@@ -1,0 +1,15 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './accordion.stories.tsx';
+
+<Meta of={Stories} />
+
+# Accordion
+
+The accordion component allows users to toggle between showing and hiding sections of content.
+
+## Usage
+
+### Basic
+
+<Canvas of={Stories.Basic} sourceState="shown" />

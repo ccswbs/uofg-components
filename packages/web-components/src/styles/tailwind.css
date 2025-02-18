@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+@import '@uoguelph/tailwind-theme';
+
+@layer base {
+  svg.fa-icon {
+    display: block;
+    height: 1em;
+    fill: currentColor;
+  }
+}
+
+@theme {
+  --color-grey-muted: #ddd;
+  --color-grey-muted-focus: #ddd;
+  --color-grey-muted-on-dark: #ddd;
+  --color-grey-muted-on-light: #ddd;
+  --color-grey-muted-contrast: #000;
+}

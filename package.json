@@ -1,0 +1,22 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^8.1.9",
+    "prettier": "^3.5.0",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "scripts": {
+    "init": "npx npmrc-replace-env",
+    "format": "npx prettier --write .",
+    "storybook": "lerna run dev --scope @uoguelph/storybook",
+    "build": "lerna run build",
+    "dev": "lerna run dev --parallel",
+    "dev:react-components": "lerna run build --scope @uoguelph/web-components && lerna run dev --parallel --scope @uoguelph/react-components --scope @uoguelph/storybook",
+    "dev:web-components": "lerna run build --scope @uoguelph/react-components && lerna run dev --parallel --scope @uoguelph/web-components --scope @uoguelph/storybook"
+  }
+}

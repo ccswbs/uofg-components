@@ -1,0 +1,14 @@
+{
+  "name": "@uoguelph/tailwind-theme",
+  "version": "1.0.0",
+  "description": "A theme for Tailwind CSS which follows University of Guelph brand guidelines.",
+  "license": "ISC",
+  "main": "index.css",
+  "style": "index.css",
+  "files": [
+    "index.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

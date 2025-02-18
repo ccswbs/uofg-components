@@ -1,0 +1,7 @@
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
+  "extends": ["plugin:svelte/recommended", "plugin:storybook/recommended"]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@uoguelph/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "storybook dev -p 6007 --ci",
+    "build": "storybook build",
+    "chromatic": "export $(cat .env | xargs) && npx chromatic --project-token=$CHROMACTIC_PROJECT_TOKEN"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-a11y": "^8.5.6",
+    "@storybook/addon-essentials": "^8.2.8",
+    "@storybook/addon-interactions": "^8.2.8",
+    "@storybook/addon-links": "^8.2.8",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/blocks": "^8.2.8",
+    "@storybook/react": "^8.2.8",
+    "@storybook/react-vite": "^8.2.8",
+    "@storybook/test": "^8.2.8",
+    "@tailwindcss/postcss": "^4.0.6",
+    "@uoguelph/react-components": "^1.0.0",
+    "@uoguelph/tailwind-theme": "^1.0.0",
+    "postcss": "^8.5.2",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.2.8",
+    "tailwindcss": "^4.0.6"
+  },
+  "dependencies": {
+    "react": "^19.0.0"
+  }
+}
