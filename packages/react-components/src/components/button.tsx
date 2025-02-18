@@ -1,4 +1,4 @@
-import { ElementType, FC, JSX, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
@@ -8,34 +8,27 @@ export type ButtonPropsBase = {
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
-  type?: 'button' | 'submit';
-  onClick?: () => void;
 };
 
-export type ButtonPropsAsLink = ButtonPropsBase & {
-  as: ElementType<{ href: string }>;
-  href?: string;
-};
+export type ButtonProps = ButtonPropsBase &
+  (
+    | ({
+        as: 'button';
+      } & ButtonHTMLAttributes<HTMLButtonElement>)
+    | ({
+        as: 'link';
+      } & AnchorHTMLAttributes<HTMLAnchorElement>)
+  );
 
-export type ButtonPropsAsButton = ButtonPropsBase & {
-  as?: keyof JSX.IntrinsicElements['button'];
-  href: undefined;
-};
-
-export const Button: FC<ButtonPropsAsLink | ButtonPropsAsButton> = ({
+export const Button: FC<ButtonProps> = ({
   as = 'button',
   color = 'red',
   outlined = false,
-  href,
   children,
   className,
   disabled = false,
-  type = 'button',
-  onClick = () => {}, // Default to an empty function
   ...rest
 }) => {
-  const Tag = as;
-
   const button = tv({
     base: 'font-medium shadow-sm inline-flex items-center justify-center px-6 py-4 text-lg no-underline transition-colors focus:outline-none',
     variants: {
@@ -213,17 +206,20 @@ export const Button: FC<ButtonPropsAsLink | ButtonPropsAsButton> = ({
     ],
   });
 
+  const classes = twMerge(button({ color: color, outlined: outlined, disabled: disabled }), className);
+
+  if (as === 'link') {
+    return (
+      <a {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Tag
-      {...rest}
-      //@ts-expect-error it's okay if href is undefined
-      href={href}
-      type={href ? undefined : type}
-      onClick={onClick}
-      className={twMerge(button({ color: color, outlined: outlined, disabled: disabled }), className)}
-    >
+    <button {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)} className={classes}>
       {children}
-    </Tag>
+    </button>
   );
 };
 
