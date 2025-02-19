@@ -1,8 +1,9 @@
 import { twMerge } from 'tailwind-merge';
-import { AnchorHTMLAttributes, ElementType, FC, HTMLAttributes, ReactElement, ReactNode } from 'react';
+import { ElementType, FC, ReactElement, ReactNode } from 'react';
 import { tv } from 'tailwind-variants';
 
-export type CardPropsBase = {
+export type CardProps = {
+  as: ElementType;
   image?: ReactElement;
   title: ReactNode;
   footer?: ReactNode;
@@ -10,12 +11,6 @@ export type CardPropsBase = {
   centered?: boolean;
   children?: ReactNode;
 };
-
-export type CardProps<T extends ElementType = 'div'> = CardPropsBase & {
-  as?: T;
-} & (T extends 'div' ? HTMLAttributes<HTMLDivElement>
-  : T extends 'a' ? AnchorHTMLAttributes<HTMLAnchorElement>
-  : Record<string, unknown>);
 
 export const Card: FC<CardProps> = ({
   as: Component = 'div',
@@ -71,7 +66,7 @@ export const Card: FC<CardProps> = ({
   });
 
   const { base, contentContainer, imageContainer, imageWrapper, titleContainer, titleWrapper, footerContainer } = card({
-    isLink: Component !== 'div',
+    isLink: 'href' in rest,
     hasImage: Boolean(image),
     centered,
   });
@@ -104,7 +99,7 @@ export const Card: FC<CardProps> = ({
   );
 
   return (
-    <Component {...(rest as Record<string, unknown>)} className={base()}>
+    <Component {...rest} className={base()}>
       {content}
     </Component>
   );

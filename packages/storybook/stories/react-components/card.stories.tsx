@@ -14,8 +14,8 @@ const config = {
     title: { name: 'title', description: 'The title of the accordion', table: { type: { summary: 'string' } } },
     as: {
       name: 'as',
-      description: "The HTML element to render the card as. If set to 'link', a href should be provided.",
-      table: { type: { summary: "'div' | 'link'" }, defaultValue: { summary: "'div'" } },
+      description: "The HTMLElement/React component to render the card as.",
+      table: { type: { summary: "React.ElementType" }, defaultValue: { summary: "'div'" } },
     },
     href: {
       name: 'href',
@@ -117,7 +117,7 @@ export const WithFooter = {
 
 export const AsALink = {
   args: {
-    as: 'link',
+    as: 'a',
     title: 'Example Title',
     className: 'w-96',
     image: (
