@@ -9,6 +9,10 @@ const config: Meta<typeof Accordion> = {
     layout: 'padded',
     docs: {
       toc: true,
+      description: {
+        component:
+          'The Accordion component is used for organizing information into collapsible sections which respond to user interaction.',
+      },
     },
   },
   tags: ['autodocs'],
@@ -39,6 +43,7 @@ type Story = StoryObj<typeof Accordion>;
 export const Basic: Story = {
   args: {
     title: 'Example Title',
-    children: "Quas eum reprehenderit beatae nemo. Natus nihil corrupti. Facere quibusdam velit. Veniam magni omnis minus. Eum harum voluptatibus nostrum laborum unde. Deleniti similique magnam error illo neque alias eos minus repudiandae.",
+    children:
+      'Quas eum reprehenderit beatae nemo. Natus nihil corrupti. Facere quibusdam velit. Veniam magni omnis minus. Eum harum voluptatibus nostrum laborum unde. Deleniti similique magnam error illo neque alias eos minus repudiandae.',
   },
 };

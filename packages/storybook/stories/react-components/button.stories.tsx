@@ -8,6 +8,10 @@ const config: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       toc: true,
+      description: {
+        component:
+          'The Button component is a interactive component designed to capture user actions (such as submitting forms). It can also function as a link to another page or resource.',
+      },
     },
   },
   tags: ['autodocs'],
@@ -109,4 +113,4 @@ export const AsALink: Story = {
     href: '#',
     children: 'Example Link Button',
   },
-}
+};

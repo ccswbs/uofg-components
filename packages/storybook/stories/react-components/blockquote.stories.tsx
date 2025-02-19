@@ -8,6 +8,9 @@ const config: Meta<typeof Blockquote> = {
     layout: 'centered',
     docs: {
       toc: true,
+      description: {
+        component: 'The Blockquote component is used to highlight a quote or excerpt from another source.',
+      },
     },
   },
   tags: ['autodocs'],
@@ -28,10 +31,10 @@ const config: Meta<typeof Blockquote> = {
       name: 'children',
       description: 'The content in the blockquote',
       table: {
-        type: { summary: "React.ReactNode?" }
+        type: { summary: 'React.ReactNode?' },
       },
       control: false,
-    }
+    },
   },
 };
 

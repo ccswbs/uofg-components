@@ -7,6 +7,12 @@ const config: Meta<typeof Card> = {
   component: Card,
   parameters: {
     layout: 'centered',
+    docs: {
+      toc: true,
+      description: {
+        component: 'The Card component is a container used to group related content like text, images, and actions in a styled, organized layout',
+      },
+    },
   },
   tags: ['autodocs'],
   argTypes: {
