@@ -16,8 +16,8 @@ export function Accordion({ title, children }: AccordionProps) {
         <div className="my-2 [&_p:last-child]:mb-0">
           <DisclosureButton
             className={twJoin(
-              'mb-1 inline-flex w-full cursor-pointer items-center justify-between gap-2 p-2.5 px-5 text-left text-xl transition-colors hover:bg-blue hover:text-white focus:bg-blue focus:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2',
-              open ? 'bg-blue text-white' : 'bg-grey-light text-blue',
+              'mb-1 inline-flex w-full cursor-pointer items-center justify-between gap-2 p-2.5 px-5 text-left text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 hocus:bg-blue hocus:text-blue-contrast',
+              open ? 'bg-blue text-blue-contrast' : 'bg-grey-light-bg text-blue-on-light',
             )}
           >
             <span>{title}</span>

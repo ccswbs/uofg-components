@@ -4,7 +4,7 @@ import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/re
 import { tv } from 'tailwind-variants';
 
 export type AlertProps = {
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
   title: ReactNode;
   subtitle: ReactNode;
   message: ReactNode;
@@ -24,25 +24,28 @@ export function Alert({ color = 'red', title, subtitle, message, footer }: Alert
     },
     variants: {
       color: {
-        red: {
+        'red': {
           titleContainer: 'bg-red text-red-contrast',
         },
-        yellow: {
+        'yellow': {
           titleContainer: 'bg-yellow text-yellow-contrast',
         },
-        blue: {
+        'blue': {
           titleContainer: 'bg-blue text-blue-contrast',
         },
-        green: {
+        'green': {
           titleContainer: 'bg-green text-green-contrast',
         },
-        grey: {
-          titleContainer: 'bg-grey text-grey-contrast',
+        'grey-light': {
+          titleContainer: 'bg-grey-light text-grey-light-contrast',
         },
-        black: {
+        'grey-dark': {
+          titleContainer: 'bg-grey-dark text-grey-dark-contrast',
+        },
+        'black': {
           titleContainer: 'bg-black text-black-contrast',
         },
-        white: {
+        'white': {
           titleContainer: 'bg-white text-white-contrast',
         },
       },

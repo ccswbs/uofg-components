@@ -40,17 +40,17 @@ export function Card<T extends CardElementType = typeof defaultElement>({
         'group ease-in-out focus-visible:ring-light-blue flex flex-col justify-center transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
         className,
       ),
-      contentContainer: 'flex flex-1 flex-col gap-2 bg-blue-light p-5 text-blue-light-contrast',
+      contentContainer: 'flex flex-1 flex-col gap-2 bg-grey-light-bg p-5 text-grey-light-contrast',
       imageContainer: 'w-full overflow-hidden',
       imageWrapper: 'w-full overflow-hidden',
       titleContainer: 'flex flex-1',
       titleWrapper: 'font-bold text-lg',
-      footerContainer: 'flex gap-2 border-t border-t-blue-dark bg-blue px-5 py-2 text-blue-contrast transition-colors',
+      footerContainer: 'flex gap-2 bg-grey-light px-5 py-2 text-grey-light-contrast transition-colors',
     },
     variants: {
       isLink: {
         true: {
-          contentContainer: 'transition-colors group-hover:bg-yellow',
+          contentContainer: 'transition-colors group-hocus:bg-yellow group-hocus:text-yellow-contrast',
           imageWrapper:
             'ease-in-out transition-transform duration-200 group-hover:scale-110 group-focus-visible:scale-110',
         },

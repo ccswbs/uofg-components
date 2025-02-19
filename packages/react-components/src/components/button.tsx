@@ -11,7 +11,7 @@ type ButtonPropsAs<T extends ButtonElementType> = {
 };
 
 type ButtonPropsBase = {
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
   outlined?: boolean;
   className?: string;
   disabled?: boolean;
@@ -40,7 +40,8 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         yellow: 'focus:ring-yellow',
         blue: 'focus:ring-blue',
         green: 'focus:ring-green',
-        grey: 'focus:ring-grey',
+        'grey-light': 'focus:ring-grey-light',
+        'grey-dark': 'focus:ring-grey-dark',
         black: 'focus:ring-black',
         white: 'focus:ring-white',
       },
@@ -141,26 +142,48 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         class: 'hocus:bg-green hocus:text-green-contrast',
       },
       {
-        color: 'grey',
+        color: 'grey-light',
         outlined: false,
-        class: 'bg-grey text-grey-contrast',
+        class: 'bg-grey-light text-grey-light-contrast',
       },
       {
-        color: 'grey',
+        color: 'grey-light',
         outlined: true,
-        class: 'border-grey text-grey',
+        class: 'border-grey-light text-grey-light',
       },
       {
-        color: 'grey',
+        color: 'grey-light',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-grey-focus',
+        class: 'hocus:bg-grey-light-focus',
       },
       {
-        color: 'grey',
+        color: 'grey-light',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-grey hocus:text-grey-contrast',
+        class: 'hocus:bg-grey-light hocus:text-grey-light-contrast',
+      },
+      {
+        color: 'grey-dark',
+        outlined: false,
+        class: 'bg-grey-dark text-grey-dark-contrast',
+      },
+      {
+        color: 'grey-dark',
+        outlined: true,
+        class: 'border-grey-dark text-grey-dark',
+      },
+      {
+        color: 'grey-dark',
+        outlined: false,
+        disabled: false,
+        class: 'hocus:bg-grey-dark-focus',
+      },
+      {
+        color: 'grey-dark',
+        outlined: true,
+        disabled: false,
+        class: 'hocus:bg-grey-dark hocus:text-grey-dark-contrast',
       },
       {
         color: 'white',
@@ -176,13 +199,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'white',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-grey-light',
+        class: 'hocus:bg-white',
       },
       {
         color: 'white',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-white hocus:text-black',
+        class: 'hocus:bg-white-focus hocus:text-white-contrast',
       },
       {
         color: 'black',
