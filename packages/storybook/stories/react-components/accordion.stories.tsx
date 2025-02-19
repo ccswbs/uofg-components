@@ -10,6 +10,14 @@ const config = {
       toc: true,
     },
   },
+  argTypes: {
+    title: { name: 'title', description: 'The title of the accordion', table: { type: { summary: 'string' } } },
+    children: {
+      name: 'children',
+      description: 'The content of the accordion',
+      table: { type: { summary: 'React.ReactNode' } },
+    },
+  },
 };
 
 export default config;
