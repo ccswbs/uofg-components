@@ -1,5 +1,6 @@
 import { ElementType, PropsWithChildren, ComponentPropsWithoutRef } from 'react';
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
 
 const defaultElement = 'div';
 
@@ -25,11 +26,17 @@ export function Container<T extends ElementType = typeof defaultElement>({
 }: ContainerProps<T>) {
   const Component = as ?? defaultElement;
 
+  const container = tv({
+    base: twMerge('tw:max-w-max-content tw:container tw:px-4 tw:pt-2 tw:pb-4', className),
+    variants: {
+      centered: {
+        true: 'tw:mx-auto',
+      },
+    },
+  });
+
   return (
-    <Component
-      {...rest}
-      className={twMerge(twJoin('max-w-max-content container px-4 pt-2 pb-4', centered && 'mx-auto'), className)}
-    >
+    <Component {...rest} className={container({ centered })}>
       {children}
     </Component>
   );

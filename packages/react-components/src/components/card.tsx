@@ -37,22 +37,22 @@ export function Card<T extends CardElementType = typeof defaultElement>({
   const card = tv({
     slots: {
       base: twMerge(
-        'group ease-in-out focus-visible:ring-light-blue flex flex-col justify-center transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+        'tw:group tw:ease-in-out tw:focus-visible:ring-light-blue tw:flex tw:flex-col tw:justify-center tw:transition tw:duration-200 tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none',
         className,
       ),
-      contentContainer: 'flex flex-1 flex-col gap-2 bg-grey-light-bg p-5 text-grey-light-contrast',
-      imageContainer: 'w-full overflow-hidden',
-      imageWrapper: 'w-full overflow-hidden',
-      titleContainer: 'flex flex-1',
-      titleWrapper: 'font-bold text-lg',
-      footerContainer: 'flex gap-2 bg-grey-light px-5 py-2 text-grey-light-contrast transition-colors',
+      contentContainer: 'tw:flex tw:flex-1 tw:flex-col tw:gap-2 tw:bg-grey-light-bg tw:p-5 tw:text-grey-light-contrast',
+      imageContainer: 'tw:w-full tw:overflow-hidden',
+      imageWrapper: 'tw:w-full tw:overflow-hidden',
+      titleContainer: 'tw:flex tw:flex-1',
+      titleWrapper: 'tw:font-bold tw:text-lg',
+      footerContainer: 'tw:flex tw:gap-2 tw:bg-grey-light tw:px-5 tw:py-2 tw:text-grey-light-contrast tw:transition-colors',
     },
     variants: {
       isLink: {
         true: {
-          contentContainer: 'transition-colors group-hocus:bg-yellow group-hocus:text-yellow-contrast',
+          contentContainer: 'tw:transition-colors tw:group-hocus:bg-yellow tw:group-hocus:text-yellow-contrast',
           imageWrapper:
-            'ease-in-out transition-transform duration-200 group-hover:scale-110 group-focus-visible:scale-110',
+            'tw:ease-in-out tw:transition-transform tw:duration-200 tw:group-hover:scale-110 tw:group-focus-visible:scale-110',
         },
       },
       hasImage: {
@@ -60,8 +60,8 @@ export function Card<T extends CardElementType = typeof defaultElement>({
       },
       centered: {
         true: {
-          titleContainer: 'items-center justify-center',
-          footerContainer: 'justify-center',
+          titleContainer: 'tw:items-center tw:justify-center',
+          footerContainer: 'tw:justify-center',
         },
         false: '',
       },
@@ -71,7 +71,7 @@ export function Card<T extends CardElementType = typeof defaultElement>({
         isLink: true,
         hasImage: false,
         class: {
-          base: 'transition-colors group-hover:bg-yellow',
+          base: 'tw:transition-colors tw:group-hover:bg-yellow',
         },
       },
     ],
@@ -96,9 +96,11 @@ export function Card<T extends CardElementType = typeof defaultElement>({
       <div className={contentContainer()}>
         {/* Card Title */}
         <div className={titleContainer()}>
-          {typeof title === 'string' ?
+          {typeof title === 'string' ? (
             <span className={titleWrapper()}>{title}</span>
-          : title}
+          ) : (
+            title
+          )}
         </div>
 
         {/* Card Body */}

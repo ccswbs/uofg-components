@@ -58,14 +58,6 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
 
     if (loop === 'continuous') {
       // TODO: Implement continuous looping
-      /*
-      const column = mod(index + visibleItems, count);
-      ref.current.scrollLeft = width * (column - 1);
-
-      scroll(ref.current, width * column, 250).then(() => {
-        isAnimating.current = false;
-      });
-       */
     }
 
     previousIndex.current = index;
@@ -95,28 +87,28 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
 
   const carousel = tv({
     slots: {
-      base: 'relative flex h-fit min-h-[7rem] w-full flex-col-reverse',
+      base: 'tw:relative tw:flex tw:h-fit tw:min-h-[7rem] tw:w-full tw:flex-col-reverse',
       contentContainer:
-        'grid w-full flex-1 grid-cols-[repeat(var(--items),calc(100%/var(--display)))] overflow-x-hidden [&>*]:[grid-row:1]',
-      controlContainer: 'md:contents flex h-16 w-full pt-8',
+        'tw:grid tw:w-full tw:flex-1 tw:grid-cols-[repeat(var(--items),calc(100%/var(--display)))] tw:overflow-x-hidden [&>*]:[grid-row:1]',
+      controlContainer: 'tw:md:contents tw:flex tw:h-16 tw:w-full tw:pt-8',
       control:
-        'sm:text-6xl md:absolute flex h-full w-16 flex-1 items-center justify-center text-3xl text-yellow transition-[transform,color,opacity,visibility] hover:text-black focus-visible:text-black',
+        'tw:sm:text-6xl tw:md:absolute tw:flex tw:h-full tw:w-16 tw:flex-1 tw:items-center tw:justify-center tw:text-3xl tw:text-yellow tw:transition-[transform,color,opacity,visibility] tw:hover:text-black tw:focus-visible:text-black',
     },
     variants: {
       showControls: {
         true: {
-          base: 'sm:px-16',
+          base: 'tw:sm:px-16',
         },
         false: {
-          control: 'pointer-events-none invisible opacity-0',
+          control: 'tw:pointer-events-none tw:invisible tw:opacity-0',
         },
       },
       direction: {
         left: {
-          control: 'left-0 hover:-translate-x-1 focus-visible:-translate-x-1',
+          control: 'tw:left-0 tw:hover:-translate-x-1 tw:focus-visible:-translate-x-1',
         },
         right: {
-          control: 'right-0 hover:translate-x-1 focus-visible:translate-x-1',
+          control: 'tw:right-0 tw:hover:translate-x-1 tw:focus-visible:translate-x-1',
         },
       },
     },
@@ -134,15 +126,14 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(-1)}
             className={control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}
           >
-            <span className="sr-only">Shift carousel left</span>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
+
           {/* Right Button */}
           <button
             onClick={() => shift(1)}
             className={control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}
           >
-            <span className="sr-only">Shift carousel right</span>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
@@ -150,16 +141,15 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
 
       <div
         className={contentContainer()}
-        //@ts-expect-error TypeScript doesn't know how to deal with CSS custom properties.
-        style={{ '--display': visibleItems, '--items': count }}
         ref={ref}
+        style={{
+          // Define CSS variables for the grid layout
+          ['--items' as string]: count,
+          ['--display' as string]: visibleItems,
+        }}
       >
-        {Children.map(children, (child, i) => (
-          <div key={'key' in (child as any) ? (child as any).key : i}>{child}</div>
-        ))}
+        {children}
       </div>
     </div>
   );
 }
-
-Carousel.displayName = 'Carousel';

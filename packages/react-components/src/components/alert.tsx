@@ -13,40 +13,40 @@ export type AlertProps = {
 export function Alert({ color = 'red', title, subtitle, message, footer }: AlertProps) {
   const card = tv({
     slots: {
-      base: 'flex flex-col',
-      titleContainer: 'flex items-center gap-2 p-4 text-xl',
-      titleIcon: 'h-[1.5em]',
+      base: 'tw:flex tw:flex-col',
+      titleContainer: 'tw:flex tw:items-center tw:gap-2 tw:p-4 tw:text-xl',
+      titleIcon: 'tw:h-[1.5em]',
       titleText: '',
-      messageContainer: 'flex flex-col border-x border-b border-grey-light bg-white px-4 py-3',
-      subtitle: 'font-bold mb-4 text-xl',
-      message: 'text-lg',
-      footer: 'flex bg-grey-light px-4 py-2',
+      messageContainer: 'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-grey-light tw:bg-white tw:px-4 tw:py-3',
+      subtitle: 'tw:font-bold tw:mb-4 tw:text-xl',
+      message: 'tw:text-lg',
+      footer: 'tw:flex tw:bg-grey-light tw:px-4 tw:py-2',
     },
     variants: {
       color: {
         'red': {
-          titleContainer: 'bg-red text-red-contrast',
+          titleContainer: 'tw:bg-red tw:text-red-contrast',
         },
         'yellow': {
-          titleContainer: 'bg-yellow text-yellow-contrast',
+          titleContainer: 'tw:bg-yellow tw:text-yellow-contrast',
         },
         'blue': {
-          titleContainer: 'bg-blue text-blue-contrast',
+          titleContainer: 'tw:bg-blue tw:text-blue-contrast',
         },
         'green': {
-          titleContainer: 'bg-green text-green-contrast',
+          titleContainer: 'tw:bg-green tw:text-green-contrast',
         },
         'grey-light': {
-          titleContainer: 'bg-grey-light text-grey-light-contrast',
+          titleContainer: 'tw:bg-grey-light tw:text-grey-light-contrast',
         },
         'grey-dark': {
-          titleContainer: 'bg-grey-dark text-grey-dark-contrast',
+          titleContainer: 'tw:bg-grey-dark tw:text-grey-dark-contrast',
         },
         'black': {
-          titleContainer: 'bg-black text-black-contrast',
+          titleContainer: 'tw:bg-black tw:text-black-contrast',
         },
         'white': {
-          titleContainer: 'bg-white text-white-contrast',
+          titleContainer: 'tw:bg-white tw:text-white-contrast',
         },
       },
     },

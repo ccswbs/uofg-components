@@ -34,12 +34,12 @@ export function Breadcrumbs<T extends BreadcrumbsElementType = typeof defaultEle
   const Component = as ?? defaultElement;
   const breadcrumbs = tv({
     slots: {
-      base: 'flex w-full flex-wrap items-center gap-2',
-      homeIcon: 'h-[1em] fill-black',
-      breadcrumbContainer: 'flex items-center gap-2',
-      breadcrumbIcon: 'h-[.75em]',
+      base: 'tw:flex tw:w-full tw:flex-wrap tw:items-center tw:gap-2',
+      homeIcon: 'tw:h-[1em] tw:fill-black',
+      breadcrumbContainer: 'tw:flex tw:items-center tw:gap-2',
+      breadcrumbIcon: 'tw:h-[.75em]',
       breadcrumbLink:
-        'underline decoration-transparent decoration-1 transition-colors hover:decoration-black focus:decoration-black',
+        'tw:underline tw:decoration-transparent tw:decoration-1 tw:transition-colors tw:hover:decoration-black tw:focus:decoration-black',
     },
   });
 
@@ -51,18 +51,19 @@ export function Breadcrumbs<T extends BreadcrumbsElementType = typeof defaultEle
         <li>
           <Component {...rest} href="/">
             <FontAwesomeIcon icon={faHome} className={homeIcon()} />
-            <span className="sr-only">U of G Homepage</span>
+            <span className="tw:sr-only">U of G Homepage</span>
           </Component>
         </li>
         {links?.map((link, index) => (
           <li key={index} className={breadcrumbContainer()}>
             <FontAwesomeIcon icon={faChevronRight} className={breadcrumbIcon()} />
-            {index === links.length - 1 ?
+            {index === links.length - 1 ? (
               <span>{link.title}</span>
-            : <Component {...rest} className={breadcrumbLink()} href={link.url}>
+            ) : (
+              <Component {...rest} className={breadcrumbLink()} href={link.url}>
                 {link.title}
               </Component>
-            }
+            )}
           </li>
         ))}
       </ol>

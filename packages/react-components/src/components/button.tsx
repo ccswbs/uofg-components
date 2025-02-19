@@ -33,211 +33,209 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const button = tv({
-    base: 'font-medium shadow-sm inline-flex items-center justify-center px-6 py-4 text-lg no-underline transition-colors focus:outline-none',
+    base: 'tw:font-medium tw:shadow-sm tw:inline-flex tw:items-center tw:justify-center tw:px-6 tw:py-4 tw:text-lg tw:no-underline tw:transition-colors tw:focus:outline-none',
     variants: {
       color: {
-        red: 'focus:ring-red',
-        yellow: 'focus:ring-yellow',
-        blue: 'focus:ring-blue',
-        green: 'focus:ring-green',
-        'grey-light': 'focus:ring-grey-light',
-        'grey-dark': 'focus:ring-grey-dark',
-        black: 'focus:ring-black',
-        white: 'focus:ring-white',
+        red: 'tw:focus:ring-red',
+        yellow: 'tw:focus:ring-yellow',
+        blue: 'tw:focus:ring-blue',
+        green: 'tw:focus:ring-green',
+        'grey-light': 'tw:focus:ring-grey-light',
+        'grey-dark': 'tw:focus:ring-grey-dark',
+        black: 'tw:focus:ring-black',
+        white: 'tw:focus:ring-white',
       },
       outlined: {
-        true: 'border-2',
+        true: 'tw:border-2',
       },
       disabled: {
-        true: 'cursor-not-allowed opacity-50',
+        true: 'tw:cursor-not-allowed tw:opacity-50',
       },
     },
     compoundVariants: [
       {
         color: 'red',
         outlined: false,
-        class: 'bg-red text-red-contrast',
+        class: 'tw:bg-red tw:text-red-contrast',
       },
       {
         color: 'red',
         outlined: true,
-        class: 'border-red text-red',
+        class: 'tw:border-red tw:text-red',
       },
       {
         color: 'red',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-red-focus',
+        class: 'tw:hocus:bg-red-focus',
       },
       {
         color: 'red',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-red hocus:text-red-contrast',
+        class: 'tw:hocus:bg-red tw:hocus:text-red-contrast',
       },
       {
         color: 'yellow',
         outlined: false,
-        class: 'bg-yellow text-yellow-contrast',
+        class: 'tw:bg-yellow tw:text-yellow-contrast',
       },
       {
         color: 'yellow',
         outlined: true,
-        class: 'border-yellow text-yellow',
+        class: 'tw:border-yellow tw:text-yellow',
       },
       {
         color: 'yellow',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-yellow-focus',
+        class: 'tw:hocus:bg-yellow-focus',
       },
       {
         color: 'yellow',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-yellow hocus:text-yellow-contrast',
+        class: 'tw:hocus:bg-yellow tw:hocus:text-yellow-contrast',
       },
       {
         color: 'blue',
         outlined: false,
-        class: 'bg-blue text-blue-contrast',
+        class: 'tw:bg-blue tw:text-blue-contrast',
       },
       {
         color: 'blue',
         outlined: true,
-        class: 'border-blue text-blue',
+        class: 'tw:border-blue tw:text-blue',
       },
       {
         color: 'blue',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-blue-focus',
+        class: 'tw:hocus:bg-blue-focus',
       },
       {
         color: 'blue',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-blue hocus:text-blue-contrast',
+        class: 'tw:hocus:bg-blue tw:hocus:text-blue-contrast',
       },
       {
         color: 'green',
         outlined: false,
-        class: 'bg-green text-green-contrast',
+        class: 'tw:bg-green tw:text-green-contrast',
       },
       {
         color: 'green',
         outlined: true,
-        class: 'border-green text-green',
+        class: 'tw:border-green tw:text-green',
       },
       {
         color: 'green',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-green-focus',
+        class: 'tw:hocus:bg-green-focus',
       },
       {
         color: 'green',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-green hocus:text-green-contrast',
+        class: 'tw:hocus:bg-green tw:hocus:text-green-contrast',
       },
       {
         color: 'grey-light',
         outlined: false,
-        class: 'bg-grey-light text-grey-light-contrast',
+        class: 'tw:bg-grey-light tw:text-grey-light-contrast',
       },
       {
         color: 'grey-light',
         outlined: true,
-        class: 'border-grey-light text-grey-light',
+        class: 'tw:border-grey-light tw:text-grey-light',
       },
       {
         color: 'grey-light',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-grey-light-focus',
+        class: 'tw:hocus:bg-grey-light-focus',
       },
       {
         color: 'grey-light',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-grey-light hocus:text-grey-light-contrast',
+        class: 'tw:hocus:bg-grey-light tw:hocus:text-grey-light-contrast',
       },
       {
         color: 'grey-dark',
         outlined: false,
-        class: 'bg-grey-dark text-grey-dark-contrast',
+        class: 'tw:bg-grey-dark tw:text-grey-dark-contrast',
       },
       {
         color: 'grey-dark',
         outlined: true,
-        class: 'border-grey-dark text-grey-dark',
+        class: 'tw:border-grey-dark tw:text-grey-dark',
       },
       {
         color: 'grey-dark',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-grey-dark-focus',
+        class: 'tw:hocus:bg-grey-dark-focus',
       },
       {
         color: 'grey-dark',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-grey-dark hocus:text-grey-dark-contrast',
-      },
-      {
-        color: 'white',
-        outlined: false,
-        class: 'bg-white text-white-contrast',
-      },
-      {
-        color: 'white',
-        outlined: true,
-        class: 'border-white text-white',
-      },
-      {
-        color: 'white',
-        outlined: false,
-        disabled: false,
-        class: 'hocus:bg-white',
-      },
-      {
-        color: 'white',
-        outlined: true,
-        disabled: false,
-        class: 'hocus:bg-white-focus hocus:text-white-contrast',
+        class: 'tw:hocus:bg-grey-dark tw:hocus:text-grey-dark-contrast',
       },
       {
         color: 'black',
         outlined: false,
-        class: 'bg-black text-black-contrast',
+        class: 'tw:bg-black tw:text-black-contrast',
       },
       {
         color: 'black',
         outlined: true,
-        class: 'border-black text-black',
+        class: 'tw:border-black tw:text-black',
       },
       {
         color: 'black',
         outlined: false,
         disabled: false,
-        class: 'hocus:bg-black-focus',
+        class: 'tw:hocus:bg-black-focus',
       },
       {
         color: 'black',
         outlined: true,
         disabled: false,
-        class: 'hocus:bg-black hocus:text-black-contrast',
+        class: 'tw:hocus:bg-black tw:hocus:text-black-contrast',
+      },
+      {
+        color: 'white',
+        outlined: false,
+        class: 'tw:bg-white tw:text-white-contrast',
+      },
+      {
+        color: 'white',
+        outlined: true,
+        class: 'tw:border-white tw:text-white',
+      },
+      {
+        color: 'white',
+        outlined: false,
+        disabled: false,
+        class: 'tw:hocus:bg-white-focus',
+      },
+      {
+        color: 'white',
+        outlined: true,
+        disabled: false,
+        class: 'tw:hocus:bg-white tw:hocus:text-white-contrast',
       },
     ],
   });
 
+  const classes = twMerge(button({ color, outlined, disabled }), className);
+
   return (
-    <Component
-      className={twMerge(button({ color, outlined, disabled }), className)}
-      disabled={Component === 'button' ? disabled : undefined}
-      {...rest}
-    >
+    <Component className={classes} disabled={disabled} {...rest}>
       {children}
     </Component>
   );
