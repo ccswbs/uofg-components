@@ -1,20 +1,15 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, FC, ReactNode } from 'react';
+import { ElementType, FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-export type ButtonPropsBase = {
+export type ButtonProps = {
+  as: ElementType;
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey' | 'black' | 'white';
   outlined?: boolean;
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
 };
-
-export type ButtonProps<T extends ElementType = 'button'> = ButtonPropsBase & {
-  as?: T;
-} & (T extends 'button' ? ButtonHTMLAttributes<HTMLButtonElement>
-  : T extends 'a' ? AnchorHTMLAttributes<HTMLAnchorElement>
-  : Record<string, unknown>);
 
 export const Button: FC<ButtonProps> = ({
   as: Component = 'button',
