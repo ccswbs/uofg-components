@@ -9,6 +9,7 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
+  "experimentalTernaries": true,
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
   "tailwindStylesheet": "./packages/tailwind-theme/index.css",
   "tailwindFunctions": ["tv", "twMerge", "twJoin"]

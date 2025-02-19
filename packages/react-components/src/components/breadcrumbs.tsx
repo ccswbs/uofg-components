@@ -43,13 +43,12 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ links, as = 'a' }) => {
         {links?.map((link, index) => (
           <li key={index} className={breadcrumbContainer()}>
             <FontAwesomeIcon icon={faChevronRight} className={breadcrumbIcon()} />
-            {index === links.length - 1 ? (
+            {index === links.length - 1 ?
               <span>{link.title}</span>
-            ) : (
-              <Link className={breadcrumbLink()} href={link.url}>
+            : <Link className={breadcrumbLink()} href={link.url}>
                 {link.title}
               </Link>
-            )}
+            }
           </li>
         ))}
       </ol>
