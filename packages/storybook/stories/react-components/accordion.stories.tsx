@@ -17,13 +17,17 @@ const config: Meta<typeof Accordion> = {
       name: 'title',
       description: 'The title of the accordion',
       table: { type: { summary: 'React.ReactNode' } },
-      control: false,
+      control: {
+        type: 'text',
+      },
     },
     children: {
       name: 'children',
       description: 'The content of the accordion',
       table: { type: { summary: 'React.ReactNode' } },
-      control: false,
+      control: {
+        type: 'text',
+      },
     },
   },
 };
@@ -35,15 +39,6 @@ type Story = StoryObj<typeof Accordion>;
 export const Basic: Story = {
   args: {
     title: 'Example Title',
-    children: (
-      <div>
-        Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
-        ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit. Similique perspiciatis
-        alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui. Voluptas quas dicta hic adipisci
-        voluptatibus impedit consectetur quae veniam. Totam amet magni. Vero voluptas dolorum itaque praesentium sint
-        quasi accusamus. Culpa consequuntur doloribus sint. Pariatur sequi consequuntur quidem enim exercitationem.
-        Culpa repellendus eveniet fugit cum. Sapiente doloribus recusandae ex autem.
-      </div>
-    ),
+    children: "Quas eum reprehenderit beatae nemo. Natus nihil corrupti. Facere quibusdam velit. Veniam magni omnis minus. Eum harum voluptatibus nostrum laborum unde. Deleniti similique magnam error illo neque alias eos minus repudiandae.",
   },
 };
