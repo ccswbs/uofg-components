@@ -1,5 +1,6 @@
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 import { AnchorHTMLAttributes, FC, HTMLAttributes, ReactElement, ReactNode } from 'react';
+import { tv } from 'tailwind-variants';
 
 export type CardPropsBase = {
   image?: ReactElement;
@@ -12,53 +13,78 @@ export type CardPropsBase = {
 
 export type CardProps = CardPropsBase &
   (
-    | {
+    | ({
         as: 'div';
-      } & HTMLAttributes<HTMLDivElement>
+      } & HTMLAttributes<HTMLDivElement>)
     | ({
         as: 'link';
       } & AnchorHTMLAttributes<HTMLAnchorElement>)
   );
 
 export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, className, centered, children, ...rest }) => {
-  const isLink = as === 'link';
-  const noImage = !image;
+  const card = tv({
+    slots: {
+      base: twMerge(
+        'group ease-in-out focus-visible:ring-light-blue flex flex-col justify-center transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+        className,
+      ),
+      contentContainer: 'flex flex-1 flex-col gap-2 bg-blue-light p-5 text-blue-light-contrast',
+      imageContainer: 'w-full overflow-hidden',
+      imageWrapper: 'w-full overflow-hidden',
+      titleContainer: 'flex flex-1',
+      titleWrapper: 'font-bold text-lg',
+      footerContainer: 'flex gap-2 border-t border-t-blue-dark bg-blue px-5 py-2 text-blue-contrast transition-colors',
+    },
+    variants: {
+      isLink: {
+        true: {
+          contentContainer: 'transition-colors group-hover:bg-yellow',
+          imageWrapper:
+            'ease-in-out transition-transform duration-200 group-hover:scale-110 group-focus-visible:scale-110',
+        },
+      },
+      hasImage: {
+        true: '',
+      },
+      centered: {
+        true: {
+          titleContainer: 'items-center justify-center',
+          footerContainer: 'justify-center',
+        },
+        false: '',
+      },
+    },
+    compoundVariants: [
+      {
+        isLink: true,
+        hasImage: false,
+        class: {
+          base: 'transition-colors group-hover:bg-yellow',
+        },
+      },
+    ],
+  });
 
-  const container = twMerge(
-    'group ease-in-out focus-visible:ring-light-blue flex flex-col justify-center transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
-    noImage && isLink && 'hover:scale-105 focus-visible:scale-105',
-    className,
-  );
-  const contentContainer = twJoin(
-    'bg-blue-light text-blue-light-contrast flex flex-1 flex-col gap-2 p-5',
-    isLink && 'transition-colors group-hover:bg-yellow',
-  );
-  const imageContainer = twJoin('w-full overflow-hidden');
-  const imageWrapper = twJoin(
-    '[&>img]:object-cover',
-    isLink && 'ease-in-out transition-transform duration-200 group-hover:scale-110 group-focus-visible:scale-110',
-  );
-  const titleContainer = twJoin('flex flex-1', centered && 'items-center justify-center');
-  const titleWrapper = twJoin('font-bold text-lg');
-  const footerContainer = twJoin(
-    'border-t-blue-dark bg-blue text-blue-contrast flex gap-2 border-t px-5 py-2 transition-colors',
-    centered && 'justify-center',
-  );
+  const { base, contentContainer, imageContainer, imageWrapper, titleContainer, titleWrapper, footerContainer } = card({
+    isLink: as === 'link',
+    hasImage: Boolean(image),
+    centered,
+  });
 
   const content = (
     <>
       {/* Card Image */}
       {image && (
-        <div className={imageContainer}>
-          <div className={imageWrapper}>{image}</div>
+        <div className={imageContainer()}>
+          <div className={imageWrapper()}>{image}</div>
         </div>
       )}
 
       {/* Card Main Container */}
-      <div className={contentContainer}>
+      <div className={contentContainer()}>
         {/* Card Title */}
-        <div className={titleContainer}>
-          {typeof title === 'string' ? <span className={titleWrapper}>{title}</span> : title}
+        <div className={titleContainer()}>
+          {typeof title === 'string' ? <span className={titleWrapper()}>{title}</span> : title}
         </div>
 
         {/* Card Body */}
@@ -66,16 +92,20 @@ export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, classNam
       </div>
 
       {/* Card Footer */}
-      {footer && <div className={footerContainer}>{footer}</div>}
+      {footer && <div className={footerContainer()}>{footer}</div>}
     </>
   );
 
   if (as === 'div') {
-    return <div {...(rest as HTMLAttributes<HTMLDivElement>)} className={container}>{content}</div>;
+    return (
+      <div {...(rest as HTMLAttributes<HTMLDivElement>)} className={base()}>
+        {content}
+      </div>
+    );
   }
 
   return (
-    <a {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)} className={container}>
+    <a {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)} className={base()}>
       {content}
     </a>
   );
