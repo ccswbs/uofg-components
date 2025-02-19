@@ -7,6 +7,39 @@ const config = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    title: { name: 'title', description: 'The title of the accordion', table: { type: { summary: 'string' } } },
+    as: {
+      name: 'as',
+      description: "The HTML element to render the card as. If set to 'link', a href should be provided.",
+      table: { type: { summary: "'div' | 'link'" }, defaultValue: { summary: "'div'" } },
+    },
+    href: {
+      name: 'href',
+      description: "The href to use for the card as a link. Only provide this if as is set to 'link'",
+      table: { type: { summary: 'string?' } },
+    },
+    className: {
+      name: 'className',
+      description: "Classes to apply to the card's main container",
+      table: { type: { summary: 'string?' } },
+    },
+    image: {
+      name: 'image',
+      description: 'The image to display in the card header',
+      table: { type: { summary: 'React.ReactNode?' } },
+    },
+    children: {
+      name: 'children',
+      description: 'The content of the card body',
+      table: { type: { summary: 'React.ReactNode' } },
+    },
+    footer: {
+      name: 'footer',
+      description: 'The content of the card footer',
+      table: { type: { summary: 'React.ReactNode?' } },
+    },
+  },
 };
 
 export default config;
