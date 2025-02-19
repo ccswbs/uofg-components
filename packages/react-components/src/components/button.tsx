@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, FC, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
@@ -10,18 +10,14 @@ export type ButtonPropsBase = {
   disabled?: boolean;
 };
 
-export type ButtonProps = ButtonPropsBase &
-  (
-    | ({
-        as: 'button';
-      } & ButtonHTMLAttributes<HTMLButtonElement>)
-    | ({
-        as: 'link';
-      } & AnchorHTMLAttributes<HTMLAnchorElement>)
-  );
+export type ButtonProps<T extends ElementType = 'button'> = ButtonPropsBase & {
+  as?: T;
+} & (T extends 'button' ? ButtonHTMLAttributes<HTMLButtonElement>
+  : T extends 'a' ? AnchorHTMLAttributes<HTMLAnchorElement>
+  : Record<string, unknown>);
 
 export const Button: FC<ButtonProps> = ({
-  as = 'button',
+  as: Component = 'button',
   color = 'red',
   outlined = false,
   children,
@@ -162,7 +158,7 @@ export const Button: FC<ButtonProps> = ({
       {
         color: 'white',
         outlined: false,
-        class: 'text-white-contrast bg-white',
+        class: 'bg-white text-white-contrast',
       },
       {
         color: 'white',
@@ -206,20 +202,14 @@ export const Button: FC<ButtonProps> = ({
     ],
   });
 
-  const classes = twMerge(button({ color: color, outlined: outlined, disabled: disabled }), className);
-
-  if (as === 'link') {
-    return (
-      <a {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)} className={classes}>
-        {children}
-      </a>
-    );
-  }
-
   return (
-    <button {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)} className={classes}>
+    <Component
+      className={twMerge(button({ color, outlined, disabled }), className)}
+      disabled={Component === 'button' ? disabled : undefined}
+      {...rest}
+    >
       {children}
-    </button>
+    </Component>
   );
 };
 
