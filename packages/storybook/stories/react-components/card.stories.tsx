@@ -7,6 +7,9 @@ const config = {
   parameters: {
     layout: 'centered',
   },
+  docs: {
+    toc: true,
+  },
   argTypes: {
     title: { name: 'title', description: 'The title of the accordion', table: { type: { summary: 'string' } } },
     as: {
