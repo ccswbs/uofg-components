@@ -1,4 +1,4 @@
-import type { ElementType, FC, ReactNode } from 'react';
+import type { ElementType, FC, ReactNode, HTMLAttributes } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
 
 export type ContainerProps = {
@@ -6,7 +6,7 @@ export type ContainerProps = {
   centered?: boolean;
   children?: ReactNode;
   className?: string;
-};
+} & HTMLAttributes<HTMLElement>;
 
 export const Container: FC<ContainerProps> = ({ as = 'div', centered = false, children, className, ...rest }) => {
   const Tag = as;
