@@ -1,7 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
-import { twJoin } from 'tailwind-merge';
 import { Children, useEffect, useRef, useState } from 'react';
 import { bezier, lerp, mod, clamp } from '../utils/math-utils';
 import { tv } from 'tailwind-variants';
@@ -95,27 +94,46 @@ export const Carousel: FC<CarouselProps> = ({ children, display = 1, loop = 'non
     setIndex(idx);
   };
 
-  const button = tv({
-    base: 'sm:text-6xl md:absolute flex h-full w-16 flex-1 items-center justify-center text-3xl text-yellow transition-[transform,color,opacity,visibility] hover:text-black focus-visible:text-black',
+  const carousel = tv({
+    slots: {
+      base: 'relative flex h-fit min-h-[7rem] w-full flex-col-reverse',
+      contentContainer:
+        'grid w-full flex-1 grid-cols-[repeat(var(--items),calc(100%/var(--display)))] overflow-x-hidden [&>*]:[grid-row:1]',
+      controlContainer: 'md:contents flex h-16 w-full pt-8',
+      control:
+        'sm:text-6xl md:absolute flex h-full w-16 flex-1 items-center justify-center text-3xl text-yellow transition-[transform,color,opacity,visibility] hover:text-black focus-visible:text-black',
+    },
     variants: {
-      direction: {
-        left: 'left-0 hover:-translate-x-1 focus-visible:-translate-x-1',
-        right: 'right-0 hover:translate-x-1 focus-visible:translate-x-1',
+      showControls: {
+        true: {
+          base: 'sm:px-16',
+        },
+        false: {
+          control: 'pointer-events-none invisible opacity-0',
+        },
       },
-      hidden: { true: 'pointer-events-none invisible opacity-0' },
+      direction: {
+        left: {
+          control: 'left-0 hover:-translate-x-1 focus-visible:-translate-x-1',
+        },
+        right: {
+          control: 'right-0 hover:translate-x-1 focus-visible:translate-x-1',
+        },
+      },
     },
   });
 
+  const showControls = count > visibleItems;
+  const { base, contentContainer, controlContainer, control } = carousel({ showControls });
+
   return (
-    <div
-      className={twJoin('relative flex h-fit min-h-[7rem] w-full flex-col-reverse', count > visibleItems && 'sm:px-16')}
-    >
-      {count > visibleItems && (
-        <div className="md:contents flex h-16 w-full pt-8">
+    <div className={base()}>
+      {showControls && (
+        <div className={controlContainer()}>
           {/* Left Button */}
           <button
             onClick={() => shift(-1)}
-            className={button({ direction: 'left', hidden: loop === 'none' && index === 0 })}
+            className={control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}
           >
             <span className="sr-only">Shift carousel left</span>
             <FontAwesomeIcon icon={faChevronLeft} />
@@ -123,7 +141,7 @@ export const Carousel: FC<CarouselProps> = ({ children, display = 1, loop = 'non
           {/* Right Button */}
           <button
             onClick={() => shift(1)}
-            className={button({ direction: 'left', hidden: loop === 'none' && index === maxIndex })}
+            className={control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}
           >
             <span className="sr-only">Shift carousel right</span>
             <FontAwesomeIcon icon={faChevronRight} />
@@ -132,7 +150,7 @@ export const Carousel: FC<CarouselProps> = ({ children, display = 1, loop = 'non
       )}
 
       <div
-        className="grid w-full flex-1 grid-cols-[repeat(var(--items),calc(100%/var(--display)))] overflow-x-hidden [&>*]:[grid-row:1]"
+        className={contentContainer()}
         //@ts-expect-error TypeScript doesn't know how to deal with CSS custom properties.
         style={{ '--display': visibleItems, '--items': count }}
         ref={ref}
