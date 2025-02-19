@@ -9,13 +9,6 @@ const config = {
       toc: true,
     },
   },
-  tags: ['autodocs'],
-  argTypes: {
-    as: { control: false },
-    children: { control: false },
-    href: { control: false },
-    className: { control: false },
-  },
 };
 
 export default config;
