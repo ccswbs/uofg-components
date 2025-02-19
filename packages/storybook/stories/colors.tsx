@@ -37,7 +37,7 @@ export const ColorGrid = () => {
 
       colors.push({
         title: title,
-        subtitle: `The University of Guelph Brand ${colorName}`,
+        subtitle: `The University of Guelph brand compliant ${colorName}`,
         swatches: getSwatches(colorName),
       });
 
