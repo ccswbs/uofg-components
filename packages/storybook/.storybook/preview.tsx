@@ -3,6 +3,7 @@ import { Title, Subtitle, Description, Primary, Controls, Stories } from '@story
 import { Preview } from '@storybook/react';
 import { ComponentImport } from '../doc-blocks/component-import';
 import * as React from 'react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +12,9 @@ const preview: Preview = {
       matchers: {
         date: /Date$/i,
       },
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
     },
     docs: {
       page: () => (
