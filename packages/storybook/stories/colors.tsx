@@ -10,8 +10,7 @@ type Color = {
 };
 
 const swatchNames = ['bg', 'contrast', 'focus', 'on-dark', 'on-light'];
-const variantNames = ['light', 'dark'];
-const colorNames = ['red', 'yellow', 'blue', 'green', 'grey', 'black', 'white'];
+const colorNames = ['black', 'white', 'red', 'yellow', 'blue', 'green', 'grey', 'grey-light', 'grey-dark'];
 
 export const ColorGrid = () => {
   const colors = React.useMemo(() => {
@@ -51,20 +50,9 @@ export const ColorGrid = () => {
 
       addColor({
         title: title,
-        subtitle: `The University of Guelph brand compliant ${colorName}`,
+        subtitle: '',
         swatches: getSwatches(colorName),
       });
-
-      for (const variant of variantNames) {
-        const colorTitle = toTitleCase(colorName);
-        const variantTitle = toTitleCase(variant);
-
-        addColor({
-          title: `${colorTitle} ${variantTitle}`,
-          subtitle: `A ${variant}er of the University of Guelph ${colorName}`,
-          swatches: getSwatches(`${colorName}-${variant}`),
-        });
-      }
     }
 
     return colors;
