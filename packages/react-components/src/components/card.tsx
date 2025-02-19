@@ -1,19 +1,29 @@
 import { twMerge } from 'tailwind-merge';
-import { ElementType, FC, ReactElement, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { tv } from 'tailwind-variants';
 
-export type CardProps = {
-  as: ElementType;
+const defaultElement = 'div';
+
+type CardElementType = ElementType<{ href?: string }, 'a'> | 'div' | 'article';
+
+type CardPropsAs<T extends CardElementType> = {
+  as?: T;
+};
+
+type CardPropsBase = {
   image?: ReactElement;
   title: ReactNode;
   footer?: ReactNode;
   className?: string;
   centered?: boolean;
-  children?: ReactNode;
 };
 
-export const Card: FC<CardProps> = ({
-  as: Component = 'div',
+export type CardProps<T extends CardElementType = typeof defaultElement> = PropsWithChildren<
+  CardPropsAs<T> & ComponentPropsWithoutRef<T> & CardPropsBase
+>;
+
+export function Card<T extends CardElementType = typeof defaultElement>({
+  as,
   image,
   title,
   footer,
@@ -21,7 +31,9 @@ export const Card: FC<CardProps> = ({
   centered,
   children,
   ...rest
-}) => {
+}: CardProps<T>) {
+  const Component = as ?? defaultElement;
+
   const card = tv({
     slots: {
       base: twMerge(
@@ -103,4 +115,4 @@ export const Card: FC<CardProps> = ({
       {content}
     </Component>
   );
-};
+}

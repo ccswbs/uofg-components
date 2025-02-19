@@ -1,25 +1,37 @@
-import { ElementType, FC, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-export type ButtonProps = {
-  as: ElementType;
+const defaultElement = 'button';
+
+type ButtonElementType = ElementType<{ href?: string }, 'a'> | 'button';
+
+type ButtonPropsAs<T extends ButtonElementType> = {
+  as?: T;
+};
+
+type ButtonPropsBase = {
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey' | 'black' | 'white';
   outlined?: boolean;
-  children?: ReactNode;
   className?: string;
   disabled?: boolean;
 };
 
-export const Button: FC<ButtonProps> = ({
-  as: Component = 'button',
+export type ButtonProps<T extends ButtonElementType = typeof defaultElement> = PropsWithChildren<
+  ButtonPropsAs<T> & ComponentPropsWithoutRef<T> & ButtonPropsBase
+>;
+
+export function Button<T extends ButtonElementType = typeof defaultElement>({
+  as,
   color = 'red',
   outlined = false,
   children,
   className,
   disabled = false,
   ...rest
-}) => {
+}: ButtonProps<T>) {
+  const Component = as ?? defaultElement;
+
   const button = tv({
     base: 'font-medium shadow-sm inline-flex items-center justify-center px-6 py-4 text-lg no-underline transition-colors focus:outline-none',
     variants: {
@@ -206,6 +218,6 @@ export const Button: FC<ButtonProps> = ({
       {children}
     </Component>
   );
-};
+}
 
 Button.displayName = 'Button';

@@ -1,4 +1,4 @@
-import type { ElementType, FC } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@awesome.me/kit-7993323d0c/icons/sharp/light';
 import { faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/light';
@@ -10,14 +10,28 @@ export type Breadcrumb = {
   url: string;
 };
 
-export type BreadcrumbsProps = {
-  links: Breadcrumb[];
-  as?: ElementType<{ href: string }>;
+const defaultElement = 'a';
+
+type BreadcrumbsElementType = ElementType<{ href?: string }, 'a'>;
+
+type BreadcrumbsPropsAs<T extends BreadcrumbsElementType> = {
+  as?: T;
 };
 
-export const Breadcrumbs: FC<BreadcrumbsProps> = ({ links, as = 'a' }) => {
-  const Link = as;
+type BreadcrumbsPropsBase = {
+  links: Breadcrumb[];
+};
 
+export type BreadcrumbsProps<T extends BreadcrumbsElementType = typeof defaultElement> = PropsWithChildren<
+  BreadcrumbsPropsAs<T> & ComponentPropsWithoutRef<T> & BreadcrumbsPropsBase
+>;
+
+export function Breadcrumbs<T extends BreadcrumbsElementType = typeof defaultElement>({
+  as,
+  links,
+  ...rest
+}: BreadcrumbsProps<T>) {
+  const Component = as ?? defaultElement;
   const breadcrumbs = tv({
     slots: {
       base: 'flex w-full flex-wrap items-center gap-2',
@@ -35,25 +49,25 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ links, as = 'a' }) => {
     <Container centered>
       <ol className={base()}>
         <li>
-          <Link href="/">
+          <Component {...rest} href="/">
             <FontAwesomeIcon icon={faHome} className={homeIcon()} />
             <span className="sr-only">U of G Homepage</span>
-          </Link>
+          </Component>
         </li>
         {links?.map((link, index) => (
           <li key={index} className={breadcrumbContainer()}>
             <FontAwesomeIcon icon={faChevronRight} className={breadcrumbIcon()} />
             {index === links.length - 1 ?
               <span>{link.title}</span>
-            : <Link className={breadcrumbLink()} href={link.url}>
+            : <Component {...rest} className={breadcrumbLink()} href={link.url}>
                 {link.title}
-              </Link>
+              </Component>
             }
           </li>
         ))}
       </ol>
     </Container>
   );
-};
+}
 
 Breadcrumbs.displayName = 'Breadcrumbs';
