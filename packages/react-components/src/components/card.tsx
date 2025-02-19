@@ -30,7 +30,7 @@ export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, classNam
     className,
   );
   const contentContainer = twJoin(
-    'bg-light-blue-50 flex flex-1 flex-col gap-2 p-5',
+    'bg-blue-light text-blue-light-contrast flex flex-1 flex-col gap-2 p-5',
     isLink && 'transition-colors group-hover:bg-yellow',
   );
   const imageContainer = twJoin('w-full overflow-hidden');
@@ -41,7 +41,7 @@ export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, classNam
   const titleContainer = twJoin('flex flex-1', centered && 'items-center justify-center');
   const titleWrapper = twJoin('font-bold text-lg');
   const footerContainer = twJoin(
-    'border-t-blue-200 bg-light-blue-100 flex gap-2 border-t px-5 py-2 transition-colors',
+    'border-t-blue-dark bg-blue text-blue-contrast flex gap-2 border-t px-5 py-2 transition-colors',
     centered && 'justify-center',
   );
 
