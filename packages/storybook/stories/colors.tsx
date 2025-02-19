@@ -11,7 +11,7 @@ type Color = {
 
 const swatchNames = ['bg', 'contrast', 'focus', 'on-dark', 'on-light'];
 const variantNames = ['light', 'dark'];
-const colorNames = ['red', 'yellow', 'blue', 'green', 'grey', 'black'];
+const colorNames = ['red', 'yellow', 'blue', 'green', 'grey', 'black', 'white'];
 
 export const ColorGrid = () => {
   const colors = React.useMemo(() => {
@@ -23,19 +23,33 @@ export const ColorGrid = () => {
     const getSwatches = (colorName: string) => {
       const swatches = {};
 
-      swatches['base'] = getHexValue(colorName);
+      const baseValue = getHexValue(colorName);
+
+      if (baseValue) {
+        swatches['base'] = getHexValue(colorName);
+      }
 
       for (const swatch of swatchNames) {
-        swatches[swatch] = getHexValue(`${colorName}-${swatch}`);
+        const value = getHexValue(`${colorName}-${swatch}`);
+
+        if (value) {
+          swatches[swatch] = getHexValue(`${colorName}-${swatch}`);
+        }
       }
 
       return swatches;
     };
 
+    const addColor = (color: Color) => {
+      if (Object.keys(color.swatches).length > 0) {
+        colors.push(color);
+      }
+    };
+
     for (const colorName of colorNames) {
       const title = toTitleCase(colorName);
 
-      colors.push({
+      addColor({
         title: title,
         subtitle: `The University of Guelph brand compliant ${colorName}`,
         swatches: getSwatches(colorName),
@@ -45,7 +59,7 @@ export const ColorGrid = () => {
         const colorTitle = toTitleCase(colorName);
         const variantTitle = toTitleCase(variant);
 
-        colors.push({
+        addColor({
           title: `${colorTitle} ${variantTitle}`,
           subtitle: `A ${variant}er of the University of Guelph ${colorName}`,
           swatches: getSwatches(`${colorName}-${variant}`),
