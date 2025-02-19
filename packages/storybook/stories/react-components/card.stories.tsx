@@ -32,7 +32,7 @@ const config = {
     children: {
       name: 'children',
       description: 'The content of the card body',
-      table: { type: { summary: 'React.ReactNode' } },
+      table: { type: { summary: 'React.ReactNode?' } },
     },
     footer: {
       name: 'footer',
