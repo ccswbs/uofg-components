@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { AnchorHTMLAttributes, FC, HTMLAttributes, ReactElement, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ElementType, FC, HTMLAttributes, ReactElement, ReactNode } from 'react';
 import { tv } from 'tailwind-variants';
 
 export type CardPropsBase = {
@@ -11,17 +11,22 @@ export type CardPropsBase = {
   children?: ReactNode;
 };
 
-export type CardProps = CardPropsBase &
-  (
-    | ({
-        as: 'div';
-      } & HTMLAttributes<HTMLDivElement>)
-    | ({
-        as: 'link';
-      } & AnchorHTMLAttributes<HTMLAnchorElement>)
-  );
+export type CardProps<T extends ElementType = 'div'> = CardPropsBase & {
+  as?: T;
+} & (T extends 'div' ? HTMLAttributes<HTMLDivElement>
+  : T extends 'a' ? AnchorHTMLAttributes<HTMLAnchorElement>
+  : Record<string, unknown>);
 
-export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, className, centered, children, ...rest }) => {
+export const Card: FC<CardProps> = ({
+  as: Component = 'div',
+  image,
+  title,
+  footer,
+  className,
+  centered,
+  children,
+  ...rest
+}) => {
   const card = tv({
     slots: {
       base: twMerge(
@@ -66,7 +71,7 @@ export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, classNam
   });
 
   const { base, contentContainer, imageContainer, imageWrapper, titleContainer, titleWrapper, footerContainer } = card({
-    isLink: as === 'link',
+    isLink: Component !== 'div',
     hasImage: Boolean(image),
     centered,
   });
@@ -84,7 +89,9 @@ export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, classNam
       <div className={contentContainer()}>
         {/* Card Title */}
         <div className={titleContainer()}>
-          {typeof title === 'string' ? <span className={titleWrapper()}>{title}</span> : title}
+          {typeof title === 'string' ?
+            <span className={titleWrapper()}>{title}</span>
+          : title}
         </div>
 
         {/* Card Body */}
@@ -96,17 +103,9 @@ export const Card: FC<CardProps> = ({ as = 'div', image, title, footer, classNam
     </>
   );
 
-  if (as === 'div') {
-    return (
-      <div {...(rest as HTMLAttributes<HTMLDivElement>)} className={base()}>
-        {content}
-      </div>
-    );
-  }
-
   return (
-    <a {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)} className={base()}>
+    <Component {...(rest as Record<string, unknown>)} className={base()}>
       {content}
-    </a>
+    </Component>
   );
 };
