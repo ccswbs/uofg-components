@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { Children, useEffect, useRef, useState } from 'react';
@@ -27,13 +27,12 @@ const scroll = (element: HTMLElement, to: number, duration: number) => {
   });
 };
 
-export type CarouselProps = {
-  children: ReactNode;
+export type CarouselProps = PropsWithChildren<{
   display?: number;
   loop?: 'jump' | 'continuous' | 'none';
-};
+}>;
 
-export const Carousel: FC<CarouselProps> = ({ children, display = 1, loop = 'none' }) => {
+export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps) {
   const count = Children.count(children);
   const visibleItems = Math.max(display, 1);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -161,4 +160,6 @@ export const Carousel: FC<CarouselProps> = ({ children, display = 1, loop = 'non
       </div>
     </div>
   );
-};
+}
+
+Carousel.displayName = 'Carousel';

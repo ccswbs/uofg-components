@@ -1,16 +1,15 @@
-import type { FC, ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faQuoteRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-export type BlockquoteProps = {
+export type BlockquoteProps = PropsWithChildren<{
   className?: string;
-  children: ReactNode;
   color?: 'yellow' | 'red' | 'blue';
-};
+}>;
 
-export const Blockquote: FC<BlockquoteProps> = ({ className, children, color = 'yellow' }) => {
+export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {
   const blockquote = tv({
     slots: {
       base: twMerge('font-light block w-full text-center text-3xl italic', className),
@@ -48,6 +47,6 @@ export const Blockquote: FC<BlockquoteProps> = ({ className, children, color = '
       <FontAwesomeIcon icon={faQuoteRight} className={icons({ direction: 'right' })} />
     </blockquote>
   );
-};
+}
 
 Blockquote.displayName = 'Blockquote';

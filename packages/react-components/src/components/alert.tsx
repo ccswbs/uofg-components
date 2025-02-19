@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { tv } from 'tailwind-variants';
@@ -10,7 +10,7 @@ export type AlertProps = {
   message: ReactNode;
   footer?: ReactNode;
 };
-export const Alert: FC<AlertProps> = ({ color = 'red', title, subtitle, message, footer }) => {
+export function Alert({ color = 'red', title, subtitle, message, footer }: AlertProps) {
   const card = tv({
     slots: {
       base: 'flex flex-col',
@@ -75,6 +75,6 @@ export const Alert: FC<AlertProps> = ({ color = 'red', title, subtitle, message,
       {footer && <div className={footerClasses()}>{footer}</div>}
     </div>
   );
-};
+}
 
 Alert.displayName = 'Alert';
