@@ -1,60 +1,76 @@
 import * as React from 'react';
 import { Card } from '@uoguelph/react-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-const config = {
+const config: Meta<typeof Card> = {
   title: 'React Components/Card',
   component: Card,
   parameters: {
     layout: 'centered',
   },
-  docs: {
-    toc: true,
-  },
+  tags: ['autodocs'],
   argTypes: {
-    title: { name: 'title', description: 'The title of the accordion', table: { type: { summary: 'string' } } },
+    title: {
+      name: 'title',
+      description: 'The title of the accordion',
+      table: { type: { summary: 'React.ReactNode' } },
+      control: {
+        type: 'text',
+      },
+    },
     as: {
       name: 'as',
-      description: "The HTMLElement/React component to render the card as.",
-      table: { type: { summary: "React.ElementType" }, defaultValue: { summary: "'div'" } },
-    },
-    href: {
-      name: 'href',
-      description: "The href to use for the card as a link. Only provide this if as is set to 'link'",
-      table: { type: { summary: 'string?' } },
+      description:
+        'The HTMLElement/React component to render the card as. Cards can be rendered as a div, an article, or any component that acts as a link.',
+      table: {
+        type: { summary: "React.ElementType<{ href?: string }, 'a'> | 'div' | 'article'" },
+        defaultValue: { summary: "'div'" },
+      },
+      control: false,
     },
     className: {
       name: 'className',
       description: "Classes to apply to the card's main container",
       table: { type: { summary: 'string?' } },
+      control: false,
     },
     image: {
       name: 'image',
       description: 'The image to display in the card header',
       table: { type: { summary: 'React.ReactNode?' } },
+      control: false,
     },
     children: {
       name: 'children',
       description: 'The content of the card body',
       table: { type: { summary: 'React.ReactNode?' } },
+      control: {
+        type: 'text',
+      },
     },
     footer: {
       name: 'footer',
       description: 'The content of the card footer',
       table: { type: { summary: 'React.ReactNode?' } },
+      control: {
+        type: 'text',
+      },
     },
   },
 };
 
 export default config;
 
-export const Basic = {
+type Story = StoryObj<typeof Card>;
+
+export const Basic: Story = {
   args: {
     title: 'Example Title',
     className: 'w-96',
   },
 };
 
-export const WithBodyContent = {
+export const WithBodyContent: Story = {
   args: {
     title: 'Example Title',
     className: 'w-96',
@@ -68,7 +84,7 @@ export const WithBodyContent = {
   },
 };
 
-export const WithImage = {
+export const WithImage: Story = {
   args: {
     title: 'Example Title',
     className: 'w-96',
@@ -91,7 +107,7 @@ export const WithImage = {
   },
 };
 
-export const WithFooter = {
+export const WithFooter: Story = {
   args: {
     title: 'Example Title',
     className: 'w-96',
@@ -115,7 +131,7 @@ export const WithFooter = {
   },
 };
 
-export const AsALink = {
+export const AsALink: Story = {
   args: {
     as: 'a',
     title: 'Example Title',

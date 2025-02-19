@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Carousel } from '@uoguelph/react-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-const config = {
+const config: Meta<typeof Carousel> = {
   title: 'React Components/Carousel',
   component: Carousel,
   parameters: {
@@ -11,11 +12,44 @@ const config = {
     },
   },
   tags: ['autodocs'],
+  argTypes: {
+    display: {
+      name: 'display',
+      description: 'The number of items to display at a time within the carousel',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: "'1'" },
+      },
+      control: {
+        type: 'number',
+      },
+    },
+    loop: {
+      name: 'loop',
+      description: 'The behavior of the carousel when the last item is reached',
+      table: {
+        type: { summary: "'none' | 'jump' | 'continuous'" },
+        defaultValue: { summary: "'none'" },
+      },
+      control: {
+        type: 'select',
+      },
+      options: ['none', 'jump', 'continuous'],
+    },
+    children: {
+      name: 'children',
+      description: 'The content of the card body',
+      table: { type: { summary: 'React.ReactNode?' } },
+      control: false,
+    },
+  },
 };
 
 export default config;
 
-export const Default = {
+type Story = StoryObj<typeof Carousel>;
+
+export const Default: Story = {
   args: {
     display: 1,
     loop: 'none',
@@ -45,7 +79,7 @@ export const Default = {
   },
 };
 
-export const MultipleItemsDisplayed = {
+export const MultipleItemsDisplayed: Story = {
   args: {
     display: 2,
     loop: 'none',
@@ -75,7 +109,7 @@ export const MultipleItemsDisplayed = {
   },
 };
 
-export const JumpLoop = {
+export const JumpLoop: Story = {
   args: {
     display: 2,
     loop: 'jump',
@@ -105,7 +139,7 @@ export const JumpLoop = {
   },
 };
 
-export const ContinuousLoop = {
+export const ContinuousLoop: Story = {
   args: {
     display: 3,
     loop: 'continuous',

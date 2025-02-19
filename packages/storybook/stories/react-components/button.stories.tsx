@@ -1,6 +1,7 @@
 import { Button } from '@uoguelph/react-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-const config = {
+const config: Meta<typeof Button> = {
   title: 'React Components/Button',
   component: Button,
   parameters: {
@@ -9,114 +10,103 @@ const config = {
       toc: true,
     },
   },
+  tags: ['autodocs'],
+  argTypes: {
+    as: {
+      name: 'as',
+      description:
+        'The HTMLElement/React component to render the Button as. Button can be rendered as a button, or any component that acts as a link.',
+      table: {
+        type: { summary: "ElementType<{ href?: string }, 'a'> | 'button'" },
+        defaultValue: { summary: "'button'" },
+      },
+      control: false,
+    },
+    color: {
+      name: 'color',
+      description: 'The color of the button',
+      table: {
+        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white'" },
+        defaultValue: { summary: "'red'" },
+      },
+      control: {
+        type: 'select',
+      },
+      options: ['red', 'yellow', 'blue', 'green', 'grey-light', 'grey-dark', 'black', 'white'],
+      defaultValue: 'red',
+    },
+    outlined: {
+      name: 'outlined',
+      description: 'Whether the button uses an outlined style',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+      control: {
+        type: 'boolean',
+      },
+      defaultValue: false,
+    },
+    disabled: {
+      name: 'disabled',
+      description: 'Whether the button is disabled, should be set to false when the button is acting as a link',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+      control: {
+        type: 'boolean',
+      },
+    },
+    className: {
+      name: 'className',
+      description: 'Classes to apply to the button',
+      table: { type: { summary: 'string?' } },
+      control: false,
+    },
+    children: {
+      name: 'children',
+      description: 'The content of the button',
+      table: { type: { summary: 'React.ReactNode?' } },
+      control: {
+        type: 'text',
+      },
+    },
+  },
 };
 
 export default config;
 
-export const RedNotOutlined = {
+type Story = StoryObj<typeof Button>;
+
+// Red Button Stories
+export const Basic: Story = {
   args: {
     color: 'red',
     children: 'Example Button',
-    outlined: false,
-    disabled: false,
   },
 };
 
-export const RedOutlined = {
+export const Outlined: Story = {
   args: {
     color: 'red',
-    children: 'Example Button',
     outlined: true,
-    disabled: false,
+    children: 'Example Outlined Button',
   },
 };
 
-export const YellowNotOutlined = {
-  args: {
-    color: 'yellow',
-    children: 'Example Button',
-    outlined: false,
-    disabled: false,
-  },
-};
-
-export const YellowOutlined = {
-  args: {
-    color: 'yellow',
-    children: 'Example Button',
-    outlined: true,
-    disabled: false,
-  },
-};
-
-export const BlueNotOutlined = {
-  args: {
-    color: 'blue',
-    children: 'Example Button',
-    outlined: false,
-    disabled: false,
-  },
-};
-
-export const BlueOutlined = {
-  args: {
-    color: 'blue',
-    children: 'Example Button',
-    outlined: true,
-    disabled: false,
-  },
-};
-
-export const GreenNotOutlined = {
-  args: {
-    color: 'green',
-    children: 'Example Button',
-    outlined: false,
-    disabled: false,
-  },
-};
-
-export const GreenOutlined = {
-  args: {
-    color: 'green',
-    children: 'Example Button',
-    outlined: true,
-    disabled: false,
-  },
-};
-
-export const GreyNotOutlined = {
-  args: {
-    color: 'grey',
-    children: 'Example Button',
-    outlined: false,
-    disabled: false,
-  },
-};
-
-export const GreyOutlined = {
-  args: {
-    color: 'grey',
-    children: 'Example Button',
-    outlined: true,
-    disabled: false,
-  },
-};
-
-export const DisabledNotOutlined = {
+export const Disabled: Story = {
   args: {
     color: 'red',
-    children: 'Example Button',
-    outlined: false,
     disabled: true,
+    children: 'Example Disabled Button',
   },
 };
 
-export const DisabledOutlined = {
+export const AsALink: Story = {
   args: {
-    color: 'red',
-    children: 'Example Button',
-    outlined: true,
-    disabled: true,
+    as: 'a',
+    href: '#',
+    children: 'Example Link Button',
   },
-};
+}

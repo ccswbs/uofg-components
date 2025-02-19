@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from '@uoguelph/react-components';
 
-const config = {
+const config: Meta<typeof Accordion> = {
   title: 'React Components/Accordion',
   component: Accordion,
   parameters: {
@@ -10,19 +11,28 @@ const config = {
       toc: true,
     },
   },
+  tags: ['autodocs'],
   argTypes: {
-    title: { name: 'title', description: 'The title of the accordion', table: { type: { summary: 'string' } } },
+    title: {
+      name: 'title',
+      description: 'The title of the accordion',
+      table: { type: { summary: 'React.ReactNode' } },
+      control: false,
+    },
     children: {
       name: 'children',
       description: 'The content of the accordion',
       table: { type: { summary: 'React.ReactNode' } },
+      control: false,
     },
   },
 };
 
 export default config;
 
-export const Basic = {
+type Story = StoryObj<typeof Accordion>;
+
+export const Basic: Story = {
   args: {
     title: 'Example Title',
     children: (

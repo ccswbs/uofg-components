@@ -1,6 +1,7 @@
 import { Breadcrumbs } from '@uoguelph/react-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-const config = {
+const config: Meta<typeof Breadcrumbs> = {
   title: 'React Components/Breadcrumbs',
   component: Breadcrumbs,
   parameters: {
@@ -10,11 +11,32 @@ const config = {
     },
   },
   tags: ['autodocs'],
+  argTypes: {
+    links: {
+      name: 'links',
+      description: 'The links to display in the breadcrumbs',
+      table: { type: { summary: '{ title: string; url: string; }[]' } },
+      control: {
+        type: 'object',
+      },
+    },
+    as: {
+      name: 'as',
+      description: 'The HTMLElement/React component to render a link in the breadcrumbs as',
+      table: {
+        type: { summary: "ElementType<{ href?: string }, 'a'>" },
+        defaultValue: { summary: "'a'" },
+      },
+      control: false,
+    },
+  },
 };
 
 export default config;
 
-export const Default = {
+type Story = StoryObj<typeof Breadcrumbs>;
+
+export const Default: Story = {
   args: {
     links: [
       {
@@ -29,7 +51,7 @@ export const Default = {
   },
 };
 
-export const WithManyCrumbs = {
+export const WithManyCrumbs: Story = {
   args: {
     links: [
       {

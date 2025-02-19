@@ -1,6 +1,7 @@
 import { Blockquote } from '@uoguelph/react-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-const config = {
+const config: Meta<typeof Blockquote> = {
   title: 'React Components/Blockquote',
   component: Blockquote,
   parameters: {
@@ -10,18 +11,35 @@ const config = {
     },
   },
   tags: ['autodocs'],
+  argTypes: {
+    color: {
+      name: 'color',
+      description: 'The color of the quotation marks in the blockquote',
+      table: {
+        type: { summary: "'red' | 'yellow' | 'blue'" },
+        defaultValue: { summary: "'red'" },
+      },
+      control: {
+        type: 'select',
+      },
+      options: ['red', 'yellow', 'blue'],
+    },
+    children: {
+      name: 'children',
+      description: 'The content in the blockquote',
+      table: {
+        type: { summary: "React.ReactNode?" }
+      },
+      control: false,
+    }
+  },
 };
 
 export default config;
 
-export const Yellow = {
-  args: {
-    children: 'Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.',
-    color: 'yellow',
-  },
-};
+type Story = StoryObj<typeof Blockquote>;
 
-export const Red = {
+export const Basic: Story = {
   args: {
     children: 'Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.',
     color: 'red',
