@@ -1,7 +1,9 @@
-import { Checkbox } from '@uoguelph/react-components';
+import * as React from 'react';
+import { Checkbox, StoryObj } from '@uoguelph/react-components';
 import { fn } from '@storybook/test';
+import { Meta } from '@storybook/react';
 
-const config = {
+const config: Meta<typeof Checkbox> = {
   title: 'React Components/Checkbox',
   component: Checkbox,
   parameters: {
@@ -55,7 +57,9 @@ const config = {
 
 export default config;
 
-export const Basic = {
+type Story = StoryObj<typeof Checkbox>;
+
+export const Basic: Story = {
   args: {
     color: 'red',
     disabled: false,
@@ -63,7 +67,7 @@ export const Basic = {
   },
 };
 
-export const WithLabel = {
+export const WithLabel: Story = {
   args: {
     color: 'red',
     disabled: false,
@@ -72,7 +76,7 @@ export const WithLabel = {
   },
 };
 
-export const WithLabelAndDescription = {
+export const WithLabelAndDescription: Story = {
   args: {
     color: 'red',
     disabled: false,
@@ -82,7 +86,7 @@ export const WithLabelAndDescription = {
   },
 };
 
-export const CheckedByDefault = {
+export const CheckedByDefault: Story = {
   args: {
     color: 'red',
     disabled: false,
@@ -92,7 +96,7 @@ export const CheckedByDefault = {
   },
 };
 
-export const DisabledAndUnchecked = {
+export const DisabledAndUnchecked: Story = {
   args: {
     color: 'red',
     disabled: true,
@@ -102,7 +106,7 @@ export const DisabledAndUnchecked = {
   },
 };
 
-export const DisabledAndChecked = {
+export const DisabledAndChecked: Story = {
   args: {
     color: 'red',
     disabled: true,
