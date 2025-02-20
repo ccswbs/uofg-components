@@ -10,6 +10,7 @@ import { Container } from './components/container.tsx';
 import { Card } from './components/card.tsx';
 import { Carousel } from './components/carousel.tsx';
 import { Checkbox } from './components/checkbox.tsx';
+import { Contact } from './components/contact.tsx';
 
 export {
   clamp,
@@ -26,4 +27,5 @@ export {
   Card,
   Carousel,
   Checkbox,
+  Contact
 };
