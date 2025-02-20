@@ -11,6 +11,7 @@ import { Card } from './components/card.tsx';
 import { Carousel } from './components/carousel.tsx';
 import { Checkbox } from './components/checkbox.tsx';
 import { Contact } from './components/contact.tsx';
+import { Divider } from './components/divider.tsx';
 
 export {
   clamp,
@@ -27,5 +28,6 @@ export {
   Card,
   Carousel,
   Checkbox,
-  Contact
+  Contact,
+  Divider
 };
