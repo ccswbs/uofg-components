@@ -1,17 +1,21 @@
-import { Divider } from "@uoguelph/react-components";
+import * as React from 'react';
+import { Divider } from '@uoguelph/react-components';
+import { Meta, StoryObj } from '@storybook/react';
 
-const config = {
-  title: "React Components/Divider",
+const config: Meta<typeof Divider> = {
+  title: 'React Components/Divider',
   component: Divider,
   parameters: {
-    layout: "padded",
+    layout: 'padded',
     docs: {
       toc: true,
     },
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default config;
 
-export const Default = {};
+type Story = StoryObj<typeof Divider>;
+
+export const Default: Story = {};
