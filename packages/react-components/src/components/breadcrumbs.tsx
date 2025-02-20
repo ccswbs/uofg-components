@@ -57,13 +57,12 @@ export function Breadcrumbs<T extends BreadcrumbsElementType = typeof defaultEle
         {links?.map((link, index) => (
           <li key={index} className={breadcrumbContainer()}>
             <FontAwesomeIcon icon={faChevronRight} className={breadcrumbIcon()} />
-            {index === links.length - 1 ? (
+            {index === links.length - 1 ?
               <span>{link.title}</span>
-            ) : (
-              <Component {...rest} className={breadcrumbLink()} href={link.url}>
+            : <Component {...rest} className={breadcrumbLink()} href={link.url}>
                 {link.title}
               </Component>
-            )}
+            }
           </li>
         ))}
       </ol>

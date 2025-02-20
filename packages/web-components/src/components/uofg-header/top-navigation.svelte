@@ -36,7 +36,7 @@
               <li>
                 <a
                   class={twJoin(
-                    'border-0 border-b border-solid border-grey/50 p-2 transition-colors hover:bg-yellow hover:text-yellow-contrast',
+                    'border-grey/50 border-0 border-b border-solid p-2 transition-colors hover:bg-yellow hover:text-yellow-contrast',
                     item.highlight && 'bg-yellow text-yellow-contrast',
                   )}
                   href={link.href}

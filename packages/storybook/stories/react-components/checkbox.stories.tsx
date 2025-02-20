@@ -1,16 +1,16 @@
-import { Checkbox } from "@uoguelph/react-components";
-import { fn } from "@storybook/test";
+import { Checkbox } from '@uoguelph/react-components';
+import { fn } from '@storybook/test';
 
 const config = {
-  title: "React Components/Checkbox",
+  title: 'React Components/Checkbox',
   component: Checkbox,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     docs: {
       toc: true,
     },
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     onChange: fn(),
   },
@@ -57,7 +57,7 @@ export default config;
 
 export const Basic = {
   args: {
-    color: "red",
+    color: 'red',
     disabled: false,
     checked: false,
   },
@@ -65,49 +65,49 @@ export const Basic = {
 
 export const WithLabel = {
   args: {
-    color: "red",
+    color: 'red',
     disabled: false,
     checked: false,
-    label: "Example checkbox",
+    label: 'Example checkbox',
   },
 };
 
 export const WithLabelAndDescription = {
   args: {
-    color: "red",
+    color: 'red',
     disabled: false,
     checked: false,
-    label: "Example checkbox",
-    description: "This is a checkbox",
+    label: 'Example checkbox',
+    description: 'This is a checkbox',
   },
 };
 
 export const CheckedByDefault = {
   args: {
-    color: "red",
+    color: 'red',
     disabled: false,
     checked: true,
-    label: "Example checkbox",
-    description: "This is a checkbox",
+    label: 'Example checkbox',
+    description: 'This is a checkbox',
   },
 };
 
 export const DisabledAndUnchecked = {
   args: {
-    color: "red",
+    color: 'red',
     disabled: true,
     checked: false,
-    label: "Example checkbox",
-    description: "This is a checkbox",
+    label: 'Example checkbox',
+    description: 'This is a checkbox',
   },
 };
 
 export const DisabledAndChecked = {
   args: {
-    color: "red",
+    color: 'red',
     disabled: true,
     checked: true,
-    label: "Example checkbox",
-    description: "This is a checkbox",
+    label: 'Example checkbox',
+    description: 'This is a checkbox',
   },
 };

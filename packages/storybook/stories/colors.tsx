@@ -10,7 +10,19 @@ type Color = {
 };
 
 const swatchNames = ['contrast', 'focus', 'on-dark', 'on-light', 'bg'];
-const colorNames = ['black', 'white', 'red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'body-copy', 'body-copy-bold', 'body-copy-link'];
+const colorNames = [
+  'black',
+  'white',
+  'red',
+  'yellow',
+  'blue',
+  'green',
+  'light-grey',
+  'dark-grey',
+  'body-copy',
+  'body-copy-bold',
+  'body-copy-link',
+];
 
 export const ColorGrid = () => {
   const colors = React.useMemo(() => {

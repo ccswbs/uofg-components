@@ -28,7 +28,7 @@
           {#each item.links as link}
             <li class="first:*:mt-4 last:*:mb-4">
               <a
-                class="hover:bg-grey-muted border-0 border-b border-solid border-grey/50 p-2 transition-colors"
+                class="hover:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors"
                 href={link.href}
                 {...link.attributes}
               >
@@ -85,7 +85,7 @@
               {#each item.links as link}
                 <li>
                   <a
-                    class="hover:bg-grey-muted border-0 border-b border-solid border-grey/50 p-2 transition-colors"
+                    class="hover:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors"
                     href={link.href}
                     {...link.attributes}
                   >
@@ -96,7 +96,7 @@
             </Menu>
           {:else}
             <a
-              class="hover:bg-grey-muted focus:bg-grey-muted border-0 border-b border-solid border-grey/50 p-2 transition-colors"
+              class="hover:bg-grey-muted focus:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors"
               class:bg-yellow={item.highlight}
               href={item.href}
             >

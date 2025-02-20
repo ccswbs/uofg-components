@@ -23,7 +23,7 @@
   --color-*: initial; /* Don't include tailwind's default palette */
 
   --color-white: #fff;
-  --color-white-focus: #DDD;
+  --color-white-focus: #ddd;
   --color-white-on-dark: #fff;
   --color-white-contrast: #000;
 
@@ -32,30 +32,30 @@
   --color-black-on-light: #000;
   --color-black-contrast: #fff;
 
-  --color-red: #E51937;
-  --color-red-focus: #B3142C;
-  --color-red-on-light: #DC1836;
+  --color-red: #e51937;
+  --color-red-focus: #b3142c;
+  --color-red-on-light: #dc1836;
   --color-red-contrast: #fff;
 
   --color-yellow: #ffc429;
-  --color-yellow-focus: #FFE299;
-  --color-yellow-on-dark: #FFC429;
+  --color-yellow-focus: #ffe299;
+  --color-yellow-on-dark: #ffc429;
   --color-yellow-contrast: #000;
 
-  --color-blue: #187BB4;
-  --color-blue-focus: #135F8B;
-  --color-blue-on-light: #1775AB;
+  --color-blue: #187bb4;
+  --color-blue-focus: #135f8b;
+  --color-blue-on-light: #1775ab;
   --color-blue-contrast: #fff;
 
   --color-green: #318738;
-  --color-green-focus: #27682C;
-  --color-green-on-light: #2E7F35;
+  --color-green-focus: #27682c;
+  --color-green-on-light: #2e7f35;
   --color-green-contrast: #fff;
 
   --color-light-grey: #d8d8d8;
   --color-light-grey-focus: #bfbfbf;
   --color-light-grey-contrast: #000;
-  --color-light-grey-bg: #F5F5F5;
+  --color-light-grey-bg: #f5f5f5;
 
   --color-dark-grey: #747676;
   --color-dark-grey-focus: #63625f;
@@ -68,9 +68,9 @@
   --color-body-copy-bold: #333;
   --color-body-copy-bold-on-dark: #eee;
 
-  --color-body-copy-link: #187BB4;
+  --color-body-copy-link: #187bb4;
   --color-body-copy-link-on-light: #166ea2;
-  --color-body-copy-link-on-dark: #1D93D7;
+  --color-body-copy-link-on-dark: #1d93d7;
 
   /** Spacing **/
   --spacing: 0.4rem; /* This rescales Tailwind's default spacing to work with root font size set to 62.5% */

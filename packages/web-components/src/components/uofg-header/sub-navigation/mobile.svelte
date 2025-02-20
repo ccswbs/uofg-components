@@ -24,7 +24,7 @@
           <!-- Link -->
           <a
             {...item.attributes}
-            class={`hover:bg-grey-muted border-0 border-b border-solid border-grey/50 p-2 transition-colors ${item.attributes?.class ?? ''}`}
+            class={`hover:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors ${item.attributes?.class ?? ''}`}
             href={item.href}
           >
             {item.text}
@@ -49,7 +49,7 @@
               <li>
                 <a
                   {...link.attributes}
-                  class={`hover:bg-grey-muted hover:text-grey-muted-contrast border-0 border-b border-solid border-grey/50 p-2 transition-colors ${link.attributes?.class ?? ''}`}
+                  class={`hover:bg-grey-muted hover:text-grey-muted-contrast border-grey/50 border-0 border-b border-solid p-2 transition-colors ${link.attributes?.class ?? ''}`}
                   href={link.href}
                 >
                   {link.text}

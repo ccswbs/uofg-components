@@ -26,7 +26,7 @@
           <li>
             <a
               {...link.attributes}
-              class={`border-0 border-b border-solid border-grey/50 p-2 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast ${link.attributes?.class ?? ''}`}
+              class={`border-grey/50 border-0 border-b border-solid p-2 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast ${link.attributes?.class ?? ''}`}
               href={link.href}
             >
               {link.text}

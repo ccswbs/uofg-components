@@ -25,7 +25,7 @@ export default defineConfig({
         'tailwind-merge',
         'tailwind-variants',
         '@headlessui/react',
-        '@headlessui/tailwindcss'
+        '@headlessui/tailwindcss',
       ],
     },
     minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false,

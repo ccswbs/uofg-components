@@ -36,14 +36,14 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
     base: 'tw:font-medium tw:shadow-sm tw:inline-flex tw:items-center tw:justify-center tw:px-6 tw:py-4 tw:text-lg tw:no-underline tw:transition-colors tw:focus:outline-none',
     variants: {
       color: {
-        red: 'tw:focus:ring-red',
-        yellow: 'tw:focus:ring-yellow',
-        blue: 'tw:focus:ring-blue',
-        green: 'tw:focus:ring-green',
+        'red': 'tw:focus:ring-red',
+        'yellow': 'tw:focus:ring-yellow',
+        'blue': 'tw:focus:ring-blue',
+        'green': 'tw:focus:ring-green',
         'light-grey': 'tw:focus:ring-light-grey',
         'dark-grey': 'tw:focus:ring-dark-grey',
-        black: 'tw:focus:ring-black',
-        white: 'tw:focus:ring-white',
+        'black': 'tw:focus:ring-black',
+        'white': 'tw:focus:ring-white',
       },
       outlined: {
         true: 'tw:border-2',

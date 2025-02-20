@@ -45,7 +45,8 @@ export function Card<T extends CardElementType = typeof defaultElement>({
       imageWrapper: 'tw:w-full tw:overflow-hidden',
       titleContainer: 'tw:flex tw:flex-1',
       titleWrapper: 'tw:font-bold tw:text-lg',
-      footerContainer: 'tw:flex tw:gap-2 tw:bg-light-grey tw:px-5 tw:py-2 tw:text-light-grey-contrast tw:transition-colors',
+      footerContainer:
+        'tw:flex tw:gap-2 tw:bg-light-grey tw:px-5 tw:py-2 tw:text-light-grey-contrast tw:transition-colors',
     },
     variants: {
       isLink: {
@@ -96,11 +97,9 @@ export function Card<T extends CardElementType = typeof defaultElement>({
       <div className={contentContainer()}>
         {/* Card Title */}
         <div className={titleContainer()}>
-          {typeof title === 'string' ? (
+          {typeof title === 'string' ?
             <span className={titleWrapper()}>{title}</span>
-          ) : (
-            title
-          )}
+          : title}
         </div>
 
         {/* Card Body */}

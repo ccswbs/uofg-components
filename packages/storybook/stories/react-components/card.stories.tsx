@@ -10,7 +10,8 @@ const config: Meta<typeof Card> = {
     docs: {
       toc: true,
       description: {
-        component: 'The Card component is a container used to group related content like text, images, and actions in a styled, organized layout',
+        component:
+          'The Card component is a container used to group related content like text, images, and actions in a styled, organized layout',
       },
     },
   },

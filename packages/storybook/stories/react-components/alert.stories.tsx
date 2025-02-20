@@ -9,7 +9,8 @@ const config: Meta<typeof Alert> = {
     docs: {
       toc: true,
       description: {
-        component: 'The Alert component is used to display critical feedback, such as warnings, errors, or informational messages.',
+        component:
+          'The Alert component is used to display critical feedback, such as warnings, errors, or informational messages.',
       },
     },
   },
@@ -28,7 +29,7 @@ const config: Meta<typeof Alert> = {
       description: 'The color of the top bar of the alert',
       table: {
         type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white'" },
-        defaultValue: { summary: "'red'" }
+        defaultValue: { summary: "'red'" },
       },
       control: {
         type: 'select',

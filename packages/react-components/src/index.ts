@@ -25,5 +25,5 @@ export {
   Container,
   Card,
   Carousel,
-  Checkbox
+  Checkbox,
 };
