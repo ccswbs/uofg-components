@@ -51,7 +51,8 @@ export function Card<T extends CardElementType = typeof defaultElement>({
     variants: {
       isLink: {
         true: {
-          contentContainer: 'tw:transition-colors tw:group-hocus:bg-yellow tw:group-hocus:text-yellow-contrast',
+          contentContainer:
+            'tw:transition-colors tw:group-hocus-visible:bg-yellow tw:group-hocus-visible:text-yellow-contrast',
           imageWrapper:
             'tw:ease-in-out tw:transition-transform tw:duration-200 tw:group-hover:scale-110 tw:group-focus-visible:scale-110',
         },

@@ -39,7 +39,7 @@ export function Breadcrumbs<T extends BreadcrumbsElementType = typeof defaultEle
       breadcrumbContainer: 'tw:flex tw:items-center tw:gap-2',
       breadcrumbIcon: 'tw:h-[.75em]',
       breadcrumbLink:
-        'tw:underline tw:decoration-transparent tw:decoration-1 tw:transition-colors tw:hover:decoration-black tw:focus:decoration-black',
+        'tw:underline tw:decoration-transparent tw:decoration-1 tw:transition-colors tw:hocus-visible:decoration-black',
     },
   });
 

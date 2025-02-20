@@ -92,7 +92,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
         'tw:grid tw:w-full tw:flex-1 tw:grid-cols-[repeat(var(--items),calc(100%/var(--display)))] tw:overflow-x-hidden [&>*]:[grid-row:1]',
       controlContainer: 'tw:md:contents tw:flex tw:h-16 tw:w-full tw:pt-8',
       control:
-        'tw:sm:text-6xl tw:md:absolute tw:flex tw:h-full tw:w-16 tw:flex-1 tw:items-center tw:justify-center tw:text-3xl tw:text-yellow tw:transition-[transform,color,opacity,visibility] tw:hover:text-black tw:focus-visible:text-black',
+        'tw:sm:text-6xl tw:md:absolute tw:flex tw:h-full tw:w-16 tw:flex-1 tw:items-center tw:justify-center tw:text-3xl tw:text-yellow tw:transition-[transform,color,opacity,visibility] tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none tw:hocus-visible:text-black tw:focus-visible:text-black',
     },
     variants: {
       showControls: {
@@ -105,10 +105,10 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
       },
       direction: {
         left: {
-          control: 'tw:left-0 tw:hover:-translate-x-1 tw:focus-visible:-translate-x-1',
+          control: 'tw:left-0 tw:hocus-visible:-translate-x-1 tw:focus-visible:-translate-x-1',
         },
         right: {
-          control: 'tw:right-0 tw:hover:translate-x-1 tw:focus-visible:translate-x-1',
+          control: 'tw:right-0 tw:hocus-visible:translate-x-1 tw:focus-visible:translate-x-1',
         },
       },
     },

@@ -33,17 +33,17 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const button = tv({
-    base: 'tw:font-medium tw:shadow-sm tw:inline-flex tw:items-center tw:justify-center tw:px-6 tw:py-4 tw:text-lg tw:no-underline tw:transition-colors tw:focus:outline-none',
+    base: 'tw:font-medium tw:shadow-sm tw:inline-flex tw:items-center tw:justify-center tw:px-6 tw:py-4 tw:text-lg tw:no-underline tw:transition-colors tw:focus-visible:outline-none tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2',
     variants: {
       color: {
-        'red': 'tw:focus:ring-red',
-        'yellow': 'tw:focus:ring-yellow',
-        'blue': 'tw:focus:ring-blue',
-        'green': 'tw:focus:ring-green',
-        'light-grey': 'tw:focus:ring-light-grey',
-        'dark-grey': 'tw:focus:ring-dark-grey',
-        'black': 'tw:focus:ring-black',
-        'white': 'tw:focus:ring-white',
+        'red': 'tw:focus-visible:ring-red',
+        'yellow': 'tw:focus-visible:ring-yellow',
+        'blue': 'tw:focus-visible:ring-blue',
+        'green': 'tw:focus-visible:ring-green',
+        'light-grey': 'tw:focus-visible:ring-light-grey',
+        'dark-grey': 'tw:focus-visible:ring-dark-grey',
+        'black': 'tw:focus-visible:ring-black',
+        'white': 'tw:focus-visible:ring-white',
       },
       outlined: {
         true: 'tw:border-2',
@@ -67,13 +67,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'red',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-red-focus',
+        class: 'tw:hocus-visible:bg-red-focus',
       },
       {
         color: 'red',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-red tw:hocus:text-red-contrast',
+        class: 'tw:hocus-visible:bg-red tw:hocus-visible:text-red-contrast',
       },
       {
         color: 'yellow',
@@ -89,13 +89,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'yellow',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-yellow-focus',
+        class: 'tw:hocus-visible:bg-yellow-focus',
       },
       {
         color: 'yellow',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-yellow tw:hocus:text-yellow-contrast',
+        class: 'tw:hocus-visible:bg-yellow tw:hocus-visible:text-yellow-contrast',
       },
       {
         color: 'blue',
@@ -111,13 +111,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'blue',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-blue-focus',
+        class: 'tw:hocus-visible:bg-blue-focus',
       },
       {
         color: 'blue',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-blue tw:hocus:text-blue-contrast',
+        class: 'tw:hocus-visible:bg-blue tw:hocus-visible:text-blue-contrast',
       },
       {
         color: 'green',
@@ -133,13 +133,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'green',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-green-focus',
+        class: 'tw:hocus-visible:bg-green-focus',
       },
       {
         color: 'green',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-green tw:hocus:text-green-contrast',
+        class: 'tw:hocus-visible:bg-green tw:hocus-visible:text-green-contrast',
       },
       {
         color: 'light-grey',
@@ -155,13 +155,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'light-grey',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-light-grey-focus',
+        class: 'tw:hocus-visible:bg-light-grey-focus',
       },
       {
         color: 'light-grey',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-light-grey tw:hocus:text-light-grey-contrast',
+        class: 'tw:hocus-visible:bg-light-grey tw:hocus-visible:text-light-grey-contrast',
       },
       {
         color: 'dark-grey',
@@ -177,13 +177,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'dark-grey',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-dark-grey-focus',
+        class: 'tw:hocus-visible:bg-dark-grey-focus',
       },
       {
         color: 'dark-grey',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-dark-grey tw:hocus:text-dark-grey-contrast',
+        class: 'tw:hocus-visible:bg-dark-grey tw:hocus-visible:text-dark-grey-contrast',
       },
       {
         color: 'black',
@@ -199,13 +199,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'black',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-black-focus',
+        class: 'tw:hocus-visible:bg-black-focus',
       },
       {
         color: 'black',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-black tw:hocus:text-black-contrast',
+        class: 'tw:hocus-visible:bg-black tw:hocus-visible:text-black-contrast',
       },
       {
         color: 'white',
@@ -221,13 +221,13 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         color: 'white',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-white-focus',
+        class: 'tw:hocus-visible:bg-white-focus',
       },
       {
         color: 'white',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-white tw:hocus:text-white-contrast',
+        class: 'tw:hocus-visible:bg-white tw:hocus-visible:text-white-contrast',
       },
     ],
   });

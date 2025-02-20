@@ -21,7 +21,7 @@ export function Contact({ name, title, phone, email }: ContactProps) {
       base: 'tw:bg-light-grey-bg tw:mb-2 tw:flex tw:flex-col tw:p-4 tw:text-body-copy',
       name: 'tw:font-bold tw:text-body-copy-bold',
       container: 'tw:flex tw:items-center tw:gap-1',
-      link: 'tw:underline tw:decoration-current tw:hocus:decoration-transparent tw:transition-colors tw:text-body-copy-link-on-light',
+      link: 'tw:underline tw:decoration-current tw:hocus-visible:decoration-transparent tw:transition-colors tw:text-body-copy-link-on-light tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none',
     },
   });
 

@@ -26,9 +26,9 @@ export function Checkbox({
 
   const checkbox = tv({
     slots: {
-      base: 'tw:flex tw:flex-col tw:gap-0.5',
+      base: 'tw:flex tw:flex-col tw:gap-0.5 tw:cursor-pointer',
       container: 'tw:flex tw:items-center tw:gap-2',
-      box: 'tw:group tw:rounded tw:flex tw:size-4 tw:items-center tw:justify-center tw:border tw:bg-white tw:p-3 tw:transition-colors',
+      box: 'tw:group tw:rounded tw:flex tw:size-4 tw:items-center tw:justify-center tw:border tw:bg-white tw:p-3 tw:transition-colors tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none',
       check: 'tw:h-5 tw:w-5 tw:opacity-0 tw:transition-opacity tw:group-ui-checked:opacity-100 tw:user-select-none',
       label: 'tw:text-body-copy',
       description: 'tw:text-sm tw:text-dark-grey',
