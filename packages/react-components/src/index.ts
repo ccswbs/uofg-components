@@ -12,6 +12,7 @@ import { Carousel } from './components/carousel.tsx';
 import { Checkbox } from './components/checkbox.tsx';
 import { Contact } from './components/contact.tsx';
 import { Divider } from './components/divider.tsx';
+import { Modal } from './components/modal.tsx';
 
 export {
   clamp,
@@ -29,5 +30,6 @@ export {
   Carousel,
   Checkbox,
   Contact,
-  Divider
+  Divider,
+  Modal,
 };
