@@ -27,7 +27,7 @@ export function Container<T extends ElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const container = tv({
-    base: twMerge('tw:max-w-max-content tw:container tw:px-4 tw:pt-2 tw:pb-4', className),
+    base: twMerge('tw:max-w-[--tw-max-content-width] tw:container tw:px-4 tw:pt-2 tw:pb-4', className),
     variants: {
       centered: {
         true: 'tw:mx-auto',

@@ -5,6 +5,7 @@
 @layer base {
   :root {
     font-size: 62.5%;
+    --tw-max-content-width: 137rem;
   }
 
   body {
@@ -18,6 +19,9 @@
   /** Fonts **/
   --font-serif: 'Bitter', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /** Breakpoints **/
+  --breakpoint-max-content: 137rem;
 
   /** Colors **/
   --color-*: initial; /* Don't include tailwind's default palette */
