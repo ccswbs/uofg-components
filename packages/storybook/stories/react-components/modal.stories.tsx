@@ -7,7 +7,7 @@ const config: Meta<typeof Modal> = {
   title: 'React Components/Modal',
   component: Modal,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
     docs: {
       toc: true,
     },
@@ -20,9 +20,24 @@ const config: Meta<typeof Modal> = {
       table: { type: { summary: 'React.ReactNode?' } },
       control: false,
     },
+    open: {
+      name: 'open',
+      description: 'Controls whether the modal is open or closed',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+      control: false,
+    },
+    onClose: {
+      name: 'onClose',
+      description: 'A callback function for when the user is dismissing the modal',
+      table: { type: { summary: '() => void)' } },
+      control: false,
+    },
     centered: {
       name: 'centered',
-      description: 'Whether the content should be centered',
+      description: 'Whether the content should be centered vertically',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
