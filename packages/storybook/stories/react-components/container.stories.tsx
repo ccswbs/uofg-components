@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Container } from "@uoguelph/react-components";
+import { Container } from '@uoguelph/react-components';
 
 const config = {
-  title: "React Components/Container",
+  title: 'React Components/Container',
   component: Container,
   parameters: {
-    layout: "padded",
+    layout: 'padded',
     docs: {
       toc: true,
     },
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     className: {
       name: 'className',
@@ -34,7 +34,7 @@ const config = {
       control: {
         type: 'boolean',
       },
-    }
+    },
   },
 };
 
