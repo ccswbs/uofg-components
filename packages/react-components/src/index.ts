@@ -13,6 +13,7 @@ import { Checkbox } from './components/checkbox.tsx';
 import { Contact } from './components/contact.tsx';
 import { Divider } from './components/divider.tsx';
 import { EmbeddedVideo } from './components/embedded-video.tsx';
+import { Heading } from './components/heading.tsx';
 import { Modal } from './components/modal.tsx';
 
 export {
@@ -33,5 +34,6 @@ export {
   Contact,
   Divider,
   EmbeddedVideo,
+  Heading,
   Modal,
 };
