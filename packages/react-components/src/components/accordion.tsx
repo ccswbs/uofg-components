@@ -25,7 +25,7 @@ export function Accordion({ title, children }: AccordionProps) {
         },
         false: {
           icon: 'tw:rotate-90',
-          button: 'tw:bg-grey-light-bg tw:text-blue-on-light',
+          button: 'tw:bg-light-grey-bg tw:text-blue-on-light',
         },
       },
     },

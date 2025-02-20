@@ -27,13 +27,13 @@ const config: Meta<typeof Alert> = {
       name: 'color',
       description: 'The color of the top bar of the alert',
       table: {
-        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white'" },
+        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white'" },
         defaultValue: { summary: "'red'" }
       },
       control: {
         type: 'select',
       },
-      options: ['red', 'yellow', 'blue', 'green', 'grey-light', 'grey-dark', 'black', 'white'],
+      options: ['red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'black', 'white'],
     },
     subtitle: {
       name: 'subtitle',

@@ -10,14 +10,14 @@ type Color = {
 };
 
 const swatchNames = ['bg', 'contrast', 'focus', 'on-dark', 'on-light'];
-const colorNames = ['black', 'white', 'red', 'yellow', 'blue', 'green', 'grey-light', 'grey-dark'];
+const colorNames = ['black', 'white', 'red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey'];
 
 export const ColorGrid = () => {
   const colors = React.useMemo(() => {
     const styles = window.getComputedStyle(document.documentElement);
     const colors: Color[] = [];
 
-    const getHexValue = (colorName: string) => styles.getPropertyValue(`--color-${colorName}`);
+    const getHexValue = (colorName: string) => styles.getPropertyValue(`--tw-color-${colorName}`);
 
     const getSwatches = (colorName: string) => {
       const swatches = {};

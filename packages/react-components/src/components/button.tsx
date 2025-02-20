@@ -11,7 +11,7 @@ type ButtonPropsAs<T extends ButtonElementType> = {
 };
 
 type ButtonPropsBase = {
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
   outlined?: boolean;
   className?: string;
   disabled?: boolean;
@@ -40,8 +40,8 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         yellow: 'tw:focus:ring-yellow',
         blue: 'tw:focus:ring-blue',
         green: 'tw:focus:ring-green',
-        'grey-light': 'tw:focus:ring-grey-light',
-        'grey-dark': 'tw:focus:ring-grey-dark',
+        'light-grey': 'tw:focus:ring-light-grey',
+        'dark-grey': 'tw:focus:ring-dark-grey',
         black: 'tw:focus:ring-black',
         white: 'tw:focus:ring-white',
       },
@@ -142,48 +142,48 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         class: 'tw:hocus:bg-green tw:hocus:text-green-contrast',
       },
       {
-        color: 'grey-light',
+        color: 'light-grey',
         outlined: false,
-        class: 'tw:bg-grey-light tw:text-grey-light-contrast',
+        class: 'tw:bg-light-grey tw:text-light-grey-contrast',
       },
       {
-        color: 'grey-light',
+        color: 'light-grey',
         outlined: true,
-        class: 'tw:border-grey-light tw:text-grey-light',
+        class: 'tw:border-light-grey tw:text-light-grey',
       },
       {
-        color: 'grey-light',
-        outlined: false,
-        disabled: false,
-        class: 'tw:hocus:bg-grey-light-focus',
-      },
-      {
-        color: 'grey-light',
-        outlined: true,
-        disabled: false,
-        class: 'tw:hocus:bg-grey-light tw:hocus:text-grey-light-contrast',
-      },
-      {
-        color: 'grey-dark',
-        outlined: false,
-        class: 'tw:bg-grey-dark tw:text-grey-dark-contrast',
-      },
-      {
-        color: 'grey-dark',
-        outlined: true,
-        class: 'tw:border-grey-dark tw:text-grey-dark',
-      },
-      {
-        color: 'grey-dark',
+        color: 'light-grey',
         outlined: false,
         disabled: false,
-        class: 'tw:hocus:bg-grey-dark-focus',
+        class: 'tw:hocus:bg-light-grey-focus',
       },
       {
-        color: 'grey-dark',
+        color: 'light-grey',
         outlined: true,
         disabled: false,
-        class: 'tw:hocus:bg-grey-dark tw:hocus:text-grey-dark-contrast',
+        class: 'tw:hocus:bg-light-grey tw:hocus:text-light-grey-contrast',
+      },
+      {
+        color: 'dark-grey',
+        outlined: false,
+        class: 'tw:bg-dark-grey tw:text-dark-grey-contrast',
+      },
+      {
+        color: 'dark-grey',
+        outlined: true,
+        class: 'tw:border-dark-grey tw:text-dark-grey',
+      },
+      {
+        color: 'dark-grey',
+        outlined: false,
+        disabled: false,
+        class: 'tw:hocus:bg-dark-grey-focus',
+      },
+      {
+        color: 'dark-grey',
+        outlined: true,
+        disabled: false,
+        class: 'tw:hocus:bg-dark-grey tw:hocus:text-dark-grey-contrast',
       },
       {
         color: 'black',

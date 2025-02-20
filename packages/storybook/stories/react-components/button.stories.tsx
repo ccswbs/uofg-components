@@ -30,13 +30,13 @@ const config: Meta<typeof Button> = {
       name: 'color',
       description: 'The color of the button',
       table: {
-        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white'" },
+        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white'" },
         defaultValue: { summary: "'red'" },
       },
       control: {
         type: 'select',
       },
-      options: ['red', 'yellow', 'blue', 'green', 'grey-light', 'grey-dark', 'black', 'white'],
+      options: ['red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'black', 'white'],
       defaultValue: 'red',
     },
     outlined: {

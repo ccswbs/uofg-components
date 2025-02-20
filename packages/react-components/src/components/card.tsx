@@ -40,12 +40,12 @@ export function Card<T extends CardElementType = typeof defaultElement>({
         'tw:group tw:ease-in-out tw:focus-visible:ring-light-blue tw:flex tw:flex-col tw:justify-center tw:transition tw:duration-200 tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none',
         className,
       ),
-      contentContainer: 'tw:flex tw:flex-1 tw:flex-col tw:gap-2 tw:bg-grey-light-bg tw:p-5 tw:text-grey-light-contrast',
+      contentContainer: 'tw:flex tw:flex-1 tw:flex-col tw:gap-2 tw:bg-light-grey-bg tw:p-5 tw:text-light-grey-contrast',
       imageContainer: 'tw:w-full tw:overflow-hidden',
       imageWrapper: 'tw:w-full tw:overflow-hidden',
       titleContainer: 'tw:flex tw:flex-1',
       titleWrapper: 'tw:font-bold tw:text-lg',
-      footerContainer: 'tw:flex tw:gap-2 tw:bg-grey-light tw:px-5 tw:py-2 tw:text-grey-light-contrast tw:transition-colors',
+      footerContainer: 'tw:flex tw:gap-2 tw:bg-light-grey tw:px-5 tw:py-2 tw:text-light-grey-contrast tw:transition-colors',
     },
     variants: {
       isLink: {

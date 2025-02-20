@@ -51,7 +51,7 @@
     </span>
   </div>
 
-  <div class="flex bg-grey-light text-grey-light-contrast" class:px-4={$$slots?.footer} class:py-2={$$slots?.footer}>
+  <div class="flex bg-light-grey text-light-grey-contrast" class:px-4={$$slots?.footer} class:py-2={$$slots?.footer}>
     <slot name="footer" />
   </div>
 </div>

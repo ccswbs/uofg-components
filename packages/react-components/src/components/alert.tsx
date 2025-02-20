@@ -4,7 +4,7 @@ import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/re
 import { tv } from 'tailwind-variants';
 
 export type AlertProps = {
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
   title: ReactNode;
   subtitle: ReactNode;
   message: ReactNode;
@@ -17,10 +17,10 @@ export function Alert({ color = 'red', title, subtitle, message, footer }: Alert
       titleContainer: 'tw:flex tw:items-center tw:gap-2 tw:p-4 tw:text-xl',
       titleIcon: 'tw:h-[1.5em]',
       titleText: '',
-      messageContainer: 'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-grey-light tw:bg-white tw:px-4 tw:py-3',
+      messageContainer: 'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-light-grey tw:bg-white tw:px-4 tw:py-3',
       subtitle: 'tw:font-bold tw:mb-4 tw:text-xl',
       message: 'tw:text-lg',
-      footer: 'tw:flex tw:bg-grey-light tw:px-4 tw:py-2',
+      footer: 'tw:flex tw:bg-light-grey tw:px-4 tw:py-2',
     },
     variants: {
       color: {
@@ -36,11 +36,11 @@ export function Alert({ color = 'red', title, subtitle, message, footer }: Alert
         'green': {
           titleContainer: 'tw:bg-green tw:text-green-contrast',
         },
-        'grey-light': {
-          titleContainer: 'tw:bg-grey-light tw:text-grey-light-contrast',
+        'light-grey': {
+          titleContainer: 'tw:bg-light-grey tw:text-light-grey-contrast',
         },
-        'grey-dark': {
-          titleContainer: 'tw:bg-grey-dark tw:text-grey-dark-contrast',
+        'dark-grey': {
+          titleContainer: 'tw:bg-dark-grey tw:text-dark-grey-contrast',
         },
         'black': {
           titleContainer: 'tw:bg-black tw:text-black-contrast',

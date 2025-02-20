@@ -24,49 +24,43 @@
 
   --color-white: #fff;
   --color-white-focus: #DDD;
-  --color-white-on-light: #000;
   --color-white-on-dark: #fff;
   --color-white-contrast: #000;
 
   --color-black: #000;
-  --color-black-focus: #333;
+  --color-black-focus: #444;
   --color-black-on-light: #000;
-  --color-black-on-dark: #fff;
   --color-black-contrast: #fff;
 
-  --color-red: #e51937;
-  --color-red-focus: #bd2e35;
-  --color-red-on-light: #cf1732;
-  --color-red-on-dark: undefined;
+  --color-red: #E51937;
+  --color-red-focus: #B3142C;
+  --color-red-on-light: #DC1836;
   --color-red-contrast: #fff;
 
   --color-yellow: #ffc429;
-  --color-yellow-focus: #ffe299;
-  --color-yellow-on-light: undefined;
-  --color-yellow-on-dark: undefined;
+  --color-yellow-focus: #FFE299;
+  --color-yellow-on-dark: #FFC429;
   --color-yellow-contrast: #000;
 
-  --color-blue: #187bb4;
-  --color-blue-focus: #156b9d;
-  --color-blue-on-light: #166ea2;
-  --color-blue-on-dark: undefined;
+  --color-blue: #187BB4;
+  --color-blue-focus: #135F8B;
+  --color-blue-on-light: #1775AB;
   --color-blue-contrast: #fff;
 
   --color-green: #318738;
-  --color-green-focus: #2a7430;
-  --color-green-on-light: #2b7832;
-  --color-green-on-dark: undefined;
+  --color-green-focus: #27682C;
+  --color-green-on-light: #2E7F35;
   --color-green-contrast: #fff;
 
-  --color-grey-light: #d8d8d8;
-  --color-grey-light-focus: #bfbfbf;
-  --color-grey-light-contrast: #000;
-  --color-grey-light-bg: #f5f5f5;
+  --color-light-grey: #d8d8d8;
+  --color-light-grey-focus: #bfbfbf;
+  --color-light-grey-contrast: #000;
+  --color-light-grey-bg: #F5F5F5;
 
-  --color-grey-dark: #747676;
-  --color-grey-dark-focus: #63625f;
-  --color-grey-dark-contrast: #fff;
-  --color-grey-dark-bg: #222;
+  --color-dark-grey: #747676;
+  --color-dark-grey-focus: #63625f;
+  --color-dark-grey-contrast: #fff;
+  --color-dark-grey-bg: #222;
 
   /** Spacing **/
   --spacing: 0.4rem; /* This rescales Tailwind's default spacing to work with root font size set to 62.5% */
