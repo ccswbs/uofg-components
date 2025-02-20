@@ -62,6 +62,16 @@
   --color-dark-grey-contrast: #fff;
   --color-dark-grey-bg: #222;
 
+  --color-body-copy: #555;
+  --color-body-copy-on-dark: #ccc;
+
+  --color-body-copy-bold: #333;
+  --color-body-copy-bold-on-dark: #eee;
+
+  --color-body-copy-link: #187BB4;
+  --color-body-copy-link-on-light: #166ea2;
+  --color-body-copy-link-on-dark: #1D93D7;
+
   /** Spacing **/
   --spacing: 0.4rem; /* This rescales Tailwind's default spacing to work with root font size set to 62.5% */
 
