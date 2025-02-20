@@ -37,7 +37,6 @@ const config: Meta<typeof Button> = {
         type: 'select',
       },
       options: ['red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'black', 'white'],
-      defaultValue: 'red',
     },
     outlined: {
       name: 'outlined',

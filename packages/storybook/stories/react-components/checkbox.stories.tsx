@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Checkbox, StoryObj } from '@uoguelph/react-components';
+import { Checkbox } from '@uoguelph/react-components';
 import { fn } from '@storybook/test';
-import { Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Checkbox> = {
   title: 'React Components/Checkbox',
@@ -28,7 +28,6 @@ const config: Meta<typeof Checkbox> = {
         type: 'select',
       },
       options: ['red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'black', 'white'],
-      defaultValue: 'red',
     },
     disabled: {
       name: 'disabled',
@@ -48,9 +47,7 @@ const config: Meta<typeof Checkbox> = {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-      control: {
-        type: false,
-      },
+      control: false,
     },
   },
 };
