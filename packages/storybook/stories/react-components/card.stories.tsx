@@ -72,14 +72,14 @@ type Story = StoryObj<typeof Card>;
 export const Basic: Story = {
   args: {
     title: 'Example Title',
-    className: 'w-96',
+    className: 'tw:w-96',
   },
 };
 
 export const WithBodyContent: Story = {
   args: {
     title: 'Example Title',
-    className: 'w-96',
+    className: 'tw:w-96',
     children: (
       <div>
         Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
@@ -93,14 +93,14 @@ export const WithBodyContent: Story = {
 export const WithImage: Story = {
   args: {
     title: 'Example Title',
-    className: 'w-96',
+    className: 'tw:w-96',
     image: (
       <img
         src="https://picsum.photos/300/200"
         width="300"
         height="200"
         alt="Placeholder image"
-        className="aspect-[3/2] w-full"
+        className="tw:aspect-[3/2] tw:w-full"
       />
     ),
     children: (
@@ -116,14 +116,14 @@ export const WithImage: Story = {
 export const WithFooter: Story = {
   args: {
     title: 'Example Title',
-    className: 'w-96',
+    className: 'tw:w-96',
     image: (
       <img
         src="https://picsum.photos/300/200"
         width="300"
         height="200"
         alt="Placeholder image"
-        className="aspect-[3/2] w-full"
+        className="tw:aspect-[3/2] tw:w-full"
       />
     ),
     children: (
@@ -141,14 +141,14 @@ export const AsALink: Story = {
   args: {
     as: 'a',
     title: 'Example Title',
-    className: 'w-96',
+    className: 'tw:w-96',
     image: (
       <img
         src="https://picsum.photos/300/200"
         width="300"
         height="200"
         alt="Placeholder image"
-        className="aspect-[3/2] w-full"
+        className="tw:aspect-[3/2] tw:w-full"
       />
     ),
     children: (
