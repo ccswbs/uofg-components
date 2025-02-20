@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Modal } from '@uoguelph/react-components';
 import { Meta, StoryObj } from '@storybook/react';
-import { useState } from '@storybook/preview-api';
+import { useArgs } from '@storybook/preview-api';
 
 const config: Meta<typeof Modal> = {
   title: 'React Components/Modal',
@@ -34,20 +34,20 @@ const config: Meta<typeof Modal> = {
   },
   decorators: [
     Story => {
-      const [open, setOpen] = useState(false);
+      const [args, updateArgs, resetArgs] = useArgs();
 
       return (
         <>
           <Button
             color="red"
             onClick={() => {
-              setOpen(true);
-              console.log('open');
+              updateArgs({ ...args, open: true, onClose: () => updateArgs({ ...args, open: false }) });
             }}
           >
             Open Modal
           </Button>
-          <Story open={open} onClose={() => setOpen(false)} />
+
+          <Story />
         </>
       );
     },
