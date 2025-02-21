@@ -126,7 +126,7 @@ export function EmbeddedVideo({ src, title, transcript, className, modal }: Embe
   const embeddedVideo = tv({
     slots: {
       container:
-        'tw:bg-dark-grey-bg tw:flex tw:w-screen tw:max-w-6xl tw:flex-col tw:gap-4 tw:p-4 tw:text-dark-grey-contrast',
+        'tw:bg-dark-grey-bg tw:flex tw:w-screen tw:max-w-6xl tw:lg:max-w-7xl tw:flex-col tw:gap-4 tw:p-4 tw:text-dark-grey-contrast',
       video: twMerge('tw:w-full', className),
       title: 'tw:text-xl tw:font-bold',
       button: modal?.className,
