@@ -56,6 +56,7 @@ function getVideoInfo(url: string) {
       type = 'vimeo';
       id = getVimeoVideoID(parsed);
     }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     // Do nothing
   }
