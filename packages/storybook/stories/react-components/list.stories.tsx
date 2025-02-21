@@ -13,8 +13,30 @@ const config: Meta<typeof List> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    children: { control: false },
-    className: { control: false },
+    as: {
+      name: 'as',
+      description: 'The HTMLElement/React component to render the list as',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'ul' },
+      },
+      control: {
+        type: 'select',
+      },
+      options: ['ul', 'ol'],
+    },
+    className: {
+      name: 'className',
+      description: 'Classes to apply to the list',
+      table: { type: { summary: 'string?' } },
+      control: false,
+    },
+    children: {
+      name: 'children',
+      description: 'The content of the list, should always be ListItem components or fragments of ListItem components',
+      table: { type: { summary: 'React.ReactNode?' } },
+      control: false,
+    },
   },
 };
 
