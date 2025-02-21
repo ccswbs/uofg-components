@@ -19,6 +19,7 @@ import { ImageOverlay } from './components/image-overlay.tsx';
 import { Info } from './components/info.tsx';
 import { LinkCarousel } from './components/link-carousel.tsx';
 import { Link } from './components/link.tsx';
+import { List, ListItem } from './components/list.tsx';
 import { Modal } from './components/modal.tsx';
 
 export {
@@ -45,5 +46,7 @@ export {
   Info,
   LinkCarousel,
   Link,
+  List,
+  ListItem,
   Modal,
 };
