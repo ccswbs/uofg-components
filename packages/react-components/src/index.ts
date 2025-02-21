@@ -17,6 +17,7 @@ import { Heading } from './components/heading.tsx';
 import { Hero } from './components/hero.tsx';
 import { ImageOverlay } from './components/image-overlay.tsx';
 import { Info } from './components/info.tsx';
+import { LinkCarousel } from './components/link-carousel.tsx';
 import { Modal } from './components/modal.tsx';
 
 export {
@@ -41,5 +42,6 @@ export {
   Hero,
   ImageOverlay,
   Info,
+  LinkCarousel,
   Modal,
 };

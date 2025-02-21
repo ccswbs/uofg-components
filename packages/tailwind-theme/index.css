@@ -106,4 +106,16 @@
   --text-8xl--line-height: 1.6;
   --text-9xl: 12.8rem;
   --text-9xl--line-height: 1.6;
+
+  --animate-fade: fade 250ms ease-in-out 1 both;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }
