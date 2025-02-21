@@ -83,7 +83,13 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
     },
   });
 
-  const { base, imageWrapper, image, overlay: overlayClasses, container } = imageOverlay({ blurred, overlay, alignment });
+  const {
+    base,
+    imageWrapper,
+    image,
+    overlay: overlayClasses,
+    container,
+  } = imageOverlay({ blurred, overlay, alignment });
 
   return (
     <div className={base()}>

@@ -26,5 +26,9 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+  previewHead: head => `
+    ${head}
+    <script src="https://kit.fontawesome.com/7993323d0c.js" crossorigin="anonymous"></script>
+  `,
 };
 export default config;

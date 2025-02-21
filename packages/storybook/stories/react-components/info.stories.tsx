@@ -1,17 +1,17 @@
-import * as React from "react";
-import { Info } from "@uoguelph/react-components";
+import * as React from 'react';
+import { Info } from '@uoguelph/react-components';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Info> = {
-  title: "React Components/Info",
+  title: 'React Components/Info',
   component: Info,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     docs: {
       toc: true,
     },
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     color: {
       name: 'color',
@@ -29,7 +29,7 @@ const config: Meta<typeof Info> = {
       name: 'children',
       description: 'The content of the button',
       table: { type: { summary: 'React.ReactNode?' } },
-      control: false
+      control: false,
     },
   },
 };

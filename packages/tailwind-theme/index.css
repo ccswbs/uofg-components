@@ -20,9 +20,6 @@
   --font-serif: 'Bitter', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 
-  /** Breakpoints **/
-  --breakpoint-max-content: 137rem;
-
   /** Colors **/
   --color-*: initial; /* Don't include tailwind's default palette */
 
@@ -107,6 +104,7 @@
   --text-9xl: 12.8rem;
   --text-9xl--line-height: 1.6;
 
+  /** Animations **/
   --animate-fade: fade 250ms ease-in-out 1 both;
 
   @keyframes fade {
