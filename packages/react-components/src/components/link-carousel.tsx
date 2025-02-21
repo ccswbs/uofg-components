@@ -73,7 +73,7 @@ export function LinkCarousel<
       gradient:
         'tw:md:block tw:absolute tw:bottom-0 tw:left-0 tw:z-0 tw:hidden tw:h-1/2 tw:w-full tw:bg-gradient-to-t tw:from-black/60 tw:to-black/0',
       linkContainer: 'tw:md:w-1/3 tw:relative tw:z-10 tw:ml-auto tw:flex tw:w-full tw:flex-col tw:gap-2',
-      link: 'tw:backdrop-blur tw:flex tw:flex-1 tw:items-center tw:justify-between tw:bg-black/60 tw:p-7 tw:text-[2.2rem] tw:text-white tw:transition-colors tw:hover:bg-yellow tw:hover:text-black tw:focus:bg-yellow tw:focus:text-black tw:focus-visible:outline-none',
+      link: 'tw:backdrop-blur tw:flex tw:flex-1 tw:items-center tw:justify-between tw:bg-black tw:md:bg-black/60 tw:p-7 tw:text-[2.2rem] tw:text-white tw:transition-colors tw:hocus:bg-yellow tw:hocus:text-black tw:focus-visible:outline-none',
     },
   });
 
