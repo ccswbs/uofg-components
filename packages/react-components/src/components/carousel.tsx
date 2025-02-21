@@ -126,6 +126,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(-1)}
             className={control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}
           >
+            <span className="tw:sr-only">Shift left</span>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
 
@@ -134,6 +135,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(1)}
             className={control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}
           >
+            <span className="tw:sr-only">Shift right</span>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
