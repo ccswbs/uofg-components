@@ -15,6 +15,7 @@ import { Divider } from './components/divider.tsx';
 import { EmbeddedVideo } from './components/embedded-video.tsx';
 import { Heading } from './components/heading.tsx';
 import { Hero } from './components/hero.tsx';
+import { ImageOverlay } from './components/image-overlay.tsx';
 import { Modal } from './components/modal.tsx';
 
 export {
@@ -37,5 +38,6 @@ export {
   EmbeddedVideo,
   Heading,
   Hero,
+  ImageOverlay,
   Modal,
 };
