@@ -20,14 +20,19 @@ import { Info } from './components/info.tsx';
 import { LinkCarousel } from './components/link-carousel.tsx';
 import { Link } from './components/link.tsx';
 import { List, ListItem } from './components/list.tsx';
+import { MediaCaption } from './components/media-caption.tsx';
 import { Modal } from './components/modal.tsx';
 
-export {
+const utils = {
   clamp,
   mod,
   lerp,
   bezier,
   toTitleCase,
+};
+
+export {
+  utils,
   Accordion,
   Alert,
   Button,
@@ -48,5 +53,6 @@ export {
   Link,
   List,
   ListItem,
+  MediaCaption,
   Modal,
 };
