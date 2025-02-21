@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 const config: Meta<typeof MediaCaption> = {
-  title: 'Components/MediaCaption',
+  title: 'React Components/MediaCaption',
   component: MediaCaption,
   parameters: {
     layout: 'centered',

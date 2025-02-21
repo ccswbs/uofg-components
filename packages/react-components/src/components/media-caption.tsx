@@ -1,10 +1,13 @@
-import { twJoin, twMerge } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { EmbeddedVideo } from './embedded-video';
+import { tv } from 'tailwind-variants';
 
 const defaultElement = 'img';
 
-type MediaCaptionElementType = ElementType<{ src: string; className?: string }, 'img'> | typeof EmbeddedVideo;
+type MediaCaptionElementType =
+  | ElementType<{ src: string; alt?: string; height?: number; width?: number }, 'img'>
+  | typeof EmbeddedVideo;
 
 type MediaCaptionPropsAs<T extends MediaCaptionElementType> = {
   as?: T;
@@ -15,6 +18,7 @@ type MediaCaptionPropsBase = {
   position?: 'left' | 'right' | 'above';
   background?: 'none' | 'light-grey' | 'dark-grey';
   className?: string;
+  mediaClassName?: string;
 };
 
 export type MediaCaptionProps<T extends MediaCaptionElementType = typeof defaultElement> = PropsWithChildren<
@@ -26,9 +30,10 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
   size = 'small',
   position = 'left',
   background = 'none',
-  className,
   children,
   src,
+  className,
+  mediaClassName,
   ...rest
 }: MediaCaptionProps<T>) {
   const Component = as ?? defaultElement;
@@ -37,49 +42,118 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
   // Small video doesn't work well, so we'll bump it up to medium
   size = type === 'video' && size === 'small' ? 'medium' : size;
 
+  const mediaCaption = tv({
+    slots: {
+      base: 'tw:flex tw:flex-col',
+      mediaWrapper: '',
+      media: 'tw:w-full tw:object-cover',
+      caption: 'tw:p-4',
+    },
+    variants: {
+      size: {
+        small: {},
+        medium: {},
+        large: {},
+      },
+      position: {
+        left: {
+          base: 'tw:md:grid',
+        },
+        right: {
+          base: 'tw:md:grid',
+          mediaWrapper: 'tw:col-start-2 tw:row-start-1',
+          caption: 'tw:col-start-1 tw:row-start-1',
+        },
+        above: {
+          caption: 'tw:flex-1',
+        },
+      },
+      background: {
+        'light-grey': {
+          caption: 'tw:bg-light-grey-bg tw:text-body-copy',
+        },
+        'dark-grey': {
+          caption: 'tw:bg-dark-grey-bg tw:text-body-copy-on-dark',
+        },
+        'none': {},
+      },
+    },
+    compoundVariants: [
+      {
+        size: 'small',
+        position: 'left',
+        class: {
+          base: 'tw:grid-cols-[1fr_4fr]',
+        },
+      },
+      {
+        size: 'medium',
+        position: 'left',
+        class: {
+          base: 'tw:grid-cols-[1fr_2fr]',
+        },
+      },
+      {
+        size: 'large',
+        position: 'left',
+        class: {
+          base: 'tw:grid-cols-[1fr_1fr]',
+        },
+      },
+      {
+        size: 'small',
+        position: 'right',
+        class: {
+          base: 'tw:grid-cols-[4fr_1fr]',
+        },
+      },
+      {
+        size: 'medium',
+        position: 'right',
+        class: {
+          base: 'tw:grid-cols-[2fr_1fr]',
+        },
+      },
+      {
+        size: 'large',
+        position: 'right',
+        class: {
+          base: 'tw:grid-cols-[1fr_1fr]',
+        },
+      },
+      {
+        background: 'none',
+        position: 'left',
+        class: {
+          caption: 'tw:md:px-4 tw:py-0',
+        },
+      },
+      {
+        background: 'none',
+        position: 'right',
+        class: {
+          caption: 'tw:md:px-4 tw:py-0',
+        },
+      },
+      {
+        background: 'none',
+        position: 'above',
+        class: {
+          caption: 'tw:px-0',
+        },
+      },
+    ],
+  });
+
+  const { base, mediaWrapper, media, caption } = mediaCaption({ size, position, background });
+
   return (
-    <div
-      className={twMerge(
-        'flex flex-col',
-        position === 'left' &&
-          twJoin(
-            'md:grid',
-            size === 'small' && 'grid-cols-[1fr,4fr]',
-            size === 'medium' && 'grid-cols-[1fr,2fr]',
-            size === 'large' && 'grid-cols-[1fr,1fr]',
-          ),
-        position === 'right' &&
-          twJoin(
-            'md:grid',
-            size === 'small' && 'grid-cols-[4fr,1fr]',
-            size === 'medium' && 'grid-cols-[2fr,1fr]',
-            size === 'large' && 'grid-cols-[1fr,1fr]',
-          ),
-        className,
-      )}
-    >
-      <div className={twJoin(position === 'right' && 'col-start-2 row-start-1')}>
-        <Component
-          {...rest}
-          src={src as string}
-          className={twMerge('w-full object-cover', 'className' in rest && (rest.className as string))}
-        />
+    <div className={twMerge(base(), className)}>
+      <div className={mediaWrapper()}>
+        <Component {...rest} src={src as string} className={twMerge(media(), mediaClassName)} />
       </div>
 
-      <div
-        className={twMerge(
-          'p-4',
-          position === 'right' && 'col-start-1 row-start-1',
-          position === 'above' && 'flex-1',
-          background === 'light-grey' && 'bg-light-blue-50',
-          background === 'dark-grey' && 'bg-cool-gray-950 text-white',
-          background === 'none' && position === 'left' && 'md:px-4 py-0',
-          background === 'none' && position === 'right' && 'md:px-4 py-0',
-          background === 'none' && position === 'above' && 'px-0',
-        )}
-      >
-        {children}
-      </div>
+      <div className={caption()}>{children}</div>
     </div>
   );
 }
