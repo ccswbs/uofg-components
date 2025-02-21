@@ -71,9 +71,7 @@ const config: Meta<typeof Button> = {
       name: 'children',
       description: 'The content of the button',
       table: { type: { summary: 'React.ReactNode?' } },
-      control: {
-        type: 'text',
-      },
+      control: false
     },
   },
 };

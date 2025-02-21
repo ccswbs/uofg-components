@@ -51,9 +51,7 @@ const config: Meta<typeof Card> = {
       name: 'children',
       description: 'The content of the card body',
       table: { type: { summary: 'React.ReactNode?' } },
-      control: {
-        type: 'text',
-      },
+      control: false
     },
     footer: {
       name: 'footer',
