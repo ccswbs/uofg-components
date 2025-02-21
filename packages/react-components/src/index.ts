@@ -14,6 +14,7 @@ import { Contact } from './components/contact.tsx';
 import { Divider } from './components/divider.tsx';
 import { EmbeddedVideo } from './components/embedded-video.tsx';
 import { Heading } from './components/heading.tsx';
+import { Hero } from './components/hero.tsx';
 import { Modal } from './components/modal.tsx';
 
 export {
@@ -35,5 +36,6 @@ export {
   Divider,
   EmbeddedVideo,
   Heading,
+  Hero,
   Modal,
 };
