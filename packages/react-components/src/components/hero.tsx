@@ -9,16 +9,16 @@ import { tv } from 'tailwind-variants';
 
 const defaultElement = 'img';
 
-type HeroImageElementType = ElementType<
+type HeroElementType = ElementType<
   { src: string; alt: string; height?: number; width?: number; className?: string },
   'img'
 >;
 
-type HeroImagePropsAs<T extends HeroImageElementType> = {
+type HeroPropsAs<T extends HeroElementType> = {
   as?: T;
 };
 
-type HeroImagePropsBase = {
+type HeroPropsBase = {
   variant: 'spotlight' | 'basic';
   src: string;
   alt: string;
@@ -38,9 +38,9 @@ type HeroImagePropsBase = {
   };
 };
 
-export type HeroProps<T extends HeroImageElementType = typeof defaultElement> = HeroImagePropsAs<T> &
+export type HeroProps<T extends HeroElementType = typeof defaultElement> = HeroPropsAs<T> &
   ComponentPropsWithoutRef<T> &
-  HeroImagePropsBase;
+  HeroPropsBase;
 
 function SpotlightHero({
   title,
@@ -157,7 +157,7 @@ function BasicHero({ title, video }: Pick<HeroProps, 'title' | 'video'>) {
   );
 }
 
-export function Hero<T extends HeroImageElementType = typeof defaultElement>({
+export function Hero<T extends HeroElementType = typeof defaultElement>({
   as,
   variant = 'basic',
   src,
@@ -196,7 +196,7 @@ export function Hero<T extends HeroImageElementType = typeof defaultElement>({
 
   return (
     <div className={base()}>
-      <Image src={src} alt={alt} width={width} height={height} className={image()} {...rest} />
+      <Image {...rest} src={src} alt={alt} width={width} height={height} className={image()} />
 
       {variant === 'spotlight' && (
         <SpotlightHero title={title} caption={caption} alignment={alignment} video={video} link={link} />
