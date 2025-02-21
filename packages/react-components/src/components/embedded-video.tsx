@@ -125,8 +125,9 @@ export function EmbeddedVideo({ src, title, transcript, className, modal }: Embe
 
   const embeddedVideo = tv({
     slots: {
-      container: 'tw:bg-dark-grey-bg tw:flex tw:w-fit tw:flex-col tw:gap-4 tw:p-4 tw:text-dark-grey-contrast',
-      video: twMerge('tw:max-w-2xl tw:w-[calc(100vw_-_theme(spacing.4))]', className),
+      container:
+        'tw:bg-dark-grey-bg tw:flex tw:w-screen tw:max-w-6xl tw:flex-col tw:gap-4 tw:p-4 tw:text-dark-grey-contrast',
+      video: twMerge('tw:w-full', className),
       title: 'tw:text-xl tw:font-bold',
       button: modal?.className,
     },

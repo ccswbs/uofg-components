@@ -29,10 +29,10 @@ export function Heading<T extends HeadingElementType = typeof defaultElement>({
   const Tag = as ?? `h${level}`;
 
   const heading = tv({
-    base: twMerge('tw:font-bold tw:leading-tight tw:text-body-copy-bold', className),
+    base: 'tw:font-bold tw:leading-tight tw:text-body-copy-bold',
     variants: {
       level: {
-        1: 'tw:my-7 tw:text-4xl tw:text-red',
+        1: 'tw:my-7 tw:text-4xl tw:text-red tw:font-serif',
         2: 'tw:my-3 tw:text-3xl',
         3: 'tw:my-3 tw:text-2xl',
         4: 'tw:my-3 tw:text-xl',
@@ -43,7 +43,7 @@ export function Heading<T extends HeadingElementType = typeof defaultElement>({
   });
 
   return (
-    <Tag {...rest} className={heading({ level })}>
+    <Tag {...rest} className={twMerge(heading({ level }), className)}>
       {children}
     </Tag>
   );

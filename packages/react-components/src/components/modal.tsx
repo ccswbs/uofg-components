@@ -18,16 +18,16 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
       base: 'tw:ease-out tw:relative tw:z-50 tw:transition tw:duration-300 tw:data-[closed]:opacity-0',
       backdrop:
         'tw:ease-out tw:fixed tw:inset-0 tw:bg-black/40 tw:transition tw:duration-300 tw:data-[closed]:opacity-0',
-      wrapper: 'tw:fixed tw:inset-0 tw:flex tw:w-screen tw:justify-center tw:p-4 tw:pt-6',
-      panelWrapper: 'tw:relative tw:h-fit tw:w-fit',
-      panel: 'tw:h-fit tw:w-fit',
+      wrapper: 'tw:fixed tw:inset-0 tw:flex tw:w-screen tw:justify-center tw:md:p-4',
+      panelWrapper: 'tw:relative tw:w-full tw:flex tw:flex-col tw:items-center',
+      panel: '',
       closeButton:
-        'tw:bg-dark-grey-bg tw:md:-top-4 tw:md:-right-4 tw:absolute tw:top-0 tw:right-0 tw:flex tw:h-9 tw:w-9 tw:items-center tw:justify-center tw:rounded-full tw:text-xl tw:text-white tw:transition-colors tw:hover:bg-red',
+        'tw:bg-dark-grey-bg tw:md:absolute tw:border-b tw:border-white/40 tw:top-0 tw:right-0 tw:flex tw:h-9 tw:w-full tw:md:w-9 tw:items-center tw:justify-center tw:md:rounded-full tw:text-xl tw:text-white tw:transition-colors tw:hover:bg-red tw:gap-1',
     },
     variants: {
       centered: {
         true: {
-          wrapper: 'tw:items-center',
+          panelWrapper: 'tw:justify-center',
         },
       },
     },
@@ -41,12 +41,12 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
 
       <div className={wrapper()}>
         <div className={panelWrapper()}>
-          <DialogPanel className={panel()}>{children}</DialogPanel>
-
           <CloseButton onClick={onClose} className={closeButton()}>
-            <span className="sr-only">Close</span>
             <FontAwesomeIcon icon={faTimes} />
+            <span className="tw:md:sr-only tw:text-base">Close Modal</span>
           </CloseButton>
+
+          <DialogPanel className={panel()}>{children}</DialogPanel>
         </div>
       </div>
     </Dialog>
