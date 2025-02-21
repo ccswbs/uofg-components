@@ -4,5 +4,7 @@
   "tailwindCSS.experimental.classRegex": [
     ["(?:twMerge|twJoin)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
     ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
-  ]
+  ],
+  "editor.wordWrapColumn": 120,
+  "editor.linkedEditing": true
 }
