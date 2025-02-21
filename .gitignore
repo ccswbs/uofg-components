@@ -8,3 +8,4 @@ node_modules/
 packages/web-components/dist/
 packages/react-components/dist/
 packages/storybook/storybook-static/
+.DS_Store
