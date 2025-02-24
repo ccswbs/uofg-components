@@ -23,6 +23,7 @@ import { List, ListItem } from './components/list.tsx';
 import { MediaCaption } from './components/media-caption.tsx';
 import { Modal } from './components/modal.tsx';
 import { Navigation } from './components/navigation.tsx';
+import { Radio } from './components/radio.tsx';
 
 const utils = {
   clamp,
@@ -57,4 +58,5 @@ export {
   MediaCaption,
   Modal,
   Navigation,
+  Radio,
 };
