@@ -17,14 +17,6 @@ const config: Meta<typeof Card> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    title: {
-      name: 'title',
-      description: 'The title of the accordion',
-      table: { type: { summary: 'React.ReactNode' } },
-      control: {
-        type: 'text',
-      },
-    },
     as: {
       name: 'as',
       description:
@@ -41,25 +33,11 @@ const config: Meta<typeof Card> = {
       table: { type: { summary: 'string?' } },
       control: false,
     },
-    image: {
-      name: 'image',
-      description: 'The image to display in the card header',
-      table: { type: { summary: 'React.ReactNode?' } },
-      control: false,
-    },
     children: {
       name: 'children',
-      description: 'The content of the card body',
+      description: 'The content of the card',
       table: { type: { summary: 'React.ReactNode?' } },
       control: false,
-    },
-    footer: {
-      name: 'footer',
-      description: 'The content of the card footer',
-      table: { type: { summary: 'React.ReactNode?' } },
-      control: {
-        type: 'text',
-      },
     },
   },
 };
@@ -70,69 +48,82 @@ type Story = StoryObj<typeof Card>;
 
 export const Basic: Story = {
   args: {
-    title: 'Example Title',
     className: 'tw:w-96',
+    children: (
+      <Card.Content>
+        <Card.Title>Example Title</Card.Title>
+      </Card.Content>
+    ),
   },
 };
 
 export const WithBodyContent: Story = {
   args: {
-    title: 'Example Title',
     className: 'tw:w-96',
     children: (
-      <div>
-        Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
-        ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit. Similique perspiciatis
-        alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
-      </div>
+      <Card.Content>
+        <Card.Title>Example Title</Card.Title>
+        <div>
+          Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
+          ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit. Similique perspiciatis
+          alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
+        </div>
+      </Card.Content>
     ),
   },
 };
 
 export const WithImage: Story = {
   args: {
-    title: 'Example Title',
     className: 'tw:w-96',
-    image: (
-      <img
-        src="https://picsum.photos/300/200"
-        width="300"
-        height="200"
-        alt="Placeholder image"
-        className="tw:aspect-[3/2] tw:w-full"
-      />
-    ),
     children: (
-      <div>
-        Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
-        ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit. Similique perspiciatis
-        alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
-      </div>
+      <>
+        <Card.Image
+          src="https://picsum.photos/300/200"
+          alt="Placeholder image"
+          width="300"
+          height="200"
+          className="tw:aspect-[3/2] tw:w-full"
+        />
+
+        <Card.Content>
+          <Card.Title>Example Title</Card.Title>
+          <div>
+            Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati
+            perspiciatis ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit.
+            Similique perspiciatis alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
+          </div>
+        </Card.Content>
+      </>
     ),
   },
 };
 
 export const WithFooter: Story = {
   args: {
-    title: 'Example Title',
     className: 'tw:w-96',
-    image: (
-      <img
-        src="https://picsum.photos/300/200"
-        width="300"
-        height="200"
-        alt="Placeholder image"
-        className="tw:aspect-[3/2] tw:w-full"
-      />
-    ),
     children: (
-      <div>
-        Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
-        ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit. Similique perspiciatis
-        alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
-      </div>
+      <>
+        <Card.Image
+          src="https://picsum.photos/300/200"
+          alt="Placeholder image"
+          width="300"
+          height="200"
+          className="tw:aspect-[3/2] tw:w-full"
+        />
+
+        <Card.Content>
+          <Card.Title>Example Title</Card.Title>
+          <div>
+            Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati
+            perspiciatis ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit.
+            Similique perspiciatis alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
+          </div>
+        </Card.Content>
+
+        <Card.Footer>Example Footer</Card.Footer>
+      </>
     ),
-    footer: 'Example Footer',
   },
 };
 
@@ -141,23 +132,28 @@ export const AsALink: Story = {
     as: 'a',
     title: 'Example Title',
     className: 'tw:w-96',
-    image: (
-      <img
-        src="https://picsum.photos/300/200"
-        width="300"
-        height="200"
-        alt="Placeholder image"
-        className="tw:aspect-[3/2] tw:w-full"
-      />
-    ),
     children: (
-      <div>
-        Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati perspiciatis
-        ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit. Similique perspiciatis
-        alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
-      </div>
+      <>
+        <Card.Image
+          src="https://picsum.photos/300/200"
+          alt="Placeholder image"
+          width="300"
+          height="200"
+          className="tw:aspect-[3/2] tw:w-full"
+        />
+
+        <Card.Content>
+          <Card.Title>Example Title</Card.Title>
+          <div>
+            Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati
+            perspiciatis ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit.
+            Similique perspiciatis alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
+          </div>
+        </Card.Content>
+
+        <Card.Footer>Example Footer</Card.Footer>
+      </>
     ),
-    footer: 'Example Footer',
     href: '#',
   },
 };
