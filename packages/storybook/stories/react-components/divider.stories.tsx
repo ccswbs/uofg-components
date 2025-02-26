@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Divider } from '@uoguelph/react-components';
+import { Divider } from '@uoguelph/react-components/divider';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Divider> = {

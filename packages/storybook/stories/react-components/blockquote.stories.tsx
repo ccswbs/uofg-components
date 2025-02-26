@@ -1,4 +1,4 @@
-import { Blockquote } from '@uoguelph/react-components';
+import { Blockquote } from '@uoguelph/react-components/blockquote';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Blockquote> = {

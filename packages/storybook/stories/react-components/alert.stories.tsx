@@ -1,4 +1,4 @@
-import { Alert } from '@uoguelph/react-components';
+import { Alert } from '@uoguelph/react-components/alert';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Alert> = {

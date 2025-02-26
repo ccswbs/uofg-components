@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Contact } from '@uoguelph/react-components';
+import { Contact } from '@uoguelph/react-components/contact';
 
 const config: Meta<typeof Contact> = {
   title: 'React Components/Contact',

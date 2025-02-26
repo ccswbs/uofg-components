@@ -1,4 +1,4 @@
-import { Heading } from '@uoguelph/react-components';
+import { Heading } from '@uoguelph/react-components/heading';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Heading> = {

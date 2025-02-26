@@ -8,9 +8,26 @@
     "lint": "eslint .",
     "prepublish": "npm run build"
   },
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "style": "./dist/index.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "default": "./dist/*.js"
+    },
+    "./style": "./dist/index.css"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -25,14 +42,6 @@
     "tailwind-merge": "^3.0.1",
     "tailwind-variants": "^0.3.1"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    },
-    "./style": "./dist/index.css"
-  },
   "devDependencies": {
     "@awesome.me/kit-7993323d0c": "^1.0.10",
     "@eslint/js": "^9.19.0",
@@ -46,6 +55,7 @@
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
+    "fast-glob": "^3.3.3",
     "globals": "^15.14.0",
     "postcss": "^8.5.2",
     "tailwindcss": "^4.0.6",

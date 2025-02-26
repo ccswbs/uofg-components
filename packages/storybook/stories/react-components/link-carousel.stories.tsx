@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LinkCarousel } from '@uoguelph/react-components';
+import { LinkCarousel } from '@uoguelph/react-components/link-carousel';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof LinkCarousel> = {

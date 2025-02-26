@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ImageOverlay } from '@uoguelph/react-components';
+import { ImageOverlay } from '@uoguelph/react-components/image-overlay';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof ImageOverlay> = {

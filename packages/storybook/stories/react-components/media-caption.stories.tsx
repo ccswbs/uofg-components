@@ -1,4 +1,5 @@
-import { EmbeddedVideo, MediaCaption } from '@uoguelph/react-components';
+import { MediaCaption } from '@uoguelph/react-components/media-caption';
+import { EmbeddedVideo } from '@uoguelph/react-components/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Carousel } from '@uoguelph/react-components';
+import { Carousel } from '@uoguelph/react-components/carousel';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Carousel> = {

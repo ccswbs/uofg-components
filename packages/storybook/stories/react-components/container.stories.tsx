@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Container } from '@uoguelph/react-components';
+import { Container } from '@uoguelph/react-components/container';
 
 const config = {
   title: 'React Components/Container',

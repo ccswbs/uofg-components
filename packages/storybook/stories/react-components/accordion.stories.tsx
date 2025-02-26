@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Accordion } from '@uoguelph/react-components';
+import { Accordion } from '@uoguelph/react-components/accordion';
 
 const config: Meta<typeof Accordion> = {
   title: 'React Components/Accordion',

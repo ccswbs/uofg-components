@@ -1,10 +1,16 @@
 import * as React from 'react';
-import { Card } from '@uoguelph/react-components';
+import { Card, CardImage, CardContent, CardTitle, CardFooter } from '@uoguelph/react-components/card';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Card> = {
   title: 'React Components/Card',
   component: Card,
+  subcomponents: {
+    CardContent,
+    CardTitle,
+    CardImage,
+    CardFooter,
+  },
   parameters: {
     layout: 'centered',
     docs: {
