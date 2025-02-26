@@ -1,4 +1,4 @@
-import { Breadcrumbs } from '@uoguelph/react-components/breadcrumbs';
+import { Breadcrumbs } from '../../../react-components/src/components/breadcrumbs';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Breadcrumbs> = {

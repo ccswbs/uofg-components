@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Hero } from '@uoguelph/react-components/hero';
+import { Hero } from '../../../react-components/src/components/hero';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Hero> = {

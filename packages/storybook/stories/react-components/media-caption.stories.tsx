@@ -1,5 +1,5 @@
-import { MediaCaption } from '@uoguelph/react-components/media-caption';
-import { EmbeddedVideo } from '@uoguelph/react-components/embedded-video';
+import { MediaCaption } from '../../../react-components/src/components/media-caption';
+import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 

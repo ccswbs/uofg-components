@@ -1,4 +1,4 @@
-import { Navigation } from '@uoguelph/react-components/navigation';
+import { Navigation } from '../../../react-components/src/components/navigation';
 
 const config = {
   title: 'React Components/Navigation',

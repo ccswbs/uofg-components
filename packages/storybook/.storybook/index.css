@@ -3,5 +3,5 @@
 
 @import 'tailwindcss' prefix(tw);
 @import '@uoguelph/tailwind-theme';
-@source '../../../node_modules/@uoguelph/react-components';
+@source '../../react-components/src';
 @plugin "@headlessui/tailwindcss";

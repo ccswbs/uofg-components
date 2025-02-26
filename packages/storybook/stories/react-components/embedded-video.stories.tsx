@@ -1,4 +1,4 @@
-import { EmbeddedVideo } from '@uoguelph/react-components/embedded-video';
+import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof EmbeddedVideo> = {

@@ -1,4 +1,4 @@
-import { Button } from '@uoguelph/react-components/button';
+import { Button } from '../../../react-components/src/components/button';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Button> = {

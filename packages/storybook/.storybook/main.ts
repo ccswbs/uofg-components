@@ -18,13 +18,19 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-backgrounds'),
     getAbsolutePath('@storybook/addon-a11y'),
-    {
-      name: '@storybook/addon-postcss',
-    },
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
+  },
+  async viteFinal(config, { configType }) {
+    const { mergeConfig } = await import('vite');
+    const tailwindcss = await import('@tailwindcss/vite');
+
+    return mergeConfig(config, {
+      // Your environment configuration here
+      plugins: [tailwindcss.default()],
+    });
   },
 };
 export default config;
