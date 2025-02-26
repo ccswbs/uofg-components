@@ -7,7 +7,22 @@ export const ComponentImport = ({ of }: { of?: any }) => {
   const title = resolvedOf.preparedMeta.title;
 
   const lib = title.includes('React Components') ? 'react-components' : 'web-components';
-  const component = title.replace('React Components/', '').replace('Web Components/', '');
 
-  return <Source code={`import { ${component} } from '@uoguelph/${lib}';`} />;
+  if (lib === 'web-components') {
+    return <></>;
+  }
+
+  const component = title.replace('React Components/', '');
+  const subpath = component.toLowerCase().replace(' ', '-');
+  const subcomponents = resolvedOf.preparedMeta.subcomponents;
+
+  if (subcomponents) {
+    return (
+      <Source
+        code={`import { ${component}, ${Object.keys(subcomponents).join(', ')} } from '@uoguelph/${lib}/${subpath}';`}
+      />
+    );
+  }
+
+  return <Source code={`import { ${component} } from '@uoguelph/${lib}/${subpath}';`} />;
 };
