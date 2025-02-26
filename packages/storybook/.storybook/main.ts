@@ -32,5 +32,8 @@ const config: StorybookConfig = {
       plugins: [tailwindcss.default()],
     });
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 export default config;
