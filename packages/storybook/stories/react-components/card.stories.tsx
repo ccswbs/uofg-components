@@ -1,28 +1,21 @@
 import * as React from 'react';
 import { Card, CardImage, CardContent, CardTitle, CardFooter } from '../../../react-components/src/components/card';
 import { Meta, StoryObj } from '@storybook/react';
+import { ComponentType } from 'react';
 
 const config: Meta<typeof Card> = {
   title: 'React Components/Card',
   component: Card,
   subcomponents: {
-    //@ts-ignore
-    CardContent,
-    //@ts-ignore
-    CardTitle,
-    //@ts-ignore
-    CardImage,
-    //@ts-ignore
-    CardFooter,
+    CardContent: CardContent as ComponentType<unknown>,
+    CardTitle: CardTitle as ComponentType<unknown>,
+    CardFooter: CardFooter as ComponentType<unknown>,
+    CardImage: CardImage as ComponentType<unknown>,
   },
   parameters: {
     layout: 'centered',
     docs: {
       toc: true,
-      description: {
-        component:
-          'The Card component is a container used to group related content like text, images, and actions in a styled, organized layout',
-      },
     },
   },
   tags: ['autodocs'],

@@ -21,11 +21,30 @@ const CardContext = createContext<CardContextValue | null>(null);
 const defaultCardImageElement = 'img';
 type CardImageElementType = ElementType<{ src: string; alt: string; width?: string; height?: string }, 'img'>;
 export type CardImageProps<T extends CardImageElementType = typeof defaultCardImageElement> = {
+  /**
+   * The element to render the image as
+   * @default 'img'
+   */
   as?: T;
+  /**
+   * The source URL of the image
+   */
   src: string;
+  /**
+   * An accessible description of the image, used primarily for screen readers
+   */
   alt: string;
+  /**
+   * The width of the image in pixels
+   */
   width?: string;
+  /**
+   * The height of the image in pixels
+   */
   height?: string;
+  /**
+   * Additional classes to apply to the image
+   */
   className?: string;
 } & ComponentPropsWithoutRef<T>;
 export function CardImage<T extends CardImageElementType = typeof defaultCardImageElement>({
@@ -75,7 +94,12 @@ export function CardImage<T extends CardImageElementType = typeof defaultCardIma
 CardImage.displayName = 'CardImage';
 
 /* Card Content */
-type CardContentProps = PropsWithChildren<{ className?: string }>;
+export type CardContentProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the card content
+   */
+  className?: string;
+}>;
 export function CardContent({ children, className }: CardContentProps) {
   const context = useContext(CardContext);
 
@@ -93,7 +117,12 @@ export function CardContent({ children, className }: CardContentProps) {
 CardContent.displayName = 'CardContent';
 
 /* Card Title */
-type CardTitleProps = PropsWithChildren<{ className?: string }>;
+export type CardTitleProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the card title
+   */
+  className?: string;
+}>;
 export function CardTitle({ children, className }: CardTitleProps) {
   const context = useContext(CardContext);
 
@@ -111,7 +140,12 @@ export function CardTitle({ children, className }: CardTitleProps) {
 CardTitle.displayName = 'CardTitle';
 
 /* Card Footer */
-type CardFooterProps = PropsWithChildren<{ className?: string }>;
+export type CardFooterProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the card footer
+   */
+  className?: string;
+}>;
 export function CardFooter({ children, className }: CardFooterProps) {
   const context = useContext(CardContext);
 
@@ -133,12 +167,25 @@ const defaultElement = 'div';
 type CardElementType = ElementType<{ href?: string }, 'a'> | 'div' | 'article';
 export type CardProps<T extends CardElementType = typeof defaultElement> = PropsWithChildren<
   {
+    /**
+     * The element to render the card as
+     */
     as?: T;
+    /**
+     * Additional classes to apply to the card
+     */
     className?: string;
+    /**
+     * Whether the card content should be centered
+     * @default false
+     */
     centered?: boolean;
   } & ComponentPropsWithoutRef<T>
 >;
 
+/**
+ * The Card component is a container used to group related content like text, images, and actions in a styled, organized layout
+ */
 export function Card<T extends CardElementType = typeof defaultElement>({
   as,
   className,
