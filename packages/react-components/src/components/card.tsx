@@ -176,9 +176,4 @@ export function Card<T extends CardElementType = typeof defaultElement>({
     </Component>
   );
 }
-
 Card.displayName = 'Card';
-Card.Image = CardImage;
-Card.Content = CardContent;
-Card.Title = CardTitle;
-Card.Footer = CardFooter;
