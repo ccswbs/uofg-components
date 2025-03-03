@@ -1,83 +1,91 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { tv } from 'tailwind-variants';
+import { twJoin } from 'tailwind-merge';
 
-export type AlertProps = {
+export type AlertTitleProps = PropsWithChildren<{
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
-  title: ReactNode;
-  subtitle: ReactNode;
-  message: ReactNode;
-  footer?: ReactNode;
-};
-export function Alert({ color = 'red', title, subtitle, message, footer }: AlertProps) {
-  const card = tv({
+}>;
+export function AlertTitle({ color = 'red', children }: AlertTitleProps) {
+  const alertTitle = tv({
     slots: {
-      base: 'tw:flex tw:flex-col',
-      titleContainer: 'tw:flex tw:items-center tw:gap-2 tw:p-4 tw:text-xl',
-      titleIcon: 'tw:h-[1.5em]',
-      titleText: '',
-      messageContainer: 'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-light-grey tw:bg-white tw:px-4 tw:py-3',
-      subtitle: 'tw:font-bold tw:mb-4 tw:text-xl',
-      message: 'tw:text-lg',
-      footer: 'tw:flex tw:bg-light-grey tw:px-4 tw:py-2',
+      container: 'tw:flex tw:items-center tw:gap-2 tw:p-4 tw:text-xl',
+      icon: 'tw:h-[1.5em]',
+      text: '',
     },
     variants: {
       color: {
         'red': {
-          titleContainer: 'tw:bg-red tw:text-red-contrast',
+          container: 'tw:bg-red tw:text-red-contrast',
         },
         'yellow': {
-          titleContainer: 'tw:bg-yellow tw:text-yellow-contrast',
+          container: 'tw:bg-yellow tw:text-yellow-contrast',
         },
         'blue': {
-          titleContainer: 'tw:bg-blue tw:text-blue-contrast',
+          container: 'tw:bg-blue tw:text-blue-contrast',
         },
         'green': {
-          titleContainer: 'tw:bg-green tw:text-green-contrast',
+          container: 'tw:bg-green tw:text-green-contrast',
         },
         'light-grey': {
-          titleContainer: 'tw:bg-light-grey tw:text-light-grey-contrast',
+          container: 'tw:bg-light-grey tw:text-light-grey-contrast',
         },
         'dark-grey': {
-          titleContainer: 'tw:bg-dark-grey tw:text-dark-grey-contrast',
+          container: 'tw:bg-dark-grey tw:text-dark-grey-contrast',
         },
         'black': {
-          titleContainer: 'tw:bg-black tw:text-black-contrast',
+          container: 'tw:bg-black tw:text-black-contrast',
         },
         'white': {
-          titleContainer: 'tw:bg-white tw:text-white-contrast',
+          container: 'tw:bg-white tw:text-white-contrast',
         },
       },
     },
   });
 
-  const {
-    base,
-    titleContainer,
-    titleIcon,
-    titleText,
-    messageContainer,
-    message: messageClasses,
-    subtitle: subtitleClasses,
-    footer: footerClasses,
-  } = card({ color });
+  const { container, icon, text } = alertTitle({ color });
 
   return (
-    <div className={base()}>
-      <div className={titleContainer()}>
-        <FontAwesomeIcon className={titleIcon()} icon={faCircleExclamation} />
-        <span className={titleText()}>{title}</span>
-      </div>
-
-      <div className={messageContainer()}>
-        <span className={subtitleClasses()}>{subtitle}</span>
-        <span className={messageClasses()}>{message}</span>
-      </div>
-
-      {footer && <div className={footerClasses()}>{footer}</div>}
+    <div className={container()}>
+      <FontAwesomeIcon className={icon()} icon={faCircleExclamation} />
+      <div className={text()}>{children}</div>
     </div>
   );
 }
+AlertTitle.displayName = 'AlertTitle';
 
+export type AlertSubtitleProps = PropsWithChildren;
+
+export function AlertSubtitle({ children }: AlertSubtitleProps) {
+  const alertSubtitle = twJoin('tw:font-bold tw:mb-4 tw:text-xl');
+
+  return <span className={alertSubtitle}>{children}</span>;
+}
+AlertSubtitle.displayName = 'AlertSubtitle';
+
+export type AlertMessageProps = PropsWithChildren;
+export function AlertMessage({ children }: AlertMessageProps) {
+  const alertMessage = twJoin(
+    'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-light-grey tw:bg-white tw:px-4 tw:py-3',
+  );
+
+  return <div className={alertMessage}>{children}</div>;
+}
+AlertMessage.displayName = 'AlertMessage';
+
+export type AlertFooterProps = PropsWithChildren;
+export function AlertFooter({ children }: AlertFooterProps) {
+  const alertFooter = twJoin('tw:flex tw:bg-light-grey tw:px-4 tw:py-2');
+
+  return <div className={alertFooter}>{children}</div>;
+}
+AlertFooter.displayName = 'AlertFooter';
+
+export type AlertProps = PropsWithChildren;
+export function Alert({ children }: AlertProps) {
+  const alert = twJoin('tw:flex tw:flex-col');
+
+  return <div className={alert}>{children}</div>;
+}
 Alert.displayName = 'Alert';
