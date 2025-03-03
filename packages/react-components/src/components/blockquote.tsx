@@ -8,7 +8,6 @@ export type BlockquoteProps = PropsWithChildren<{
   className?: string;
   color?: 'yellow' | 'red' | 'blue';
 }>;
-
 export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {
   const blockquote = tv({
     slots: {
@@ -41,12 +40,11 @@ export function Blockquote({ className, children, color = 'yellow' }: Blockquote
   const { base, icons } = blockquote({ color });
 
   return (
-    <blockquote className={base()}>
-      <FontAwesomeIcon icon={faQuoteLeft} className={icons({ direction: 'left' })} />
-      <span>{children}</span>
-      <FontAwesomeIcon icon={faQuoteRight} className={icons({ direction: 'right' })} />
+    <blockquote className={`uofg-blockquote ${base()}`}>
+      <FontAwesomeIcon icon={faQuoteLeft} className={`uofg-blockquote-left-quote ${icons({ direction: 'left' })}`} />
+      <span className="uofg-blockquote-content">{children}</span>
+      <FontAwesomeIcon icon={faQuoteRight} className={`uofg-blockquote-right-quote ${icons({ direction: 'right' })}`} />
     </blockquote>
   );
 }
-
 Blockquote.displayName = 'Blockquote';
