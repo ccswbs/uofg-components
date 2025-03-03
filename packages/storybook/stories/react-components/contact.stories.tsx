@@ -1,10 +1,23 @@
 import * as React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Contact } from '../../../react-components/src/components/contact';
+import {
+  Contact,
+  ContactTitle,
+  ContactName,
+  ContactPhone,
+  ContactEmail,
+} from '../../../react-components/src/components/contact';
+import { ComponentType } from 'react';
 
 const config: Meta<typeof Contact> = {
   title: 'React Components/Contact',
   component: Contact,
+  subcomponents: {
+    ContactTitle: ContactTitle as ComponentType<unknown>,
+    ContactName: ContactName as ComponentType<unknown>,
+    ContactPhone: ContactPhone as ComponentType<unknown>,
+    ContactEmail: ContactEmail as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'centered',
     docs: {
@@ -12,67 +25,33 @@ const config: Meta<typeof Contact> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    name: {
-      name: 'name',
-      description: 'The name of the contact',
-      table: {
-        type: { summary: 'string' },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-    title: {
-      name: 'title',
-      description: 'The title of the contact',
-      table: {
-        type: { summary: 'string' },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-    phone: {
-      name: 'phone',
-      description: 'The phone number for the contact',
-      table: {
-        type: { summary: 'string | { number: string, extension: string }' },
-      },
-      control: {
-        type: 'object',
-      },
-    },
-    email: {
-      name: 'email',
-      description: 'The email for the contact',
-      table: {
-        type: { summary: 'string' },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-  },
 };
 
 export default config;
 
 type Story = StoryObj<typeof Contact>;
 export const Default: Story = {
-  args: {
-    name: 'Example Name',
-    title: 'Example Title',
-    phone: { number: '123-456-7890', extension: '12345' },
-    email: 'example@example.com',
+  render: ({ ...args }) => {
+    return (
+      <Contact {...args}>
+        <ContactName>Example Name</ContactName>
+        <ContactTitle>Example Title</ContactTitle>
+        <ContactPhone number="123-456-7890" />
+        <ContactEmail email="example@example.com" />
+      </Contact>
+    );
   },
 };
 
-export const NoExtension: Story = {
-  args: {
-    name: 'Example Name',
-    title: 'Example Title',
-    phone: '123-456-7890',
-    email: 'example@example.com',
+export const WithPhoneExtension: Story = {
+  render: ({ ...args }) => {
+    return (
+      <Contact {...args}>
+        <ContactName>Example Name</ContactName>
+        <ContactTitle>Example Title</ContactTitle>
+        <ContactPhone number="123-456-7890" extension="123123" />
+        <ContactEmail email="example@example.com" />
+      </Contact>
+    );
   },
 };
