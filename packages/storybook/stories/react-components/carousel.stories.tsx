@@ -31,13 +31,13 @@ const config: Meta<typeof Carousel> = {
       name: 'loop',
       description: 'The behavior of the carousel when the last item is reached',
       table: {
-        type: { summary: "'none' | 'jump' | 'continuous'" },
+        type: { summary: "'none' | 'jump'" },
         defaultValue: { summary: "'none'" },
       },
       control: {
         type: 'select',
       },
-      options: ['none', 'jump', 'continuous'],
+      options: ['none', 'jump'],
     },
     children: {
       name: 'children',
@@ -116,36 +116,6 @@ export const JumpLoop: Story = {
   args: {
     display: 2,
     loop: 'jump',
-    children: [
-      <div key="test-1" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 1
-      </div>,
-      <div key="test-2" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 2
-      </div>,
-      <div key="test-3" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 3
-      </div>,
-      <div key="test-4" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 4
-      </div>,
-      <div key="test-5" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 5
-      </div>,
-      <div key="test-6" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 6
-      </div>,
-      <div key="test-7" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
-        Carousel Item 7
-      </div>,
-    ],
-  },
-};
-
-export const ContinuousLoop: Story = {
-  args: {
-    display: 3,
-    loop: 'continuous',
     children: [
       <div key="test-1" className="tw:flex tw:h-96 tw:items-center tw:justify-center tw:border-2">
         Carousel Item 1
