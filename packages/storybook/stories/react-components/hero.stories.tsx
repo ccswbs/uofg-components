@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { Hero } from '../../../react-components/src/components/hero';
+import { Hero, HeroTitle, HeroVideo } from '../../../react-components/src/components/hero';
 import { Meta, StoryObj } from '@storybook/react';
+import { ComponentType } from 'react';
 
 const config: Meta<typeof Hero> = {
   title: 'React Components/Hero',
   component: Hero,
+  subcomponents: {
+    HeroTitle: HeroTitle as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'fullScreen',
     docs: {
@@ -12,143 +16,6 @@ const config: Meta<typeof Hero> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    as: {
-      name: 'as',
-      description: "The element/component to render the hero's image as",
-      table: {
-        type: {
-          summary:
-            "React.ElementType<{ src: string; alt: string; height?: number; width?: number; className?: string }, 'img'>;",
-        },
-      },
-      control: false,
-    },
-    src: {
-      name: 'src',
-      description: 'The URL of the image to display',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-    alt: {
-      name: 'alt',
-      description: 'The alt text for the image',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-    width: {
-      name: 'width',
-      description: 'The width of the image in pixels',
-      table: {
-        type: {
-          summary: 'number',
-        },
-      },
-      control: {
-        type: 'number',
-      },
-    },
-    height: {
-      name: 'height',
-      description: 'The height of the image in pixels',
-      table: {
-        type: {
-          summary: 'number',
-        },
-      },
-      control: {
-        type: 'number',
-      },
-    },
-    variant: {
-      name: 'variant',
-      description: 'The variant of the hero',
-      table: {
-        type: {
-          summary: "'basic' | 'spotlight'",
-        },
-        defaultValue: { summary: "'basic'" },
-      },
-      control: {
-        type: 'select',
-      },
-      options: ['basic', 'spotlight'],
-    },
-    title: {
-      name: 'title',
-      description: 'The title of the hero',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-    caption: {
-      name: 'caption',
-      description: 'The caption of the hero',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-      control: {
-        type: 'text',
-      },
-    },
-    alignment: {
-      name: 'alignment',
-      description: 'The alignment of the title box in the hero (only applicable when variant is "spotlight")',
-      table: {
-        type: {
-          summary: "'left' | 'center' | 'right' | 'fullWidth'",
-        },
-        defaultValue: { summary: "'left'" },
-      },
-      control: {
-        type: 'select',
-      },
-      options: ['left', 'center', 'right', 'fullWidth'],
-    },
-    video: {
-      name: 'video',
-      description: 'Displays a button that opens a modal video, with the given video details',
-      table: {
-        type: {
-          summary: '{ src: string; title: string; transcript?: string; }',
-        },
-      },
-      control: {
-        type: 'object',
-      },
-    },
-    link: {
-      name: 'link',
-      description: 'Displays a button which links to the given URL and has the given text',
-      table: {
-        type: {
-          summary: '{ href: string; text: string; }',
-        },
-      },
-      control: {
-        type: 'object',
-      },
-    },
-  },
 };
 
 export default config;
@@ -162,26 +29,37 @@ const image = {
   alt: 'Placeholder image',
 };
 
+const video = {
+  src: 'https://www.youtube.com/watch?v=vmILmBbl8hk',
+  title: 'Why Choose U of G? - Banky',
+  transcript:
+    'https://preview-ugconthub.netlify.app/_gatsby/file/698e52bbf7d24a15d69d4a3c46c326ce/Banky_Why_Choose_U_of_G_Visual_Transcript.txt?url=https%3A%2F%2Fapi.liveugconthub.uoguelph.dev%2Fsites%2Fdefault%2Ffiles%2F2021-06%2FBanky_Why_Choose_U_of_G_Visual_Transcript.txt&cd=307f9699436c68e4c4b41f02e6e2946e',
+};
+
 export const BasicHero: Story = {
   args: {
     variant: 'basic',
-    title: 'Lorem Ipsum',
     ...image,
   },
+  render: ({ ...args }) => (
+    <Hero {...args}>
+      <HeroTitle>Lorem Ipsum</HeroTitle>
+    </Hero>
+  ),
 };
 
 export const BasicWithModalVideo: Story = {
   args: {
     variant: 'basic',
-    title: 'Lorem Ipsum',
     ...image,
-    video: {
-      src: 'https://www.youtube.com/watch?v=vmILmBbl8hk',
-      title: 'Why Choose U of G? - Banky',
-      transcript:
-        'https://preview-ugconthub.netlify.app/_gatsby/file/698e52bbf7d24a15d69d4a3c46c326ce/Banky_Why_Choose_U_of_G_Visual_Transcript.txt?url=https%3A%2F%2Fapi.liveugconthub.uoguelph.dev%2Fsites%2Fdefault%2Ffiles%2F2021-06%2FBanky_Why_Choose_U_of_G_Visual_Transcript.txt&cd=307f9699436c68e4c4b41f02e6e2946e',
-    },
   },
+  render: ({ ...args }) => (
+    <Hero {...args}>
+      <HeroTitle>Lorem Ipsum</HeroTitle>
+
+      <HeroVideo {...video} />
+    </Hero>
+  ),
 };
 
 export const SpotlightHero: Story = {

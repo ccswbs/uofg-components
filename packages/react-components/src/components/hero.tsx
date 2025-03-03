@@ -1,11 +1,12 @@
 import { Button } from './button';
-import { Heading } from './heading';
+import { Heading, HeadingProps, HeadingElementType } from './heading';
 import { Container } from './container';
-import { EmbeddedVideo } from './embedded-video';
+import { EmbeddedVideo, EmbeddedVideoModalButton } from './embedded-video';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
-import { ComponentPropsWithoutRef, ElementType } from 'react';
+import { ComponentPropsWithoutRef, createContext, ElementType, PropsWithChildren, use, useContext } from 'react';
 import { tv } from 'tailwind-variants';
+import { twMerge } from 'tailwind-merge';
 
 const defaultElement = 'img';
 
@@ -14,17 +15,15 @@ type HeroElementType = ElementType<
   'img'
 >;
 
-type HeroPropsAs<T extends HeroElementType> = {
-  as?: T;
-};
-
-type HeroPropsBase = {
-  variant: 'spotlight' | 'basic';
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  title: string;
+export type HeroProps<T extends HeroElementType = typeof defaultElement> = PropsWithChildren<
+  {
+    as?: T;
+    variant: 'spotlight' | 'basic';
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    /*title: string;
   caption?: string;
   alignment?: 'left' | 'center' | 'right' | 'fullWidth';
   video?: {
@@ -35,13 +34,11 @@ type HeroPropsBase = {
   link?: {
     href: string;
     text: string;
-  };
-};
+  };*/
+  } & ComponentPropsWithoutRef<T>
+>;
 
-export type HeroProps<T extends HeroElementType = typeof defaultElement> = HeroPropsAs<T> &
-  ComponentPropsWithoutRef<T> &
-  HeroPropsBase;
-
+/*
 function SpotlightHero({
   title,
   caption,
@@ -156,6 +153,110 @@ function BasicHero({ title, video }: Pick<HeroProps, 'title' | 'video'>) {
     </>
   );
 }
+*/
+
+export type HeroContextType = {
+  variant: 'spotlight' | 'basic';
+};
+const HeroContext = createContext<HeroContextType | null>(null);
+
+export type HeroTitleElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
+export type HeroTitleProps<T extends HeroTitleElementType = 'h1'> = PropsWithChildren<{
+  as?: T;
+  className?: string;
+}>;
+export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
+  as,
+  children,
+  className,
+  ...rest
+}: HeroTitleProps<T>) {
+  const context = useContext(HeroContext);
+  const Component = as ?? 'h1';
+
+  const heroTitle = tv({
+    slots: {
+      base: '',
+      heading: 'tw:font-serif tw:font-bold tw:text-3xl tw:w-fit',
+    },
+    variants: {
+      variant: {
+        spotlight: {
+          heading: 'tw:text-white',
+        },
+        basic: {
+          base: 'tw:absolute tw:bottom-0 tw:left-1/2 tw:h-fit tw:w-full tw:-translate-x-1/2 tw:p-0',
+          heading: 'tw:bg-yellow tw:md:text-4xl tw:text-yellow-contrast tw:p-1',
+        },
+      },
+    },
+  });
+
+  const { base, heading } = heroTitle({ variant: context?.variant });
+
+  if (context?.variant === 'spotlight') {
+    return (
+      <Component {...rest} className={heading()}>
+        {children}
+      </Component>
+    );
+  }
+
+  return (
+    <Container centered className={`uofg-hero-title-container ${twMerge(base(), className)}`}>
+      <Component {...rest} className={heading()}>
+        {children}
+      </Component>
+    </Container>
+  );
+}
+HeroTitle.displayName = 'HeroTitle';
+
+export type HeroVideo = PropsWithChildren<{
+  src: string;
+  title: string;
+  transcript?: string;
+  className?: string;
+}>;
+export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
+  const context = useContext(HeroContext);
+  const heroVideo = tv({
+    slots: {
+      base: '',
+    },
+    variants: {
+      variant: {
+        basic: {
+          base: 'tw:absolute tw:top-1/2 tw:left-1/2 tw:-translate-x-1/2 tw:-translate-y-1/2',
+        },
+        spotlight: {
+          base: 'tw:w-fit tw:gap-2 tw:p-3',
+        },
+      },
+    },
+  });
+
+  const { base } = heroVideo({ variant: context?.variant });
+
+  if (context?.variant === 'spotlight') {
+    return (
+      <EmbeddedVideo src={src} title={title} transcript={transcript}>
+        <EmbeddedVideoModalButton type="yellow">
+          <FontAwesomeIcon icon={faPlay} />
+          <span>{children}</span>
+        </EmbeddedVideoModalButton>
+      </EmbeddedVideo>
+    );
+  }
+
+  return (
+    <div className={base()}>
+      <EmbeddedVideo src={src} title={title} transcript={transcript}>
+        <EmbeddedVideoModalButton type="play-button" />
+      </EmbeddedVideo>
+    </div>
+  );
+}
 
 export function Hero<T extends HeroElementType = typeof defaultElement>({
   as,
@@ -164,11 +265,7 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
   alt,
   width,
   height,
-  title,
-  caption,
-  alignment = 'left',
-  video,
-  link,
+  children,
   ...rest
 }: HeroProps<T>) {
   const Image = as ?? defaultElement;
@@ -198,10 +295,7 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
     <div className={base()}>
       <Image {...rest} src={src} alt={alt} width={width} height={height} className={image()} />
 
-      {variant === 'spotlight' && (
-        <SpotlightHero title={title} caption={caption} alignment={alignment} video={video} link={link} />
-      )}
-      {variant === 'basic' && <BasicHero title={title} video={video} />}
+      <HeroContext.Provider value={{ variant }}>{children}</HeroContext.Provider>
     </div>
   );
 }
