@@ -5,7 +5,14 @@ import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
 
 export type AlertTitleProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the alert title
+   */
   className?: string;
+  /**
+   * The background color of the alert title
+   * @default 'red'
+   */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
 }>;
 export function AlertTitle({ color = 'red', className, children }: AlertTitleProps) {
@@ -57,6 +64,9 @@ export function AlertTitle({ color = 'red', className, children }: AlertTitlePro
 AlertTitle.displayName = 'AlertTitle';
 
 export type AlertSubtitleProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the alert subtitle
+   */
   className?: string;
 }>;
 export function AlertSubtitle({ children, className }: AlertSubtitleProps) {
@@ -67,6 +77,9 @@ export function AlertSubtitle({ children, className }: AlertSubtitleProps) {
 AlertSubtitle.displayName = 'AlertSubtitle';
 
 export type AlertMessageProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the alert message
+   */
   className?: string;
 }>;
 export function AlertMessage({ children, className }: AlertMessageProps) {
@@ -80,6 +93,9 @@ export function AlertMessage({ children, className }: AlertMessageProps) {
 AlertMessage.displayName = 'AlertMessage';
 
 export type AlertFooterProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the alert footer
+   */
   className?: string;
 }>;
 export function AlertFooter({ children, className }: AlertFooterProps) {
@@ -90,6 +106,9 @@ export function AlertFooter({ children, className }: AlertFooterProps) {
 AlertFooter.displayName = 'AlertFooter';
 
 export type AlertProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the alert
+   */
   className?: string;
 }>;
 export function Alert({ children, className }: AlertProps) {

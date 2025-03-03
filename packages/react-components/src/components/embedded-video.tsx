@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { PropsWithChildren, useState, createContext, useContext, ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Button } from './button.tsx';
 import { Modal } from './modal.tsx';
@@ -56,7 +56,7 @@ function getVideoInfo(url: string) {
       type = 'vimeo';
       id = getVimeoVideoID(parsed);
     }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     // Do nothing
   }
@@ -70,15 +70,6 @@ type VideoProps = {
   transcript?: string;
   className?: string;
 };
-
-type EmbeddedVideoProps = VideoProps & {
-  modal?: {
-    button?: ReactNode;
-    type: 'play-button' | ButtonProps['color'];
-    className?: string;
-  };
-};
-
 function Video({ src, title, transcript, className }: VideoProps) {
   const { id, type } = getVideoInfo(src);
 
@@ -121,60 +112,72 @@ function Video({ src, title, transcript, className }: VideoProps) {
   );
 }
 
-export function EmbeddedVideo({ src, title, transcript, className, modal }: EmbeddedVideoProps) {
+export type EmbeddedVideoContextType = {
+  modalOpen: boolean;
+  setModalOpen: (open: boolean) => void;
+};
+const EmbeddedVideoContext = createContext<EmbeddedVideoContextType | null>(null);
+
+type EmbeddedVideoModalButtonProps = PropsWithChildren<{
+  type: 'play-button' | ButtonProps['color'];
+  className?: string;
+}>;
+export function EmbeddedVideoModalButton({ type, children, className }: EmbeddedVideoModalButtonProps) {
+  const context = useContext(EmbeddedVideoContext);
+
+  if (type === 'play-button') {
+    const button = twMerge(
+      'tw:flex tw:aspect-square tw:w-24 tw:items-center tw:justify-center tw:rounded-full tw:bg-black/30 tw:text-4xl tw:text-white tw:transition-colors tw:hover:bg-red/30 tw:focus:bg-red/30',
+      className,
+    );
+
+    return (
+      <button type="button" className={button} onClick={() => context?.setModalOpen(true)}>
+        <FontAwesomeIcon icon={faPlay} />
+        <span className="sr-only">Show Video</span>
+      </button>
+    );
+  }
+
+  return (
+    <Button type="button" color={type} className={className} onClick={() => context?.setModalOpen(true)}>
+      {children}
+    </Button>
+  );
+}
+
+type EmbeddedVideoProps<> = VideoProps & {
+  modalButton?: ReactElement<typeof EmbeddedVideoModalButton>;
+};
+export function EmbeddedVideo({ src, title, transcript, className, modalButton }: EmbeddedVideoProps) {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const embeddedVideo = tv({
-    slots: {
-      container:
-        'tw:bg-dark-grey-bg tw:flex tw:w-screen tw:max-w-6xl tw:lg:max-w-7xl tw:flex-col tw:gap-4 tw:p-4 tw:text-dark-grey-contrast',
-      video: twMerge('tw:w-full', className),
-      title: 'tw:text-xl tw:font-bold',
-      button: modal?.className,
-    },
-    variants: {
-      type: {
-        'play-button': {
-          button: twMerge(
-            'tw:flex tw:aspect-square tw:w-24 tw:items-center tw:justify-center tw:rounded-full tw:bg-black/30 tw:text-4xl tw:text-white tw:transition-colors tw:hover:bg-red/30 tw:focus:bg-red/30',
-            modal?.className,
-          ),
-        },
-        'red': {},
-        'yellow': {},
-        'green': {},
-        'blue': {},
-        'light-grey': {},
-        'dark-grey': {},
-        'black': {},
-        'white': {},
+  if (modalButton) {
+    const embeddedVideo = tv({
+      slots: {
+        container:
+          'tw:bg-dark-grey-bg tw:flex tw:w-screen tw:max-w-6xl tw:lg:max-w-7xl tw:flex-col tw:gap-4 tw:p-4 tw:text-dark-grey-contrast',
+        video: 'tw:w-full',
+        title: 'tw:text-xl tw:font-bold',
       },
-    },
-  });
+    });
 
-  const { container, video, title: titleClasses, button } = embeddedVideo({ type: modal?.type });
+    const { container, video, title: titleClasses } = embeddedVideo();
 
-  return modal ?
+    return (
       <>
-        {modal.type === 'play-button' ?
-          <button className={button()} onClick={() => setModalOpen(true)}>
-            <FontAwesomeIcon icon={faPlay} />
-            <span className="sr-only">Show Video</span>
-          </button>
-        : <Button color={modal.type} onClick={() => setModalOpen(true)} className={button()}>
-            {modal.button}
-          </Button>
-        }
-
+        <EmbeddedVideoContext.Provider value={{ modalOpen, setModalOpen }}>{modalButton}</EmbeddedVideoContext.Provider>
         <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
           <div className={container()}>
             <span className={titleClasses()}>{title}</span>
-
-            <Video src={src} title={title} transcript={transcript} className={video()} />
+            <Video src={src} title={title} transcript={transcript} className={twMerge(video(), className)} />
           </div>
         </Modal>
       </>
-    : <Video src={src} title={title} transcript={transcript} className={className} />;
+    );
+  }
+
+  return <Video src={src} title={title} transcript={transcript} className={`uofg-embedded-video ${className}`} />;
 }
 
 EmbeddedVideo.displayName = 'EmbeddedVideo';

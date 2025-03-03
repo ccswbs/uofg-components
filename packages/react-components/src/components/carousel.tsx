@@ -28,7 +28,15 @@ const scroll = (element: HTMLElement, to: number, duration: number) => {
 };
 
 export type CarouselProps = PropsWithChildren<{
+  /**
+   * The number of items to display at once
+   * @default 1
+   */
   display?: number;
+  /**
+   * The looping behavior of the carousel
+   * @default 'none'
+   */
   loop?: 'jump' | 'continuous' | 'none';
 }>;
 

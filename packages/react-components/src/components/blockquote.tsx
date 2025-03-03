@@ -5,7 +5,14 @@ import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type BlockquoteProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the blockquote
+   */
   className?: string;
+  /**
+   * The color of the blockquote quotation marks
+   * @default 'yellow'
+   */
   color?: 'yellow' | 'red' | 'blue';
 }>;
 export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {

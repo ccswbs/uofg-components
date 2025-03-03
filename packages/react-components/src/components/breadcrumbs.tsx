@@ -8,16 +8,21 @@ import { twJoin, twMerge } from 'tailwind-merge';
 
 const defaultElement = 'a';
 
-export type Breadcrumb = {
-  title: string;
-  url: string;
-};
-
 export type BreadcrumbElementType = ElementType<{ href?: string }, 'a'>;
 export type BreadcrumbProps<T extends BreadcrumbElementType = typeof defaultElement> = PropsWithChildren<
   {
+    /**
+     * The element to render the breadcrumb as
+     * @default 'a'
+     */
     as?: T;
+    /**
+     * The URL to link to
+     */
     href?: string;
+    /**
+     * Additional classes to apply to the breadcrumb
+     */
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
@@ -72,6 +77,9 @@ export function BreadcrumbHome<T extends BreadcrumbElementType = typeof defaultE
 BreadcrumbHome.displayName = 'BreadcrumbHome';
 
 export type BreadcrumbsProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the breadcrumbs
+   */
   className?: string;
 }>;
 export function Breadcrumbs({ className, children }: BreadcrumbsProps) {

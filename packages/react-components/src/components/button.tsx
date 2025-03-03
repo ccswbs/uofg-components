@@ -11,16 +11,30 @@ type ButtonPropsAs<T extends ButtonElementType> = {
 };
 
 type ButtonPropsBase = {
+  /**
+   * The color of the button
+   * @default 'red'
+   */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
+  /**
+   * Whether the button should be outlined
+   * @default false
+   */
   outlined?: boolean;
+  /**
+   * Additional classes to apply to the button
+   */
   className?: string;
+  /**
+   * Whether the button is disabled
+   * @default false
+   */
   disabled?: boolean;
 };
 
 export type ButtonProps<T extends ButtonElementType = typeof defaultElement> = PropsWithChildren<
   ButtonPropsAs<T> & ComponentPropsWithoutRef<T> & ButtonPropsBase
 >;
-
 export function Button<T extends ButtonElementType = typeof defaultElement>({
   as,
   color = 'red',
@@ -235,10 +249,9 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
   const classes = twMerge(button({ color, outlined, disabled }), className);
 
   return (
-    <Component className={classes} disabled={disabled} {...rest}>
+    <Component className={`uofg-button ${classes}`} disabled={disabled} {...rest}>
       {children}
     </Component>
   );
 }
-
 Button.displayName = 'Button';

@@ -5,11 +5,32 @@ import { faCheck } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { tv } from 'tailwind-variants';
 
 export type CheckboxProps = {
+  /**
+   * Whether the checkbox is checked initially
+   * @default false
+   */
   checked?: boolean;
+  /**
+   * The label for the checkbox
+   */
   label?: ReactNode;
+  /**
+   * The description for the checkbox
+   */
   description?: ReactNode;
+  /**
+   * The color of the checkbox
+   * @default 'red'
+   */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
+  /**
+   * Whether the checkbox is disabled
+   * @default false
+   */
   disabled?: boolean;
+  /**
+   * The function to call when the checkbox is toggled
+   */
   onChange?: (value: boolean) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
 

@@ -9,7 +9,14 @@ type ContainerPropsAs<T extends ElementType> = {
 };
 
 type ContainerPropsBase = {
+  /**
+   * Whether the container content should be horizontally centered
+   * @default false
+   */
   centered?: boolean;
+  /**
+   * Additional classes to apply to the container
+   */
   className?: string;
 };
 

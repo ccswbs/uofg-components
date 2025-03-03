@@ -1,9 +1,13 @@
-import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video';
+import { EmbeddedVideo, EmbeddedVideoModalButton } from '../../../react-components/src/components/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
+import React, { ComponentType } from 'react';
 
 const config: Meta<typeof EmbeddedVideo> = {
   title: 'React Components/EmbeddedVideo',
   component: EmbeddedVideo,
+  subcomponents: {
+    EmbeddedVideoModalButton: EmbeddedVideoModalButton as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'padded',
     docs: {
@@ -47,10 +51,7 @@ export const AsModalWithDefaultButton: Story = {
     title: 'Why Choose U of G? - Banky',
     transcript:
       'https://preview-ugconthub.netlify.app/_gatsby/file/698e52bbf7d24a15d69d4a3c46c326ce/Banky_Why_Choose_U_of_G_Visual_Transcript.txt?url=https%3A%2F%2Fapi.liveugconthub.uoguelph.dev%2Fsites%2Fdefault%2Ffiles%2F2021-06%2FBanky_Why_Choose_U_of_G_Visual_Transcript.txt&cd=307f9699436c68e4c4b41f02e6e2946e',
-    modal: {
-      button: 'Play Video',
-      type: 'red',
-    },
+    modalButton: <EmbeddedVideoModalButton type="red">Play Video</EmbeddedVideoModalButton>,
   },
 };
 
@@ -60,8 +61,6 @@ export const AsModalWithPlayButton: Story = {
     title: 'Why Choose U of G? - Banky',
     transcript:
       'https://preview-ugconthub.netlify.app/_gatsby/file/698e52bbf7d24a15d69d4a3c46c326ce/Banky_Why_Choose_U_of_G_Visual_Transcript.txt?url=https%3A%2F%2Fapi.liveugconthub.uoguelph.dev%2Fsites%2Fdefault%2Ffiles%2F2021-06%2FBanky_Why_Choose_U_of_G_Visual_Transcript.txt&cd=307f9699436c68e4c4b41f02e6e2946e',
-    modal: {
-      type: 'play-button',
-    },
+    modalButton: <EmbeddedVideoModalButton type="play-button" />,
   },
 };
