@@ -13,7 +13,7 @@ export const ComponentImport = ({ of }: { of?: any }) => {
   }
 
   const component = title.replace('React Components/', '');
-  const subpath = component.toLowerCase().replace(' ', '-');
+  const subpath = component.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
   const subcomponents = resolvedOf.preparedMeta.subcomponents;
 
   if (subcomponents) {
