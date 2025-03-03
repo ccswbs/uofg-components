@@ -65,9 +65,21 @@ function getVideoInfo(url: string) {
 }
 
 type VideoProps = {
+  /**
+   * The URL of the video to embed.
+   */
   src: string;
+  /**
+   * The title of the video.
+   */
   title?: string;
+  /**
+   * The URL to a human readable transcript of the video.
+   */
   transcript?: string;
+  /**
+   * Additional classes to apply to the video container.
+   */
   className?: string;
 };
 function Video({ src, title, transcript, className }: VideoProps) {
@@ -147,12 +159,15 @@ export function EmbeddedVideoModalButton({ type, children, className }: Embedded
 }
 
 type EmbeddedVideoProps<> = VideoProps & {
-  modalButton?: ReactElement<typeof EmbeddedVideoModalButton>;
+  /**
+   * If passed the video will render as a modal, with the button being used to open the video.
+   */
+  children?: ReactElement<typeof EmbeddedVideoModalButton>;
 };
-export function EmbeddedVideo({ src, title, transcript, className, modalButton }: EmbeddedVideoProps) {
+export function EmbeddedVideo({ src, title, transcript, className, children }: EmbeddedVideoProps) {
   const [modalOpen, setModalOpen] = useState(false);
 
-  if (modalButton) {
+  if (children) {
     const embeddedVideo = tv({
       slots: {
         container:
@@ -166,11 +181,16 @@ export function EmbeddedVideo({ src, title, transcript, className, modalButton }
 
     return (
       <>
-        <EmbeddedVideoContext.Provider value={{ modalOpen, setModalOpen }}>{modalButton}</EmbeddedVideoContext.Provider>
+        <EmbeddedVideoContext.Provider value={{ modalOpen, setModalOpen }}>{children}</EmbeddedVideoContext.Provider>
         <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-          <div className={container()}>
-            <span className={titleClasses()}>{title}</span>
-            <Video src={src} title={title} transcript={transcript} className={twMerge(video(), className)} />
+          <div className={`uofg-embedded-video-container ${container()}`}>
+            <span className={`uofg-embedded-video-title ${titleClasses()}`}>{title}</span>
+            <Video
+              src={src}
+              title={title}
+              transcript={transcript}
+              className={`uofg-embedded-video ${twMerge(video(), className)}`}
+            />
           </div>
         </Modal>
       </>
