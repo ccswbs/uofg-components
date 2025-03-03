@@ -6,9 +6,11 @@ import { faCircleMinus, faCirclePlus } from '@awesome.me/kit-7993323d0c/icons/cl
 import { tv } from 'tailwind-variants';
 
 export type AccordionProps = PropsWithChildren<{
+  /**
+   * The title of the accordion displayed in the button
+   */
   title: string | ReactNode;
 }>;
-
 export function Accordion({ title, children }: AccordionProps) {
   const accordion = tv({
     slots: {
@@ -38,13 +40,16 @@ export function Accordion({ title, children }: AccordionProps) {
         const { base, button, icon, panel } = accordion({ open });
 
         return (
-          <div className={base()}>
-            <DisclosureButton className={button()}>
-              <span>{title}</span>
-              <FontAwesomeIcon icon={open ? faCircleMinus : faCirclePlus} className={icon()} />
+          <div className={`uofg-accordion ${base()}`}>
+            <DisclosureButton className={`uofg-accordion-button ${button()}`}>
+              <span className="uofg-accordion-title">{title}</span>
+              <FontAwesomeIcon
+                icon={open ? faCircleMinus : faCirclePlus}
+                className={`uofg-accordion-button-icon ${icon()}`}
+              />
             </DisclosureButton>
             <AnimateHeight height={open ? 'auto' : 0} duration={200} easing={'ease-in-out'}>
-              <DisclosurePanel static className={panel()}>
+              <DisclosurePanel static className={`uofg-accordion-content ${panel()}`}>
                 {children}
               </DisclosurePanel>
             </AnimateHeight>
@@ -54,5 +59,4 @@ export function Accordion({ title, children }: AccordionProps) {
     </Disclosure>
   );
 }
-
 Accordion.displayName = 'Accordion';
