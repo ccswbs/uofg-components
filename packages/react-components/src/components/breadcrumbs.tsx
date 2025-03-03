@@ -4,70 +4,83 @@ import { faHome } from '@awesome.me/kit-7993323d0c/icons/sharp/light';
 import { faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/light';
 import { Container } from './container';
 import { tv } from 'tailwind-variants';
+import { twJoin, twMerge } from 'tailwind-merge';
+
+const defaultElement = 'a';
 
 export type Breadcrumb = {
   title: string;
   url: string;
 };
 
-const defaultElement = 'a';
-
-type BreadcrumbsElementType = ElementType<{ href?: string }, 'a'>;
-
-type BreadcrumbsPropsAs<T extends BreadcrumbsElementType> = {
-  as?: T;
-};
-
-type BreadcrumbsPropsBase = {
-  links: Breadcrumb[];
-};
-
-export type BreadcrumbsProps<T extends BreadcrumbsElementType = typeof defaultElement> = PropsWithChildren<
-  BreadcrumbsPropsAs<T> & ComponentPropsWithoutRef<T> & BreadcrumbsPropsBase
+export type BreadcrumbElementType = ElementType<{ href?: string }, 'a'>;
+export type BreadcrumbProps<T extends BreadcrumbElementType = typeof defaultElement> = PropsWithChildren<
+  {
+    as?: T;
+    href?: string;
+    className?: string;
+  } & ComponentPropsWithoutRef<T>
 >;
-
-export function Breadcrumbs<T extends BreadcrumbsElementType = typeof defaultElement>({
+export function Breadcrumb<T extends BreadcrumbElementType = typeof defaultElement>({
   as,
-  links,
+  children,
+  className,
+  href,
   ...rest
-}: BreadcrumbsProps<T>) {
+}: BreadcrumbProps<T>) {
   const Component = as ?? defaultElement;
-  const breadcrumbs = tv({
+  const breadcrumb = tv({
     slots: {
-      base: 'tw:flex tw:w-full tw:flex-wrap tw:items-center tw:gap-2',
-      homeIcon: 'tw:h-[1em] tw:fill-black',
-      breadcrumbContainer: 'tw:flex tw:items-center tw:gap-2',
-      breadcrumbIcon: 'tw:h-[.75em]',
-      breadcrumbLink:
-        'tw:underline tw:decoration-transparent tw:decoration-1 tw:transition-colors tw:hocus-visible:decoration-black',
+      container: 'tw:flex tw:items-center tw:gap-2',
+      icon: 'tw:h-[.75em]',
+      link: 'tw:underline tw:decoration-transparent tw:decoration-1 tw:transition-colors tw:hocus-visible:decoration-black',
     },
   });
 
-  const { base, homeIcon, breadcrumbContainer, breadcrumbIcon, breadcrumbLink } = breadcrumbs();
+  const { container, icon, link } = breadcrumb();
+
+  return (
+    <li className={container()}>
+      <FontAwesomeIcon icon={faChevronRight} className={icon()} />
+      {href ?
+        <Component {...rest} className={twMerge(link(), className)} href={href}>
+          {children}
+        </Component>
+      : <span>{children}</span>}
+    </li>
+  );
+}
+Breadcrumb.displayName = 'Breadcrumb';
+
+export function BreadcrumbHome<T extends BreadcrumbElementType = typeof defaultElement>({
+  href = '/',
+  children, // eslint-disable-line @typescript-eslint/no-unused-vars
+  className,
+  ...rest
+}: BreadcrumbProps<T>) {
+  const icon = twJoin('tw:h-[1em] tw:fill-black');
+
+  return (
+    <li>
+      <a {...rest} href={href} className={className}>
+        <FontAwesomeIcon icon={faHome} className={icon} />
+        <span className="tw:sr-only">U of G Homepage</span>
+      </a>
+    </li>
+  );
+}
+BreadcrumbHome.displayName = 'BreadcrumbHome';
+
+export type BreadcrumbsProps = PropsWithChildren<{
+  className?: string;
+}>;
+export function Breadcrumbs({ className, children }: BreadcrumbsProps) {
+  const breadcrumbs = twJoin('tw:flex tw:w-full tw:flex-wrap tw:items-center tw:gap-2');
 
   return (
     <Container centered>
-      <ol className={base()}>
-        <li>
-          <Component {...rest} href="/">
-            <FontAwesomeIcon icon={faHome} className={homeIcon()} />
-            <span className="tw:sr-only">U of G Homepage</span>
-          </Component>
-        </li>
-        {links?.map((link, index) => (
-          <li key={index} className={breadcrumbContainer()}>
-            <FontAwesomeIcon icon={faChevronRight} className={breadcrumbIcon()} />
-            {index === links.length - 1 ?
-              <span>{link.title}</span>
-            : <Component {...rest} className={breadcrumbLink()} href={link.url}>
-                {link.title}
-              </Component>
-            }
-          </li>
-        ))}
-      </ol>
+      <ol className={twMerge(breadcrumbs, className)}>{children}</ol>
     </Container>
   );
 }
-
 Breadcrumbs.displayName = 'Breadcrumbs';
