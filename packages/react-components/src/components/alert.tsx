@@ -2,12 +2,13 @@ import type { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { tv } from 'tailwind-variants';
-import { twJoin } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 
 export type AlertTitleProps = PropsWithChildren<{
+  className?: string;
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
 }>;
-export function AlertTitle({ color = 'red', children }: AlertTitleProps) {
+export function AlertTitle({ color = 'red', className, children }: AlertTitleProps) {
   const alertTitle = tv({
     slots: {
       container: 'tw:flex tw:items-center tw:gap-2 tw:p-4 tw:text-xl',
@@ -47,45 +48,53 @@ export function AlertTitle({ color = 'red', children }: AlertTitleProps) {
   const { container, icon, text } = alertTitle({ color });
 
   return (
-    <div className={container()}>
-      <FontAwesomeIcon className={icon()} icon={faCircleExclamation} />
-      <div className={text()}>{children}</div>
+    <div className={`uofg-alert-title-container ${twMerge(container(), className)}`}>
+      <FontAwesomeIcon className={`uofg-alert-title-icon ${icon()}`} icon={faCircleExclamation} />
+      <div className={`uofg-alert-title ${text()}`}>{children}</div>
     </div>
   );
 }
 AlertTitle.displayName = 'AlertTitle';
 
-export type AlertSubtitleProps = PropsWithChildren;
+export type AlertSubtitleProps = PropsWithChildren<{
+  className?: string;
+}>;
+export function AlertSubtitle({ children, className }: AlertSubtitleProps) {
+  const alertSubtitle = twMerge('tw:font-bold tw:mb-4 tw:text-xl', className);
 
-export function AlertSubtitle({ children }: AlertSubtitleProps) {
-  const alertSubtitle = twJoin('tw:font-bold tw:mb-4 tw:text-xl');
-
-  return <span className={alertSubtitle}>{children}</span>;
+  return <span className={`uofg-alert-subtitle ${alertSubtitle}`}>{children}</span>;
 }
 AlertSubtitle.displayName = 'AlertSubtitle';
 
-export type AlertMessageProps = PropsWithChildren;
-export function AlertMessage({ children }: AlertMessageProps) {
-  const alertMessage = twJoin(
+export type AlertMessageProps = PropsWithChildren<{
+  className?: string;
+}>;
+export function AlertMessage({ children, className }: AlertMessageProps) {
+  const alertMessage = twMerge(
     'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-light-grey tw:bg-white tw:px-4 tw:py-3',
+    className,
   );
 
-  return <div className={alertMessage}>{children}</div>;
+  return <div className={`uofg-alert-message ${alertMessage}`}>{children}</div>;
 }
 AlertMessage.displayName = 'AlertMessage';
 
-export type AlertFooterProps = PropsWithChildren;
-export function AlertFooter({ children }: AlertFooterProps) {
-  const alertFooter = twJoin('tw:flex tw:bg-light-grey tw:px-4 tw:py-2');
+export type AlertFooterProps = PropsWithChildren<{
+  className?: string;
+}>;
+export function AlertFooter({ children, className }: AlertFooterProps) {
+  const alertFooter = twMerge('tw:flex tw:bg-light-grey tw:px-4 tw:py-2', className);
 
-  return <div className={alertFooter}>{children}</div>;
+  return <div className={`uofg-alert-footer ${alertFooter}`}>{children}</div>;
 }
 AlertFooter.displayName = 'AlertFooter';
 
-export type AlertProps = PropsWithChildren;
-export function Alert({ children }: AlertProps) {
-  const alert = twJoin('tw:flex tw:flex-col');
+export type AlertProps = PropsWithChildren<{
+  className?: string;
+}>;
+export function Alert({ children, className }: AlertProps) {
+  const alert = twMerge('tw:flex tw:flex-col', className);
 
-  return <div className={alert}>{children}</div>;
+  return <div className={`uofg-alert ${alert}`}>{children}</div>;
 }
 Alert.displayName = 'Alert';
