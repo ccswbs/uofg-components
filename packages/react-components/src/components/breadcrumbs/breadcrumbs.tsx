@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@awesome.me/kit-7993323d0c/icons/sharp/light';
 import { faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/light';
-import { Container } from './container';
+import { Container } from '../container/container';
 import { tv } from 'tailwind-variants';
 import { twJoin, twMerge } from 'tailwind-merge';
 

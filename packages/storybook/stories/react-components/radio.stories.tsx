@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import { Radio } from '../../../react-components/src/components/radio';
+import { Radio } from '../../../react-components/src/components/radio/radio';
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 

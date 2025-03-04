@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Info } from '../../../react-components/src/components/info';
+import { Info } from '../../../react-components/src/components/info/info';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Info> = {

@@ -6,7 +6,7 @@ import {
   ContactName,
   ContactPhone,
   ContactEmail,
-} from '../../../react-components/src/components/contact';
+} from '../../../react-components/src/components/contact/contact';
 import { ComponentType } from 'react';
 
 const config: Meta<typeof Contact> = {

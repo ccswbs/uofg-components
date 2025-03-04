@@ -1,10 +1,10 @@
 import { PropsWithChildren, useState, createContext, useContext, ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Button } from './button.tsx';
-import { Modal } from './modal.tsx';
+import { Button } from '../button/button.tsx';
+import { Modal } from '../modal/modal.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
-import { ButtonProps } from './button.tsx';
+import { ButtonProps } from '../button/button.tsx';
 import { tv } from 'tailwind-variants';
 
 function getYouTubeVideoID(url: URL) {

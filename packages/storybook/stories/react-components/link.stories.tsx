@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Link } from '../../../react-components/src/components/link';
+import { Link } from '../../../react-components/src/components/link/link';
 
 const config: Meta<typeof Link> = {
   title: 'React Components/Link',

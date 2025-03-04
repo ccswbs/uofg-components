@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Modal } from '../../../react-components/src/components/modal';
-import { Button } from '../../../react-components/src/components/button';
+import { Modal } from '../../../react-components/src/components/modal/modal';
+import { Button } from '../../../react-components/src/components/button/button';
 import { Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
 

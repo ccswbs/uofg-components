@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { List, ListItem } from '../../../react-components/src/components/list';
+import { List, ListItem } from '../../../react-components/src/components/list/list';
 import React from 'react';
 
 const config: Meta<typeof List> = {

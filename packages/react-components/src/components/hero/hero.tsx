@@ -1,9 +1,9 @@
-import { Button } from './button';
-import { Container } from './container';
-import { EmbeddedVideo, EmbeddedVideoModalButton } from './embedded-video';
+import { Button } from '../button/button';
+import { Container } from '../container/container';
+import { EmbeddedVideo, EmbeddedVideoModalButton } from '../embedded-video/embedded-video';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
-import { ComponentPropsWithoutRef, createContext, ElementType, PropsWithChildren, use, useContext } from 'react';
+import { ComponentPropsWithoutRef, createContext, ElementType, PropsWithChildren, useContext } from 'react';
 import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
 

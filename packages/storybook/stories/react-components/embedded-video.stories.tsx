@@ -1,4 +1,7 @@
-import { EmbeddedVideo, EmbeddedVideoModalButton } from '../../../react-components/src/components/embedded-video';
+import {
+  EmbeddedVideo,
+  EmbeddedVideoModalButton,
+} from '../../../react-components/src/components/embedded-video/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
 import React, { ComponentType } from 'react';
 

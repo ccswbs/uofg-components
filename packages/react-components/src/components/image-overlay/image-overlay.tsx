@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { Container } from './container';
+import { Container } from '../container/container';
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
 

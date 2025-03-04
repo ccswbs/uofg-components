@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { Card, CardImage, CardContent, CardTitle, CardFooter } from '../../../react-components/src/components/card';
+import {
+  Card,
+  CardImage,
+  CardContent,
+  CardTitle,
+  CardFooter,
+} from '../../../react-components/src/components/card/card';
 import { Meta, StoryObj } from '@storybook/react';
 import { ComponentType } from 'react';
 

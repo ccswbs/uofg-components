@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
-import { EmbeddedVideo } from './embedded-video';
+import { EmbeddedVideo } from '../embedded-video/embedded-video';
 import { tv } from 'tailwind-variants';
 
 const defaultElement = 'img';

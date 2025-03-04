@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox } from '../../../react-components/src/components/checkbox';
+import { Checkbox } from '../../../react-components/src/components/checkbox/checkbox';
 import { fn } from '@storybook/test';
 import { Meta, StoryObj } from '@storybook/react';
 
