@@ -50,7 +50,7 @@ export type ImageOverlayProps<T extends ImageOverlayElementType = typeof default
      * A color overlay to apply to the image.
      * @default 'none'
      */
-    overlay: 'dark' | 'light' | 'none';
+    overlay: 'dark' | 'light' | 'dark-gradient' | 'light-gradient' | 'none';
     /**
      * Whether the image should be blurred.
      * @default false
@@ -93,13 +93,19 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         },
       },
       overlay: {
-        dark: {
+        'dark': {
           overlay: 'tw:bg-black/60',
         },
-        light: {
+        'light': {
           overlay: 'tw:bg-white/60',
         },
-        none: {
+        'dark-gradient': {
+          overlay: 'tw:from-black/50 tw:via-30% tw:via-black/20 tw:to-transparent',
+        },
+        'light-gradient': {
+          overlay: 'tw:from-white/50 tw:via-30% tw:via-white/20 tw:to-transparent',
+        },
+        'none': {
           overlay: 'tw:hidden',
         },
       },
@@ -126,6 +132,48 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         },
       },
     },
+    compoundVariants: [
+      {
+        overlay: ['dark-gradient', 'light-gradient'],
+        verticalAlignment: 'bottom',
+        horizontalAlignment: ['left', 'center', 'right'],
+        class: {
+          overlay: 'tw:bg-gradient-to-t',
+        },
+      },
+      {
+        overlay: ['dark-gradient', 'light-gradient'],
+        verticalAlignment: 'top',
+        horizontalAlignment: ['left', 'center', 'right'],
+        class: {
+          overlay: 'tw:bg-gradient-to-b',
+        },
+      },
+      {
+        overlay: ['dark-gradient', 'light-gradient'],
+        verticalAlignment: 'center',
+        horizontalAlignment: 'center',
+        class: {
+          overlay: 'tw:bg-radial',
+        },
+      },
+      {
+        overlay: ['dark-gradient', 'light-gradient'],
+        verticalAlignment: 'center',
+        horizontalAlignment: 'left',
+        class: {
+          overlay: 'tw:bg-gradient-to-r',
+        },
+      },
+      {
+        overlay: ['dark-gradient', 'light-gradient'],
+        verticalAlignment: 'center',
+        horizontalAlignment: 'right',
+        class: {
+          overlay: 'tw:bg-gradient-to-l',
+        },
+      },
+    ],
   });
 
   const {
@@ -149,7 +197,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
           sizes="100vw"
         />
 
-        {(overlay === 'dark' || overlay === 'light') && <div className={overlayClasses()}></div>}
+        {overlay !== 'none' && <div className={overlayClasses()}></div>}
       </div>
 
       <div className={container()}>{children}</div>
