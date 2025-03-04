@@ -6,16 +6,11 @@ const defaultElement = 'ul';
 
 type ListElementType = 'ul' | 'ol';
 
-type ListPropsAs<T extends ListElementType> = {
-  as?: T;
-};
-
-type ListPropsBase = {
-  className?: string;
-};
-
 export type ListProps<T extends ListElementType = typeof defaultElement> = PropsWithChildren<
-  ListPropsAs<T> & ComponentPropsWithoutRef<T> & ListPropsBase
+  {
+    as?: T;
+    className?: string;
+  } & ComponentPropsWithoutRef<T>
 >;
 
 const ListContext = createContext<{ nested: boolean } | null>(null);
@@ -49,10 +44,11 @@ export function List<T extends ListElementType = typeof defaultElement>({
   );
 }
 
-type ListItemProps = PropsWithChildren<{
-  className?: string;
-}> &
-  ComponentPropsWithoutRef<'li'>;
+type ListItemProps = PropsWithChildren<
+  {
+    className?: string;
+  } & ComponentPropsWithoutRef<'li'>
+>;
 
 export function ListItem({ className, children, ...rest }: ListItemProps) {
   return (
