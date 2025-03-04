@@ -1,5 +1,4 @@
 import { twMerge } from 'tailwind-merge';
-import { Container } from '../container/container';
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
 
@@ -38,10 +37,15 @@ export type ImageOverlayProps<T extends ImageOverlayElementType = typeof default
      */
     className?: string;
     /**
-     * The alignment of the content in the overlay.
+     * The vertical alignment of the content in the overlay.
      * @default 'center'
      */
-    alignment: 'top' | 'center' | 'bottom';
+    verticalAlignment: 'top' | 'center' | 'bottom';
+    /**
+     * The horizontal alignment of the content in the overlay.
+     * @default 'center'
+     */
+    horizontalAlignment: 'left' | 'center' | 'right';
     /**
      * A color overlay to apply to the image.
      * @default 'none'
@@ -66,7 +70,8 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
   alt,
   children,
   className,
-  alignment = 'center',
+  verticalAlignment = 'center',
+  horizontalAlignment = 'center',
   overlay = 'none',
   blurred = false,
   ...rest
@@ -79,7 +84,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
       imageWrapper: 'tw:absolute tw:z-10 tw:h-full tw:w-full',
       image: 'tw:h-full tw:w-full tw:object-cover',
       overlay: 'tw:absolute tw:top-0 tw:left-0 tw:h-full tw:w-full',
-      container: 'tw:relative tw:z-20 tw:flex tw:flex-1 tw:flex-col tw:py-20',
+      container: 'tw:relative tw:z-20 tw:flex tw:flex-1 tw:flex-col tw:p-0',
     },
     variants: {
       blurred: {
@@ -98,15 +103,26 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
           overlay: 'tw:hidden',
         },
       },
-      alignment: {
+      verticalAlignment: {
         top: {
-          container: 'tw:items-center tw:justify-start',
+          container: 'tw:justify-start',
         },
         center: {
-          container: 'tw:items-center tw:justify-center',
+          container: 'tw:justify-center',
         },
         bottom: {
-          container: 'tw:items-center tw:justify-end',
+          container: 'tw:justify-end',
+        },
+      },
+      horizontalAlignment: {
+        left: {
+          container: 'tw:items-start',
+        },
+        center: {
+          container: 'tw:items-center',
+        },
+        right: {
+          container: 'tw:items-end',
         },
       },
     },
@@ -118,7 +134,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
     image,
     overlay: overlayClasses,
     container,
-  } = imageOverlay({ blurred, overlay, alignment });
+  } = imageOverlay({ blurred, overlay, verticalAlignment, horizontalAlignment });
 
   return (
     <div className={base()}>
@@ -136,9 +152,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         {(overlay === 'dark' || overlay === 'light') && <div className={overlayClasses()}></div>}
       </div>
 
-      <Container centered className={container()}>
-        {children}
-      </Container>
+      <div className={container()}>{children}</div>
     </div>
   );
 }
