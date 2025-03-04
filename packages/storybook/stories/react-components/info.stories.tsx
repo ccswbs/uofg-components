@@ -12,26 +12,6 @@ const config: Meta<typeof Info> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    color: {
-      name: 'color',
-      description: 'The color of the button',
-      table: {
-        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white'" },
-        defaultValue: { summary: "'red'" },
-      },
-      control: {
-        type: 'select',
-      },
-      options: ['red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'black', 'white'],
-    },
-    children: {
-      name: 'children',
-      description: 'The content of the button',
-      table: { type: { summary: 'React.ReactNode?' } },
-      control: false,
-    },
-  },
 };
 
 export default config;
