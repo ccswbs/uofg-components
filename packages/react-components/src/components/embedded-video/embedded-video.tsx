@@ -1,10 +1,9 @@
-import { PropsWithChildren, useState, createContext, useContext, ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Button } from '../button/button.tsx';
 import { Modal } from '../modal/modal.tsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
-import { ButtonProps } from '../button/button.tsx';
+import { EmbeddedVideoContext } from './embedded-video-context';
+import { EmbeddedVideoModalButton } from './embedded-video-modal-button';
 import { tv } from 'tailwind-variants';
 
 function getYouTubeVideoID(url: URL) {
@@ -124,46 +123,13 @@ function Video({ src, title, transcript, className }: VideoProps) {
   );
 }
 
-export type EmbeddedVideoContextType = {
-  modalOpen: boolean;
-  setModalOpen: (open: boolean) => void;
-};
-const EmbeddedVideoContext = createContext<EmbeddedVideoContextType | null>(null);
-
-type EmbeddedVideoModalButtonProps = PropsWithChildren<{
-  type: 'play-button' | ButtonProps['color'];
-  className?: string;
-}>;
-export function EmbeddedVideoModalButton({ type, children, className }: EmbeddedVideoModalButtonProps) {
-  const context = useContext(EmbeddedVideoContext);
-
-  if (type === 'play-button') {
-    const button = twMerge(
-      'tw:flex tw:aspect-square tw:w-24 tw:items-center tw:justify-center tw:rounded-full tw:bg-black/30 tw:text-4xl tw:text-white tw:transition-colors tw:hover:bg-red/30 tw:focus:bg-red/30',
-      className,
-    );
-
-    return (
-      <button type="button" className={button} onClick={() => context?.setModalOpen(true)}>
-        <FontAwesomeIcon icon={faPlay} />
-        <span className="sr-only">Show Video</span>
-      </button>
-    );
-  }
-
-  return (
-    <Button type="button" color={type} className={className} onClick={() => context?.setModalOpen(true)}>
-      {children}
-    </Button>
-  );
-}
-
-type EmbeddedVideoProps<> = VideoProps & {
+type EmbeddedVideoProps = VideoProps & {
   /**
    * If passed the video will render as a modal, with the button being used to open the video.
    */
   children?: ReactElement<typeof EmbeddedVideoModalButton>;
 };
+
 /**
  * The EmbeddedVideo component is used for embedding videos from YouTube and Vimeo. It can be used to render a video directly or as a modal.
  */
@@ -204,3 +170,5 @@ export function EmbeddedVideo({ src, title, transcript, className, children }: E
 }
 
 EmbeddedVideo.displayName = 'EmbeddedVideo';
+
+export { EmbeddedVideoModalButton };
