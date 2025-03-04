@@ -1,6 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 import { useContext, createContext, PropsWithChildren, ComponentPropsWithoutRef } from 'react';
 import { tv } from 'tailwind-variants';
+import { ListItem } from './list-item';
 
 const defaultElement = 'ul';
 
@@ -8,13 +9,23 @@ type ListElementType = 'ul' | 'ol';
 
 export type ListProps<T extends ListElementType = typeof defaultElement> = PropsWithChildren<
   {
+    /**
+     * The element type to render as.
+     * @default 'ul'
+     */
     as?: T;
+    /**
+     * Additional classes to apply to the list.
+     */
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
 
 const ListContext = createContext<{ nested: boolean } | null>(null);
 
+/**
+ * A list component.
+ */
 export function List<T extends ListElementType = typeof defaultElement>({
   as,
   children,
@@ -44,19 +55,6 @@ export function List<T extends ListElementType = typeof defaultElement>({
   );
 }
 
-type ListItemProps = PropsWithChildren<
-  {
-    className?: string;
-  } & ComponentPropsWithoutRef<'li'>
->;
-
-export function ListItem({ className, children, ...rest }: ListItemProps) {
-  return (
-    <li {...rest} className={twMerge('tw:relative tw:h-fit tw:w-full', className)}>
-      {children}
-    </li>
-  );
-}
-
 List.displayName = 'List';
-ListItem.displayName = 'ListItem';
+
+export { ListItem };
