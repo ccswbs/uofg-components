@@ -1,11 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { List, ListItem } from '../../../react-components/src/components/list/list';
-import React from 'react';
+import React, { ComponentType } from 'react';
 
 const config: Meta<typeof List> = {
   title: 'React Components/List',
   component: List,
-  subcomponents: { ListItem },
+  subcomponents: {
+    ListItem: ListItem as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'centered',
     docs: {
