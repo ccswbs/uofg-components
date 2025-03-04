@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { Children, useEffect, useRef, useState } from 'react';
-import { bezier, lerp, mod, clamp } from '../utils/math-utils';
+import { bezier, lerp, mod, clamp } from '../../utils/math-utils';
 import { tv } from 'tailwind-variants';
 
 const scroll = (element: HTMLElement, to: number, duration: number) => {
