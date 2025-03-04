@@ -1,10 +1,19 @@
 import * as React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Accordion } from '../../../react-components/src/components/accordion/accordion';
+import {
+  Accordion,
+  AccordionButton,
+  AccordionContent,
+} from '../../../react-components/src/components/accordion/accordion';
+import { ComponentType } from 'react';
 
 const config: Meta<typeof Accordion> = {
   title: 'React Components/Accordion',
   component: Accordion,
+  subcomponents: {
+    AccordionButton: AccordionButton as ComponentType<unknown>,
+    AccordionContent: AccordionContent as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'padded',
     docs: {
@@ -12,24 +21,6 @@ const config: Meta<typeof Accordion> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    title: {
-      name: 'title',
-      description: 'The title of the accordion',
-      table: { type: { summary: 'React.ReactNode' } },
-      control: {
-        type: 'text',
-      },
-    },
-    children: {
-      name: 'children',
-      description: 'The content of the accordion',
-      table: { type: { summary: 'React.ReactNode' } },
-      control: {
-        type: 'text',
-      },
-    },
-  },
 };
 
 export default config;
@@ -37,9 +28,14 @@ export default config;
 type Story = StoryObj<typeof Accordion>;
 
 export const Basic: Story = {
-  args: {
-    title: 'Example Title',
-    children:
-      'Quas eum reprehenderit beatae nemo. Natus nihil corrupti. Facere quibusdam velit. Veniam magni omnis minus. Eum harum voluptatibus nostrum laborum unde. Deleniti similique magnam error illo neque alias eos minus repudiandae.',
-  },
+  render: ({ ...args }) => (
+    <Accordion {...args}>
+      <AccordionButton>Example Accordion Button</AccordionButton>
+      <AccordionContent>
+        Example Accordion Content Quas eum reprehenderit beatae nemo. Natus nihil corrupti. Facere quibusdam velit.
+        Veniam magni omnis minus. Eum harum voluptatibus nostrum laborum unde. Deleniti similique magnam error illo
+        neque alias eos minus repudiandae.
+      </AccordionContent>
+    </Accordion>
+  ),
 };
