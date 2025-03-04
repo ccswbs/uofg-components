@@ -33,7 +33,9 @@ export type CheckboxProps = {
    */
   onChange?: (value: boolean) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
-
+/**
+ * The Checkbox component is used to allow the user to select one or more options from a list of choices.
+ */
 export function Checkbox({
   checked = false,
   label,

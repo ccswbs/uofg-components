@@ -11,6 +11,9 @@ export type AccordionProps = PropsWithChildren<{
    */
   title: string | ReactNode;
 }>;
+/**
+ * The Accordion component is used for organizing information into collapsible sections which respond to user interaction.
+ */
 export function Accordion({ title, children }: AccordionProps) {
   const accordion = tv({
     slots: {

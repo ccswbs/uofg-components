@@ -375,6 +375,9 @@ export type HeroProps<T extends HeroElementType = typeof defaultElement> = Props
     alignment?: 'left' | 'center' | 'right' | 'fullWidth';
   } & ComponentPropsWithoutRef<T>
 >;
+/**
+ * The Hero component is a layout component that displays a large image with accompanying content.
+ */
 export function Hero<T extends HeroElementType = typeof defaultElement>({
   as,
   variant = 'basic',

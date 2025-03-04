@@ -23,7 +23,9 @@ type ContainerPropsBase = {
 export type ContainerProps<T extends ElementType = typeof defaultElement> = PropsWithChildren<
   ContainerPropsAs<T> & ComponentPropsWithoutRef<T> & ContainerPropsBase
 >;
-
+/**
+ * The Container component is a layout component that wraps content and applies padding and max-width styles.
+ */
 export function Container<T extends ElementType = typeof defaultElement>({
   as,
   centered = false,

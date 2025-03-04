@@ -15,6 +15,9 @@ export type BlockquoteProps = PropsWithChildren<{
    */
   color?: 'yellow' | 'red' | 'blue';
 }>;
+/**
+ * The Blockquote component is used to highlight a quote or excerpt from another source.
+ */
 export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {
   const blockquote = tv({
     slots: {

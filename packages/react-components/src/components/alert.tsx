@@ -111,6 +111,9 @@ export type AlertProps = PropsWithChildren<{
    */
   className?: string;
 }>;
+/**
+ * The Alert component is used to display critical feedback, such as warnings, errors, or informational messages.
+ */
 export function Alert({ children, className }: AlertProps) {
   const alert = twMerge('tw:flex tw:flex-col', className);
 

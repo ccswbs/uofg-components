@@ -20,7 +20,9 @@ export type HeadingProps<T extends HeadingElementType = 'h1'> = PropsWithChildre
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
-
+/**
+ * The Heading component is a typographic component used to display headings in a document.
+ */
 export function Heading<T extends HeadingElementType = 'h1'>({
   level,
   children,

@@ -9,10 +9,6 @@ const config: Meta<typeof Accordion> = {
     layout: 'padded',
     docs: {
       toc: true,
-      description: {
-        component:
-          'The Accordion component is used for organizing information into collapsible sections which respond to user interaction.',
-      },
     },
   },
   tags: ['autodocs'],

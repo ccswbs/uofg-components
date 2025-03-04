@@ -13,10 +13,6 @@ const config: Meta<typeof Breadcrumbs> = {
     layout: 'padded',
     docs: {
       toc: true,
-      description: {
-        component:
-          "The Breadcrumbs component is a navigational aid that displays a trail of links representing the user's path within a website or application.",
-      },
     },
   },
   tags: ['autodocs'],

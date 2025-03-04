@@ -35,6 +35,9 @@ type ButtonPropsBase = {
 export type ButtonProps<T extends ButtonElementType = typeof defaultElement> = PropsWithChildren<
   ButtonPropsAs<T> & ComponentPropsWithoutRef<T> & ButtonPropsBase
 >;
+/**
+ * The Button component is a interactive component designed to capture user actions (such as submitting forms). It can also function as a link to another page or resource.
+ */
 export function Button<T extends ButtonElementType = typeof defaultElement>({
   as,
   color = 'red',

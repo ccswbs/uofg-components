@@ -164,6 +164,9 @@ type EmbeddedVideoProps<> = VideoProps & {
    */
   children?: ReactElement<typeof EmbeddedVideoModalButton>;
 };
+/**
+ * The EmbeddedVideo component is used for embedding videos from YouTube and Vimeo. It can be used to render a video directly or as a modal.
+ */
 export function EmbeddedVideo({ src, title, transcript, className, children }: EmbeddedVideoProps) {
   const [modalOpen, setModalOpen] = useState(false);
 

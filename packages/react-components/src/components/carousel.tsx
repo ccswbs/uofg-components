@@ -39,7 +39,9 @@ export type CarouselProps = PropsWithChildren<{
    */
   loop?: 'jump' | 'continuous' | 'none';
 }>;
-
+/**
+ * The Carousel component is used to display a series of items in a horizontal row, allowing the user to scroll through them.
+ */
 export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps) {
   const count = Children.count(children);
   const visibleItems = Math.max(display, 1);

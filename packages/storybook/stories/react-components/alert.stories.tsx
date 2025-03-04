@@ -22,10 +22,6 @@ const config: Meta<typeof Alert> = {
     layout: 'padded',
     docs: {
       toc: true,
-      description: {
-        component:
-          'The Alert component is used to display critical feedback, such as warnings, errors, or informational messages.',
-      },
     },
   },
   tags: ['autodocs'],

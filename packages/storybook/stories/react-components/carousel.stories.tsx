@@ -9,9 +9,6 @@ const config: Meta<typeof Carousel> = {
     layout: 'padded',
     docs: {
       toc: true,
-      description: {
-        component: 'The Carousel component is designed to showcase content in a sliding format.',
-      },
     },
   },
   tags: ['autodocs'],

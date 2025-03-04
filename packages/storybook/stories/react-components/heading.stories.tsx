@@ -11,31 +11,6 @@ const config: Meta<typeof Heading> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    level: {
-      name: 'level',
-      description: 'The level of the heading, a lower number indicates a larger heading',
-      table: { type: { summary: '1 | 2 | 3 | 4 | 5 | 6' } },
-      control: {
-        type: 'number',
-        min: 1,
-        max: 6,
-        step: 1,
-      },
-    },
-    className: {
-      name: 'className',
-      description: "Classes to apply to the card's main container",
-      table: { type: { summary: 'string?' } },
-      control: false,
-    },
-    children: {
-      name: 'children',
-      description: 'The content of the container',
-      table: { type: { summary: 'React.ReactNode?' } },
-      control: false,
-    },
-  },
 };
 
 export default config;

@@ -8,9 +8,6 @@ const config: Meta<typeof Blockquote> = {
     layout: 'centered',
     docs: {
       toc: true,
-      description: {
-        component: 'The Blockquote component is used to highlight a quote or excerpt from another source.',
-      },
     },
   },
   tags: ['autodocs'],
