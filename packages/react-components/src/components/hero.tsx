@@ -131,7 +131,14 @@ const HeroContext = createContext<HeroContextType | null>(null);
 
 export type HeroTitleElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
 export type HeroTitleProps<T extends HeroTitleElementType = 'h1'> = PropsWithChildren<{
+  /**
+   * The element type to render the title as
+   * @default 'h1'
+   */
   as?: T;
+  /**
+   * Additional classes to apply to the title
+   */
   className?: string;
 }>;
 export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
@@ -164,6 +171,9 @@ export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
 HeroTitle.displayName = 'HeroTitle';
 
 export type HeroCaptionProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the caption
+   */
   className?: string;
 }>;
 export function HeroCaption({ children, className }: HeroCaptionProps) {
@@ -172,8 +182,18 @@ export function HeroCaption({ children, className }: HeroCaptionProps) {
 
 export type HeroLinkElementType = ElementType<{ href?: string }, 'a'>;
 export type HeroLinkProps<T extends HeroLinkElementType = 'a'> = PropsWithChildren<{
+  /**
+   * The element type to render the link as
+   * @default 'a'
+   */
   as?: T;
+  /**
+   * The URL to link to
+   */
   href: string;
+  /**
+   * Additional classes to apply to the link
+   */
   className?: string;
 }>;
 export function HeroLink<T extends HeroLinkElementType = 'a'>({
@@ -199,9 +219,21 @@ export function HeroLink<T extends HeroLinkElementType = 'a'>({
 }
 
 export type HeroVideo = PropsWithChildren<{
+  /**
+   * The URL of the video to embed.
+   */
   src: string;
+  /**
+   * The title of the video.
+   */
   title: string;
+  /**
+   * The URL to a human readable transcript of the video.
+   */
   transcript?: string;
+  /**
+   * Additional classes to apply to the video container
+   */
   className?: string;
 }>;
 export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
@@ -238,6 +270,10 @@ export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
 HeroVideo.displayName = 'HeroVideo';
 
 export type HeroContentProps = PropsWithChildren<{
+  /**
+   * The alignment of the content
+   * @default 'left'
+   */
   alignment?: HeroProps['alignment'];
 }>;
 function HeroContent({ children, alignment = 'left' }: HeroContentProps) {
@@ -306,12 +342,36 @@ type HeroElementType = ElementType<
 >;
 export type HeroProps<T extends HeroElementType = typeof defaultElement> = PropsWithChildren<
   {
+    /**
+     * The element type to render the hero image as
+     * @default 'img'
+     */
     as?: T;
+    /**
+     * The variant of the hero
+     * @default 'basic'
+     */
     variant: 'spotlight' | 'basic';
+    /**
+     * The URL of the image to display
+     */
     src: string;
+    /**
+     * The alt text for the image
+     */
     alt: string;
+    /**
+     * The width of the image in pixels
+     */
     width?: number;
+    /**
+     * The height of the image in pixels
+     */
     height?: number;
+    /**
+     * The alignment of the hero content, only applies to the spotlight variant
+     * @default 'left'
+     */
     alignment?: 'left' | 'center' | 'right' | 'fullWidth';
   } & ComponentPropsWithoutRef<T>
 >;
