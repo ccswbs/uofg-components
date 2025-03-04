@@ -26,7 +26,7 @@ export function Radio<T>({ selected, children, value }: RadioProps<T>) {
 
   const radio = tv({
     slots: {
-      field: 'tw:flex tw:items-center tw:gap-0.5',
+      field: 'tw:flex tw:items-center tw:gap-2',
       radio:
         'tw:block tw:aspect-square tw:rounded-full tw:border tw:border-blue tw:p-1.5 tw:focus-visible:ring-2 tw:focus-visible:ring-blue tw:focus-visible:ring-offset-2',
       circle: 'tw:block tw:h-2 tw:w-2 tw:rounded-full',
