@@ -30,10 +30,10 @@ export function List<T extends ListElementType = typeof defaultElement>({
   const context = useContext(ListContext);
 
   const list = tv({
-    base: 'tw:flex tw:flex-col tw:gap-1 tw:relative tw:h-fit tw:w-full tw:list-inside',
+    base: 'tw:flex tw:flex-col tw:relative tw:h-fit tw:w-full tw:list-inside tw:gap-2',
     variants: {
       as: {
-        ol: 'tw:gap-2 tw:list-decimal',
+        ol: 'tw:list-decimal',
         ul: 'tw:list-disc',
       },
       nested: {
