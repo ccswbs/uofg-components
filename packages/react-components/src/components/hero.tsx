@@ -1,5 +1,4 @@
 import { Button } from './button';
-import { Heading, HeadingProps, HeadingElementType } from './heading';
 import { Container } from './container';
 import { EmbeddedVideo, EmbeddedVideoModalButton } from './embedded-video';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,36 +6,6 @@ import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { ComponentPropsWithoutRef, createContext, ElementType, PropsWithChildren, use, useContext } from 'react';
 import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
-
-const defaultElement = 'img';
-
-type HeroElementType = ElementType<
-  { src: string; alt: string; height?: number; width?: number; className?: string },
-  'img'
->;
-
-export type HeroProps<T extends HeroElementType = typeof defaultElement> = PropsWithChildren<
-  {
-    as?: T;
-    variant: 'spotlight' | 'basic';
-    src: string;
-    alt: string;
-    width?: number;
-    height?: number;
-    /*title: string;
-  caption?: string;
-  alignment?: 'left' | 'center' | 'right' | 'fullWidth';
-  video?: {
-    src: string;
-    title: string;
-    transcript?: string;
-  };
-  link?: {
-    href: string;
-    text: string;
-  };*/
-  } & ComponentPropsWithoutRef<T>
->;
 
 /*
 function SpotlightHero({
@@ -175,42 +144,59 @@ export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
   const Component = as ?? 'h1';
 
   const heroTitle = tv({
-    slots: {
-      base: '',
-      heading: 'tw:font-serif tw:font-bold tw:text-3xl tw:w-fit',
-    },
+    base: 'tw:font-serif tw:font-bold tw:text-3xl tw:w-fit',
     variants: {
       variant: {
-        spotlight: {
-          heading: 'tw:text-white',
-        },
-        basic: {
-          base: 'tw:absolute tw:bottom-0 tw:left-1/2 tw:h-fit tw:w-full tw:-translate-x-1/2 tw:p-0',
-          heading: 'tw:bg-yellow tw:md:text-4xl tw:text-yellow-contrast tw:p-1',
-        },
+        spotlight: 'tw:text-white',
+        basic: 'tw:bg-yellow tw:md:text-4xl tw:text-yellow-contrast tw:p-1',
       },
     },
   });
 
-  const { base, heading } = heroTitle({ variant: context?.variant });
-
-  if (context?.variant === 'spotlight') {
-    return (
-      <Component {...rest} className={heading()}>
-        {children}
-      </Component>
-    );
-  }
+  const classes = `uofg-hero-title ${twMerge(heroTitle({ variant: context?.variant }), className)}`;
 
   return (
-    <Container centered className={`uofg-hero-title-container ${twMerge(base(), className)}`}>
-      <Component {...rest} className={heading()}>
-        {children}
-      </Component>
-    </Container>
+    <Component {...rest} className={classes}>
+      {children}
+    </Component>
   );
 }
 HeroTitle.displayName = 'HeroTitle';
+
+export type HeroCaptionProps = PropsWithChildren<{
+  className?: string;
+}>;
+export function HeroCaption({ children, className }: HeroCaptionProps) {
+  return <p className={`uofg-hero-caption tw:text-xl ${className}`}>{children}</p>;
+}
+
+export type HeroLinkElementType = ElementType<{ href?: string }, 'a'>;
+export type HeroLinkProps<T extends HeroLinkElementType = 'a'> = PropsWithChildren<{
+  as?: T;
+  href: string;
+  className?: string;
+}>;
+export function HeroLink<T extends HeroLinkElementType = 'a'>({
+  as,
+  href,
+  children,
+  className,
+  ...rest
+}: HeroLinkProps<T>) {
+  const Component = as ?? 'a';
+
+  return (
+    <Button
+      {...rest}
+      as={Component}
+      color="yellow"
+      href={href}
+      className={`uofg-hero-link ${twMerge('tw:p-3 tw:w-fit', className)}`}
+    >
+      {children}
+    </Button>
+  );
+}
 
 export type HeroVideo = PropsWithChildren<{
   src: string;
@@ -221,27 +207,21 @@ export type HeroVideo = PropsWithChildren<{
 export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
   const context = useContext(HeroContext);
   const heroVideo = tv({
-    slots: {
-      base: '',
-    },
+    base: '',
     variants: {
       variant: {
-        basic: {
-          base: 'tw:absolute tw:top-1/2 tw:left-1/2 tw:-translate-x-1/2 tw:-translate-y-1/2',
-        },
-        spotlight: {
-          base: 'tw:w-fit tw:gap-2 tw:p-3',
-        },
+        basic: 'tw:absolute tw:top-1/2 tw:left-1/2 tw:-translate-x-1/2 tw:-translate-y-1/2',
+        spotlight: 'tw:w-fit tw:gap-2 tw:p-3',
       },
     },
   });
 
-  const { base } = heroVideo({ variant: context?.variant });
+  const classes = `uofg-hero-video ${heroVideo({ variant: context?.variant })}`;
 
   if (context?.variant === 'spotlight') {
     return (
       <EmbeddedVideo src={src} title={title} transcript={transcript}>
-        <EmbeddedVideoModalButton type="yellow">
+        <EmbeddedVideoModalButton type="yellow" className={classes}>
           <FontAwesomeIcon icon={faPlay} />
           <span>{children}</span>
         </EmbeddedVideoModalButton>
@@ -250,14 +230,91 @@ export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
   }
 
   return (
-    <div className={base()}>
-      <EmbeddedVideo src={src} title={title} transcript={transcript}>
-        <EmbeddedVideoModalButton type="play-button" />
-      </EmbeddedVideo>
-    </div>
+    <EmbeddedVideo src={src} title={title} transcript={transcript}>
+      <EmbeddedVideoModalButton type="play-button" className={classes} />
+    </EmbeddedVideo>
   );
 }
+HeroVideo.displayName = 'HeroVideo';
 
+export type HeroContentProps = PropsWithChildren<{
+  alignment?: HeroProps['alignment'];
+}>;
+function HeroContent({ children, alignment = 'left' }: HeroContentProps) {
+  const context = useContext(HeroContext);
+
+  const heroContent = tv({
+    slots: {
+      base: '',
+      wrapper: 'tw:lg:bg-black/80 tw:lg:backdrop-blur tw:flex tw:w-full tw:bg-black tw:p-7 tw:text-white',
+      container: 'tw:container tw:mx-auto tw:flex tw:flex-col tw:gap-5',
+    },
+    variants: {
+      variant: {
+        spotlight: {
+          base: 'tw:lg:container tw:lg:absolute tw:lg:bottom-0 tw:lg:left-1/2 tw:lg:max-w-max-content tw:lg:-translate-x-1/2 tw:lg:p-4 tw:flex tw:items-center',
+        },
+        basic: {
+          base: 'tw:absolute tw:bottom-0 tw:left-1/2 tw:w-full tw:-translate-x-1/2 tw:p-0 tw:flex tw:h-full tw:items-end',
+        },
+      },
+      alignment: {
+        left: {
+          wrapper: 'tw:mr-auto tw:lg:max-w-[50%]',
+        },
+        center: {
+          wrapper: 'tw:mx-auto tw:lg:max-w-[50%]',
+          container: 'tw:lg:text-center tw:lg:items-center',
+          link: 'tw:lg:mx-auto',
+        },
+        right: {
+          wrapper: 'tw:ml-auto tw:lg:max-w-[50%]',
+          container: 'tw:lg:text-right tw:lg:items-end',
+          link: 'tw:lg:ml-auto',
+        },
+        fullWidth: {
+          wrapper: 'tw:mx-auto',
+        },
+      },
+    },
+  });
+
+  const { base, wrapper, container } = heroContent({ alignment, variant: context?.variant });
+
+  if (context?.variant === 'spotlight') {
+    return (
+      <div className={`uofg-hero-content ${base()}`}>
+        <div className={`uofg-hero-content-wrapper ${wrapper()}`}>
+          <div className={`uofg-hero-content-container ${container()}`}>{children}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Container centered className={`uofg-hero-content ${base()}`}>
+      {children}
+    </Container>
+  );
+}
+HeroContent.displayName = 'HeroContent';
+
+const defaultElement = 'img';
+type HeroElementType = ElementType<
+  { src: string; alt: string; height?: number; width?: number; className?: string },
+  'img'
+>;
+export type HeroProps<T extends HeroElementType = typeof defaultElement> = PropsWithChildren<
+  {
+    as?: T;
+    variant: 'spotlight' | 'basic';
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    alignment?: 'left' | 'center' | 'right' | 'fullWidth';
+  } & ComponentPropsWithoutRef<T>
+>;
 export function Hero<T extends HeroElementType = typeof defaultElement>({
   as,
   variant = 'basic',
@@ -265,6 +322,7 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
   alt,
   width,
   height,
+  alignment,
   children,
   ...rest
 }: HeroProps<T>) {
@@ -295,9 +353,10 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
     <div className={base()}>
       <Image {...rest} src={src} alt={alt} width={width} height={height} className={image()} />
 
-      <HeroContext.Provider value={{ variant }}>{children}</HeroContext.Provider>
+      <HeroContext.Provider value={{ variant }}>
+        <HeroContent alignment={alignment}>{children}</HeroContent>
+      </HeroContext.Provider>
     </div>
   );
 }
-
 Hero.displayName = 'Hero';
