@@ -15,6 +15,10 @@ export type AlertTitleProps = PropsWithChildren<{
    */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
 }>;
+
+/**
+ * The AlertTitle component is used to display the title of an alert.
+ */
 export function AlertTitle({ color = 'red', className, children }: AlertTitleProps) {
   const alertTitle = tv({
     slots: {
@@ -61,62 +65,5 @@ export function AlertTitle({ color = 'red', className, children }: AlertTitlePro
     </div>
   );
 }
+
 AlertTitle.displayName = 'AlertTitle';
-
-export type AlertSubtitleProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the alert subtitle
-   */
-  className?: string;
-}>;
-export function AlertSubtitle({ children, className }: AlertSubtitleProps) {
-  const alertSubtitle = twMerge('tw:font-bold tw:mb-4 tw:text-xl', className);
-
-  return <span className={`uofg-alert-subtitle ${alertSubtitle}`}>{children}</span>;
-}
-AlertSubtitle.displayName = 'AlertSubtitle';
-
-export type AlertMessageProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the alert message
-   */
-  className?: string;
-}>;
-export function AlertMessage({ children, className }: AlertMessageProps) {
-  const alertMessage = twMerge(
-    'tw:flex tw:flex-col tw:border-x tw:border-b tw:border-light-grey tw:bg-white tw:px-4 tw:py-3',
-    className,
-  );
-
-  return <div className={`uofg-alert-message ${alertMessage}`}>{children}</div>;
-}
-AlertMessage.displayName = 'AlertMessage';
-
-export type AlertFooterProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the alert footer
-   */
-  className?: string;
-}>;
-export function AlertFooter({ children, className }: AlertFooterProps) {
-  const alertFooter = twMerge('tw:flex tw:bg-light-grey tw:px-4 tw:py-2', className);
-
-  return <div className={`uofg-alert-footer ${alertFooter}`}>{children}</div>;
-}
-AlertFooter.displayName = 'AlertFooter';
-
-export type AlertProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the alert
-   */
-  className?: string;
-}>;
-/**
- * The Alert component is used to display critical feedback, such as warnings, errors, or informational messages.
- */
-export function Alert({ children, className }: AlertProps) {
-  const alert = twMerge('tw:flex tw:flex-col', className);
-
-  return <div className={`uofg-alert ${alert}`}>{children}</div>;
-}
-Alert.displayName = 'Alert';
