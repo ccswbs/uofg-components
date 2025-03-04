@@ -38,8 +38,8 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
     base: 'tw:block tw:leading-[1.4] tw:has-[strong]:text-body-copy-bold',
     variants: {
       type: {
-        h1: 'tw:mt-7.5 tw:text-4xl tw:font-bold tw:text-red tw:font-serif',
-        h2: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-3xl',
+        h1: 'tw:mt-7.5 tw:text-4xl tw:font-bold tw:text-black tw:font-serif',
+        h2: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-red tw:text-3xl',
         h3: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-2xl',
         h4: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-xl',
         h5: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-lg',
