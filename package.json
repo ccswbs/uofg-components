@@ -14,6 +14,7 @@
     "init": "npx npmrc-replace-env",
     "format": "npx prettier --write .",
     "build": "lerna run build",
-    "dev": "lerna run dev --scope @uoguelph/storybook"
+    "dev": "lerna run dev --scope @uoguelph/storybook",
+    "clean": "rm -rf packages/react-components/dist packages/web-components/dist packages/storybook/storybook-static"
   }
 }
