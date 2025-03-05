@@ -1,134 +1,98 @@
-import { ComponentPropsWithoutRef, ElementType, ReactNode, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { Children, isValidElement, PropsWithChildren, useMemo, useRef, useState } from 'react';
+import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
+import { LinkCarouselLink } from './link-carousel-link';
 
-const defaultImageElement = 'img';
+function findFirstId(children: React.ReactNode): LinkCarouselId | null {
+  let firstId: LinkCarouselId | null = null;
 
-type LinkCarouselImageElementType = ElementType<
-  { src: string; alt: string; height?: number; width?: number; className?: string },
-  'img'
->;
+  function searchChildren(nodes: React.ReactNode) {
+    Children.forEach(nodes, child => {
+      if (firstId) return;
 
-const defaultLinkElement = 'a';
+      const isElement = isValidElement(child);
+      const isLink = isElement && child.type === LinkCarouselLink;
 
-type LinkCarouselLinkElementType = ElementType<{ href?: string }, 'a'>;
+      if (isLink) {
+        // @ts-expect-error figure out how to type this
+        firstId = child.props.id;
+        // @ts-expect-error figure out how to type this
+      } else if (isElement && child.props.children) {
+        // @ts-expect-error figure out how to type this
+        searchChildren(child.props.children);
+      }
+    });
+  }
 
-type LinkCarouselPropImageAs<T extends LinkCarouselImageElementType> = {
-  imageAs?: T;
-};
+  searchChildren(children);
+  return firstId;
+}
 
-type LinkCarouselPropLinkAs<T extends ElementType> = {
-  linkAs?: T;
-};
+export type LinkCarouselProps = PropsWithChildren<{
+  /**
+   * Additional classes to apply to the link carousel.
+   */
+  className?: string;
+  /**
+   * Whether the carousel links should stack on top of the content, rather than beside it.
+   */
+  stack?: boolean;
+  /**
+   * The side of the carousel that the links should be displayed on.
+   * @default 'left'
+   */
+  direction?: 'left' | 'right';
+}>;
 
-export type LinkCarouselProps<
-  I extends LinkCarouselImageElementType = typeof defaultImageElement,
-  L extends LinkCarouselLinkElementType = typeof defaultLinkElement,
-> = LinkCarouselPropImageAs<I> &
-  LinkCarouselPropLinkAs<L> & {
-    links: {
-      url: string;
-      title: string;
-      caption?: ReactNode;
-      image: {
-        src: string;
-        height?: number;
-        width?: number;
-        alt: string;
-        className?: string;
-        props?: ComponentPropsWithoutRef<I>;
-      };
-      props?: ComponentPropsWithoutRef<L>;
-    }[];
-  };
+/**
+ * The LinkCarousel component is used to display a column of links that change the content displayed that is displayed once the user hovers on a link.
+ */
+export function LinkCarousel({ children, className, stack = false, direction = 'left' }: LinkCarouselProps) {
+  const firstId = useMemo(() => findFirstId(children), [children]);
+  const [activeId, setActiveId] = useState<LinkCarouselId | null>(firstId);
+  const previousActiveId = useRef<LinkCarouselId | null>(null);
 
-export function LinkCarousel<
-  I extends LinkCarouselImageElementType = typeof defaultImageElement,
-  L extends LinkCarouselLinkElementType = typeof defaultLinkElement,
->({ imageAs, linkAs, links }: LinkCarouselProps<I, L>) {
-  const Image = imageAs ?? defaultImageElement;
-  const Link = linkAs ?? defaultLinkElement;
-
-  type LinkType = (typeof links)[0];
-
-  const [activeLink, setActiveLink] = useState(links[0]);
-  const previousActiveLink = useRef<LinkType>(null);
-
-  const updateActiveLink = (link: LinkType) => {
-    setActiveLink(previous => {
-      previousActiveLink.current = previous;
-      return link;
+  const updateActiveId = (id: LinkCarouselId) => {
+    setActiveId(previous => {
+      previousActiveId.current = previous;
+      return id;
     });
   };
 
   const linkCarousel = tv({
-    slots: {
-      base: 'tw:relative tw:w-full',
-      imageWrapper: 'tw:absolute tw:top-0 tw:left-0 tw:z-0 tw:h-full tw:w-full',
-      image: 'tw:absolute tw:top-0 tw:left-0 tw:hidden tw:h-full tw:w-full tw:object-cover tw:object-left',
-      caption:
-        'tw:md:block tw:absolute tw:bottom-0 tw:left-0 tw:z-10 tw:hidden tw:w-full tw:px-4 tw:py-4 tw:text-white',
-      gradient:
-        'tw:md:block tw:absolute tw:bottom-0 tw:left-0 tw:z-0 tw:hidden tw:h-1/2 tw:w-full tw:bg-gradient-to-t tw:from-black/60 tw:to-black/0',
-      linkContainer: 'tw:md:w-1/3 tw:relative tw:z-10 tw:ml-auto tw:flex tw:w-full tw:flex-col tw:gap-2',
-      link: 'tw:backdrop-blur tw:flex tw:flex-1 tw:items-center tw:justify-between tw:bg-black tw:md:bg-black/60 tw:p-7 tw:text-[2.2rem] tw:text-white tw:transition-colors tw:hocus:bg-yellow tw:hocus:text-black tw:focus-visible:outline-none',
+    base: 'tw:flex tw:w-full tw:relative tw:h-fit tw:overflow-hidden',
+    variants: {
+      direction: {
+        left: 'tw:flex-row',
+        right: 'tw:flex-row-reverse',
+      },
     },
   });
 
-  const { base, imageWrapper, image, caption, gradient, linkContainer, link: linkClasses } = linkCarousel();
-
   return (
-    <div className={base()}>
-      <div className={imageWrapper()}>
-        {links.map(link => (
-          <Image
-            {...link.image.props}
-            key={link.url}
-            className={twMerge(
-              image(),
-              link === activeLink && 'tw:animate-fade tw:md:block tw:z-10',
-              link === previousActiveLink.current && 'tw:md:block tw:z-0',
-              link.image?.className,
-            )}
-            src={link.image.src}
-            width={link.image?.width}
-            height={link.image?.height}
-            alt={link.image.alt}
-          />
-        ))}
-      </div>
-
-      {activeLink?.caption && (
-        <>
-          <div className={caption()}>{activeLink.caption}</div>
-
-          <div className={gradient()}></div>
-        </>
-      )}
-
-      <div className={linkContainer()}>
-        {links.map((link, index) => (
-          <Link
-            {...link.props}
-            onMouseEnter={() => {
-              updateActiveLink(link);
-            }}
-            onFocus={() => {
-              updateActiveLink(link);
-            }}
-            key={index}
-            href={link.url}
-            className={linkClasses()}
-          >
-            {link.title}
-            <FontAwesomeIcon icon={faChevronRight} />
-          </Link>
-        ))}
-      </div>
+    <div className={`uofg-link-carousel ${twMerge(linkCarousel({ direction }), className)}`}>
+      <LinkCarouselContext.Provider
+        value={{
+          previousActiveId: previousActiveId.current,
+          activeId,
+          setActiveId: updateActiveId,
+          stack: stack ?? false,
+          direction,
+          clearPreviousActiveId: () => {
+            previousActiveId.current = null;
+          },
+        }}
+      >
+        {children}
+      </LinkCarouselContext.Provider>
     </div>
   );
 }
 
 LinkCarousel.displayName = 'LinkCarousel';
+
+export { LinkCarouselLinks } from './link-carousel-links';
+export { LinkCarouselLink } from './link-carousel-link';
+export { LinkCarouselContent } from './link-carousel-content';
+export { LinkCarouselItem } from './link-carousel-item';
