@@ -2,6 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @import 'tailwindcss' prefix(tw);
-@import '@uoguelph/tailwind-theme';
+@reference '@uoguelph/tailwind-theme';
 @source '../../react-components/src';
 @plugin "@headlessui/tailwindcss";
+
+@layer base {
+  :root {
+    font-size: 62.5%;
+    --tw-max-content-width: 137rem;
+  }
+
+  body {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+  }
+}

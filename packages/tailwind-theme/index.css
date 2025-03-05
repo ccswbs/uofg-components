@@ -1,6 +1,4 @@
-@custom-variant dark (&:where(.dark, .dark *));
-@custom-variant hocus (&:hover, &:focus);
-@custom-variant hocus-visible (&:hover, &:focus-visible);
+@import 'tailwindcss';
 
 @layer base {
   :root {
@@ -14,6 +12,10 @@
     padding: 0;
   }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant hocus (&:hover, &:focus);
+@custom-variant hocus-visible (&:hover, &:focus-visible);
 
 @theme {
   /** Fonts **/
@@ -112,7 +114,6 @@
     0% {
       opacity: 0;
     }
-
     100% {
       opacity: 1;
     }

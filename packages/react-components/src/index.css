@@ -1,4 +1,16 @@
 @import 'tailwindcss' prefix(tw);
-@import '@uoguelph/tailwind-theme';
-
+@reference '@uoguelph/tailwind-theme';
 @plugin "@headlessui/tailwindcss";
+
+@layer base {
+  :root {
+    font-size: 62.5%;
+    --tw-max-content-width: 137rem;
+  }
+
+  body {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+  }
+}
