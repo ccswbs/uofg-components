@@ -7,7 +7,7 @@ import {
   AlertFooter,
 } from '../../../react-components/src/components/alert/alert';
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import * as React from 'react';
 
 const config: Meta<typeof Alert> = {
   title: 'React Components/Alert',

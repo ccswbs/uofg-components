@@ -3,7 +3,8 @@ import {
   EmbeddedVideoModalButton,
 } from '../../../react-components/src/components/embedded-video/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
-import React, { ComponentType } from 'react';
+import { ComponentType } from 'react';
+import * as React from 'react';
 
 const config: Meta<typeof EmbeddedVideo> = {
   title: 'React Components/EmbeddedVideo',

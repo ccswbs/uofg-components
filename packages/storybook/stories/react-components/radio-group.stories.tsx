@@ -1,6 +1,7 @@
 import { fn } from '@storybook/test';
 import { RadioGroup, Radio } from '../../../react-components/src/components/radio-group/radio-group';
-import React, { ComponentType } from 'react';
+import { ComponentType } from 'react';
+import * as React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof RadioGroup> = {

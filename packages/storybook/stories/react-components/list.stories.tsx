@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { List, ListItem } from '../../../react-components/src/components/list/list';
-import React, { ComponentType } from 'react';
+import * as React from 'react';
+import { ComponentType } from 'react';
 
 const config: Meta<typeof List> = {
   title: 'React Components/List',

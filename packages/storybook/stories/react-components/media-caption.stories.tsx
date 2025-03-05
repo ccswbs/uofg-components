@@ -1,7 +1,7 @@
 import { MediaCaption } from '../../../react-components/src/components/media-caption/media-caption';
 import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video/embedded-video';
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import * as React from 'react';
 
 const config: Meta<typeof MediaCaption> = {
   title: 'React Components/MediaCaption',
