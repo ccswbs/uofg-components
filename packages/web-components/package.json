@@ -54,9 +54,9 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ccswbs/web-components.git"
+    "url": "git+https://github.com/ccswbs/uofg-components.git"
   },
   "bugs": {
-    "url": "https://github.com/ccswbs/web-components/issues"
+    "url": "https://github.com/ccswbs/uofg-components/issues"
   }
 }
