@@ -4,8 +4,4 @@ node_modules/
 *.env.local
 *.env.staging
 .npmrc
-*storybook.log
-packages/web-components/dist/
-packages/react-components/dist/
-packages/storybook/storybook-static/
 .DS_Store
