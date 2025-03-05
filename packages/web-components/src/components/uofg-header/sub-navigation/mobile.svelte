@@ -19,12 +19,12 @@
     {/snippet}
 
     {#each items as item (item.text || item.title)}
-      <li class="first:*:mt-4 last:*:mb-4">
+      <li class="[&>*]:first:mt-4 [&>*]:last:mb-4">
         {#if item.text}
           <!-- Link -->
           <a
             {...item.attributes}
-            class={`hover:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors ${item.attributes?.class ?? ''}`}
+            class={`border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors ${item.attributes?.class ?? ''}`}
             href={item.href}
           >
             {item.text}
@@ -33,7 +33,7 @@
           <!-- Nested Menu -->
           <Menu
             class="relative w-full"
-            buttonClass="flex border-0 border-b border-solid border-grey/50 w-full items-center justify-between gap-2 p-2 transition-colors hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted aria-expanded:[&_svg]:rotate-180"
+            buttonClass="flex border-0 border-b border-solid border-grey/50 w-full items-center justify-between gap-2 p-2 transition-colors hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted [&_svg]:aria-expanded:rotate-180"
             contentClass="flex flex-col w-full flex-col bg-white text-black [&>li]:contents"
             as="ul"
             autoCollapse={false}
@@ -49,7 +49,7 @@
               <li>
                 <a
                   {...link.attributes}
-                  class={`hover:bg-grey-muted hover:text-grey-muted-contrast border-grey/50 border-0 border-b border-solid p-2 transition-colors ${link.attributes?.class ?? ''}`}
+                  class={`border-grey/50 hover:bg-grey-muted hover:text-grey-muted-contrast border-0 border-b border-solid p-2 transition-colors ${link.attributes?.class ?? ''}`}
                   href={link.href}
                 >
                   {link.text}

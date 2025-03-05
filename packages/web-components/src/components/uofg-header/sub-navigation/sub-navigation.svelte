@@ -55,7 +55,7 @@
       </span>
     {/if}
 
-    <ul class="static! flex h-full w-fit lg:static [&>li]:contents" bind:clientWidth={contentWidth}>
+    <ul class="!static flex h-full w-fit lg:static [&>li]:contents" bind:clientWidth={contentWidth}>
       {#if items?.length > 0}
         {#if $headerState.mode === 'desktop' && (isNaN(overflowWidth) || containerWidth > overflowWidth)}
           <Desktop {items} />

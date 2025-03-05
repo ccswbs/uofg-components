@@ -26,9 +26,9 @@
           {/snippet}
 
           {#each item.links as link}
-            <li class="first:*:mt-4 last:*:mb-4">
+            <li class="[&>*]:first:mt-4 [&>*]:last:mb-4">
               <a
-                class="hover:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors"
+                class="border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
                 href={link.href}
                 {...link.attributes}
               >
@@ -54,7 +54,7 @@
     <Menu
       class="h-full w-fit"
       label="Main Menu"
-      buttonClass="flex h-full aspect-square items-center justify-center gap-2 px-4 transition-colors hover:bg-white focus:bg-white aria-expanded:bg-white hover:text-black focus:text-black aria-expanded:text-black aria-expanded:[&_svg]:rotate-180"
+      buttonClass="flex h-full aspect-square items-center justify-center gap-2 px-4 transition-colors hover:bg-white focus:bg-white aria-expanded:bg-white hover:text-black focus:text-black aria-expanded:text-black [&_svg]:aria-expanded:rotate-180"
       contentClass="absolute right-0 top-full z-50 flex w-full flex-col bg-white px-4 text-black shadow-md lg:w-[30rem] [&>li]:contents max-h-[calc(100vh-5rem)] overflow-y-auto"
       as="ul"
     >
@@ -63,11 +63,11 @@
       {/snippet}
 
       {#each mainMenu as item}
-        <li class="first:*:mt-4 last:*:mb-4">
+        <li class="[&>*]:first:mt-4 [&>*]:last:mb-4">
           {#if item.links}
             <Menu
               class="relative w-full"
-              buttonClass="flex border-0 border-b border-solid border-grey/50 w-full items-center justify-between gap-2 p-2 transition-colors hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted aria-expanded:[&_svg]:rotate-180"
+              buttonClass="flex border-0 border-b border-solid border-grey/50 w-full items-center justify-between gap-2 p-2 transition-colors hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted [&_svg]:aria-expanded:rotate-180"
               contentClass="flex flex-col w-full flex-col bg-white text-black [&>li]:contents"
               as="ul"
               autoCollapse={false}
@@ -85,7 +85,7 @@
               {#each item.links as link}
                 <li>
                   <a
-                    class="hover:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors"
+                    class="border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
                     href={link.href}
                     {...link.attributes}
                   >
@@ -96,7 +96,7 @@
             </Menu>
           {:else}
             <a
-              class="hover:bg-grey-muted focus:bg-grey-muted border-grey/50 border-0 border-b border-solid p-2 transition-colors"
+              class="border-grey/50 hover:bg-grey-muted focus:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
               class:bg-yellow={item.highlight}
               href={item.href}
             >

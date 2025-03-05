@@ -11,7 +11,7 @@
     <li>
       <Menu
         class="relative h-full"
-        buttonClass="flex h-full items-center justify-center gap-2 px-2 transition-colors hover:bg-yellow focus:bg-yellow aria-expanded:bg-yellow hover:text-yellow-contrast focus:text-yellow-contrast aria-expanded:text-yellow-contrast aria-expanded:[&_svg]:rotate-180"
+        buttonClass="flex h-full items-center justify-center gap-2 px-2 transition-colors hover:bg-yellow focus:bg-yellow aria-expanded:bg-yellow hover:text-yellow-contrast focus:text-yellow-contrast aria-expanded:text-yellow-contrast [&_svg]:aria-expanded:rotate-180"
         contentClass="absolute right-0 top-full z-50 flex min-w-[20rem] flex-col bg-grey-muted [&>li]:contents"
         as="ul"
       >

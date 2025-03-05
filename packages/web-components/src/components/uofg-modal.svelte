@@ -163,7 +163,7 @@
 </script>
 
 <div
-  class="bg-opacity-50 fixed top-0 left-0 z-1000 flex h-screen w-screen bg-black transition-[opacity,visibility]"
+  class="bg-opacity-50 fixed top-0 left-0 z-[1000] flex h-screen w-screen bg-black transition-[opacity,visibility]"
   class:visible={isOpen}
   class:opacity-100={isOpen}
   class:invisible={!isOpen}
@@ -188,7 +188,7 @@
     )}
   >
     <button
-      class="absolute top-0 right-0 z-2 flex aspect-square w-8 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-black/30 bg-black p-2 text-lg text-black-contrast transition-colors hover:bg-red hover:text-red-contrast focus:bg-red focus:text-red-contrast"
+      class="absolute top-0 right-0 z-[2] flex aspect-square w-8 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-black/30 bg-black p-2 text-lg text-black-contrast transition-colors hover:bg-red hover:text-red-contrast focus:bg-red focus:text-red-contrast"
       aria-label="Close modal"
       bind:this={dismissButton}
       onclick={() => (isOpen = false)}
