@@ -4,15 +4,11 @@ import { tv } from 'tailwind-variants';
 import { CardContext } from './card-context';
 
 export type CardFooterProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the card footer
-   */
+  /** Additional classes to apply to the card footer */
   className?: string;
 }>;
 
-/**
- * The CardFooter component is used to display additional information or actions at the bottom of a card.
- */
+/** The CardFooter component is used to display additional information or actions at the bottom of a card. */
 export function CardFooter({ children, className }: CardFooterProps) {
   const context = useContext(CardContext);
 

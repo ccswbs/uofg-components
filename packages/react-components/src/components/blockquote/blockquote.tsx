@@ -5,19 +5,16 @@ import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type BlockquoteProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the blockquote
-   */
+  /** Additional classes to apply to the blockquote */
   className?: string;
   /**
    * The color of the blockquote quotation marks
+   *
    * @default 'yellow'
    */
   color?: 'yellow' | 'red' | 'blue';
 }>;
-/**
- * The Blockquote component is used to highlight a quote or excerpt from another source.
- */
+/** The Blockquote component is used to highlight a quote or excerpt from another source. */
 export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {
   const blockquote = tv({
     slots: {

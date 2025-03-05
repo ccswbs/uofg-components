@@ -13,16 +13,13 @@ type CardElementType = ElementType<{ href?: string }, 'a'> | 'div' | 'article';
 
 export type CardProps<T extends CardElementType = typeof defaultElement> = PropsWithChildren<
   {
-    /**
-     * The element to render the card as
-     */
+    /** The element to render the card as */
     as?: T;
-    /**
-     * Additional classes to apply to the card
-     */
+    /** Additional classes to apply to the card */
     className?: string;
     /**
      * Whether the card content should be centered
+     *
      * @default false
      */
     centered?: boolean;
@@ -30,7 +27,8 @@ export type CardProps<T extends CardElementType = typeof defaultElement> = Props
 >;
 
 /**
- * The Card component is a container used to group related content like text, images, and actions in a styled, organized layout
+ * The Card component is a container used to group related content like text, images, and actions in a styled, organized
+ * layout
  */
 export function Card<T extends CardElementType = typeof defaultElement>({
   as,

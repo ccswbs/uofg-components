@@ -11,21 +11,18 @@ export type ListProps<T extends ListElementType = typeof defaultElement> = Props
   {
     /**
      * The element type to render as.
+     *
      * @default 'ul'
      */
     as?: T;
-    /**
-     * Additional classes to apply to the list.
-     */
+    /** Additional classes to apply to the list. */
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
 
 const ListContext = createContext<{ nested: boolean } | null>(null);
 
-/**
- * A list component.
- */
+/** A list component. */
 export function List<T extends ListElementType = typeof defaultElement>({
   as,
   children,

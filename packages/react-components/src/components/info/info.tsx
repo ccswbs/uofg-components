@@ -4,6 +4,7 @@ import { tv } from 'tailwind-variants';
 export type InfoProps = PropsWithChildren<{
   /**
    * The color of the left border in the info component.
+   *
    * @default 'red'
    */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';

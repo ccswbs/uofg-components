@@ -30,23 +30,24 @@ function findFirstId(children: React.ReactNode): LinkCarouselId | null {
 }
 
 export type LinkCarouselProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the link carousel.
-   */
+  /** Additional classes to apply to the link carousel. */
   className?: string;
-  /**
-   * Whether the carousel links should stack on top of the content, rather than beside it.
-   */
+  /** Whether the carousel links should stack on top of the content, rather than beside it. */
   stack?: boolean;
   /**
    * The side of the carousel that the links should be displayed on.
+   *
    * @default 'left'
    */
   direction?: 'left' | 'right';
 }>;
 
 /**
- * The LinkCarousel component is used to display a column of links that change the content that is displayed once the user hovers on a link. The content must have a defined height otherwise the component will not work as expected. Content should be limited to purely decoration, as the link carousel does not display its content on mobile devices, and is not focus friendly. If your content doesn't match this criteria, use the Carousel component instead, or find another way to display your content.
+ * The LinkCarousel component is used to display a column of links that change the content that is displayed once the
+ * user hovers on a link. The content must have a defined height otherwise the component will not work as expected.
+ * Content should be limited to purely decoration, as the link carousel does not display its content on mobile devices,
+ * and is not focus friendly. If your content doesn't match this criteria, use the Carousel component instead, or find
+ * another way to display your content.
  */
 export function LinkCarousel({ children, className, stack = false, direction = 'left' }: LinkCarouselProps) {
   const firstId = useMemo(() => findFirstId(children), [children]);

@@ -9,22 +9,17 @@ export type TypographyProps<T extends TypographyElementType = typeof defaultElem
   {
     /**
      * The element to render the text as.
+     *
      * @default 'span'
      */
     as?: T;
-    /**
-     * The text style
-     */
+    /** The text style */
     type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body';
-    /**
-     * Additional classes to apply to the text.
-     */
+    /** Additional classes to apply to the text. */
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
-/**
- * The Typography component is a typographic component used to display headings or blocks of text.
- */
+/** The Typography component is a typographic component used to display headings or blocks of text. */
 export function Typography<T extends TypographyElementType = typeof defaultElement>({
   type,
   children,

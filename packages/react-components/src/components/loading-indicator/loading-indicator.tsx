@@ -7,11 +7,13 @@ import { tv } from 'tailwind-variants';
 export type LoadingIndicatorProps = {
   /**
    * The size of the loading indicator
+   *
    * @default 'lg'
-   * */
+   */
   size?: 'sm' | 'md' | 'lg';
   /**
    * The color of the loading indicator
+   *
    * @default 'red'
    */
   color?: 'blue' | 'red' | 'green' | 'yellow';
@@ -19,9 +21,7 @@ export type LoadingIndicatorProps = {
   className?: string;
 };
 
-/**
- * A component which can be used as a placeholder while content is loading
- */
+/** A component which can be used as a placeholder while content is loading */
 export function LoadingIndicator({ size = 'lg', color = 'red', className }: LoadingIndicatorProps) {
   const loadingIndicator = tv({
     slots: {

@@ -30,17 +30,20 @@ const scroll = (element: HTMLElement, to: number, duration: number) => {
 export type CarouselProps = PropsWithChildren<{
   /**
    * The number of items to display at once
+   *
    * @default 1
    */
   display?: number;
   /**
    * The looping behavior of the carousel
+   *
    * @default 'none'
    */
   loop?: 'jump' | 'continuous' | 'none';
 }>;
 /**
- * The Carousel component is used to display a series of items in a horizontal row, allowing the user to scroll through them.
+ * The Carousel component is used to display a series of items in a horizontal row, allowing the user to scroll through
+ * them.
  */
 export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps) {
   const count = Children.count(children);

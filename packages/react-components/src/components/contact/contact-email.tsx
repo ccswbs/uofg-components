@@ -4,19 +4,13 @@ import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type ContactEmailProps = {
-  /**
-   * Additional classes to apply to the email
-   */
+  /** Additional classes to apply to the email */
   className?: string;
-  /**
-   * The email address to display
-   */
+  /** The email address to display */
   email: string;
 };
 
-/**
- * The ContactEmail component is used to display an email address.
- */
+/** The ContactEmail component is used to display an email address. */
 export function ContactEmail({ email, className }: ContactEmailProps) {
   const contactEmail = tv({
     slots: {

@@ -4,9 +4,7 @@ import { tv } from 'tailwind-variants';
 import { LinkCarouselContext } from './link-carousel-context';
 
 export type LinkCarouselContentProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the link carousel content container.
-   */
+  /** Additional classes to apply to the link carousel content container. */
   className?: string;
 }>;
 

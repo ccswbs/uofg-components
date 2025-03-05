@@ -6,14 +6,13 @@ import { HeroContext } from './hero-context';
 export type HeroContentProps = PropsWithChildren<{
   /**
    * The alignment of the content
+   *
    * @default 'left'
    */
   alignment?: 'left' | 'center' | 'right' | 'fullWidth';
 }>;
 
-/**
- * The HeroContent component is used to display the content of a hero.
- */
+/** The HeroContent component is used to display the content of a hero. */
 export function HeroContent({ children, alignment = 'left' }: HeroContentProps) {
   const context = useContext(HeroContext);
 

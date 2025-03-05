@@ -8,18 +8,15 @@ export type HeroTitleElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'sp
 export type HeroTitleProps<T extends HeroTitleElementType = 'h1'> = PropsWithChildren<{
   /**
    * The element type to render the title as
+   *
    * @default 'h1'
    */
   as?: T;
-  /**
-   * Additional classes to apply to the title
-   */
+  /** Additional classes to apply to the title */
   className?: string;
 }>;
 
-/**
- * The HeroTitle component is used to display the title of a hero.
- */
+/** The HeroTitle component is used to display the title of a hero. */
 export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
   as,
   children,

@@ -4,15 +4,11 @@ import { tv } from 'tailwind-variants';
 import { CardContext } from './card-context';
 
 export type CardTitleProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the card title
-   */
+  /** Additional classes to apply to the card title */
   className?: string;
 }>;
 
-/**
- * The CardTitle component is used to display a title for a card.
- */
+/** The CardTitle component is used to display a title for a card. */
 export function CardTitle({ children, className }: CardTitleProps) {
   const context = useContext(CardContext);
 

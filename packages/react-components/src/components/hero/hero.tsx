@@ -18,41 +18,34 @@ export type HeroProps<T extends HeroElementType = typeof defaultElement> = Props
   {
     /**
      * The element type to render the hero image as
+     *
      * @default 'img'
      */
     as?: T;
     /**
      * The variant of the hero
+     *
      * @default 'basic'
      */
     variant: 'spotlight' | 'basic';
-    /**
-     * The URL of the image to display
-     */
+    /** The URL of the image to display */
     src: string;
-    /**
-     * The alt text for the image
-     */
+    /** The alt text for the image */
     alt: string;
-    /**
-     * The width of the image in pixels
-     */
+    /** The width of the image in pixels */
     width?: number;
-    /**
-     * The height of the image in pixels
-     */
+    /** The height of the image in pixels */
     height?: number;
     /**
      * The alignment of the hero content, only applies to the spotlight variant
+     *
      * @default 'left'
      */
     alignment?: 'left' | 'center' | 'right' | 'fullWidth';
   } & ComponentPropsWithoutRef<T>
 >;
 
-/**
- * The Hero component is a layout component that displays a large image with accompanying content.
- */
+/** The Hero component is a layout component that displays a large image with accompanying content. */
 export function Hero<T extends HeroElementType = typeof defaultElement>({
   as,
   variant = 'basic',

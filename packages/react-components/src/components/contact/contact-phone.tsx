@@ -4,23 +4,15 @@ import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type ContactPhoneProps = {
-  /**
-   * Additional classes to apply to the phone number
-   */
+  /** Additional classes to apply to the phone number */
   className?: string;
-  /**
-   * The phone number to display
-   */
+  /** The phone number to display */
   number: string;
-  /**
-   * The phone number extension to display
-   */
+  /** The phone number extension to display */
   extension?: string;
 };
 
-/**
- * The ContactPhone component is used to display a phone number.
- */
+/** The ContactPhone component is used to display a phone number. */
 export function ContactPhone({ number, extension, className }: ContactPhoneProps) {
   const phone = tv({
     slots: {

@@ -4,9 +4,7 @@ import { tv } from 'tailwind-variants';
 import { CardContext } from './card-context';
 
 export type CardContentProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the card content
-   */
+  /** Additional classes to apply to the card content */
   className?: string;
 }>;
 export function CardContent({ children, className }: CardContentProps) {

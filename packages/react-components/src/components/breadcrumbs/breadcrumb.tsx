@@ -12,23 +12,18 @@ export type BreadcrumbProps<T extends BreadcrumbElementType = typeof defaultBrea
   {
     /**
      * The element to render the breadcrumb as
+     *
      * @default 'a'
      */
     as?: T;
-    /**
-     * The URL to link to
-     */
+    /** The URL to link to */
     href?: string;
-    /**
-     * Additional classes to apply to the breadcrumb
-     */
+    /** Additional classes to apply to the breadcrumb */
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
 
-/**
- * The Breadcrumb component is used to display a single breadcrumb in a Breadcrumbs component.
- */
+/** The Breadcrumb component is used to display a single breadcrumb in a Breadcrumbs component. */
 export function Breadcrumb<T extends BreadcrumbElementType = typeof defaultBreadcrumbElement>({
   as,
   children,

@@ -11,7 +11,12 @@
   "useTabs": false,
   "experimentalTernaries": true,
   "organizeImportsSkipDestructiveCodeActions": true,
-  "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss", "prettier-plugin-organize-imports"],
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-jsdoc",
+    "prettier-plugin-tailwindcss"
+  ],
   "tailwindStylesheet": "./packages/tailwind-theme/index.css",
   "tailwindFunctions": ["tv", "twMerge", "twJoin"]
 }

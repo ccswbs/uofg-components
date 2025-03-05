@@ -6,27 +6,17 @@ import { EmbeddedVideo, EmbeddedVideoModalButton } from '../embedded-video/embed
 import { HeroContext } from './hero-context';
 
 export type HeroVideo = PropsWithChildren<{
-  /**
-   * The URL of the video to embed.
-   */
+  /** The URL of the video to embed. */
   src: string;
-  /**
-   * The title of the video.
-   */
+  /** The title of the video. */
   title: string;
-  /**
-   * The URL to a human readable transcript of the video.
-   */
+  /** The URL to a human readable transcript of the video. */
   transcript?: string;
-  /**
-   * Additional classes to apply to the video container
-   */
+  /** Additional classes to apply to the video container */
   className?: string;
 }>;
 
-/**
- * The HeroVideo component is used to display a video modal in a hero.
- */
+/** The HeroVideo component is used to display a video modal in a hero. */
 export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
   const context = useContext(HeroContext);
   const heroVideo = tv({

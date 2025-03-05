@@ -4,14 +4,13 @@ import { twMerge } from 'tailwind-merge';
 import { AccordionContext } from './accordion-context';
 
 export type AccordionProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the accordion.
-   */
+  /** Additional classes to apply to the accordion. */
   className?: string;
 }>;
 
 /**
- * The Accordion component is used for organizing information into collapsible sections which respond to user interaction.
+ * The Accordion component is used for organizing information into collapsible sections which respond to user
+ * interaction.
  */
 export function Accordion({ children, className }: AccordionProps) {
   const accordion = twMerge('tw:my-2 tw:[&_p:last-child]:mb-0', className);

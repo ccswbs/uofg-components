@@ -64,21 +64,13 @@ function getVideoInfo(url: string) {
 }
 
 type VideoProps = {
-  /**
-   * The URL of the video to embed.
-   */
+  /** The URL of the video to embed. */
   src: string;
-  /**
-   * The title of the video.
-   */
+  /** The title of the video. */
   title?: string;
-  /**
-   * The URL to a human readable transcript of the video.
-   */
+  /** The URL to a human readable transcript of the video. */
   transcript?: string;
-  /**
-   * Additional classes to apply to the video container.
-   */
+  /** Additional classes to apply to the video container. */
   className?: string;
 };
 function Video({ src, title, transcript, className }: VideoProps) {
@@ -124,14 +116,13 @@ function Video({ src, title, transcript, className }: VideoProps) {
 }
 
 type EmbeddedVideoProps = VideoProps & {
-  /**
-   * If passed the video will render as a modal, with the button being used to open the video.
-   */
+  /** If passed the video will render as a modal, with the button being used to open the video. */
   children?: ReactElement<typeof EmbeddedVideoModalButton>;
 };
 
 /**
- * The EmbeddedVideo component is used for embedding videos from YouTube and Vimeo. It can be used to render a video directly or as a modal.
+ * The EmbeddedVideo component is used for embedding videos from YouTube and Vimeo. It can be used to render a video
+ * directly or as a modal.
  */
 export function EmbeddedVideo({ src, title, transcript, className, children }: EmbeddedVideoProps) {
   const [modalOpen, setModalOpen] = useState(false);

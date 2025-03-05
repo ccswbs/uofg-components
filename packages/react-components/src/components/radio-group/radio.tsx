@@ -4,13 +4,9 @@ import { tv } from 'tailwind-variants';
 import { RadioContext } from './radio-context';
 
 export type RadioProps<T> = PropsWithChildren<{
-  /**
-   *  Whether the radio is selected or not initially.
-   */
+  /** Whether the radio is selected or not initially. */
   selected?: boolean;
-  /**
-   * The value of the radio.
-   */
+  /** The value of the radio. */
   value: T;
 }>;
 

@@ -13,55 +13,48 @@ export type ImageOverlayProps<T extends ImageOverlayElementType = typeof default
   {
     /**
      * The element type to render as.
+     *
      * @default 'img'
      */
     as?: T;
-    /**
-     * The image source.
-     */
+    /** The image source. */
     src: string;
-    /**
-     * The image alt text.
-     */
+    /** The image alt text. */
     alt: string;
-    /**
-     * The image width in pixels.
-     */
+    /** The image width in pixels. */
     width?: number;
-    /**
-     * The image height in pixels.
-     */
+    /** The image height in pixels. */
     height?: number;
-    /**
-     * Additional classes to apply to the image.
-     */
+    /** Additional classes to apply to the image. */
     className?: string;
     /**
      * The vertical alignment of the content in the overlay.
+     *
      * @default 'center'
      */
     verticalAlignment: 'top' | 'center' | 'bottom';
     /**
      * The horizontal alignment of the content in the overlay.
+     *
      * @default 'center'
      */
     horizontalAlignment: 'left' | 'center' | 'right';
     /**
      * A color overlay to apply to the image.
+     *
      * @default 'none'
      */
     overlay: 'dark' | 'light' | 'dark-gradient' | 'light-gradient' | 'none';
     /**
      * Whether the image should be blurred.
+     *
      * @default false
      */
     blurred: boolean;
   } & ComponentPropsWithoutRef<T>
 >;
 
-/**
- * A component to display content over an image.
- */
+/** A component to display content over an image. */
 export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultElement>({
   as,
   src,

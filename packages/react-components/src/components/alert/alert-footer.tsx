@@ -2,15 +2,11 @@ import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export type AlertFooterProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the alert footer
-   */
+  /** Additional classes to apply to the alert footer */
   className?: string;
 }>;
 
-/**
- * The AlertFooter component is used to display additional information or actions at the bottom of an alert.
- */
+/** The AlertFooter component is used to display additional information or actions at the bottom of an alert. */
 export function AlertFooter({ children, className }: AlertFooterProps) {
   const alertFooter = twMerge('tw:flex tw:bg-light-grey tw:px-4 tw:py-2', className);
 

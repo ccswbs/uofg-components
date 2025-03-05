@@ -7,15 +7,11 @@ import { tv } from 'tailwind-variants';
 import { AccordionContext } from './accordion-context';
 
 export type AccordionButtonProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the accordion button
-   */
+  /** Additional classes to apply to the accordion button */
   className?: string;
 }>;
 
-/**
- * The AccordionButton component is a button used to toggle the visibility of an accordion panel.
- */
+/** The AccordionButton component is a button used to toggle the visibility of an accordion panel. */
 export function AccordionButton({ children, className }: AccordionButtonProps) {
   const context = useContext(AccordionContext);
 

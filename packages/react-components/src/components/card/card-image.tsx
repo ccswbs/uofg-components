@@ -10,34 +10,23 @@ type CardImageElementType = ElementType<{ src: string; alt: string; width?: stri
 export type CardImageProps<T extends CardImageElementType = typeof defaultCardImageElement> = {
   /**
    * The element to render the image as
+   *
    * @default 'img'
    */
   as?: T;
-  /**
-   * The source URL of the image
-   */
+  /** The source URL of the image */
   src: string;
-  /**
-   * An accessible description of the image, used primarily for screen readers
-   */
+  /** An accessible description of the image, used primarily for screen readers */
   alt: string;
-  /**
-   * The width of the image in pixels
-   */
+  /** The width of the image in pixels */
   width?: string;
-  /**
-   * The height of the image in pixels
-   */
+  /** The height of the image in pixels */
   height?: string;
-  /**
-   * Additional classes to apply to the image
-   */
+  /** Additional classes to apply to the image */
   className?: string;
 } & ComponentPropsWithoutRef<T>;
 
-/**
- * The CardImage component is used to display an image within a card.
- */
+/** The CardImage component is used to display an image within a card. */
 export function CardImage<T extends CardImageElementType = typeof defaultCardImageElement>({
   as,
   src,

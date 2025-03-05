@@ -5,20 +5,17 @@ import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type AlertTitleProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the alert title
-   */
+  /** Additional classes to apply to the alert title */
   className?: string;
   /**
    * The background color of the alert title
+   *
    * @default 'red'
    */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
 }>;
 
-/**
- * The AlertTitle component is used to display the title of an alert.
- */
+/** The AlertTitle component is used to display the title of an alert. */
 export function AlertTitle({ color = 'red', className, children }: AlertTitleProps) {
   const alertTitle = tv({
     slots: {

@@ -13,20 +13,21 @@ type ButtonPropsAs<T extends ButtonElementType> = {
 type ButtonPropsBase = {
   /**
    * The color of the button
+   *
    * @default 'red'
    */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
   /**
    * Whether the button should be outlined
+   *
    * @default false
    */
   outlined?: boolean;
-  /**
-   * Additional classes to apply to the button
-   */
+  /** Additional classes to apply to the button */
   className?: string;
   /**
    * Whether the button is disabled
+   *
    * @default false
    */
   disabled?: boolean;
@@ -36,7 +37,8 @@ export type ButtonProps<T extends ButtonElementType = typeof defaultElement> = P
   ButtonPropsAs<T> & ComponentPropsWithoutRef<T> & ButtonPropsBase
 >;
 /**
- * The Button component is a interactive component designed to capture user actions (such as submitting forms). It can also function as a link to another page or resource.
+ * The Button component is a interactive component designed to capture user actions (such as submitting forms). It can
+ * also function as a link to another page or resource.
  */
 export function Button<T extends ButtonElementType = typeof defaultElement>({
   as,

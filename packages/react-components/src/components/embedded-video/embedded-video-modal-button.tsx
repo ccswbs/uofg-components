@@ -6,13 +6,9 @@ import { Button, ButtonProps } from '../button/button.tsx';
 import { EmbeddedVideoContext } from './embedded-video-context.ts';
 
 type EmbeddedVideoModalButtonProps = PropsWithChildren<{
-  /**
-   * The type of button to render, either a play button or a color which will be passed to a Button component
-   */
+  /** The type of button to render, either a play button or a color which will be passed to a Button component */
   type: 'play-button' | ButtonProps['color'];
-  /**
-   * Additional classes to apply to the button
-   */
+  /** Additional classes to apply to the button */
   className?: string;
 }>;
 

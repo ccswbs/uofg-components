@@ -1,9 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 export type HeroCaptionProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the caption
-   */
+  /** Additional classes to apply to the caption */
   className?: string;
 }>;
 

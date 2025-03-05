@@ -7,35 +7,30 @@ import { tv } from 'tailwind-variants';
 export type CheckboxProps = {
   /**
    * Whether the checkbox is checked initially
+   *
    * @default false
    */
   checked?: boolean;
-  /**
-   * The label for the checkbox
-   */
+  /** The label for the checkbox */
   label?: ReactNode;
-  /**
-   * The description for the checkbox
-   */
+  /** The description for the checkbox */
   description?: ReactNode;
   /**
    * The color of the checkbox
+   *
    * @default 'red'
    */
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
   /**
    * Whether the checkbox is disabled
+   *
    * @default false
    */
   disabled?: boolean;
-  /**
-   * The function to call when the checkbox is toggled
-   */
+  /** The function to call when the checkbox is toggled */
   onChange?: (value: boolean) => void;
 } & InputHTMLAttributes<HTMLInputElement>;
-/**
- * The Checkbox component is used to allow the user to select one or more options from a list of choices.
- */
+/** The Checkbox component is used to allow the user to select one or more options from a list of choices. */
 export function Checkbox({
   checked = false,
   label,

@@ -1,8 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-/**
- * Separates content on a page visually
- */
+/** Separates content on a page visually */
 export const Divider = () => {
   const divider = tv({
     slots: {

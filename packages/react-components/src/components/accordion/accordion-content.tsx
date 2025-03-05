@@ -5,9 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { AccordionContext } from './accordion-context';
 
 export type AccordionContentProps = PropsWithChildren<{
-  /**
-   * Additional classes to apply to the accordion button
-   */
+  /** Additional classes to apply to the accordion button */
   className?: string;
 }>;
 
