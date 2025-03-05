@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/react-components",
-  "version": "0.0.0",
+  "version": "1.0.0-rc.0",
   "description": "University of Guelph React Components Library",
   "type": "module",
   "scripts": {
@@ -48,7 +48,7 @@
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@uoguelph/tailwind-theme": "*",
+    "@uoguelph/tailwind-theme": "^1.0.0-rc.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.19.0",

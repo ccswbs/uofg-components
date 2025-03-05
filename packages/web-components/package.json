@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/web-components",
-  "version": "1.9.0-rc.12",
+  "version": "1.9.1-rc.0",
   "description": "University of Guelph Web Components Library",
   "type": "module",
   "files": [
@@ -27,7 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tailwindcss/vite": "^4.0.6",
-    "@uoguelph/tailwind-theme": "*",
+    "@uoguelph/tailwind-theme": "^1.0.0-rc.0",
     "autoprefixer": "^10.4.18",
     "eslint": "^9.19.0",
     "eslint-plugin-storybook": "^0.11.2",
