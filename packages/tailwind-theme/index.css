@@ -105,7 +105,8 @@
   --text-9xl--line-height: 1.6;
 
   /** Animations **/
-  --animate-fade: fade 250ms ease-in-out 1 both;
+  --animate-fade-in: fade 250ms ease-in-out 1 normal forwards;
+  --animate-fade-out: fade 250ms ease-in-out 1 reverse backwards;
 
   @keyframes fade {
     0% {
