@@ -1,0 +1,22 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as Stories from './footer.stories.tsx';
+
+<Meta of={Stories} />
+
+# Footer
+
+The footer component is used to display the footer of a page. It contains links to various resources and information about the University of Guelph.
+
+## Usage
+
+### Basic
+
+<Canvas of={Stories.Basic} />
+
+### With Links
+
+The footer also allows for a collection of links to be displayed above the main footer content.
+
+<Canvas of={Stories.WithLinks} />
+```
