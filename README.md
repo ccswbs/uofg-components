@@ -37,3 +37,27 @@ The monorepo contains the following packages:
 1. **packages/storybook**: This directory contains the code for our Storybook documentation. It acts as the documentation for all the other packages in the repo.
 
 For more detailed explanation of each package, read their corresponding README and Development Guide files.
+
+## Publishing
+
+To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process. 
+Lerna allows us to publish all the packages in the monorepo with a single command.
+
+### Prerequisites
+
+1. Ensure you have an NPM account with access to the uoguelph organization and are logged in. You can log in by running:
+
+```sh
+npm login
+```
+### Publishing Steps
+
+1. Run the following command to publish all the packages in the monorepo (Lerna will automatically determine which packages have changed and need to be published):
+
+```sh
+lerna publish --pre-dist-tag rc
+```
+
+2. Follow the prompts to select the version number for each package. You should read the [Semantic Versioning](https://semver.org/) documentation to understand how to select the correct version number. Remember any pre-release version should be suffixed with `-rc` (e.g. `1.0.0-rc.0`).
+
+3. Thats it! The packages should have been published to the NPM registry. You can verify by checking the NPM website for each package.
