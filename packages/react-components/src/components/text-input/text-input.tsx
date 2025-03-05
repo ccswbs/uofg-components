@@ -69,8 +69,10 @@ export function TextInput({
           className={clearButton()}
           onClick={() => {
             if (!ref.current) return;
+            // We need to use the native setter to update the value, so that React correctly dispatches the change event
+            const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
 
-            ref.current.value = '';
+            setter?.call(ref.current, '');
             ref.current.dispatchEvent(new Event('input', { bubbles: true }));
             ref.current.focus();
           }}
