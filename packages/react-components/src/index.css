@@ -1,2 +1,3 @@
 @import '@uoguelph/tailwind-theme' prefix(tw);
+@source '../../src/components';
 @plugin "@headlessui/tailwindcss";
