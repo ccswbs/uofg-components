@@ -1,8 +1,7 @@
 import { PropsWithChildren, useContext } from 'react';
 import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 import { tv } from 'tailwind-variants';
-import { twJoin, twMerge } from 'tailwind-merge';
-import { Transition } from '@headlessui/react';
+import { twMerge } from 'tailwind-merge';
 
 export type LinkCarouselItemProps = PropsWithChildren<{
   /**
@@ -19,10 +18,10 @@ export function LinkCarouselItem({ id, children, className }: LinkCarouselItemPr
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselItem = tv({
-    base: 'tw:w-full tw:hidden',
+    base: 'tw:w-full tw:hidden tw:bg-white',
     variants: {
-      isActive: { true: 'tw:relative tw:block tw:animate-pulse tw:z-10' },
-      wasActive: { true: 'tw:block tw:absolute' },
+      isActive: { true: 'tw:block tw:relative tw:animate-fade-in tw:z-10' },
+      wasActive: { true: 'tw:block tw:absolute tw:z-0 tw:top-0 tw:left-0' },
     },
   });
 
@@ -31,5 +30,9 @@ export function LinkCarouselItem({ id, children, className }: LinkCarouselItemPr
     className,
   );
 
-  return <div className={`uofg-link-carousel-item ${classes}`}>{children}</div>;
+  return (
+    <>
+      <div className={`uofg-link-carousel-item ${classes}`}>{children}</div>
+    </>
+  );
 }

@@ -14,7 +14,7 @@ export function LinkCarouselContent({ children, className }: LinkCarouselContent
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselContent = tv({
-    base: 'tw:relative',
+    base: 'tw:relative tw:h-full tw:hidden tw:md:block',
     variants: {
       stack: {
         true: 'tw:w-full',
