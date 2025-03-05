@@ -1,11 +1,15 @@
 {
   "name": "@uoguelph/react-components",
   "version": "1.0.0",
+  "description": "University of Guelph React Components Library",
   "type": "module",
   "scripts": {
     "build": "NODE_ENV=production vite build",
-    "prepublishOnly": "npm run build"
+    "prepack": "npm run build"
   },
+  "files": [
+    "./dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -25,16 +29,6 @@
         "dist/"
       ]
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "ignore": [
-      "!dist/",
-      "src/"
-    ],
-    "access": "public"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
