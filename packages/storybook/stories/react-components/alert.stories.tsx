@@ -1,13 +1,13 @@
+import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react';
 import { ComponentType } from 'react';
 import {
   Alert,
-  AlertTitle,
-  AlertSubtitle,
-  AlertMessage,
   AlertFooter,
+  AlertMessage,
+  AlertSubtitle,
+  AlertTitle,
 } from '../../../react-components/src/components/alert/alert';
-import { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
 
 const config: Meta<typeof Alert> = {
   title: 'React Components/Alert',

@@ -1,6 +1,6 @@
-import { PropsWithChildren, useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { PropsWithChildren, useContext } from 'react';
 import { tv } from 'tailwind-variants';
 import { EmbeddedVideo, EmbeddedVideoModalButton } from '../embedded-video/embedded-video';
 import { HeroContext } from './hero-context';

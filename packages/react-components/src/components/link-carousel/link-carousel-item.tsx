@@ -1,7 +1,7 @@
 import { PropsWithChildren, useContext } from 'react';
-import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
-import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
+import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 
 export type LinkCarouselItemProps = PropsWithChildren<{
   /**

@@ -1,4 +1,4 @@
-import { PropsWithChildren, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type ListItemProps = PropsWithChildren<

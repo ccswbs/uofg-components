@@ -1,4 +1,4 @@
-import { ElementType, ComponentPropsWithoutRef, useContext } from 'react';
+import { ComponentPropsWithoutRef, ElementType, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { CardContext } from './card-context';

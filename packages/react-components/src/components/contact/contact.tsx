@@ -1,9 +1,9 @@
-import { twMerge } from 'tailwind-merge';
 import { PropsWithChildren } from 'react';
-import { ContactName } from './contact-name';
-import { ContactTitle } from './contact-title';
-import { ContactPhone } from './contact-phone';
+import { twMerge } from 'tailwind-merge';
 import { ContactEmail } from './contact-email';
+import { ContactName } from './contact-name';
+import { ContactPhone } from './contact-phone';
+import { ContactTitle } from './contact-title';
 
 export type ContactProps = PropsWithChildren<{
   /**
@@ -23,4 +23,4 @@ export function Contact({ children, className }: ContactProps) {
 
 Contact.displayName = 'Contact';
 
-export { ContactName, ContactTitle, ContactPhone, ContactEmail };
+export { ContactEmail, ContactName, ContactPhone, ContactTitle };

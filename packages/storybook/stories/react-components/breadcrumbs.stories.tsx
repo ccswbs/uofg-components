@@ -1,11 +1,11 @@
+import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { ComponentType } from 'react';
 import {
-  Breadcrumbs,
-  BreadcrumbHome,
   Breadcrumb,
+  BreadcrumbHome,
+  Breadcrumbs,
 } from '../../../react-components/src/components/breadcrumbs/breadcrumbs';
-import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof Breadcrumbs> = {
   title: 'React Components/Breadcrumbs',

@@ -1,6 +1,6 @@
 import { faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ElementType, PropsWithChildren, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 

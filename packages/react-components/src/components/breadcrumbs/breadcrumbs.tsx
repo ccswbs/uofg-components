@@ -1,8 +1,8 @@
-import { Container } from '../container/container';
+import { PropsWithChildren } from 'react';
 import { twJoin, twMerge } from 'tailwind-merge';
+import { Container } from '../container/container';
 import { Breadcrumb } from './breadcrumb';
 import { BreadcrumbHome } from './breadcrumb-home';
-import { PropsWithChildren } from 'react';
 
 export type BreadcrumbsProps = PropsWithChildren<{
   /**

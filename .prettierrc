@@ -10,7 +10,8 @@
   "trailingComma": "all",
   "useTabs": false,
   "experimentalTernaries": true,
-  "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
+  "organizeImportsSkipDestructiveCodeActions": true,
+  "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss", "prettier-plugin-organize-imports"],
   "tailwindStylesheet": "./packages/tailwind-theme/index.css",
   "tailwindFunctions": ["tv", "twMerge", "twJoin"]
 }

@@ -1,7 +1,7 @@
 import { Children, isValidElement, PropsWithChildren, useMemo, useRef, useState } from 'react';
-import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
+import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 import { LinkCarouselLink } from './link-carousel-link';
 
 function findFirstId(children: React.ReactNode): LinkCarouselId | null {
@@ -92,7 +92,7 @@ export function LinkCarousel({ children, className, stack = false, direction = '
 
 LinkCarousel.displayName = 'LinkCarousel';
 
-export { LinkCarouselLinks } from './link-carousel-links';
-export { LinkCarouselLink } from './link-carousel-link';
 export { LinkCarouselContent } from './link-carousel-content';
 export { LinkCarouselItem } from './link-carousel-item';
+export { LinkCarouselLink } from './link-carousel-link';
+export { LinkCarouselLinks } from './link-carousel-links';

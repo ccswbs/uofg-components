@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { AlertTitle } from './alert-title';
+import { AlertFooter } from './alert-footer';
 import { AlertMessage } from './alert-message';
 import { AlertSubtitle } from './alert-subtitle';
-import { AlertFooter } from './alert-footer';
+import { AlertTitle } from './alert-title';
 
 export type AlertProps = PropsWithChildren<{
   /**
@@ -23,4 +23,4 @@ export function Alert({ children, className }: AlertProps) {
 
 Alert.displayName = 'Alert';
 
-export { AlertTitle, AlertMessage, AlertSubtitle, AlertFooter };
+export { AlertFooter, AlertMessage, AlertSubtitle, AlertTitle };

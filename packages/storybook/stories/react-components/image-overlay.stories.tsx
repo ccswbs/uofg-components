@@ -1,6 +1,6 @@
+import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { ImageOverlay } from '../../../react-components/src/components/image-overlay/image-overlay';
-import { Meta, StoryObj } from '@storybook/react';
 
 const config: Meta<typeof ImageOverlay> = {
   title: 'React Components/ImageOverlay',

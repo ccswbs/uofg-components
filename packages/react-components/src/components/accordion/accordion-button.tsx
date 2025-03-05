@@ -2,9 +2,9 @@ import { faCircleMinus, faCirclePlus } from '@awesome.me/kit-7993323d0c/icons/cl
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DisclosureButton } from '@headlessui/react';
 import { PropsWithChildren, useContext } from 'react';
-import { AccordionContext } from './accordion-context';
-import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
+import { AccordionContext } from './accordion-context';
 
 export type AccordionButtonProps = PropsWithChildren<{
   /**

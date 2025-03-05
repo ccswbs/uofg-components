@@ -1,9 +1,9 @@
-import './index.css';
-import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
-import { Preview } from '@storybook/react';
-import { ComponentImport } from '../doc-blocks/component-import';
-import * as React from 'react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { Controls, Description, Primary, Stories, Subtitle, Title } from '@storybook/blocks';
+import { Preview } from '@storybook/react';
+import * as React from 'react';
+import { ComponentImport } from '../doc-blocks/component-import';
+import './index.css';
 
 const preview: Preview = {
   parameters: {

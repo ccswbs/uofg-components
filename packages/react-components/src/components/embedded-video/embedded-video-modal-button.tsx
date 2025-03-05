@@ -1,7 +1,7 @@
+import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { Button, ButtonProps } from '../button/button.tsx';
 import { EmbeddedVideoContext } from './embedded-video-context.ts';
 

@@ -1,10 +1,10 @@
 import {
-  faInstagram,
-  faTiktok,
-  faYoutube,
   faFacebookF,
+  faInstagram,
   faLinkedinIn,
+  faTiktok,
   faXTwitter,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faBriefcase,

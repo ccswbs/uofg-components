@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
-import { tv } from 'tailwind-variants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
 
 export type ContactEmailProps = {
   /**

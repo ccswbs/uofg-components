@@ -1,7 +1,7 @@
 import { ElementType, PropsWithChildren, useContext, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 import { tv } from 'tailwind-variants';
+import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 
 const defaultElement = 'a';
 

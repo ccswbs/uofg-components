@@ -1,7 +1,7 @@
 import { PropsWithChildren, useContext } from 'react';
-import { CardContext } from './card-context';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
+import { CardContext } from './card-context';
 
 export type CardContentProps = PropsWithChildren<{
   /**

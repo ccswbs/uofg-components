@@ -1,11 +1,11 @@
-import { twMerge } from 'tailwind-merge';
 import { Children, ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactElement } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
-import { CardContext } from './card-context';
-import { CardImage } from './card-image';
 import { CardContent } from './card-content';
-import { CardTitle } from './card-title';
+import { CardContext } from './card-context';
 import { CardFooter } from './card-footer';
+import { CardImage } from './card-image';
+import { CardTitle } from './card-title';
 
 const defaultElement = 'div';
 
@@ -72,4 +72,4 @@ export function Card<T extends CardElementType = typeof defaultElement>({
 
 Card.displayName = 'Card';
 
-export { CardImage, CardContent, CardTitle, CardFooter };
+export { CardContent, CardFooter, CardImage, CardTitle };

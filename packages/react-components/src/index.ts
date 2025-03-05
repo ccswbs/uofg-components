@@ -1,5 +1,5 @@
 import './index.css';
-import { clamp, mod, lerp, bezier } from './utils/math-utils.ts';
+import { bezier, clamp, lerp, mod } from './utils/math-utils.ts';
 import { toTitleCase } from './utils/string-utils.ts';
 
-export { clamp, mod, lerp, bezier, toTitleCase };
+export { bezier, clamp, lerp, mod, toTitleCase };

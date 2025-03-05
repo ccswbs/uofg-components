@@ -1,4 +1,4 @@
-import { ElementType, PropsWithChildren, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 

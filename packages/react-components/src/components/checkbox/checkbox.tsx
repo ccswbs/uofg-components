@@ -1,7 +1,7 @@
-import { Checkbox as HUICheckbox, Description, Field, Label } from '@headlessui/react';
-import { useState, ReactNode, InputHTMLAttributes } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Description, Field, Checkbox as HUICheckbox, Label } from '@headlessui/react';
+import { InputHTMLAttributes, ReactNode, useState } from 'react';
 import { tv } from 'tailwind-variants';
 
 export type CheckboxProps = {

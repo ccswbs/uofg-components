@@ -1,5 +1,5 @@
-import type { PropsWithChildren } from 'react';
 import { Disclosure } from '@headlessui/react';
+import type { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { AccordionContext } from './accordion-context';
 

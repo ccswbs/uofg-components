@@ -1,6 +1,6 @@
-import { CloseButton, Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { CloseButton, Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
 

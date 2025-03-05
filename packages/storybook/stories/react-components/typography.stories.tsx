@@ -1,5 +1,5 @@
-import { Typography } from '../../../react-components/src/components/typography/typography';
 import { Meta, StoryObj } from '@storybook/react';
+import { Typography } from '../../../react-components/src/components/typography/typography';
 
 const config: Meta<typeof Typography> = {
   title: 'React Components/Typography',

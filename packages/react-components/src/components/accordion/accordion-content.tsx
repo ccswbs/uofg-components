@@ -1,8 +1,8 @@
 import { DisclosurePanel } from '@headlessui/react';
 import { PropsWithChildren, useContext } from 'react';
-import { AccordionContext } from './accordion-context';
-import { twMerge } from 'tailwind-merge';
 import AnimateHeight from 'react-animate-height';
+import { twMerge } from 'tailwind-merge';
+import { AccordionContext } from './accordion-context';
 
 export type AccordionContentProps = PropsWithChildren<{
   /**

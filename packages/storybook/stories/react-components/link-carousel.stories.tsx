@@ -1,13 +1,13 @@
+import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
+import { ComponentType } from 'react';
 import {
   LinkCarousel,
-  LinkCarouselLinks,
-  LinkCarouselLink,
-  LinkCarouselItem,
   LinkCarouselContent,
+  LinkCarouselItem,
+  LinkCarouselLink,
+  LinkCarouselLinks,
 } from '../../../react-components/src/components/link-carousel/link-carousel';
-import { Meta, StoryObj } from '@storybook/react';
-import { ComponentType } from 'react';
 
 const config: Meta<typeof LinkCarousel> = {
   title: 'React Components/LinkCarousel',

@@ -1,8 +1,8 @@
-import { tv } from 'tailwind-variants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGryphonStatue } from '@awesome.me/kit-7993323d0c/icons/kit/custom';
 import { faSpinner } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
+import { faGryphonStatue } from '@awesome.me/kit-7993323d0c/icons/kit/custom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
 
 export type LoadingIndicatorProps = {
   /**

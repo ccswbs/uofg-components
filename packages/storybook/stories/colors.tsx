@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { ColorItem, ColorPalette } from '@storybook/blocks';
+import * as React from 'react';
 import { toTitleCase } from '../../react-components/src/utils/string-utils';
 
 type Swatches = { [p: string]: string };

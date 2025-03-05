@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Hero, HeroLink, HeroTitle, HeroCaption, HeroVideo } from '../../../react-components/src/components/hero/hero';
 import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react';
 import { ComponentType } from 'react';
+import { Hero, HeroCaption, HeroLink, HeroTitle, HeroVideo } from '../../../react-components/src/components/hero/hero';
 
 const config: Meta<typeof Hero> = {
   title: 'React Components/Hero',

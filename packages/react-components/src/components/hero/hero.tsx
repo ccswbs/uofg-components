@@ -1,11 +1,11 @@
-import { ElementType, ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
-import { HeroContext } from './hero-context';
-import { HeroTitle } from './hero-title';
 import { HeroCaption } from './hero-caption';
-import { HeroLink } from './hero-link';
-import { HeroVideo } from './hero-video';
 import { HeroContent } from './hero-content';
+import { HeroContext } from './hero-context';
+import { HeroLink } from './hero-link';
+import { HeroTitle } from './hero-title';
+import { HeroVideo } from './hero-video';
 
 const defaultElement = 'img';
 
@@ -100,4 +100,4 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
 
 Hero.displayName = 'Hero';
 
-export { HeroTitle, HeroCaption, HeroLink, HeroVideo, HeroContent };
+export { HeroCaption, HeroContent, HeroLink, HeroTitle, HeroVideo };

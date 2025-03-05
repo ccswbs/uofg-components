@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
-import { tv } from 'tailwind-variants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
 
 export type AlertTitleProps = PropsWithChildren<{
   /**

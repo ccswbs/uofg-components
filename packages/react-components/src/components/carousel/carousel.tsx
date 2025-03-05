@@ -1,9 +1,9 @@
-import type { PropsWithChildren } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { PropsWithChildren } from 'react';
 import { Children, useEffect, useRef, useState } from 'react';
-import { bezier, lerp, mod, clamp } from '../../utils/math-utils';
 import { tv } from 'tailwind-variants';
+import { bezier, clamp, lerp, mod } from '../../utils/math-utils';
 
 const scroll = (element: HTMLElement, to: number, duration: number) => {
   const from = element.scrollLeft;

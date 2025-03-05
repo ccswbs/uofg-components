@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite';
-import * as path from 'path';
-import * as fs from 'fs';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import tailwindcss from '@tailwindcss/vite';
+import * as fs from 'fs';
+import * as path from 'path';
+import { defineConfig } from 'vite';
 
 const entries = {
   'uofg-web-components': path.resolve(__dirname, 'src/main.js'),

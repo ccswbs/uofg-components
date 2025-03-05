@@ -1,6 +1,5 @@
-import { useOf } from '@storybook/blocks';
+import { Source, useOf } from '@storybook/blocks';
 import * as React from 'react';
-import { Source } from '@storybook/blocks';
 
 export const ComponentImport = ({ of }: { of?: any }) => {
   const resolvedOf = useOf(of ?? 'meta', ['meta']);

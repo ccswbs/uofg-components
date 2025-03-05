@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Modal } from '../../../react-components/src/components/modal/modal';
-import { Button } from '../../../react-components/src/components/button/button';
-import { Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/preview-api';
+import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react';
+import { Button } from '../../../react-components/src/components/button/button';
+import { Modal } from '../../../react-components/src/components/modal/modal';
 
 const config: Meta<typeof Modal> = {
   title: 'React Components/Modal',

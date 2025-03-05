@@ -1,13 +1,13 @@
-import * as React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react';
+import { ComponentType } from 'react';
 import {
   Contact,
-  ContactTitle,
+  ContactEmail,
   ContactName,
   ContactPhone,
-  ContactEmail,
+  ContactTitle,
 } from '../../../react-components/src/components/contact/contact';
-import { ComponentType } from 'react';
 
 const config: Meta<typeof Contact> = {
   title: 'React Components/Contact',
