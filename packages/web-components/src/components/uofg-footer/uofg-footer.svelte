@@ -51,7 +51,7 @@
   {/if}
 
   <div
-    class="md:grid md:grid-cols-2 lg:grid-cols-4 flex flex-col content-center gap-6 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast"
+    class="flex flex-col content-center gap-6 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast md:grid md:grid-cols-2 lg:grid-cols-4"
   >
     <div class="mb-1 flex flex-col gap-1">
       <Logo />

@@ -180,7 +180,7 @@
   <div
     part="content"
     class={twJoin(
-      'sm:w-fit sm:p-8 absolute left-1/2 z-1 h-fit max-h-full w-full max-w-full -translate-x-1/2 overflow-auto transition-transform motion-reduce:transition-none',
+      'absolute left-1/2 z-1 h-fit max-h-full w-full max-w-full -translate-x-1/2 overflow-auto transition-transform motion-reduce:transition-none sm:w-fit sm:p-8',
       isOpen && 'visible opacity-100',
       !isOpen && !centered && 'translate-y-[-50px]',
       !isOpen && centered && 'top-1/2 translate-y-[calc(-50%_-_50px)]',

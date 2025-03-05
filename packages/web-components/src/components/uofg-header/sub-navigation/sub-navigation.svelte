@@ -32,8 +32,8 @@
 
 <nav
   class={twJoin(
-    'align-items bg-grey-muted text-grey-muted-contrast lg:whitespace-nowrap relative block justify-end px-[calc((100%-1320px)/2)] text-lg',
-    $headerState?.variant === 'dual-brand' ? 'h-10' : 'lg:h-10 h-[5rem]',
+    'align-items bg-grey-muted text-grey-muted-contrast relative block justify-end px-[calc((100%-1320px)/2)] text-lg lg:whitespace-nowrap',
+    $headerState?.variant === 'dual-brand' ? 'h-10' : 'h-[5rem] lg:h-10',
   )}
   aria-label="Page Specific"
 >
@@ -43,19 +43,19 @@
   >
     {#if title && url}
       <a
-        class="font-bold mr-auto flex h-full items-center justify-center px-3 transition-colors hover:bg-yellow hover:text-yellow-contrast"
+        class="mr-auto flex h-full items-center justify-center px-3 font-bold transition-colors hover:bg-yellow hover:text-yellow-contrast"
         href={url}
         bind:clientWidth={titleWidth}
       >
         {title}
       </a>
     {:else if title}
-      <span bind:clientWidth={titleWidth} class="font-bold mr-auto flex h-full items-center justify-center px-3">
+      <span bind:clientWidth={titleWidth} class="mr-auto flex h-full items-center justify-center px-3 font-bold">
         {title}
       </span>
     {/if}
 
-    <ul class="lg:static static! flex h-full w-fit [&>li]:contents" bind:clientWidth={contentWidth}>
+    <ul class="static! flex h-full w-fit lg:static [&>li]:contents" bind:clientWidth={contentWidth}>
       {#if items?.length > 0}
         {#if $headerState.mode === 'desktop' && (isNaN(overflowWidth) || containerWidth > overflowWidth)}
           <Desktop {items} />

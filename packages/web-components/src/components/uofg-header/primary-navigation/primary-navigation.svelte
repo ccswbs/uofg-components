@@ -11,7 +11,7 @@
 
 <nav
   class={twJoin(
-    'lg:h-25 relative flex w-full justify-between bg-black px-[calc((100%-1320px)/2)] text-lg text-black-contrast',
+    'relative flex w-full justify-between bg-black px-[calc((100%-1320px)/2)] text-lg text-black-contrast lg:h-25',
     $headerState?.variant === 'dual-brand' ? 'h-[7.5rem]' : 'h-12.5',
   )}
   aria-label="Primary"
