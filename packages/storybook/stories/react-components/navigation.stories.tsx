@@ -1,8 +1,12 @@
-import { Navigation } from '../../../react-components/src/components/navigation/navigation';
+import { Navigation, NavigationLink } from '../../../react-components/src/components/navigation/navigation';
+import { ComponentType } from 'react';
 
 const config = {
   title: 'React Components/Navigation',
   component: Navigation,
+  subcomponents: {
+    NavigationLink: NavigationLink as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'padded',
     docs: {
@@ -15,74 +19,29 @@ const config = {
 export default config;
 
 export const Default = {
-  args: {
-    links: [
-      {
-        href: '/example-page-1',
-        text: 'Example Page 1',
-      },
-      {
-        href: '/example-page-2',
-        text: 'Example Page 2',
-      },
-      {
-        href: '/example-page-3',
-        text: 'Example Page 3',
-      },
-      {
-        href: '/example-page-4',
-        text: 'Example Page 4',
-      },
-    ],
-    fullWidth: false,
-  },
-};
-
-export const FullWidth = {
-  args: {
-    links: [
-      {
-        href: '/example-page-1',
-        text: 'Example Page 1',
-      },
-      {
-        href: '/example-page-2',
-        text: 'Example Page 2',
-      },
-      {
-        href: '/example-page-3',
-        text: 'Example Page 3',
-      },
-      {
-        href: '/example-page-4',
-        text: 'Example Page 4',
-      },
-    ],
-    fullWidth: true,
+  render: ({ ...args }) => {
+    return (
+      <Navigation {...args}>
+        <NavigationLink href="/example-page-1">Example Page 1</NavigationLink>
+        <NavigationLink href="/example-page-2">Example Page 2</NavigationLink>
+        <NavigationLink href="/example-page-3">Example Page 3</NavigationLink>
+        <NavigationLink href="/example-page-4">Example Page 4</NavigationLink>
+      </Navigation>
+    );
   },
 };
 
 export const Active = {
-  args: {
-    links: [
-      {
-        href: '/example-page-1',
-        text: 'Example Page 1',
-        active: true,
-      },
-      {
-        href: '/example-page-2',
-        text: 'Example Page 2',
-      },
-      {
-        href: '/example-page-3',
-        text: 'Example Page 3',
-      },
-      {
-        href: '/example-page-4',
-        text: 'Example Page 4',
-      },
-    ],
-    fullWidth: true,
+  render: ({ ...args }) => {
+    return (
+      <Navigation {...args}>
+        <NavigationLink href="/example-page-1">Example Page 1</NavigationLink>
+        <NavigationLink href="/example-page-2" active>
+          Example Page 2
+        </NavigationLink>
+        <NavigationLink href="/example-page-3">Example Page 3</NavigationLink>
+        <NavigationLink href="/example-page-4">Example Page 4</NavigationLink>
+      </Navigation>
+    );
   },
 };
