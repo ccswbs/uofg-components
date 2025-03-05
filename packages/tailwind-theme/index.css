@@ -44,8 +44,6 @@
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 
   /** Colors **/
-  --color-*: initial; /* Don't include tailwind's default palette */
-
   --color-white: #fff;
   --color-white-focus: #ddd;
   --color-white-on-dark: #fff;

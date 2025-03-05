@@ -31,11 +31,9 @@ bun add -D @uoguelph/tailwind-theme
 Once you've set up Tailwind CSS in your project, ensure your main CSS file looks like this
 
 ```CSS
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-@import "tailwindcss";
-@reference "@uoguelph/tailwind-theme";
+@import "@uoguelph/tailwind-theme";
 
 /* Whatever else you want here */
 ```
+
+NOTE: That you no longer need to import the default Tailwind CSS styles, as they are already included in our theme.
