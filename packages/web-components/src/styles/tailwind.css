@@ -1,5 +1,6 @@
 @import 'tailwindcss';
-@import '@uoguelph/tailwind-theme';
+@reference '@uoguelph/tailwind-theme';
+@source '../components/';
 
 @layer base {
   svg.fa-icon {

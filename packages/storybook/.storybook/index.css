@@ -4,6 +4,7 @@
 @import 'tailwindcss' prefix(tw);
 @reference '@uoguelph/tailwind-theme';
 @source '../../react-components/src';
+@source '../';
 @plugin "@headlessui/tailwindcss";
 
 @layer base {
