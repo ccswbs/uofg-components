@@ -1,3 +1,60 @@
 import { Meta } from '@storybook/blocks';
 
 <Meta title="Introduction" />
+
+# University of Guelph Components
+
+To make the development of brand compliant web pages easier,
+we have created a collection of npm packages that offer components, styles, etc.
+Below is a list of the packages and their purposes.
+
+For more information about a specific package, please refer to the documentation for that package.
+
+## Packages
+- **@uoguelph/react-components**: A collection of components for use in React projects.
+- **@uoguelph/web-components**: A collection of framework-agnostic web components.
+- **@uoguelph/tailwind-theme**: A theme which can be used in any project using TailwindCSS.
+
+## Fonts
+
+Whenever you use any of the aforementioned packages, you must include the fonts **DM Sans** and **Bitter**.
+as they are not typically available by default in most browsers or systems.
+The easiest way to do this is via Google Fonts:
+
+Using HTML:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+```
+
+Using CSS:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+```
+
+You can use any approach you prefer,
+such as hosting the fonts yourself, but our recommendation is you use one of the above methods.
+
+## Root Font Size and REM units
+
+The root font size of University of Guelph web pages is 10px.
+
+This means that 1rem = 10px, 2rem = 20px, etc.
+
+This is done by setting the font size of the html element to 62.5%:
+
+```css
+html {
+  font-size: 62.5%;
+}
+```
+This is done as both a developer convenience (rem units are easier to work with when 1rem = 10px)
+and a accessibility feature (pages will scale according to the user's preferred font size).
+
+If you are correctly using any of the packages in this monorepo, this will be done for you.
+but its important to note that any custom CSS you write that uses rem units should be done with this in mind,
+otherwise the sizing of the elements you are styling will be incorrect.
