@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
-import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
+import { tv } from 'tailwind-variants';
 
 const defaultElement = 'a';
 

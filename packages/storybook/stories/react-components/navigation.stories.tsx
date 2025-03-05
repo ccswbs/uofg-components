@@ -1,5 +1,5 @@
-import { Navigation, NavigationLink } from '../../../react-components/src/components/navigation/navigation';
 import { ComponentType } from 'react';
+import { Navigation, NavigationLink } from '../../../react-components/src/components/navigation/navigation';
 
 const config = {
   title: 'React Components/Navigation',
