@@ -36,4 +36,4 @@ The monorepo contains the following packages:
 
 1. **packages/storybook**: This directory contains the code for our Storybook documentation. It acts as the documentation for all the other packages in the repo.
 
-For more detailed explanation of each package, read their corresponding README.
+For more detailed explanation of each package, read their corresponding README and Development Guide files.
