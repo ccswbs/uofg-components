@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @import 'tailwindcss';
 
 @layer base {
@@ -10,6 +13,24 @@
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
@@ -109,13 +130,4 @@
   /** Animations **/
   --animate-fade-in: fade 250ms ease-in-out 1 normal forwards;
   --animate-fade-out: fade 250ms ease-in-out 1 reverse backwards;
-
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 }

@@ -1,5 +1,4 @@
-@import 'tailwindcss';
-@reference '@uoguelph/tailwind-theme';
+@import '@uoguelph/tailwind-theme';
 @source '../components/';
 
 @layer base {
