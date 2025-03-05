@@ -2,38 +2,4 @@
 
 A theme for Tailwind CSS which follows University of Guelph brand guidelines.
 
-## Getting Started
-
-### Setup Tailwind in your project
-
-First, your project must be using Tailwind CSS. To get started with Tailwind CSS, you can visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs). It provides comprehensive guides on installation, configuration, and usage.
-
-**IMPORTANT** Our theme is only compatible with version 4+ of Tailwind CSS.
-
-### Install the package
-
-Install the package using the package manager of your choice.
-
-```bash
-# Using npm
-npm install --save-dev @uoguelph/tailwind-theme
-
-# Using Yarn
-yarn add -D @uoguelph/tailwind-theme
-
-# Using pnpm
-pnpm add -D @uoguelph/tailwind-theme
-
-# Using bun
-bun add -D @uoguelph/tailwind-theme
-```
-
-Once you've set up Tailwind CSS in your project, ensure your main CSS file looks like this
-
-```CSS
-@import "@uoguelph/tailwind-theme";
-
-/* Whatever else you want here */
-```
-
-NOTE: That you no longer need to import the default Tailwind CSS styles, as they are already included in our theme.
+For more information, please read the [Documentation](https://uoguelph.github.io/react-components/) here.

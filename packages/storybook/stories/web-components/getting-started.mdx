@@ -62,17 +62,3 @@ For example, specifying `1.x.x` will ensure you get the latest release of versio
 Using a version range like this will prevent unexpected issues and ensure stability until you’re ready to upgrade to a new major release.
 
 For more details, refer to the [unpkg documentation](https://www.unpkg.com).
-
-## Fonts
-
-Some components, such as the `uofg-header`, are designed with specific fonts in mind, like **DM Sans**.
-This font is not typically available by default in most browsers or systems.
-To ensure your components look as intended, we recommend adding the required fonts via Google Fonts:
-
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
-```
-
-While the components will still function without these fonts, their appearance may differ slightly from the intended design.
