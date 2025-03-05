@@ -1,4 +1,4 @@
-import { ElementType, PropsWithChildren, useContext, useEffect } from 'react';
+import { ElementType, PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
@@ -9,7 +9,7 @@ export type LinkCarouselLinkElementType = ElementType<{ href?: string }, 'a'>;
 
 export type LinkCarouselLinkProps<T extends LinkCarouselLinkElementType = typeof defaultElement> = PropsWithChildren<{
   /**
-   * The element type to render as.
+   * The element-type to render as.
    *
    * @default 'a'
    */
