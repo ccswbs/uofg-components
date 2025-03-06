@@ -13,6 +13,7 @@ const config = {
     'variant': {
       type: { name: 'string', required: false },
       description: 'The variant of the header',
+      control: false,
       table: {
         type: {
           optional: false,
@@ -23,10 +24,12 @@ const config = {
     'page-title': {
       type: { name: 'string', required: false },
       description: 'The title of the department/topic that the header is being used for.',
+      control: false,
     },
     'page-url': {
       type: { name: 'string', required: false },
       description: 'The URL to the home/landing page of the department/topic the header is being used for.',
+      control: false,
     },
   },
 };
@@ -41,6 +44,14 @@ export const Basic = {
 };
 
 export const WithPageTitle = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Sometimes the header is being used on pages that belong together in a group, or are being used in web pages that belong to a specific department of the University. In these cases the header provides a way to make it clear to the end user that these pages belong together by showing the name of the department/topic in the sub navigation.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Page Title"></uofg-header>
@@ -48,6 +59,14 @@ export const WithPageTitle = {
 };
 
 export const WithPageLink = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Sometimes the header is being used on pages that belong together in a group, or are being used in web pages that belong to a specific department of the University. In these cases the header provides a way to make it clear to the end user that these pages belong together by showing the name of the department/topic in the sub navigation.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Page Title" page-url="#example"></uofg-header>
@@ -55,6 +74,14 @@ export const WithPageLink = {
 };
 
 export const WithSubNavigation = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'The header also allows for a collection of links and dropdowns to be displayed within the sub navigation. This pairs well with the topic/category title, allowing for a more detailed navigation experience.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Topic/Department">
@@ -78,6 +105,14 @@ export const WithSubNavigation = {
 };
 
 export const WithOverflowingSubNavigation = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Sometimes you may have several links and menus within the sub-navigation. Normally, this would cause overflow on desktop. The header will detect when it overflows and switch the desktop sub-navigation to show a menu containing all the sub navigation items similar to how it does on mobile.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Topic/Department">
@@ -105,6 +140,14 @@ export const WithOverflowingSubNavigation = {
 };
 
 export const DualBrand = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'A simplfied version of the header, with both the University of Guelph and the University of Guelph-Humber logos. This is currently only used in Slate forms.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Topic/Department" variant="dual-brand"></uofg-header>

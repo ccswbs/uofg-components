@@ -15,6 +15,14 @@ const config = {
 export default config;
 
 export const Basic = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'The footer component is used to display the footer of a page. It contains links to various resources and information about the University of Guelph.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-footer>
@@ -24,6 +32,13 @@ export const Basic = {
 };
 
 export const WithLinks = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'The footer also allows for a collection of links to be displayed above the main footer content.',
+      },
+    },
+  },
   render: ({ ...args }) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-footer>
