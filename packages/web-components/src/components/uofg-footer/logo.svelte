@@ -5,7 +5,7 @@
 <a
   href="https://www.uoguelph.ca/improve-life"
   aria-label="Improve Life"
-  class="h-full row-span-2 flex transition-opacity hover:opacity-75 focus:opacity-75 md:h-[3.5em] [&>svg]:block [&>svg]:w-full max-h-[4.8rem]"
+  class="h-[4.8rem] w-full row-span-2 flex transition-opacity hover:opacity-75 focus:opacity-75 md:h-[3.5em] [&>svg]:block [&>svg]:h-full [&>svg]:w-full overflow-hidden"
 >
   <ImproveLife />
 </a>
