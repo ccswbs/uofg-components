@@ -5,7 +5,7 @@
 
   const classes = tv({
     slots: {
-      list: 'grid grid-rows-5 items-center not-italic gap-1',
+      list: 'grid grid-rows-5 items-center not-italic gap-0',
       link: 'h-full flex items-center',
     }
   });

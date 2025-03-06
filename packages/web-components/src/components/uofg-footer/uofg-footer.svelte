@@ -49,7 +49,7 @@
     slots: {
       footer:
         'flex flex-col content-center gap-0 md:gap-6 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast md:grid md:grid-cols-2 lg:grid-cols-4',
-      wrapper: 'grid grid-rows-5 not-italic items-center mb-6 md:mb-0 gap-1',
+      wrapper: 'grid grid-rows-5 not-italic items-center mb-6 md:mb-0 gap-0',
     },
   });
 
