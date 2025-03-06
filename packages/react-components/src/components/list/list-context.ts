@@ -1,7 +1,11 @@
 import { createContext } from 'react';
 
-export type ListContextValue = { nesting: number };
+export type ListContextValue = {
+  parent: 'ol' | 'ul' | null;
+  level: number;
+};
 
 export const ListContext = createContext<ListContextValue>({
-  nesting: 0,
+  parent: null,
+  level: 0,
 });

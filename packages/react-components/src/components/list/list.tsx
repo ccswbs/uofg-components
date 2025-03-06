@@ -41,7 +41,7 @@ export function List<T extends ListElementType = typeof defaultElement>({
       nested: {
         true: 'tw:ml-4',
       },
-      nesting: {
+      level: {
         0: '',
         1: '',
         2: '',
@@ -50,37 +50,44 @@ export function List<T extends ListElementType = typeof defaultElement>({
     },
     compoundVariants: [
       {
-        nesting: 1,
+        level: 1,
         as: 'ul',
         class: 'tw:list-[square]',
       },
       {
-        nesting: 1,
+        level: 1,
         as: 'ol',
         class: 'tw:list-[lower-alpha]',
       },
       {
-        nesting: 2,
+        level: 2,
         as: 'ul',
         class: 'tw:list-[circle]',
       },
       {
-        nesting: 2,
+        level: 2,
         as: 'ol',
         class: 'tw:list-[lower-roman]',
       },
     ],
   });
 
+  const classes = list({
+    as: Component,
+    level: context.parent === as ? ((context.level % 3) as 0 | 1 | 2 | 3) : 0,
+    nested: context.level > 0,
+  });
+
   return (
-    <Component
-      {...rest}
-      className={twMerge(
-        list({ as: Component, nesting: (context?.nesting % 3) as 0 | 1 | 2, nested: context?.nesting > 0 }),
-        className,
-      )}
-    >
-      <ListContext.Provider value={{ nesting: (context.nesting + 1) % 4 }}>{children}</ListContext.Provider>
+    <Component {...rest} className={twMerge(classes, className)}>
+      <ListContext.Provider
+        value={{
+          parent: as ?? 'ul',
+          level: context.level + 1,
+        }}
+      >
+        {children}
+      </ListContext.Provider>
     </Component>
   );
 }
