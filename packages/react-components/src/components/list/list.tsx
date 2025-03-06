@@ -1,6 +1,7 @@
-import { ComponentPropsWithoutRef, createContext, PropsWithChildren, useContext } from 'react';
+import { ComponentPropsWithoutRef, PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
+import { ListContext } from './list-context.ts';
 import { ListItem } from './list-item';
 
 const defaultElement = 'ul';
@@ -10,7 +11,7 @@ type ListElementType = 'ul' | 'ol';
 export type ListProps<T extends ListElementType = typeof defaultElement> = PropsWithChildren<
   {
     /**
-     * The element type to render as.
+     * The element-type to render as.
      *
      * @default 'ul'
      */
@@ -19,8 +20,6 @@ export type ListProps<T extends ListElementType = typeof defaultElement> = Props
     className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
-
-const ListContext = createContext<{ nested: boolean } | null>(null);
 
 /** A list component. */
 export function List<T extends ListElementType = typeof defaultElement>({
@@ -42,12 +41,46 @@ export function List<T extends ListElementType = typeof defaultElement>({
       nested: {
         true: 'tw:ml-4',
       },
+      nesting: {
+        0: '',
+        1: '',
+        2: '',
+        3: '',
+      },
     },
+    compoundVariants: [
+      {
+        nesting: 1,
+        as: 'ul',
+        class: 'tw:list-[square]',
+      },
+      {
+        nesting: 1,
+        as: 'ol',
+        class: 'tw:list-[lower-alpha]',
+      },
+      {
+        nesting: 2,
+        as: 'ul',
+        class: 'tw:list-[circle]',
+      },
+      {
+        nesting: 2,
+        as: 'ol',
+        class: 'tw:list-[lower-roman]',
+      },
+    ],
   });
 
   return (
-    <Component {...rest} className={twMerge(list({ as: Component, nested: context?.nested }), className)}>
-      <ListContext.Provider value={{ nested: typeof context === 'object' }}>{children}</ListContext.Provider>
+    <Component
+      {...rest}
+      className={twMerge(
+        list({ as: Component, nesting: (context?.nesting % 3) as 0 | 1 | 2, nested: context?.nesting > 0 }),
+        className,
+      )}
+    >
+      <ListContext.Provider value={{ nesting: (context.nesting + 1) % 4 }}>{children}</ListContext.Provider>
     </Component>
   );
 }

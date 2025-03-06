@@ -64,6 +64,14 @@ export const NestedUnorderedList: Story = {
       <List as="ul">
         <ListItem>Example Nested List Item 1</ListItem>
         <ListItem>Example Nested List Item 2</ListItem>
+        <List as="ol">
+          <ListItem>Example Nested List Item 1</ListItem>
+          <ListItem>Example Nested List Item 2</ListItem>
+          <List as="ul">
+            <ListItem>Example Nested List Item 1</ListItem>
+            <ListItem>Example Nested List Item 2</ListItem>
+          </List>
+        </List>
       </List>
       <ListItem>Example List Item 6</ListItem>
     </List>
@@ -82,6 +90,14 @@ export const NestedOrderedList: Story = {
       <List as="ol">
         <ListItem>Example Nested List Item 1</ListItem>
         <ListItem>Example Nested List Item 2</ListItem>
+        <List as="ol">
+          <ListItem>Example Nested List Item 1</ListItem>
+          <ListItem>Example Nested List Item 2</ListItem>
+          <List as="ol">
+            <ListItem>Example Nested List Item 1</ListItem>
+            <ListItem>Example Nested List Item 2</ListItem>
+          </List>
+        </List>
       </List>
       <ListItem>Example List Item 6</ListItem>
     </List>
