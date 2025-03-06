@@ -9,7 +9,7 @@ type Color = {
   swatches: Swatches;
 };
 
-const swatchNames = ['contrast', 'focus', 'on-dark', 'on-light', 'bg'];
+const swatchNames = ['focus', 'on-dark', 'on-light', 'bg', 'contrast'];
 const colorNames = [
   'black',
   'white',
