@@ -1,9 +1,11 @@
 <script>
-  let { href, label, title, children } = $props();
+  import { twMerge } from 'tailwind-merge';
+
+  let { href, label, title, children, classes } = $props();
 </script>
 
 <a
-  class="w-fit underline decoration-transparent transition-colors hover:decoration-black-contrast focus:decoration-black-contrast"
+  class={twMerge("w-fit underline decoration-transparent transition-colors hover:decoration-black-contrast focus:decoration-black-contrast", classes)}
   {href}
   title={title ?? undefined}
   aria-label={label ?? undefined}

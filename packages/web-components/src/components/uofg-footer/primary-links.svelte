@@ -1,14 +1,34 @@
 <script>
   import { primaryLinks as links } from './data/guelph.js';
   import Link from './link.svelte';
+  import { tv } from 'tailwind-variants';
+
+  const classes = tv({
+    slots: {
+      list: 'grid grid-rows-5 items-center not-italic gap-1',
+      link: 'h-full flex items-center',
+    }
+  });
+
+  const { list, link } = classes();
 </script>
 
-<div class="flex justify-center md:col-span-2 md:row-start-2 lg:row-auto">
-  <ul class="flex w-full flex-col gap-x-6 gap-y-1 md:grid md:grid-cols-2 [&>li]:contents">
-    {#each links as { href, title, text }}
+<ul class={list()}>
+  {#each links as { href, title, text }, i}
+    {#if i % 2 === 0}
       <li>
-        <Link {href} {title}>{text}</Link>
+        <Link classes={link()} {href} {title}>{text}</Link>
       </li>
-    {/each}
-  </ul>
-</div>
+    {/if}
+  {/each}
+</ul>
+
+<ul class={list()}>
+  {#each links as { href, title, text }, i}
+    {#if i % 2 !== 0}
+      <li>
+        <Link classes={link()} {href} {title}>{text}</Link>
+      </li>
+    {/if}
+  {/each}
+</ul>

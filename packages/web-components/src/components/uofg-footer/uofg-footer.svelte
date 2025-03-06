@@ -41,8 +41,19 @@
   import Address from './address.svelte';
   import Link from './link.svelte';
   import { social } from './data/guelph.js';
+  import { tv } from 'tailwind-variants';
 
   let { subFooter } = $props();
+
+  const classes = tv({
+    slots: {
+      footer:
+        'flex flex-col content-center gap-0 md:gap-6 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast md:grid md:grid-cols-2 lg:grid-cols-4',
+      wrapper: 'grid grid-rows-5 not-italic items-center mb-6 md:mb-0 gap-1',
+    },
+  });
+
+  const { footer, wrapper } = classes();
 </script>
 
 <footer>
@@ -50,10 +61,8 @@
     <SubFooter links={subFooter} />
   {/if}
 
-  <div
-    class="flex flex-col content-center gap-6 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast md:grid md:grid-cols-2 lg:grid-cols-4"
-  >
-    <div class="mb-1 flex flex-col gap-1">
+  <div class={footer()}>
+    <div class={wrapper()}>
       <Logo />
       <Social />
       <Link href={social.directory}>Social Media Directory</Link>
