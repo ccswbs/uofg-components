@@ -11,7 +11,10 @@
 <div class="flex w-fit">
   {#if $headerState?.mode === 'desktop'}
     <!-- Decorative SVG -->
-    <div class="left-0 h-full w-[7.5rem] min-[1320px]:absolute [&>svg]:block [&>svg]:h-full [&>svg]:w-auto">
+    <div
+      class="left-0 h-full w-[7.5rem] min-[1320px]:absolute [&>svg]:block [&>svg]:h-full [&>svg]:w-auto"
+      aria-hidden="true"
+    >
       <Decorative />
     </div>
   {/if}

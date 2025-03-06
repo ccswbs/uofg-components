@@ -40,7 +40,7 @@ For more detailed explanation of each package, read their corresponding README a
 
 ## Publishing
 
-To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process. 
+To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process.
 Lerna allows us to publish all the packages in the monorepo with a single command.
 
 ### Prerequisites
@@ -50,6 +50,7 @@ Lerna allows us to publish all the packages in the monorepo with a single comman
 ```sh
 npm login
 ```
+
 ### Publishing Steps
 
 1. Run the following command to publish all the packages in the monorepo (Lerna will automatically determine which packages have changed and need to be published):
