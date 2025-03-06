@@ -29,7 +29,7 @@ export function LoadingIndicator({ size = 'lg', color = 'red', className }: Load
       spinner: 'tw:w-[1em] tw:animate-spin',
       container: 'tw:flex tw:absolute tw:flex-col tw:items-center tw:justify-center',
       icon: '',
-      text: '',
+      text: 'tw:font-serif',
     },
     variants: {
       size: {
