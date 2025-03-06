@@ -9,7 +9,26 @@ const config = {
       toc: true,
     },
   },
-  tags: ['autodocs'],
+  argTypes: {
+    'variant': {
+      type: { name: 'string', required: false },
+      description: 'The variant of the header',
+      table: {
+        type: {
+          optional: false,
+          summary: '"dual-brand"',
+        },
+      },
+    },
+    'page-title': {
+      type: { name: 'string', required: false },
+      description: 'The title of the department/topic that the header is being used for.',
+    },
+    'page-url': {
+      type: { name: 'string', required: false },
+      description: 'The URL to the home/landing page of the department/topic the header is being used for.',
+    },
+  },
 };
 
 export default config;

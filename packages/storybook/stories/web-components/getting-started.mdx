@@ -4,61 +4,46 @@ import { Meta } from '@storybook/blocks';
 
 # Introduction
 
-This is a library of web components designed for use across various University of Guelph websites. These components are built with [Svelte](https://svelte.dev/), a compiler/framework that simplifies the development of component libraries.
+This is a library of web components designed for use across various University of Guelph websites.
 
-## Adding Components to a Page
+## Usage
 
-The recommended method for including the web components in your page is to use [unpkg](https://www.unpkg.com), a fast, globally available CDN for npm packages.
+The recommended method for including the web components in your page is to use a CDN like unpkg or jsdelivr.
 
-To always load the latest version, add the following to the `<head>` of your HTML:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@uoguelph/web-components/dist/uofg-web-components/uofg-web-components.css"
-/>
-<script
-  type="module"
-  src="https://unpkg.com/@uoguelph/web-components/dist/uofg-web-components/uofg-web-components.esm.js"
-></script>
-```
-
-### Including a single component
-
-Using `uofg-web-components.esm.js` will load all the web-components in the library, which may not be what you desire.
-
-You can load each component individually, and thus can load only the components you are planning on using, by replacing the `uofg-web-components.esm.js` in the `src` attribute in the `script` with the name of the component you want. For example, if I only want to load the header:
-
-```html
-<script
-  type="module"
-  src="https://unpkg.com/@uoguelph/web-components/dist/uofg-web-components/uofg-header.esm.js"
-></script>
-```
-
-### Best Practice: Specify a Version Range
-
-While loading the latest version ensures you're using the most current features, it’s not always best practice. New releases may introduce breaking changes that could impact your page’s functionality. Instead, it’s safer to specify a version range following semantic versioning (semver).
-
-Semantic versioning follows the format `x1.x2.x3`:
-
-- **Major (x1)**: Potentially breaking changes.
-- **Minor (x2)**: New features, backward compatible.
-- **Patch (x3)**: Bug fixes, backward compatible.
-
-For example, specifying `1.x.x` will ensure you get the latest release of version 1 (without breaking changes). Here's how you can do it:
+The package contains a stylesheet that is required for the components to render correctly.
+As such, you must link to the stylesheet in the `<head>` of your HTML:
 
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@uoguelph/web-components@1.x.x/dist/uofg-web-components/uofg-web-components.css"
+  href="https://cdn.jsdelivr.net/npm/@uoguelph/web-components/web-components/dist/uofg-web-components/uofg-web-components.css"
 />
+```
+
+Note the above will always load the latest version of the library.
+This is not recommended for production use, as new releases may introduce breaking changes.
+Instead, use [semantic versioning](https://semver.org/) to specify a version range.
+For example, to always load the latest version of the 1.x.x series, add the following to the `<head>` of your HTML:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@1.x.x/dist/uofg-web-components/uofg-web-components.css"
+/>
+```
+
+To load the components, add the following to the `<head>` of your HTML as well:
+
+```html
 <script
   type="module"
-  src="https://unpkg.com/@uoguelph/web-components@1.x.x/dist/uofg-web-components/uofg-web-components.esm.js"
+  src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@1.x.x/dist/uofg-web-components/uofg-web-components.esm.js"
 ></script>
 ```
 
-Using a version range like this will prevent unexpected issues and ensure stability until you’re ready to upgrade to a new major release.
+This will load all the web components in the library.
 
-For more details, refer to the [unpkg documentation](https://www.unpkg.com).
+You can also load each component individually, and thus can load only the components you are planning on using.
+
+For more details about this, view the documentation for the individual components.
+At the top of each component's documentation, you will find the code to load that component.

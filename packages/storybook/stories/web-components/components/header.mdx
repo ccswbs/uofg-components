@@ -1,6 +1,7 @@
-import { Canvas, Meta } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as Stories from './header.stories.tsx';
+import { ComponentImport } from '../../../doc-blocks/component-import.js';
 
 <Meta of={Stories} />
 
@@ -8,38 +9,9 @@ import * as Stories from './header.stories.tsx';
 
 The header component is used to display the header of a page. It contains the University of Guelph logo and links to various resources.
 
-## Attributes
+<ComponentImport of={Stories} />
 
-<table>
-  <thead>
-    <tr>
-      <td>Attribute</td>
-      <td>Description</td>
-      <td>Type</td>
-      <td>Default</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>`page-title`</td>
-      <td>The title of the department/topic that the header is being used for.</td>
-      <td>`string`</td>
-      <td>`""`</td>
-    </tr>
-    <tr>
-      <td>`page-url`</td>
-      <td>The URL to the home/landing page of the department/topic the header is being used for.</td>
-      <td>`string`</td>
-      <td>`""`</td>
-    </tr>
-    <tr>
-      <td>`variant`</td>
-      <td>Which variant of the header to use, currently only one exists, the `dual-brand` variant.</td>
-      <td>`string`</td>
-      <td>`""`</td>
-    </tr>
-  </tbody>
-</table>
+<ArgTypes of={Stories.Basic} />
 
 ## Usage
 
