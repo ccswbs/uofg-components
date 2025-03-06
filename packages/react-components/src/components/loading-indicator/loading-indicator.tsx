@@ -1,4 +1,4 @@
-import { faSpinner } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
+import { faSpinnerThird } from '@awesome.me/kit-7993323d0c/icons/classic/light';
 import { faGryphonStatue } from '@awesome.me/kit-7993323d0c/icons/kit/custom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { twMerge } from 'tailwind-merge';
@@ -25,61 +25,63 @@ export type LoadingIndicatorProps = {
 export function LoadingIndicator({ size = 'lg', color = 'red', className }: LoadingIndicatorProps) {
   const loadingIndicator = tv({
     slots: {
-      base: 'tw:flex tw:flex-col tw:items-center tw:justify-center',
-      icon: '',
-      container: 'tw:flex tw:items-center tw:gap-2',
+      base: 'tw:flex tw:flex-col tw:items-center tw:justify-center tw:relative',
       spinner: 'tw:w-[1em] tw:animate-spin',
-      loadingText: 'tw:font-condensed tw:text-3xl',
+      container: 'tw:flex tw:absolute tw:flex-col tw:items-center tw:justify-center',
+      icon: '',
+      text: '',
     },
     variants: {
       size: {
         sm: {
-          icon: 'tw:text-4xl',
-          loadingText: 'tw:text-lg',
+          spinner: 'tw:text-[8rem]',
+          icon: 'tw:text-[4rem]',
+          text: 'tw:sr-only',
         },
         md: {
-          icon: 'tw:text-6xl',
-          loadingText: 'tw:text-xl',
+          spinner: 'tw:text-[14rem]',
+          icon: 'tw:text-[6rem]',
+          text: 'tw:text-[1.5rem]',
         },
         lg: {
-          icon: 'tw:text-9xl',
-          loadingText: 'tw:text-2xl',
+          spinner: 'tw:text-[18rem]',
+          icon: 'tw:text-[8rem]',
+          text: 'tw:text-lg',
         },
       },
       color: {
         red: {
           icon: 'tw:text-red',
           spinner: 'tw:text-red',
-          loadingText: 'tw:text-red',
+          text: 'tw:text-red',
         },
         blue: {
           icon: 'tw:text-blue',
           spinner: 'tw:text-blue',
-          loadingText: 'tw:text-blue',
+          text: 'tw:text-blue',
         },
         green: {
           icon: 'tw:text-green',
           spinner: 'tw:text-green',
-          loadingText: 'tw:text-green',
+          text: 'tw:text-green',
         },
         yellow: {
           icon: 'tw:text-yellow',
           spinner: 'tw:text-yellow',
-          loadingText: 'tw:text-yellow',
+          text: 'tw:text-yellow',
         },
       },
     },
   });
 
-  const { base, icon, container, spinner, loadingText } = loadingIndicator({ size, color });
+  const { base, icon, container, spinner, text } = loadingIndicator({ size, color });
 
   return (
     <div className={`uofg-loading-indicator ${twMerge(base(), className)}`}>
-      <FontAwesomeIcon className={`uofg-loading-indicator-icon ${icon()}`} icon={faGryphonStatue} />
-
-      <div className={`uofg-loading-indicator-container ${container()}`}>
-        <FontAwesomeIcon className={`uofg-loading-indicator-spinner ${spinner()}`} icon={faSpinner} />
-        <span className={`uofg-loading-indicator-loading-text ${loadingText()}`}>Loading</span>
+      <FontAwesomeIcon className={`uofg-loading-indicator-spinner ${spinner()}`} icon={faSpinnerThird} />
+      <div className={container()}>
+        <FontAwesomeIcon className={`uofg-loading-indicator-icon ${icon()}`} icon={faGryphonStatue} />
+        <span className={text()}>Loading</span>
       </div>
     </div>
   );
