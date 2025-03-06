@@ -55,7 +55,7 @@ npm login
 1. Run the following command to publish all the packages in the monorepo (Lerna will automatically determine which packages have changed and need to be published):
 
 ```sh
-lerna publish --pre-dist-tag rc
+lerna publish --pre-dist-tag rc --no-private --preid rc
 ```
 
 2. Follow the prompts to select the version number for each package. You should read the [Semantic Versioning](https://semver.org/) documentation to understand how to select the correct version number. Remember any pre-release version should be suffixed with `-rc` (e.g. `1.0.0-rc.0`).
