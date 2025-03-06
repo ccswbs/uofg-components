@@ -12,6 +12,7 @@ function getAbsolutePath(value: string) {
 const config: StorybookConfig = {
   stories: [
     '../stories/introduction.mdx',
+    '../stories/tailwind-theme/getting-started.mdx',
     '../stories/web-components/getting-started.mdx',
     '../stories/react-components/getting-started.mdx',
     '../stories/**/*.mdx',
