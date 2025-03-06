@@ -4,6 +4,7 @@ import { Preview } from '@storybook/react';
 import * as React from 'react';
 import { ComponentImport } from '../doc-blocks/component-import';
 import './index.css';
+import theme from './theme';
 
 const preview: Preview = {
   parameters: {
@@ -17,6 +18,7 @@ const preview: Preview = {
       viewports: INITIAL_VIEWPORTS,
     },
     docs: {
+      theme: { ...theme, fontBase: '"DM Sans", sans-serif' },
       page: () => (
         <>
           <Title />
