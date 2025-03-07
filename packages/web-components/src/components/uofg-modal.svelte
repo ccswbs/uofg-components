@@ -160,14 +160,60 @@
     // Prevent scrolling of the body when the modal is open.
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
+
+  const classes = tv({
+    slots: {
+      base: 'bg-opacity-50 fixed top-0 left-0 z-[1000] flex h-screen w-screen bg-black transition-[opacity,visibility]',
+      content:
+        'absolute left-1/2 z-1 h-fit max-h-full w-full max-w-full -translate-x-1/2 overflow-auto transition-transform motion-reduce:transition-none sm:w-fit sm:p-8',
+      button:
+        'absolute top-0 right-0 z-[2] flex aspect-square w-8 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-black/30 bg-black p-2 text-lg text-black-contrast transition-colors hover:bg-red hover:text-red-contrast focus:bg-red focus:text-red-contrast',
+    },
+    variants: {
+      isOpen: {
+        true: {
+          base: 'visible opacity-100',
+          content: 'visible opacity-100',
+        },
+        false: {
+          base: 'invisible opacity-0',
+          content: 'invisible opacity-0',
+        },
+      },
+      centered: {
+        true: '',
+      },
+    },
+    compoundVariants: [
+      {
+        isOpen: true,
+        centered: true,
+        class: {
+          content: 'top-1/2 translate-y-[-50%]',
+        },
+      },
+      {
+        isOpen: false,
+        centered: false,
+        class: {
+          content: 'translate-y-[-50px]',
+        },
+      },
+      {
+        isOpen: false,
+        centered: true,
+        class: {
+          content: 'top-1/2 translate-y-[calc(-50%_-_50px)]',
+        },
+      },
+    ],
+  });
+
+  const { base, content, button } = classes({ isOpen, centered });
 </script>
 
 <div
-  class="bg-opacity-50 fixed top-0 left-0 z-[1000] flex h-screen w-screen bg-black transition-[opacity,visibility]"
-  class:visible={isOpen}
-  class:opacity-100={isOpen}
-  class:invisible={!isOpen}
-  class:opacity-0={!isOpen}
+  class={base()}
   role={alertDialog ? 'alertdialog' : 'dialog'}
   aria-modal={isOpen ? 'true' : ''}
   aria-label={label}
@@ -177,22 +223,8 @@
   onfocusout={handleFocusOut}
   bind:this={container}
 >
-  <div
-    part="content"
-    class={twJoin(
-      'absolute left-1/2 z-1 h-fit max-h-full w-full max-w-full -translate-x-1/2 overflow-auto transition-transform motion-reduce:transition-none sm:w-fit sm:p-8',
-      isOpen && 'visible opacity-100',
-      !isOpen && !centered && 'translate-y-[-50px]',
-      !isOpen && centered && 'top-1/2 translate-y-[calc(-50%_-_50px)]',
-      isOpen && centered && 'top-1/2 translate-y-[-50%]',
-    )}
-  >
-    <button
-      class="absolute top-0 right-0 z-[2] flex aspect-square w-8 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-black/30 bg-black p-2 text-lg text-black-contrast transition-colors hover:bg-red hover:text-red-contrast focus:bg-red focus:text-red-contrast"
-      aria-label="Close modal"
-      bind:this={dismissButton}
-      onclick={() => (isOpen = false)}
-    >
+  <div part="content" class={content()}>
+    <button class={button()} aria-label="Close modal" bind:this={dismissButton} onclick={() => (isOpen = false)}>
       <FontAwesomeIcon icon={faTimes} />
     </button>
     <slot />
