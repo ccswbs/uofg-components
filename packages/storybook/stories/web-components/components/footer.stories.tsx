@@ -23,7 +23,7 @@ export const Basic = {
       },
     },
   },
-  render: ({ ...args }) => (
+  render: () => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-footer>
       {/* @ts-expect-error Svelte will define the custom element, so we can ignore the error */}
@@ -39,7 +39,7 @@ export const WithLinks = {
       },
     },
   },
-  render: ({ ...args }) => (
+  render: () => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-footer>
       <a href="#example">Example Menu Link</a>
