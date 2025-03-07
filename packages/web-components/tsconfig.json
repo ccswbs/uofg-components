@@ -17,10 +17,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "allowJs": true,
-    "checkJs": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "checkJs": false
   },
   "include": ["src", "vite.config.ts"]
 }

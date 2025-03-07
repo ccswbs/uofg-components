@@ -31,9 +31,4 @@ export default defineConfig({
     sourcemap: process.env.NODE_ENV !== 'production',
     emptyOutDir: true,
   },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
 });
