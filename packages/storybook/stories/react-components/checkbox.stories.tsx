@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import * as React from 'react';
 import { Checkbox } from '../../../react-components/src/components/checkbox/checkbox';
 
 const config: Meta<typeof Checkbox> = {

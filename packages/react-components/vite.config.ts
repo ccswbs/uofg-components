@@ -34,5 +34,5 @@ export default defineConfig({
     sourcemap: process.env.NODE_ENV !== 'production',
     emptyOutDir: true,
   },
-  plugins: [react(), dts({ rollupTypes: true, tsconfigPath: './tsconfig.app.json' }), tailwindcss()],
+  plugins: [react(), dts({ tsconfigPath: './tsconfig.app.json', insertTypesEntry: true }), tailwindcss()],
 });

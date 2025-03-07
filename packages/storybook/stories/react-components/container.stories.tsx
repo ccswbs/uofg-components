@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Container } from '../../../react-components/src/components/container/container';
 
 const config = {

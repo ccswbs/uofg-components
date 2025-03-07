@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import * as React from 'react';
 import { ComponentType } from 'react';
 import { Radio, RadioGroup } from '../../../react-components/src/components/radio-group/radio-group';
 

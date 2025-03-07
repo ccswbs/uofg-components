@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
 import { ComponentType } from 'react';
 import {
   LinkCarousel,
@@ -30,14 +29,6 @@ const config: Meta<typeof LinkCarousel> = {
 export default config;
 
 type Story = StoryObj<typeof LinkCarousel>;
-
-const image = {
-  src: 'https://picsum.photos/seed/first/1680/640',
-  height: 1680,
-  width: 640,
-  alt: 'Placeholder image',
-  className: 'w-full',
-};
 
 export const Default: Story = {
   args: {

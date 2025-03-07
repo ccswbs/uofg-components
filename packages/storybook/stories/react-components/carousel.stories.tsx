@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
 import { Carousel } from '../../../react-components/src/components/carousel/carousel';
 
 const config: Meta<typeof Carousel> = {
