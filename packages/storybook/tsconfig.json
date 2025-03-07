@@ -17,5 +17,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["stories", "doc-blocks", ".storybook", "vite.config.ts"]
+  "include": ["stories", "doc-blocks", ".storybook", "vite.config.ts", "vite-env.d.ts"]
 }
