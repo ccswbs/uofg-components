@@ -34,5 +34,9 @@ export default defineConfig({
     sourcemap: process.env.NODE_ENV !== 'production',
     emptyOutDir: true,
   },
-  plugins: [react(), dts({ tsconfigPath: './tsconfig.app.json', insertTypesEntry: true }), tailwindcss()],
+  plugins: [
+    react(),
+    dts({ tsconfigPath: './tsconfig.json', insertTypesEntry: true, exclude: 'vite.config.ts' }),
+    tailwindcss(),
+  ],
 });

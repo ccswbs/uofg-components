@@ -26,5 +26,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
-  }
+  },
+  "include": ["stories", "doc-blocks", ".storybook", "vite.config.ts"]
 }
