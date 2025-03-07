@@ -1,5 +1,6 @@
-<script>
-  let { icon } = $props();
+<script lang="ts">
+  import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+  let { icon }: { icon: IconDefinition } = $props();
 
   const width = icon.icon[0];
   const height = icon.icon[1];
