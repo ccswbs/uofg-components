@@ -2,8 +2,8 @@ import { faPlay } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Button, ButtonProps } from '../button/button.tsx';
-import { EmbeddedVideoContext } from './embedded-video-context.ts';
+import { Button, ButtonProps } from '../button/button';
+import { EmbeddedVideoContext } from './embedded-video-context';
 
 type EmbeddedVideoModalButtonProps = PropsWithChildren<{
   /** The type of button to render, either a play button or a color which will be passed to a Button component */

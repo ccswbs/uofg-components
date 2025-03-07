@@ -20,4 +20,4 @@ export function Navigation({ className, children }: NavigationProps) {
 
 Navigation.displayName = 'Navigation';
 
-export { NavigationLink } from './navigation-link.tsx';
+export { NavigationLink } from './navigation-link';

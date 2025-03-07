@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
-import { ListContext } from './list-context.ts';
+import { ListContext } from './list-context';
 import { ListItem } from './list-item';
 
 const defaultElement = 'ul';

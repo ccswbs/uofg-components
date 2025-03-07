@@ -1,8 +1,8 @@
 import { ReactElement, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
-import { Button } from '../button/button.tsx';
-import { Modal } from '../modal/modal.tsx';
+import { Button } from '../button/button';
+import { Modal } from '../modal/modal';
 import { EmbeddedVideoContext } from './embedded-video-context';
 import { EmbeddedVideoModalButton } from './embedded-video-modal-button';
 
