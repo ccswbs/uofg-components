@@ -5,7 +5,7 @@ import * as path from 'path';
 import { defineConfig } from 'vite';
 
 const entries = {
-  'uofg-web-components': path.resolve(__dirname, 'src/main.ts'),
+  'uofg-web-components': path.resolve(__dirname, 'src/main.js'),
 };
 
 fs.readdirSync(path.resolve(__dirname, 'src', 'components'), { withFileTypes: true, recursive: true }).forEach(file => {
@@ -30,5 +30,10 @@ export default defineConfig({
     minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false,
     sourcemap: process.env.NODE_ENV !== 'production',
     emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
 });
