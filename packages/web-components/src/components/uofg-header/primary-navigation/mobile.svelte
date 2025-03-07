@@ -1,9 +1,13 @@
 <script>
   import { faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
   import Menu from '../../../lib/menu.svelte';
+  import MenuTest from '../../../lib/menu/menu.svelte';
+  import MenuButton from '../../../lib/menu/menu-button.svelte';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
   import { primaryLinks as primary } from '../data/guelph.js';
   import { topLinks as top } from '../data/guelph.js';
+  import { slide } from 'svelte/transition';
+  import { cubicInOut } from 'svelte/easing';
 
   const links = [...primary, ...top];
   const mainMenu = links.filter(link => !link?.excludeFromMainMenu);
@@ -12,31 +16,37 @@
 
 <ul class="flex h-full [&>li]:contents">
   {#each outer as item (item.text || item.title)}
-    <li data-testid="outer-link">
+    <li>
       {#if item.links}
-        <Menu
-          class="h-full w-fit"
-          label={item.icon ? item.text : undefined}
-          buttonClass="flex h-full aspect-square items-center justify-center gap-2 px-4 transition-colors hover:bg-white focus:bg-white aria-expanded:bg-white hover:text-black focus:text-black aria-expanded:text-black"
-          contentClass="absolute right-0 top-full z-50 flex w-full flex-col bg-white px-4 text-black shadow-md lg:w-[30rem] [&>li]:contents"
-          as="ul"
-        >
+        <MenuTest class="h-full w-fit">
           {#snippet button()}
-            <FontAwesomeIcon icon={item.icon} />
+            <MenuButton
+              class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"
+              label={item.text}
+            >
+              <FontAwesomeIcon icon={item.icon} />
+            </MenuButton>
           {/snippet}
 
-          {#each item.links as link}
-            <li class="[&>*]:first:mt-4 [&>*]:last:mb-4">
-              <a
-                class="border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
-                href={link.href}
-                {...link.attributes}
-              >
-                {link.text}
-              </a>
-            </li>
-          {/each}
-        </Menu>
+          {#snippet content()}
+            <ul
+              class="absolute top-full right-0 z-50 flex w-full flex-col bg-white px-4 text-black shadow-md lg:w-[30rem]"
+              transition:slide={{ duration: 200, easing: cubicInOut }}
+            >
+              {#each item.links as link}
+                <li class="contents first:*:mt-4 last:*:mb-4">
+                  <a
+                    class="border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
+                    href={link.href}
+                    {...link.attributes}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          {/snippet}
+        </MenuTest>
       {:else}
         <a
           class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"

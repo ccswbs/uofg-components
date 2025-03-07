@@ -1,28 +1,24 @@
-<script>
-  import { getContext } from 'svelte';
+<script lang="ts">
+  import { getContext, type Snippet } from 'svelte';
+  import type { Writable } from 'svelte/store';
+  let {
+    class: className,
+    label,
+    children,
+  }: {
+    class: string;
+    label: string;
+    children: Snippet;
+  } = $props();
 
-  /**
-   * @typedef {Object} Props
-   * @property {string} class
-   * @property {string} label - For accessibility, the button may need a label
-   * @property {import('svelte').Snippet} [children]
-   */
+  const open = getContext<Writable<boolean>>('menu');
 
-  /** @type {Props} */
-  let { class: className, label, children } = $props();
-
-  const open = getContext('menu');
+  const handleClick = (e: MouseEvent) => {
+    $open = !$open;
+    (e.target as HTMLElement)?.focus();
+  };
 </script>
 
-<button
-  class={className}
-  aria-haspopup="true"
-  aria-expanded={$open}
-  aria-label={label}
-  onclick={e => {
-    $open = !$open;
-    e.target.focus();
-  }}
->
+<button class={className} aria-haspopup="true" aria-expanded={$open} aria-label={label} onclick={handleClick}>
   {@render children?.()}
 </button>

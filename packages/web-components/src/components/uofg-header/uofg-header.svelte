@@ -77,7 +77,7 @@
 </script>
 
 <script>
-  import attachTailwind from '../../lib/attach-tailwind.js';
+  import attachTailwind from '../../lib/attach-tailwind';
   import TopNavigation from './top-navigation.svelte';
   import PrimaryNavigation from './primary-navigation/primary-navigation.svelte';
   import SubNavigation from './sub-navigation/sub-navigation.svelte';

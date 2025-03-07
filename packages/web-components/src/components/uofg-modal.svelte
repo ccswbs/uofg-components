@@ -48,11 +48,11 @@
   }}
 />
 
-<script>
-  import attachTailwind from '../lib/attach-tailwind.js';
+<script lang="ts">
+  import attachTailwind from '../lib/attach-tailwind';
   import FontAwesomeIcon from '../lib/font-awesome-icon.svelte';
   import { faTimes } from '@fortawesome/free-solid-svg-icons';
-  import { getAllFocusableElements } from '../lib/get-all-focusable.js';
+  import { getAllFocusableElements } from '../lib/get-all-focusable';
   import { twJoin } from 'tailwind-merge';
 
   let {

@@ -1,7 +1,7 @@
 <script>
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
-  import focuswithin from './focus-within.js';
+  import focuswithin from './focus-within';
 
   /**
    * @typedef {Object} Props

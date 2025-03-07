@@ -12,14 +12,14 @@
   }}
 />
 
-<script>
-  import attachTailwind from '../lib/attach-tailwind.js';
+<script lang="ts">
+  import attachTailwind from '../lib/attach-tailwind';
   import FontAwesomeIcon from '../lib/font-awesome-icon.svelte';
   import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-  import { twJoin } from 'tailwind-merge';
+  import { tv } from 'tailwind-variants';
 
-  let visible = $state(false);
   let scrollY = $state(0);
+  let visible = $derived(scrollY > 50);
 
   const scrollToTop = () => {
     window.scroll({
@@ -29,20 +29,20 @@
     });
   };
 
-  $effect(() => {
-    visible = scrollY > 50;
+  const classes = tv({
+    base: 'fixed right-8 bottom-8 z-10 flex h-10 w-10 items-center justify-center border border-white bg-black text-lg text-black-contrast transition hover:bg-red hover:text-red-contrast focus:bg-red focus:text-red-contrast',
+    variants: {
+      visible: {
+        true: 'visible opacity-100',
+        false: 'invisible opacity-0',
+      },
+    },
   });
 </script>
 
 <svelte:window bind:scrollY />
 
-<button
-  onclick={scrollToTop}
-  class={twJoin(
-    'fixed right-8 bottom-8 z-10 flex h-10 w-10 items-center justify-center border border-white bg-black text-lg text-black-contrast transition hover:bg-red hover:text-red-contrast focus:bg-red focus:text-red-contrast',
-    visible ? 'opacity-100' : 'opacity-0',
-  )}
->
+<button onclick={scrollToTop} class={classes({ visible })}>
   <span aria-hidden="true">
     <FontAwesomeIcon icon={faChevronUp} />
   </span>

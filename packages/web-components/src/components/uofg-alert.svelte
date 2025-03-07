@@ -16,7 +16,7 @@
 />
 
 <script>
-  import attachTailwind from '../lib/attach-tailwind.js';
+  import attachTailwind from '../lib/attach-tailwind';
   import FontAwesomeIcon from '../lib/font-awesome-icon.svelte';
   import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
   import { twJoin } from 'tailwind-merge';

@@ -33,7 +33,7 @@
 />
 
 <script>
-  import attachTailwind from '../../lib/attach-tailwind.js';
+  import attachTailwind from '../../lib/attach-tailwind';
   import SubFooter from './sub-footer.svelte';
   import Logo from './logo.svelte';
   import Social from './social.svelte';
