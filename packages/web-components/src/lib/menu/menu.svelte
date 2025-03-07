@@ -1,6 +1,6 @@
 <script lang="ts">
   import focuswithin from '../focus-within';
-  import { setContext, Snippet } from 'svelte';
+  import { setContext, type Snippet } from 'svelte';
   import { writable } from 'svelte/store';
 
   let {

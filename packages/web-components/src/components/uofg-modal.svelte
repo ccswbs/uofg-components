@@ -53,7 +53,6 @@
   import FontAwesomeIcon from '../lib/font-awesome-icon.svelte';
   import { faTimes } from '@fortawesome/free-solid-svg-icons';
   import { getAllFocusableElements } from '../lib/get-all-focusable';
-  import { twJoin } from 'tailwind-merge';
 
   let {
     isOpen = $bindable(),

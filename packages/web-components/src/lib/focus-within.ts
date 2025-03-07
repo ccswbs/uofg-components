@@ -1,4 +1,4 @@
-import { Action } from 'svelte/action';
+import { type Action } from 'svelte/action';
 
 interface Attributes {
   onfocusoutside: (e: CustomEvent) => void;

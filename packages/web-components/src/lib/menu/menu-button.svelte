@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext, type Snippet } from 'svelte';
-  import type { Writable } from 'svelte/store';
+  import { type Writable } from 'svelte/store';
   let {
     class: className,
     label,
