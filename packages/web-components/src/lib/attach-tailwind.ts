@@ -14,10 +14,20 @@ export default function attachTailwind(root: ShadowRoot | null) {
   }
 
   if (stylesheet) {
-    root.adoptedStyleSheets = [...root.adoptedStyleSheets, stylesheet];
-  } else {
-    const style = document.createElement('style');
-    style.innerHTML = styles;
-    root.prepend(style);
+    root.adoptedStyleSheets = [stylesheet];
+    return;
   }
+
+  // If the browser doesn't support CSSStyleSheet, we need to use a fallback,
+  // but we need to check if the styles are already attached to avoid duplicates
+  if (root.querySelector('#uofg-web-components-tailwind')) {
+    console.warn('Tailwind styles already attached to this shadow root');
+    return;
+  }
+
+  // Fallback for browsers that don't support CSSStyleSheet
+  const style = document.createElement('style');
+  style.id = 'uofg-web-components-tailwind';
+  style.innerHTML = styles;
+  root.prepend(style);
 }
