@@ -7,32 +7,12 @@
           super();
           attachTailwind(this.shadowRoot);
         }
-        connectedCallback() {
-          super.connectedCallback();
-
-          this.updateSubFooter();
-
-          this.observer ??= new MutationObserver(() => {
-            this.updateSubFooter();
-          });
-
-          this.observer.observe(this, { childList: true, subtree: true });
-        }
-        disconnectedCallback() {
-          super.disconnectedCallback();
-          this.observer.disconnect();
-        }
-        updateSubFooter() {
-          this.subFooter = Array.from(this.children)
-            .filter(child => child.tagName === 'A')
-            .map(child => ({ text: child.textContent, href: child.getAttribute('href') }));
-        }
       };
     },
   }}
 />
 
-<script>
+<script lang="ts">
   import attachTailwind from '../../lib/attach-tailwind';
   import SubFooter from './sub-footer.svelte';
   import Logo from './logo.svelte';
@@ -42,8 +22,7 @@
   import Link from './link.svelte';
   import { social } from './data/guelph.js';
   import { tv } from 'tailwind-variants';
-
-  let { subFooter } = $props();
+  import { onMount } from 'svelte';
 
   const classes = tv({
     slots: {
@@ -51,6 +30,25 @@
         'flex flex-col content-center gap-0 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4',
       wrapper: 'mb-6 grid grid-rows-5 items-center gap-0 not-italic md:mb-0',
     },
+  });
+
+  let subFooter = $state<{ text: string; href: string }[]>([]);
+
+  onMount(() => {
+    const updateSubFooter = () => {
+      subFooter = Array.from($host().children)
+        .filter(child => child.tagName === 'A')
+        .map(child => ({ text: child.textContent ?? '', href: child.getAttribute('href') ?? '' }));
+    };
+
+    updateSubFooter();
+
+    const observer = new MutationObserver(updateSubFooter);
+    observer.observe($host(), { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+    };
   });
 
   const { footer, wrapper } = classes();
