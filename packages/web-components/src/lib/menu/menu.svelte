@@ -8,11 +8,11 @@
    * @property {string} class
    * @property {boolean} [autoCollapse]
    * @property {import('svelte').Snippet} [button]
-   * @property {import('svelte').Snippet} [content]
+   * @property {import('svelte').Snippet} [children]
    */
 
   /** @type {Props} */
-  let { class: className, autoCollapse = true, button, content } = $props();
+  let { class: className, autoCollapse = true, button, children } = $props();
 
   const open = writable(false);
 
@@ -31,6 +31,6 @@
   {@render button?.()}
 
   {#if $open}
-    {@render content?.()}
+    {@render children?.()}
   {/if}
 </div>
