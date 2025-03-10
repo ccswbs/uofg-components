@@ -5,9 +5,9 @@ import { tv } from 'tailwind-variants';
 export const ComponentImport = ({ of }: { of?: any }) => {
   const tabs = tv({
     slots: {
-      group: '',
+      group: 'group',
       list: 'tw:flex tw:gap-2 tw:mb-2',
-      tab: 'tw:px-4 tw:py-2 tw:text-sm tw:font-medium tw:border-b-2 tw:border-transparent tw:data-[selected]:border-red',
+      tab: 'tw:px-4 tw:py-2 tw:text-sm tw:font-medium tw:border-b-2 tw:border-transparent tw:data-[selected]:border-red tw:cursor-pointer tw:focus:outline-none',
       panels: '',
       panel: '',
     },
