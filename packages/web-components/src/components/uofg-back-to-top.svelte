@@ -1,8 +1,8 @@
 <svelte:options
   customElement={{
     tag: 'uofg-back-to-top',
-    extend: customElementConstructor => {
-      return class extends customElementConstructor {
+    extend: CustomElementConstructor => {
+      return class extends CustomElementConstructor {
         constructor() {
           super();
           attachTailwind(this.shadowRoot);

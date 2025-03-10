@@ -1,27 +1,21 @@
 <svelte:options
   customElement={{
     tag: 'uofg-modal',
-    props: {
-      label: { reflect: true, type: 'String', attribute: 'label' },
-      alertDialog: { reflect: true, type: 'String', attribute: 'alert-dialog' },
-      centered: { reflect: true, type: 'Boolean', attribute: 'centered' },
-      autoOpen: { reflect: true, type: 'Boolean', attribute: 'auto-open' },
-      staticBackdrop: { reflect: true, type: 'Boolean', attribute: 'static-backdrop' },
-    },
+
     extend: customElementConstructor => {
       return class extends customElementConstructor {
+        el: HTMLElement;
+        inertElements: HTMLElement[];
+        isOpen: boolean;
+
         constructor() {
           super();
           attachTailwind(this.shadowRoot);
           this.el = this;
           this.inertElements = [];
-        }
-        connectedCallback() {
-          super.connectedCallback();
+          this.isOpen = false;
         }
         disconnectedCallback() {
-          super.disconnectedCallback();
-
           // Just in case the modal is removed from the DOM before it is closed, make sure to remove the inert attribute from all elements that we marked as inert when the modal was opened.
           for (const element of this.inertElements) {
             element.removeAttribute('inert');
@@ -44,6 +38,13 @@
           this.isOpen = true;
         }
       };
+    },
+    props: {
+      label: { reflect: true, type: 'String', attribute: 'label' },
+      alertDialog: { reflect: true, type: 'String', attribute: 'alert-dialog' },
+      centered: { reflect: true, type: 'Boolean', attribute: 'centered' },
+      autoOpen: { reflect: true, type: 'Boolean', attribute: 'auto-open' },
+      staticBackdrop: { reflect: true, type: 'Boolean', attribute: 'static-backdrop' },
     },
   }}
 />

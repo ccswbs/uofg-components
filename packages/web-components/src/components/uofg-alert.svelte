@@ -1,16 +1,16 @@
 <svelte:options
   customElement={{
     tag: 'uofg-alert',
-    props: {
-      color: { reflect: true, type: 'String', attribute: 'color' },
-    },
-    extend: customElementConstructor => {
-      return class extends customElementConstructor {
+    extend: CustomElementConstructor => {
+      return class extends CustomElementConstructor {
         constructor() {
           super();
           attachTailwind(this.shadowRoot);
         }
       };
+    },
+    props: {
+      color: { reflect: true, type: 'String', attribute: 'color' },
     },
   }}
 />
@@ -19,8 +19,18 @@
   import attachTailwind from '../lib/attach-tailwind';
   import FontAwesomeIcon from '../lib/font-awesome-icon.svelte';
   import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+  import { onMount } from 'svelte';
+  import { tv } from 'tailwind-variants';
 
-  let { color = 'red' } = $props();
+  let {
+    color = 'red',
+  }: {
+    color?: 'red' | 'yellow' | 'blue' | 'green';
+  } = $props();
+
+  onMount(() => {
+    attachTailwind($host().shadowRoot);
+  });
 
   const classes = tv({
     slots: {
