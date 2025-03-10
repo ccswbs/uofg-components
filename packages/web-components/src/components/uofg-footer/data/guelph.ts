@@ -6,6 +6,7 @@ import {
   faXTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+
 import {
   faBriefcase,
   faCalendar,
@@ -17,8 +18,17 @@ import {
   faTree,
   faUniversalAccess,
 } from '@fortawesome/free-solid-svg-icons';
+import { HTMLAttributes } from 'svelte/elements';
 
-export const social = {
+export type FooterLink = {
+  text: string;
+  icon?: any;
+  href: string;
+  classes?: string;
+  attributes?: Omit<HTMLAttributes<HTMLAnchorElement>, 'class'>;
+};
+
+export const social: { directory: string; links: FooterLink[] } = {
   directory: 'https://www.uoguelph.ca/web/socialmedia/',
   links: [
     {
@@ -60,7 +70,7 @@ export const social = {
   ],
 };
 
-export const primaryLinks = [
+export const primaryLinks: FooterLink[] = [
   {
     text: 'Accessibility',
     icon: faUniversalAccess,

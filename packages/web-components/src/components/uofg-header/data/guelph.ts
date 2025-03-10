@@ -1,6 +1,21 @@
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 
-export const primaryLinks = [
+export type HeaderLinkAndMenuCommon = {
+  text: string;
+  icon?: any;
+  highlight?: boolean;
+  excludeFromMainMenu?: boolean;
+};
+
+export type HeaderLink = {
+  href: string;
+} & HeaderLinkAndMenuCommon;
+
+export type HeaderMenu = {
+  links: HeaderLink[];
+} & HeaderLinkAndMenuCommon;
+
+export const primaryLinks: HeaderLink[] = [
   {
     text: 'About',
     href: 'https://uoguelph.ca/about',
@@ -29,7 +44,7 @@ export const primaryLinks = [
   },
 ];
 
-export const topLinks = [
+export const topLinks: (HeaderLink | HeaderMenu)[] = [
   {
     text: 'Give',
     href: 'https://bbis.alumni.uoguelph.ca/BBIS_Cannon/give/uofg',

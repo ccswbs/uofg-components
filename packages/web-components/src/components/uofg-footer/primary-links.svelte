@@ -1,5 +1,5 @@
 <script>
-  import { primaryLinks as links } from './data/guelph.js';
+  import { primaryLinks as links } from './data/guelph.ts';
   import Link from './link.svelte';
   import { tv } from 'tailwind-variants';
 

@@ -1,6 +1,6 @@
 <script>
   import FontAwesomeIcon from '../../lib/font-awesome-icon.svelte';
-  import { social } from './data/guelph.js';
+  import { social } from './data/guelph.ts';
   import { twJoin } from 'tailwind-merge';
 </script>
 

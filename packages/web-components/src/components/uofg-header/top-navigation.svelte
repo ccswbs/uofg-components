@@ -2,7 +2,7 @@
   import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
   import Menu from '../../lib/menu.svelte';
   import FontAwesomeIcon from '../../lib/font-awesome-icon.svelte';
-  import { topLinks as links } from './data/guelph.js';
+  import { topLinks as links } from './data/guelph.ts';
   import { twJoin } from 'tailwind-merge';
 </script>
 

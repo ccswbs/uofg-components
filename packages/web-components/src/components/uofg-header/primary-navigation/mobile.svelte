@@ -4,8 +4,8 @@
   import MenuTest from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { primaryLinks as primary } from '../data/guelph.js';
-  import { topLinks as top } from '../data/guelph.js';
+  import { primaryLinks as primary } from '../data/guelph.ts';
+  import { topLinks as top } from '../data/guelph.ts';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
 

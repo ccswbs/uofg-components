@@ -112,7 +112,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<header class="font-condensed relative z-10 w-full text-black">
+<header class="relative z-10 w-full font-sans text-black">
   {#if $headerState.mode === 'desktop' && variant !== 'dual-brand'}
     <TopNavigation />
   {/if}
