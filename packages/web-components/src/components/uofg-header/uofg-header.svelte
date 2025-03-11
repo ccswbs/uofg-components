@@ -17,6 +17,22 @@
   }}
 />
 
+<script module lang="ts">
+  import { type Writable } from 'svelte/store';
+
+  export type HeaderProps = {
+    pageTitle?: string;
+    pageURL?: string;
+    variant?: 'dual-brand';
+  };
+
+  export type HeaderContext = Writable<
+    {
+      mode: 'mobile' | 'desktop';
+    } & Pick<HeaderProps, 'variant'>
+  >;
+</script>
+
 <script lang="ts">
   import attachTailwind from '../../lib/attach-tailwind';
   import TopNavigation from './top-navigation.svelte';
@@ -25,20 +41,12 @@
   import { writable } from 'svelte/store';
   import { onMount, setContext } from 'svelte';
 
-  let {
-    pageTitle,
-    pageURL,
-    variant,
-  }: {
-    pageTitle?: string;
-    pageURL?: string;
-    variant?: 'dual-brand';
-  } = $props();
+  let { pageTitle, pageURL, variant }: HeaderProps = $props();
 
   let windowWidth = $state<number>(0);
   const BREAKPOINT = 1024;
 
-  const headerState = writable({
+  const headerState: HeaderContext = writable({
     mode: 'mobile',
     variant,
   });

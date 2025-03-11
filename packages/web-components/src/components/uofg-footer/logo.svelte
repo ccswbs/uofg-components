@@ -1,5 +1,5 @@
 <script>
-  import ImproveLife from '../../svg/improve-life.svg';
+  import ImproveLife from '../../svg/improve-life.svelte';
 </script>
 
 <a

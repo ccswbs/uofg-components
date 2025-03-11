@@ -1,7 +1,7 @@
 <script>
   import { twJoin } from 'tailwind-merge';
   import Logo from '../logo.svelte';
-  import UofGHLogo from '../../../svg/uofgh-logo.svg';
+  import UofGHLogo from '../../../svg/uofgh-logo.svelte';
   import Desktop from './desktop.svelte';
   import Mobile from './mobile.svelte';
   import { getContext } from 'svelte';
