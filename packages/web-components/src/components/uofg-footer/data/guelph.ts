@@ -95,8 +95,10 @@ export const primaryLinks: FooterLink[] = [
     text: 'Land Acknowledgement',
     icon: faTree,
     href: 'https://www.uoguelph.ca/land-acknowledgement/',
-    title:
-      'The University of Guelph resides on the treaty lands and territory of the Mississaugas of the Credit. We recognize that today this gathering place is home to many First Nations, Inuit and Métis peoples and acknowledging them reminds us of our collective responsibility to the land where we learn and work.',
+    attributes: {
+      title:
+        'The University of Guelph resides on the treaty lands and territory of the Mississaugas of the Credit. We recognize that today this gathering place is home to many First Nations, Inuit and Métis peoples and acknowledging them reminds us of our collective responsibility to the land where we learn and work.',
+    },
   },
   {
     text: 'Careers',

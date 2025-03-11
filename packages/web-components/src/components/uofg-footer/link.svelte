@@ -1,20 +1,20 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { type Snippet } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
   let {
     href,
     label,
-    title,
     children,
     class: className,
+    ...rest
   }: {
     href: string;
     label?: string;
-    title?: string;
     class?: string;
     children: Snippet;
-  } = $props();
+  } & HTMLAttributes<HTMLAnchorElement> = $props();
 
   const classes = twMerge(
     'w-fit underline decoration-transparent transition-colors hover:decoration-black-contrast focus:decoration-black-contrast',
@@ -22,6 +22,6 @@
   );
 </script>
 
-<a class={classes} {href} title={title ?? undefined} aria-label={label ?? undefined}>
+<a {...rest} class={classes} {href} aria-label={label ?? undefined}>
   {@render children()}
 </a>

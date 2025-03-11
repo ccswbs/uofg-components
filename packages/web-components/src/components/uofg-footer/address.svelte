@@ -1,5 +1,5 @@
 <script>
-  import { address } from './data/guelph.ts';
+  import { address } from './data/guelph';
   import Link from './link.svelte';
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-  import { primaryLinks as links } from './data/guelph.ts';
+  import { primaryLinks as links } from './data/guelph';
   import Link from './link.svelte';
   import { tv } from 'tailwind-variants';
 
@@ -14,20 +14,20 @@
 </script>
 
 <ul class={list()}>
-  {#each links as { href, title, text }, i}
+  {#each links as { href, attributes, text }, i}
     {#if i % 2 === 0}
       <li>
-        <Link classes={link()} {href} {title}>{text}</Link>
+        <Link class={link()} {href} {...attributes}>{text}</Link>
       </li>
     {/if}
   {/each}
 </ul>
 
 <ul class={list()}>
-  {#each links as { href, title, text }, i}
+  {#each links as { href, attributes, text }, i}
     {#if i % 2 !== 0}
       <li>
-        <Link classes={link()} {href} {title}>{text}</Link>
+        <Link class={link()} {href} {...attributes}>{text}</Link>
       </li>
     {/if}
   {/each}

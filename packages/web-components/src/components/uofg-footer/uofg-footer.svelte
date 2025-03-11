@@ -20,7 +20,7 @@
   import PrimaryLinks from './primary-links.svelte';
   import Address from './address.svelte';
   import Link from './link.svelte';
-  import { social } from './data/guelph.js';
+  import { social } from './data/guelph';
   import { tv } from 'tailwind-variants';
   import { onMount } from 'svelte';
 
