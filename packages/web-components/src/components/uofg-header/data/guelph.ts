@@ -1,10 +1,12 @@
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { type HTMLAttributes } from 'svelte/elements';
 
 export type HeaderLinkAndMenuCommon = {
   text: string;
   icon?: any;
   highlight?: boolean;
   excludeFromMainMenu?: boolean;
+  attributes?: HTMLAttributes<HTMLAnchorElement>;
 };
 
 export type HeaderLink = {

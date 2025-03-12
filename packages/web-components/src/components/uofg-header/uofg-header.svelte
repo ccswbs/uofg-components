@@ -40,6 +40,7 @@
   import SubNavigation from './sub-navigation/sub-navigation.svelte';
   import { writable } from 'svelte/store';
   import { onMount, setContext } from 'svelte';
+  import { type HeaderLink, type HeaderMenu } from './data/guelph';
 
   let { pageTitle, pageURL, variant }: HeaderProps = $props();
 
@@ -53,27 +54,16 @@
 
   setContext('header-state', headerState);
 
-  type SubNavigationLink = {
-    href: string;
-    text: string;
-    attributes: Record<string, string>;
-  };
-
-  type SubNavigationMenu = {
-    title: string;
-    links: SubNavigationLink[];
-  };
-
-  let subNavigation = $state<(SubNavigationLink | SubNavigationMenu)[]>([]);
+  let subNavigation = $state<(HeaderLink | HeaderMenu)[]>([]);
 
   onMount(() => {
     const updateSubNavigation = () => {
       const aToSubNavigationLink = (a: HTMLAnchorElement) => {
-        const attributes: SubNavigationLink['attributes'] = {};
+        const attributes: HeaderLink['attributes'] = {};
 
         for (const attr of a.attributes) {
           if (attr.name !== 'href') {
-            attributes[attr.name] = attr.value;
+            attributes[attr.name as keyof HeaderLink['attributes']] = attr.value;
           }
         }
 
@@ -81,7 +71,7 @@
           href: a.getAttribute('href'),
           text: a.textContent,
           attributes,
-        } as SubNavigationLink;
+        } as HeaderLink;
       };
 
       subNavigation = Array.from($host().children)
@@ -92,12 +82,12 @@
               return aToSubNavigationLink(child as HTMLAnchorElement);
             case 'UL':
               return {
-                title: child.getAttribute('data-title') ?? '',
+                text: child.getAttribute('data-title') ?? '',
                 links: Array.from(child.querySelectorAll('a')).map(aToSubNavigationLink),
-              } as SubNavigationMenu;
+              } as HeaderMenu;
           }
         })
-        .filter(val => Boolean(val)) as (SubNavigationLink | SubNavigationMenu)[];
+        .filter(val => Boolean(val)) as (HeaderLink | HeaderMenu)[];
     };
 
     updateSubNavigation();
