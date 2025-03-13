@@ -4,3 +4,9 @@
 @source '../../react-components/src';
 @source '../';
 @plugin "@headlessui/tailwindcss";
+
+@layer base {
+  .docblock-colorpalette {
+    white-space: pre-wrap !important;
+  }
+}

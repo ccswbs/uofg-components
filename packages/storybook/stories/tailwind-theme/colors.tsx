@@ -2,14 +2,7 @@ import { ColorItem, ColorPalette } from '@storybook/blocks';
 import * as React from 'react';
 import { toTitleCase } from '../../../react-components/src/utils/string-utils';
 
-type Swatches = {
-  'base'?: string;
-  'focus'?: string;
-  'on-dark'?: string;
-  'on-light'?: string;
-  'bg'?: string;
-  'contrast'?: string;
-};
+type Swatches = { [key: string]: string };
 type Color = {
   title: string;
   subtitle: string;
@@ -44,14 +37,14 @@ export const ColorGrid = () => {
       const baseValue = getHexValue(colorName);
 
       if (baseValue) {
-        swatches['base'] = getHexValue(colorName);
+        swatches[`base\nvar(--uog-color-${colorName})`] = getHexValue(colorName);
       }
 
       for (const swatch of swatchNames) {
         const value = getHexValue(`${colorName}-${swatch}`);
 
         if (value) {
-          swatches[swatch as keyof Swatches] = getHexValue(`${colorName}-${swatch}`);
+          swatches[`${swatch}\nvar(--uog-color-${colorName}-${swatch})`] = getHexValue(`${colorName}-${swatch}`);
         }
       }
 
@@ -83,8 +76,12 @@ export const ColorGrid = () => {
 
   return (
     <ColorPalette>
-      {/* This is to force body-copy-bold-on-dark to be added to the page. */}
+      {/* This is to force colors in the palette that aren't used to be added to the page. */}
       <span className="uog:hidden uog:text-body-copy-bold-on-dark">test</span>
+      <span className="uog:hidden uog:text-body-copy-on-light">test</span>
+      <span className="uog:hidden uog:text-red-on-light">test</span>
+      <span className="uog:hidden uog:text-yellow-on-dark">test</span>
+      <span className="uog:hidden uog:text-green-on-light">test</span>
       {colors.map(color => (
         <ColorItem key={color.title} title={color.title} subtitle={color.subtitle} colors={color.swatches} />
       ))}
