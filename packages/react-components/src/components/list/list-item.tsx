@@ -11,7 +11,7 @@ type ListItemProps = PropsWithChildren<
 /** A list item component. */
 export function ListItem({ className, children, ...rest }: ListItemProps) {
   return (
-    <li {...rest} className={twMerge('tw:relative tw:h-fit tw:w-full', className)}>
+    <li {...rest} className={twMerge('uog:relative uog:h-fit uog:w-full', className)}>
       {children}
     </li>
   );

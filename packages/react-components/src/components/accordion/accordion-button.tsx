@@ -18,18 +18,18 @@ export function AccordionButton({ children, className }: AccordionButtonProps) {
   const accordionButton = tv({
     slots: {
       button:
-        'tw:group tw:mb-1 tw:inline-flex tw:w-full tw:cursor-pointer tw:items-center tw:justify-between tw:gap-2 tw:p-2.5 tw:px-5 tw:text-left tw:text-xl tw:transition-colors tw:focus:outline-none tw:focus-visible:ring-2 tw:focus-visible:ring-blue tw:focus-visible:ring-offset-2 tw:hocus-visible:bg-blue tw:hocus-visible:text-blue-contrast',
-      icon: 'tw:h-[1em] tw:text-blue-on-light tw:group-hocus-visible:text-blue-contrast tw:transition',
+        'uog:group uog:mb-1 uog:inline-flex uog:w-full uog:cursor-pointer uog:items-center uog:justify-between uog:gap-2 uog:p-2.5 uog:px-5 uog:text-left uog:text-xl uog:transition-colors uog:focus:outline-none uog:focus-visible:ring-2 uog:focus-visible:ring-blue uog:focus-visible:ring-offset-2 uog:hocus-visible:bg-blue uog:hocus-visible:text-blue-contrast',
+      icon: 'uog:h-[1em] uog:text-blue-on-light uog:group-hocus-visible:text-blue-contrast uog:transition',
     },
     variants: {
       open: {
         true: {
-          button: 'tw:bg-blue tw:text-blue-contrast',
-          icon: 'tw:text-blue-contrast',
+          button: 'uog:bg-blue uog:text-blue-contrast',
+          icon: 'uog:text-blue-contrast',
         },
         false: {
-          icon: 'tw:rotate-90',
-          button: 'tw:bg-light-grey-bg tw:text-blue-on-light',
+          icon: 'uog:rotate-90',
+          button: 'uog:bg-light-grey-bg uog:text-blue-on-light',
         },
       },
     },

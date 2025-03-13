@@ -19,35 +19,35 @@ export type AlertTitleProps = PropsWithChildren<{
 export function AlertTitle({ color = 'red', className, children }: AlertTitleProps) {
   const alertTitle = tv({
     slots: {
-      container: 'tw:flex tw:items-center tw:gap-2 tw:p-4 tw:text-xl',
-      icon: 'tw:h-[1.5em]',
+      container: 'uog:flex uog:items-center uog:gap-2 uog:p-4 uog:text-xl',
+      icon: 'uog:h-[1.5em]',
       text: '',
     },
     variants: {
       color: {
         'red': {
-          container: 'tw:bg-red tw:text-red-contrast',
+          container: 'uog:bg-red uog:text-red-contrast',
         },
         'yellow': {
-          container: 'tw:bg-yellow tw:text-yellow-contrast',
+          container: 'uog:bg-yellow uog:text-yellow-contrast',
         },
         'blue': {
-          container: 'tw:bg-blue tw:text-blue-contrast',
+          container: 'uog:bg-blue uog:text-blue-contrast',
         },
         'green': {
-          container: 'tw:bg-green tw:text-green-contrast',
+          container: 'uog:bg-green uog:text-green-contrast',
         },
         'light-grey': {
-          container: 'tw:bg-light-grey tw:text-light-grey-contrast',
+          container: 'uog:bg-light-grey uog:text-light-grey-contrast',
         },
         'dark-grey': {
-          container: 'tw:bg-dark-grey tw:text-dark-grey-contrast',
+          container: 'uog:bg-dark-grey uog:text-dark-grey-contrast',
         },
         'black': {
-          container: 'tw:bg-black tw:text-black-contrast',
+          container: 'uog:bg-black uog:text-black-contrast',
         },
         'white': {
-          container: 'tw:bg-white tw:text-white-contrast',
+          container: 'uog:bg-white uog:text-white-contrast',
         },
       },
     },

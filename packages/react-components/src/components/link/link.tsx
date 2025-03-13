@@ -31,12 +31,12 @@ export function Link<T extends LinkElementType = typeof defaultElement>({
   const LinkComponent = as ?? defaultElement;
 
   const linkClasses = tv({
-    base: 'tw:inline-flex tw:gap-[1em] tw:underline tw:decoration-current tw:transition-colors tw:hover:decoration-transparent tw:focus:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none tw:text-body-copy-link',
+    base: 'uog:inline-flex uog:gap-[1em] uog:underline uog:decoration-current uog:transition-colors uog:hover:decoration-transparent uog:focus:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:text-body-copy-link',
     variants: {
       color: {
-        base: 'tw:text-body-copy-link tw:focus-visible:ring-body-copy-link',
-        light: 'tw:text-body-copy-link-on-light tw:focus-visible:ring-body-copy-link-on-light',
-        dark: 'tw:text-body-copy-link-on-dark tw:focus-visible:ring-body-copy-link-on-light',
+        base: 'uog:text-body-copy-link uog:focus-visible:ring-body-copy-link',
+        light: 'uog:text-body-copy-link-on-light uog:focus-visible:ring-body-copy-link-on-light',
+        dark: 'uog:text-body-copy-link-on-dark uog:focus-visible:ring-body-copy-link-on-light',
       },
     },
   });

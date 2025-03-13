@@ -33,7 +33,7 @@ export function HeroLink<T extends HeroLinkElementType = 'a'>({
       as={Component}
       color="yellow"
       href={href}
-      className={`uofg-hero-link ${twMerge('tw:p-3 tw:w-fit', className)}`}
+      className={`uofg-hero-link ${twMerge('uog:p-3 uog:w-fit', className)}`}
     >
       {children}
     </Button>

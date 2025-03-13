@@ -30,16 +30,16 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
   const Tag = as ?? defaultElement;
 
   const typography = tv({
-    base: 'tw:inline-flex tw:leading-[1.4] tw:has-[strong]:text-body-copy-bold',
+    base: 'uog:inline-flex uog:leading-[1.4] uog:has-[strong]:text-body-copy-bold',
     variants: {
       type: {
-        h1: 'tw:mt-7.5 tw:text-4xl tw:font-bold tw:text-black tw:font-serif',
-        h2: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-red tw:text-3xl',
-        h3: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-2xl',
-        h4: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-xl',
-        h5: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-lg',
-        h6: 'tw:mt-7.5 tw:mb-3.75 tw:font-bold tw:text-body-copy-bold tw:text-base',
-        body: 'tw:mt-3.75 tw:text-lg tw:text-body-copy tw:font-normal tw:leading-[1.6]',
+        h1: 'uog:mt-7.5 uog:text-4xl uog:font-bold uog:text-black uog:font-serif',
+        h2: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-red uog:text-3xl',
+        h3: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:text-2xl',
+        h4: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:text-xl',
+        h5: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:text-lg',
+        h6: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:text-base',
+        body: 'uog:mt-3.75 uog:text-lg uog:text-body-copy uog:font-normal uog:leading-[1.6]',
       },
     },
   });

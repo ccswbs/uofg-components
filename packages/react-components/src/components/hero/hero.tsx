@@ -61,18 +61,18 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
 
   const hero = tv({
     slots: {
-      base: 'tw:relative tw:flex tw:w-full tw:flex-col tw:overflow-hidden',
-      image: 'tw:aspect-[16/9] tw:w-full tw:object-cover tw:md:aspect-[2.625]',
+      base: 'uog:relative uog:flex uog:w-full uog:flex-col uog:overflow-hidden',
+      image: 'uog:aspect-[16/9] uog:w-full uog:object-cover uog:md:aspect-[2.625]',
     },
     variants: {
       variant: {
         basic: {
-          base: 'tw:h-fit',
-          image: 'tw:max-h-[calc(85vh-14rem)]',
+          base: 'uog:h-fit',
+          image: 'uog:max-h-[calc(85vh-14rem)]',
         },
         spotlight: {
           base: '',
-          image: 'tw:max-h-[80vh]',
+          image: 'uog:max-h-[80vh]',
         },
       },
     },

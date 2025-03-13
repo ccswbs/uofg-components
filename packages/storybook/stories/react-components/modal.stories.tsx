@@ -74,7 +74,7 @@ export default config;
 type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
   args: {
-    children: <div className="tw:bg-white tw:p-4">Whatever content you want here</div>,
+    children: <div className="uog:bg-white uog:p-4">Whatever content you want here</div>,
     open: false,
   },
 };

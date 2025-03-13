@@ -54,16 +54,16 @@ export const Default: Story = {
 
       <LinkCarouselContent>
         <LinkCarouselItem id="item-1">
-          <div className="tw:h-96 tw:bg-yellow"></div>
+          <div className="uog:h-96 uog:bg-yellow"></div>
         </LinkCarouselItem>
         <LinkCarouselItem id="item-2">
-          <div className="tw:h-96 tw:bg-blue"></div>
+          <div className="uog:h-96 uog:bg-blue"></div>
         </LinkCarouselItem>
         <LinkCarouselItem id="item-3">
-          <div className="tw:h-96 tw:bg-green"></div>
+          <div className="uog:h-96 uog:bg-green"></div>
         </LinkCarouselItem>
         <LinkCarouselItem id="item-4">
-          <div className="tw:h-96 tw:bg-red"></div>
+          <div className="uog:h-96 uog:bg-red"></div>
         </LinkCarouselItem>
       </LinkCarouselContent>
     </LinkCarousel>

@@ -12,7 +12,7 @@ export type AccordionContentProps = PropsWithChildren<{
 export function AccordionContent({ children, className }: AccordionContentProps) {
   const context = useContext(AccordionContext);
 
-  const accordionContent = twMerge('tw:border-l-4 tw:border-yellow tw:py-3 tw:pl-5', className);
+  const accordionContent = twMerge('uog:border-l-4 uog:border-yellow uog:py-3 uog:pl-5', className);
 
   return (
     <AnimateHeight height={context?.isOpen ? 'auto' : 0} duration={200} easing={'ease-in-out'}>

@@ -8,7 +8,7 @@ export type ContactNameProps = PropsWithChildren<{
 
 /** The ContactName component is used to display the name of a contact. */
 export function ContactName({ children, className }: ContactNameProps) {
-  const name = twMerge('tw:text-body-copy-bold tw:font-bold', className);
+  const name = twMerge('uog:text-body-copy-bold uog:font-bold', className);
   return <span className={name}>{children}</span>;
 }
 

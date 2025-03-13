@@ -18,27 +18,27 @@ export type BlockquoteProps = PropsWithChildren<{
 export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {
   const blockquote = tv({
     slots: {
-      base: twMerge('tw:font-light tw:block tw:w-full tw:text-center tw:text-3xl tw:italic', className),
-      icons: 'tw:inline-block tw:h-[1em]',
+      base: twMerge('uog:font-light uog:block uog:w-full uog:text-center uog:text-3xl uog:italic', className),
+      icons: 'uog:inline-block uog:h-[1em]',
     },
     variants: {
       color: {
         red: {
-          icons: 'tw:text-red',
+          icons: 'uog:text-red',
         },
         yellow: {
-          icons: 'tw:text-yellow',
+          icons: 'uog:text-yellow',
         },
         blue: {
-          icons: 'tw:text-blue',
+          icons: 'uog:text-blue',
         },
       },
       direction: {
         left: {
-          icons: 'tw:mr-[0.3em]',
+          icons: 'uog:mr-[0.3em]',
         },
         right: {
-          icons: 'tw:ml-[0.25em]',
+          icons: 'uog:ml-[0.25em]',
         },
       },
     },

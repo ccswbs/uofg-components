@@ -7,12 +7,12 @@ export type NavigationProps = PropsWithChildren<{
 }>;
 export function Navigation({ className, children }: NavigationProps) {
   const list = twMerge(
-    'tw:md:flex-row tw:flex tw:flex-col tw:gap-1 tw:border-b-4 tw:border-yellow tw:w-full',
+    'uog:md:flex-row uog:flex uog:flex-col uog:gap-1 uog:border-b-4 uog:border-yellow uog:w-full',
     className,
   );
 
   return (
-    <nav className="uofg-navigation tw:contents">
+    <nav className="uofg-navigation uog:contents">
       <ul className={`uofg-navigation-list ${list}`}>{children}</ul>
     </nav>
   );

@@ -12,15 +12,15 @@ export function LinkCarouselLinks({ children, className }: LinkCarouselLinksProp
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselLinks = tv({
-    base: 'tw:flex tw:flex-col tw:gap-2 tw:w-full tw:top-0 tw:md:w-1/3 tw:md:z-20',
+    base: 'uog:flex uog:flex-col uog:gap-2 uog:w-full uog:top-0 uog:md:w-1/3 uog:md:z-20',
     variants: {
       stack: {
-        true: 'tw:md:absolute tw:h-full',
-        false: 'tw:h-auto',
+        true: 'uog:md:absolute uog:h-full',
+        false: 'uog:h-auto',
       },
       direction: {
-        left: 'tw:left-0',
-        right: 'tw:right-0',
+        left: 'uog:left-0',
+        right: 'uog:right-0',
       },
     },
   });

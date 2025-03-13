@@ -73,55 +73,55 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
 
   const imageOverlay = tv({
     slots: {
-      base: 'tw:min-h-[50rem] tw:relative tw:flex tw:h-fit tw:w-full tw:flex-col',
-      imageWrapper: 'tw:absolute tw:z-10 tw:h-full tw:w-full',
-      image: 'tw:h-full tw:w-full tw:object-cover',
-      overlay: 'tw:absolute tw:top-0 tw:left-0 tw:h-full tw:w-full',
-      container: 'tw:relative tw:z-20 tw:flex tw:flex-1 tw:flex-col tw:p-0',
+      base: 'uog:min-h-[50rem] uog:relative uog:flex uog:h-fit uog:w-full uog:flex-col',
+      imageWrapper: 'uog:absolute uog:z-10 uog:h-full uog:w-full',
+      image: 'uog:h-full uog:w-full uog:object-cover',
+      overlay: 'uog:absolute uog:top-0 uog:left-0 uog:h-full uog:w-full',
+      container: 'uog:relative uog:z-20 uog:flex uog:flex-1 uog:flex-col uog:p-0',
     },
     variants: {
       blurred: {
         true: {
-          image: 'tw:blur-sm',
+          image: 'uog:blur-sm',
         },
       },
       overlay: {
         'dark': {
-          overlay: 'tw:bg-black/60',
+          overlay: 'uog:bg-black/60',
         },
         'light': {
-          overlay: 'tw:bg-white/60',
+          overlay: 'uog:bg-white/60',
         },
         'dark-gradient': {
-          overlay: 'tw:from-black/50 tw:via-30% tw:via-black/20 tw:to-transparent',
+          overlay: 'uog:from-black/50 uog:via-30% uog:via-black/20 uog:to-transparent',
         },
         'light-gradient': {
-          overlay: 'tw:from-white/50 tw:via-30% tw:via-white/20 tw:to-transparent',
+          overlay: 'uog:from-white/50 uog:via-30% uog:via-white/20 uog:to-transparent',
         },
         'none': {
-          overlay: 'tw:hidden',
+          overlay: 'uog:hidden',
         },
       },
       verticalAlignment: {
         top: {
-          container: 'tw:justify-start',
+          container: 'uog:justify-start',
         },
         center: {
-          container: 'tw:justify-center',
+          container: 'uog:justify-center',
         },
         bottom: {
-          container: 'tw:justify-end',
+          container: 'uog:justify-end',
         },
       },
       horizontalAlignment: {
         left: {
-          container: 'tw:items-start',
+          container: 'uog:items-start',
         },
         center: {
-          container: 'tw:items-center',
+          container: 'uog:items-center',
         },
         right: {
-          container: 'tw:items-end',
+          container: 'uog:items-end',
         },
       },
     },
@@ -131,7 +131,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'bottom',
         horizontalAlignment: ['left', 'center', 'right'],
         class: {
-          overlay: 'tw:bg-gradient-to-t',
+          overlay: 'uog:bg-gradient-to-t',
         },
       },
       {
@@ -139,7 +139,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'top',
         horizontalAlignment: ['left', 'center', 'right'],
         class: {
-          overlay: 'tw:bg-gradient-to-b',
+          overlay: 'uog:bg-gradient-to-b',
         },
       },
       {
@@ -147,7 +147,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'center',
         horizontalAlignment: 'center',
         class: {
-          overlay: 'tw:bg-radial',
+          overlay: 'uog:bg-radial',
         },
       },
       {
@@ -155,7 +155,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'center',
         horizontalAlignment: 'left',
         class: {
-          overlay: 'tw:bg-gradient-to-r',
+          overlay: 'uog:bg-gradient-to-r',
         },
       },
       {
@@ -163,7 +163,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'center',
         horizontalAlignment: 'right',
         class: {
-          overlay: 'tw:bg-gradient-to-l',
+          overlay: 'uog:bg-gradient-to-l',
         },
       },
     ],

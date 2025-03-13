@@ -23,8 +23,8 @@ export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
     base: '',
     variants: {
       variant: {
-        basic: 'tw:absolute tw:top-1/2 tw:left-1/2 tw:-translate-x-1/2 tw:-translate-y-1/2',
-        spotlight: 'tw:w-fit tw:gap-2 tw:p-3',
+        basic: 'uog:absolute uog:top-1/2 uog:left-1/2 uog:-translate-x-1/2 uog:-translate-y-1/2',
+        spotlight: 'uog:w-fit uog:gap-2 uog:p-3',
       },
     },
   });

@@ -62,11 +62,11 @@ export function LinkCarousel({ children, className, stack = false, direction = '
   };
 
   const linkCarousel = tv({
-    base: 'tw:flex tw:w-full tw:relative tw:h-fit tw:overflow-hidden',
+    base: 'uog:flex uog:w-full uog:relative uog:h-fit uog:overflow-hidden',
     variants: {
       direction: {
-        left: 'tw:flex-row',
-        right: 'tw:flex-row-reverse',
+        left: 'uog:flex-row',
+        right: 'uog:flex-row-reverse',
       },
     },
   });

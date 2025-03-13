@@ -22,19 +22,19 @@ export function Radio<T>({ selected, children, value }: RadioProps<T>) {
 
   const radio = tv({
     slots: {
-      field: 'tw:flex tw:items-center tw:gap-2',
+      field: 'uog:flex uog:items-center uog:gap-2',
       radio:
-        'tw:block tw:aspect-square tw:rounded-full tw:border tw:border-blue tw:p-1.5 tw:focus-visible:ring-2 tw:focus-visible:ring-blue tw:focus-visible:ring-offset-2',
-      circle: 'tw:block tw:h-2 tw:w-2 tw:rounded-full',
+        'uog:block uog:aspect-square uog:rounded-full uog:border uog:border-blue uog:p-1.5 uog:focus-visible:ring-2 uog:focus-visible:ring-blue uog:focus-visible:ring-offset-2',
+      circle: 'uog:block uog:h-2 uog:w-2 uog:rounded-full',
     },
     variants: {
       checked: {
         true: {
-          radio: 'tw:bg-blue',
-          circle: 'tw:bg-white',
+          radio: 'uog:bg-blue',
+          circle: 'uog:bg-white',
         },
         false: {
-          circle: 'tw:bg-transparent',
+          circle: 'uog:bg-transparent',
         },
       },
     },

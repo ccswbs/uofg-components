@@ -17,7 +17,7 @@ export function EmbeddedVideoModalButton({ type, children, className }: Embedded
 
   if (type === 'play-button') {
     const button = twMerge(
-      'tw:flex tw:aspect-square tw:w-24 tw:items-center tw:justify-center tw:rounded-full tw:bg-black/30 tw:text-4xl tw:text-white tw:transition-colors tw:hover:bg-red/30 tw:focus:bg-red/30',
+      'uog:flex uog:aspect-square uog:w-24 uog:items-center uog:justify-center uog:rounded-full uog:bg-black/30 uog:text-4xl uog:text-white uog:transition-colors uog:hover:bg-red/30 uog:focus:bg-red/30',
       className,
     );
 

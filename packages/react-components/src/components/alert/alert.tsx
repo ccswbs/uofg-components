@@ -12,7 +12,7 @@ export type AlertProps = PropsWithChildren<{
 
 /** The Alert component is used to display critical feedback, such as warnings, errors, or informational messages. */
 export function Alert({ children, className }: AlertProps) {
-  const alert = twMerge('tw:flex tw:flex-col', className);
+  const alert = twMerge('uog:flex uog:flex-col', className);
 
   return <div className={`uofg-alert ${alert}`}>{children}</div>;
 }

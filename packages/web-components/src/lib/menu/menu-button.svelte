@@ -6,8 +6,8 @@
     label,
     children,
   }: {
-    class: string;
-    label: string;
+    class?: string;
+    label?: string;
     children: Snippet;
   } = $props();
 
@@ -19,6 +19,9 @@
   };
 </script>
 
-<button class={className} aria-haspopup="true" aria-expanded={$open} aria-label={label} onclick={handleClick}>
+<button class={className} aria-haspopup="true" aria-expanded={$open} onclick={handleClick}>
   {@render children?.()}
+  {#if label}
+    <span class="sr-only">{label}</span>
+  {/if}
 </button>

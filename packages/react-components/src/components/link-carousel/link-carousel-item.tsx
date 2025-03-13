@@ -14,10 +14,10 @@ export function LinkCarouselItem({ id, children, className }: LinkCarouselItemPr
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselItem = tv({
-    base: 'tw:w-full tw:hidden tw:bg-white',
+    base: 'uog:w-full uog:hidden uog:bg-white',
     variants: {
-      isActive: { true: 'tw:block tw:relative tw:animate-fade-in tw:z-10' },
-      wasActive: { true: 'tw:block tw:absolute tw:z-0 tw:top-0 tw:left-0' },
+      isActive: { true: 'uog:block uog:relative uog:animate-fade-in uog:z-10' },
+      wasActive: { true: 'uog:block uog:absolute uog:z-0 uog:top-0 uog:left-0' },
     },
   });
 

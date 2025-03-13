@@ -18,12 +18,12 @@ export function RadioGroup<T>({ name, inline = false, onChange, children }: Radi
 
   const radio = tv({
     slots: {
-      base: 'tw:flex tw:gap-2',
+      base: 'uog:flex uog:gap-2',
     },
     variants: {
       inline: {
         false: {
-          base: 'tw:flex-col',
+          base: 'uog:flex-col',
         },
       },
     },

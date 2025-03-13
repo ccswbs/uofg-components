@@ -100,28 +100,28 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
 
   const carousel = tv({
     slots: {
-      base: 'tw:relative tw:flex tw:h-fit tw:min-h-[7rem] tw:w-full tw:flex-col-reverse',
+      base: 'uog:relative uog:flex uog:h-fit uog:min-h-[7rem] uog:w-full uog:flex-col-reverse',
       contentContainer:
-        'tw:grid tw:w-full tw:flex-1 tw:grid-cols-[repeat(var(--items),calc(100%/var(--display)))] tw:overflow-x-hidden [&>*]:[grid-row:1]',
-      controlContainer: 'tw:md:contents tw:flex tw:h-16 tw:w-full tw:pt-8',
+        'uog:grid uog:w-full uog:flex-1 uog:grid-cols-[repeat(var(--items),calc(100%/var(--display)))] uog:overflow-x-hidden [&>*]:[grid-row:1]',
+      controlContainer: 'uog:md:contents uog:flex uog:h-16 uog:w-full uog:pt-8',
       control:
-        'tw:sm:text-6xl tw:md:absolute tw:flex tw:h-full tw:w-16 tw:flex-1 tw:items-center tw:justify-center tw:text-3xl tw:text-yellow tw:transition-[transform,color,opacity,visibility] tw:focus-visible:ring-2 tw:focus-visible:ring-offset-2 tw:focus-visible:outline-none tw:hocus-visible:text-black tw:focus-visible:text-black',
+        'uog:sm:text-6xl uog:md:absolute uog:flex uog:h-full uog:w-16 uog:flex-1 uog:items-center uog:justify-center uog:text-3xl uog:text-yellow uog:transition-[transform,color,opacity,visibility] uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:hocus-visible:text-black uog:focus-visible:text-black',
     },
     variants: {
       showControls: {
         true: {
-          base: 'tw:sm:px-16',
+          base: 'uog:sm:px-16',
         },
         false: {
-          control: 'tw:pointer-events-none tw:invisible tw:opacity-0',
+          control: 'uog:pointer-events-none uog:invisible uog:opacity-0',
         },
       },
       direction: {
         left: {
-          control: 'tw:left-0 tw:hocus-visible:-translate-x-1 tw:focus-visible:-translate-x-1',
+          control: 'uog:left-0 uog:hocus-visible:-translate-x-1 uog:focus-visible:-translate-x-1',
         },
         right: {
-          control: 'tw:right-0 tw:hocus-visible:translate-x-1 tw:focus-visible:translate-x-1',
+          control: 'uog:right-0 uog:hocus-visible:translate-x-1 uog:focus-visible:translate-x-1',
         },
       },
     },
@@ -139,7 +139,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(-1)}
             className={control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}
           >
-            <span className="tw:sr-only">Shift left</span>
+            <span className="uog:sr-only">Shift left</span>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
 
@@ -148,7 +148,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(1)}
             className={control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}
           >
-            <span className="tw:sr-only">Shift right</span>
+            <span className="uog:sr-only">Shift right</span>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>

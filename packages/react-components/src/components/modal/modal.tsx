@@ -15,19 +15,19 @@ export type ModalProps = PropsWithChildren<{
 export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, centered, children }: ModalProps) {
   const modal = tv({
     slots: {
-      base: 'tw:ease-out tw:relative tw:z-50 tw:transition tw:duration-300 tw:data-[closed]:opacity-0',
+      base: 'uog:ease-out uog:relative uog:z-50 uog:transition uog:duration-300 uog:data-[closed]:opacity-0',
       backdrop:
-        'tw:ease-out tw:fixed tw:inset-0 tw:bg-black/40 tw:transition tw:duration-300 tw:data-[closed]:opacity-0',
-      wrapper: 'tw:fixed tw:inset-0 tw:flex tw:w-screen tw:justify-center tw:md:p-4',
-      panelWrapper: 'tw:relative tw:w-full tw:flex tw:flex-col tw:items-center',
+        'uog:ease-out uog:fixed uog:inset-0 uog:bg-black/40 uog:transition uog:duration-300 uog:data-[closed]:opacity-0',
+      wrapper: 'uog:fixed uog:inset-0 uog:flex uog:w-screen uog:justify-center uog:md:p-4',
+      panelWrapper: 'uog:relative uog:w-full uog:flex uog:flex-col uog:items-center',
       panel: '',
       closeButton:
-        'tw:bg-dark-grey-bg tw:md:absolute tw:border-b tw:border-white/40 tw:top-0 tw:right-0 tw:flex tw:h-9 tw:w-full tw:md:w-9 tw:items-center tw:justify-center tw:md:rounded-full tw:text-xl tw:text-white tw:transition-colors tw:hover:bg-red tw:gap-1',
+        'uog:bg-dark-grey-bg uog:md:absolute uog:border-b uog:border-white/40 uog:top-0 uog:right-0 uog:flex uog:h-9 uog:w-full uog:md:w-9 uog:items-center uog:justify-center uog:md:rounded-full uog:text-xl uog:text-white uog:transition-colors uog:hover:bg-red uog:gap-1',
     },
     variants: {
       centered: {
         true: {
-          panelWrapper: 'tw:justify-center',
+          panelWrapper: 'uog:justify-center',
         },
       },
     },
@@ -43,7 +43,7 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
         <div className={panelWrapper()}>
           <CloseButton onClick={onClose} className={closeButton()}>
             <FontAwesomeIcon icon={faTimes} />
-            <span className="tw:md:sr-only tw:text-base">Close Modal</span>
+            <span className="uog:md:sr-only uog:text-base">Close Modal</span>
           </CloseButton>
 
           <DialogPanel className={panel()}>{children}</DialogPanel>

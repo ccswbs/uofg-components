@@ -34,10 +34,10 @@ export function LinkCarouselLink<T extends LinkCarouselLinkElementType = typeof 
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselLink = tv({
-    base: 'tw:w-full tw:flex-1 tw:text-xl tw:bg-black tw:flex tw:items-center tw:justify-center tw:text-black-contrast tw:p-6',
+    base: 'uog:w-full uog:flex-1 uog:text-xl uog:bg-black uog:flex uog:items-center uog:justify-center uog:text-black-contrast uog:p-6',
     variants: {
       stack: {
-        true: 'tw:md:bg-black/70',
+        true: 'uog:md:bg-black/70',
       },
     },
   });

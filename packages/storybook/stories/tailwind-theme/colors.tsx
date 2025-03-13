@@ -36,7 +36,7 @@ export const ColorGrid = () => {
     const styles = window.getComputedStyle(document.documentElement);
     const colors: Color[] = [];
 
-    const getHexValue = (colorName: string) => styles.getPropertyValue(`--tw-color-${colorName}`);
+    const getHexValue = (colorName: string) => styles.getPropertyValue(`--uog-color-${colorName}`);
 
     const getSwatches = (colorName: string) => {
       const swatches: Swatches = {};
@@ -84,7 +84,7 @@ export const ColorGrid = () => {
   return (
     <ColorPalette>
       {/* This is to force body-copy-bold-on-dark to be added to the page. */}
-      <span className="tw:hidden tw:text-body-copy-bold-on-dark">test</span>
+      <span className="uog:hidden uog:text-body-copy-bold-on-dark">test</span>
       {colors.map(color => (
         <ColorItem key={color.title} title={color.title} subtitle={color.subtitle} colors={color.swatches} />
       ))}

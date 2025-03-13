@@ -13,7 +13,7 @@ export type AccordionProps = PropsWithChildren<{
  * interaction.
  */
 export function Accordion({ children, className }: AccordionProps) {
-  const accordion = twMerge('tw:my-2 tw:[&_p:last-child]:mb-0', className);
+  const accordion = twMerge('uog:my-2 uog:[&_p:last-child]:mb-0', className);
 
   return (
     <Disclosure>

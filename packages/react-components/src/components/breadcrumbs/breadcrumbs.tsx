@@ -14,7 +14,7 @@ export type BreadcrumbsProps = PropsWithChildren<{
  * website or application.
  */
 export function Breadcrumbs({ className, children }: BreadcrumbsProps) {
-  const breadcrumbs = twJoin('tw:flex tw:w-full tw:flex-wrap tw:items-center tw:gap-2');
+  const breadcrumbs = twJoin('uog:flex uog:w-full uog:flex-wrap uog:items-center uog:gap-2');
 
   return (
     <Container centered>

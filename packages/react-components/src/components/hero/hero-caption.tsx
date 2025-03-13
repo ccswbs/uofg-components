@@ -6,7 +6,7 @@ export type HeroCaptionProps = PropsWithChildren<{
 }>;
 
 export function HeroCaption({ children, className }: HeroCaptionProps) {
-  return <p className={`uofg-hero-caption tw:text-xl ${className}`}>{children}</p>;
+  return <p className={`uofg-hero-caption uog:text-xl ${className}`}>{children}</p>;
 }
 
 HeroCaption.displayName = 'HeroCaption';

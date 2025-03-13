@@ -19,34 +19,34 @@ export function HeroContent({ children, alignment = 'left' }: HeroContentProps) 
   const heroContent = tv({
     slots: {
       base: '',
-      wrapper: 'tw:lg:bg-black/80 tw:lg:backdrop-blur tw:flex tw:w-full tw:bg-black tw:p-7 tw:text-white',
-      container: 'tw:container tw:mx-auto tw:flex tw:flex-col tw:gap-5',
+      wrapper: 'uog:lg:bg-black/80 uog:lg:backdrop-blur uog:flex uog:w-full uog:bg-black uog:p-7 uog:text-white',
+      container: 'uog:container uog:mx-auto uog:flex uog:flex-col uog:gap-5',
     },
     variants: {
       variant: {
         spotlight: {
-          base: 'tw:lg:container tw:lg:absolute tw:lg:bottom-0 tw:lg:left-1/2 tw:lg:max-w-max-content tw:lg:-translate-x-1/2 tw:lg:p-4 tw:flex tw:items-center',
+          base: 'uog:lg:container uog:lg:absolute uog:lg:bottom-0 uog:lg:left-1/2 uog:lg:max-w-max-content uog:lg:-translate-x-1/2 uog:lg:p-4 uog:flex uog:items-center',
         },
         basic: {
-          base: 'tw:absolute tw:bottom-0 tw:left-1/2 tw:w-full tw:-translate-x-1/2 tw:p-0 tw:flex tw:h-full tw:items-end',
+          base: 'uog:absolute uog:bottom-0 uog:left-1/2 uog:w-full uog:-translate-x-1/2 uog:p-0 uog:flex uog:h-full uog:items-end',
         },
       },
       alignment: {
         left: {
-          wrapper: 'tw:mr-auto tw:lg:max-w-[50%]',
+          wrapper: 'uog:mr-auto uog:lg:max-w-[50%]',
         },
         center: {
-          wrapper: 'tw:mx-auto tw:lg:max-w-[50%]',
-          container: 'tw:lg:text-center tw:lg:items-center',
-          link: 'tw:lg:mx-auto',
+          wrapper: 'uog:mx-auto uog:lg:max-w-[50%]',
+          container: 'uog:lg:text-center uog:lg:items-center',
+          link: 'uog:lg:mx-auto',
         },
         right: {
-          wrapper: 'tw:ml-auto tw:lg:max-w-[50%]',
-          container: 'tw:lg:text-right tw:lg:items-end',
-          link: 'tw:lg:ml-auto',
+          wrapper: 'uog:ml-auto uog:lg:max-w-[50%]',
+          container: 'uog:lg:text-right uog:lg:items-end',
+          link: 'uog:lg:ml-auto',
         },
         fullWidth: {
-          wrapper: 'tw:mx-auto',
+          wrapper: 'uog:mx-auto',
         },
       },
     },

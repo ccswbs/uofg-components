@@ -27,6 +27,6 @@ const image = {
 export const Default: Story = {
   args: {
     ...image,
-    children: <div className="tw:bg-black/50 tw:text-white tw:p-4">Whatever content you want here</div>,
+    children: <div className="uog:bg-black/50 uog:text-white uog:p-4">Whatever content you want here</div>,
   },
 };

@@ -33,10 +33,10 @@ export function Container<T extends ElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const container = tv({
-    base: 'tw:max-w-[--tw-max-content-width] tw:container tw:px-4 tw:pt-2 tw:pb-4',
+    base: 'uog:max-w-[--tw-max-content-width] uog:container uog:px-4 uog:pt-2 uog:pb-4',
     variants: {
       centered: {
-        true: 'tw:mx-auto',
+        true: 'uog:mx-auto',
       },
     },
   });

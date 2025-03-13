@@ -30,16 +30,16 @@ export function TextInput({
 
   const textInput = tv({
     slots: {
-      base: 'tw:flex tw:flex-col tw:gap-0.5',
+      base: 'uog:flex uog:flex-col uog:gap-0.5',
       wrapper:
-        'tw:text-input tw:border-gray-300 tw:flex tw:rounded-md tw:border tw:px-4 tw:py-2 tw:transition-colors tw:focus-within:border-blue tw:focus:outline-none',
-      input: 'tw:flex-1 tw:focus:outline-none',
-      clearButton: 'tw:rounded-full tw:text-xl',
+        'uog:text-input uog:border-gray-300 uog:flex uog:rounded-md uog:border uog:px-4 uog:py-2 uog:transition-colors uog:focus-within:border-blue uog:focus:outline-none',
+      input: 'uog:flex-1 uog:focus:outline-none',
+      clearButton: 'uog:rounded-full uog:text-xl',
     },
     variants: {
       empty: {
         true: {
-          clearButton: 'tw:pointer-events-none tw:invisible',
+          clearButton: 'uog:pointer-events-none uog:invisible',
         },
       },
     },
