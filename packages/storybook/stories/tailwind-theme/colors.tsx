@@ -78,6 +78,7 @@ export const ColorGrid = () => {
     <ColorPalette>
       {/* This is to force colors in the palette that aren't used to be added to the page. */}
       <span className="uog:hidden uog:text-body-copy-bold-on-dark">test</span>
+      <span className="uog:hidden uog:text-body-copy-bold-on-light">test</span>
       <span className="uog:hidden uog:text-body-copy-on-light">test</span>
       <span className="uog:hidden uog:text-red-on-light">test</span>
       <span className="uog:hidden uog:text-yellow-on-dark">test</span>
