@@ -18,7 +18,7 @@
       <FontAwesomeIcon icon={faBars} />
     {/snippet}
 
-    {#each items as item (item.text || item.title)}
+    {#each items as item (item.text || item.text)}
       <li class="[&>*]:first:mt-4 [&>*]:last:mb-4">
         {#if item.text}
           <!-- Link -->
@@ -40,7 +40,7 @@
           >
             {#snippet button()}
               <span class="flex w-full items-center justify-between gap-2 [&>svg]:transition-transform">
-                <span class="mr-auto">{item.title}</span>
+                <span class="mr-auto">{item.text}</span>
                 <FontAwesomeIcon icon={faChevronDown} />
               </span>
             {/snippet}

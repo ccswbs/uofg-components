@@ -6,7 +6,7 @@
   let { items } = $props();
 </script>
 
-{#each items as item (item.text || item.title)}
+{#each items as item (item.text || item.text)}
   {#if item.links}
     <li>
       <Menu
@@ -17,7 +17,7 @@
       >
         {#snippet button()}
           <span class="flex items-center gap-2 [&>svg]:transition-transform">
-            <span>{item.title}</span>
+            <span>{item.text}</span>
             <FontAwesomeIcon icon={faChevronDown} />
           </span>
         {/snippet}
