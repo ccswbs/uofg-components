@@ -37,14 +37,14 @@ export const ColorGrid = () => {
       const baseValue = getHexValue(colorName);
 
       if (baseValue) {
-        swatches[`base\nvar(--uog-color-${colorName})`] = getHexValue(colorName);
+        swatches[`base\n\nvar(--uog-color-${colorName})`] = getHexValue(colorName);
       }
 
       for (const swatch of swatchNames) {
         const value = getHexValue(`${colorName}-${swatch}`);
 
         if (value) {
-          swatches[`${swatch}\nvar(--uog-color-${colorName}-${swatch})`] = getHexValue(`${colorName}-${swatch}`);
+          swatches[`${swatch}\n\nvar(--uog-color-${colorName}-${swatch})`] = getHexValue(`${colorName}-${swatch}`);
         }
       }
 
