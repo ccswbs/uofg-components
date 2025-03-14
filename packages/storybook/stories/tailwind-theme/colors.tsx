@@ -40,14 +40,24 @@ export const ColorGrid = () => {
       const baseValue = getHexValue(colorName);
 
       if (baseValue) {
-        swatches.push({ name: 'base', hex: getHexValue(colorName), variable: `--uog-color-${colorName}` });
+        swatches.push({
+          // @ts-ignore
+          name: colorName.replaceAll('-', ' '),
+          hex: getHexValue(colorName),
+          variable: `--uog-color-${colorName}`,
+        });
       }
 
       for (const swatch of swatchNames) {
         const value = getHexValue(`${colorName}-${swatch}`);
 
         if (value) {
-          swatches.push({ name: swatch, hex: value, variable: `--uog-color-${colorName}-${swatch}` });
+          swatches.push({
+            // @ts-ignore
+            name: `${colorName} ${swatch}`.replaceAll('-', ' ').replace('bg', 'BG'),
+            hex: value,
+            variable: `--uog-color-${colorName}-${swatch}`,
+          });
         }
       }
 
@@ -77,9 +87,7 @@ export const ColorGrid = () => {
   }, []);
 
   return (
-    <div className="uog:grid uog:grid-cols-[fit-content(10ch)_1fr] uog:gap-4">
-      <strong className="uog:text-2xl uog:font-bold">Name</strong>
-      <strong className="uog:text-2xl uog:font-bold">Swatches</strong>
+    <div className="uog:flex uog:flex-col uog:gap-4">
       {colors.map(color => (
         <>
           <span className="uog:font-bold uog:text-xs">{color.name}</span>
@@ -93,7 +101,7 @@ export const ColorGrid = () => {
                   }}
                 ></div>
                 <div className="uog:flex uog:flex-col uog:gap-0 uog:items-center uog:justify-center uog:text-center">
-                  <p className="uog:m-0!">{swatch.name}</p>
+                  <p className="uog:m-0! uog:capitalize">{swatch.name}</p>
                   <p className="uog:m-0!">{swatch.variable}</p>
                   <p className="uog:m-0!">{swatch.hex}</p>
                 </div>
