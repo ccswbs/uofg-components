@@ -18,7 +18,7 @@ import {
   faTree,
   faUniversalAccess,
 } from '@fortawesome/free-solid-svg-icons';
-import { HTMLAttributes } from 'svelte/elements';
+import type { HTMLAttributes } from 'svelte/elements';
 
 export type FooterLink = {
   text: string;

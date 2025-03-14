@@ -4,10 +4,6 @@
 
     extend: customElementConstructor => {
       return class extends customElementConstructor {
-        el: HTMLElement;
-        inertElements: HTMLElement[];
-        isOpen: boolean;
-
         constructor() {
           super();
           attachTailwind(this.shadowRoot);

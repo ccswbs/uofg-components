@@ -1,5 +1,5 @@
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import { type HTMLAttributes } from 'svelte/elements';
+import type { HTMLAttributes } from 'svelte/elements';
 
 export type HeaderLinkAndMenuCommon = {
   text: string;
