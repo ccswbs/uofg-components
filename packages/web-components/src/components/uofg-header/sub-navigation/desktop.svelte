@@ -6,7 +6,7 @@
   let { items } = $props();
 </script>
 
-{#each items as item (item.text || item.text)}
+{#each items as item (item.text)}
   {#if 'items' in item}
     <li>
       <Menu
