@@ -1,12 +1,15 @@
-import { ColorItem, ColorPalette } from '@storybook/blocks';
 import * as React from 'react';
 import { toTitleCase } from '../../../react-components/src/utils/string-utils';
 
-type Swatches = { [key: string]: string };
+type Swatch = {
+  name: string;
+  hex: string;
+  variable: string;
+};
+
 type Color = {
-  title: string;
-  subtitle: string;
-  swatches: Swatches;
+  name: string;
+  swatches: Swatch[];
 };
 
 const swatchNames = ['focus', 'on-dark', 'on-light', 'bg', 'contrast'];
@@ -32,19 +35,19 @@ export const ColorGrid = () => {
     const getHexValue = (colorName: string) => styles.getPropertyValue(`--uog-color-${colorName}`);
 
     const getSwatches = (colorName: string) => {
-      const swatches: Swatches = {};
+      const swatches: Swatch[] = [];
 
       const baseValue = getHexValue(colorName);
 
       if (baseValue) {
-        swatches[`base\n\n--uog-color-${colorName}\n\n`] = getHexValue(colorName);
+        swatches.push({ name: 'base', hex: getHexValue(colorName), variable: `--uog-color-${colorName}` });
       }
 
       for (const swatch of swatchNames) {
         const value = getHexValue(`${colorName}-${swatch}`);
 
         if (value) {
-          swatches[`${swatch}\n\n--uog-color-${colorName}-${swatch}\n\n`] = getHexValue(`${colorName}-${swatch}`);
+          swatches.push({ name: swatch, hex: value, variable: `--uog-color-${colorName}-${swatch}` });
         }
       }
 
@@ -65,8 +68,7 @@ export const ColorGrid = () => {
       }
 
       addColor({
-        title: title,
-        subtitle: '',
+        name: title,
         swatches: getSwatches(colorName),
       });
     }
@@ -75,17 +77,31 @@ export const ColorGrid = () => {
   }, []);
 
   return (
-    <ColorPalette>
-      {/* This is to force colors in the palette that aren't used to be added to the page. */}
-      <span className="uog:hidden uog:text-body-copy-bold-on-dark">test</span>
-      <span className="uog:hidden uog:text-body-copy-bold-on-light">test</span>
-      <span className="uog:hidden uog:text-body-copy-on-light">test</span>
-      <span className="uog:hidden uog:text-red-on-light">test</span>
-      <span className="uog:hidden uog:text-yellow-on-dark">test</span>
-      <span className="uog:hidden uog:text-green-on-light">test</span>
+    <div className="uog:grid uog:grid-cols-[fit-content(10ch)_1fr] uog:gap-4">
+      <strong className="uog:text-2xl uog:font-bold">Name</strong>
+      <strong className="uog:text-2xl uog:font-bold">Swatches</strong>
       {colors.map(color => (
-        <ColorItem key={color.title} title={color.title} subtitle={color.subtitle} colors={color.swatches} />
+        <>
+          <span className="uog:font-bold uog:text-xs">{color.name}</span>
+          <div className="uog:flex">
+            {color.swatches.map(swatch => (
+              <div className="uog:flex-1 uog:border uog:border-l-0 uog:first:border-l uog:border-black/10">
+                <div
+                  className="uog:h-15 uog:border-b uog:border-black/10"
+                  style={{
+                    backgroundColor: swatch.hex,
+                  }}
+                ></div>
+                <div className="uog:flex uog:flex-col uog:gap-0 uog:items-center uog:justify-center uog:text-center">
+                  <p className="uog:m-0!">{swatch.name}</p>
+                  <p className="uog:m-0!">{swatch.variable}</p>
+                  <p className="uog:m-0!">{swatch.hex}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       ))}
-    </ColorPalette>
+    </div>
   );
 };
