@@ -83,9 +83,9 @@ export const ColorGrid = () => {
       {colors.map(color => (
         <>
           <span className="uog:font-bold uog:text-xs">{color.name}</span>
-          <div className="uog:flex">
+          <div className="uog:flex uog:gap-2">
             {color.swatches.map(swatch => (
-              <div className="uog:flex-1 uog:border uog:border-l-0 uog:first:border-l uog:border-black/10">
+              <div className="uog:flex-1 uog:border uog:border-black/10">
                 <div
                   className="uog:h-15 uog:border-b uog:border-black/10"
                   style={{
