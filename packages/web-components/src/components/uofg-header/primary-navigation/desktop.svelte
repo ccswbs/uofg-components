@@ -1,6 +1,6 @@
 <script lang="ts">
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { primaryNavigation } from '../data/guelph';
+  import { primaryNavigation, search } from '../data/guelph';
   import { tv } from 'tailwind-variants';
 
   const classes = tv({
@@ -22,7 +22,7 @@
 </script>
 
 <ul class={classes.base()}>
-  {#each primaryNavigation as item}
+  {#each [...primaryNavigation, search] as item}
     <li>
       {#if item.icon}
         <a class={classes.link({ hasIcon: true })} href={item.href}>

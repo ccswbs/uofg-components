@@ -7,7 +7,7 @@
 </script>
 
 {#each items as item (item.text || item.text)}
-  {#if item.links}
+  {#if 'items' in item}
     <li>
       <Menu
         class="relative h-full"
@@ -22,7 +22,7 @@
           </span>
         {/snippet}
 
-        {#each item.links as link}
+        {#each item.items as link}
           <li>
             <a
               {...link.attributes}

@@ -14,7 +14,7 @@ export type HeaderLink = {
 } & HeaderLinkAndMenuCommon;
 
 export type HeaderMenu = {
-  items: (HeaderLink | HeaderMenu)[];
+  items: HeaderLink[];
 } & HeaderLinkAndMenuCommon;
 
 export const primaryNavigation: HeaderLink[] = [
