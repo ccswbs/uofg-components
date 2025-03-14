@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
   import { twJoin } from 'tailwind-merge';
-  import Logo from '../logo.svelte';
+  import Logo from './logo.svelte';
   import UofGHLogo from '../../../svg/uofgh-logo.svelte';
   import Desktop from './desktop.svelte';
   import Mobile from './mobile.svelte';
   import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
 
-  const headerState = getContext('header-state');
+  const headerState = getContext<HeaderContext>('header-state');
 </script>
 
 <nav

@@ -35,7 +35,7 @@
 
 <script lang="ts">
   import attachTailwind from '../../lib/attach-tailwind';
-  import TopNavigation from './top-navigation.svelte';
+  import TopNavigation from './top-navigation/top-navigation.svelte';
   import PrimaryNavigation from './primary-navigation/primary-navigation.svelte';
   import SubNavigation from './sub-navigation/sub-navigation.svelte';
   import { writable } from 'svelte/store';
@@ -83,7 +83,7 @@
             case 'UL':
               return {
                 text: child.getAttribute('data-title') ?? '',
-                links: Array.from(child.querySelectorAll('a')).map(aToSubNavigationLink),
+                items: Array.from(child.querySelectorAll('a')).map(aToSubNavigationLink),
               } as HeaderMenu;
           }
         })

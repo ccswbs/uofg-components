@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Decorative from '../../svg/decorative.svelte';
-  import LogoSmall from '../../svg/logo-small.svelte';
-  import Logo from '../../svg/logo.svelte';
+  import Decorative from '../../../svg/decorative.svelte';
+  import LogoSmall from '../../../svg/logo-small.svelte';
+  import Logo from '../../../svg/logo.svelte';
   import { getContext } from 'svelte';
   import { tv } from 'tailwind-variants';
-  import { type HeaderContext } from './uofg-header.svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
 
   const headerState: HeaderContext = getContext('header-state');
 

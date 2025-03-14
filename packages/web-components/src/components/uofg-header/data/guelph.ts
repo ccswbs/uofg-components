@@ -14,10 +14,10 @@ export type HeaderLink = {
 } & HeaderLinkAndMenuCommon;
 
 export type HeaderMenu = {
-  links: HeaderLink[];
+  items: (HeaderLink | HeaderMenu)[];
 } & HeaderLinkAndMenuCommon;
 
-export const primaryLinks: HeaderLink[] = [
+export const primaryNavigation: HeaderLink[] = [
   {
     text: 'About',
     href: 'https://uoguelph.ca/about',
@@ -38,15 +38,15 @@ export const primaryLinks: HeaderLink[] = [
     text: 'Student Life',
     href: 'https://www.uoguelph.ca/studentexperience/',
   },
-  {
-    text: 'Search the University of Guelph',
-    href: 'https://uoguelph.ca/search',
-    icon: faSearch,
-    excludeFromMainMenu: true,
-  },
 ];
 
-export const topLinks: (HeaderLink | HeaderMenu)[] = [
+export const search: HeaderLink = {
+  text: 'Search the University of Guelph',
+  href: 'https://uoguelph.ca/search',
+  icon: faSearch,
+};
+
+export const topNavigation: (HeaderLink | HeaderMenu)[] = [
   {
     text: 'Give',
     href: 'https://bbis.alumni.uoguelph.ca/BBIS_Cannon/give/uofg',
@@ -57,7 +57,7 @@ export const topLinks: (HeaderLink | HeaderMenu)[] = [
   },
   {
     text: 'Quick Links',
-    links: [
+    items: [
       {
         text: 'Future Students',
         href: 'https://uoguelph.ca/future-ready',
@@ -85,31 +85,31 @@ export const topLinks: (HeaderLink | HeaderMenu)[] = [
     href: 'https://uoguelph.ca/apply/',
     highlight: true,
   },
-  {
-    text: 'Account Menu',
-    links: [
-      {
-        text: 'U of G Insider',
-        href: 'https://uoguelphca.sharepoint.com/',
-      },
-      {
-        text: 'WebAdvisor',
-        href: 'https://www.uoguelph.ca/webadvisor/',
-      },
-      {
-        text: 'GryphMail',
-        href: 'https://mail.uoguelph.ca/',
-      },
-      {
-        text: 'CourseLink',
-        href: 'https://courselink.uoguelph.ca/',
-      },
-      {
-        text: 'GryphLife',
-        href: 'https://gryphlife.uoguelph.ca/',
-      },
-    ],
-    icon: faUser,
-    excludeFromMainMenu: true,
-  },
 ];
+
+export const accountMenu: HeaderMenu = {
+  text: 'Account Menu',
+  items: [
+    {
+      text: 'U of G Insider',
+      href: 'https://uoguelphca.sharepoint.com/',
+    },
+    {
+      text: 'WebAdvisor',
+      href: 'https://www.uoguelph.ca/webadvisor/',
+    },
+    {
+      text: 'GryphMail',
+      href: 'https://mail.uoguelph.ca/',
+    },
+    {
+      text: 'CourseLink',
+      href: 'https://courselink.uoguelph.ca/',
+    },
+    {
+      text: 'GryphLife',
+      href: 'https://gryphlife.uoguelph.ca/',
+    },
+  ],
+  icon: faUser,
+};

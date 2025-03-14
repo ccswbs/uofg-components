@@ -1,17 +1,16 @@
-<script>
+<script lang="ts">
   import { faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
   import Menu from '../../../lib/menu.svelte';
   import MenuTest from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { primaryLinks as primary } from '../data/guelph.ts';
-  import { topLinks as top } from '../data/guelph.ts';
+  import { primaryNavigation as primary, topNavigation as top } from '../data/guelph';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
 
-  const links = [...primary, ...top];
-  const mainMenu = links.filter(link => !link?.excludeFromMainMenu);
-  const outer = links.filter(link => link?.excludeFromMainMenu);
+  const primaryNavigation = [...primary, ...top];
+  const mainMenu = primaryNavigation.filter(link => !link?.excludeFromMainMenu);
+  const outer = primaryNavigation.filter(link => link?.excludeFromMainMenu);
 </script>
 
 <ul class="flex h-full [&>li]:contents">
