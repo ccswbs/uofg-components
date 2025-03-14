@@ -86,6 +86,15 @@ export const ColorGrid = () => {
     return colors;
   }, []);
 
+  /*
+    uog:text-body-copy-bold-on-dark
+    uog:text-body-copy-bold-on-light
+    uog:text-body-copy-on-light
+    uog:text-red-on-light
+    uog:text-yellow-on-dark
+    uog:text-green-on-light
+  */
+
   return (
     <div className="uog:flex uog:flex-col uog:gap-4">
       {colors.map(color => (
