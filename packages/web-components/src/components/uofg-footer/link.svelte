@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import { twJoin } from 'tailwind-merge';
   import { type Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
 
@@ -16,7 +16,7 @@
     children: Snippet;
   } & HTMLAttributes<HTMLAnchorElement> = $props();
 
-  const classes = twMerge(
+  const classes = twJoin(
     'w-fit underline decoration-transparent transition-colors hover:decoration-black-contrast focus:decoration-black-contrast',
     className,
   );
