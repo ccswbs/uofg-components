@@ -31,11 +31,11 @@
             <Menu class="relative w-full" autoCollapse={false}>
               {#snippet button()}
                 <MenuButton
-                  class="border-grey/50 hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted flex w-full items-center justify-between gap-2 border-0 border-b border-solid p-2 transition-colors [&_svg]:aria-expanded:rotate-180"
+                  class="group border-grey/50 hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted flex w-full items-center justify-between gap-2 border-0 border-b border-solid p-2 transition-colors"
                 >
-                  <span class="flex w-full items-center justify-between gap-2 [&>svg]:transition-transform">
+                  <span class="flex w-full items-center justify-between gap-2">
                     <span class="mr-auto">{item.text}</span>
-                    <FontAwesomeIcon icon={faChevronDown} />
+                    <FontAwesomeIcon icon={faChevronDown} class="transition-transform group-aria-expanded:rotate-180" />
                   </span>
                 </MenuButton>
               {/snippet}
