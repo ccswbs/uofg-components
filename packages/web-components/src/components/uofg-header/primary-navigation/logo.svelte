@@ -14,6 +14,16 @@
       decoration: 'left-0 h-full w-[7.5rem] min-[1320px]:absolute [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
       logo: 'flex h-full w-fit items-center transition-opacity hover:opacity-75 focus:opacity-75 min-[1320px]:absolute min-[1320px]:left-[max(calc((100%-1320px)/2),7.5rem)] [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
     },
+    variants: {
+      mode: {
+        desktop: {
+          logo: 'py-2',
+        },
+        mobile: {
+          logo: '',
+        },
+      },
+    },
   });
 
   const { base, decoration, logo } = classes();
@@ -27,7 +37,11 @@
     </div>
   {/if}
 
-  <a class={logo()} href="https://www.uoguelph.ca" aria-label="University of Guelph Home Page">
+  <a
+    class={logo({ mode: $headerState.mode })}
+    href="https://www.uoguelph.ca"
+    aria-label="University of Guelph Home Page"
+  >
     {#if $headerState?.mode === 'desktop'}
       <Logo />
     {:else}
