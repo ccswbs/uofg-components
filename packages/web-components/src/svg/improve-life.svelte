@@ -1,5 +1,4 @@
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 718.9 79.5">
-  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 718.9 79.5">
   <defs>
     <style>
       .st0 {

@@ -1,10 +1,4 @@
-<svg
-  id="Layer_1"
-  data-name="Layer 1"
-  xmlns="http://www.w3.org/2000/svg"
-  style="height:100%"
-  viewBox="0 0 266.13 110.89"
->
+<svg xmlns="http://www.w3.org/2000/svg" style="height:100%" viewBox="0 0 266.13 110.89">
   <defs>
     <style>
       .cls-1,
