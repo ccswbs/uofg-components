@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twJoin } from 'tailwind-merge';
   import Logo from './logo.svelte';
-  import UofGHLogo from '../../../svg/uofgh-logo.svelte';
+  import UofGHLogo from '../../../svg/uofgh-logo.svg';
   import Desktop from './desktop.svelte';
   import Mobile from './mobile.svelte';
   import { getContext } from 'svelte';
@@ -25,7 +25,7 @@
       class="ml-auto h-full w-auto p-4 transition-opacity hover:opacity-75 focus:opacity-75"
     >
       <span class="sr-only">University of Guelph-Humber Homepage</span>
-      <UofGHLogo />
+      {@html UofGHLogo}
     </a>
   {:else if $headerState?.mode === 'desktop'}
     <Desktop />

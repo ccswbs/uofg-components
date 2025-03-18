@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Decorative from '../../../svg/decorative.svelte';
-  import LogoSmall from '../../../svg/logo-small.svelte';
-  import Logo from '../../../svg/logo.svelte';
+  import Decorative from '../../../svg/decorative.svg';
+  import LogoSmall from '../../../svg/logo-small.svg';
+  import Logo from '../../../svg/logo.svg';
   import { getContext } from 'svelte';
   import { tv } from 'tailwind-variants';
   import { type HeaderContext } from '../uofg-header.svelte';
@@ -31,9 +31,8 @@
 
 <div class={base()}>
   {#if $headerState?.mode === 'desktop'}
-    <!-- Decorative SVG -->
     <div class={decoration()} aria-hidden="true">
-      <Decorative />
+      {@html Decorative}
     </div>
   {/if}
 
@@ -43,9 +42,9 @@
     aria-label="University of Guelph Home Page"
   >
     {#if $headerState?.mode === 'desktop'}
-      <Logo />
+      {@html Logo}
     {:else}
-      <LogoSmall />
+      {@html LogoSmall}
     {/if}
   </a>
 </div>

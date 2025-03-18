@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import * as fs from 'fs';
 import * as path from 'path';
 import { defineConfig } from 'vite';
+import svg from 'vite-plugin-svgo';
 
 const entries = {
   'uofg-web-components': path.resolve(__dirname, 'src/main.ts'),
@@ -17,7 +18,7 @@ fs.readdirSync(path.resolve(__dirname, 'src', 'components'), { withFileTypes: tr
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte(), tailwindcss()],
+  plugins: [svelte(), tailwindcss(), svg()],
   build: {
     outDir: 'dist/uofg-web-components',
     lib: {
