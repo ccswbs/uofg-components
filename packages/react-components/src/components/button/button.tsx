@@ -16,7 +16,7 @@ type ButtonPropsBase = {
    *
    * @default 'red'
    */
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'black';
   /**
    * Whether the button should be outlined
    *
@@ -37,7 +37,7 @@ export type ButtonProps<T extends ButtonElementType = typeof defaultElement> = P
   ButtonPropsAs<T> & ComponentPropsWithoutRef<T> & ButtonPropsBase
 >;
 /**
- * The Button component is a interactive component designed to capture user actions (such as submitting forms). It can
+ * The Button component is an interactive component designed to capture user actions (such as submitting forms). It can
  * also function as a link to another page or resource.
  */
 export function Button<T extends ButtonElementType = typeof defaultElement>({
@@ -55,14 +55,11 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
     base: 'uog:font-medium uog:shadow-sm uog:inline-flex uog:items-center uog:justify-center uog:px-6 uog:py-4 uog:text-lg uog:no-underline uog:transition-colors uog:focus-visible:outline-none uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2',
     variants: {
       color: {
-        'red': 'uog:focus-visible:ring-red',
-        'yellow': 'uog:focus-visible:ring-yellow',
-        'blue': 'uog:focus-visible:ring-blue',
-        'green': 'uog:focus-visible:ring-green',
-        'grey-light': 'uog:focus-visible:ring-grey-light',
-        'grey-dark': 'uog:focus-visible:ring-grey-dark',
-        'black': 'uog:focus-visible:ring-black',
-        'white': 'uog:focus-visible:ring-white',
+        red: 'uog:focus-visible:ring-red',
+        yellow: 'uog:focus-visible:ring-yellow',
+        blue: 'uog:focus-visible:ring-blue',
+        green: 'uog:focus-visible:ring-green',
+        black: 'uog:focus-visible:ring-black',
       },
       outlined: {
         true: 'uog:border-2',
@@ -161,50 +158,6 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         class: 'uog:hocus-visible:bg-green uog:hocus-visible:text-green-contrast',
       },
       {
-        color: 'grey-light',
-        outlined: false,
-        class: 'uog:bg-grey-light uog:text-grey-light-contrast',
-      },
-      {
-        color: 'grey-light',
-        outlined: true,
-        class: 'uog:border-grey-light uog:text-grey-light',
-      },
-      {
-        color: 'grey-light',
-        outlined: false,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-grey-light-focus',
-      },
-      {
-        color: 'grey-light',
-        outlined: true,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-grey-light uog:hocus-visible:text-grey-light-contrast',
-      },
-      {
-        color: 'grey-dark',
-        outlined: false,
-        class: 'uog:bg-grey-dark uog:text-grey-dark-contrast',
-      },
-      {
-        color: 'grey-dark',
-        outlined: true,
-        class: 'uog:border-grey-dark uog:text-grey-dark',
-      },
-      {
-        color: 'grey-dark',
-        outlined: false,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-grey-dark-focus',
-      },
-      {
-        color: 'grey-dark',
-        outlined: true,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-grey-dark uog:hocus-visible:text-grey-dark-contrast',
-      },
-      {
         color: 'black',
         outlined: false,
         class: 'uog:bg-black uog:text-black-contrast',
@@ -225,28 +178,6 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         outlined: true,
         disabled: false,
         class: 'uog:hocus-visible:bg-black uog:hocus-visible:text-black-contrast',
-      },
-      {
-        color: 'white',
-        outlined: false,
-        class: 'uog:bg-white uog:text-white-contrast',
-      },
-      {
-        color: 'white',
-        outlined: true,
-        class: 'uog:border-white uog:text-white',
-      },
-      {
-        color: 'white',
-        outlined: false,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-white-focus',
-      },
-      {
-        color: 'white',
-        outlined: true,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-white uog:hocus-visible:text-white-contrast',
       },
     ],
   });
