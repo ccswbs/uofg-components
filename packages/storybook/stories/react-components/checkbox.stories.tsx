@@ -15,40 +15,6 @@ const config: Meta<typeof Checkbox> = {
   args: {
     onChange: fn(),
   },
-  argTypes: {
-    color: {
-      name: 'color',
-      description: 'The background color of the checkbox when it is checked',
-      table: {
-        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white'" },
-        defaultValue: { summary: "'red'" },
-      },
-      control: {
-        type: 'select',
-      },
-      options: ['red', 'yellow', 'blue', 'green', 'grey-light', 'grey-dark', 'black', 'white'],
-    },
-    disabled: {
-      name: 'disabled',
-      description: 'Whether the Checkbox is disabled',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-      control: {
-        type: 'boolean',
-      },
-    },
-    checked: {
-      name: 'checked',
-      description: 'Whether the Checkbox is checked initially',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-      control: false,
-    },
-  },
 };
 
 export default config;
@@ -57,7 +23,6 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const Basic: Story = {
   args: {
-    color: 'red',
     disabled: false,
     checked: false,
   },
@@ -65,7 +30,6 @@ export const Basic: Story = {
 
 export const WithLabel: Story = {
   args: {
-    color: 'red',
     disabled: false,
     checked: false,
     label: 'Example checkbox',
@@ -74,7 +38,6 @@ export const WithLabel: Story = {
 
 export const WithLabelAndDescription: Story = {
   args: {
-    color: 'red',
     disabled: false,
     checked: false,
     label: 'Example checkbox',
@@ -84,7 +47,6 @@ export const WithLabelAndDescription: Story = {
 
 export const CheckedByDefault: Story = {
   args: {
-    color: 'red',
     disabled: false,
     checked: true,
     label: 'Example checkbox',
@@ -94,7 +56,6 @@ export const CheckedByDefault: Story = {
 
 export const DisabledAndUnchecked: Story = {
   args: {
-    color: 'red',
     disabled: true,
     checked: false,
     label: 'Example checkbox',
@@ -104,7 +65,6 @@ export const DisabledAndUnchecked: Story = {
 
 export const DisabledAndChecked: Story = {
   args: {
-    color: 'red',
     disabled: true,
     checked: true,
     label: 'Example checkbox',

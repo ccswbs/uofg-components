@@ -11,37 +11,6 @@ const config: Meta<typeof Carousel> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    display: {
-      name: 'display',
-      description: 'The number of items to display at a time within the carousel',
-      table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: "'1'" },
-      },
-      control: {
-        type: 'number',
-      },
-    },
-    loop: {
-      name: 'loop',
-      description: 'The behavior of the carousel when the last item is reached',
-      table: {
-        type: { summary: "'none' | 'jump'" },
-        defaultValue: { summary: "'none'" },
-      },
-      control: {
-        type: 'select',
-      },
-      options: ['none', 'jump'],
-    },
-    children: {
-      name: 'children',
-      description: 'The content of the card body',
-      table: { type: { summary: 'React.ReactNode?' } },
-      control: false,
-    },
-  },
 };
 
 export default config;

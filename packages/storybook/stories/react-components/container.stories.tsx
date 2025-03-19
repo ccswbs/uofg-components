@@ -10,31 +10,6 @@ const config = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    className: {
-      name: 'className',
-      description: "Classes to apply to the card's main container",
-      table: { type: { summary: 'string?' } },
-      control: false,
-    },
-    children: {
-      name: 'children',
-      description: 'The content of the container',
-      table: { type: { summary: 'React.ReactNode?' } },
-      control: false,
-    },
-    centered: {
-      name: 'centered',
-      description: 'Whether the container should be centered',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
 };
 
 export default config;
