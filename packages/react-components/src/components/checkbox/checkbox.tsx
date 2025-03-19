@@ -18,9 +18,9 @@ export type CheckboxProps = {
   /**
    * The color of the checkbox
    *
-   * @default 'red'
+   * @default 'yellow'
    */
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
+  color?: 'yellow' | 'blue' | 'green' | 'black' | 'white';
   /**
    * Whether the checkbox is disabled
    *
@@ -35,7 +35,7 @@ export function Checkbox({
   checked = false,
   label,
   description,
-  color = 'red',
+  color = 'yellow',
   disabled = false,
   onChange,
   ...rest
@@ -54,35 +54,23 @@ export function Checkbox({
     },
     variants: {
       color: {
-        'red': {
-          box: 'uog:focus-visible:ring-red uog:ui-checked:bg-red',
-          check: 'uog:text-red-contrast',
-        },
-        'yellow': {
+        yellow: {
           box: 'uog:focus-visible:ring-yellow uog:ui-checked:bg-yellow',
           check: 'uog:text-yellow-contrast',
         },
-        'blue': {
+        blue: {
           box: 'uog:focus-visible:ring-blue uog:ui-checked:bg-blue',
           check: 'uog:text-blue-contrast',
         },
-        'green': {
+        green: {
           box: 'uog:focus-visible:ring-green uog:ui-checked:bg-green',
           check: 'uog:text-green-contrast',
         },
-        'grey-light': {
-          box: 'uog:focus-visible:ring-grey-light uog:ui-checked:bg-grey-light',
-          check: 'uog:text-grey-light-contrast',
-        },
-        'grey-dark': {
-          box: 'uog:focus-visible:ring-grey-dark uog:ui-checked:bg-grey-dark',
-          check: 'uog:text-grey-dark-contrast',
-        },
-        'black': {
+        black: {
           box: 'uog:focus-visible:ring-black uog:ui-checked:bg-black',
           check: 'uog:text-black-contrast',
         },
-        'white': {
+        white: {
           box: 'uog:focus-visible:ring-white uog:ui-checked:bg-white',
           check: 'uog:text-white-contrast',
         },
