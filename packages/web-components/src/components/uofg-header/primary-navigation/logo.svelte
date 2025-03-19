@@ -20,7 +20,7 @@
           logo: 'py-2',
         },
         mobile: {
-          logo: '',
+          logo: 'p-3',
         },
       },
     },
@@ -41,7 +41,7 @@
     href="https://www.uoguelph.ca"
     aria-label="University of Guelph Home Page"
   >
-    {#if $headerState?.mode === 'desktop'}
+    {#if $headerState?.mode === 'desktop' || $headerState?.variant === 'dual-brand'}
       {@html Logo}
     {:else}
       {@html LogoSmall}
