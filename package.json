@@ -13,7 +13,6 @@
     "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "scripts": {
-    "init": "npx npmrc-replace-env",
     "format": "npx prettier --write .",
     "build": "lerna run build",
     "build:web-components": "lerna run build --scope @uoguelph/web-components",

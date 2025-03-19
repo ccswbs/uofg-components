@@ -6,10 +6,13 @@ To get started with developing in this repository, you will need to have npm ins
 
 Once you have npm installed, follow these steps:
 
-1. Initialize the project by running the following command:
+1. Set the nessessary environment variables
+
+NPMRC_FONTAWESOME_PACKAGE_TOKEN - This is the token used to access the FontAwesome Pro package.
+You can get this token from the C&M FontAwesome account or from [Netlify](https://app.netlify.com/sites/uofg-components/configuration/env#environment-variables).
 
 ```sh
-npm run init
+export NPMRC_FONTAWESOME_PACKAGE_TOKEN="TOKEN VALUE HERE"
 ```
 
 2. Install the necessary dependencies by running:
@@ -51,14 +54,31 @@ Lerna allows us to publish all the packages in the monorepo with a single comman
 npm login
 ```
 
+2. Run a build of all the packages in the monorepo to make sure the packages are ready to be published.
+
+```sh
+lerna run build
+```
+
+If your build fails, you will need to fix the errors before you can publish the packages.
+
+3. Update any documentation regarding the packages in the monorepo. This includes updating the README files and the Storybook.
+
 ### Publishing Steps
 
-1. Run the following command to publish all the packages in the monorepo (Lerna will automatically determine which packages have changed and need to be published):
+1. Run the following command to publish all the packages in the monorepo (Lerna will automatically determine which packages have changed and need to be republished):
 
 ```sh
 lerna publish --pre-dist-tag rc --no-private --preid rc
 ```
 
-2. Follow the prompts to select the version number for each package. You should read the [Semantic Versioning](https://semver.org/) documentation to understand how to select the correct version number. Remember any pre-release version should be suffixed with `-rc` (e.g. `1.0.0-rc.0`).
+If for some reason a package is not being published, you can force it to be published by running:
+
+```sh
+lerna publish --force-publish <package-name> --pre-dist-tag rc --no-private --preid rc
+```
+
+2. Follow the prompts to select the version number for each package. Lerna will give you a chance before publishing to see what the new version numbers for each package will be. You should read the [Semantic Versioning](https://semver.org/) documentation to understand how to select the correct version number. Remember any pre-release version should be suffixed with `-rc` (e.g. `1.0.0-rc.0`).
+
 
 3. Thats it! The packages should have been published to the NPM registry. You can verify by checking the NPM website for each package.
