@@ -23,9 +23,9 @@ export const Divider = () => {
   return (
     <>
       <div className={base()}>
-        <div className={black()}></div>
         <div className={red()}></div>
         <div className={yellow()}></div>
+        <div className={black()}></div>
       </div>
       <hr className={hr()} />
     </>
