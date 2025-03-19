@@ -12,7 +12,7 @@ export type AlertTitleProps = PropsWithChildren<{
    *
    * @default 'red'
    */
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
 }>;
 
 /** The AlertTitle component is used to display the title of an alert. */
@@ -37,11 +37,11 @@ export function AlertTitle({ color = 'red', className, children }: AlertTitlePro
         'green': {
           container: 'uog:bg-green uog:text-green-contrast',
         },
-        'light-grey': {
-          container: 'uog:bg-light-grey uog:text-light-grey-contrast',
+        'grey-light': {
+          container: 'uog:bg-grey-light uog:text-grey-light-contrast',
         },
-        'dark-grey': {
-          container: 'uog:bg-dark-grey uog:text-dark-grey-contrast',
+        'grey-dark': {
+          container: 'uog:bg-grey-dark uog:text-grey-dark-contrast',
         },
         'black': {
           container: 'uog:bg-black uog:text-black-contrast',

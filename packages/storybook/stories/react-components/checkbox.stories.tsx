@@ -20,13 +20,13 @@ const config: Meta<typeof Checkbox> = {
       name: 'color',
       description: 'The background color of the checkbox when it is checked',
       table: {
-        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white'" },
+        type: { summary: "'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white'" },
         defaultValue: { summary: "'red'" },
       },
       control: {
         type: 'select',
       },
-      options: ['red', 'yellow', 'blue', 'green', 'light-grey', 'dark-grey', 'black', 'white'],
+      options: ['red', 'yellow', 'blue', 'green', 'grey-light', 'grey-dark', 'black', 'white'],
     },
     disabled: {
       name: 'disabled',

@@ -7,7 +7,7 @@ export type InfoProps = PropsWithChildren<{
    *
    * @default 'red'
    */
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
 }>;
 
 export function Info({ children, color = 'red' }: InfoProps) {
@@ -19,8 +19,8 @@ export function Info({ children, color = 'red' }: InfoProps) {
         'yellow': 'uog:border-l-yellow',
         'blue': 'uog:border-l-blue',
         'green': 'uog:border-l-green',
-        'light-grey': 'uog:border-l-light-grey',
-        'dark-grey': 'uog:border-l-dark-grey',
+        'grey-light': 'uog:border-l-grey-light',
+        'grey-dark': 'uog:border-l-grey-dark',
         'black': 'uog:border-l-black',
         'white': 'uog:border-l-white',
       },

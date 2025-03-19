@@ -22,7 +22,7 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
       panelWrapper: 'uog:relative uog:w-full uog:flex uog:flex-col uog:items-center',
       panel: '',
       closeButton:
-        'uog:bg-dark-grey-bg uog:md:absolute uog:border-b uog:border-white/40 uog:top-0 uog:right-0 uog:flex uog:h-9 uog:w-full uog:md:w-9 uog:items-center uog:justify-center uog:md:rounded-full uog:text-xl uog:text-white uog:transition-colors uog:hover:bg-red uog:gap-1',
+        'uog:bg-grey-dark-bg uog:md:absolute uog:border-b uog:border-white/40 uog:top-0 uog:right-0 uog:flex uog:h-9 uog:w-full uog:md:w-9 uog:items-center uog:justify-center uog:md:rounded-full uog:text-xl uog:text-white uog:transition-colors uog:hover:bg-red uog:gap-1',
     },
     variants: {
       centered: {

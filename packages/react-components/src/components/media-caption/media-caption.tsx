@@ -16,7 +16,7 @@ type MediaCaptionPropsAs<T extends MediaCaptionElementType> = {
 type MediaCaptionPropsBase = {
   size?: 'small' | 'medium' | 'large';
   position?: 'left' | 'right' | 'above';
-  background?: 'none' | 'light-grey' | 'dark-grey';
+  background?: 'none' | 'grey-light' | 'grey-dark';
   className?: string;
   mediaClassName?: string;
 };
@@ -69,11 +69,11 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
         },
       },
       background: {
-        'light-grey': {
-          caption: 'uog:bg-light-grey-bg uog:text-body-copy',
+        'grey-light': {
+          caption: 'uog:bg-grey-light-bg uog:text-body-copy',
         },
-        'dark-grey': {
-          caption: 'uog:bg-dark-grey-bg uog:text-body-copy-on-dark',
+        'grey-dark': {
+          caption: 'uog:bg-grey-dark-bg uog:text-body-copy-on-dark',
         },
         'none': {},
       },

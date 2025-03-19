@@ -29,7 +29,7 @@ export function AccordionButton({ children, className }: AccordionButtonProps) {
         },
         false: {
           icon: 'uog:rotate-90',
-          button: 'uog:bg-light-grey-bg uog:text-blue-on-light',
+          button: 'uog:bg-grey-light-bg uog:text-blue-on-light',
         },
       },
     },

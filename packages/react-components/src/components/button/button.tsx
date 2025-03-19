@@ -16,7 +16,7 @@ type ButtonPropsBase = {
    *
    * @default 'red'
    */
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'light-grey' | 'dark-grey' | 'black' | 'white';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
   /**
    * Whether the button should be outlined
    *
@@ -59,8 +59,8 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         'yellow': 'uog:focus-visible:ring-yellow',
         'blue': 'uog:focus-visible:ring-blue',
         'green': 'uog:focus-visible:ring-green',
-        'light-grey': 'uog:focus-visible:ring-light-grey',
-        'dark-grey': 'uog:focus-visible:ring-dark-grey',
+        'grey-light': 'uog:focus-visible:ring-grey-light',
+        'grey-dark': 'uog:focus-visible:ring-grey-dark',
         'black': 'uog:focus-visible:ring-black',
         'white': 'uog:focus-visible:ring-white',
       },
@@ -161,48 +161,48 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         class: 'uog:hocus-visible:bg-green uog:hocus-visible:text-green-contrast',
       },
       {
-        color: 'light-grey',
+        color: 'grey-light',
         outlined: false,
-        class: 'uog:bg-light-grey uog:text-light-grey-contrast',
+        class: 'uog:bg-grey-light uog:text-grey-light-contrast',
       },
       {
-        color: 'light-grey',
+        color: 'grey-light',
         outlined: true,
-        class: 'uog:border-light-grey uog:text-light-grey',
+        class: 'uog:border-grey-light uog:text-grey-light',
       },
       {
-        color: 'light-grey',
-        outlined: false,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-light-grey-focus',
-      },
-      {
-        color: 'light-grey',
-        outlined: true,
-        disabled: false,
-        class: 'uog:hocus-visible:bg-light-grey uog:hocus-visible:text-light-grey-contrast',
-      },
-      {
-        color: 'dark-grey',
-        outlined: false,
-        class: 'uog:bg-dark-grey uog:text-dark-grey-contrast',
-      },
-      {
-        color: 'dark-grey',
-        outlined: true,
-        class: 'uog:border-dark-grey uog:text-dark-grey',
-      },
-      {
-        color: 'dark-grey',
+        color: 'grey-light',
         outlined: false,
         disabled: false,
-        class: 'uog:hocus-visible:bg-dark-grey-focus',
+        class: 'uog:hocus-visible:bg-grey-light-focus',
       },
       {
-        color: 'dark-grey',
+        color: 'grey-light',
         outlined: true,
         disabled: false,
-        class: 'uog:hocus-visible:bg-dark-grey uog:hocus-visible:text-dark-grey-contrast',
+        class: 'uog:hocus-visible:bg-grey-light uog:hocus-visible:text-grey-light-contrast',
+      },
+      {
+        color: 'grey-dark',
+        outlined: false,
+        class: 'uog:bg-grey-dark uog:text-grey-dark-contrast',
+      },
+      {
+        color: 'grey-dark',
+        outlined: true,
+        class: 'uog:border-grey-dark uog:text-grey-dark',
+      },
+      {
+        color: 'grey-dark',
+        outlined: false,
+        disabled: false,
+        class: 'uog:hocus-visible:bg-grey-dark-focus',
+      },
+      {
+        color: 'grey-dark',
+        outlined: true,
+        disabled: false,
+        class: 'uog:hocus-visible:bg-grey-dark uog:hocus-visible:text-grey-dark-contrast',
       },
       {
         color: 'black',

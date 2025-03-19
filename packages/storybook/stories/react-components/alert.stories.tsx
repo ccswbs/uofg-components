@@ -74,7 +74,7 @@ export const LightGrey: Story = {
   render: ({ ...args }) => {
     return (
       <Alert {...args}>
-        <AlertTitle color="light-grey">Example Title</AlertTitle>
+        <AlertTitle color="grey-light">Example Title</AlertTitle>
       </Alert>
     );
   },
@@ -84,7 +84,7 @@ export const DarkGrey: Story = {
   render: ({ ...args }) => {
     return (
       <Alert {...args}>
-        <AlertTitle color="dark-grey">Example Title</AlertTitle>
+        <AlertTitle color="grey-dark">Example Title</AlertTitle>
       </Alert>
     );
   },

@@ -13,7 +13,7 @@ export function CardFooter({ children, className }: CardFooterProps) {
   const context = useContext(CardContext);
 
   const cardFooter = tv({
-    base: 'uog:flex uog:gap-2 uog:bg-light-grey uog:px-5 uog:py-2 uog:text-light-grey-contrast uog:transition-colors',
+    base: 'uog:flex uog:gap-2 uog:bg-grey-light uog:px-5 uog:py-2 uog:text-grey-light-contrast uog:transition-colors',
     variants: {
       centered: {
         true: 'uog:justify-center',
