@@ -1,9 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Blockquote } from '../../../react-components/src/components/blockquote/blockquote';
+import { ComponentType } from 'react';
+import {
+  Blockquote,
+  BlockquoteAuthor,
+  BlockquoteContent,
+} from '../../../react-components/src/components/blockquote/blockquote';
 
 const config: Meta<typeof Blockquote> = {
   title: 'React Components/Blockquote',
   component: Blockquote,
+  subcomponents: {
+    BlockquoteContent: BlockquoteContent as ComponentType<unknown>,
+    BlockquoteAuthor: BlockquoteAuthor as ComponentType<unknown>,
+  },
   parameters: {
     layout: 'centered',
     docs: {
@@ -11,28 +20,6 @@ const config: Meta<typeof Blockquote> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {
-    color: {
-      name: 'color',
-      description: 'The color of the quotation marks in the blockquote',
-      table: {
-        type: { summary: "'red' | 'yellow' | 'blue'" },
-        defaultValue: { summary: "'red'" },
-      },
-      control: {
-        type: 'select',
-      },
-      options: ['red', 'yellow', 'blue'],
-    },
-    children: {
-      name: 'children',
-      description: 'The content in the blockquote',
-      table: {
-        type: { summary: 'React.ReactNode?' },
-      },
-      control: false,
-    },
-  },
 };
 
 export default config;
@@ -40,8 +27,36 @@ export default config;
 type Story = StoryObj<typeof Blockquote>;
 
 export const Basic: Story = {
+  render: ({ ...args }) => (
+    <Blockquote {...args}>
+      <BlockquoteContent>
+        Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.
+      </BlockquoteContent>
+    </Blockquote>
+  ),
+};
+
+export const WithAuthor: Story = {
+  render: ({ ...args }) => (
+    <Blockquote {...args}>
+      <BlockquoteContent>
+        Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.
+      </BlockquoteContent>
+      <BlockquoteAuthor name="John Doe" title="Web Developer" />
+    </Blockquote>
+  ),
+};
+
+export const Blue: Story = {
   args: {
-    children: 'Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.',
-    color: 'red',
+    color: 'blue',
   },
+  render: ({ ...args }) => (
+    <Blockquote {...args}>
+      <BlockquoteContent>
+        Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.
+      </BlockquoteContent>
+      <BlockquoteAuthor name="John Doe" title="Web Developer" />
+    </Blockquote>
+  ),
 };
