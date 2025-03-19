@@ -107,7 +107,7 @@ function Video({ src, title, transcript, className }: VideoProps) {
       )}
 
       {transcript && (
-        <Button as="a" color="red" className={transcriptButton()} href={transcript} download={true}>
+        <Button as="a" color="black" className={transcriptButton()} href={transcript} download={true}>
           Download Transcript
         </Button>
       )}
