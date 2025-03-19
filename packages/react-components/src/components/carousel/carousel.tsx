@@ -105,7 +105,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
         'uog:grid uog:w-full uog:flex-1 uog:grid-cols-[repeat(var(--items),calc(100%/var(--display)))] uog:overflow-x-hidden [&>*]:[grid-row:1]',
       controlContainer: 'uog:md:contents uog:flex uog:h-16 uog:w-full uog:pt-8',
       control:
-        'uog:sm:text-6xl uog:md:absolute uog:flex uog:h-full uog:w-16 uog:flex-1 uog:items-center uog:justify-center uog:text-3xl uog:text-yellow uog:transition-[transform,color,opacity,visibility] uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:hocus-visible:text-black uog:focus-visible:text-black',
+        'uog:sm:text-6xl uog:md:absolute uog:flex uog:h-full uog:w-16 uog:flex-1 uog:items-center uog:justify-center uog:text-3xl uog:text-blue uog:transition-[transform,color,opacity,visibility] uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:hocus-visible:text-blue-focus',
     },
     variants: {
       showControls: {
