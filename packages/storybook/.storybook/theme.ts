@@ -5,7 +5,7 @@ export default create({
   // Branding
   brandTitle: 'University of Guelph Components',
   brandUrl: 'https://uoguelph.ca',
-  brandImage: 'https://guides.uoguelph.ca/wp-content/uploads/2017/07/uofg_cornerstone.png',
+  brandImage: '/logo.svg',
   brandTarget: '_self',
   // Colors
   colorPrimary: '#000',
