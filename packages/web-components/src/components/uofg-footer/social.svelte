@@ -7,8 +7,7 @@
   const classes = tv({
     slots: {
       base: 'flex gap-2 text-lg [&>li]:contents',
-      links:
-        'border border-current p-0.5 transition-colors hover:border-transparent focus:border-transparent [&>*]:aspect-square',
+      links: 'p-0.5 transition-colors [&>*]:aspect-square',
     },
   });
 
