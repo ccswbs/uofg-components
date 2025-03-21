@@ -12,7 +12,7 @@
     slots: {
       base: 'flex w-fit',
       decoration: 'left-0 h-full w-[7.5rem] min-[1320px]:absolute [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
-      logo: 'flex h-full w-fit items-center transition-opacity hover:opacity-75 focus:opacity-75 min-[1320px]:absolute min-[1320px]:left-[max(calc((100%-1320px)/2),7.5rem)] [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
+      logo: 'flex h-12.5 w-fit items-center transition-opacity hover:opacity-75 focus:opacity-75 min-[1320px]:absolute min-[1320px]:left-[max(calc((100%-1320px)/2),7.5rem)] lg:h-25 [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
     },
     variants: {
       mode: {
