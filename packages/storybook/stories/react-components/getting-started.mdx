@@ -1,3 +1,65 @@
 import { Meta } from '@storybook/blocks';
 
 <Meta title="React Components/Getting Started" />
+
+# Introduction
+
+This is a library of React components designed for use in any University of Guelph React project.
+
+## Install the package
+
+Install the package using the package manager of your choice.
+
+```bash
+# Using npm
+npm install @uoguelph/react-components
+
+# Using Yarn
+yarn add @uoguelph/react-components
+
+# Using pnpm
+pnpm add @uoguelph/react-components
+
+# Using bun
+bun add @uoguelph/react-components
+```
+
+Then, import the components you want to use in your project.
+You can see the individual component documentation for more information on how to use and import each component.
+
+## Styles
+
+### Without using Tailwind CSS
+
+The components in this library are designed to be used with Tailwind CSS.
+If you are not using Tailwind CSS in your project,
+or you want to keep the styles of the components separate from your own,
+you will need to include the stylesheet provided in the package.
+
+```html
+<link rel="stylesheet" href="/node_modules/@uoguelph/react-components/dist/index.css" />
+```
+
+Or if you are using a bundler like Webpack, you can import the stylesheet in your JavaScript file:
+
+```javascript
+import '@uoguelph/react-components/dist/index.css';
+```
+
+### Using Tailwind CSS
+
+If you are using Tailwind CSS in your project, you can use the components without including the stylesheet.
+Doing this will save some bandwidth as the components will share the same styles as your own.
+However, this will require you
+to include our [Tailwind CSS theme package](/?path=/docs/tailwind-theme-getting-started--docs) in your project,
+as well as using [Tailwind's prefix option](https://tailwindcss.com/docs/styling-with-utility-classes#using-the-prefix-option) to prefix all Tailwind classes with `uog`.
+
+You will also need the [@headlessui/tailwindcss](https://www.npmjs.com/package/@headlessui/tailwindcss) plugin.
+
+Then, make sure your Tailwind CSS config file looks like this:
+
+```css
+@import '@uoguelph/tailwind-theme' prefix(uog);
+@source 'PATH_TO_YOUR_NODE_MODULES_FOLDER/node_modules/@uoguelph/react-components';
+@plugin "@headlessui/tailwindcss";
+```
