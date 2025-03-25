@@ -91,13 +91,17 @@ This includes providing a summary of changes, detailing significant modification
 
 For every pull request, you must publish test versions of the packages using the instructions above.
 
-Once your PR has been reviewed approved, and is ready to be merged, you need to update the version numbers of the packages that were changed so they are their no longer the test versions. You can do this by running:
+Once your PR has been reviewed, approved,
+and is ready to be merged,
+you need to update the version numbers of the packages that were changed so they are their no longer the test versions.
+You can do this by running:
 
 ```sh
 lerna version --no-private --preid rc --force-publish <package-name>
 ```
 
-You can then merge your PR and publish the packages using the following command:
+You can then merge your PR, switch to the main branch,
+pull the changes, and publish the packages using the following command:
 
 ```sh
 lerna publish from-git --no-private --pre-dist-tag rc
