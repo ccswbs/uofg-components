@@ -10,7 +10,7 @@
 </script>
 
 <li>
-  <Menu class="h-full">
+  <Menu class="h-full" autoCollapse={false}>
     {#snippet button()}
       <MenuButton
         class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast aria-expanded:bg-yellow aria-expanded:text-yellow-contrast"
@@ -48,7 +48,7 @@
                   <li>
                     <a
                       {...menuItem.attributes}
-                      class={`border-grey/50 hover:bg-grey-muted hover:text-grey-muted-contrast border-0 border-b border-solid p-2 transition-colors ${menuItem.attributes?.class ?? ''}`}
+                      class={`border-grey/50 hover:bg-grey-muted hover:text-grey-muted-contrast border-0 border-b border-solid p-2 transition-colors ${menuItem.attributes?.class ?? ''} uofg-header-sub-nav-item-${menuItem.text.toLowerCase().replace(/ /g, '-')}`}
                       href={menuItem.href}
                     >
                       {menuItem.text}
@@ -61,7 +61,7 @@
             <!-- Link -->
             <a
               {...item.attributes}
-              class={`border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors ${item.attributes?.class ?? ''}`}
+              class={`border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors ${item.attributes?.class ?? ''} uofg-header-sub-nav-item-${item.text.toLowerCase().replace(/ /g, '-')}`}
               href={item.href}
             >
               {item.text}
