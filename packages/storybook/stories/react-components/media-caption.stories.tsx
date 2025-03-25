@@ -170,7 +170,7 @@ export const VideoAbove: Story = {
   },
 };
 
-export const LightBlueBG: Story = {
+export const LightGreyBG: Story = {
   args: {
     as: 'img',
     ...image,
