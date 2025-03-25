@@ -27,14 +27,14 @@ export const ComponentImport = ({ of }: { of?: any }) => {
     return (
       <TabGroup className={tabs.group()}>
         <TabList className={tabs.list()}>
-          <Tab className={tabs.tab()}>Latest v1 (recommended)</Tab>
+          <Tab className={tabs.tab()}>Latest v2 (recommended)</Tab>
           <Tab className={tabs.tab()}>Latest</Tab>
           <Tab className={tabs.tab()}>Test Version</Tab>
         </TabList>
         <TabPanels className={tabs.panels()}>
           <TabPanel className={tabs.panel()}>
             <Source
-              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@1.x.x/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js">`}
+              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@2.x.x/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js">`}
             />
           </TabPanel>
           <TabPanel className={tabs.panel()}>
