@@ -32,7 +32,9 @@ You can see the individual component documentation for more information on how t
 ### Without using Tailwind CSS
 
 The components in this library are designed to be used with Tailwind CSS.
-If you are not using Tailwind CSS in your project, you will need to include the stylesheet provided in the package.
+If you are not using Tailwind CSS in your project,
+or you want to keep the styles of the components separate from your own,
+you will need to include the stylesheet provided in the package.
 
 ```html
 <link rel="stylesheet" href="/node_modules/@uoguelph/react-components/dist/index.css" />
@@ -46,11 +48,14 @@ import '@uoguelph/react-components/dist/index.css';
 
 ### Using Tailwind CSS
 
-If you are using Tailwind CSS in your project, you must be using our Tailwind CSS theme package as well.
-View the getting started guide for the Tailwind CSS theme package for more information
-on how to install and use it [here](/?path=/docs/tailwind-theme-getting-started--docs).
+If you are using Tailwind CSS in your project, you can use the components without including the stylesheet.
+Doing this will save some bandwidth as the components will share the same styles as your own.
+However,
+doing this will require you
+to include our [Tailwind CSS theme package](/?path=/docs/tailwind-theme-getting-started--docs) in your project,
+as well as prefixing the Tailwind classes with `uog`.
 
-You will also need the `@headlessui/tailwindcss` plugin and your Tailwind classes will need to be prefixed with `uog`.
+You will also need the [@headlessui/tailwindcss](https://www.npmjs.com/package/@headlessui/tailwindcss) plugin.
 
 Then, make sure your Tailwind CSS config file looks like this:
 
