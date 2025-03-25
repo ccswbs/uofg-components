@@ -1,3 +1,63 @@
 import { Meta } from '@storybook/blocks';
 
 <Meta title="React Components/Getting Started" />
+
+# Introduction
+
+This is a library of React components designed for use in any University of Guelph React project.
+
+## Install the package
+
+Install the package using the package manager of your choice.
+
+```bash
+# Using npm
+npm install @uoguelph/react-components
+
+# Using Yarn
+yarn add @uoguelph/react-components
+
+# Using pnpm
+pnpm add @uoguelph/react-components
+
+# Using bun
+bun add @uoguelph/react-components
+```
+
+Then, import the components you want to use in your project.
+You can see the individual component documentation for more information on how to use and import each component.
+
+## Styles
+
+
+### Without using Tailwind CSS
+
+The components in this library are designed to be used with Tailwind CSS.
+If you are not using Tailwind CSS in your project, you will need to include the stylesheet provided in the package.
+
+```html
+<link rel="stylesheet" href="/node_modules/@uoguelph/react-components/dist/index.css" />
+```
+
+Or if you are using a bundler like Webpack, you can import the stylesheet in your JavaScript file:
+
+```javascript
+import '@uoguelph/react-components/dist/index.css';
+```
+
+### Using Tailwind CSS
+
+If you are using Tailwind CSS in your project, you must be using our Tailwind CSS theme package as well.
+View the getting started guide for the Tailwind CSS theme package for more information
+on how to install and use it [here](/?path=/docs/tailwind-theme-getting-started--docs).
+
+You will also need the `@headlessui/tailwindcss` plugin and your Tailwind classes will need to be prefixed with `uog`.
+
+
+Then, make sure your Tailwind CSS config file looks like this:
+
+```css
+@import '@uoguelph/tailwind-theme' prefix(uog);
+@source 'node_modules/@uoguelph/react-components';
+@plugin "@headlessui/tailwindcss";
+```
