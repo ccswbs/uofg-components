@@ -5,10 +5,11 @@ const config: Meta<typeof LoadingIndicator> = {
   title: 'React Components/LoadingIndicator',
   component: LoadingIndicator,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

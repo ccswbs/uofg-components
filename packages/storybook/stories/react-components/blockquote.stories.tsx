@@ -14,10 +14,11 @@ const config: Meta<typeof Blockquote> = {
     BlockquoteAuthor: BlockquoteAuthor as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

@@ -18,10 +18,11 @@ const config: Meta<typeof LinkCarousel> = {
     LinkCarouselItem: LinkCarouselItem as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

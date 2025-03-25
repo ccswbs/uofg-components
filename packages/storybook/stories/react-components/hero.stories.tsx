@@ -12,10 +12,11 @@ const config: Meta<typeof Hero> = {
     HeroVideo: HeroVideo as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'fullScreen',
-    docs: {
+    'layout': 'fullScreen',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

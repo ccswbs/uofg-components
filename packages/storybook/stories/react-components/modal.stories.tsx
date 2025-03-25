@@ -7,10 +7,11 @@ const config: Meta<typeof Modal> = {
   title: 'React Components/Modal',
   component: Modal,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
   decorators: [

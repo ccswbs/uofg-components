@@ -5,10 +5,11 @@ const config: Meta<typeof Info> = {
   title: 'React Components/Info',
   component: Info,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

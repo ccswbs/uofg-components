@@ -5,10 +5,11 @@ const config: Meta<typeof Link> = {
   title: 'React Components/Link',
   component: Link,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

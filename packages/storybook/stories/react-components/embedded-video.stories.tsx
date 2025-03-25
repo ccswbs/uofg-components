@@ -12,10 +12,11 @@ const config: Meta<typeof EmbeddedVideo> = {
     EmbeddedVideoModalButton: EmbeddedVideoModalButton as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

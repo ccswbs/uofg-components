@@ -10,10 +10,11 @@ const config: Meta<typeof RadioGroup> = {
     Radio: Radio as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
   decorators: [

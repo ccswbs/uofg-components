@@ -6,10 +6,11 @@ const config: Meta<typeof TextInput> = {
   title: 'React Components/TextInput',
   component: TextInput,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
   args: {

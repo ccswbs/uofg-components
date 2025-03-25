@@ -5,10 +5,11 @@ const config: Meta<typeof Divider> = {
   title: 'React Components/Divider',
   component: Divider,
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

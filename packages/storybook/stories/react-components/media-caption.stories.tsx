@@ -6,10 +6,11 @@ const config: Meta<typeof MediaCaption> = {
   title: 'React Components/MediaCaption',
   component: MediaCaption,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
   argTypes: {

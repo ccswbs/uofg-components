@@ -5,10 +5,11 @@ const config: Meta<typeof Button> = {
   title: 'React Components/Button',
   component: Button,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

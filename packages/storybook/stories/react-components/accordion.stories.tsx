@@ -14,10 +14,11 @@ const config: Meta<typeof Accordion> = {
     AccordionContent: AccordionContent as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

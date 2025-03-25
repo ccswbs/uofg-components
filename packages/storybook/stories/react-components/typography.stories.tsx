@@ -5,10 +5,11 @@ const config: Meta<typeof Typography> = {
   title: 'React Components/Typography',
   component: Typography,
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

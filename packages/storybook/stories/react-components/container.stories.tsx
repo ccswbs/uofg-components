@@ -4,10 +4,11 @@ const config = {
   title: 'React Components/Container',
   component: Container,
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

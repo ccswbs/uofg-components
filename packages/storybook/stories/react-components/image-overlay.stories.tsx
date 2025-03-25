@@ -5,10 +5,11 @@ const config: Meta<typeof ImageOverlay> = {
   title: 'React Components/ImageOverlay',
   component: ImageOverlay,
   parameters: {
-    layout: 'fullscreen',
-    docs: {
+    'layout': 'fullscreen',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

@@ -1,6 +1,9 @@
 import { Meta } from '@storybook/blocks';
+import { BannerComponent } from '../../doc-blocks/banner.js';
 
 <Meta title="React Components/Getting Started" />
+
+<BannerComponent>This library is currently still in development. As a result, its exact usage and functionality is subject to change. Do not use it in production.</BannerComponent>
 
 # Introduction
 
@@ -40,7 +43,8 @@ you will need to include the stylesheet provided in the package.
 <link rel="stylesheet" href="/node_modules/@uoguelph/react-components/dist/index.css" />
 ```
 
-Or if you are using a bundler like Webpack, you can import the stylesheet in your JavaScript file:
+Or if you are using a bundler like Webpack, you can import the
+import { BannerComponent } from '../../doc-blocks/banner.js'; stylesheet in your JavaScript file:
 
 ```javascript
 import '@uoguelph/react-components/dist/index.css';

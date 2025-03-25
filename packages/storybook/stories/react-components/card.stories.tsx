@@ -18,10 +18,11 @@ const config: Meta<typeof Card> = {
     CardImage: CardImage as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

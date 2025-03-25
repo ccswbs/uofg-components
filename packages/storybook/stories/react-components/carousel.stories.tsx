@@ -5,10 +5,11 @@ const config: Meta<typeof Carousel> = {
   title: 'React Components/Carousel',
   component: Carousel,
   parameters: {
-    layout: 'padded',
-    docs: {
+    'layout': 'padded',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };

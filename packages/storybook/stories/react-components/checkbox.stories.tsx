@@ -6,10 +6,11 @@ const config: Meta<typeof Checkbox> = {
   title: 'React Components/Checkbox',
   component: Checkbox,
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
   args: {

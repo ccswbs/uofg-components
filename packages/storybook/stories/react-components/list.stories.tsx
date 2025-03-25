@@ -9,10 +9,11 @@ const config: Meta<typeof List> = {
     ListItem: ListItem as ComponentType<unknown>,
   },
   parameters: {
-    layout: 'centered',
-    docs: {
+    'layout': 'centered',
+    'docs': {
       toc: true,
     },
+    'in-development': true,
   },
   tags: ['autodocs'],
 };
