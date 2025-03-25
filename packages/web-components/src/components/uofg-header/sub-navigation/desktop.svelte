@@ -32,7 +32,7 @@
             <li>
               <a
                 {...menuItem.attributes}
-                class={`border-grey/50 border-0 border-b border-solid p-2 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast ${menuItem.attributes?.class ?? ''}`}
+                class={`border-grey/50 border-0 border-b border-solid p-2 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast ${menuItem.attributes?.class ?? ''} uofg-header-sub-nav-item-${menuItem.text.toLowerCase().replace(/ /g, '-')}`}
                 href={menuItem.href}
               >
                 {menuItem.text}
@@ -46,7 +46,7 @@
     <li>
       <a
         {...item.attributes}
-        class={`flex h-full items-center justify-center gap-2 px-2 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast ${item.attributes?.class ?? ''}`}
+        class={`flex h-full items-center justify-center gap-2 px-2 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast ${item.attributes?.class ?? ''} uofg-header-sub-nav-item-${item.text.toLowerCase().replace(/ /g, '-')}`}
         href={item.href}
       >
         {item.text}
