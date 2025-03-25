@@ -82,3 +82,27 @@ lerna publish --force-publish <package-name> --pre-dist-tag rc --no-private --pr
 
 
 3. Thats it! The packages should have been published to the NPM registry. You can verify by checking the NPM website for each package.
+
+### Pull Requests and Publishing
+
+We require the use of pull requests for any changes made to the codebase.
+When creating a pull request, please ensure that you follow the guidelines outlined in the pull request template.
+This includes providing a summary of changes, detailing significant modifications, and including a test plan.
+
+For every pull request, you must publish test versions of the packages using the instructions above.
+
+Once your PR has been reviewed, approved,
+and is ready to be merged,
+you need to update the version numbers of the packages that were changed so they are their no longer the test versions.
+You can do this by running:
+
+```sh
+lerna version --no-private --preid rc --force-publish <package-name>
+```
+
+You can then merge your PR, switch to the main branch,
+pull the changes, and publish the packages using the following command:
+
+```sh
+lerna publish from-git --no-private --pre-dist-tag rc
+```
