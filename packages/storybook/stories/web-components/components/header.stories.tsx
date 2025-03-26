@@ -37,7 +37,7 @@ const config = {
 export default config;
 
 export const Basic = {
-  render: () => (
+  render: ({}) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header></uofg-header>
   ),
@@ -52,7 +52,7 @@ export const WithPageTitle = {
       },
     },
   },
-  render: () => (
+  render: ({}) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Page Title"></uofg-header>
   ),
@@ -67,7 +67,7 @@ export const WithPageLink = {
       },
     },
   },
-  render: () => (
+  render: ({}) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Page Title" page-url="#example"></uofg-header>
   ),
@@ -82,7 +82,7 @@ export const WithSubNavigation = {
       },
     },
   },
-  render: () => (
+  render: ({}) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Topic/Department">
       <a href="#example">Example Link</a>
@@ -113,7 +113,7 @@ export const WithOverflowingSubNavigation = {
       },
     },
   },
-  render: () => (
+  render: ({}) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Topic/Department">
       <a href="#example">Example Link</a>
@@ -148,7 +148,7 @@ export const DualBrand = {
       },
     },
   },
-  render: () => (
+  render: ({}) => (
     // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-header page-title="Example Topic/Department" variant="dual-brand"></uofg-header>
   ),
