@@ -1,5 +1,6 @@
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import { tv } from 'tailwind-variants';
+import { useResizeObserver } from '../../utils/use-resize-observer';
 import { StatisticsContext } from './statistics-context';
 
 export type StatisticsProps = PropsWithChildren<{
@@ -9,6 +10,11 @@ export type StatisticsProps = PropsWithChildren<{
 /** The Statistic component is used to display a list of statistics in a grid layout. */
 export function Statistics({ children, variant }: StatisticsProps) {
   const [count, setCount] = useState<number>(0);
+  const [ref, entry] = useResizeObserver<HTMLDListElement>();
+
+  useEffect(() => {
+    console.log(entry);
+  }, [entry]);
 
   const classes = tv({
     base: 'uofg-statistics uog:mx-auto uog:my-4 uog:flex uog:flex-col uog:flex-wrap uog:sm:flex-row',
@@ -63,6 +69,11 @@ export function Statistics({ children, variant }: StatisticsProps) {
           divisibleByThree: count % 3 === 0,
           divisibleByFour: count % 4 === 0,
         })}
+        style={
+          /* @ts-expect-error TypeScript doesn't like CSS Variables */
+          variant === 'solid-colors-full' ? { '--statistic-bg-width': entry?.contentRect.width + 'px' } : undefined
+        }
+        ref={ref}
       >
         {children}
       </dl>
