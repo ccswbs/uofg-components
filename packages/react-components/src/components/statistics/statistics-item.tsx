@@ -58,7 +58,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
       {
         variant: ['solid-colors-full', 'solid-colors-no-gap', 'solid-colors'],
         class:
-          'uog:bg-black uog:text-black-contrast uog:nth-[2n]:bg-red uog:nth-[2n]:text-red-contrast uog:nth-[3n]:bg-yellow uog:nth-[3n]:text-yellow-contrast uog:nth-[4n]:bg-blue uog:nth-[4n]:text-blue-contrast',
+          'uog:bg-black uog:text-black-contrast uog:nth-[2n]:bg-red uog:nth-[2n]:text-red-contrast uog:nth-[3n]:bg-yellow uog:nth-[3n]:text-yellow-contrast uog:nth-[4n]:bg-blue uog:nth-[4n]:text-blue-contrast uog:border-b uog:border-white',
       },
     ],
   });
