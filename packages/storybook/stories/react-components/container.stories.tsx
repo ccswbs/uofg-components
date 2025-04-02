@@ -16,15 +16,11 @@ const config = {
 export default config;
 
 export const Default = {
-  args: {
-    centered: false,
-    children: <div>Whatever content you want here</div>,
-  },
-};
-
-export const Centered = {
-  args: {
-    centered: true,
-    children: <div>Whatever content you want here</div>,
+  render: ({ ...args }) => {
+    return (
+      <Container {...args}>
+        <div className="uog:bg-grey-light-bg uog:p-4">Whatever content you want here</div>
+      </Container>
+    );
   },
 };
