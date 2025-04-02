@@ -44,10 +44,11 @@ export const Basic: Story = {
         <StoryBody>
           <StoryBackground>
             <StoryBackgroundImage
-              src="https://picsum.photos/1920/700"
+              src="/img/change-happens-banner.jpg"
               alt="Placeholder image"
               width="1920"
               height="700"
+              className="uog:object-cover uog:lg:[object-position:left_20px]"
             />
           </StoryBackground>
 
@@ -55,12 +56,34 @@ export const Basic: Story = {
             <StoryForegroundContent>
               <div className="uog:text-white">This is the foreground content.</div>
             </StoryForegroundContent>
-            <StoryForegroundImage
-              src="https://picsum.photos/300/200"
+            <StoryForegroundImage src="/img/asha-edwin.png" alt="Placeholder image" width="1341" height="1275" />
+          </StoryForeground>
+        </StoryBody>
+      </Story>
+    );
+  },
+};
+
+export const WithFooter: Story = {
+  render: ({ ...args }) => {
+    return (
+      <Story {...args}>
+        <StoryBody>
+          <StoryBackground>
+            <StoryBackgroundImage
+              src="/img/change-happens-banner.jpg"
               alt="Placeholder image"
-              width="300"
-              height="200"
+              width="1920"
+              height="700"
+              className="uog:object-cover uog:lg:[object-position:left_20px]"
             />
+          </StoryBackground>
+
+          <StoryForeground>
+            <StoryForegroundContent>
+              <div className="uog:text-white">This is the foreground content.</div>
+            </StoryForegroundContent>
+            <StoryForegroundImage src="/img/asha-edwin.png" alt="Placeholder image" width="1341" height="1275" />
           </StoryForeground>
         </StoryBody>
 
