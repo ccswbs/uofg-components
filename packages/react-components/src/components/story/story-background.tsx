@@ -11,3 +11,5 @@ export function StoryBackground({ children, className }: StoryBackgroundProps) {
 
   return <div className={classes}>{children}</div>;
 }
+
+StoryBackground.displayName = 'StoryBackground';

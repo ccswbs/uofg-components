@@ -14,3 +14,5 @@ export function StoryBody({ children, className }: StoryBodyProps) {
 
   return <div className={classes}>{children}</div>;
 }
+
+StoryBody.displayName = 'StoryBody';

@@ -42,3 +42,5 @@ export function StoryBackgroundImage<T extends StoryBackgroundImageElementType =
 
   return <Component {...rest} src={src} alt={alt} width={width} height={height} className={classes} />;
 }
+
+StoryBackgroundImage.displayName = 'StoryBackgroundImage';

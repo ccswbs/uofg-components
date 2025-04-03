@@ -14,3 +14,5 @@ export function StoryForegroundContent({ children, className }: StoryForegroundC
 
   return <div className={classes}>{children}</div>;
 }
+
+StoryForegroundContent.displayName = 'StoryForegroundContent';

@@ -24,3 +24,5 @@ export function StoryFooter({ children, className }: StoryFooterProps) {
     </div>
   );
 }
+
+StoryFooter.displayName = 'StoryFooter';

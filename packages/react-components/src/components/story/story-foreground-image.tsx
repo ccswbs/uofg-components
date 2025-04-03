@@ -54,3 +54,5 @@ export function StoryForegroundImage<T extends StoryForegroundImageElementType =
     </div>
   );
 }
+
+StoryForegroundImage.displayName = 'StoryForegroundImage';

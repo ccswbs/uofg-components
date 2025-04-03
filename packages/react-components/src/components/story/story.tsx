@@ -12,6 +12,8 @@ export function Story({ children, className }: StoryProps) {
   return <div className={classes}>{children}</div>;
 }
 
+Story.displayName = 'Story';
+
 export { StoryBackground } from './story-background';
 export { StoryBackgroundImage } from './story-background-image';
 export { StoryBody } from './story-body';
