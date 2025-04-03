@@ -34,17 +34,17 @@ export const ComponentImport = ({ of }: { of?: any }) => {
         <TabPanels className={tabs.panels()}>
           <TabPanel className={tabs.panel()}>
             <Source
-              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@2.x.x/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js">`}
+              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@2.x.x/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js" type="module"></script>`}
             />
           </TabPanel>
           <TabPanel className={tabs.panel()}>
             <Source
-              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js">`}
+              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js" type="module"></script>`}
             />
           </TabPanel>
           <TabPanel className={tabs.panel()}>
             <Source
-              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@rc/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js">`}
+              code={`<script src="https://cdn.jsdelivr.net/npm/@uoguelph/web-components@rc/dist/uofg-web-components/uofg-${component.toLowerCase()}.esm.js" type="module"></script>`}
             />
           </TabPanel>
         </TabPanels>
