@@ -64,11 +64,7 @@ export function HeroContent({ children, alignment = 'left' }: HeroContentProps) 
     );
   }
 
-  return (
-    <Container centered className={`uofg-hero-content ${base()}`}>
-      {children}
-    </Container>
-  );
+  return <Container className={`uofg-hero-content ${base()}`}>{children}</Container>;
 }
 
 HeroContent.displayName = 'HeroContent';

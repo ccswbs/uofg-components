@@ -17,7 +17,7 @@ export function Breadcrumbs({ className, children }: BreadcrumbsProps) {
   const breadcrumbs = twJoin('uog:flex uog:w-full uog:flex-wrap uog:items-center uog:gap-2');
 
   return (
-    <Container centered>
+    <Container>
       <ol className={twMerge(breadcrumbs, className)}>{children}</ol>
     </Container>
   );
