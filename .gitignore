@@ -5,3 +5,8 @@ node_modules/
 *.env.staging
 .DS_Store
 /lerna-debug.log
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
