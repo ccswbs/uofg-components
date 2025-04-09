@@ -26,11 +26,6 @@ export default config;
 type Story = StoryObj<typeof Header>;
 
 export const Basic: Story = {
-  parameters: {
-    description: {
-      story: 'T',
-    },
-  },
   render: ({ ...args }) => {
     return <Header {...args}></Header>;
   },
