@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useDismissible = (id: string, hash: string, container: 'local' | 'session' = 'local') => {
+export const useDismissible = (id: string, hash?: string, container: 'local' | 'session' = 'local') => {
   const key = `${id}-use-dismissible-hash`;
   const storage =
     typeof window === 'object' ?
@@ -45,6 +45,10 @@ export const useDismissible = (id: string, hash: string, container: 'local' | 's
   return {
     dismissed,
     dismiss: () => {
+      if (!hash) {
+        return;
+      }
+
       setDismissed(true);
       storage?.setItem(key, hash);
     },
