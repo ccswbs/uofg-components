@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/react-components",
-  "version": "1.2.6-rc.0",
+  "version": "1.2.6",
   "description": "University of Guelph React Components Library",
   "type": "module",
   "scripts": {
@@ -84,5 +84,5 @@
   "bugs": {
     "url": "https://github.com/ccswbs/uofg-components/issues"
   },
-  "gitHead": "f688888837675197db25465924a86e3e788498ea"
+  "gitHead": "427dd9f18eb9408c86dc0bfb18a0ecf8bbec2be5"
 }
