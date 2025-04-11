@@ -4,10 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const defaultElement = 'img';
 
-type StoryForegroundImageElementType = ElementType<
-  { src: string; alt: string; width?: string; height?: string },
-  'img'
->;
+type StoryForegroundImageElementType = ElementType;
 
 export type StoryForegroundImageProps<T extends StoryForegroundImageElementType = typeof defaultElement> = {
   /**

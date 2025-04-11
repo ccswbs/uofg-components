@@ -5,9 +5,7 @@ import { EmbeddedVideo } from '../embedded-video/embedded-video';
 
 const defaultElement = 'img';
 
-type MediaCaptionElementType =
-  | ElementType<{ src: string; alt?: string; height?: number; width?: number }, 'img'>
-  | typeof EmbeddedVideo;
+type MediaCaptionElementType = ElementType;
 
 type MediaCaptionPropsAs<T extends MediaCaptionElementType> = {
   as?: T;

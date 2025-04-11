@@ -5,7 +5,7 @@ import { CardContext } from './card-context';
 
 const defaultCardImageElement = 'img';
 
-type CardImageElementType = ElementType<{ src: string; alt: string; width?: string; height?: string }, 'img'>;
+type CardImageElementType = ElementType;
 
 export type CardImageProps<T extends CardImageElementType = typeof defaultCardImageElement> = {
   /**

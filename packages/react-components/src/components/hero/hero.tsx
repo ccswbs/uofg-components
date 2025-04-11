@@ -9,10 +9,7 @@ import { HeroVideo } from './hero-video';
 
 const defaultElement = 'img';
 
-type HeroElementType = ElementType<
-  { src: string; alt: string; height?: number; width?: number; className?: string },
-  'img'
->;
+type HeroElementType = ElementType;
 
 export type HeroProps<T extends HeroElementType = typeof defaultElement> = PropsWithChildren<
   {

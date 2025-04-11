@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 const defaultElement = 'img';
 
-type StatisticsItemImageElementType = ElementType<{ src: string; alt: string; width?: string; height?: string }, 'img'>;
+type StatisticsItemImageElementType = ElementType;
 
 export type StatisticsItemImageProps<T extends StatisticsItemImageElementType = typeof defaultElement> = {
   /**

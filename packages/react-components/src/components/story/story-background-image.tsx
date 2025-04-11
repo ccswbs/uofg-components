@@ -3,10 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 const defaultElement = 'img';
 
-type StoryBackgroundImageElementType = ElementType<
-  { src: string; alt: string; width?: string; height?: string },
-  'img'
->;
+type StoryBackgroundImageElementType = ElementType;
 
 export type StoryBackgroundImageProps<T extends StoryBackgroundImageElementType = typeof defaultElement> = {
   /**

@@ -4,10 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const defaultElement = 'img';
 
-type ImageOverlayElementType = ElementType<
-  { src: string; alt: string; height?: number; width?: number; className?: string },
-  'img'
->;
+type ImageOverlayElementType = ElementType;
 
 export type ImageOverlayProps<T extends ImageOverlayElementType = typeof defaultElement> = PropsWithChildren<
   {
