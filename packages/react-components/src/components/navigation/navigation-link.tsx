@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const defaultElement = 'a';
 
-type NavigationLinkElementType = ElementType<{ href?: string }, 'a'>;
+type NavigationLinkElementType = ElementType;
 
 export type NavigationLinkProps<T extends NavigationLinkElementType = typeof defaultElement> = PropsWithChildren<
   {

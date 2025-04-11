@@ -2,7 +2,7 @@ import { ElementType, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Button } from '../button/button';
 
-export type HeroLinkElementType = ElementType<{ href?: string }, 'a'>;
+export type HeroLinkElementType = ElementType;
 
 export type HeroLinkProps<T extends HeroLinkElementType = 'a'> = PropsWithChildren<{
   /**

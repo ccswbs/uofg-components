@@ -5,7 +5,7 @@ import { LinkCarouselContext, LinkCarouselId } from './link-carousel-context';
 
 const defaultElement = 'a';
 
-export type LinkCarouselLinkElementType = ElementType<{ href?: string }, 'a'>;
+export type LinkCarouselLinkElementType = ElementType;
 
 export type LinkCarouselLinkProps<T extends LinkCarouselLinkElementType = typeof defaultElement> = PropsWithChildren<{
   /**

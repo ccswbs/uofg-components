@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants';
 
 export const defaultBreadcrumbElement = 'a';
 
-export type BreadcrumbElementType = ElementType<{ href?: string }, 'a'>;
+export type BreadcrumbElementType = ElementType;
 
 export type BreadcrumbProps<T extends BreadcrumbElementType = typeof defaultBreadcrumbElement> = PropsWithChildren<
   {

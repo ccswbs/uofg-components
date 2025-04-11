@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const defaultElement = 'a';
 
-type LinkElementType = ElementType<{ href?: string }, 'a'>;
+type LinkElementType = ElementType;
 
 type LinkPropsAs<T extends LinkElementType> = {
   as?: T;

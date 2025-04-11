@@ -9,7 +9,7 @@ import { CardTitle } from './card-title';
 
 const defaultElement = 'div';
 
-type CardElementType = ElementType<{ href?: string }, 'a'> | 'div' | 'article';
+type CardElementType = ElementType | 'div' | 'article';
 
 export type CardProps<T extends CardElementType = typeof defaultElement> = PropsWithChildren<
   {

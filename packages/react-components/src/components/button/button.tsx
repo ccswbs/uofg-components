@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const defaultElement = 'button';
 
-type ButtonElementType = ElementType<{ href?: string }, 'a'> | 'button';
+type ButtonElementType = ElementType | 'button';
 
 type ButtonPropsAs<T extends ButtonElementType> = {
   as?: T;
