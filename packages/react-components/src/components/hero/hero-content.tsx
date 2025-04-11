@@ -20,12 +20,12 @@ export function HeroContent({ children, alignment = 'left' }: HeroContentProps) 
     slots: {
       base: '',
       wrapper: 'uog:lg:bg-black/80 uog:lg:backdrop-blur uog:flex uog:w-full uog:bg-black uog:p-7 uog:text-white',
-      container: 'uog:container uog:mx-auto uog:flex uog:flex-col uog:gap-5',
+      container: 'uog:mx-auto uog:flex uog:flex-col uog:gap-5',
     },
     variants: {
       variant: {
         spotlight: {
-          base: 'uog:lg:container uog:lg:absolute uog:lg:bottom-0 uog:lg:left-1/2 uog:lg:max-w-max-content uog:lg:-translate-x-1/2 uog:lg:p-4 uog:flex uog:items-center',
+          base: 'uog:w-full uog:lg:absolute uog:lg:bottom-0 uog:lg:left-1/2 uog:lg:max-w-[137rem] uog:lg:-translate-x-1/2 uog:lg:p-4 uog:flex uog:items-center',
         },
         basic: {
           base: 'uog:absolute uog:bottom-0 uog:left-1/2 uog:w-full uog:-translate-x-1/2 uog:p-0 uog:flex uog:h-full uog:items-end',
