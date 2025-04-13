@@ -1,3 +1,5 @@
+import { faChevronRight } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ElementType, PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
@@ -34,7 +36,7 @@ export function LinkCarouselLink<T extends LinkCarouselLinkElementType = typeof 
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselLink = tv({
-    base: 'uog:w-full uog:flex-1 uog:text-xl uog:bg-black uog:flex uog:items-center uog:justify-center uog:text-black-contrast uog:p-6',
+    base: 'uog:w-full uog:flex-1 uog:text-2xl uog:bg-black uog:flex uog:items-center uog:justify-between uog:text-black-contrast uog:p-6',
     variants: {
       stack: {
         true: 'uog:md:bg-black/70',
@@ -52,6 +54,7 @@ export function LinkCarouselLink<T extends LinkCarouselLinkElementType = typeof 
       }}
     >
       {children}
+      <FontAwesomeIcon icon={faChevronRight} />
     </Component>
   );
 }
