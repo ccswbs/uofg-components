@@ -32,12 +32,12 @@ export function NavigationLink<T extends NavigationLinkElementType = typeof defa
   const navigationLink = tv({
     slots: {
       listItem: 'uog:contents uog:flex-1',
-      link: 'uog:rounded-t-sm uog:bg-grey-light-bg uog:font-bold uog:hocus-visible:bg-grey-light uog:mb-1 uog:flex uog:items-center uog:justify-center uog:px-4 uog:py-3 uog:text-center uog:text-lg uog:text-black uog:transition-colors uog:focus:outline-none uog:flex-1',
+      link: 'uog:mb-1 uog:flex uog:items-center uog:justify-center uog:rounded-t-sm uog:bg-grey-light-bg uog:px-4 uog:py-3 uog:text-center uog:text-lg uog:font-bold uog:text-black uog:transition-colors uog:hover:bg-grey-light uog:focus:bg-grey-light uog:focus:outline-hidden uog:flex-1',
     },
     variants: {
       active: {
         true: {
-          link: 'uog:mb-0 uog:border-2 uog:border-yellow uog:bg-yellow uog:text-yellow-contrast uog:hocus-visible:bg-yellow',
+          link: 'uog:text-yellow-contrast uog:hocus-visible:bg-yellow uog:mb-0 uog:border-2 uog:border-yellow uog:bg-yellow uog:order-last uog:md:order-none',
         },
       },
     },
