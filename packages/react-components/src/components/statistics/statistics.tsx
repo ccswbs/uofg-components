@@ -17,7 +17,7 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
   const [ref, entry] = useResizeObserver<HTMLDListElement>();
 
   const classes = tv({
-    base: 'uofg-statistics uog:mx-auto uog:my-4 uog:flex uog:flex-col uog:flex-wrap uog:sm:flex-row',
+    base: 'uofg-statistics uog:mx-auto uog:my-0 uog:flex uog:flex-col uog:flex-wrap uog:sm:flex-row',
     variants: {
       divisibleByTwo: {
         true: '',
