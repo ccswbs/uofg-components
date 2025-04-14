@@ -33,7 +33,7 @@ export function TextInput({
       base: 'uog:flex uog:flex-col uog:gap-0.5',
       wrapper:
         'uog:text-input uog:border-grey-light uog:flex uog:rounded-md uog:border uog:px-4 uog:py-2 uog:transition-colors uog:focus-within:border-blue uog:focus:outline-none',
-      input: 'uog:flex-1 uog:focus:outline-none',
+      input: 'uog:flex-1 uog:focus:outline-none uog:bg-white',
       clearButton: 'uog:rounded-full uog:text-xl',
     },
     variants: {
