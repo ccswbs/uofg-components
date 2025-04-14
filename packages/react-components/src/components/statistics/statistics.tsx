@@ -1,14 +1,18 @@
 import { PropsWithChildren, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { useResizeObserver } from '../../utils/use-resize-observer';
 import { StatisticsContext } from './statistics-context';
 
 export type StatisticsProps = PropsWithChildren<{
+  /** The variant of the statistics */
   variant: 'solid-colors-full' | 'solid-colors-no-gap' | 'solid-colors' | 'light-grey' | 'left-border';
+  /** Additional classes to apply to the statistics */
+  className?: string;
 }>;
 
 /** The Statistic component is used to display a list of statistics in a grid layout. */
-export function Statistics({ children, variant }: StatisticsProps) {
+export function Statistics({ children, variant, className }: StatisticsProps) {
   const [count, setCount] = useState<number>(0);
   const [ref, entry] = useResizeObserver<HTMLDListElement>();
 
@@ -59,12 +63,15 @@ export function Statistics({ children, variant }: StatisticsProps) {
       }}
     >
       <dl
-        className={classes({
-          variant,
-          divisibleByTwo: count % 2 === 0,
-          divisibleByThree: count % 3 === 0,
-          divisibleByFour: count % 4 === 0,
-        })}
+        className={twMerge(
+          classes({
+            variant,
+            divisibleByTwo: count % 2 === 0,
+            divisibleByThree: count % 3 === 0,
+            divisibleByFour: count % 4 === 0,
+          }),
+          className,
+        )}
         style={
           /* @ts-expect-error TypeScript doesn't like CSS Variables */
           variant === 'solid-colors-full' ? { '--statistic-bg-width': entry?.contentRect.width + 'px' } : undefined
