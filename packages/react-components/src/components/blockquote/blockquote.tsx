@@ -11,12 +11,14 @@ export type BlockquoteProps = PropsWithChildren<{
    * @default 'yellow'
    */
   color?: 'yellow' | 'blue';
+  /** Whether to hide the quotation marks */
+  hideQuotationMarks?: boolean;
 }>;
 
 /** The Blockquote component is used to highlight a quote or excerpt from another source. */
-export function Blockquote({ className, children, color = 'yellow' }: BlockquoteProps) {
+export function Blockquote({ className, hideQuotationMarks, children, color = 'yellow' }: BlockquoteProps) {
   return (
-    <BlockquoteContext.Provider value={{ color }}>
+    <BlockquoteContext.Provider value={{ color, hideQuotationMarks }}>
       <div className={`uofg-blockquote ${twMerge('flex flex-col gap-2', className)}`}>{children}</div>
     </BlockquoteContext.Provider>
   );

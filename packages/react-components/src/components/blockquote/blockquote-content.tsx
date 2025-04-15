@@ -27,14 +27,6 @@ export function BlockquoteContent({ className, children }: BlockquoteContentProp
           icons: 'uog:text-blue',
         },
       },
-      direction: {
-        left: {
-          icons: 'uog:mr-[0.3em]',
-        },
-        right: {
-          icons: 'uog:ml-[0.25em]',
-        },
-      },
     },
   });
 
@@ -42,15 +34,18 @@ export function BlockquoteContent({ className, children }: BlockquoteContentProp
 
   return (
     <blockquote className={`uofg-blockquote-content ${twMerge(base(), className)}`}>
-      <FontAwesomeIcon
-        icon={faQuoteLeft}
-        className={`uofg-blockquote-content-left-quote ${icons({ direction: 'left' })}`}
-      />
-      <span className="uofg-blockquote-content-text">{children}</span>
-      <FontAwesomeIcon
-        icon={faQuoteRight}
-        className={`uofg-blockquote-content-right-quote ${icons({ direction: 'right' })}`}
-      />
+      {!context?.hideQuotationMarks && (
+        <>
+          <FontAwesomeIcon icon={faQuoteLeft} className={`uofg-blockquote-content-left-quote ${icons()}`} />{' '}
+        </>
+      )}
+      <span className="uofg-blockquote-content-text">{children}</span>{' '}
+      {!context?.hideQuotationMarks && (
+        <>
+          {' '}
+          <FontAwesomeIcon icon={faQuoteRight} className={`uofg-blockquote-content-right-quote ${icons()}`} />
+        </>
+      )}
     </blockquote>
   );
 }
