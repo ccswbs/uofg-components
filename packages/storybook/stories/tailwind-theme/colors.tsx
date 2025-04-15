@@ -39,7 +39,7 @@ export const ColorGrid = () => {
 
       const baseValue = getHexValue(colorName);
 
-      if (baseValue) {
+      if (baseValue && colorName !== 'grey-light' && colorName !== 'grey-dark') {
         swatches.push({
           // @ts-ignore
           name: colorName.replaceAll('-', ' '),
@@ -73,10 +73,6 @@ export const ColorGrid = () => {
     for (const colorName of colorNames) {
       const title = toTitleCase(colorName);
 
-      if (colorName === 'body-copy-bold') {
-        console.log(getHexValue('body-copy-bold'));
-      }
-
       addColor({
         name: title,
         swatches: getSwatches(colorName),
@@ -99,7 +95,13 @@ export const ColorGrid = () => {
     <div className="uog:flex uog:flex-col uog:gap-4">
       {colors.map(color => (
         <>
-          <span className="uog:font-bold uog:text-xs">{color.name}</span>
+          <span className="uog:font-bold uog:text-xs">
+            {color.name === 'Grey Light' ?
+              'Light Background'
+            : color.name === 'Grey Dark' ?
+              'Dark Background'
+            : color.name}
+          </span>
           <div className="uog:flex uog:gap-2">
             {color.swatches.map(swatch => (
               <div className="uog:flex-1 uog:border uog:border-black/10">
