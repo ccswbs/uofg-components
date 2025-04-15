@@ -3,6 +3,9 @@ import { ComponentType } from 'react';
 import {
   Blockquote,
   BlockquoteAuthor,
+  BlockquoteAuthorLink,
+  BlockquoteAuthorName,
+  BlockquoteAuthorTitle,
   BlockquoteContent,
 } from '../../../react-components/src/components/blockquote/blockquote';
 
@@ -12,6 +15,9 @@ const config: Meta<typeof Blockquote> = {
   subcomponents: {
     BlockquoteContent: BlockquoteContent as ComponentType<unknown>,
     BlockquoteAuthor: BlockquoteAuthor as ComponentType<unknown>,
+    BlockquoteAuthorName: BlockquoteAuthorName as ComponentType<unknown>,
+    BlockquoteAuthorTitle: BlockquoteAuthorTitle as ComponentType<unknown>,
+    BlockquoteAuthorLink: BlockquoteAuthorLink as ComponentType<unknown>,
   },
   parameters: {
     'layout': 'centered',
@@ -43,7 +49,11 @@ export const WithAuthor: Story = {
       <BlockquoteContent>
         Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.
       </BlockquoteContent>
-      <BlockquoteAuthor name="John Doe" title="Web Developer" />
+      <BlockquoteAuthor>
+        <BlockquoteAuthorName>John Doe</BlockquoteAuthorName>
+        <BlockquoteAuthorTitle>Web Developer</BlockquoteAuthorTitle>
+        <BlockquoteAuthorLink href="https://example.com">Hear more from John Doe</BlockquoteAuthorLink>
+      </BlockquoteAuthor>
     </Blockquote>
   ),
 };
@@ -57,7 +67,11 @@ export const Blue: Story = {
       <BlockquoteContent>
         Quis cum cupiditate adipisci dolores aliquam ullam incidunt tempore nesciunt.
       </BlockquoteContent>
-      <BlockquoteAuthor name="John Doe" title="Web Developer" />
+      <BlockquoteAuthor>
+        <BlockquoteAuthorName>John Doe</BlockquoteAuthorName>
+        <BlockquoteAuthorTitle>Web Developer</BlockquoteAuthorTitle>
+        <BlockquoteAuthorLink href="https://example.com">Hear more from John Doe</BlockquoteAuthorLink>
+      </BlockquoteAuthor>
     </Blockquote>
   ),
 };

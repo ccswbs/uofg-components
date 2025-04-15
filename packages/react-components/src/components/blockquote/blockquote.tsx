@@ -24,4 +24,7 @@ export function Blockquote({ className, children, color = 'yellow' }: Blockquote
 Blockquote.displayName = 'Blockquote';
 
 export { BlockquoteAuthor } from './blockquote-author';
+export { BlockquoteAuthorLink } from './blockquote-author-link';
+export { BlockquoteAuthorName } from './blockquote-author-name';
+export { BlockquoteAuthorTitle } from './blockquote-author-title';
 export { BlockquoteContent } from './blockquote-content';
