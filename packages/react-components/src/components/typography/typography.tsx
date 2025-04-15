@@ -30,7 +30,7 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
   const Tag = as ?? defaultElement;
 
   const typography = tv({
-    base: 'uog:inline-flex uog:leading-[1.4] uog:has-[strong]:text-body-copy-bold',
+    base: 'uog:leading-[1.4] uog:has-[strong]:text-body-copy-bold',
     variants: {
       type: {
         h1: 'uog:mt-7.5 uog:text-4xl uog:font-bold uog:text-black uog:font-serif',
