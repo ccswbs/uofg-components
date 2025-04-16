@@ -123,14 +123,14 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
         background: 'none',
         position: 'left',
         class: {
-          caption: 'uog:md:px-4 uog:py-0',
+          caption: 'uog:px-0 uog:md:px-4 uog:md:py-0',
         },
       },
       {
         background: 'none',
         position: 'right',
         class: {
-          caption: 'uog:md:px-4 uog:py-0',
+          caption: 'uog:px-0 uog:md:px-4 uog:md:py-0',
         },
       },
       {
