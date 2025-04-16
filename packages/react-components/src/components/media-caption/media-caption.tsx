@@ -42,10 +42,10 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
 
   const mediaCaption = tv({
     slots: {
-      base: 'uog:flex uog:flex-col',
-      mediaWrapper: '',
-      media: 'uog:w-full uog:object-cover',
-      caption: 'uog:p-4',
+      base: 'uofg-media-caption uog:flex uog:flex-col',
+      mediaWrapper: 'uofg-media-caption-wrapper',
+      media: 'uofg-media-caption-media uog:w-full uog:object-cover',
+      caption: 'uofg-media-caption-caption uog:p-4',
     },
     variants: {
       size: {
@@ -148,7 +148,7 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
   return (
     <div className={twMerge(base(), className)}>
       <div className={mediaWrapper()}>
-        <Component {...rest} src={src as string} className={twMerge(media(), mediaClassName)} />
+        <Component {...rest} src={src as string} className={media()} />
       </div>
 
       <div className={caption()}>{children}</div>
