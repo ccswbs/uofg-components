@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../../../react-components/src/components/button/button';
 
 const config: Meta<typeof Button> = {

@@ -9,31 +9,27 @@
     "build:chromatic": "export $(cat .env | xargs) && npx chromatic --project-token=$CHROMACTIC_PROJECT_TOKEN"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.9.0",
+    "@chromatic-com/storybook": "^4.0.0-next.16",
     "@headlessui/react": "^2.2.0",
-    "@storybook/addon-a11y": "^8.6.11",
-    "@storybook/addon-backgrounds": "^8.6.11",
-    "@storybook/addon-essentials": "^8.6.11",
-    "@storybook/addon-interactions": "^8.6.11",
-    "@storybook/addon-links": "^8.6.11",
-    "@storybook/blocks": "^8.6.11",
-    "@storybook/manager-api": "^8.6.11",
-    "@storybook/preview-api": "^8.6.11",
-    "@storybook/react": "^8.6.11",
-    "@storybook/react-vite": "^8.6.11",
-    "@storybook/test": "^8.6.11",
-    "@storybook/theming": "^8.6.11",
+    "@storybook/addon-a11y": "^9.1.0-alpha.2",
+    "@storybook/addon-docs": "^9.1.0-alpha.2",
+    "@storybook/addon-links": "^9.1.0-alpha.2",
+    "@storybook/react-vite": "^9.1.0-alpha.2",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tailwindcss/vite": "^4.0.9",
     "@uoguelph/tailwind-theme": "*",
     "@vitejs/plugin-react-swc": "^3.8.0",
-    "storybook": "^8.6.11",
-    "tailwind-merge": "^3.0.2",
+    "eslint-plugin-storybook": "^9.1.0-alpha.2",
+    "storybook": "^9.1.0-alpha.2",
+    "tailwind-merge": "^3.3.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.0.6",
-    "vite-plugin-svgo": "^1.6.2"
+    "vite-plugin-svgo": "^2.0.0"
   },
   "dependencies": {
     "react": "^19.0.0"
+  },
+  "overrides": {
+    "storybook": "$storybook"
   }
 }

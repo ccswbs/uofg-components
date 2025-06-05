@@ -1,4 +1,4 @@
-import { useOf } from '@storybook/blocks';
+import { useOf } from '@storybook/addon-docs/blocks';
 import { PropsWithChildren } from 'react';
 
 export const BannerComponent = ({ children }: PropsWithChildren) => {

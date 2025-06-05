@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
 import { Header, HeaderLink, HeaderMenu, HeaderMenuItem } from '../../../react-components/src/components/header/header';
 import '../../../web-components/src/components/uofg-header/uofg-header.svelte';

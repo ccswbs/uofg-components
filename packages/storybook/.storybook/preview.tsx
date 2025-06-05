@@ -1,6 +1,6 @@
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { Controls, Description, Primary, Stories, Subtitle, Title } from '@storybook/blocks';
-import { Preview } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import { Controls, Description, Primary, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { Preview } from '@storybook/react-vite';
 import * as React from 'react';
 import { Banner } from '../doc-blocks/banner';
 import { ComponentImport } from '../doc-blocks/component-import';

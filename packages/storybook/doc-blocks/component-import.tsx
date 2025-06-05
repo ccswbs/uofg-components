@@ -1,5 +1,5 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
-import { Source, useOf } from '@storybook/blocks';
+import { Source, useOf } from '@storybook/addon-docs/blocks';
 import { tv } from 'tailwind-variants';
 
 export const ComponentImport = ({ of }: { of?: any }) => {

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { LoadingIndicator } from '../../../react-components/src/components/loading-indicator/loading-indicator';
 
 const config: Meta<typeof LoadingIndicator> = {

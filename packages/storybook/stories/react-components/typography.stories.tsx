@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Typography } from '../../../react-components/src/components/typography/typography';
 
 const config: Meta<typeof Typography> = {

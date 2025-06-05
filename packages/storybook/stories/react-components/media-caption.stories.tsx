@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video/embedded-video';
 import { MediaCaption } from '../../../react-components/src/components/media-caption/media-caption';
 

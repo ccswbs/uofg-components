@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
 import { Footer, FooterLink } from '../../../react-components/src/components/footer/footer';
 import '../../../web-components/src/components/uofg-footer/uofg-footer.svelte';

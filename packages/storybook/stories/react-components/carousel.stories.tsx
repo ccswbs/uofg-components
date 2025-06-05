@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Carousel } from '../../../react-components/src/components/carousel/carousel';
 
 const config: Meta<typeof Carousel> = {

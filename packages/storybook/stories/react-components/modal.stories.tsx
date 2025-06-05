@@ -1,5 +1,5 @@
-import { useArgs } from '@storybook/preview-api';
-import { Meta, StoryObj } from '@storybook/react';
+import { useArgs } from 'storybook/preview-api';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../../../react-components/src/components/button/button';
 import { Modal } from '../../../react-components/src/components/modal/modal';
 

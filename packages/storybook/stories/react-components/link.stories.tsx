@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Link } from '../../../react-components/src/components/link/link';
 
 const config: Meta<typeof Link> = {
