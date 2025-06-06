@@ -78,8 +78,8 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
   const { base, image } = hero({ variant });
 
   return (
-    <div className={base()}>
-      <Image {...rest} src={src} alt={alt} width={width} height={height} className={image()} />
+    <div className={`uofg-hero ${base()}`}>
+      <Image {...rest} src={src} alt={alt} width={width} height={height} className={`uofg-hero-img ${image()}`} />
 
       <HeroContext.Provider value={{ variant }}>
         <HeroContent alignment={alignment}>{children}</HeroContent>

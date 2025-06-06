@@ -24,12 +24,12 @@ export function ContactPhone({ number, extension, className }: ContactPhoneProps
   const { container, link } = phone();
 
   return (
-    <div className={twMerge(container(), className)}>
-      <FontAwesomeIcon icon={faPhone} />
-      <a className={link()} href={`tel:${number}`}>
+    <div className={`uofg-contact-phone-container ${twMerge(container(), className)}`}>
+      <FontAwesomeIcon icon={faPhone} className="uofg-contact-phone-icon" />
+      <a className={`uofg-contact-phone ${link()}`} href={`tel:${number}`}>
         {number}
       </a>
-      {extension && <span> - Ext. {extension}</span>}
+      {extension && <span className="uofg-contact-phone-extension"> - Ext. {extension}</span>}
     </div>
   );
 }

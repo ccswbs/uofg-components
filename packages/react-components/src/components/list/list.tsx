@@ -79,7 +79,7 @@ export function List<T extends ListElementType = typeof defaultElement>({
   });
 
   return (
-    <Component {...rest} className={twMerge(classes, className)}>
+    <Component {...rest} className={`uofg-list ${twMerge(classes, className)}`}>
       <ListContext.Provider
         value={{
           parent: as ?? 'ul',

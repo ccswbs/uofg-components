@@ -36,17 +36,24 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
   const { base, backdrop, wrapper, panelWrapper, panel, closeButton } = modal({ centered });
 
   return (
-    <Dialog transition open={open} role={role} onClose={onClose} className={base()} aria-labelledby={labelledBy}>
-      <DialogBackdrop transition className={backdrop()} />
+    <Dialog
+      transition
+      open={open}
+      role={role}
+      onClose={onClose}
+      className={`uofg-modal ${base()}`}
+      aria-labelledby={labelledBy}
+    >
+      <DialogBackdrop transition className={`uofg-modal-backdrop ${backdrop()}`} />
 
-      <div className={wrapper()}>
-        <div className={panelWrapper()}>
-          <CloseButton onClick={onClose} className={closeButton()}>
+      <div className={`uofg-modal-wrapper ${wrapper()}`}>
+        <div className={`uofg-modal-panel-wrapper ${panelWrapper()}`}>
+          <CloseButton onClick={onClose} className={`uofg-modal-close-button ${closeButton()}`}>
             <FontAwesomeIcon icon={faTimes} />
             <span className="uog:md:sr-only uog:text-base">Close Modal</span>
           </CloseButton>
 
-          <DialogPanel className={panel()}>{children}</DialogPanel>
+          <DialogPanel className={`uofg-modal-panel ${panel()}`}>{children}</DialogPanel>
         </div>
       </div>
     </Dialog>

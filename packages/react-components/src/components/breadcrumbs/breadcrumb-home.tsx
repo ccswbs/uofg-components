@@ -12,8 +12,8 @@ export function BreadcrumbHome<T extends BreadcrumbElementType = typeof defaultB
   const icon = twJoin('uog:h-[1em] uog:fill-black');
 
   return (
-    <li>
-      <a {...rest} href={href} className={className}>
+    <li className="uofg-breadcrumb-home-list-item">
+      <a {...rest} href={href} className={`uofg-breadcrumb-home ${className}`}>
         <FontAwesomeIcon icon={faHome} className={icon} />
         <span className="uog:sr-only">U of G Homepage</span>
       </a>

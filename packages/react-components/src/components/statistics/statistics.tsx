@@ -17,7 +17,7 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
   const [ref, entry] = useResizeObserver<HTMLDListElement>();
 
   const classes = tv({
-    base: 'uofg-statistics uog:mx-auto uog:my-0 uog:flex uog:flex-col uog:flex-wrap uog:sm:flex-row',
+    base: 'uog:mx-auto uog:my-0 uog:flex uog:flex-col uog:flex-wrap uog:sm:flex-row',
     variants: {
       divisibleByTwo: {
         true: '',
@@ -55,6 +55,16 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
     ],
   });
 
+  const mergedClasses = twMerge(
+    classes({
+      variant,
+      divisibleByTwo: count % 2 === 0,
+      divisibleByThree: count % 3 === 0,
+      divisibleByFour: count % 4 === 0,
+    }),
+    className,
+  );
+
   return (
     <StatisticsContext.Provider
       value={{
@@ -63,15 +73,7 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
       }}
     >
       <dl
-        className={twMerge(
-          classes({
-            variant,
-            divisibleByTwo: count % 2 === 0,
-            divisibleByThree: count % 3 === 0,
-            divisibleByFour: count % 4 === 0,
-          }),
-          className,
-        )}
+        className={`uofg-statistics ${mergedClasses}`}
         style={
           /* @ts-expect-error TypeScript doesn't like CSS Variables */
           variant === 'solid-colors-full' ? { '--statistic-bg-width': entry?.contentRect.width + 'px' } : undefined

@@ -95,8 +95,8 @@ export function Checkbox({
   } = checkbox({ color, disabled });
 
   return (
-    <Field className={base()}>
-      <div className={container()}>
+    <Field className={`uofg-checkbox-field ${base()}`}>
+      <div className={`uofg-checkbox-container ${container()}`}>
         <HUICheckbox
           checked={enabled}
           onChange={value => {
@@ -104,15 +104,17 @@ export function Checkbox({
             onChange?.(value);
           }}
           disabled={disabled}
-          className={box()}
+          className={`uofg-checkbox ${box()}`}
           {...rest}
         >
-          <FontAwesomeIcon className={check()} icon={faCheck} />
+          <FontAwesomeIcon className={`uofg-checkbox-icon ${check()}`} icon={faCheck} />
         </HUICheckbox>
-        {label && <Label className={labelClasses()}>{label}</Label>}
+        {label && <Label className={`uofg-checkbox-label ${labelClasses()}`}>{label}</Label>}
       </div>
 
-      {description && <Description className={descriptionClasses()}>{description}</Description>}
+      {description && (
+        <Description className={`uofg-checkbox-description ${descriptionClasses()}`}>{description}</Description>
+      )}
     </Field>
   );
 }

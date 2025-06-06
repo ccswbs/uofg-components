@@ -131,13 +131,13 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
   const { base, contentContainer, controlContainer, control } = carousel({ showControls });
 
   return (
-    <div className={base()}>
+    <div className={`uofg-carousel ${base()}`}>
       {showControls && (
-        <div className={controlContainer()}>
+        <div className={`uofg-carousel-control-container ${controlContainer()}`}>
           {/* Left Button */}
           <button
             onClick={() => shift(-1)}
-            className={control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}
+            className={`uofg-carousel-shift-left ${control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}`}
           >
             <span className="uog:sr-only">Shift left</span>
             <FontAwesomeIcon icon={faChevronLeft} />
@@ -146,7 +146,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
           {/* Right Button */}
           <button
             onClick={() => shift(1)}
-            className={control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}
+            className={`uofg-carousel-shift-right ${control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}`}
           >
             <span className="uog:sr-only">Shift right</span>
             <FontAwesomeIcon icon={faChevronRight} />
@@ -155,7 +155,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
       )}
 
       <div
-        className={contentContainer()}
+        className={`uofg-carousel-content-container ${contentContainer()}`}
         ref={ref}
         style={{
           // Define CSS variables for the grid layout

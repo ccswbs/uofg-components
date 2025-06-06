@@ -22,7 +22,7 @@ export const Divider = () => {
 
   return (
     <>
-      <div className={base()}>
+      <div className={`uofg-divider ${base()}`}>
         <div className={red()}></div>
         <div className={yellow()}></div>
         <div className={black()}></div>

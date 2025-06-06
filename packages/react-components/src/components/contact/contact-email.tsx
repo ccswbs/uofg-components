@@ -22,9 +22,9 @@ export function ContactEmail({ email, className }: ContactEmailProps) {
   const { container, link } = contactEmail();
 
   return (
-    <div className={twMerge(container(), className)}>
-      <FontAwesomeIcon icon={faEnvelope} />
-      <a className={link()} href={`mailto:${email}`}>
+    <div className={`uofg-contact-email-container ${twMerge(container(), className)}`}>
+      <FontAwesomeIcon icon={faEnvelope} className="uofg-contact-email-icon" />
+      <a className={`uofg-contact-email ${link()}`} href={`mailto:${email}`}>
         {email}
       </a>
     </div>

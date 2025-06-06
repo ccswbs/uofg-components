@@ -19,6 +19,10 @@ export function CardContent({ children, className }: CardContentProps) {
     },
   });
 
-  return <div className={twMerge(cardContent({ isLink: context?.isLink ?? false }), className)}>{children}</div>;
+  return (
+    <div className={`uofg-card-content ${twMerge(cardContent({ isLink: context?.isLink ?? false }), className)}`}>
+      {children}
+    </div>
+  );
 }
 CardContent.displayName = 'CardContent';

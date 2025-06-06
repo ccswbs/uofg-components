@@ -62,7 +62,7 @@ export function Card<T extends CardElementType = typeof defaultElement>({
   const hasImage = Children.toArray(children).some(child => (child as ReactElement).type === CardImage);
 
   return (
-    <Component {...rest} className={twMerge(card({ isLink, hasImage }), className)}>
+    <Component {...rest} className={`uofg-card ${twMerge(card({ isLink, hasImage }), className)}`}>
       <CardContext.Provider value={{ isLink, centered: centered ?? false }}>{children}</CardContext.Provider>
     </Component>
   );

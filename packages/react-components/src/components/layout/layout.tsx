@@ -54,7 +54,7 @@ export function Layout({ children, loading }: LayoutProps) {
   return (
     <>
       <Transition show={Boolean(loading)}>
-        <div className={placeholder()}>
+        <div className={`uofg-layout-placeholder ${placeholder()}`}>
           <LoadingIndicator>{typeof loading !== 'boolean' && loading}</LoadingIndicator>
         </div>
       </Transition>
@@ -64,7 +64,7 @@ export function Layout({ children, loading }: LayoutProps) {
           <a className={skipLink()} href="#content">
             Skip to main content
           </a>
-          <div className="flex flex-1 flex-col">{children}</div>
+          <div className="uofg-layout flex flex-1 flex-col">{children}</div>
         </>
       )}
     </>

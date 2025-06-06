@@ -27,7 +27,7 @@ export function Container<T extends ElementType = typeof defaultElement>({
   const classes = twMerge('uog:max-w-[137rem] uog:w-full uog:px-4 uog:pt-2 uog:pb-4 uog:mx-auto', className);
 
   return (
-    <Component {...rest} className={classes}>
+    <Component {...rest} className={`uofg-container ${classes}`}>
       {children}
     </Component>
   );

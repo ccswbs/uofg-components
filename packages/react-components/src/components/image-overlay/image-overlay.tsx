@@ -175,11 +175,11 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
   } = imageOverlay({ blurred, overlay, verticalAlignment, horizontalAlignment });
 
   return (
-    <div className={base()}>
-      <div className={imageWrapper()}>
+    <div className={`uofg-image-overlay ${base()}`}>
+      <div className={`uofg-image-overlay-wrapper ${imageWrapper()}`}>
         <Image
           {...rest}
-          className={twMerge(image(), className)}
+          className={`uofg-image-overlay-image ${twMerge(image(), className)}`}
           src={src}
           width={width}
           height={height}
@@ -187,10 +187,10 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
           sizes="100vw"
         />
 
-        {overlay !== 'none' && <div className={overlayClasses()}></div>}
+        {overlay !== 'none' && <div className={`uofg-image-overlay-overlay ${overlayClasses()}`}></div>}
       </div>
 
-      <div className={container()}>{children}</div>
+      <div className={`uofg-image-overlay-content ${container()}`}>{children}</div>
     </div>
   );
 }

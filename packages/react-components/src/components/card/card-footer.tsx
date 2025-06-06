@@ -21,7 +21,11 @@ export function CardFooter({ children, className }: CardFooterProps) {
     },
   });
 
-  return <div className={twMerge(cardFooter({ centered: context?.centered ?? false }), className)}>{children}</div>;
+  return (
+    <div className={`uofg-card-footer ${twMerge(cardFooter({ centered: context?.centered ?? false }), className)}`}>
+      {children}
+    </div>
+  );
 }
 
 CardFooter.displayName = 'CardFooter';

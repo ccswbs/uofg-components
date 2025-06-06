@@ -22,7 +22,7 @@ export function BlockquoteAuthorLink<T extends ElementType = 'a'>({
   const Component = as ?? 'a';
 
   return (
-    <Link {...rest} href={href} as={Component} className={className}>
+    <Link {...rest} href={href} as={Component} className={`uofg-blockquote-author-link ${className}`}>
       {children}
     </Link>
   );

@@ -12,7 +12,7 @@ export function TabList({ children, className }: TabListProps) {
     'uofg-tab-list uog:flex uog:gap-1 uog:border-b-4 uog:border-yellow uog:w-full uog:flex-col uog:md:flex-row',
     className,
   );
-  return <HUITabList className={classes}>{children}</HUITabList>;
+  return <HUITabList className={`uofg-tab-list ${classes}`}>{children}</HUITabList>;
 }
 
 TabList.displayName = 'TabList';

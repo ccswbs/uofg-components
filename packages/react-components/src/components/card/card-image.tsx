@@ -57,15 +57,15 @@ export function CardImage<T extends CardImageElementType = typeof defaultCardIma
   const { container, wrapper, image } = cardImage({ isLink: context?.isLink ?? false });
 
   return (
-    <div className={container()}>
-      <div className={wrapper()}>
+    <div className={`uofg-card-image-container ${container()}`}>
+      <div className={`uofg-card-image-wrapper ${wrapper()}`}>
         <Component
           {...rest}
           src={src}
           alt={alt}
           width={width}
           height={height}
-          className={twMerge(image(), className)}
+          className={`uofg-card-image ${twMerge(image(), className)}`}
         />
       </div>
     </div>

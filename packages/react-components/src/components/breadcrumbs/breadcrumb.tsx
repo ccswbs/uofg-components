@@ -43,10 +43,10 @@ export function Breadcrumb<T extends BreadcrumbElementType = typeof defaultBread
   const { container, icon, link } = breadcrumb();
 
   return (
-    <li className={container()}>
+    <li className={`uofg-breadcrumb-list-item ${container()}`}>
       <FontAwesomeIcon icon={faChevronRight} className={icon()} />
       {href ?
-        <Component {...rest} className={twMerge(link(), className)} href={href}>
+        <Component {...rest} className={`uofg-breadcrumb ${twMerge(link(), className)}`} href={href}>
           {children}
         </Component>
       : <span>{children}</span>}

@@ -43,15 +43,15 @@ export function Radio<T>({ selected, children, value }: RadioProps<T>) {
   const { field, radio: radioClasses, circle } = radio();
 
   return (
-    <Field className={field()}>
+    <Field className={`uofg-radio-field ${field()}`}>
       <HUIRadio value={value} as={Fragment}>
         {({ checked }) => (
-          <span className={radioClasses({ checked })}>
-            <span className={circle({ checked })} />
+          <span className={`uofg-radio ${radioClasses({ checked })}`}>
+            <span className={`uofg-radio-circle ${circle({ checked })}`} />
           </span>
         )}
       </HUIRadio>
-      <Label>{children}</Label>
+      <Label className="uofg-radio-label">{children}</Label>
     </Field>
   );
 }

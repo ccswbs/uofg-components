@@ -9,7 +9,7 @@ export type TabsProps = PropsWithChildren<{
 
 export function Tabs({ children, className }: TabsProps) {
   const classes = twMerge('uofg-tabs', className);
-  return <TabGroup className={classes}>{children}</TabGroup>;
+  return <TabGroup className={`uofg-tabs ${classes}`}>{children}</TabGroup>;
 }
 
 Tabs.displayName = 'Tabs';

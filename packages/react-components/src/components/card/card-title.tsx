@@ -21,7 +21,11 @@ export function CardTitle({ children, className }: CardTitleProps) {
     },
   });
 
-  return <div className={twMerge(cardTitle({ centered: context?.centered ?? false }), className)}>{children}</div>;
+  return (
+    <div className={`uofg-card-title ${twMerge(cardTitle({ centered: context?.centered ?? false }), className)}`}>
+      {children}
+    </div>
+  );
 }
 
 CardTitle.displayName = 'CardTitle';

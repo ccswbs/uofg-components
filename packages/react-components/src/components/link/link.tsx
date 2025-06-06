@@ -42,7 +42,7 @@ export function Link<T extends LinkElementType = typeof defaultElement>({
   });
 
   return (
-    <LinkComponent {...rest} href={href} className={twMerge(linkClasses({ color }), className)}>
+    <LinkComponent {...rest} href={href} className={`uofg-link ${twMerge(linkClasses({ color }), className)}`}>
       {children}
     </LinkComponent>
   );

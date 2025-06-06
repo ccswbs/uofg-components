@@ -39,7 +39,7 @@ export function RadioGroup<T>({ name, inline = false, onChange, children }: Radi
         setSelected(value);
         onChange?.(value);
       }}
-      className={base()}
+      className={`uofg-radio-group ${base()}`}
     >
       <RadioContext.Provider value={contextValue}>{children}</RadioContext.Provider>
     </HUIRadioGroup>

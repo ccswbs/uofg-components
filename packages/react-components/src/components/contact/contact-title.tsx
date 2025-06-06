@@ -9,7 +9,7 @@ export type ContactTitleProps = PropsWithChildren<{
 /** The ContactTitle component is used to display a title for a contact. */
 export function ContactTitle({ children, className }: ContactTitleProps) {
   const title = twMerge('uog:text-body-copy', className);
-  return <span className={title}>{children}</span>;
+  return <span className={`uofg-contact-title ${title}`}>{children}</span>;
 }
 
 ContactTitle.displayName = 'ContactTitle';

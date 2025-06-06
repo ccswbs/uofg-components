@@ -48,10 +48,10 @@ export function TextInput({
   const { base, wrapper, input, clearButton } = textInput({ empty: value?.length === 0 });
 
   return (
-    <Field className={base()}>
-      {children && <Label>{children}</Label>}
+    <Field className={`uofg-text-input-field ${base()}`}>
+      {children && <Label className="uofg-text-input-label">{children}</Label>}
 
-      <div className={wrapper()}>
+      <div className={`uofg-text-input-wrapper ${wrapper()}`}>
         <Input
           {...rest}
           ref={ref}
@@ -62,14 +62,14 @@ export function TextInput({
             setValue((e?.target as HTMLInputElement)?.value);
             onInput?.(e);
           }}
-          className={input()}
+          className={`uofg-text-input ${input()}`}
         />
 
         <button
-          className={clearButton()}
+          className={`uofg-text-input-clear-button ${clearButton()}`}
           onClick={() => {
             if (!ref.current) return;
-            // We need to use the native setter to update the value, so that React correctly dispatches the change event
+            // We need to use the native setter to update the value so that React correctly dispatches the change event
             const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
 
             setter?.call(ref.current, '');

@@ -18,7 +18,7 @@ export function Breadcrumbs({ className, children }: BreadcrumbsProps) {
 
   return (
     <Container>
-      <ol className={twMerge(breadcrumbs, className)}>{children}</ol>
+      <ol className={`uofg-breadcrumbs ${twMerge(breadcrumbs, className)}`}>{children}</ol>
     </Container>
   );
 }

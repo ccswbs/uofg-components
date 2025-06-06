@@ -30,7 +30,7 @@ export function Tab({ children, className }: TabProps) {
     className,
   );
 
-  return <HUITab className={classes}>{children}</HUITab>;
+  return <HUITab className={`uofg-tab ${classes}`}>{children}</HUITab>;
 }
 
 Tab.displayName = 'Tab';

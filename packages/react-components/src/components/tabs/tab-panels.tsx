@@ -9,7 +9,7 @@ export type TabPanelsProps = PropsWithChildren<{
 
 export function TabPanels({ children, className }: TabPanelsProps) {
   const classes = twMerge('uofg-tab-panels', className);
-  return <HUITabPanels className={classes}>{children}</HUITabPanels>;
+  return <HUITabPanels className={`uofg-tab-panels ${classes}`}>{children}</HUITabPanels>;
 }
 
 TabPanels.displayName = 'TabPanels';

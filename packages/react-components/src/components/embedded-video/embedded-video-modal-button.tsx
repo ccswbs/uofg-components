@@ -22,7 +22,11 @@ export function EmbeddedVideoModalButton({ type, children, className }: Embedded
     );
 
     return (
-      <button type="button" className={button} onClick={() => context?.setModalOpen(true)}>
+      <button
+        type="button"
+        className={`uofg-embedded-video-play-button ${button}`}
+        onClick={() => context?.setModalOpen(true)}
+      >
         <FontAwesomeIcon icon={faPlay} />
         <span className="sr-only">Show Video</span>
       </button>
@@ -30,7 +34,12 @@ export function EmbeddedVideoModalButton({ type, children, className }: Embedded
   }
 
   return (
-    <Button type="button" color={type} className={className} onClick={() => context?.setModalOpen(true)}>
+    <Button
+      type="button"
+      color={type}
+      className={`uofg-embedded-video-play-button ${className}`}
+      onClick={() => context?.setModalOpen(true)}
+    >
       {children}
     </Button>
   );

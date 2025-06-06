@@ -48,7 +48,7 @@ export function LinkCarouselLink<T extends LinkCarouselLinkElementType = typeof 
     <Component
       {...rest}
       href={href}
-      className={twMerge(linkCarouselLink({ stack: context?.stack }), className)}
+      className={`uofg-link-carousel-link ${twMerge(linkCarouselLink({ stack: context?.stack }), className)}`}
       onMouseEnter={() => {
         context?.setActiveId(id);
       }}

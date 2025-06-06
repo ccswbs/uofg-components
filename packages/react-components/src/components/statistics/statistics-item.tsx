@@ -16,7 +16,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
   }, []);
 
   const classes = tv({
-    base: 'uofg-statistics-item uog:relative uog:flex uog:flex-1 uog:flex-col uog:justify-around uog:gap-2',
+    base: 'uog:relative uog:flex uog:flex-1 uog:flex-col uog:justify-around uog:gap-2',
     variants: {
       variant: {
         'solid-colors-full': [
@@ -63,7 +63,11 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
     ],
   });
 
-  return <div className={twMerge(classes({ variant: context?.variant }), className)}>{children}</div>;
+  return (
+    <div className={`uofg-statistics-item ${twMerge(classes({ variant: context?.variant }), className)}`}>
+      {children}
+    </div>
+  );
 }
 
 StatisticsItem.displayName = 'StatisticsItem';

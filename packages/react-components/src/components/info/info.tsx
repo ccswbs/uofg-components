@@ -27,7 +27,7 @@ export function Info({ children, color = 'red' }: InfoProps) {
     },
   });
 
-  return <div className={info({ color })}>{children}</div>;
+  return <div className={`uofg-info ${info({ color })}`}>{children}</div>;
 }
 
 Info.displayName = 'Info';

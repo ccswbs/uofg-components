@@ -34,11 +34,18 @@ export function StatisticsItemImage<T extends StatisticsItemImageElementType = t
   ...rest
 }: StatisticsItemImageProps<T>) {
   const Component = as ?? defaultElement;
-  const classes = twMerge('uofg-statistics-item-image uog:w-full', className);
+  const classes = twMerge('uog:w-full', className);
 
   return (
     <dd className="contents">
-      <Component src={src} alt={alt} width={width} height={height} className={classes} {...rest} />
+      <Component
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={`uofg-statistics-item-image ${classes}`}
+        {...rest}
+      />
     </dd>
   );
 }
