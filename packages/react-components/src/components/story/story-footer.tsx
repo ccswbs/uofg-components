@@ -11,16 +11,16 @@ export type StoryFooterProps = PropsWithChildren<{
 export function StoryFooter({ children, className }: StoryFooterProps) {
   const classes = tv({
     slots: {
-      base: 'uofg-story-footer uog:flex uog:w-full uog:items-center uog:justify-center uog:bg-black uog:p-4 uog:text-white',
-      container: 'uofg-story-footer-container uog:flex uog:items-center uog:justify-center uog:p-2 uog:text-xl',
+      base: 'uog:flex uog:w-full uog:items-center uog:justify-center uog:bg-black uog:p-4 uog:text-white',
+      container: 'uog:flex uog:items-center uog:justify-center uog:p-2 uog:text-xl',
     },
   });
 
   const { base, container } = classes();
 
   return (
-    <div className={twMerge(base(), className)}>
-      <Container className={container()}>{children}</Container>
+    <div className={`uofg-story-footer ${twMerge(base(), className)}`}>
+      <Container className={`uofg-story-footer-container ${container()}`}>{children}</Container>
     </div>
   );
 }

@@ -7,9 +7,9 @@ export type StoryProps = PropsWithChildren<{
 }>;
 
 export function Story({ children, className }: StoryProps) {
-  const classes = twMerge('uofg-story uog:flex uog:w-full uog:flex-col', className);
+  const classes = twMerge('uog:flex uog:w-full uog:flex-col', className);
 
-  return <div className={classes}>{children}</div>;
+  return <div className={`uofg-story ${classes}`}>{children}</div>;
 }
 
 Story.displayName = 'Story';

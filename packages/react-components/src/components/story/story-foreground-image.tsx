@@ -38,16 +38,23 @@ export function StoryForegroundImage<T extends StoryForegroundImageElementType =
 
   const classes = tv({
     slots: {
-      base: 'uofg-story-foreground-image-container uog:flex uog:w-full uog:justify-center uog:lg:mt-auto uog:lg:w-1/2',
-      image: 'uofg-story-foreground-image uog:w-full uog:h-full',
+      base: 'uog:flex uog:w-full uog:justify-center uog:lg:mt-auto uog:lg:w-1/2',
+      image: 'uog:w-full uog:h-full',
     },
   });
 
   const { base, image } = classes();
 
   return (
-    <div className={base()}>
-      <Component {...rest} src={src} alt={alt} width={width} height={height} className={twMerge(image(), className)} />
+    <div className={`uofg-story-foreground-image-container ${base()}`}>
+      <Component
+        {...rest}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={`uofg-story-foreground-image ${twMerge(image(), className)}`}
+      />
     </div>
   );
 }
