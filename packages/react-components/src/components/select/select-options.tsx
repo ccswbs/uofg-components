@@ -16,7 +16,7 @@ export function SelectOptions<T extends ElementType>({ children, className, ...r
     'uog:rounded-b-md',
     'uog:border',
     'uog:border-t-0',
-    'uog:border-gray-300',
+    'uog:border-grey-light',
     'uog:bg-white',
     'uog:shadow-md',
     'uog:group-focus-within:border-blue',

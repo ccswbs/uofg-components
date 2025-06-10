@@ -1,10 +1,15 @@
 import { Listbox, ListboxProps } from '@headlessui/react';
-import { ElementType } from 'react';
 
-export type SelectProps<T extends ElementType> = ListboxProps<T>;
-
-export function Select<T extends ElementType>({ children, ...rest }: SelectProps<T>) {
-  return <Listbox {...rest}>{children}</Listbox>;
+export function Select({ children, ...rest }: ListboxProps<'div'>) {
+  return (
+    <Listbox className="uofg-select uog:relative uog:w-full" {...rest} as="div">
+      {children}
+    </Listbox>
+  );
 }
 
 Select.displayName = 'Select';
+
+export { SelectButton } from './select-button';
+export { SelectOption } from './select-option';
+export { SelectOptions } from './select-options';

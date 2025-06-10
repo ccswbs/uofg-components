@@ -29,8 +29,11 @@ export function SelectOption<T extends ElementType>({ children, className, ...re
         'uog:focus:bg-gray-100',
         'uog:focus:outline-none',
         'uog:ui-active:bg-gray-100',
+        'uog:gap-2',
       ],
       icon: 'uog:h-5 uog:w-5 uog:text-blue-600',
+      wrapper: 'uog:flex uog:items-center',
+      content: 'uog:flex-1',
     },
     variants: {
       selected: {
@@ -44,13 +47,13 @@ export function SelectOption<T extends ElementType>({ children, className, ...re
     },
   });
 
-  const { option, icon } = classes();
+  const { option, icon, wrapper, content } = classes();
 
   return (
     <ListboxOption {...rest} className={twMerge(option(), className)}>
       {({ focus, selected, ...rest }) => (
-        <div className="flex items-center">
-          <span className="flex-1">
+        <div className={wrapper()}>
+          <span className={content()}>
             {typeof children === 'function' ? children({ focus, selected, ...rest }) : children}
           </span>
 
