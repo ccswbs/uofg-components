@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video/embedded-video';
 import { MediaCaption } from '../../../react-components/src/components/media-caption/media-caption';
+import { Typography } from '../../../react-components/src/components/typography/typography';
 
 const config: Meta<typeof MediaCaption> = {
   title: 'React Components/MediaCaption',
@@ -46,7 +47,7 @@ export const SmallImageLeft: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -55,7 +56,7 @@ export const SmallImageLeft: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -69,7 +70,7 @@ export const MediumImageLeft: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -78,7 +79,7 @@ export const MediumImageLeft: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -92,7 +93,7 @@ export const LargeImageLeft: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -101,7 +102,7 @@ export const LargeImageLeft: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -115,7 +116,7 @@ export const SmallImageRight: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -124,7 +125,7 @@ export const SmallImageRight: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -138,7 +139,7 @@ export const MediumImageRight: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -147,7 +148,7 @@ export const MediumImageRight: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -161,7 +162,7 @@ export const LargeImageRight: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -170,7 +171,7 @@ export const LargeImageRight: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -184,7 +185,7 @@ export const ImageAbove: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -193,7 +194,7 @@ export const ImageAbove: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -208,7 +209,7 @@ export const MediumVideoLeft: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -217,7 +218,7 @@ export const MediumVideoLeft: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -231,7 +232,7 @@ export const LargeVideoLeft: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -240,7 +241,7 @@ export const LargeVideoLeft: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -254,7 +255,7 @@ export const MediumVideoRight: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -263,7 +264,7 @@ export const MediumVideoRight: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -277,7 +278,7 @@ export const LargeVideoRight: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -286,7 +287,7 @@ export const LargeVideoRight: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -300,7 +301,7 @@ export const VideoAbove: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -309,7 +310,7 @@ export const VideoAbove: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -326,7 +327,7 @@ export const LightGreyBG: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -335,7 +336,7 @@ export const LightGreyBG: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
@@ -350,7 +351,7 @@ export const DarkGrayBG: Story = {
   },
   render: ({ ...args }) => (
     <MediaCaption {...args}>
-      <p>
+      <Typography type="body">
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
@@ -359,7 +360,7 @@ export const DarkGrayBG: Story = {
         provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
         accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
         distinctio sit repellendus itaque. Itaque itaque esse.
-      </p>
+      </Typography>
     </MediaCaption>
   ),
 };
