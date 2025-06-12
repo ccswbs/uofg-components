@@ -8,7 +8,6 @@
     label,
     children,
     class: className,
-    ...rest
   }: {
     href: string;
     label?: string;
@@ -22,6 +21,6 @@
   );
 </script>
 
-<a {...rest} class={classes} {href} aria-label={label ?? undefined}>
+<a class={classes} {href} aria-label={label ?? undefined}>
   {@render children()}
 </a>
