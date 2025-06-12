@@ -12,7 +12,6 @@ type LinkPropsAs<T extends LinkElementType> = {
 
 type LinkPropsBase = {
   href: string;
-  color?: 'base' | 'light' | 'dark';
   className?: string;
 };
 
@@ -23,7 +22,6 @@ export type LinkProps<T extends LinkElementType = typeof defaultElement> = Props
 export function Link<T extends LinkElementType = typeof defaultElement>({
   as,
   href,
-  color = 'base',
   children,
   className,
   ...rest
@@ -31,18 +29,11 @@ export function Link<T extends LinkElementType = typeof defaultElement>({
   const LinkComponent = as ?? defaultElement;
 
   const linkClasses = tv({
-    base: 'uog:inline-flex uog:gap-[1em] uog:underline uog:decoration-current uog:transition-colors uog:hover:decoration-transparent uog:focus:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:text-body-copy-link',
-    variants: {
-      color: {
-        base: 'uog:text-body-copy-link uog:focus-visible:ring-body-copy-link',
-        light: 'uog:text-body-copy-link-on-light uog:focus-visible:ring-body-copy-link-on-light',
-        dark: 'uog:text-body-copy-link-on-dark uog:focus-visible:ring-body-copy-link-on-light',
-      },
-    },
+    base: 'uog:inline-flex uog:gap-[1em] uog:underline uog:decoration-current uog:transition-colors uog:hover:decoration-transparent uog:focus:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:text-body-copy-link uog:focus-visible:ring-body-copy-link uog:light:text-body-copy-link-on-light uog:light:focus-visible:ring-body-copy-link-on-light uog:dark:text-body-copy-link-on-dark uog:dark:focus-visible:ring-body-copy-link-on-light',
   });
 
   return (
-    <LinkComponent {...rest} href={href} className={`uofg-link ${twMerge(linkClasses({ color }), className)}`}>
+    <LinkComponent {...rest} href={href} className={`uofg-link ${twMerge(linkClasses(), className)}`}>
       {children}
     </LinkComponent>
   );

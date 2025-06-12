@@ -15,7 +15,10 @@ export type ContactProps = PropsWithChildren<{
  * address in a styled, organized layout
  */
 export function Contact({ children, className }: ContactProps) {
-  const contact = twMerge('uog:bg-grey-light-bg uog:mb-2 uog:flex uog:flex-col uog:p-4 uog:text-body-copy', className);
+  const contact = twMerge(
+    'uog:bg-grey-light-bg uog:mb-2 uog:flex uog:flex-col uog:p-4 uog:text-body-copy-on-light',
+    className,
+  );
 
   return <div className={`uofg-contact ${contact}`}>{children}</div>;
 }

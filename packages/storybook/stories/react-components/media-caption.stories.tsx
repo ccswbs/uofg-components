@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import { EmbeddedVideo } from '../../../react-components/src/components/embedded-video/embedded-video';
+import { Link } from '../../../react-components/src/components/link/link';
 import { MediaCaption } from '../../../react-components/src/components/media-caption/media-caption';
 import { Typography } from '../../../react-components/src/components/typography/typography';
 
@@ -355,11 +356,11 @@ export const DarkGrayBG: Story = {
         Error officia iure dicta illum. Corporis in cum porro excepturi officiis nesciunt a. Neque velit dolores impedit
         fugiat quae alias. Corporis voluptas delectus error veritatis labore quae magnam eos sequi. Et dicta aut nulla
         commodi voluptatem rerum. Porro voluptatum quibusdam quo incidunt. Rem dignissimos rerum laboriosam cumque. Nisi
-        quasi occaecati esse exercitationem asperiores nam. Ex vero voluptatibus animi. Explicabo numquam reprehenderit
-        ipsa unde ad. Maxime dolor illum minima nam perspiciatis autem. Necessitatibus vitae molestias. Dolorem amet
-        provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in incidunt sed. Vitae occaecati
-        accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero quas quam doloremque
-        distinctio sit repellendus itaque. Itaque itaque esse.
+        quasi <Link href="#example">Example Link</Link> esse exercitationem asperiores nam. Ex vero voluptatibus animi.
+        Explicabo numquam reprehenderit ipsa unde ad. Maxime dolor illum minima nam perspiciatis autem. Necessitatibus
+        vitae molestias. Dolorem amet provident molestias dolorum esse asperiores. Ipsa atque sunt neque deserunt in
+        incidunt sed. Vitae occaecati accusantium iure doloremque voluptas deleniti enim officia. Distinctio nulla vero
+        quas quam doloremque distinctio sit repellendus itaque. Itaque itaque esse.
       </Typography>
     </MediaCaption>
   ),

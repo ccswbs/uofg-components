@@ -32,6 +32,7 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 @custom-variant hocus (&:hover, &:focus);
 @custom-variant hocus-visible (&:hover, &:focus-visible);
 

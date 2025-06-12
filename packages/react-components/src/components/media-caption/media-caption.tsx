@@ -68,6 +68,7 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
       },
       background: {
         'grey-light': {
+          base: 'light',
           caption: 'uog:bg-grey-light-bg uog:text-body-copy',
         },
         'grey-dark': {
