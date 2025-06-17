@@ -1,5 +1,5 @@
 export function clamp(value: number, min: number, max: number) {
-  return Math.max(Math.min(value, min), Math.min(value, max));
+  return Math.max(min, Math.min(value, max));
 }
 
 export function mod(n: number, m: number) {
