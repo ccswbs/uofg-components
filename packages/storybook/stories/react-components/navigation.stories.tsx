@@ -1,7 +1,8 @@
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
 import { Navigation, NavigationLink } from '../../../react-components/src/components/navigation/navigation';
 
-const config = {
+const config: Meta<typeof Navigation> = {
   title: 'React Components/Navigation',
   component: Navigation,
   subcomponents: {
@@ -19,7 +20,9 @@ const config = {
 
 export default config;
 
-export const Default = {
+type Story = StoryObj<typeof Navigation>;
+
+export const Default: Story = {
   render: ({ ...args }) => {
     return (
       <Navigation {...args}>
@@ -32,7 +35,7 @@ export const Default = {
   },
 };
 
-export const Active = {
+export const Active: Story = {
   render: ({ ...args }) => {
     return (
       <Navigation {...args}>
