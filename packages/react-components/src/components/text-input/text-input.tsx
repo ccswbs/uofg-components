@@ -1,7 +1,7 @@
 import { faXmarkCircle } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Field, Input, Label } from '@headlessui/react';
-import { ComponentPropsWithoutRef, FormEvent, PropsWithChildren, useRef, useState } from 'react';
+import { ComponentPropsWithoutRef, FormEvent, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
@@ -13,6 +13,8 @@ export type TextInputProps = PropsWithChildren<
     initialValue?: string;
     /** The type of the input */
     type?: 'text' | 'password';
+    /** The value of the input */
+    value?: string;
     /** Placeholder text to show in the input when it is empty */
     placeholder?: string;
     /** Callback to call when the input changes */
@@ -30,10 +32,15 @@ export function TextInput({
   children,
   className,
   hideClear,
+  value,
   ...rest
 }: TextInputProps) {
-  const [value, setValue] = useState(initialValue);
+  const [input, setInput] = useState(initialValue);
   const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setInput(value ?? '');
+  }, [value]);
 
   const textInput = tv({
     slots: {
@@ -57,7 +64,7 @@ export function TextInput({
     },
   });
 
-  const { base, wrapper, input, clearButton } = textInput({ empty: value?.length === 0 });
+  const { base, wrapper, input: inputClasses, clearButton } = textInput({ empty: input?.length === 0 });
 
   return (
     <Field className={`uofg-text-input-field ${twMerge(base(), className)}`}>
@@ -67,14 +74,14 @@ export function TextInput({
         <Input
           {...rest}
           ref={ref}
-          value={value}
+          value={input}
           type={type}
           placeholder={placeholder}
           onInput={e => {
-            setValue((e?.target as HTMLInputElement)?.value);
+            setInput((e?.target as HTMLInputElement)?.value);
             onInput?.(e);
           }}
-          className={`uofg-text-input ${input()}`}
+          className={`uofg-text-input ${inputClasses()}`}
         />
 
         <button
