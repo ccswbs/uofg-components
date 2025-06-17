@@ -22,11 +22,14 @@ export type NumberInputProps = PropsWithChildren<
     max?: number;
     /** Callback to call when the input changes */
     onInput?: (value: number, e?: FormEvent<HTMLInputElement>) => void;
+    /** The color of the inputs control buttons */
+    color?: 'red' | 'yellow' | 'blue' | 'green';
   } & Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'onInput'>
 >;
 
 export function NumberInput({
   initialValue,
+  color = 'yellow',
   placeholder = '',
   onInput,
   children,
@@ -68,9 +71,27 @@ export function NumberInput({
       input:
         'uog:flex-1 uog:focus:outline-none uog:bg-white uog:w-full uog:[appearance:textfield] uog:[&::-webkit-outer-spin-button]:appearance-none uog:[&::-webkit-inner-spin-button]:appearance-none uog:col-2',
       control:
-        'uog:flex uog:items-center uog:justify-center uog:rounded-full uog:text-yellow uog:bg-black uog:hocus-visible:text-yellow-focus uog:text-xl uog:transition-colors uog:shadow uog:cursor-pointer',
+        'uog:flex uog:items-center uog:justify-center uog:rounded-full uog:text-xl uog:transition-colors uog:shadow uog:cursor-pointer',
     },
-  })();
+    variants: {
+      color: {
+        red: {
+          control: 'uog:text-red uog:bg-red-contrast uog:hocus-visible:text-red-focus',
+        },
+        yellow: {
+          control: 'uog:text-yellow uog:bg-yellow-contrast uog:hocus-visible:text-yellow-focus',
+        },
+        blue: {
+          control: 'uog:text-blue uog:bg-blue-contrast uog:hocus-visible:text-blue-focus',
+        },
+        green: {
+          control: 'uog:text-green uog:bg-green-contrast uog:hocus-visible:text-green-focus',
+        },
+      },
+    },
+  })({
+    color: color ?? 'yellow',
+  });
 
   return (
     <Field className={`uofg-number-input-field ${twMerge(base(), className)}`}>
