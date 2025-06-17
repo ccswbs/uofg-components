@@ -71,21 +71,21 @@ export function NumberInput({
       input:
         'uog:flex-1 uog:focus:outline-none uog:bg-white uog:w-full uog:[appearance:textfield] uog:[&::-webkit-outer-spin-button]:appearance-none uog:[&::-webkit-inner-spin-button]:appearance-none uog:col-2',
       control:
-        'uog:flex uog:items-center uog:justify-center uog:rounded-full uog:text-xl uog:transition-colors uog:shadow uog:cursor-pointer',
+        'uog:flex uog:relative uog:items-center uog:justify-center uog:rounded-full uog:text-xl uog:transition-colors uog:shadow uog:cursor-pointer uog:before:absolute uog:before:-z-1 uog:before:w-2/3 uog:before:h-2/3',
     },
     variants: {
       color: {
         red: {
-          control: 'uog:text-red uog:bg-red-contrast uog:hocus-visible:text-red-focus',
+          control: 'uog:text-red uog:before:bg-red-contrast uog:hocus-visible:text-red-focus',
         },
         yellow: {
-          control: 'uog:text-yellow uog:bg-yellow-contrast uog:hocus-visible:text-yellow-focus',
+          control: 'uog:text-yellow uog:before:bg-yellow-contrast uog:hocus-visible:text-yellow-focus',
         },
         blue: {
-          control: 'uog:text-blue uog:bg-blue-contrast uog:hocus-visible:text-blue-focus',
+          control: 'uog:text-blue uog:before:bg-blue-contrast uog:hocus-visible:text-blue-focus',
         },
         green: {
-          control: 'uog:text-green uog:bg-green-contrast uog:hocus-visible:text-green-focus',
+          control: 'uog:text-green uog:before:bg-green-contrast uog:hocus-visible:text-green-focus',
         },
       },
     },
