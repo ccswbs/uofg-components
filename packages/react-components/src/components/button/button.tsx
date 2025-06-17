@@ -52,7 +52,7 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const button = tv({
-    base: 'uog:font-medium uog:shadow-sm uog:inline-flex uog:items-center uog:justify-center uog:px-6 uog:py-4 uog:text-lg uog:no-underline uog:transition-colors uog:focus-visible:outline-none uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2',
+    base: 'uog:font-medium uog:shadow-sm uog:inline-flex uog:items-center uog:justify-center uog:px-6 uog:py-4 uog:text-lg uog:no-underline uog:transition-colors uog:focus-visible:outline-none uog:cursor-pointer uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2',
     variants: {
       color: {
         red: 'uog:focus-visible:ring-red',

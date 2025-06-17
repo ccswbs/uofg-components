@@ -68,7 +68,7 @@ export function NumberInput({
       input:
         'uog:flex-1 uog:focus:outline-none uog:bg-white uog:w-full uog:[appearance:textfield] uog:[&::-webkit-outer-spin-button]:appearance-none uog:[&::-webkit-inner-spin-button]:appearance-none uog:col-2',
       control:
-        'uog:flex uog:items-center uog:justify-center uog:rounded-full uog:text-yellow uog:bg-black uog:hocus-visible:text-yellow-focus uog:text-xl uog:transition-colors uog:shadow',
+        'uog:flex uog:items-center uog:justify-center uog:rounded-full uog:text-yellow uog:bg-black uog:hocus-visible:text-yellow-focus uog:text-xl uog:transition-colors uog:shadow uog:cursor-pointer',
     },
   })();
 
