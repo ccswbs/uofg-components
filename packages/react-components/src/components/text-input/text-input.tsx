@@ -2,10 +2,13 @@ import { faXmarkCircle } from '@awesome.me/kit-7993323d0c/icons/classic/regular'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Field, Input, Label } from '@headlessui/react';
 import { ComponentPropsWithoutRef, FormEvent, PropsWithChildren, useRef, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type TextInputProps = PropsWithChildren<
   {
+    /** Additional classes to apply to the input * */
+    className?: string;
     /** Sets the initial value of the TextInput */
     initialValue?: string;
     /** The type of the input */
@@ -14,6 +17,8 @@ export type TextInputProps = PropsWithChildren<
     placeholder?: string;
     /** Callback to call when the input changes */
     onInput?: (e: FormEvent<HTMLInputElement>) => void;
+    /** Whether to render a clear button in the input */
+    hideClear?: boolean;
   } & ComponentPropsWithoutRef<'input'>
 >;
 
@@ -23,6 +28,8 @@ export function TextInput({
   placeholder = '',
   onInput,
   children,
+  className,
+  hideClear,
   ...rest
 }: TextInputProps) {
   const [value, setValue] = useState(initialValue);
@@ -42,13 +49,18 @@ export function TextInput({
           clearButton: 'uog:pointer-events-none uog:invisible',
         },
       },
+      hide: {
+        true: {
+          clearButton: 'uog:pointer-events-none uog:invisible',
+        },
+      },
     },
   });
 
   const { base, wrapper, input, clearButton } = textInput({ empty: value?.length === 0 });
 
   return (
-    <Field className={`uofg-text-input-field ${base()}`}>
+    <Field className={`uofg-text-input-field ${twMerge(base(), className)}`}>
       {children && <Label className="uofg-text-input-label">{children}</Label>}
 
       <div className={`uofg-text-input-wrapper ${wrapper()}`}>
@@ -66,7 +78,7 @@ export function TextInput({
         />
 
         <button
-          className={`uofg-text-input-clear-button ${clearButton()}`}
+          className={`uofg-text-input-clear-button ${clearButton({ hide: hideClear })}`}
           onClick={() => {
             if (!ref.current) return;
             // We need to use the native setter to update the value so that React correctly dispatches the change event
