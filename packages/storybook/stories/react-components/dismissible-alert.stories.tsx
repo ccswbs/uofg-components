@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite';
 import { DismissibleAlert } from '../../../react-components/src/components/dismissible-alert/dismissible-alert';
 
 const config: Meta<typeof DismissibleAlert> = {
-  title: 'React Components/Dismissible Alert',
+  title: 'React Components/DismissibleAlert',
   component: DismissibleAlert,
   parameters: {
     'layout': 'centered',
