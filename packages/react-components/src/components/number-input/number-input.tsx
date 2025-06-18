@@ -39,7 +39,7 @@ export function NumberInput({
   value,
   ...rest
 }: NumberInputProps) {
-  const [num, setNum] = useState(initialValue);
+  const [num, setNum] = useState(initialValue ?? 0);
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export function NumberInput({
       wrapper:
         'uog:text-input uog:border-grey-light uog:flex uog:rounded-md uog:border uog:px-2 uog:py-2 uog:transition-colors uog:focus-within:border-blue uog:focus:outline-none uog:bg-white',
       container:
-        'uog:grid uog:items-center uog:justify-center uog:justify-items-center uog:grid-cols-[1fr_1.25fr_1fr] uog:gap-1',
+        'uog:grid uog:items-center uog:justify-center uog:justify-items-center uog:grid-cols-[2rem_1fr_2rem] uog:gap-2',
       input:
         'uog:flex-1 uog:focus:outline-none uog:bg-white uog:w-full uog:[appearance:textfield] uog:[&::-webkit-outer-spin-button]:appearance-none uog:[&::-webkit-inner-spin-button]:appearance-none uog:col-2',
       control:
@@ -119,7 +119,7 @@ export function NumberInput({
         <button
           className={`uofg-number-input-subtract uog:col-1 uog:row-1 ${control()}`}
           onClick={() => {
-            update((num ?? 0) - 1);
+            update((num ? num : 0) - 1);
           }}
         >
           <FontAwesomeIcon icon={faMinusCircle} />
@@ -128,7 +128,7 @@ export function NumberInput({
         <button
           className={`uofg-number-input-add uog:col-3 uog:row-1 ${control()}`}
           onClick={() => {
-            update((num ?? 0) + 1);
+            update((num ? num : 0) + 1);
           }}
         >
           <FontAwesomeIcon icon={faPlusCircle} />
