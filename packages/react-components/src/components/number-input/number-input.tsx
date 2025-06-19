@@ -22,7 +22,7 @@ export type NumberInputProps = PropsWithChildren<
     max?: number;
     /** Callback to call when the input changes */
     onInput?: (value: number, e?: FormEvent<HTMLInputElement>) => void;
-    /** The color of the inputs control buttons */
+    /** The colour of the input's control buttons */
     color?: 'red' | 'yellow' | 'blue' | 'green';
   } & Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'onInput'>
 >;

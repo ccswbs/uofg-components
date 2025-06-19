@@ -2,6 +2,7 @@ import { faEllipsis } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { faChevronsLeft, faChevronsRight } from '@awesome.me/kit-7993323d0c/icons/duotone/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { clamp } from '../../utils/math-utils';
 import { Button } from '../button/button';
@@ -18,12 +19,18 @@ export type PaginationProps = {
   defaultPage?: number;
   /** A callback for when the user has selected an item. */
   onChange: (page: number) => void;
-  /** The color of the pagination controls */
-  color: 'red' | 'yellow' | 'blue' | 'green';
+  /**
+   * The colour of the pagination controls
+   *
+   * @default 'yellow'
+   */
+  color?: 'red' | 'yellow' | 'blue' | 'green';
   /** Whether to hide the manual page selector */
   hideInput?: boolean;
   /** Whether to hide the list of pages */
   hideList?: boolean;
+  /** Additional classes to apply to the component */
+  className?: string;
 };
 
 export function Pagination({
@@ -35,6 +42,7 @@ export function Pagination({
   color = 'yellow',
   hideInput = false,
   hideList = false,
+  className,
 }: PaginationProps) {
   const [currentPage, setCurrentPage] = useState(defaultPage ?? 0);
   const [inputPage, setInputPage] = useState(defaultPage ?? 0);
@@ -169,7 +177,7 @@ export function Pagination({
   });
 
   return (
-    <div className={`uofg-pagination ${base()}`}>
+    <div className={`uofg-pagination ${twMerge(base(), className)}`}>
       <ul className={`uofg-pagination-list ${list()}`}>
         <li className="uog:contents">
           <button
