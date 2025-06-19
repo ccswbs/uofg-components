@@ -61,16 +61,15 @@ export function Pagination({
 
   const toPaginationItem = (p: number) => {
     return (
-      <li key={p} className="uog:contents">
-        <button
-          className={`uofg-pagination-item ${item({ active: currentPage === p })}`}
-          onClick={() => {
-            updateCurrentPage(p);
-          }}
-        >
-          {p + 1}
-        </button>
-      </li>
+      <button
+        key={p}
+        className={`uofg-pagination-item ${item({ active: currentPage === p })}`}
+        onClick={() => {
+          updateCurrentPage(p);
+        }}
+      >
+        {p + 1}
+      </button>
     );
   };
 
@@ -178,16 +177,14 @@ export function Pagination({
 
   return (
     <div className={`uofg-pagination ${twMerge(base(), className)}`}>
-      <ul className={`uofg-pagination-list ${list()}`}>
-        <li className="uog:contents">
-          <button
-            disabled={currentPage <= 0}
-            className={`uofg-pagination-previous ${control()}`}
-            onClick={() => updateCurrentPage(currentPage - 1)}
-          >
-            <FontAwesomeIcon icon={faChevronsLeft} />
-          </button>
-        </li>
+      <div className={`uofg-pagination-list ${list()}`}>
+        <button
+          disabled={currentPage <= 0}
+          className={`uofg-pagination-previous ${control()}`}
+          onClick={() => updateCurrentPage(currentPage - 1)}
+        >
+          <FontAwesomeIcon icon={faChevronsLeft} />
+        </button>
 
         {toPaginationItem(0)}
 
@@ -199,16 +196,14 @@ export function Pagination({
 
         {toPaginationItem(count - 1)}
 
-        <li className="uog:contents">
-          <button
-            disabled={currentPage >= count - 1}
-            className={`uofg-pagination-next ${control()}`}
-            onClick={() => updateCurrentPage(currentPage + 1)}
-          >
-            <FontAwesomeIcon icon={faChevronsRight} />
-          </button>
-        </li>
-      </ul>
+        <button
+          disabled={currentPage >= count - 1}
+          className={`uofg-pagination-next ${control()}`}
+          onClick={() => updateCurrentPage(currentPage + 1)}
+        >
+          <FontAwesomeIcon icon={faChevronsRight} />
+        </button>
+      </div>
 
       <span className={`uofg-pagination-seperator ${seperator()}`}></span>
 
