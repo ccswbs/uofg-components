@@ -189,7 +189,7 @@ export function Pagination({
           </button>
         </li>
 
-        <li className="uog:contents">{toPaginationItem(0)}</li>
+        {toPaginationItem(0)}
 
         {showLeftEllipsis && <FontAwesomeIcon icon={faEllipsis} />}
 
@@ -197,7 +197,7 @@ export function Pagination({
 
         {showRightEllipsis && <FontAwesomeIcon icon={faEllipsis} />}
 
-        <li className="uog:contents">{toPaginationItem(count - 1)}</li>
+        {toPaginationItem(count - 1)}
 
         <li className="uog:contents">
           <button
