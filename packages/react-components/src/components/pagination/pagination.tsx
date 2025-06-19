@@ -10,7 +10,7 @@ import { NumberInput } from '../number-input/number-input';
 export type PaginationProps = {
   /** The total number of pages. Must be a positive integer. */
   count: number;
-  /** The number of pages that are displayed at once. Must be a positive odd integer greater than 3. */
+  /** The number of pages that are displayed at once. This number will always be clamped between 3 and count. */
   visible: number;
   /** The currently selected page */
   page?: number;
@@ -39,6 +39,7 @@ export function Pagination({
   const [currentPage, setCurrentPage] = useState(defaultPage ?? 0);
   const [inputPage, setInputPage] = useState(defaultPage ?? 0);
   const pages = [...Array(count).keys()];
+  const visiblePages = Math.max(Math.ceil(visible), 3);
 
   useEffect(() => {
     updateCurrentPage(page ?? 0);
@@ -49,8 +50,6 @@ export function Pagination({
     onChange?.(newPage);
     setCurrentPage(newPage);
   };
-
-  console.log(visible);
 
   const toPaginationItem = (p: number) => {
     return (
@@ -69,19 +68,24 @@ export function Pagination({
 
   let start, end, showLeftEllipsis, showRightEllipsis;
 
-  if (currentPage < visible - 1) {
+  if (count <= visiblePages || count < 5) {
     start = 1;
-    end = visible;
+    end = count - 1;
+    showLeftEllipsis = false;
+    showRightEllipsis = false;
+  } else if (currentPage < visiblePages - 1) {
+    start = 1;
+    end = visiblePages;
     showRightEllipsis = true;
     showLeftEllipsis = false;
-  } else if (currentPage > count - visible) {
-    start = count - visible;
+  } else if (currentPage > count - visiblePages) {
+    start = count - visiblePages;
     end = count - 1;
     showLeftEllipsis = true;
     showRightEllipsis = false;
   } else {
-    start = currentPage - Math.floor(visible / 2);
-    end = start + visible;
+    start = currentPage - Math.floor(visiblePages / 2);
+    end = start + visiblePages;
     showLeftEllipsis = start > 1;
     showRightEllipsis = end < count;
   }
