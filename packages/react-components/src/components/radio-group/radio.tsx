@@ -1,3 +1,5 @@
+'use client';
+
 import { Field, Radio as HUIRadio, Label } from '@headlessui/react';
 import { Fragment, PropsWithChildren, useContext, useEffect } from 'react';
 import { tv } from 'tailwind-variants';

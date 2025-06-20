@@ -1,3 +1,5 @@
+'use client';
+
 import { faMinusCircle, faPlusCircle } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Field, Input, Label } from '@headlessui/react';

@@ -1,3 +1,5 @@
+'use client';
+
 import { TabPanels as HUITabPanels } from '@headlessui/react';
 import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';

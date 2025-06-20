@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
 import fg from 'fast-glob';
 import { resolve } from 'path';
+import preserveDirectives from 'rollup-preserve-directives';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
@@ -38,5 +39,6 @@ export default defineConfig({
     react(),
     dts({ tsconfigPath: './tsconfig.json', insertTypesEntry: true, exclude: 'vite.config.ts' }),
     tailwindcss(),
+    preserveDirectives(),
   ],
 });

@@ -1,3 +1,5 @@
+'use client';
+
 import objectHash from 'object-hash';
 import { useMemo, useState } from 'react';
 import { useDismissible } from '../../utils/use-dismissible';

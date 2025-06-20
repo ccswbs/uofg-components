@@ -1,3 +1,5 @@
+'use client';
+
 import { DisclosurePanel } from '@headlessui/react';
 import { PropsWithChildren, useContext } from 'react';
 import AnimateHeight from 'react-animate-height';

@@ -1,3 +1,5 @@
+'use client';
+
 import { Listbox, ListboxProps } from '@headlessui/react';
 
 export function Select({ children, ...rest }: ListboxProps<'div'>) {

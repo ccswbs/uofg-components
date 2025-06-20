@@ -1,3 +1,5 @@
+'use client';
+
 import { faCheck } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ListboxOption, ListboxOptionProps } from '@headlessui/react';

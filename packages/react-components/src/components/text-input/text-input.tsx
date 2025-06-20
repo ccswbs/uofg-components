@@ -1,3 +1,5 @@
+'use client';
+
 import { faXmarkCircle } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Field, Input, Label } from '@headlessui/react';

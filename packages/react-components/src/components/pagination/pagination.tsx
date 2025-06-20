@@ -1,3 +1,5 @@
+'use client';
+
 import { faEllipsis } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { faChevronsLeft, faChevronsRight } from '@awesome.me/kit-7993323d0c/icons/duotone/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

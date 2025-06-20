@@ -1,3 +1,5 @@
+'use client';
+
 import { Children, isValidElement, PropsWithChildren, useMemo, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';

@@ -1,3 +1,5 @@
+'use client';
+
 import { RadioGroup as HUIRadioGroup } from '@headlessui/react';
 import { PropsWithChildren, useMemo, useState } from 'react';
 import { tv } from 'tailwind-variants';

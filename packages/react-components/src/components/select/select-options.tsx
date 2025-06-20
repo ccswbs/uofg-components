@@ -1,3 +1,5 @@
+'use client';
+
 import { ListboxOptions, ListboxOptionsProps } from '@headlessui/react';
 import { ElementType } from 'react';
 import { twMerge } from 'tailwind-merge';

@@ -1,3 +1,5 @@
+'use client';
+
 import { Disclosure } from '@headlessui/react';
 import type { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
