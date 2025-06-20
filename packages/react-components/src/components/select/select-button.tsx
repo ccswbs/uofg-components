@@ -28,7 +28,7 @@ export function SelectButton<T extends ElementType>({ children, className, ...re
         'uog:border-grey-light',
         'uog:bg-white',
         'uog:px-4',
-        'uog:py-2',
+        'uog:py-2.5',
         'uog:shadow-sm',
         'uog:transition-colors',
         'uog:group-focus-within:border-blue',
@@ -46,7 +46,7 @@ export function SelectButton<T extends ElementType>({ children, className, ...re
       {bag => {
         return (
           <>
-            {typeof children === 'function' ? children(bag) : <span>{children}</span>}
+            {typeof children === 'function' ? children(bag) : children}
             <FontAwesomeIcon className={icon()} icon={faChevronDown} />
           </>
         );
