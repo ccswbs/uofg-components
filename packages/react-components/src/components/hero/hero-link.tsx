@@ -1,3 +1,5 @@
+'use client';
+
 import { ElementType, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Button } from '../button/button';

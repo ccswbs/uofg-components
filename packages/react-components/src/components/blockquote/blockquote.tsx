@@ -1,3 +1,5 @@
+'use client';
+
 import type { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { BlockquoteContext } from './blockquote-context';

@@ -1,3 +1,5 @@
+'use client';
+
 import { Children, ComponentPropsWithoutRef, ElementType, PropsWithChildren, ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';

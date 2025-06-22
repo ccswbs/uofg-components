@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { Link } from '../link/link';
 

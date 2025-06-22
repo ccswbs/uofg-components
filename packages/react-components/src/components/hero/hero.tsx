@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
 import { HeroCaption } from './hero-caption';

@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren, useContext } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';

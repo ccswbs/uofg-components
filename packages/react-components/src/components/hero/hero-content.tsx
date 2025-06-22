@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren, useContext } from 'react';
 import { tv } from 'tailwind-variants';
 import { Container } from '../container/container';
