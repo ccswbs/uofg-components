@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
