@@ -15,6 +15,8 @@ type MediaCaptionPropsBase = {
   size?: 'small' | 'medium' | 'large';
   position?: 'left' | 'right' | 'above';
   background?: 'none' | 'grey-light' | 'grey-dark';
+  /** Whether the media should expand to match the height of the caption. */
+  matchCaptionHeight?: boolean;
   className?: string;
   mediaClassName?: string;
 };
@@ -32,6 +34,7 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
   src,
   className,
   mediaClassName,
+  matchCaptionHeight,
   ...rest
 }: MediaCaptionProps<T>) {
   const Component = as ?? defaultElement;
@@ -68,14 +71,17 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
       },
       background: {
         'grey-light': {
-          base: 'light',
-          caption: 'uog:bg-grey-light-bg uog:text-body-copy',
+          base: 'light uog:bg-grey-light-bg uog:text-body-copy',
         },
         'grey-dark': {
-          base: 'dark',
-          caption: 'uog:bg-grey-dark-bg uog:text-body-copy-on-dark',
+          base: 'dark uog:bg-grey-dark-bg uog:text-body-copy-on-dark',
         },
         'none': {},
+      },
+      matchCaptionHeight: {
+        true: {
+          media: 'uog:h-full',
+        },
       },
     },
     compoundVariants: [
@@ -145,7 +151,7 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
     ],
   });
 
-  const { base, mediaWrapper, media, caption } = mediaCaption({ size, position, background });
+  const { base, mediaWrapper, media, caption } = mediaCaption({ size, position, background, matchCaptionHeight });
 
   return (
     <div className={twMerge(base(), className)}>
