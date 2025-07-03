@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/react-components",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "description": "University of Guelph React Components Library",
   "type": "module",
   "scripts": {
