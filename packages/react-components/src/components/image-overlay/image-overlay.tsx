@@ -84,12 +84,14 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
       },
       overlay: {
         'dark': {
+          base: 'dark',
           overlay: 'uog:bg-black/60',
         },
         'light': {
           overlay: 'uog:bg-white/60',
         },
         'dark-gradient': {
+          base: 'dark',
           overlay: 'uog:from-black/50 uog:via-30% uog:via-black/20 uog:to-transparent',
         },
         'light-gradient': {
