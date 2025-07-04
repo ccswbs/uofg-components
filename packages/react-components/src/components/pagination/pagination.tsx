@@ -62,15 +62,16 @@ export function Pagination({
   };
 
   const toPaginationItem = (p: number) => {
+    const isActivePage = currentPage === p;
     return (
       <button
         key={p}
-        className={`uofg-pagination-item ${item({ active: currentPage === p })}`}
+        className={`uofg-pagination-item ${item({ active: isActivePage })}`}
         onClick={() => {
           updateCurrentPage(p);
         }}
       >
-        {p + 1}
+        <span className="sr-only">Page</span> {p + 1} { isActivePage ? <span className="sr-only">(Current Page)</span> : ''}
       </button>
     );
   };
@@ -186,6 +187,7 @@ export function Pagination({
           onClick={() => updateCurrentPage(currentPage - 1)}
         >
           <FontAwesomeIcon icon={faChevronsLeft} />
+          <span className="sr-only">Previous Page</span>
         </button>
 
         {toPaginationItem(0)}
@@ -204,6 +206,7 @@ export function Pagination({
           onClick={() => updateCurrentPage(currentPage + 1)}
         >
           <FontAwesomeIcon icon={faChevronsRight} />
+          <span className="sr-only">Next Page</span>
         </button>
       </div>
 
@@ -219,7 +222,9 @@ export function Pagination({
             setInputPage(isNaN(value) ? 0 : clamp(value - 1, 0, count - 1));
           }}
           className={`uofg-pagination-go-to-input ${input()}`}
-        />
+        >
+          <span className="sr-only">Input Page Number</span>
+        </NumberInput>
 
         <Button
           color={color}

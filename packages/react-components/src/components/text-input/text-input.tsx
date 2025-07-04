@@ -99,6 +99,7 @@ export function TextInput({
           }}
         >
           <FontAwesomeIcon icon={faXmarkCircle} />
+          <span className="sr-only">Clear text</span>
         </button>
       </div>
     </Field>

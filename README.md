@@ -6,7 +6,7 @@ To get started with developing in this repository, you will need to have npm ins
 
 Once you have npm installed, follow these steps:
 
-1. Set the nessessary environment variables
+1. Set the necessary environment variables
 
 NPMRC_FONTAWESOME_PACKAGE_TOKEN - This is the token used to access the FontAwesome Pro package.
 You can get this token from the C&M FontAwesome account or from [Netlify](https://app.netlify.com/sites/uofg-components/configuration/env#environment-variables).
@@ -44,9 +44,12 @@ For more detailed explanation of each package, read their corresponding README a
 ## Publishing
 
 To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process.
+
 Lerna allows us to publish all the packages in the monorepo with a single command.
 
 ### Prerequisites
+
+1. Ensure Lerna is installed on your machine. Run `lerna --help` to see if you already have it installed. If not, run `npm install --global lerna`. You can also install through other methods, such as Homebrew (`brew install lerna`)
 
 1. Ensure you have an NPM account with access to the uoguelph organization and are logged in. You can log in by running:
 
