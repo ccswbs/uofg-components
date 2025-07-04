@@ -65,29 +65,28 @@ export function NumberInput({
     control,
   } = tv({
     slots: {
-      base: 'uog:flex uog:flex-col uog:gap-0.5',
+      base: 'flex flex-col gap-0.5',
       wrapper:
-        'uog:text-input uog:border-grey-light uog:flex uog:rounded-md uog:border uog:px-2 uog:py-2 uog:transition-colors uog:focus-within:border-blue uog:focus:outline-none uog:bg-white',
-      container:
-        'uog:grid uog:items-center uog:justify-center uog:justify-items-center uog:grid-cols-[2rem_1fr_2rem] uog:gap-2',
+        'text-input flex rounded-md border border-grey-light bg-white px-2 py-2 transition-colors focus-within:border-blue focus:outline-none',
+      container: 'grid grid-cols-[2rem_1fr_2rem] items-center justify-center justify-items-center gap-2',
       input:
-        'uog:flex-1 uog:focus:outline-none uog:bg-white uog:w-full uog:[appearance:textfield] uog:[&::-webkit-outer-spin-button]:appearance-none uog:[&::-webkit-inner-spin-button]:appearance-none uog:col-2',
+        'col-2 w-full flex-1 [appearance:textfield] bg-white focus:outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none',
       control:
-        'uog:flex uog:relative uog:items-center uog:justify-center uog:rounded-full uog:text-xl uog:transition-colors uog:shadow uog:cursor-pointer uog:before:absolute uog:before:-z-1 uog:before:w-2/3 uog:before:h-2/3',
+        'relative flex cursor-pointer items-center justify-center rounded-full text-xl shadow transition-colors before:absolute before:-z-1 before:h-2/3 before:w-2/3',
     },
     variants: {
       color: {
         red: {
-          control: 'uog:text-red uog:before:bg-red-contrast uog:hocus-visible:text-red-focus',
+          control: 'text-red before:bg-red-contrast hocus-visible:text-red-focus',
         },
         yellow: {
-          control: 'uog:text-yellow uog:before:bg-yellow-contrast uog:hocus-visible:text-yellow-focus',
+          control: 'text-yellow before:bg-yellow-contrast hocus-visible:text-yellow-focus',
         },
         blue: {
-          control: 'uog:text-blue uog:before:bg-blue-contrast uog:hocus-visible:text-blue-focus',
+          control: 'text-blue before:bg-blue-contrast hocus-visible:text-blue-focus',
         },
         green: {
-          control: 'uog:text-green uog:before:bg-green-contrast uog:hocus-visible:text-green-focus',
+          control: 'text-green before:bg-green-contrast hocus-visible:text-green-focus',
         },
       },
     },
@@ -119,22 +118,22 @@ export function NumberInput({
         </div>
 
         <button
-          className={`uofg-number-input-subtract uog:col-1 uog:row-1 ${control()}`}
+          className={`uofg-number-input-subtract col-1 row-1 ${control()}`}
           onClick={() => {
             update((num ? num : 0) - 1);
           }}
         >
           <FontAwesomeIcon icon={faMinusCircle} />
-          <span className="uog:sr-only">Subtract</span>
+          <span className="sr-only">Subtract</span>
         </button>
         <button
-          className={`uofg-number-input-add uog:col-3 uog:row-1 ${control()}`}
+          className={`uofg-number-input-add col-3 row-1 ${control()}`}
           onClick={() => {
             update((num ? num : 0) + 1);
           }}
         >
           <FontAwesomeIcon icon={faPlusCircle} />
-          <span className="uog:sr-only">Add</span>
+          <span className="sr-only">Add</span>
         </button>
       </div>
     </Field>

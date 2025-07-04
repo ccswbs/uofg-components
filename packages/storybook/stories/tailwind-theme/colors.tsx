@@ -83,38 +83,38 @@ export const ColorGrid = () => {
   }, []);
 
   /*
-    uog:text-body-copy-bold-on-dark
-    uog:text-body-copy-bold-on-light
-    uog:text-body-copy-on-light
-    uog:text-red-on-light
-    uog:text-yellow-on-dark
-    uog:text-green-on-light
+    text-body-copy-bold-on-dark
+    text-body-copy-bold-on-light
+    text-body-copy-on-light
+    text-red-on-light
+    text-yellow-on-dark
+    text-green-on-light
   */
 
   return (
-    <div className="uog:flex uog:flex-col uog:gap-4">
+    <div className="flex flex-col gap-4">
       {colors.map(color => (
         <>
-          <span className="uog:font-bold uog:text-xs">
+          <span className="text-xs font-bold">
             {color.name === 'Grey Light' ?
               'Light Background'
             : color.name === 'Grey Dark' ?
               'Dark Background'
             : color.name}
           </span>
-          <div className="uog:flex uog:gap-2">
+          <div className="flex gap-2">
             {color.swatches.map(swatch => (
-              <div className="uog:flex-1 uog:border uog:border-black/10">
+              <div className="flex-1 border border-black/10">
                 <div
-                  className="uog:h-15 uog:border-b uog:border-black/10"
+                  className="h-15 border-b border-black/10"
                   style={{
                     backgroundColor: swatch.hex,
                   }}
                 ></div>
-                <div className="uog:flex uog:flex-col uog:gap-0 uog:items-center uog:justify-center uog:text-center">
-                  <p className="uog:m-0! uog:capitalize">{swatch.name}</p>
-                  <p className="uog:m-0!">{swatch.variable}</p>
-                  <p className="uog:m-0!">{swatch.hex}</p>
+                <div className="flex flex-col items-center justify-center gap-0 text-center">
+                  <p className="m-0! capitalize">{swatch.name}</p>
+                  <p className="m-0!">{swatch.variable}</p>
+                  <p className="m-0!">{swatch.hex}</p>
                 </div>
               </div>
             ))}

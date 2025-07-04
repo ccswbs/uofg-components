@@ -30,16 +30,16 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
   const Tag = as ?? defaultElement;
 
   const typography = tv({
-    base: 'uog:leading-[1.4] uog:[&_strong]:text-body-copy-bold uog:[&_strong]:dark:text-body-copy-bold-on-dark',
+    base: 'leading-[1.4] [&_strong]:text-body-copy-bold [&_strong]:dark:text-body-copy-bold-on-dark',
     variants: {
       type: {
-        h1: 'uog:mt-7.5 uog:text-4xl uog:font-bold uog:text-black uog:dark:text-white uog:font-serif',
-        h2: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-red uog:dark:text-white uog:text-3xl',
-        h3: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:dark:text-body-copy-bold-on-dark uog:light:text-body-copy-bold-on-light uog:text-2xl',
-        h4: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:dark:text-body-copy-bold-on-dark uog:light:text-body-copy-bold-on-light uog:text-xl',
-        h5: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:dark:text-body-copy-bold-on-dark uog:light:text-body-copy-bold-on-light uog:text-lg',
-        h6: 'uog:mt-7.5 uog:mb-3.75 uog:font-bold uog:text-body-copy-bold uog:dark:text-body-copy-bold-on-dark uog:light:text-body-copy-bold-on-light uog:text-base',
-        body: 'uog:mt-3.75 uog:text-lg uog:text-body-copy uog:dark:text-body-copy-on-dark uog:light:text-body-copy-on-light uog:font-normal uog:leading-[1.6]',
+        h1: 'mt-7.5 font-serif text-4xl font-bold text-black dark:text-white',
+        h2: 'mt-7.5 mb-3.75 text-3xl font-bold text-red dark:text-white',
+        h3: 'mt-7.5 mb-3.75 text-2xl font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
+        h4: 'mt-7.5 mb-3.75 text-xl font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
+        h5: 'mt-7.5 mb-3.75 text-lg font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
+        h6: 'mt-7.5 mb-3.75 text-base font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
+        body: 'mt-3.75 text-lg leading-[1.6] font-normal text-body-copy dark:text-body-copy-on-dark light:text-body-copy-on-light',
       },
     },
   });

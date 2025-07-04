@@ -19,7 +19,7 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
   const [ref, entry] = useResizeObserver<HTMLDListElement>();
 
   const classes = tv({
-    base: 'uog:mx-auto uog:my-0 uog:flex uog:flex-col uog:flex-wrap uog:sm:flex-row',
+    base: 'mx-auto my-0 flex flex-col flex-wrap sm:flex-row',
     variants: {
       divisibleByTwo: {
         true: '',
@@ -28,7 +28,7 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
         true: '',
       },
       divisibleByFour: {
-        true: 'uog:grid uog:grid-cols-1 uog:sm:grid-cols-2 uog:lg:grid-cols-4',
+        true: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
       },
       variant: {
         'solid-colors-full': '',
@@ -41,18 +41,18 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
     compoundVariants: [
       {
         variant: ['solid-colors', 'light-grey', 'left-border'],
-        class: 'uog:gap-4',
+        class: 'gap-4',
       },
       {
         divisibleByTwo: true,
         divisibleByThree: false,
         divisibleByFour: false,
-        class: 'uog:grid uog:grid-cols-1 uog:sm:grid-cols-2',
+        class: 'grid grid-cols-1 sm:grid-cols-2',
       },
       {
         divisibleByThree: true,
         divisibleByFour: false,
-        class: 'uog:grid uog:grid-cols-1 uog:sm:grid-cols-3',
+        class: 'grid grid-cols-1 sm:grid-cols-3',
       },
     ],
   });

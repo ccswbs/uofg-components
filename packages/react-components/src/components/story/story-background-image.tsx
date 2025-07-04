@@ -35,7 +35,7 @@ export function StoryBackgroundImage<T extends StoryBackgroundImageElementType =
 }: StoryBackgroundImageProps<T>) {
   const Component = as ?? defaultElement;
 
-  const classes = twMerge('uog:h-full uog:w-full uog:brightness-50', className);
+  const classes = twMerge('h-full w-full brightness-50', className);
 
   return (
     <Component

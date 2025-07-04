@@ -64,11 +64,11 @@ export function LinkCarousel({ children, className, stack = false, direction = '
   };
 
   const linkCarousel = tv({
-    base: 'uog:flex uog:w-full uog:relative uog:h-fit uog:overflow-hidden',
+    base: 'relative flex h-fit w-full overflow-hidden',
     variants: {
       direction: {
-        left: 'uog:flex-row',
-        right: 'uog:flex-row-reverse',
+        left: 'flex-row',
+        right: 'flex-row-reverse',
       },
     },
   });

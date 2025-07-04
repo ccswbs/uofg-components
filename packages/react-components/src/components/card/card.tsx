@@ -42,7 +42,7 @@ export function Card<T extends CardElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const card = tv({
-    base: 'uog:group uog:ease-in-out uog:focus-visible:ring-light-blue uog:flex uog:flex-col uog:justify-center uog:transition uog:duration-200 uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none',
+    base: 'group focus-visible:ring-light-blue flex flex-col justify-center transition duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
     variants: {
       isLink: {
         true: '',
@@ -55,7 +55,7 @@ export function Card<T extends CardElementType = typeof defaultElement>({
       {
         isLink: true,
         hasImage: false,
-        class: 'uog:transition-colors uog:group-hover:bg-yellow',
+        class: 'transition-colors group-hover:bg-yellow',
       },
     ],
   });

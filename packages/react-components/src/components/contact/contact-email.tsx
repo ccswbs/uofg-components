@@ -14,8 +14,8 @@ export type ContactEmailProps = {
 export function ContactEmail({ email, className }: ContactEmailProps) {
   const contactEmail = tv({
     slots: {
-      container: 'uog:flex uog:items-center uog:gap-1',
-      link: 'uog:underline uog:decoration-current uog:hocus-visible:decoration-transparent uog:transition-colors uog:text-body-copy-link-on-light uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none',
+      container: 'flex items-center gap-1',
+      link: 'text-body-copy-link-on-light underline decoration-current transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none hocus-visible:decoration-transparent',
     },
   });
 

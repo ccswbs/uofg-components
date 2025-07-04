@@ -38,8 +38,8 @@ export function StoryForegroundImage<T extends StoryForegroundImageElementType =
 
   const classes = tv({
     slots: {
-      base: 'uog:flex uog:w-full uog:justify-center uog:lg:mt-auto uog:lg:w-1/2',
-      image: 'uog:w-full uog:h-full',
+      base: 'flex w-full justify-center lg:mt-auto lg:w-1/2',
+      image: 'h-full w-full',
     },
   });
 

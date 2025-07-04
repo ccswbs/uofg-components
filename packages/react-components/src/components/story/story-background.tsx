@@ -7,7 +7,7 @@ export type StoryBackgroundProps = PropsWithChildren<{
 }>;
 
 export function StoryBackground({ children, className }: StoryBackgroundProps) {
-  const classes = twMerge('uog:absolute uog:z-0 uog:h-full uog:max-h-full uog:w-full', className);
+  const classes = twMerge('absolute z-0 h-full max-h-full w-full', className);
 
   return <div className={`uofg-story-background ${classes}`}>{children}</div>;
 }

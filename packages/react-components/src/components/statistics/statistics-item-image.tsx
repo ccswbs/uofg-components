@@ -36,7 +36,7 @@ export function StatisticsItemImage<T extends StatisticsItemImageElementType = t
   ...rest
 }: StatisticsItemImageProps<T>) {
   const Component = as ?? defaultElement;
-  const classes = twMerge('uog:w-full', className);
+  const classes = twMerge('w-full', className);
 
   return (
     <dd className="contents">

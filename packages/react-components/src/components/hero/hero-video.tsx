@@ -25,8 +25,8 @@ export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
     base: '',
     variants: {
       variant: {
-        basic: 'uog:absolute uog:top-1/2 uog:left-1/2 uog:-translate-x-1/2 uog:-translate-y-1/2',
-        spotlight: 'uog:w-fit uog:gap-2 uog:p-3',
+        basic: 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+        spotlight: 'w-fit gap-2 p-3',
       },
     },
   });

@@ -48,13 +48,13 @@ export const Basic: Story = {
               alt="Placeholder image"
               width="1920"
               height="700"
-              className="uog:object-cover uog:lg:[object-position:left_20px]"
+              className="object-cover lg:[object-position:left_20px]"
             />
           </StoryBackground>
 
           <StoryForeground>
             <StoryForegroundContent>
-              <div className="uog:text-white">This is the foreground content.</div>
+              <div className="text-white">This is the foreground content.</div>
             </StoryForegroundContent>
             <StoryForegroundImage src="/img/asha-edwin.png" alt="Placeholder image" width="1341" height="1275" />
           </StoryForeground>
@@ -75,13 +75,13 @@ export const WithFooter: Story = {
               alt="Placeholder image"
               width="1920"
               height="700"
-              className="uog:object-cover uog:lg:[object-position:left_20px]"
+              className="object-cover lg:[object-position:left_20px]"
             />
           </StoryBackground>
 
           <StoryForeground>
             <StoryForegroundContent>
-              <div className="uog:text-white">This is the foreground content.</div>
+              <div className="text-white">This is the foreground content.</div>
             </StoryForegroundContent>
             <StoryForegroundImage src="/img/asha-edwin.png" alt="Placeholder image" width="1341" height="1275" />
           </StoryForeground>

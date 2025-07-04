@@ -20,18 +20,18 @@ export function AccordionButton({ children, className }: AccordionButtonProps) {
   const accordionButton = tv({
     slots: {
       button:
-        'uog:group uog:mb-1 uog:inline-flex uog:w-full uog:cursor-pointer uog:items-center uog:justify-between uog:gap-2 uog:p-2.5 uog:px-5 uog:text-left uog:text-xl uog:transition-colors uog:focus:outline-none uog:focus-visible:ring-2 uog:focus-visible:ring-blue uog:focus-visible:ring-offset-2 uog:hocus-visible:bg-blue uog:hocus-visible:text-blue-contrast',
-      icon: 'uog:h-[1em] uog:text-blue-on-light uog:group-hocus-visible:text-blue-contrast uog:transition',
+        'group mb-1 inline-flex w-full cursor-pointer items-center justify-between gap-2 p-2.5 px-5 text-left text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 hocus-visible:bg-blue hocus-visible:text-blue-contrast',
+      icon: 'h-[1em] text-blue-on-light transition group-hocus-visible:text-blue-contrast',
     },
     variants: {
       open: {
         true: {
-          button: 'uog:bg-blue uog:text-blue-contrast',
-          icon: 'uog:text-blue-contrast',
+          button: 'bg-blue text-blue-contrast',
+          icon: 'text-blue-contrast',
         },
         false: {
-          icon: 'uog:rotate-90',
-          button: 'uog:bg-grey-light-bg uog:text-blue-on-light',
+          icon: 'rotate-90',
+          button: 'bg-grey-light-bg text-blue-on-light',
         },
       },
     },

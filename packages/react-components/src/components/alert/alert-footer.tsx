@@ -8,7 +8,7 @@ export type AlertFooterProps = PropsWithChildren<{
 
 /** The AlertFooter component is used to display additional information or actions at the bottom of an alert. */
 export function AlertFooter({ children, className }: AlertFooterProps) {
-  const alertFooter = twMerge('uog:flex uog:bg-grey-light uog:px-4 uog:py-2', className);
+  const alertFooter = twMerge('flex bg-grey-light px-4 py-2', className);
 
   return <div className={`uofg-alert-footer ${alertFooter}`}>{children}</div>;
 }

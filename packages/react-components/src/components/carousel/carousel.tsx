@@ -102,28 +102,28 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
 
   const carousel = tv({
     slots: {
-      base: 'uog:relative uog:flex uog:h-fit uog:min-h-[7rem] uog:w-full uog:flex-col-reverse',
+      base: 'relative flex h-fit min-h-[7rem] w-full flex-col-reverse',
       contentContainer:
-        'uog:grid uog:w-full uog:flex-1 uog:grid-cols-[repeat(var(--items),calc(100%/var(--display)))] uog:overflow-x-hidden [&>*]:[grid-row:1]',
-      controlContainer: 'uog:md:contents uog:flex uog:h-16 uog:w-full uog:pt-8',
+        'grid w-full flex-1 grid-cols-[repeat(var(--items),calc(100%/var(--display)))] overflow-x-hidden [&>*]:[grid-row:1]',
+      controlContainer: 'flex h-16 w-full pt-8 md:contents',
       control:
-        'uog:sm:text-6xl uog:md:absolute uog:flex uog:h-full uog:w-16 uog:flex-1 uog:items-center uog:justify-center uog:text-3xl uog:text-blue uog:transition-[transform,color,opacity,visibility] uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:hocus-visible:text-blue-focus',
+        'flex h-full w-16 flex-1 items-center justify-center text-3xl text-blue transition-[transform,color,opacity,visibility] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none sm:text-6xl md:absolute hocus-visible:text-blue-focus',
     },
     variants: {
       showControls: {
         true: {
-          base: 'uog:sm:px-16',
+          base: 'sm:px-16',
         },
         false: {
-          control: 'uog:pointer-events-none uog:invisible uog:opacity-0',
+          control: 'pointer-events-none invisible opacity-0',
         },
       },
       direction: {
         left: {
-          control: 'uog:left-0 uog:hocus-visible:-translate-x-1 uog:focus-visible:-translate-x-1',
+          control: 'left-0 focus-visible:-translate-x-1 hocus-visible:-translate-x-1',
         },
         right: {
-          control: 'uog:right-0 uog:hocus-visible:translate-x-1 uog:focus-visible:translate-x-1',
+          control: 'right-0 focus-visible:translate-x-1 hocus-visible:translate-x-1',
         },
       },
     },
@@ -141,7 +141,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(-1)}
             className={`uofg-carousel-shift-left ${control({ showControls: !(loop === 'none' && index === 0), direction: 'left' })}`}
           >
-            <span className="uog:sr-only">Shift left</span>
+            <span className="sr-only">Shift left</span>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
 
@@ -150,7 +150,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
             onClick={() => shift(1)}
             className={`uofg-carousel-shift-right ${control({ showControls: !(loop === 'none' && index === maxIndex), direction: 'right' })}`}
           >
-            <span className="uog:sr-only">Shift right</span>
+            <span className="sr-only">Shift right</span>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>

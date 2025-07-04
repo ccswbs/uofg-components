@@ -70,57 +70,57 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
 
   const imageOverlay = tv({
     slots: {
-      base: 'uog:min-h-[50rem] uog:relative uog:flex uog:h-fit uog:w-full uog:flex-col',
-      imageWrapper: 'uog:absolute uog:z-10 uog:h-full uog:w-full',
-      image: 'uog:h-full uog:w-full uog:object-cover',
-      overlay: 'uog:absolute uog:top-0 uog:left-0 uog:h-full uog:w-full',
-      container: 'uog:relative uog:z-20 uog:flex uog:flex-1 uog:flex-col uog:p-0',
+      base: 'relative flex h-fit min-h-[50rem] w-full flex-col',
+      imageWrapper: 'absolute z-10 h-full w-full',
+      image: 'h-full w-full object-cover',
+      overlay: 'absolute top-0 left-0 h-full w-full',
+      container: 'relative z-20 flex flex-1 flex-col p-0',
     },
     variants: {
       blurred: {
         true: {
-          image: 'uog:blur-sm',
+          image: 'blur-sm',
         },
       },
       overlay: {
         'dark': {
           base: 'dark',
-          overlay: 'uog:bg-black/60',
+          overlay: 'bg-black/60',
         },
         'light': {
-          overlay: 'uog:bg-white/60',
+          overlay: 'bg-white/60',
         },
         'dark-gradient': {
           base: 'dark',
-          overlay: 'uog:from-black/50 uog:via-30% uog:via-black/20 uog:to-transparent',
+          overlay: 'from-black/50 via-black/20 via-30% to-transparent',
         },
         'light-gradient': {
-          overlay: 'uog:from-white/50 uog:via-30% uog:via-white/20 uog:to-transparent',
+          overlay: 'from-white/50 via-white/20 via-30% to-transparent',
         },
         'none': {
-          overlay: 'uog:hidden',
+          overlay: 'hidden',
         },
       },
       verticalAlignment: {
         top: {
-          container: 'uog:justify-start',
+          container: 'justify-start',
         },
         center: {
-          container: 'uog:justify-center',
+          container: 'justify-center',
         },
         bottom: {
-          container: 'uog:justify-end',
+          container: 'justify-end',
         },
       },
       horizontalAlignment: {
         left: {
-          container: 'uog:items-start',
+          container: 'items-start',
         },
         center: {
-          container: 'uog:items-center',
+          container: 'items-center',
         },
         right: {
-          container: 'uog:items-end',
+          container: 'items-end',
         },
       },
     },
@@ -130,7 +130,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'bottom',
         horizontalAlignment: ['left', 'center', 'right'],
         class: {
-          overlay: 'uog:bg-gradient-to-t',
+          overlay: 'bg-gradient-to-t',
         },
       },
       {
@@ -138,7 +138,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'top',
         horizontalAlignment: ['left', 'center', 'right'],
         class: {
-          overlay: 'uog:bg-gradient-to-b',
+          overlay: 'bg-gradient-to-b',
         },
       },
       {
@@ -146,7 +146,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'center',
         horizontalAlignment: 'center',
         class: {
-          overlay: 'uog:bg-radial',
+          overlay: 'bg-radial',
         },
       },
       {
@@ -154,7 +154,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'center',
         horizontalAlignment: 'left',
         class: {
-          overlay: 'uog:bg-gradient-to-r',
+          overlay: 'bg-gradient-to-r',
         },
       },
       {
@@ -162,7 +162,7 @@ export function ImageOverlay<T extends ImageOverlayElementType = typeof defaultE
         verticalAlignment: 'center',
         horizontalAlignment: 'right',
         class: {
-          overlay: 'uog:bg-gradient-to-l',
+          overlay: 'bg-gradient-to-l',
         },
       },
     ],

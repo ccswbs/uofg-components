@@ -80,9 +80,9 @@ function Video({ src, title, transcript, className }: VideoProps) {
 
   const video = tv({
     slots: {
-      base: twMerge('uog:flex uog:flex-col', className),
-      iframe: 'uog:w-full uog:h-full uog:aspect-video',
-      transcriptButton: 'uog:p-3 uog:w-full',
+      base: twMerge('flex flex-col', className),
+      iframe: 'aspect-video h-full w-full',
+      transcriptButton: 'w-full p-3',
     },
   });
 
@@ -132,10 +132,9 @@ export function EmbeddedVideo({ src, title, transcript, className, children }: E
   if (children) {
     const embeddedVideo = tv({
       slots: {
-        container:
-          'uog:bg-grey-dark-bg uog:flex uog:w-screen uog:max-w-6xl uog:lg:max-w-7xl uog:flex-col uog:gap-4 uog:p-4 uog:text-grey-dark-contrast',
-        video: 'uog:w-full',
-        title: 'uog:text-xl uog:font-bold',
+        container: 'flex w-screen max-w-6xl flex-col gap-4 bg-grey-dark-bg p-4 text-grey-dark-contrast lg:max-w-7xl',
+        video: 'w-full',
+        title: 'text-xl font-bold',
       },
     });
 

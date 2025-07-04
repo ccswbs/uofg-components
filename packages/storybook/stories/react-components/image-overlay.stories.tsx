@@ -28,6 +28,6 @@ const image = {
 export const Default: Story = {
   args: {
     ...image,
-    children: <div className="uog:bg-black/50 uog:text-white uog:p-4">Whatever content you want here</div>,
+    children: <div className="bg-black/50 p-4 text-white">Whatever content you want here</div>,
   },
 };

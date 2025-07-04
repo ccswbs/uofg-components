@@ -11,8 +11,8 @@ export type StoryFooterProps = PropsWithChildren<{
 export function StoryFooter({ children, className }: StoryFooterProps) {
   const classes = tv({
     slots: {
-      base: 'uog:flex uog:w-full uog:items-center uog:justify-center uog:bg-black uog:p-4 uog:text-white',
-      container: 'uog:flex uog:items-center uog:justify-center uog:p-2 uog:text-xl',
+      base: 'flex w-full items-center justify-center bg-black p-4 text-white',
+      container: 'flex items-center justify-center p-2 text-xl',
     },
   });
 

@@ -43,14 +43,14 @@ export function CardImage<T extends CardImageElementType = typeof defaultCardIma
 
   const cardImage = tv({
     slots: {
-      container: 'uog:w-full uog:overflow-hidden',
-      wrapper: 'uog:w-full uog:overflow-hidden',
-      image: 'uog:w-full',
+      container: 'w-full overflow-hidden',
+      wrapper: 'w-full overflow-hidden',
+      image: 'w-full',
     },
     variants: {
       isLink: {
         true: {
-          wrapper: 'uog:ease-in-out uog:transition-transform uog:duration-200 uog:group-hover:scale-110',
+          wrapper: 'transition-transform duration-200 ease-in-out group-hover:scale-110',
         },
       },
     },

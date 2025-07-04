@@ -101,14 +101,14 @@ export function Pagination({
 
   const { base, list, seperator, control, item, inputWrapper, goTo, input } = tv({
     slots: {
-      base: 'uog:flex uog:w-full uog:flex-col uog:md:flex-row uog:gap-4 uog:items-center uog:justify-center',
-      list: 'uog:flex uog:gap-4 uog:items-center uog:justify-center',
-      seperator: 'uog:md:w-1 uog:md:h-12 uog:h-1 uog:w-1/2 uog:block',
-      control: 'uog:cursor-pointer uog:disabled:opacity-15 uog:disabled:cursor-default uog:transition-colors',
-      item: 'uog:p-1 uog:aspect-square uog:flex uog:items-center uog:justify-center uog:h-[2em] uog:bg-grey-light-bg uog:text-body-copy-on-light uog:hover:bg-grey-dark-bg uog:hover:text-body-copy-on-dark uog:transition-colors uog:cursor-pointer',
-      inputWrapper: 'uog:flex uog:items-center uog:justify-center uog:gap-2',
-      goTo: 'uog:p-2 uog:text-sm',
-      input: 'uog:w-fit uog:[&_.uofg-number-input]:text-center',
+      base: 'flex w-full flex-col items-center justify-center gap-4 md:flex-row',
+      list: 'flex items-center justify-center gap-4',
+      seperator: 'block h-1 w-1/2 md:h-12 md:w-1',
+      control: 'cursor-pointer transition-colors disabled:cursor-default disabled:opacity-15',
+      item: 'flex aspect-square h-[2em] cursor-pointer items-center justify-center bg-grey-light-bg p-1 text-body-copy-on-light transition-colors hover:bg-grey-dark-bg hover:text-body-copy-on-dark',
+      inputWrapper: 'flex items-center justify-center gap-2',
+      goTo: 'p-2 text-sm',
+      input: 'w-fit [&_.uofg-number-input]:text-center',
     },
     variants: {
       active: {
@@ -116,28 +116,28 @@ export function Pagination({
       },
       color: {
         red: {
-          seperator: 'uog:bg-red',
+          seperator: 'bg-red',
         },
         yellow: {
-          seperator: 'uog:bg-yellow',
+          seperator: 'bg-yellow',
         },
         blue: {
-          seperator: 'uog:bg-blue',
+          seperator: 'bg-blue',
         },
         green: {
-          seperator: 'uog:bg-green',
+          seperator: 'bg-green',
         },
       },
       hideList: {
         true: {
-          list: 'uog:hidden',
-          seperator: 'uog:hidden',
+          list: 'hidden',
+          seperator: 'hidden',
         },
       },
       hideInput: {
         true: {
-          inputWrapper: 'uog:hidden',
-          seperator: 'uog:hidden',
+          inputWrapper: 'hidden',
+          seperator: 'hidden',
         },
       },
     },
@@ -146,28 +146,28 @@ export function Pagination({
         active: true,
         color: 'red',
         class: {
-          item: 'uog:bg-red uog:text-red-contrast',
+          item: 'bg-red text-red-contrast',
         },
       },
       {
         active: true,
         color: 'yellow',
         class: {
-          item: 'uog:bg-yellow uog:text-yellow-contrast',
+          item: 'bg-yellow text-yellow-contrast',
         },
       },
       {
         active: true,
         color: 'blue',
         class: {
-          item: 'uog:bg-blue uog:text-blue-contrast',
+          item: 'bg-blue text-blue-contrast',
         },
       },
       {
         active: true,
         color: 'green',
         class: {
-          item: 'uog:bg-green uog:text-green-contrast',
+          item: 'bg-green text-green-contrast',
         },
       },
     ],

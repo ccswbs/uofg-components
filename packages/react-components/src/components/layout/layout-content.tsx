@@ -14,7 +14,7 @@ export type LayoutContentProps = PropsWithChildren<{
 }>;
 
 export function LayoutContent({ children, className, container = true }: LayoutContentProps) {
-  const classes = `uofg-layout-content ${twMerge('uofg-layout-content uog:pb-4 uog:flex-1', className)}`;
+  const classes = `uofg-layout-content ${twMerge('uofg-layout-content flex-1 pb-4', className)}`;
 
   if (container) {
     return (

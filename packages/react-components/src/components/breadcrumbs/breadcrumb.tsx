@@ -34,9 +34,9 @@ export function Breadcrumb<T extends BreadcrumbElementType = typeof defaultBread
   const Component = as ?? defaultBreadcrumbElement;
   const breadcrumb = tv({
     slots: {
-      container: 'uog:flex uog:items-center uog:gap-2',
-      icon: 'uog:h-[.75em]',
-      link: 'uog:underline uog:decoration-transparent uog:decoration-1 uog:transition-colors uog:hocus-visible:decoration-black',
+      container: 'flex items-center gap-2',
+      icon: 'h-[.75em]',
+      link: 'underline decoration-transparent decoration-1 transition-colors hocus-visible:decoration-black',
     },
   });
 

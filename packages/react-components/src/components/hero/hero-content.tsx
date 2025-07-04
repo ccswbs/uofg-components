@@ -21,34 +21,34 @@ export function HeroContent({ children, alignment = 'left' }: HeroContentProps) 
   const heroContent = tv({
     slots: {
       base: '',
-      wrapper: 'uog:lg:bg-black/80 uog:lg:backdrop-blur uog:flex uog:w-full uog:bg-black uog:p-7 uog:text-white',
-      container: 'uog:mx-auto uog:flex uog:flex-col uog:gap-5',
+      wrapper: 'flex w-full bg-black p-7 text-white lg:bg-black/80 lg:backdrop-blur',
+      container: 'mx-auto flex flex-col gap-5',
     },
     variants: {
       variant: {
         spotlight: {
-          base: 'uog:w-full uog:lg:absolute uog:lg:bottom-0 uog:lg:left-1/2 uog:lg:max-w-[137rem] uog:lg:-translate-x-1/2 uog:lg:p-4 uog:flex uog:items-center',
+          base: 'flex w-full items-center lg:absolute lg:bottom-0 lg:left-1/2 lg:max-w-[137rem] lg:-translate-x-1/2 lg:p-4',
         },
         basic: {
-          base: 'uog:absolute uog:bottom-0 uog:left-1/2 uog:w-full uog:-translate-x-1/2 uog:p-0 uog:flex uog:h-full uog:items-end',
+          base: 'absolute bottom-0 left-1/2 flex h-full w-full -translate-x-1/2 items-end p-0',
         },
       },
       alignment: {
         left: {
-          wrapper: 'uog:mr-auto uog:lg:max-w-[50%]',
+          wrapper: 'mr-auto lg:max-w-[50%]',
         },
         center: {
-          wrapper: 'uog:mx-auto uog:lg:max-w-[50%]',
-          container: 'uog:lg:text-center uog:lg:items-center',
-          link: 'uog:lg:mx-auto',
+          wrapper: 'mx-auto lg:max-w-[50%]',
+          container: 'lg:items-center lg:text-center',
+          link: 'lg:mx-auto',
         },
         right: {
-          wrapper: 'uog:ml-auto uog:lg:max-w-[50%]',
-          container: 'uog:lg:text-right uog:lg:items-end',
-          link: 'uog:lg:ml-auto',
+          wrapper: 'ml-auto lg:max-w-[50%]',
+          container: 'lg:items-end lg:text-right',
+          link: 'lg:ml-auto',
         },
         fullWidth: {
-          wrapper: 'uog:mx-auto',
+          wrapper: 'mx-auto',
         },
       },
     },

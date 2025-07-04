@@ -23,25 +23,25 @@ export const Default: Story = {
     display: 1,
     loop: 'none',
     children: [
-      <div key="test-1" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-1" className="flex h-96 items-center justify-center border-2">
         Carousel Item 1
       </div>,
-      <div key="test-2" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-2" className="flex h-96 items-center justify-center border-2">
         Carousel Item 2
       </div>,
-      <div key="test-3" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-3" className="flex h-96 items-center justify-center border-2">
         Carousel Item 3
       </div>,
-      <div key="test-4" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-4" className="flex h-96 items-center justify-center border-2">
         Carousel Item 4
       </div>,
-      <div key="test-5" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-5" className="flex h-96 items-center justify-center border-2">
         Carousel Item 5
       </div>,
-      <div key="test-6" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-6" className="flex h-96 items-center justify-center border-2">
         Carousel Item 6
       </div>,
-      <div key="test-7" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-7" className="flex h-96 items-center justify-center border-2">
         Carousel Item 7
       </div>,
     ],
@@ -53,25 +53,25 @@ export const MultipleItemsDisplayed: Story = {
     display: 2,
     loop: 'none',
     children: [
-      <div key="test-1" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-1" className="flex h-96 items-center justify-center border-2">
         Carousel Item 1
       </div>,
-      <div key="test-2" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-2" className="flex h-96 items-center justify-center border-2">
         Carousel Item 2
       </div>,
-      <div key="test-3" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-3" className="flex h-96 items-center justify-center border-2">
         Carousel Item 3
       </div>,
-      <div key="test-4" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-4" className="flex h-96 items-center justify-center border-2">
         Carousel Item 4
       </div>,
-      <div key="test-5" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-5" className="flex h-96 items-center justify-center border-2">
         Carousel Item 5
       </div>,
-      <div key="test-6" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-6" className="flex h-96 items-center justify-center border-2">
         Carousel Item 6
       </div>,
-      <div key="test-7" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-7" className="flex h-96 items-center justify-center border-2">
         Carousel Item 7
       </div>,
     ],
@@ -83,25 +83,25 @@ export const JumpLoop: Story = {
     display: 2,
     loop: 'jump',
     children: [
-      <div key="test-1" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-1" className="flex h-96 items-center justify-center border-2">
         Carousel Item 1
       </div>,
-      <div key="test-2" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-2" className="flex h-96 items-center justify-center border-2">
         Carousel Item 2
       </div>,
-      <div key="test-3" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-3" className="flex h-96 items-center justify-center border-2">
         Carousel Item 3
       </div>,
-      <div key="test-4" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-4" className="flex h-96 items-center justify-center border-2">
         Carousel Item 4
       </div>,
-      <div key="test-5" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-5" className="flex h-96 items-center justify-center border-2">
         Carousel Item 5
       </div>,
-      <div key="test-6" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-6" className="flex h-96 items-center justify-center border-2">
         Carousel Item 6
       </div>,
-      <div key="test-7" className="uog:flex uog:h-96 uog:items-center uog:justify-center uog:border-2">
+      <div key="test-7" className="flex h-96 items-center justify-center border-2">
         Carousel Item 7
       </div>,
     ],

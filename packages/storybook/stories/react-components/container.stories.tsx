@@ -19,7 +19,7 @@ export const Default = {
   render: ({ ...args }) => {
     return (
       <Container {...args}>
-        <div className="uog:bg-grey-light-bg uog:p-4">Whatever content you want here</div>
+        <div className="bg-grey-light-bg p-4">Whatever content you want here</div>
       </Container>
     );
   },

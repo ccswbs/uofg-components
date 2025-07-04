@@ -13,10 +13,10 @@ export function CardContent({ children, className }: CardContentProps) {
   const context = useContext(CardContext);
 
   const cardContent = tv({
-    base: 'uog:flex uog:flex-col uog:flex-1 uog:gap-2 uog:bg-grey-light-bg uog:p-5 uog:text-grey-light-contrast',
+    base: 'flex flex-1 flex-col gap-2 bg-grey-light-bg p-5 text-grey-light-contrast',
     variants: {
       isLink: {
-        true: 'uog:transition-colors uog:group-hocus-visible:bg-yellow uog:group-hocus-visible:text-yellow-contrast',
+        true: 'transition-colors group-hocus-visible:bg-yellow group-hocus-visible:text-yellow-contrast',
       },
     },
   });

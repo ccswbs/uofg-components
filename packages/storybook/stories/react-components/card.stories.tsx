@@ -33,7 +33,7 @@ type Story = StoryObj<typeof Card>;
 
 export const Basic: Story = {
   args: {
-    className: 'uog:w-96',
+    className: 'w-96',
   },
   render: ({ ...args }) => {
     return (
@@ -48,7 +48,7 @@ export const Basic: Story = {
 
 export const WithBodyContent: Story = {
   args: {
-    className: 'uog:w-96',
+    className: 'w-96',
   },
   render: ({ ...args }) => {
     return (
@@ -68,7 +68,7 @@ export const WithBodyContent: Story = {
 
 export const WithImage: Story = {
   args: {
-    className: 'uog:w-96',
+    className: 'w-96',
   },
   render: ({ ...args }) => {
     return (
@@ -78,7 +78,7 @@ export const WithImage: Story = {
           alt="Placeholder image"
           width="300"
           height="200"
-          className="uog:aspect-[3/2] uog:w-full"
+          className="aspect-[3/2] w-full"
         />
 
         <CardContent>
@@ -96,7 +96,7 @@ export const WithImage: Story = {
 
 export const WithFooter: Story = {
   args: {
-    className: 'uog:w-96',
+    className: 'w-96',
   },
   render: ({ ...args }) => {
     return (
@@ -106,7 +106,7 @@ export const WithFooter: Story = {
           alt="Placeholder image"
           width="300"
           height="200"
-          className="uog:aspect-[3/2] uog:w-full"
+          className="aspect-[3/2] w-full"
         />
 
         <CardContent>
@@ -127,7 +127,7 @@ export const WithFooter: Story = {
 export const AsALink: Story = {
   args: {
     as: 'a',
-    className: 'uog:w-96',
+    className: 'w-96',
     href: '#',
   },
   render: ({ ...args }) => {
@@ -138,7 +138,7 @@ export const AsALink: Story = {
           alt="Placeholder image"
           width="300"
           height="200"
-          className="uog:aspect-[3/2] uog:w-full"
+          className="aspect-[3/2] w-full"
         />
 
         <CardContent>

@@ -7,10 +7,7 @@ export type StoryBodyProps = PropsWithChildren<{
 }>;
 
 export function StoryBody({ children, className }: StoryBodyProps) {
-  const classes = twMerge(
-    'uog:relative uog:flex uog:w-full uog:items-center uog:justify-center uog:overflow-hidden',
-    className,
-  );
+  const classes = twMerge('relative flex w-full items-center justify-center overflow-hidden', className);
 
   return <div className={`uofg-story-body ${classes}`}>{children}</div>;
 }

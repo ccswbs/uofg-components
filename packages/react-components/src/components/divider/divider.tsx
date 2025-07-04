@@ -4,16 +4,16 @@ import { tv } from 'tailwind-variants';
 export const Divider = () => {
   const divider = tv({
     slots: {
-      base: 'uog:mx-auto uog:my-7 uog:h-1 uog:w-3/4 uog:border-0 uog:flex',
-      red: 'uog:bg-red',
-      yellow: 'uog:bg-yellow',
-      black: 'uog:bg-black',
-      hr: 'uog:border-0',
+      base: 'mx-auto my-7 flex h-1 w-3/4 border-0',
+      red: 'bg-red',
+      yellow: 'bg-yellow',
+      black: 'bg-black',
+      hr: 'border-0',
     },
     compoundSlots: [
       {
         slots: ['red', 'yellow', 'black'],
-        class: 'uog:flex-1 uog:h-full',
+        class: 'h-full flex-1',
       },
     ],
   });

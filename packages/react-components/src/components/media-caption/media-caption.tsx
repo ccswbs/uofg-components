@@ -45,10 +45,10 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
 
   const mediaCaption = tv({
     slots: {
-      base: 'uofg-media-caption uog:flex uog:flex-col',
+      base: 'uofg-media-caption flex flex-col',
       mediaWrapper: 'uofg-media-caption-wrapper',
-      media: 'uofg-media-caption-media uog:w-full uog:object-cover',
-      caption: 'uofg-media-caption-caption uog:p-4',
+      media: 'uofg-media-caption-media w-full object-cover',
+      caption: 'uofg-media-caption-caption p-4',
     },
     variants: {
       size: {
@@ -58,29 +58,29 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
       },
       position: {
         left: {
-          base: 'uog:md:grid',
+          base: 'md:grid',
         },
         right: {
-          base: 'uog:md:grid',
-          mediaWrapper: 'uog:col-start-2 uog:row-start-1',
-          caption: 'uog:col-start-1 uog:row-start-1',
+          base: 'md:grid',
+          mediaWrapper: 'col-start-2 row-start-1',
+          caption: 'col-start-1 row-start-1',
         },
         above: {
-          caption: 'uog:flex-1',
+          caption: 'flex-1',
         },
       },
       background: {
         'grey-light': {
-          base: 'light uog:bg-grey-light-bg uog:text-body-copy',
+          base: 'light bg-grey-light-bg text-body-copy',
         },
         'grey-dark': {
-          base: 'dark uog:bg-grey-dark-bg uog:text-body-copy-on-dark',
+          base: 'dark bg-grey-dark-bg text-body-copy-on-dark',
         },
         'none': {},
       },
       matchCaptionHeight: {
         true: {
-          media: 'uog:h-full',
+          media: 'h-full',
         },
       },
     },
@@ -89,63 +89,63 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
         size: 'small',
         position: 'left',
         class: {
-          base: 'uog:grid-cols-[1fr_4fr]',
+          base: 'grid-cols-[1fr_4fr]',
         },
       },
       {
         size: 'medium',
         position: 'left',
         class: {
-          base: 'uog:grid-cols-[1fr_2fr]',
+          base: 'grid-cols-[1fr_2fr]',
         },
       },
       {
         size: 'large',
         position: 'left',
         class: {
-          base: 'uog:grid-cols-[1fr_1fr]',
+          base: 'grid-cols-[1fr_1fr]',
         },
       },
       {
         size: 'small',
         position: 'right',
         class: {
-          base: 'uog:grid-cols-[4fr_1fr]',
+          base: 'grid-cols-[4fr_1fr]',
         },
       },
       {
         size: 'medium',
         position: 'right',
         class: {
-          base: 'uog:grid-cols-[2fr_1fr]',
+          base: 'grid-cols-[2fr_1fr]',
         },
       },
       {
         size: 'large',
         position: 'right',
         class: {
-          base: 'uog:grid-cols-[1fr_1fr]',
+          base: 'grid-cols-[1fr_1fr]',
         },
       },
       {
         background: 'none',
         position: 'left',
         class: {
-          caption: 'uog:px-0 uog:md:px-4 uog:md:py-0',
+          caption: 'px-0 md:px-4 md:py-0',
         },
       },
       {
         background: 'none',
         position: 'right',
         class: {
-          caption: 'uog:px-0 uog:md:px-4 uog:md:py-0',
+          caption: 'px-0 md:px-4 md:py-0',
         },
       },
       {
         background: 'none',
         position: 'above',
         class: {
-          caption: 'uog:px-0',
+          caption: 'px-0',
         },
       },
     ],

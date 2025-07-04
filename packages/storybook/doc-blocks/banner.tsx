@@ -4,10 +4,10 @@ import { PropsWithChildren } from 'react';
 export const BannerComponent = ({ children }: PropsWithChildren) => {
   return (
     <>
-      <div className="uog:fixed uog:top-0 uog:left-0 uog:bg-red uog:p-4 uog:text-center uog:w-screen uog:font-bold uog:text-red-contrast uog:mb-4 uog:z-100">
+      <div className="fixed top-0 left-0 z-100 mb-4 w-screen bg-red p-4 text-center font-bold text-red-contrast">
         {children}
       </div>
-      <div className="uog:w-full uog:h-8"></div>
+      <div className="h-8 w-full"></div>
     </>
   );
 };

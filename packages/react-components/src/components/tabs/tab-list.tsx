@@ -10,10 +10,7 @@ export type TabListProps = PropsWithChildren<{
 }>;
 
 export function TabList({ children, className }: TabListProps) {
-  const classes = twMerge(
-    'uofg-tab-list uog:flex uog:gap-1 uog:border-b-4 uog:border-yellow uog:w-full uog:flex-col uog:md:flex-row',
-    className,
-  );
+  const classes = twMerge('uofg-tab-list flex w-full flex-col gap-1 border-b-4 border-yellow md:flex-row', className);
   return <HUITabList className={`uofg-tab-list ${classes}`}>{children}</HUITabList>;
 }
 

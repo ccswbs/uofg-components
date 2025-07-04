@@ -9,13 +9,13 @@ export function BreadcrumbHome<T extends BreadcrumbElementType = typeof defaultB
   className,
   ...rest
 }: BreadcrumbProps<T>) {
-  const icon = twJoin('uog:h-[1em] uog:fill-black');
+  const icon = twJoin('h-[1em] fill-black');
 
   return (
     <li className="uofg-breadcrumb-home-list-item">
       <a {...rest} href={href} className={`uofg-breadcrumb-home ${className}`}>
         <FontAwesomeIcon icon={faHome} className={icon} />
-        <span className="uog:sr-only">U of G Homepage</span>
+        <span className="sr-only">U of G Homepage</span>
       </a>
     </li>
   );

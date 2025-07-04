@@ -6,13 +6,10 @@ export type NavigationProps = PropsWithChildren<{
   className?: string;
 }>;
 export function Navigation({ className, children }: NavigationProps) {
-  const list = twMerge(
-    'uog:md:flex-row uog:flex uog:flex-col uog:gap-1 uog:border-b-4 uog:border-yellow uog:w-full',
-    className,
-  );
+  const list = twMerge('flex w-full flex-col gap-1 border-b-4 border-yellow md:flex-row', className);
 
   return (
-    <nav className="uofg-navigation uog:contents">
+    <nav className="uofg-navigation contents">
       <ul className={`uofg-navigation-list ${list}`}>{children}</ul>
     </nav>
   );

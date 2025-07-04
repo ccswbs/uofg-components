@@ -46,41 +46,40 @@ export function Checkbox({
 
   const checkbox = tv({
     slots: {
-      base: 'uog:flex uog:flex-col uog:gap-0.5 uog:cursor-pointer',
-      container: 'uog:flex uog:items-center uog:gap-2',
-      box: 'uog:group uog:rounded uog:flex uog:size-4 uog:items-center uog:justify-center uog:border uog:bg-white uog:p-3 uog:transition-colors uog:focus-visible:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none',
-      check:
-        'uog:h-5 uog:w-5 uog:opacity-0 uog:transition-opacity uog:group-ui-checked:opacity-100 uog:user-select-none',
-      label: 'uog:text-body-copy',
-      description: 'uog:text-sm uog:text-grey-dark',
+      base: 'flex cursor-pointer flex-col gap-0.5',
+      container: 'flex items-center gap-2',
+      box: 'group flex size-4 items-center justify-center rounded border bg-white p-3 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+      check: 'group-ui-checked:opacity-100 user-select-none h-5 w-5 opacity-0 transition-opacity',
+      label: 'text-body-copy',
+      description: 'text-sm text-grey-dark',
     },
     variants: {
       color: {
         yellow: {
-          box: 'uog:focus-visible:ring-yellow uog:ui-checked:bg-yellow',
-          check: 'uog:text-yellow-contrast',
+          box: 'ui-checked:bg-yellow focus-visible:ring-yellow',
+          check: 'text-yellow-contrast',
         },
         blue: {
-          box: 'uog:focus-visible:ring-blue uog:ui-checked:bg-blue',
-          check: 'uog:text-blue-contrast',
+          box: 'ui-checked:bg-blue focus-visible:ring-blue',
+          check: 'text-blue-contrast',
         },
         green: {
-          box: 'uog:focus-visible:ring-green uog:ui-checked:bg-green',
-          check: 'uog:text-green-contrast',
+          box: 'ui-checked:bg-green focus-visible:ring-green',
+          check: 'text-green-contrast',
         },
         black: {
-          box: 'uog:focus-visible:ring-black uog:ui-checked:bg-black',
-          check: 'uog:text-black-contrast',
+          box: 'ui-checked:bg-black focus-visible:ring-black',
+          check: 'text-black-contrast',
         },
         white: {
-          box: 'uog:focus-visible:ring-white uog:ui-checked:bg-white',
-          check: 'uog:text-white-contrast',
+          box: 'ui-checked:bg-white focus-visible:ring-white',
+          check: 'text-white-contrast',
         },
       },
       disabled: {
         true: {
-          base: 'uog:opacity-60',
-          label: 'uog:text-grey-dark',
+          base: 'opacity-60',
+          label: 'text-grey-dark',
         },
         false: {},
       },

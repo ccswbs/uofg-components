@@ -1,5 +1,5 @@
-import { useArgs } from 'storybook/preview-api';
 import { Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
 import { Button } from '../../../react-components/src/components/button/button';
 import { Modal } from '../../../react-components/src/components/modal/modal';
 
@@ -41,7 +41,7 @@ export default config;
 type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
   args: {
-    children: <div className="uog:bg-white uog:p-4">Whatever content you want here</div>,
+    children: <div className="bg-white p-4">Whatever content you want here</div>,
     open: false,
   },
 };

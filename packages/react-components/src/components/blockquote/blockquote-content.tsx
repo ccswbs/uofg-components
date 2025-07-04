@@ -17,16 +17,16 @@ export function BlockquoteContent({ className, children }: BlockquoteContentProp
 
   const classes = tv({
     slots: {
-      base: 'uog:font-light uog:block uog:w-full uog:text-center uog:text-3xl uog:italic',
-      icons: 'uog:inline-block uog:h-[1em]',
+      base: 'block w-full text-center text-3xl font-light italic',
+      icons: 'inline-block h-[1em]',
     },
     variants: {
       color: {
         yellow: {
-          icons: 'uog:text-yellow',
+          icons: 'text-yellow',
         },
         blue: {
-          icons: 'uog:text-blue',
+          icons: 'text-blue',
         },
       },
     },

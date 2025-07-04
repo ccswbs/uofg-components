@@ -12,17 +12,17 @@ export type InfoProps = PropsWithChildren<{
 
 export function Info({ children, color = 'red' }: InfoProps) {
   const info = tv({
-    base: 'uog:flex uog:flex-col uog:gap-1 uog:border-l-4 uog:pl-4',
+    base: 'flex flex-col gap-1 border-l-4 pl-4',
     variants: {
       color: {
-        'red': 'uog:border-l-red',
-        'yellow': 'uog:border-l-yellow',
-        'blue': 'uog:border-l-blue',
-        'green': 'uog:border-l-green',
-        'grey-light': 'uog:border-l-grey-light',
-        'grey-dark': 'uog:border-l-grey-dark',
-        'black': 'uog:border-l-black',
-        'white': 'uog:border-l-white',
+        'red': 'border-l-red',
+        'yellow': 'border-l-yellow',
+        'blue': 'border-l-blue',
+        'green': 'border-l-green',
+        'grey-light': 'border-l-grey-light',
+        'grey-dark': 'border-l-grey-dark',
+        'black': 'border-l-black',
+        'white': 'border-l-white',
       },
     },
   });

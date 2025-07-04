@@ -38,10 +38,10 @@ export function LinkCarouselLink<T extends LinkCarouselLinkElementType = typeof 
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselLink = tv({
-    base: 'uog:w-full uog:flex-1 uog:text-2xl uog:bg-black uog:flex uog:items-center uog:justify-between uog:text-black-contrast uog:p-6 uog:hocus:text-black uog:hocus:bg-yellow uog:transition-colors',
+    base: 'flex w-full flex-1 items-center justify-between bg-black p-6 text-2xl text-black-contrast transition-colors hocus:bg-yellow hocus:text-black',
     variants: {
       stack: {
-        true: 'uog:md:bg-black/70',
+        true: 'md:bg-black/70',
       },
     },
   });

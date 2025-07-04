@@ -29,7 +29,7 @@ export function Link<T extends LinkElementType = typeof defaultElement>({
   const LinkComponent = as ?? defaultElement;
 
   const linkClasses = tv({
-    base: 'uog:inline-flex uog:gap-[1em] uog:underline uog:decoration-current uog:transition-colors uog:hover:decoration-transparent uog:focus:ring-2 uog:focus-visible:ring-offset-2 uog:focus-visible:outline-none uog:text-body-copy-link uog:focus-visible:ring-body-copy-link uog:light:text-body-copy-link-on-light uog:light:focus-visible:ring-body-copy-link-on-light uog:dark:text-body-copy-link-on-dark uog:dark:focus-visible:ring-body-copy-link-on-light',
+    base: 'inline-flex gap-[1em] text-body-copy-link underline decoration-current transition-colors hover:decoration-transparent focus:ring-2 focus-visible:ring-body-copy-link focus-visible:ring-offset-2 focus-visible:outline-none dark:text-body-copy-link-on-dark dark:focus-visible:ring-body-copy-link-on-light light:text-body-copy-link-on-light light:focus-visible:ring-body-copy-link-on-light',
   });
 
   return (

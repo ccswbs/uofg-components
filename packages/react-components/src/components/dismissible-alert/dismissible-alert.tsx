@@ -29,7 +29,7 @@ export function DismissibleAlert({ alert }: DismissibleAlertProps) {
   if (alert && !dismissed) {
     return (
       <Modal open={show} onClose={() => setShow(false)}>
-        <Container className="uog:max-w-[80rem]! uog:p-0">
+        <Container className="max-w-[80rem]! p-0">
           <Alert>
             <AlertTitle>University of Guelph Alert</AlertTitle>
 
@@ -38,7 +38,7 @@ export function DismissibleAlert({ alert }: DismissibleAlertProps) {
               {alert.description}
             </AlertMessage>
 
-            <AlertFooter className="uog:flex uog:flex-col uog:gap-4">
+            <AlertFooter className="flex flex-col gap-4">
               <span>Last Updated: {alert.timestamp}</span>{' '}
               <Button
                 color="red"

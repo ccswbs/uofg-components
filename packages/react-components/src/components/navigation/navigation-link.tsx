@@ -31,13 +31,13 @@ export function NavigationLink<T extends NavigationLinkElementType = typeof defa
 
   const navigationLink = tv({
     slots: {
-      listItem: 'uog:contents uog:flex-1',
-      link: 'uog:mb-1 uog:flex uog:items-center uog:justify-center uog:rounded-t-sm uog:bg-grey-light-bg uog:px-4 uog:py-3 uog:text-center uog:text-lg uog:font-bold uog:text-black uog:transition-colors uog:hover:bg-grey-light uog:focus:bg-grey-light uog:focus:outline-hidden uog:flex-1',
+      listItem: 'contents flex-1',
+      link: 'mb-1 flex flex-1 items-center justify-center rounded-t-sm bg-grey-light-bg px-4 py-3 text-center text-lg font-bold text-black transition-colors hover:bg-grey-light focus:bg-grey-light focus:outline-hidden',
     },
     variants: {
       active: {
         true: {
-          link: 'uog:text-yellow-contrast uog:hocus-visible:bg-yellow uog:mb-0 uog:border-2 uog:border-yellow uog:bg-yellow uog:order-last uog:md:order-none',
+          link: 'order-last mb-0 border-2 border-yellow bg-yellow text-yellow-contrast md:order-none hocus-visible:bg-yellow',
         },
       },
     },

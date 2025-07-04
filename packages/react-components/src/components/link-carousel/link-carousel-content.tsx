@@ -14,11 +14,11 @@ export function LinkCarouselContent({ children, className }: LinkCarouselContent
   const context = useContext(LinkCarouselContext);
 
   const linkCarouselContent = tv({
-    base: 'uog:relative uog:h-full uog:hidden uog:md:block',
+    base: 'relative hidden h-full md:block',
     variants: {
       stack: {
-        true: 'uog:w-full',
-        false: 'uog:flex-1',
+        true: 'w-full',
+        false: 'flex-1',
       },
     },
   });

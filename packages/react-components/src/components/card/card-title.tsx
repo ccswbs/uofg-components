@@ -15,10 +15,10 @@ export function CardTitle({ children, className }: CardTitleProps) {
   const context = useContext(CardContext);
 
   const cardTitle = tv({
-    base: 'uog:flex uog:font-bold uog:text-lg',
+    base: 'flex text-lg font-bold',
     variants: {
       centered: {
-        true: 'uog:items-center uog:justify-center',
+        true: 'items-center justify-center',
       },
     },
   });

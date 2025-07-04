@@ -34,14 +34,14 @@ export function List<T extends ListElementType = typeof defaultElement>({
   const context = useContext(ListContext);
 
   const list = tv({
-    base: 'uog:flex uog:flex-col uog:relative uog:h-fit uog:w-full uog:list-inside uog:gap-2',
+    base: 'relative flex h-fit w-full list-inside flex-col gap-2',
     variants: {
       as: {
-        ol: 'uog:list-decimal',
-        ul: 'uog:list-disc',
+        ol: 'list-decimal',
+        ul: 'list-disc',
       },
       nested: {
-        true: 'uog:ml-4',
+        true: 'ml-4',
       },
       level: {
         0: '',
@@ -54,22 +54,22 @@ export function List<T extends ListElementType = typeof defaultElement>({
       {
         level: 1,
         as: 'ul',
-        class: 'uog:list-[square]',
+        class: 'list-[square]',
       },
       {
         level: 1,
         as: 'ol',
-        class: 'uog:list-[lower-alpha]',
+        class: 'list-[lower-alpha]',
       },
       {
         level: 2,
         as: 'ul',
-        class: 'uog:list-[circle]',
+        class: 'list-[circle]',
       },
       {
         level: 2,
         as: 'ol',
-        class: 'uog:list-[lower-roman]',
+        class: 'list-[lower-roman]',
       },
     ],
   });

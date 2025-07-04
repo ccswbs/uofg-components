@@ -7,10 +7,7 @@ export type StoryForegroundProps = PropsWithChildren<{
 }>;
 
 export function StoryForeground({ children, className }: StoryForegroundProps) {
-  const classes = twMerge(
-    'uog:max-w-[137rem] uog:z-10 uog:flex uog:w-full uog:flex-col uog:items-center uog:gap-6 uog:px-4 uog:lg:flex-row',
-    className,
-  );
+  const classes = twMerge('z-10 flex w-full max-w-[137rem] flex-col items-center gap-6 px-4 lg:flex-row', className);
 
   return <div className={`uofg-story-foreground ${classes}`}>{children}</div>;
 }

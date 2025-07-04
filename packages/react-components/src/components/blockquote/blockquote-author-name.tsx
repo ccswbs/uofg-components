@@ -10,7 +10,7 @@ export type BlockquoteAuthorNameProps = PropsWithChildren<{
 
 export function BlockquoteAuthorName({ children, className, ...rest }: BlockquoteAuthorNameProps) {
   return (
-    <cite {...rest} className={twMerge('uofg-blockquote-author-name uog:not-italic uog:font-bold', className)}>
+    <cite {...rest} className={twMerge('uofg-blockquote-author-name font-bold not-italic', className)}>
       {children}
     </cite>
   );

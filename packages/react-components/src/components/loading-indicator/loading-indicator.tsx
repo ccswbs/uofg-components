@@ -26,39 +26,39 @@ export type LoadingIndicatorProps = PropsWithChildren<{
 export function LoadingIndicator({ size = 'lg', color = 'red', className, children }: LoadingIndicatorProps) {
   const loadingIndicator = tv({
     slots: {
-      base: 'uog:flex uog:flex-col uog:items-center uog:justify-center uog:relative uog:w-fit uog:h-fit uog:gap-2',
-      container: 'uog:relative uog:aspect-square uog:flex uog:flex-col uog:items-center uog:justify-center uog:w-[1em]',
-      spinner: 'uog:animate-spin uog:z-0',
-      icon: 'uog:absolute uog:w-[0.6em]!',
-      text: 'uog:font-serif uog:text-center',
+      base: 'relative flex h-fit w-fit flex-col items-center justify-center gap-2',
+      container: 'relative flex aspect-square w-[1em] flex-col items-center justify-center',
+      spinner: 'z-0 animate-spin',
+      icon: 'absolute w-[0.6em]!',
+      text: 'text-center font-serif',
     },
     variants: {
       size: {
         sm: {
-          container: 'uog:text-[8rem]',
-          text: 'uog:sr-only',
+          container: 'text-[8rem]',
+          text: 'sr-only',
         },
         md: {
-          container: 'uog:text-[12rem]',
-          text: 'uog:text-[1.5rem]',
+          container: 'text-[12rem]',
+          text: 'text-[1.5rem]',
         },
         lg: {
-          container: 'uog:text-[15rem]',
-          text: 'uog:text-lg',
+          container: 'text-[15rem]',
+          text: 'text-lg',
         },
       },
       color: {
         red: {
-          base: 'uog:text-red',
+          base: 'text-red',
         },
         blue: {
-          base: 'uog:text-blue',
+          base: 'text-blue',
         },
         green: {
-          base: 'uog:text-green',
+          base: 'text-green',
         },
         yellow: {
-          base: 'uog:text-yellow',
+          base: 'text-yellow',
         },
       },
     },

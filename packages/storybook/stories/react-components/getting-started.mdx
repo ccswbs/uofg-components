@@ -49,20 +49,19 @@ Or if you are using a bundler like Webpack, you can import the stylesheet in you
 import '@uoguelph/react-components/dist/index.css';
 ```
 
+Note TailwindCSS generates class names that may conflict with whatever existing CSS framework or files you are using, its recommended you adjust your styles to remove conflicts.
+
 ### Using Tailwind CSS
 
 If you are using Tailwind CSS in your project, you can use the components without including the stylesheet.
 Doing this will save some bandwidth as the components will share the same styles as your own.
 However, this will require you
-to include our [Tailwind CSS theme package](/?path=/docs/tailwind-theme-getting-started--docs) in your project,
-as well as using [Tailwind's prefix option](https://tailwindcss.com/docs/styling-with-utility-classes#using-the-prefix-option) to prefix all Tailwind classes with `uog`.
-
-You will also need the [@headlessui/tailwindcss](https://www.npmjs.com/package/@headlessui/tailwindcss) plugin.
+to include our [Tailwind CSS theme package](/?path=/docs/tailwind-theme-getting-started--docs) in your project, you will also need the [@headlessui/tailwindcss](https://www.npmjs.com/package/@headlessui/tailwindcss) plugin.
 
 Then, make sure your Tailwind CSS config file looks like this:
 
 ```css
-@import '@uoguelph/tailwind-theme' prefix(uog);
+@import '@uoguelph/tailwind-theme';
 @source 'PATH_TO_YOUR_NODE_MODULES_FOLDER/node_modules/@uoguelph/react-components';
 @plugin "@headlessui/tailwindcss";
 ```

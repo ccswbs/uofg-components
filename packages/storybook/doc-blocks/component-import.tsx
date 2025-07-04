@@ -6,8 +6,8 @@ export const ComponentImport = ({ of }: { of?: any }) => {
   const tabs = tv({
     slots: {
       group: 'group',
-      list: 'uog:flex uog:gap-2 uog:mb-2',
-      tab: 'uog:px-4 uog:py-2 uog:text-sm uog:font-medium uog:border-b-2 uog:border-transparent uog:data-[selected]:border-red uog:cursor-pointer uog:focus:outline-none',
+      list: 'mb-2 flex gap-2',
+      tab: 'cursor-pointer border-b-2 border-transparent px-4 py-2 text-sm font-medium focus:outline-none data-[selected]:border-red',
       panels: '',
       panel: '',
     },

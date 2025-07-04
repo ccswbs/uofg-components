@@ -46,21 +46,21 @@ export function TextInput({
 
   const textInput = tv({
     slots: {
-      base: 'uog:flex uog:flex-col uog:gap-0.5',
+      base: 'flex flex-col gap-0.5',
       wrapper:
-        'uog:text-input uog:border-grey-light uog:flex uog:rounded-md uog:border uog:px-4 uog:py-2 uog:transition-colors uog:focus-within:border-blue uog:focus:outline-none uog:bg-white',
-      input: 'uog:flex-1 uog:focus:outline-none uog:bg-white',
-      clearButton: 'uog:rounded-full uog:text-xl',
+        'text-input flex rounded-md border border-grey-light bg-white px-4 py-2 transition-colors focus-within:border-blue focus:outline-none',
+      input: 'flex-1 bg-white focus:outline-none',
+      clearButton: 'rounded-full text-xl',
     },
     variants: {
       empty: {
         true: {
-          clearButton: 'uog:pointer-events-none uog:invisible',
+          clearButton: 'pointer-events-none invisible',
         },
       },
       hide: {
         true: {
-          clearButton: 'uog:pointer-events-none uog:invisible',
+          clearButton: 'pointer-events-none invisible',
         },
       },
     },

@@ -14,11 +14,11 @@ export function BlockquoteAuthor({ className, children }: BlockquoteAuthorProps)
   const context = useContext(BlockquoteContext);
 
   const classes = tv({
-    base: 'uofg-blockquote-author uog:border-l-4 uog:pl-4 uog:flex uog:flex-col uog:gap-1 uog:items-start uog:font-light',
+    base: 'uofg-blockquote-author flex flex-col items-start gap-1 border-l-4 pl-4 font-light',
     variants: {
       color: {
-        yellow: 'uog:border-yellow',
-        blue: 'uog:border-blue',
+        yellow: 'border-yellow',
+        blue: 'border-blue',
       },
     },
   });
