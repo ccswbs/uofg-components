@@ -59,7 +59,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
       {
         variant: ['solid-colors-full', 'solid-colors-no-gap', 'solid-colors'],
         class:
-          'border-b border-white bg-black text-black-contrast nth-[2n]:bg-red nth-[2n]:text-red-contrast nth-[3n]:bg-yellow nth-[3n]:text-yellow-contrast nth-[4n]:bg-blue nth-[4n]:text-blue-contrast',
+          'bg-black text-black-contrast nth-[2n]:bg-red nth-[2n]:text-red-contrast nth-[3n]:bg-yellow nth-[3n]:text-yellow-contrast nth-[4n]:bg-blue nth-[4n]:text-blue-contrast',
       },
     ],
   });
