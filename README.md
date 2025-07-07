@@ -32,12 +32,9 @@ This monorepo is managed using [Lerna](https://lerna.js.org/), a tool that optim
 The monorepo contains the following packages:
 
 1. **packages/react-components**: This package is a collection of React components that follow the University of Guelph Brand Guidelines
-
-1. **packages/web-components**: This package is a collection of framework agnostic native web components that follow the University of Guelph Brand Guidelines. These components are developed using Svelte.
-
-1. **packages/tailwind-theme**: This package provides a common tailwind v4 config file, it is used internally in both the web-components and react-components packages but is also accessible as its own npm package.
-
-1. **packages/storybook**: This directory contains the code for our Storybook documentation. It acts as the documentation for all the other packages in the repo.
+2. **packages/web-components**: This package is a collection of framework agnostic native web components that follow the University of Guelph Brand Guidelines. These components are developed using Svelte.
+3. **packages/tailwind-theme**: This package provides a common tailwind v4 config file, it is used internally in both the web-components and react-components packages but is also accessible as its own npm package.
+4. **packages/storybook**: This directory contains the code for our Storybook documentation. It acts as the documentation for all the other packages in the repo.
 
 For more detailed explanation of each package, read their corresponding README and Development Guide files.
 
@@ -50,8 +47,7 @@ Lerna allows us to publish all the packages in the monorepo with a single comman
 ### Prerequisites
 
 1. Ensure Lerna is installed on your machine. Run `lerna --help` to see if you already have it installed. If not, run `npm install --global lerna`. You can also install through other methods, such as Homebrew (`brew install lerna`)
-
-1. Ensure you have an NPM account with access to the uoguelph organization and are logged in. You can log in by running:
+2. Ensure you have an NPM account with access to the uoguelph organization and are logged in. You can log in by running:
 
 ```sh
 npm login
@@ -82,8 +78,6 @@ lerna publish --force-publish <package-name> --pre-dist-tag rc --no-private --pr
 ```
 
 2. Follow the prompts to select the version number for each package. Lerna will give you a chance before publishing to see what the new version numbers for each package will be. You should read the [Semantic Versioning](https://semver.org/) documentation to understand how to select the correct version number. Remember any pre-release version should be suffixed with `-rc` (e.g. `1.0.0-rc.0`).
-
-
 3. Thats it! The packages should have been published to the NPM registry. You can verify by checking the NPM website for each package.
 
 ### Pull Requests and Publishing
@@ -96,7 +90,7 @@ For every pull request, you must publish test versions of the packages using the
 
 Once your PR has been reviewed, approved,
 and is ready to be merged,
-you need to update the version numbers of the packages that were changed so they are their no longer the test versions.
+you need to update the version numbers of the packages that were changed so they are no longer the test versions.
 You can do this by running:
 
 ```sh
