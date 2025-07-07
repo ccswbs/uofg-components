@@ -1,6 +1,7 @@
 'use client';
 
 import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { HeroCaption } from './hero-caption';
 import { HeroContent } from './hero-content';
@@ -54,6 +55,7 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
   height,
   alignment,
   children,
+  className,
   ...rest
 }: HeroProps<T>) {
   const Image = as ?? defaultElement;
@@ -80,7 +82,7 @@ export function Hero<T extends HeroElementType = typeof defaultElement>({
   const { base, image } = hero({ variant });
 
   return (
-    <div className={`uofg-hero ${base()}`}>
+    <div className={`uofg-hero ${twMerge(base(), className)}`}>
       <Image {...rest} src={src} alt={alt} width={width} height={height} className={`uofg-hero-img ${image()}`} />
 
       <HeroContext.Provider value={{ variant }}>
