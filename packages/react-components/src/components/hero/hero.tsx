@@ -42,6 +42,8 @@ export type HeroProps<T extends HeroElementType = typeof defaultElement> = Props
      * @default 'left'
      */
     alignment?: 'left' | 'center' | 'right' | 'fullWidth';
+    /** Additional classes to apply to the component */
+    className?: string;
   } & ComponentPropsWithoutRef<T>
 >;
 
