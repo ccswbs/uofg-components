@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/web-components",
-  "version": "2.0.3",
+  "version": "2.0.4-rc.0",
   "description": "University of Guelph Web Components Library",
   "type": "module",
   "files": [
