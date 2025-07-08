@@ -101,5 +101,5 @@ You can then merge your PR, switch to the main branch,
 pull the changes, and publish the packages using the following command:
 
 ```sh
-lerna publish from-git --no-private --pre-dist-tag rc
+lerna publish from-package --no-private --pre-dist-tag rc
 ```
