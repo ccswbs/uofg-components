@@ -13,7 +13,7 @@
   <Menu class="h-full" autoCollapse={false}>
     {#snippet button()}
       <MenuButton
-        class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast aria-expanded:bg-yellow aria-expanded:text-yellow-contrast"
+        class="flex h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-yellow hover:text-yellow-contrast focus:bg-yellow focus:text-yellow-contrast aria-expanded:bg-yellow aria-expanded:text-yellow-contrast"
         label="Sub Navigation Menu"
       >
         <FontAwesomeIcon icon={faBars} />

@@ -32,30 +32,35 @@
 
 <nav
   class={twJoin(
-    'align-items bg-grey-muted text-grey-muted-contrast relative block justify-end px-[calc((100%-1320px)/2)] text-lg lg:whitespace-nowrap',
-    $headerState?.variant === 'dual-brand' ? 'h-10' : 'h-[5rem] lg:h-10',
+    'align-items bg-grey-muted text-grey-muted-contrast relative block h-fit justify-end px-[calc((100%-1320px)/2)] text-lg lg:h-10 lg:whitespace-nowrap',
   )}
   aria-label="Page Specific"
 >
   <div
-    class="relative flex h-full min-w-full items-center justify-end overflow-y-visible [&>li]:contents"
+    class="relative grid h-full min-w-full grid-cols-[10fr_1fr] items-center justify-end overflow-y-visible lg:flex [&>li]:contents"
     bind:clientWidth={containerWidth}
   >
     {#if title && url}
       <a
-        class="mr-auto flex h-full items-center justify-center px-3 font-bold transition-colors hover:bg-yellow hover:text-yellow-contrast"
+        class="mr-auto flex h-full min-h-[5rem] items-center justify-center px-3 font-bold transition-colors hover:bg-yellow hover:text-yellow-contrast lg:min-h-10"
         href={url}
         bind:clientWidth={titleWidth}
       >
         {title}
       </a>
     {:else if title}
-      <span bind:clientWidth={titleWidth} class="mr-auto flex h-full items-center justify-center px-3 font-bold">
+      <span
+        bind:clientWidth={titleWidth}
+        class="mr-auto flex h-full min-h-[5rem] items-center justify-center px-3 font-bold lg:min-h-10"
+      >
         {title}
       </span>
     {/if}
 
-    <ul class="!static flex h-full w-fit lg:static [&>li]:contents" bind:clientWidth={contentWidth}>
+    <ul
+      class="!static flex h-full min-h-[5rem] w-fit justify-self-end lg:static lg:min-h-10 [&>li]:contents"
+      bind:clientWidth={contentWidth}
+    >
       {#if items?.length > 0}
         {#if $headerState.mode === 'desktop' && (isNaN(overflowWidth) || containerWidth > overflowWidth)}
           <Desktop {items} />
