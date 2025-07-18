@@ -38,10 +38,10 @@ export const Default: Story = {
   render: ({ ...args }) => {
     return (
       <Container>
-        <Grid {...args} className="h-screen">
+        <Grid {...args}>
           {Array.from({ length: 10 }, (_value, index) => (
-            <Card className="h-10 w-2/3">
-              <CardContent className="h-10 w-2/3 overflow-hidden">
+            <Card>
+              <CardContent>
                 <CardTitle>Example Grid Item {index + 1}</CardTitle>
                 <div>
                   Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati
