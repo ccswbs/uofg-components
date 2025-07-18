@@ -20,10 +20,9 @@ export type GridProps = PropsWithChildren<{
    * Specifies the size settings for each row or column at different screen sizes. Pass an array of objects, each with:
    *
    * - 'breakpoint': The screen size where these settings apply (e.g. 'sm', 'md', 'lg', 'xl', '2xl').
-   * - 'value': An array of numbers or strings that define the sizes:
+   * - 'value': An array of strings that define the sizes:
    *
-   *   - Numbers are treated as fractions ('fr') of available space.
-   *   - Strings are used directly (like '100px', 'auto').
+   *   - Values are used directly (like '100px', 'auto').
    *
    * This works like the CSS grid-template-rows or grid-template-columns properties for responsive layouts.
    */
