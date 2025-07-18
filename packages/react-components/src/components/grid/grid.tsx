@@ -43,7 +43,7 @@ export function Grid({ template, major = 'column', gap, alignment, children, cla
   const classes = tv({
     base: 'grid gap-x-(--uofg-grid-gap-x) gap-y-(--uofg-grid-gap-y)',
     variants: {
-      major: { row: '', column: '' },
+      major: { row: 'grid-flow-col', column: '' },
       hasBaseTemplate: { true: '' },
       hasSmTemplate: { true: '' },
       hasMdTemplate: { true: '' },

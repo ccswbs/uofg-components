@@ -45,8 +45,7 @@ export const Default: Story = {
                 <CardTitle>Example Grid Item {index + 1}</CardTitle>
                 <div>
                   Iusto possimus possimus delectus et. Et aspernatur culpa quis sint at nam voluptatibus. Occaecati
-                  perspiciatis ea eius dolorem aliquid. Ad ducimus aut aspernatur. Cumque enim repellat reprehenderit.
-                  Similique perspiciatis alias doloremque reprehenderit eum. A laboriosam dolore. Facere possimus qui..
+                  perspiciatis ea eius dolorem aliquid. Ad ducimus aut aspernatur.
                 </div>
               </CardContent>
             </Card>
