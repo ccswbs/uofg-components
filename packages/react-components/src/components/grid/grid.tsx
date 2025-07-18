@@ -40,7 +40,7 @@ export type GridProps = PropsWithChildren<{
   };
 }>;
 
-export function Grid({ template, major = 'column', gap, children, className }: GridProps) {
+export function Grid({ template, major = 'column', gap, alignment, children, className }: GridProps) {
   const classes = tv({
     base: 'grid gap-x-(--uofg-grid-gap-x) gap-y-(--uofg-grid-gap-y)',
     variants: {
@@ -51,6 +51,18 @@ export function Grid({ template, major = 'column', gap, children, className }: G
       hasLgTemplate: { true: '' },
       hasXlTemplate: { true: '' },
       has2XlTemplate: { true: '' },
+      alignmentX: {
+        start: 'justify-items-start',
+        center: 'justify-items-center',
+        end: 'justify-items-end',
+        stretch: 'justify-items-stretch',
+      },
+      alignmentY: {
+        start: 'items-start',
+        center: 'items-center',
+        end: 'items-end',
+        stretch: 'items-stretch',
+      },
     },
     compoundVariants: [
       {
@@ -122,6 +134,8 @@ export function Grid({ template, major = 'column', gap, children, className }: G
     hasLgTemplate: template.lg !== undefined,
     hasXlTemplate: template.xl !== undefined,
     has2XlTemplate: template['2xl'] !== undefined,
+    alignmentX: alignment?.x ?? 'start',
+    alignmentY: alignment?.y ?? 'start',
   });
 
   const vars = Object.entries(template).reduce(
