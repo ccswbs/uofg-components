@@ -35,6 +35,7 @@ export function Layout({ children, loading }: LayoutProps) {
       skipLink: [
         'bg-uog-color-yellow',
         'sr-only',
+        'focus:not-sr-only',
         'left-0',
         'z-[1000]',
         'fixed',
