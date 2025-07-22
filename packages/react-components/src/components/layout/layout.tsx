@@ -34,8 +34,7 @@ export function Layout({ children, loading }: LayoutProps) {
       ],
       skipLink: [
         'bg-uog-color-yellow',
-        'sr-only',
-        'focus:not-sr-only',
+        'sr-only!',
         'left-0',
         'z-[1000]',
         'fixed',
@@ -44,7 +43,7 @@ export function Layout({ children, loading }: LayoutProps) {
         'px-0',
         'underline',
         'transition-[padding]',
-        'focus:not-sr-only',
+        'focus:not-sr-only!',
         'focus:px-2',
       ],
     },
