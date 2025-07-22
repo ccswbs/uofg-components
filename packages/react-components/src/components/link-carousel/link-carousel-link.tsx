@@ -54,6 +54,9 @@ export function LinkCarouselLink<T extends LinkCarouselLinkElementType = typeof 
       onMouseEnter={() => {
         context?.setActiveId(id);
       }}
+      onFocus={() => {
+        context?.setActiveId(id);
+      }}
     >
       {children}
       <FontAwesomeIcon icon={faChevronRight} />
