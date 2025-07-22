@@ -15,7 +15,7 @@ export function Layout({ children, loading }: LayoutProps) {
   const classes = tv({
     slots: {
       placeholder: [
-        'text-uog-color-red',
+        'text-red',
         'fixed',
         'top-0',
         'left-0',
@@ -33,8 +33,8 @@ export function Layout({ children, loading }: LayoutProps) {
         'data-[closed]:opacity-0',
       ],
       skipLink: [
-        'bg-uog-color-yellow',
-        'sr-only',
+        'bg-yellow',
+        'sr-only!',
         'left-0',
         'z-[1000]',
         'fixed',
@@ -43,7 +43,7 @@ export function Layout({ children, loading }: LayoutProps) {
         'px-0',
         'underline',
         'transition-[padding]',
-        'focus:not-sr-only',
+        'focus:not-sr-only!',
         'focus:px-2',
       ],
     },
