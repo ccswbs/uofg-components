@@ -14,38 +14,10 @@ export type LayoutProps = PropsWithChildren<{
 export function Layout({ children, loading }: LayoutProps) {
   const classes = tv({
     slots: {
-      placeholder: [
-        'text-red',
-        'fixed',
-        'top-0',
-        'left-0',
-        'z-20',
-        'flex',
-        'h-screen',
-        'w-screen',
-        'flex-col',
-        'items-center',
-        'justify-center',
-        'gap-6',
-        'bg-white',
-        'transition-opacity',
-        'duration-300',
-        'data-[closed]:opacity-0',
-      ],
-      skipLink: [
-        'bg-yellow',
-        'sr-only!',
-        'left-0',
-        'z-[1000]',
-        'fixed',
-        'top-0',
-        'w-fit',
-        'px-0',
-        'underline',
-        'transition-[padding]',
-        'focus:not-sr-only!',
-        'focus:px-2',
-      ],
+      placeholder:
+        'fixed top-0 left-0 z-20 flex h-screen w-screen flex-col items-center justify-center gap-6 bg-white text-red transition-opacity duration-300 data-[closed]:opacity-0',
+      skipLink:
+        'sr-only! fixed top-0 left-0 z-[1000] block w-full bg-yellow text-center text-body-copy no-underline focus:not-sr-only! focus:p-2!',
     },
   });
 
@@ -61,7 +33,7 @@ export function Layout({ children, loading }: LayoutProps) {
 
       {!loading && (
         <>
-          <a className={skipLink()} href="#content">
+          <a className={skipLink()} href="#content" autoFocus={false}>
             Skip to main content
           </a>
           <div className="uofg-layout flex flex-1 flex-col">{children}</div>
