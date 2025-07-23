@@ -17,7 +17,7 @@ export function Layout({ children, loading }: LayoutProps) {
       placeholder:
         'fixed top-0 left-0 z-20 flex h-screen w-screen flex-col items-center justify-center gap-6 bg-white text-red transition-opacity duration-300 data-[closed]:opacity-0',
       skipLink:
-        'sr-only! fixed top-0 left-0 z-[1000] block w-full bg-yellow text-center text-body-copy no-underline focus:not-sr-only! focus:p-2!',
+        'sr-only! fixed top-0 left-0 z-[1000] block w-full bg-yellow text-center text-body-copy no-underline focus-visible:not-sr-only! focus-visible:p-2!',
     },
   });
 
