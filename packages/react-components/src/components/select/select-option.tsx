@@ -7,12 +7,16 @@ import { ElementType } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-export type SelectOptionProps<T extends ElementType> = ListboxOptionProps<T> & {
+export type SelectOptionProps<TTag extends ElementType, TType> = ListboxOptionProps<TTag, TType> & {
   /** Additional classes to apply to the component. */
   className?: string;
 };
 
-export function SelectOption<T extends ElementType>({ children, className, ...rest }: SelectOptionProps<T>) {
+export function SelectOption<TTag extends ElementType, TType>({
+  children,
+  className,
+  ...rest
+}: SelectOptionProps<TTag, TType>) {
   const classes = tv({
     slots: {
       option: [

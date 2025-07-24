@@ -1,10 +1,22 @@
 'use client';
 
 import { Listbox, ListboxProps } from '@headlessui/react';
+import { ElementType } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-export function Select({ children, ...rest }: ListboxProps<'div'>) {
+export type SelectProps<TTag extends ElementType, TType, TActualType> = ListboxProps<TTag, TType, TActualType> & {
+  /** Additional classes to apply to the component. */
+  className?: string;
+};
+
+export function Select<TTag extends ElementType, TType, TActualType>({
+  children,
+  className,
+  value,
+  ...rest
+}: SelectProps<TTag, TType, TActualType>) {
   return (
-    <Listbox className="uofg-select group relative w-full" {...rest} as="div">
+    <Listbox value={value} className={twMerge('uofg-select group relative w-full', className)} {...rest}>
       {children}
     </Listbox>
   );
