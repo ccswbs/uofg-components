@@ -32,7 +32,7 @@ export const ColorGrid = () => {
     const styles = window.getComputedStyle(document.documentElement);
     const colors: Color[] = [];
 
-    const getHexValue = (colorName: string) => styles.getPropertyValue(`--uog-color-${colorName}`);
+    const getHexValue = (colorName: string) => styles.getPropertyValue(`--color-${colorName}`);
 
     const getSwatches = (colorName: string) => {
       const swatches: Swatch[] = [];
