@@ -16,7 +16,7 @@ export function SelectButton<T extends ElementType>({ children, className, ...re
   const classes = tv({
     slots: {
       button:
-        'uofg-select-button ui-open:rounded-b-none ui-open:border-blue flex w-(--button-width) items-center justify-between gap-2 rounded-md border border-grey-light bg-white px-4 py-2.5 shadow-sm transition-colors group-focus-within:border-blue group-focus-within:outline-none',
+        'uofg-select-button ui-open:rounded-b-none ui-open:border-blue flex w-full items-center justify-between gap-2 rounded-md border border-grey-light bg-white px-4 py-2.5 shadow-sm transition-colors group-focus-within:border-blue group-focus-within:outline-none',
       icon: 'ui-open:rotate-180 h-5 w-5 text-body-copy transition-transform',
     },
   });
