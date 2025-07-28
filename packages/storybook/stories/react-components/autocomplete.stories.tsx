@@ -62,6 +62,7 @@ export const Default: Story = {
         onClose={() => setQuery('')}
         onChange={value => setSelected(value)}
         virtual={null}
+        immediate
       >
         <AutocompleteInput displayValue={selected => selected ?? ''} onChange={event => setQuery(event.target.value)} />
 
