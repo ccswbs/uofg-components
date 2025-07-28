@@ -13,10 +13,11 @@ export function Select<TTag extends ElementType, TType, TActualType>({
   children,
   className,
   value,
+  as,
   ...rest
 }: SelectProps<TTag, TType, TActualType>) {
   return (
-    <Listbox value={value} className={twMerge('uofg-select group relative w-full', className)} {...rest}>
+    <Listbox {...rest} value={value} className={twMerge('uofg-select group relative w-full', className)} as="div">
       {children}
     </Listbox>
   );
