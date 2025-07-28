@@ -64,7 +64,10 @@ export const Default: Story = {
         virtual={null}
         immediate
       >
-        <AutocompleteInput displayValue={selected => selected ?? ''} onChange={event => setQuery(event.target.value)} />
+        <AutocompleteInput
+          displayValue={(selected: string) => selected ?? ''}
+          onChange={event => setQuery(event.target.value)}
+        />
 
         <AutocompleteOptions anchor="bottom">
           {filtered.map(value => (

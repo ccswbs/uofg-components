@@ -7,17 +7,17 @@ import { ElementType } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-export type AutocompleteInputProps<TTag extends ElementType> = ComboboxInputProps<TTag> & {
+export type AutocompleteInputProps<TTag extends ElementType, TType> = ComboboxInputProps<TTag, TType> & {
   /** Additional classes to apply to the component. */
   className?: string;
 };
 
-export function AutocompleteInput<TTag extends ElementType>({
+export function AutocompleteInput<TTag extends ElementType, TType>({
   children,
   className,
   defaultValue,
   ...rest
-}: AutocompleteInputProps<TTag>) {
+}: AutocompleteInputProps<TTag, TType>) {
   const classes = tv({
     slots: {
       button:
