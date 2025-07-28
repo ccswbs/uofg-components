@@ -70,4 +70,4 @@ export function SelectOption<TTag extends ElementType, TType>({
   );
 }
 
-SelectOption.displayName = 'SelectOptions';
+SelectOption.displayName = 'SelectOption';
