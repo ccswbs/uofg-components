@@ -17,10 +17,16 @@ export function Autocomplete<TValue, TMultiple extends boolean, TTag extends Ele
   children,
   className,
   value,
+  as,
   ...rest
 }: AutocompleteProps<TValue, TMultiple, TTag>) {
   return (
-    <Combobox {...rest} value={value} className={twMerge('uofg-autocomplete group relative w-full', className)}>
+    <Combobox
+      {...rest}
+      value={value}
+      className={twMerge('uofg-autocomplete group relative w-full', className)}
+      as="div"
+    >
       {children}
     </Combobox>
   );
@@ -28,6 +34,6 @@ export function Autocomplete<TValue, TMultiple extends boolean, TTag extends Ele
 
 Autocomplete.displayName = 'Autocomplete';
 
-export { AutocompleteButton } from './autocomplete-button';
+export { AutocompleteInput } from './autocomplete-input';
 export { AutocompleteOption } from './autocomplete-option';
 export { AutocompleteOptions } from './autocomplete-options';

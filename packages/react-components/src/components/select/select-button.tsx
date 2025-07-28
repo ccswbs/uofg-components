@@ -15,26 +15,8 @@ export type SelectButtonProps<T extends ElementType> = ListboxButtonProps<T> & {
 export function SelectButton<T extends ElementType>({ children, className, ...rest }: SelectButtonProps<T>) {
   const classes = tv({
     slots: {
-      button: [
-        'uofg-select-button',
-        'ui-open:rounded-b-none',
-        'ui-open:border-blue',
-        'flex',
-        'w-full',
-        'items-center',
-        'justify-between',
-        'rounded-md',
-        'border',
-        'border-grey-light',
-        'bg-white',
-        'px-4',
-        'py-2.5',
-        'shadow-sm',
-        'transition-colors',
-        'group-focus-within:border-blue',
-        'group-focus-within:outline-none',
-        'gap-2',
-      ],
+      button:
+        'uofg-select-button ui-open:rounded-b-none ui-open:border-blue flex w-full items-center justify-between gap-2 rounded-md border border-grey-light bg-white px-4 py-2.5 shadow-sm transition-colors group-focus-within:border-blue group-focus-within:outline-none',
       icon: 'ui-open:rotate-180 h-5 w-5 text-body-copy transition-transform',
     },
   });

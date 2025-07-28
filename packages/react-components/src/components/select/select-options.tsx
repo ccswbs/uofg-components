@@ -11,24 +11,7 @@ export type SelectOptionsProps<T extends ElementType> = ListboxOptionsProps<T> &
 
 export function SelectOptions<T extends ElementType>({ children, className, ...rest }: SelectOptionsProps<T>) {
   const classes = twMerge(
-    'z-10',
-    'max-h-[20rem]',
-    'w-full',
-    'overflow-auto',
-    'rounded-b-md',
-    'border',
-    'border-t-0',
-    'border-grey-light',
-    'bg-white',
-    'shadow-md',
-    'group-focus-within:border-blue',
-    'group-focus-within:outline-none',
-    'ui-open:border-blue',
-    'md:absolute',
-    'transition',
-    'duration-300',
-    'ease-out',
-    'data-[closed]:opacity-0',
+    'ui-open:border-blue z-10 max-h-[20rem] w-full overflow-auto rounded-b-md border border-t-0 border-grey-light bg-white shadow-md transition duration-300 ease-out group-focus-within:border-blue group-focus-within:outline-none data-[closed]:opacity-0 md:absolute',
     className,
   );
 

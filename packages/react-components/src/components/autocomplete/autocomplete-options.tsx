@@ -15,25 +15,7 @@ export function AutocompleteOptions<TTag extends ElementType>({
   ...rest
 }: AutocompleteOptionsProps<TTag>) {
   const classes = twMerge(
-    'uofg-autocomplete-options',
-    'z-10',
-    'max-h-[20rem]',
-    'w-full',
-    'overflow-auto',
-    'rounded-b-md',
-    'border',
-    'border-t-0',
-    'border-grey-light',
-    'bg-white',
-    'shadow-md',
-    'group-focus-within:border-blue',
-    'group-focus-within:outline-none',
-    'ui-open:border-blue',
-    'md:absolute',
-    'transition',
-    'duration-300',
-    'ease-out',
-    'data-[closed]:opacity-0',
+    'uofg-autocomplete-options ui-open:border-blue z-10 max-h-[20rem] w-full overflow-auto rounded-b-md border border-t-0 border-grey-light bg-white shadow-md transition duration-300 ease-out group-focus-within:border-blue group-focus-within:outline-none data-[closed]:opacity-0 md:absolute',
     className,
   );
 
