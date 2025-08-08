@@ -31,29 +31,3 @@ export const Basic: Story = {
     );
   },
 };
-
-export const Loading: Story = {
-  args: {
-    loading: true,
-  },
-  render: ({ ...args }) => {
-    return (
-      <Layout {...args}>
-        <LayoutContent>Page Content</LayoutContent>
-      </Layout>
-    );
-  },
-};
-
-export const LoadingWithMessage: Story = {
-  args: {
-    loading: 'This is a custom loading message',
-  },
-  render: ({ ...args }) => {
-    return (
-      <Layout {...args}>
-        <LayoutContent>Page Content</LayoutContent>
-      </Layout>
-    );
-  },
-};
