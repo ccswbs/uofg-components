@@ -24,7 +24,7 @@ export function Layout({ children, loading }: LayoutProps) {
   const { placeholder, skipLink } = classes();
 
   return (
-    <>
+    <div className="uofg-layout-container">
       <Transition show={Boolean(loading)}>
         <div className={`uofg-layout-placeholder ${placeholder()}`}>
           <LoadingIndicator>{typeof loading !== 'boolean' && loading}</LoadingIndicator>
@@ -39,7 +39,7 @@ export function Layout({ children, loading }: LayoutProps) {
           <div className="uofg-layout flex flex-1 flex-col">{children}</div>
         </>
       )}
-    </>
+    </div>
   );
 }
 
