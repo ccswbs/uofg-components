@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
 
-export function Layout({ children }: PropsWithChildren<{}>) {
+export function Layout({ children, className }: PropsWithChildren<{ className?: string }>) {
   const classes = tv({
     slots: {
       main: 'flex flex-1 flex-col',
@@ -11,7 +11,7 @@ export function Layout({ children }: PropsWithChildren<{}>) {
   })();
 
   return (
-    <div className="uofg-layout-container">
+    <div className={`uofg-layout-container ${className}`}>
       <a className={`uofg-skip-link ${classes.skipLink()}`} href="#content" autoFocus={false}>
         Skip to main content
       </a>
