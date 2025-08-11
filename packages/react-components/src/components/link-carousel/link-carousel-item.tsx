@@ -14,6 +14,8 @@ export type LinkCarouselItemProps = PropsWithChildren<{
 
 export function LinkCarouselItem({ id, children, className }: LinkCarouselItemProps) {
   const context = useContext(LinkCarouselContext);
+  const isActive = context?.activeId === id;
+  const wasActive = context?.previousActiveId === id;
 
   const linkCarouselItem = tv({
     base: 'hidden w-full bg-white',
@@ -23,14 +25,13 @@ export function LinkCarouselItem({ id, children, className }: LinkCarouselItemPr
     },
   });
 
-  const classes = twMerge(
-    linkCarouselItem({ isActive: context?.activeId === id, wasActive: context?.previousActiveId === id }),
-    className,
-  );
+  const classes = twMerge(linkCarouselItem({ isActive, wasActive }), className);
 
   return (
     <>
-      <div className={`uofg-link-carousel-item ${classes}`}>{children}</div>
+      <div className={`uofg-link-carousel-item ${classes}`} inert={wasActive}>
+        {children}
+      </div>
     </>
   );
 }
