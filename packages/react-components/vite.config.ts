@@ -5,6 +5,7 @@ import { resolve } from 'path';
 import preserveDirectives from 'rollup-preserve-directives';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -40,5 +41,6 @@ export default defineConfig({
     dts({ tsconfigPath: './tsconfig.json', insertTypesEntry: true, exclude: 'vite.config.ts' }),
     tailwindcss(),
     preserveDirectives(),
+    svgr()
   ],
 });
