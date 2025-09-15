@@ -1,9 +1,9 @@
 import { faSpinnerThird } from '@awesome.me/kit-7993323d0c/icons/classic/light';
-import { faGryphonStatue } from '@awesome.me/kit-7993323d0c/icons/kit/custom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
+import Emblem from './emblem.svg?react';
 
 export type LoadingIndicatorProps = PropsWithChildren<{
   /**
@@ -70,7 +70,7 @@ export function LoadingIndicator({ size = 'lg', color = 'red', className, childr
     <div className={`uofg-loading-indicator ${twMerge(base(), className)}`}>
       <div className={container()}>
         <FontAwesomeIcon className={`uofg-loading-indicator-spinner ${spinner()}`} icon={faSpinnerThird} />
-        <FontAwesomeIcon className={`uofg-loading-indicator-icon ${icon()}`} icon={faGryphonStatue} />
+        <Emblem className={`uofg-loading-indicator-icon ${icon()}`} />
       </div>
 
       <span className={text()}>{children}</span>
