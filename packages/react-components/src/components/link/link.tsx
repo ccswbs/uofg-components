@@ -29,7 +29,7 @@ export function Link<T extends LinkElementType = typeof defaultElement>({
   const LinkComponent = as ?? defaultElement;
 
   const linkClasses = tv({
-    base: 'inline-flex gap-[1em] text-body-copy-link underline decoration-current transition-colors hover:decoration-transparent focus:ring-2 focus-visible:ring-body-copy-link focus-visible:ring-offset-2 focus-visible:outline-none dark:text-body-copy-link-on-dark dark:focus-visible:ring-body-copy-link-on-light light:text-body-copy-link-on-light light:focus-visible:ring-body-copy-link-on-light',
+    base: 'text-body-copy-link underline decoration-current transition-colors hover:decoration-transparent focus:ring-2 focus-visible:ring-body-copy-link focus-visible:ring-offset-2 focus-visible:outline-none dark:text-body-copy-link-on-dark dark:focus-visible:ring-body-copy-link-on-light light:text-body-copy-link-on-light light:focus-visible:ring-body-copy-link-on-light',
   });
 
   return (
