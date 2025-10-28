@@ -47,14 +47,14 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
     slots: {
       base: 'uofg-media-caption flex flex-col',
       mediaWrapper: 'uofg-media-caption-wrapper',
-      media: 'uofg-media-caption-media w-full object-cover',
+      media: 'uofg-media-caption-media object-cover',
       caption: 'uofg-media-caption-caption p-4',
     },
     variants: {
       size: {
-        small: {},
-        medium: {},
-        large: {},
+        small: { media: 'max-w-sm w-auto' },
+        medium: { media: 'max-w-md w-auto' },
+        large: { media: 'w-full' },
       },
       position: {
         left: {
