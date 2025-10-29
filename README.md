@@ -38,6 +38,25 @@ The monorepo contains the following packages:
 
 For more detailed explanation of each package, read their corresponding README and Development Guide files.
 
+## Development Tips
+
+### Testing Changes Locally
+
+The only way to test changes without publishing a release candidate first is to run Storybook locally and then observe how the component in question behaves. From your `uofg-components` directory, run `bun run dev` and when it finishes, you should see an info box with the following URLs:
+
+```
+Local: http://localhost:6007/                                              │
+On your network: http://192.168.40.128:6007/
+``` 
+
+Either one will take you to a locally running version of the Storybook. Navigate to the component you changed, e.g. http://localhost:6007/?path=/story/react-components-card--as-a-link and ensure your changes appear as expected with no error messages or warnings.
+
+### Testing Changes with an Existing Feature Branch
+
+To test your changes with an existing feature branch from another repo, e.g. [ugnext](https://github.com/ccswbs/ugnext), go to `package.json` and, in the "dependencies" section, find the line referring to the package you want to test. Edit it to point to your just-published release candidate, e.g. `"@uoguelph/react-components": "^1.5.6-rc.1"` Then run `bun install` to ensure your `bun.lock` file gets updated as well. 
+
+Now you can run a local build which uses your release candidate and verify if your changes work as expected. If you want to test remotely, e.g. on a Netlify site, you'll need to commit your changes to `package.json` and `bun.lock` and then push. Make sure you revert these changes once testing is complete.
+
 ## Publishing
 
 To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process.
