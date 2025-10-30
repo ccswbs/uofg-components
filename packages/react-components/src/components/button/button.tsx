@@ -54,17 +54,17 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const button = tv({
-    base: 'inline-flex cursor-pointer items-center justify-center px-6 py-4 text-lg font-medium no-underline shadow-sm transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+    base: 'inline-flex cursor-pointer items-center justify-center px-6 py-4 text-lg font-medium no-underline shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2',
     variants: {
       color: {
-        red: 'focus-visible:ring-red',
-        yellow: 'focus-visible:ring-yellow',
-        blue: 'focus-visible:ring-blue',
-        green: 'focus-visible:ring-green',
-        black: 'focus-visible:ring-black',
-        white: 'focus-visible:ring-white',
-        primary: 'focus-visible:ring-red dark:focus-visible:ring-yellow',
-        secondary: 'focus-visible:ring-blue dark:focus-visible:ring-white',
+        red: 'focus-visible:outline-red',
+        yellow: 'focus-visible:outline-yellow',
+        blue: 'focus-visible:outline-blue',
+        green: 'focus-visible:outline-green',
+        black: 'focus-visible:outline-black',
+        white: 'focus-visible:outline-white',
+        primary: 'focus-visible:outline-red dark:focus-visible:outline-yellow',
+        secondary: 'focus-visible:outline-blue dark:focus-visible:outline-white',
       },
       outlined: {
         true: 'border-2',
