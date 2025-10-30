@@ -55,7 +55,7 @@ export const PrimaryAndSecondary: Story = {
     docs: {
       description: {
         story:
-          'The primary and secondary colors are special, they are used in situations where you want the button to react to changes in the Tailwind theme. For example, the primary button is red when the Tailwind theme is light and yellow when the theme is dark.',
+          'The primary and secondary colors are special, they are used in situations where you want the button to react to changes in the Tailwind theme. For example, the primary button is red when the Tailwind theme is light and yellow when the theme is dark. (Note, by default you can change the theme by adding the class "dark" on any parent of the button or the button itself)',
       },
     },
   },
