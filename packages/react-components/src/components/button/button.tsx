@@ -18,7 +18,7 @@ type ButtonPropsBase = {
    *
    * @default 'red'
    */
-  color?: 'red' | 'yellow' | 'blue' | 'green' | 'black';
+  color?: 'red' | 'yellow' | 'blue' | 'green' | 'black' | 'white' | 'primary' | 'secondary';
   /**
    * Whether the button should be outlined
    *
@@ -62,6 +62,9 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         blue: 'focus-visible:ring-blue',
         green: 'focus-visible:ring-green',
         black: 'focus-visible:ring-black',
+        white: 'focus-visible:ring-white',
+        primary: 'focus-visible:ring-red dark:focus-visible:ring-yellow',
+        secondary: 'focus-visible:ring-blue dark:focus-visible:ring-white',
       },
       outlined: {
         true: 'border-2',
@@ -180,6 +183,74 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
         outlined: true,
         disabled: false,
         class: 'hocus-visible:bg-black hocus-visible:text-black-contrast',
+      },
+      {
+        color: 'white',
+        outlined: false,
+        class: 'bg-white text-black',
+      },
+      {
+        color: 'white',
+        outlined: true,
+        class: 'border-white text-black',
+      },
+      {
+        color: 'white',
+        outlined: false,
+        disabled: false,
+        class: 'hocus-visible:bg-grey-light-focus',
+      },
+      {
+        color: 'white',
+        outlined: true,
+        disabled: false,
+        class: 'hocus-visible:bg-white hocus-visible:text-black',
+      },
+      {
+        color: 'primary',
+        outlined: false,
+        class: 'bg-red text-red-contrast dark:bg-yellow dark:text-yellow-contrast',
+      },
+      {
+        color: 'primary',
+        outlined: true,
+        class: 'border-red text-red dark:border-yellow dark:text-yellow',
+      },
+      {
+        color: 'primary',
+        outlined: false,
+        disabled: false,
+        class: 'hocus-visible:bg-red-focus dark:hocus-visible:bg-yellow-focus',
+      },
+      {
+        color: 'primary',
+        outlined: true,
+        disabled: false,
+        class:
+          'hocus-visible:bg-red hocus-visible:text-red-contrast dark:hocus-visible:bg-yellow dark:hocus-visible:text-yellow-contrast',
+      },
+      {
+        color: 'secondary',
+        outlined: false,
+        class: 'bg-blue text-blue-contrast dark:bg-white dark:text-white-contrast',
+      },
+      {
+        color: 'secondary',
+        outlined: true,
+        class: 'border-blue text-blue dark:border-white dark:text-white',
+      },
+      {
+        color: 'secondary',
+        outlined: false,
+        disabled: false,
+        class: 'hocus-visible:bg-blue-focus dark:hocus-visible:bg-grey-light-focus',
+      },
+      {
+        color: 'secondary',
+        outlined: true,
+        disabled: false,
+        class:
+          'hocus-visible:bg-blue hocus-visible:text-blue-contrast dark:hocus-visible:bg-white dark:hocus-visible:text-white-contrast',
       },
     ],
   });
