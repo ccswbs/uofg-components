@@ -57,6 +57,9 @@ export function CardImage<T extends CardImageElementType = typeof defaultCardIma
   });
 
   const { container, wrapper, image } = cardImage({ isLink: context?.isLink ?? false });
+  
+  /** If Card is a link, pass empty alt attribute so assistive technologies treat image as decorative. */
+  const imageAlt = context?.isLink ? "" : alt;
 
   return (
     <div className={`uofg-card-image-container ${container()}`}>
@@ -64,7 +67,7 @@ export function CardImage<T extends CardImageElementType = typeof defaultCardIma
         <Component
           {...rest}
           src={src}
-          alt={alt}
+          alt={imageAlt}
           width={width}
           height={height}
           className={`uofg-card-image ${twMerge(image(), className)}`}
