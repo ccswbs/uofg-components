@@ -54,7 +54,7 @@ export function Button<T extends ButtonElementType = typeof defaultElement>({
   const Component = as ?? defaultElement;
 
   const button = tv({
-    base: 'inline-flex cursor-pointer items-center justify-center px-6 py-4 text-lg font-medium no-underline shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2',
+    base: 'inline-flex cursor-pointer items-center justify-center px-6 py-4 text-lg font-medium no-underline shadow-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2',
     variants: {
       color: {
         red: 'focus-visible:outline-red',
