@@ -34,7 +34,7 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
     variants: {
       type: {
         h1: 'mt-7.5 font-serif text-4xl font-bold text-black dark:text-white',
-        h2: 'mt-7.5 mb-3.75 text-3xl font-bold text-red dark:text-white',
+        h2: 'mt-7.5 mb-3.75 text-3xl font-bold text-red dark:text-white light:text-black',
         h3: 'mt-7.5 mb-3.75 text-2xl font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
         h4: 'mt-7.5 mb-3.75 text-xl font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
         h5: 'mt-7.5 mb-3.75 text-lg font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
