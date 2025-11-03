@@ -9,7 +9,7 @@ export type StatisticsItemRepresentsProps = PropsWithChildren<{
 }>;
 
 export function StatisticsItemRepresents({ children, className }: StatisticsItemRepresentsProps) {
-  const classes = twMerge('text-normal flex-1 p-6 pt-0 text-lg font-normal', className);
+  const classes = twMerge('text-normal p-6 pt-0 text-lg font-normal', className);
 
   return <dd className={`uofg-statistics-item-represents ${classes}`}>{children}</dd>;
 }
