@@ -57,6 +57,35 @@ To test your changes with an existing feature branch from another repo, e.g. [ug
 
 Now you can run a local build which uses your release candidate and verify if your changes work as expected. If you want to test remotely, e.g. on a Netlify site, you'll need to commit your changes to `package.json` and `bun.lock` and then push. Make sure you revert these changes once testing is complete.
 
+### Testing Changes Using the bun/npm Link command
+
+Another way to test your changes is to use the `bun/npm link` command.
+
+- https://bun.com/docs/pm/cli/link
+- https://docs.npmjs.com/cli/v11/commands/npm-link
+
+This command allows you to link a package so that the local version on your machine will be used instead of the published version.
+
+For example, if you want to test the changes you made to the `react-components` package on ugnext, you can run the following command from the `packages/react-components` directory:
+
+```bash
+bun link
+```
+
+Then, in ugnext, you can run the following command to link the `react-components` package to the local version:
+
+```bash
+bun link @uoguelph/react-components
+```
+
+Now, when ever you make changes to the `react-components` package, you must build the package. You can do this by running the corresponding build command for the package you are working on. For example, to build the `react-components` package, run: `npm run build:react-components`
+
+Once you are done testing, you can unlink the package by running:
+
+```bash
+bun unlink @uoguelph/react-components
+```
+
 ## Publishing
 
 To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process.
