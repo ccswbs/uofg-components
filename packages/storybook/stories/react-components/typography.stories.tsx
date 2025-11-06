@@ -89,3 +89,71 @@ export const H3StylesAsH1: Story = {
     children: 'Example H1 heading with H3 styles',
   },
 };
+
+export const EmphasizedH1: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'All of the headings can be emphasized with a larger, slightly more opinionated heading style by setting the `emphasize` prop to `true`. This should be used sparingly and in situations where the heading is meant to stand out from the surrounding content. For example, if the heading is within a ImageOverlay component.',
+      },
+    },
+  },
+  name: 'Emphasized H1',
+  args: {
+    as: 'h1',
+    type: 'h1',
+    children: 'Example H1 heading',
+    emphasize: true,
+  },
+};
+
+export const EmphasizedH2: Story = {
+  name: 'Emphasized H2',
+  args: {
+    as: 'h2',
+    type: 'h2',
+    children: 'Example H2 heading',
+    emphasize: true,
+  },
+};
+
+export const EmphasizedH3: Story = {
+  name: 'Emphasized H3',
+  args: {
+    as: 'h3',
+    type: 'h3',
+    children: 'Example H3 heading',
+    emphasize: true,
+  },
+};
+
+export const EmphasizedH4: Story = {
+  name: 'Emphasized H4',
+  args: {
+    as: 'h4',
+    type: 'h4',
+    children: 'Example H4 heading',
+    emphasize: true,
+  },
+};
+
+export const EmphasizedH5: Story = {
+  name: 'Emphasized H5',
+  args: {
+    as: 'h5',
+    type: 'h5',
+    children: 'Example H5 heading',
+    emphasize: true,
+  },
+};
+
+export const EmphasizedH6: Story = {
+  name: 'Emphasized H6',
+  args: {
+    as: 'h6',
+    type: 'h6',
+    children: 'Example H6 heading',
+    emphasize: true,
+  },
+};
