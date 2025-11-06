@@ -1,11 +1,8 @@
-import { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import { ComponentPropsWithoutRef, ElementType, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
-const defaultElement = 'span';
-
-export type TypographyElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p';
-export type TypographyProps<T extends TypographyElementType = typeof defaultElement> = PropsWithChildren<
+export type TypographyProps<T extends ElementType> = PropsWithChildren<
   {
     /**
      * The element to render the text as.
@@ -22,7 +19,7 @@ export type TypographyProps<T extends TypographyElementType = typeof defaultElem
   } & ComponentPropsWithoutRef<T>
 >;
 /** The Typography component is a typographic component used to display headings or blocks of text. */
-export function Typography<T extends TypographyElementType = typeof defaultElement>({
+export function Typography<T extends ElementType>({
   type,
   children,
   className,
@@ -30,7 +27,7 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
   emphasize = false,
   ...rest
 }: TypographyProps<T>) {
-  const Tag = as ?? defaultElement;
+  const Tag = as ?? 'span';
 
   const typography = tv({
     base: 'leading-[1.4] [&_strong]:text-body-copy-bold [&_strong]:dark:text-body-copy-bold-on-dark',
