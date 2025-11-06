@@ -13,7 +13,7 @@ export type TypographyProps<T extends ElementType> = PropsWithChildren<
     /** The text style */
     type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body';
     /** Whether to emphasize the text with a larger, slightly more opinionated heading style. */
-    emphasize: boolean;
+    emphasize?: boolean;
     /** Additional classes to apply to the text. */
     className?: string;
   } & ComponentPropsWithoutRef<T>
