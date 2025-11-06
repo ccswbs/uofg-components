@@ -15,6 +15,8 @@ export type TypographyProps<T extends TypographyElementType = typeof defaultElem
     as?: T;
     /** The text style */
     type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body';
+    /** Whether to emphasize the text with a larger, slightly more opinionated heading style. */
+    emphasize: boolean;
     /** Additional classes to apply to the text. */
     className?: string;
   } & ComponentPropsWithoutRef<T>
@@ -25,6 +27,7 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
   children,
   className,
   as,
+  emphasize = false,
   ...rest
 }: TypographyProps<T>) {
   const Tag = as ?? defaultElement;
@@ -41,11 +44,46 @@ export function Typography<T extends TypographyElementType = typeof defaultEleme
         h6: 'mt-7.5 mb-3.75 text-base font-bold text-body-copy-bold dark:text-body-copy-bold-on-dark light:text-body-copy-bold-on-light',
         body: 'mt-3.75 text-lg leading-[1.6] font-normal text-body-copy dark:text-body-copy-on-dark light:text-body-copy-on-light',
       },
+      emphasize: {
+        true: '',
+      },
     },
+    compoundVariants: [
+      {
+        type: ['h1'],
+        emphasize: true,
+        class: 'font-sans text-[5rem] leading-[1.2] font-light',
+      },
+      {
+        type: ['h2'],
+        emphasize: true,
+        class: 'font-sans text-[4.5rem] leading-[1.2] font-light text-black',
+      },
+      {
+        type: ['h3'],
+        emphasize: true,
+        class: 'font-sans text-[4rem] leading-[1.2] font-light',
+      },
+      {
+        type: ['h4'],
+        emphasize: true,
+        class: 'font-sans text-[3.5rem] leading-[1.2] font-light',
+      },
+      {
+        type: ['h5'],
+        emphasize: true,
+        class: 'font-sans text-[3rem] leading-[1.2] font-light',
+      },
+      {
+        type: ['h6'],
+        emphasize: true,
+        class: 'font-sans text-[2.5rem] leading-[1.2] font-light',
+      },
+    ],
   });
 
   return (
-    <Tag {...rest} className={`uofg-typography ${twMerge(typography({ type }), className)}`}>
+    <Tag {...rest} className={`uofg-typography ${twMerge(typography({ type, emphasize }), className)}`}>
       {children}
     </Tag>
   );
