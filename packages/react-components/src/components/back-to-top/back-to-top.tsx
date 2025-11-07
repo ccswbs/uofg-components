@@ -23,6 +23,10 @@ export function BackToTop({ className, threshold = 100 }: BackToTopProps) {
     };
   }, [threshold]);
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const classes = twMerge(
     'fixed right-4 bottom-4 z-50 rounded-full bg-black p-2 text-white shadow-md',
     !isVisible && 'hidden',
@@ -30,7 +34,7 @@ export function BackToTop({ className, threshold = 100 }: BackToTopProps) {
   );
 
   return (
-    <button className={`uofg-back-to-top ${classes}`}>
+    <button onClick={handleClick} className={`uofg-back-to-top ${classes}`}>
       <span className="sr-only">Back to top</span>
       <FontAwesomeIcon icon={faChevronUp} />
     </button>
