@@ -30,8 +30,9 @@ export function BackToTop({ className, threshold = 100 }: BackToTopProps) {
   };
 
   const classes = twMerge(
-    'fixed right-4 bottom-4 z-50 rounded-full bg-black p-2 text-white shadow-md',
-    !isVisible && 'hidden',
+    'fixed right-4 bottom-4 z-50 flex aspect-square w-12 items-center justify-center rounded-full border border-white bg-black p-2 text-white transition hover:bg-red hover:text-red-contrast',
+    !isVisible && 'invisible opacity-0',
+    isVisible && 'visible opacity-100',
     className,
   );
 
