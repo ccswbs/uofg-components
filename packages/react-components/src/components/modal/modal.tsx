@@ -19,11 +19,11 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
     slots: {
       base: 'relative z-50 transition duration-300 ease-out data-[closed]:opacity-0',
       backdrop: 'fixed inset-0 bg-black/40 transition duration-300 ease-out data-[closed]:opacity-0',
-      wrapper: 'fixed inset-0 flex w-screen justify-center md:p-4',
+      wrapper: 'fixed inset-0 flex w-screen justify-center md:p-6',
       panelWrapper: 'relative flex w-full flex-col items-center',
       panel: '',
       closeButton:
-        'top-0 right-0 flex h-9 w-full items-center justify-center gap-1 border-b border-white/40 bg-grey-dark-bg text-xl text-white transition-colors hover:bg-red md:absolute md:w-9 md:rounded-full',
+        '-top-3.5 -right-3.5 flex h-9 w-full items-center justify-center gap-1 border-b border-white/40 bg-grey-dark-bg text-xl text-white transition-colors hover:bg-red md:absolute md:w-9 md:rounded-full',
     },
     variants: {
       centered: {
@@ -49,12 +49,13 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
 
       <div className={`uofg-modal-wrapper ${wrapper()}`}>
         <div className={`uofg-modal-panel-wrapper ${panelWrapper()}`}>
-          <CloseButton onClick={onClose} className={`uofg-modal-close-button ${closeButton()}`}>
-            <FontAwesomeIcon icon={faTimes} />
-            <span className="text-base md:sr-only">Close Modal</span>
-          </CloseButton>
-
-          <DialogPanel className={`uofg-modal-panel ${panel()}`}>{children}</DialogPanel>
+          <DialogPanel className={`uofg-modal-panel ${panel()}`}>
+            <CloseButton onClick={onClose} className={`uofg-modal-close-button ${closeButton()}`}>
+              <FontAwesomeIcon icon={faTimes} />
+              <span className="text-base md:sr-only">Close Modal</span>
+            </CloseButton>
+            {children}
+          </DialogPanel>
         </div>
       </div>
     </Dialog>
