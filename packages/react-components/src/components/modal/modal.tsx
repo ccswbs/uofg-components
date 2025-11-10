@@ -21,7 +21,7 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
       backdrop: 'fixed inset-0 bg-black/40 transition duration-300 ease-out data-[closed]:opacity-0',
       wrapper: 'fixed inset-0 flex w-screen justify-center md:p-6',
       panelWrapper: 'relative flex w-full flex-col items-center',
-      panel: '',
+      panel: 'relative',
       closeButton:
         '-top-3.5 -right-3.5 flex h-9 w-full items-center justify-center gap-1 border-b border-white/40 bg-grey-dark-bg text-xl text-white transition-colors hover:bg-red md:absolute md:w-9 md:rounded-full',
     },
