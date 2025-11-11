@@ -32,6 +32,7 @@ function findFirstId(children: React.ReactNode): LinkCarouselId | null {
 }
 
 export type LinkCarouselProps = PropsWithChildren<{
+  id?: string;
   /** Additional classes to apply to the link carousel. */
   className?: string;
   /** Whether the carousel links should stack on top of the content, rather than beside it. */
@@ -51,7 +52,7 @@ export type LinkCarouselProps = PropsWithChildren<{
  * and is not focus friendly. If your content doesn't match this criteria, use the Carousel component instead, or find
  * another way to display your content.
  */
-export function LinkCarousel({ children, className, stack = false, direction = 'left' }: LinkCarouselProps) {
+export function LinkCarousel({ id, children, className, stack = false, direction = 'left' }: LinkCarouselProps) {
   const firstId = useMemo(() => findFirstId(children), [children]);
   const [activeId, setActiveId] = useState<LinkCarouselId | null>(firstId);
   const previousActiveId = useRef<LinkCarouselId | null>(null);
@@ -74,7 +75,7 @@ export function LinkCarousel({ children, className, stack = false, direction = '
   });
 
   return (
-    <div className={`uofg-link-carousel ${twMerge(linkCarousel({ direction }), className)}`}>
+    <div id={id} className={`uofg-link-carousel ${twMerge(linkCarousel({ direction }), className)}`}>
       <LinkCarouselContext.Provider
         value={{
           previousActiveId: previousActiveId.current,

@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
 
 export type InfoProps = PropsWithChildren<{
+  id?: string;
   /**
    * The color of the left border in the info component.
    *
@@ -10,7 +11,7 @@ export type InfoProps = PropsWithChildren<{
   color?: 'red' | 'yellow' | 'blue' | 'green' | 'grey-light' | 'grey-dark' | 'black' | 'white';
 }>;
 
-export function Info({ children, color = 'red' }: InfoProps) {
+export function Info({ id, children, color = 'red' }: InfoProps) {
   const info = tv({
     base: 'flex flex-col gap-1 border-l-4 pl-4',
     variants: {
@@ -27,7 +28,11 @@ export function Info({ children, color = 'red' }: InfoProps) {
     },
   });
 
-  return <div className={`uofg-info ${info({ color })}`}>{children}</div>;
+  return (
+    <div id={id} className={`uofg-info ${info({ color })}`}>
+      {children}
+    </div>
+  );
 }
 
 Info.displayName = 'Info';

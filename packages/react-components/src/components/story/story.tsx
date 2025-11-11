@@ -2,14 +2,19 @@ import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export type StoryProps = PropsWithChildren<{
+  id?: string;
   /** Additional classes to apply to the component. */
   className?: string;
 }>;
 
-export function Story({ children, className }: StoryProps) {
+export function Story({ id, children, className }: StoryProps) {
   const classes = twMerge('flex w-full flex-col', className);
 
-  return <div className={`uofg-story ${classes}`}>{children}</div>;
+  return (
+    <div id={id} className={`uofg-story ${classes}`}>
+      {children}
+    </div>
+  );
 }
 
 Story.displayName = 'Story';

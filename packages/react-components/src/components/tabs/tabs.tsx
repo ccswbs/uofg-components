@@ -5,13 +5,18 @@ import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export type TabsProps = PropsWithChildren<{
+  id?: string;
   /** Additional classes to apply to the component. */
   className?: string;
 }>;
 
-export function Tabs({ children, className }: TabsProps) {
+export function Tabs({ id, children, className }: TabsProps) {
   const classes = twMerge('uofg-tabs', className);
-  return <TabGroup className={`uofg-tabs ${classes}`}>{children}</TabGroup>;
+  return (
+    <TabGroup id={id} className={`uofg-tabs ${classes}`}>
+      {children}
+    </TabGroup>
+  );
 }
 
 Tabs.displayName = 'Tabs';

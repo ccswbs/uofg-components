@@ -5,6 +5,7 @@ import { tv } from 'tailwind-variants';
 type Breakpoints = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export type GridProps = PropsWithChildren<{
+  id?: string;
   /** Extra CSS classes to add to the grid container (optional). */
   className?: string;
 
@@ -39,7 +40,7 @@ export type GridProps = PropsWithChildren<{
   };
 }>;
 
-export function Grid({ template, major = 'column', gap, alignment, children, className }: GridProps) {
+export function Grid({ id, template, major = 'column', gap, alignment, children, className }: GridProps) {
   const classes = tv({
     base: 'grid gap-x-(--uofg-grid-gap-x) gap-y-(--uofg-grid-gap-y)',
     variants: {
@@ -147,6 +148,7 @@ export function Grid({ template, major = 'column', gap, alignment, children, cla
 
   return (
     <div
+      id={id}
       className={`uofg-grid ${twMerge(classes, className)}`}
       style={{
         ...vars,

@@ -7,7 +7,7 @@ import { useResizeObserver } from '../../utils/use-resize-observer';
 import { StatisticsContext } from './statistics-context';
 
 export type StatisticsProps = PropsWithChildren<{
-  id: string;
+  id?: string;
   /** The variant of the statistics */
   variant: 'solid-colors-full' | 'solid-colors-no-gap' | 'solid-colors' | 'light-grey' | 'left-border';
   /** Additional classes to apply to the statistics */

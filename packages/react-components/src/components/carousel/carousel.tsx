@@ -30,6 +30,7 @@ const scroll = (element: HTMLElement, to: number, duration: number) => {
 };
 
 export type CarouselProps = PropsWithChildren<{
+  id?: string;
   /**
    * The number of items to display at once
    *
@@ -47,7 +48,7 @@ export type CarouselProps = PropsWithChildren<{
  * The Carousel component is used to display a series of items in a horizontal row, allowing the user to scroll through
  * them.
  */
-export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps) {
+export function Carousel({ id, children, display = 1, loop = 'none' }: CarouselProps) {
   const count = Children.count(children);
   const visibleItems = Math.max(display, 1);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -133,7 +134,7 @@ export function Carousel({ children, display = 1, loop = 'none' }: CarouselProps
   const { base, contentContainer, controlContainer, control } = carousel({ showControls });
 
   return (
-    <div className={`uofg-carousel ${base()}`}>
+    <div id={id} className={`uofg-carousel ${base()}`}>
       {showControls && (
         <div className={`uofg-carousel-control-container ${controlContainer()}`}>
           {/* Left Button */}
