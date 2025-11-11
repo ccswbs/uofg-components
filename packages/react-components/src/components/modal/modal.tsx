@@ -23,7 +23,7 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
       panelWrapper: 'relative flex w-full flex-col items-center',
       panel: 'relative',
       closeButton:
-        '-top-3.5 -right-3.5 flex h-9 w-full items-center justify-center gap-1 border-b border-white/40 bg-grey-dark-bg text-xl text-white transition-colors hover:bg-red md:absolute md:w-9 md:rounded-full',
+        '-top-3.5 -right-3.5 flex h-9 w-full items-center justify-center gap-1 border border-white/40 bg-grey-dark-bg text-xl text-white transition-colors hover:bg-red md:absolute md:w-9 md:rounded-full',
     },
     variants: {
       centered: {
