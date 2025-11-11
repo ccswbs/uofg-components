@@ -7,6 +7,7 @@ import { useResizeObserver } from '../../utils/use-resize-observer';
 import { StatisticsContext } from './statistics-context';
 
 export type StatisticsProps = PropsWithChildren<{
+  id: string;
   /** The variant of the statistics */
   variant: 'solid-colors-full' | 'solid-colors-no-gap' | 'solid-colors' | 'light-grey' | 'left-border';
   /** Additional classes to apply to the statistics */
@@ -14,7 +15,7 @@ export type StatisticsProps = PropsWithChildren<{
 }>;
 
 /** The Statistic component is used to display a list of statistics in a grid layout. */
-export function Statistics({ children, variant, className }: StatisticsProps) {
+export function Statistics({ id, children, variant, className }: StatisticsProps) {
   const [count, setCount] = useState<number>(0);
   const [ref, entry] = useResizeObserver<HTMLDListElement>();
 
@@ -75,6 +76,7 @@ export function Statistics({ children, variant, className }: StatisticsProps) {
       }}
     >
       <dl
+        id={id}
         className={`uofg-statistics ${mergedClasses}`}
         style={
           /* @ts-expect-error TypeScript doesn't like CSS Variables */
