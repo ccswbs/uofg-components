@@ -18,9 +18,9 @@ export type StoryForegroundImageProps<T extends StoryForegroundImageElementType 
   /** An accessible description of the image, used primarily for screen readers */
   alt: string;
   /** The width of the image in pixels */
-  width?: string;
+  width?: `${number}` | number;
   /** The height of the image in pixels */
-  height?: string;
+  height?: `${number}` | number;
   /** Additional classes to apply to the component. */
   className?: string;
 } & ComponentPropsWithoutRef<T>;

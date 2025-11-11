@@ -33,9 +33,9 @@ export type HeroProps<T extends HeroElementType = typeof defaultElement> = Props
     /** The alt text for the image */
     alt: string;
     /** The width of the image in pixels */
-    width?: number;
+    width?: `${number}` | number;
     /** The height of the image in pixels */
-    height?: number;
+    height?: `${number}` | number;
     /**
      * The alignment of the hero content, only applies to the spotlight variant
      *

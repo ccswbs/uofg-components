@@ -18,10 +18,10 @@ export type ImageOverlayProps<T extends ImageOverlayElementType = typeof default
     src: string;
     /** The image alt text. */
     alt: string;
-    /** The image width in pixels. */
-    width?: number;
-    /** The image height in pixels. */
-    height?: number;
+    /** The width of the image in pixels */
+    width?: `${number}` | number;
+    /** The height of the image in pixels */
+    height?: `${number}` | number;
     /** Additional classes to apply to the image. */
     className?: string;
     /**

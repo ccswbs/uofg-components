@@ -21,9 +21,9 @@ export type CardImageProps<T extends CardImageElementType = typeof defaultCardIm
   /** An accessible description of the image, used primarily for screen readers */
   alt: string;
   /** The width of the image in pixels */
-  width?: string;
+  width?: `${number}` | number;
   /** The height of the image in pixels */
-  height?: string;
+  height?: `${number}` | number;
   /** Additional classes to apply to the image */
   className?: string;
 } & ComponentPropsWithoutRef<T>;
@@ -57,9 +57,9 @@ export function CardImage<T extends CardImageElementType = typeof defaultCardIma
   });
 
   const { container, wrapper, image } = cardImage({ isLink: context?.isLink ?? false });
-  
+
   /** If Card is a link, pass empty alt attribute so assistive technologies treat image as decorative. */
-  const imageAlt = context?.isLink ? "" : alt;
+  const imageAlt = context?.isLink ? '' : alt;
 
   return (
     <div className={`uofg-card-image-container ${container()}`}>
