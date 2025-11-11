@@ -6,6 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import { AccordionContext } from './accordion-context';
 
 export type AccordionProps = PropsWithChildren<{
+  id?: string;
   /** Additional classes to apply to the accordion. */
   className?: string;
 }>;
@@ -14,14 +15,14 @@ export type AccordionProps = PropsWithChildren<{
  * The Accordion component is used for organizing information into collapsible sections which respond to user
  * interaction.
  */
-export function Accordion({ children, className }: AccordionProps) {
+export function Accordion({ id, children, className }: AccordionProps) {
   const accordion = twMerge('my-2 [&_p:last-child]:mb-0', className);
 
   return (
     <Disclosure>
       {({ open }) => {
         return (
-          <div className={`uofg-accordion ${accordion}`}>
+          <div id={id} className={`uofg-accordion ${accordion}`}>
             <AccordionContext.Provider value={{ isOpen: open }}>{children}</AccordionContext.Provider>
           </div>
         );
