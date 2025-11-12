@@ -143,7 +143,7 @@ export function EmbeddedVideo({ src, title, transcript, className, children }: E
     return (
       <>
         <EmbeddedVideoContext.Provider value={{ modalOpen, setModalOpen }}>{children}</EmbeddedVideoContext.Provider>
-        <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+        <Modal open={modalOpen} onClose={() => setModalOpen(false)} centered={true}>
           <div className={`uofg-embedded-video-container ${container()}`}>
             <span className={`uofg-embedded-video-title ${titleClasses()}`}>{title}</span>
             <Video
