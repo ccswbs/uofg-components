@@ -87,7 +87,7 @@ export const primaryLinks: FooterLink[] = [
     href: 'https://www.uoguelph.ca/sitemap',
   },
   {
-    text: 'IT Systems Status',
+    text: 'IT Status',
     icon: faCircleCheck,
     href: 'https://uoguelph.statuspage.io/',
   },
