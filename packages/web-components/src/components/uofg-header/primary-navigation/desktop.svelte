@@ -1,7 +1,14 @@
 <script lang="ts">
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { primaryNavigation, search } from '../data/guelph';
+  import { primaryNavigation as guelphPrimaryNavigation, search as guelphSearch } from '../data/guelph';
+  import { primaryNavigation as ridgetownPrimaryNavigation, search as ridgetownSearch } from '../data/ridgetown';
   import { tv } from 'tailwind-variants';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
+
+  const headerState: HeaderContext = getContext('header-state');
+  const primaryNavigation = $headerState.variant === 'ridgetown' ? ridgetownPrimaryNavigation : guelphPrimaryNavigation;
+  const search = $headerState.variant === 'ridgetown' ? ridgetownSearch : guelphSearch;
 
   const classes = tv({
     slots: {
