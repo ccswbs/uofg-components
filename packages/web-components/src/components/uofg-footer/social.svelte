@@ -1,8 +1,14 @@
-<script>
+<script lang="ts">
   import FontAwesomeIcon from '../../lib/font-awesome-icon.svelte';
-  import { social } from './data/guelph';
+  import { social as guelphSocial } from './data/guelph';
+  import { social as ridgetownSocial } from './data/ridgetown';
   import { twJoin } from 'tailwind-merge';
   import { tv } from 'tailwind-variants';
+  import { getContext } from 'svelte';
+  import { type FooterContext } from './uofg-footer.svelte';
+
+  const footerState = getContext<FooterContext>('footer-state');
+  const social = $footerState.variant === 'ridgetown' ? ridgetownSocial : guelphSocial;
 
   const classes = tv({
     slots: {

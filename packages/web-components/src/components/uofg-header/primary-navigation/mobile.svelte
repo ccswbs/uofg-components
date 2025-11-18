@@ -3,12 +3,30 @@
   import Menu from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { accountMenu, primaryNavigation, search, topNavigation } from '../data/guelph';
+  import {
+    topNavigation as guelphTopNavigation,
+    accountMenu as guelphAccountMenu,
+    primaryNavigation as guelphPrimaryNavigation,
+    search as guelphSearch,
+  } from '../data/guelph';
+  import {
+    topNavigation as ridgetownTopNavigation,
+    accountMenu as ridgetownAccountMenu,
+    primaryNavigation as ridgetownPrimaryNavigation,
+    search as ridgetownSearch,
+  } from '../data/ridgetown';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
 
-  const mainMenu = [...primaryNavigation, ...topNavigation];
-  const outer = [accountMenu, search];
+  const headerState: HeaderContext = getContext('header-state');
+  const mainMenu =
+    $headerState.variant === 'ridgetown' ?
+      [...ridgetownPrimaryNavigation, ...ridgetownTopNavigation]
+    : [...guelphPrimaryNavigation, guelphTopNavigation];
+  const outer =
+    $headerState.variant === 'ridgetown' ? [ridgetownAccountMenu, ridgetownSearch] : [guelphAccountMenu, guelphSearch];
 </script>
 
 <ul class="flex h-full [&>li]:contents">

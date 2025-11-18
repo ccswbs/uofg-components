@@ -1,12 +1,19 @@
 <script lang="ts">
   import Menu from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
-  import { topNavigation, accountMenu } from '../data/guelph';
+  import { topNavigation as guelphTopNavigation, accountMenu as guelphAccountMenu } from '../data/guelph';
+  import { topNavigation as ridgetownTopNavigation, accountMenu as ridgetownAccountMenu } from '../data/ridgetown';
   import { tv } from 'tailwind-variants';
   import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
+
+  const headerState = getContext<HeaderContext>('header-state');
+  const topNavigation = $headerState?.variant === 'ridgetown' ? ridgetownTopNavigation : guelphTopNavigation;
+  const accountMenu = $headerState?.variant === 'ridgetown' ? ridgetownAccountMenu : guelphAccountMenu;
 
   const classes = tv({
     slots: {

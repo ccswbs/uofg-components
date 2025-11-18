@@ -1,7 +1,13 @@
-<script>
-  import { primaryLinks as links } from './data/guelph';
+<script lang="ts">
+  import { primaryLinks as guelphLinks } from './data/guelph';
+  import { primaryLinks as ridgetownLinks } from './data/ridgetown';
   import Link from './link.svelte';
   import { tv } from 'tailwind-variants';
+  import { getContext } from 'svelte';
+  import { type FooterContext } from './uofg-footer.svelte';
+
+  const footerState = getContext<FooterContext>('footer-state');
+  const links = $footerState.variant === 'ridgetown' ? ridgetownLinks : guelphLinks;
 
   const classes = tv({
     slots: {

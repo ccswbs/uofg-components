@@ -41,7 +41,13 @@
     href="https://www.uoguelph.ca"
     aria-label="University of Guelph Home Page"
   >
-    {#if $headerState?.mode === 'desktop' || $headerState?.variant === 'dual-brand'}
+    {#if $headerState?.variant === 'ridgetown'}
+      {#if $headerState?.mode === 'desktop'}
+        {@html Logo}
+      {:else}
+        {@html LogoSmall}
+      {/if}
+    {:else if $headerState?.mode === 'desktop' || $headerState?.variant === 'dual-brand'}
       {@html Logo}
     {:else}
       {@html LogoSmall}

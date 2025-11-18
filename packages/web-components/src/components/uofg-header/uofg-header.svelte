@@ -23,7 +23,7 @@
   export type HeaderProps = {
     pageTitle?: string;
     pageURL?: string;
-    variant?: 'dual-brand';
+    variant?: 'dual-brand' | 'ridgetown';
   };
 
   export type HeaderContext = Writable<
@@ -40,7 +40,7 @@
   import SubNavigation from './sub-navigation/sub-navigation.svelte';
   import { writable } from 'svelte/store';
   import { onMount, setContext } from 'svelte';
-  import { type HeaderLink, type HeaderMenu } from './data/guelph';
+  import { type HeaderLink, type HeaderMenu } from './data/types';
 
   let { pageTitle, pageURL, variant }: HeaderProps = $props();
 
