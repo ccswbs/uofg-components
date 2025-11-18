@@ -1,21 +1,5 @@
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import type { HTMLAttributes } from 'svelte/elements';
-
-export type HeaderLinkAndMenuCommon = {
-  text: string;
-  icon?: any;
-  highlight?: boolean;
-  excludeFromMainMenu?: boolean;
-  attributes?: HTMLAttributes<HTMLAnchorElement>;
-};
-
-export type HeaderLink = {
-  href: string;
-} & HeaderLinkAndMenuCommon;
-
-export type HeaderMenu = {
-  items: HeaderLink[];
-} & HeaderLinkAndMenuCommon;
+import type { HeaderLink, HeaderMenu } from './types';
 
 export const primaryNavigation: HeaderLink[] = [
   {

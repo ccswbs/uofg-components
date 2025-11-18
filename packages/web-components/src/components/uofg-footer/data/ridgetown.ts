@@ -10,15 +10,7 @@ import {
   faTree,
   faUniversalAccess,
 } from '@fortawesome/free-solid-svg-icons';
-import type { HTMLAttributes } from 'svelte/elements';
-
-export type FooterLink = {
-  text: string;
-  icon?: any;
-  href: string;
-  classes?: string;
-  attributes?: Omit<HTMLAttributes<HTMLAnchorElement>, 'class'>;
-};
+import type { FooterLink } from './types';
 
 export const social: { directory: string; links: FooterLink[] } = {
   directory: 'https://www.uoguelph.ca/web/socialmedia/',
