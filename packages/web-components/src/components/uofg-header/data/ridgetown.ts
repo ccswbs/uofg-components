@@ -20,23 +20,19 @@ export type HeaderMenu = {
 export const primaryNavigation: HeaderLink[] = [
   {
     text: 'About',
-    href: 'https://uoguelph.ca/about',
+    href: 'https://www.uoguelph.ca/ridgetown/about',
   },
   {
     text: 'Academics',
-    href: 'https://www.uoguelph.ca/programs/undergraduate',
+    href: 'https://www.uoguelph.ca/ridgetown/programs',
   },
   {
     text: 'Admission',
-    href: 'https://uoguelph.ca/admissions',
-  },
-  {
-    text: 'Research',
-    href: 'https://uoguelph.ca/research',
+    href: 'https://www.uoguelph.ca/ridgetown/apply',
   },
   {
     text: 'Student Life',
-    href: 'https://www.uoguelph.ca/studentexperience/',
+    href: 'https://www.uoguelph.ca/ridgetown/student-life/',
   },
 ];
 
@@ -49,7 +45,7 @@ export const search: HeaderLink = {
 export const topNavigation: (HeaderLink | HeaderMenu)[] = [
   {
     text: 'Give',
-    href: 'https://bbis.alumni.uoguelph.ca/BBIS_Cannon/give/uofg',
+    href: 'https://www.uoguelph.ca/ridgetown/alumni',
   },
   {
     text: 'News',
@@ -60,29 +56,25 @@ export const topNavigation: (HeaderLink | HeaderMenu)[] = [
     items: [
       {
         text: 'Future Students',
-        href: 'https://www.uoguelph.ca/admission/',
+        href: 'https://www.uoguelph.ca/ridgetown/discover',
       },
       {
         text: 'Current Students',
-        href: 'https://www.uoguelph.ca/students',
+        href: 'https://www.ridgetownc.com/current/academic-support/',
       },
       {
-        text: 'Alumni & Donors',
-        href: 'https://alumni.uoguelph.ca/',
-      },
-      {
-        text: 'Faculty & Staff',
-        href: 'https://www.uoguelph.ca/faculty',
+        text: 'Alumni',
+        href: 'https://www.uoguelph.ca/ridgetown/alumni',
       },
       {
         text: 'Employers & Partners',
-        href: 'https://cecs.uoguelph.ca/employers-institutions',
+        href: 'https://www.ridgetownc.com/about/community/',
       },
     ],
   },
   {
     text: 'Apply Now',
-    href: 'https://uoguelph.ca/apply/',
+    href: 'https://uoguelph.ca/ridgetown/apply/',
     highlight: true,
   },
 ];
@@ -91,8 +83,8 @@ export const accountMenu: HeaderMenu = {
   text: 'Account Menu',
   items: [
     {
-      text: 'U of G Insider',
-      href: 'https://uoguelphca.sharepoint.com/',
+      text: 'Intranet',
+      href: 'https://uoguelphca.sharepoint.com/sites/Ridgetown/SitePages/CollabHome.aspx',
     },
     {
       text: 'WebAdvisor',
@@ -105,10 +97,6 @@ export const accountMenu: HeaderMenu = {
     {
       text: 'CourseLink',
       href: 'https://courselink.uoguelph.ca/',
-    },
-    {
-      text: 'GryphLife',
-      href: 'https://gryphlife.uoguelph.ca/',
     },
   ],
   icon: faUser,
