@@ -17,7 +17,7 @@ const config = {
       table: {
         type: {
           optional: false,
-          summary: '"dual-brand"',
+          summary: '"dual-brand" | "ridgetown"',
         },
       },
     },

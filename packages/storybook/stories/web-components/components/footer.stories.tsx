@@ -9,6 +9,19 @@ const config = {
       toc: true,
     },
   },
+  argTypes: {
+    variant: {
+      type: { name: 'string', required: false },
+      description: 'The variant of the footer',
+      control: false,
+      table: {
+        type: {
+          optional: false,
+          summary: '"ridgetown"',
+        },
+      },
+    },
+  },
   tags: ['autodocs'],
 };
 
@@ -23,12 +36,7 @@ export const Basic = {
       },
     },
   },
-  render: ({}) => (
-    // @ts-expect-error Svelte will define the custom element, so we can ignore the error
-    <uofg-footer>
-      {/* @ts-expect-error Svelte will define the custom element, so we can ignore the error */}
-    </uofg-footer>
-  ),
+  render: ({}) => <uofg-footer></uofg-footer>,
 };
 
 export const WithLinks = {
@@ -40,7 +48,6 @@ export const WithLinks = {
     },
   },
   render: ({}) => (
-    // @ts-expect-error Svelte will define the custom element, so we can ignore the error
     <uofg-footer>
       <a href="#example">Example Menu Link</a>
       <a href="#example">Example Menu Link 1</a>
@@ -49,7 +56,17 @@ export const WithLinks = {
       <a href="#example">Example Menu Link 4</a>
       <a href="#example">Example Menu Link 5</a>
       <a href="#example">Example Menu Link 6</a>
-      {/* @ts-expect-error Svelte will define the custom element, so we can ignore the error */}
     </uofg-footer>
   ),
+};
+
+export const Ridgetown = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'The footer has a special variant for the University of Guelph Ridgetown campus.',
+      },
+    },
+  },
+  render: ({}) => <uofg-footer variant="ridgetown"></uofg-footer>,
 };
