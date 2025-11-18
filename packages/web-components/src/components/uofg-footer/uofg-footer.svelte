@@ -9,8 +9,21 @@
         }
       };
     },
+    props: {
+      variant: { reflect: true, attribute: 'variant' },
+    },
   }}
 />
+
+<script module lang="ts">
+  import { type Writable } from 'svelte/store';
+
+  export type FooterProps = {
+    variant?: 'ridgetown';
+  };
+
+  export type FooterContext = Writable<FooterProps>;
+</script>
 
 <script lang="ts">
   import attachTailwind from '../../lib/attach-tailwind';
@@ -22,7 +35,16 @@
   import Link from './link.svelte';
   import { social } from './data/guelph';
   import { tv } from 'tailwind-variants';
-  import { onMount } from 'svelte';
+  import { onMount, setContext } from 'svelte';
+  import { writable } from 'svelte/store';
+
+  let { variant }: FooterProps = $props();
+
+  const footerState: FooterContext = writable({
+    variant,
+  });
+
+  setContext('footer-state', footerState);
 
   const classes = tv({
     slots: {
