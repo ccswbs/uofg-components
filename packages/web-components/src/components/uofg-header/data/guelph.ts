@@ -60,7 +60,7 @@ export const topNavigation: (HeaderLink | HeaderMenu)[] = [
     items: [
       {
         text: 'Future Students',
-        href: 'https://uoguelph.ca/future-ready',
+        href: 'https://www.uoguelph.ca/admission/',
       },
       {
         text: 'Current Students',

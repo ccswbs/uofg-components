@@ -87,7 +87,7 @@ export const primaryLinks: FooterLink[] = [
     href: 'https://www.uoguelph.ca/sitemap',
   },
   {
-    text: 'Status Page',
+    text: 'IT Status',
     icon: faCircleCheck,
     href: 'https://uoguelph.statuspage.io/',
   },
@@ -106,14 +106,14 @@ export const primaryLinks: FooterLink[] = [
     href: 'https://careers.uoguelph.ca/',
   },
   {
-    text: 'Undergraduate Calendar',
+    text: 'Academic Calendar',
     icon: faCalendar,
-    href: 'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/',
+    href: 'https://calendar.uoguelph.ca/',
   },
   {
-    text: 'Graduate Calendar',
+    text: 'Campus Status',
     icon: faCalendar,
-    href: 'https://www.uoguelph.ca/registrar/calendars/graduate/current/',
+    href: 'https://www.uoguelph.ca/campus-status/',
   },
   {
     text: 'Admission',
