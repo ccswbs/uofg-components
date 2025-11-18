@@ -1,11 +1,4 @@
-import {
-  faFacebookF,
-  faInstagram,
-  faLinkedinIn,
-  faTiktok,
-  faXTwitter,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import {
   faBriefcase,
@@ -13,7 +6,6 @@ import {
   faCircleCheck,
   faHandHoldingHeart,
   faKey,
-  faList,
   faSitemap,
   faTree,
   faUniversalAccess,
@@ -34,38 +26,26 @@ export const social: { directory: string; links: FooterLink[] } = {
     {
       text: 'X',
       icon: faXTwitter,
-      href: 'https://twitter.com/uofg',
+      href: 'https://twitter.com/RidgetownCampus',
       classes: 'focus:text-black hover:text-black focus:bg-white hover:bg-white',
-    },
-    {
-      text: 'Facebook',
-      icon: faFacebookF,
-      href: 'https://www.facebook.com/uofguelph',
-      classes: 'focus:text-white hover:text-white focus:bg-[#0866ff] hover:bg-[#0866ff]',
     },
     {
       text: 'Instagram',
       icon: faInstagram,
-      href: 'https://www.instagram.com/uofguelph/',
+      href: 'https://www.instagram.com/ridgetowncampus/',
       classes: 'focus:text-white hover:text-white focus:bg-[#d62976] hover:bg-[#d62976]',
-    },
-    {
-      text: 'Youtube',
-      icon: faYoutube,
-      href: 'https://www.youtube.com/user/uofguelph',
-      classes: 'focus:text-white hover:text-white focus:bg-[#ff0000] hover:bg-[#ff0000]',
     },
     {
       text: 'LinkedIn',
       icon: faLinkedinIn,
-      href: 'https://www.linkedin.com/school/university-of-guelph/',
+      href: 'https://www.linkedin.com/school/university-of-guelph-ridgetown-campus/',
       classes: 'focus:text-white hover:text-white focus:bg-[#0a66c2] hover:bg-[#0a66c2]',
     },
     {
-      text: 'TikTok',
-      icon: faTiktok,
-      href: 'https://www.tiktok.com/@uofguelph',
-      classes: 'focus:text-black hover:text-black focus:bg-white hover:bg-white',
+      text: 'Facebook',
+      icon: faFacebookF,
+      href: 'https://www.facebook.com/UofGRidgetownCampus',
+      classes: 'focus:text-white hover:text-white focus:bg-[#0866ff] hover:bg-[#0866ff]',
     },
   ],
 };
@@ -106,19 +86,14 @@ export const primaryLinks: FooterLink[] = [
     href: 'https://careers.uoguelph.ca/',
   },
   {
-    text: 'Undergraduate Calendar',
+    text: 'Programs',
     icon: faCalendar,
-    href: 'https://www.uoguelph.ca/registrar/calendars/undergraduate/current/',
+    href: 'https://preview-ugconthub.netlify.app/ridgetown/programs/',
   },
   {
-    text: 'Graduate Calendar',
+    text: 'Campus Map',
     icon: faCalendar,
-    href: 'https://www.uoguelph.ca/registrar/calendars/graduate/current/',
-  },
-  {
-    text: 'Admission',
-    icon: faList,
-    href: 'https://uoguelph.ca/admission',
+    href: 'https://preview-ugconthub.netlify.app/ridgetown/about/directions',
   },
   {
     text: 'Give to U of G',
@@ -128,9 +103,9 @@ export const primaryLinks: FooterLink[] = [
 ];
 
 export const address = {
-  title: 'University of Guelph',
-  street: '50 Stone Road East',
-  city: 'Guelph',
-  postalCode: 'N1G 2W1',
-  phoneNumber: '519-824-4120',
+  title: 'University of Guelph, Ridgetown Campus',
+  street: '120 Main Street East',
+  city: 'Ridgetown',
+  postalCode: 'N0P 2C0',
+  phoneNumber: '519-674-1500',
 };
