@@ -23,7 +23,7 @@
   export type HeaderProps = {
     pageTitle?: string;
     pageURL?: string;
-    variant?: 'dual-brand';
+    variant?: 'dual-brand' | 'ridgetown';
   };
 
   export type HeaderContext = Writable<
