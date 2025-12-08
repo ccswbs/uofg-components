@@ -90,7 +90,7 @@ export const primaryLinks: FooterLink[] = [
   {
     text: 'Give to U of G',
     icon: faHandHoldingHeart,
-    href: 'https://www.alumni.uoguelph.ca/give-to-guelph/how-to-give',
+    href: 'https://alumni.uoguelph.ca/give-to-guelph/how-to-give',
   },
 ];
 
