@@ -42,7 +42,7 @@ For more detailed explanation of each package, read their corresponding README a
 
 ### Testing Changes Locally
 
-The only way to test changes without publishing a release candidate first is to run Storybook locally and then observe how the component in question behaves. From your `uofg-components` directory, run `bun run dev` and when it finishes, you should see an info box with the following URLs:
+The only way to test changes without publishing a release candidate first is to run Storybook locally and then observe how the component in question behaves. From your `uofg-components` directory, run `npm run dev` and when it finishes, you should see an info box with the following URLs:
 
 ```
 Local: http://localhost:6007/                                              │
@@ -50,6 +50,14 @@ On your network: http://192.168.40.128:6007/
 ``` 
 
 Either one will take you to a locally running version of the Storybook. Navigate to the component you changed, e.g. http://localhost:6007/?path=/story/react-components-card--as-a-link and ensure your changes appear as expected with no error messages or warnings.
+
+### Testing Changes with Docker
+
+If you are running into issues with Storybook not working locally, try using the command `npm run dev:docker` instead. This will run Storybook inside a Docker container which has been preconfigured to work with this monorepo. 
+
+Note you will need to have Docker/Docker Desktop installed on your machine for this to work.
+
+You can download Docker from [here](https://www.docker.com/get-started).
 
 ### Testing Changes with an Existing Feature Branch
 
