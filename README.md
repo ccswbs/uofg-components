@@ -94,6 +94,8 @@ Once you are done testing, you can unlink the package by running:
 bun unlink @uoguelph/react-components
 ```
 
+Note that this sometimes causes issues with ugnext's dev server and its recommended you try to test your changes using the other methods mentioned above.
+
 ## Publishing
 
 To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process.
