@@ -12,7 +12,7 @@
   const classes = tv({
     slots: {
       list: 'grid grid-rows-5 items-center gap-0 not-italic',
-      link: 'flex h-full items-center',
+      link: 'flex h-full items-center whitespace-nowrap',
     },
   });
 
