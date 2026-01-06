@@ -17,7 +17,7 @@ const config = {
       table: {
         type: {
           optional: false,
-          summary: '"dual-brand"',
+          summary: '"dual-brand" | "ridgetown"',
         },
       },
     },
@@ -157,4 +157,15 @@ export const DualBrand = {
     },
   },
   render: ({}) => <uofg-header page-title="Example Topic/Department" variant="dual-brand"></uofg-header>,
+};
+
+export const Ridgetown = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'A version of the header, with links/data related to the University of Guelph Ridgetown campus.',
+      },
+    },
+  },
+  render: ({}) => <uofg-header variant="ridgetown"></uofg-header>,
 };

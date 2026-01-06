@@ -9,8 +9,21 @@
         }
       };
     },
+    props: {
+      variant: { reflect: true, attribute: 'variant' },
+    },
   }}
 />
+
+<script module lang="ts">
+  import { type Writable } from 'svelte/store';
+
+  export type FooterProps = {
+    variant?: 'ridgetown';
+  };
+
+  export type FooterContext = Writable<FooterProps>;
+</script>
 
 <script lang="ts">
   import attachTailwind from '../../lib/attach-tailwind';
@@ -22,13 +35,29 @@
   import Link from './link.svelte';
   import { social } from './data/guelph';
   import { tv } from 'tailwind-variants';
-  import { onMount } from 'svelte';
+  import { onMount, setContext } from 'svelte';
+  import { writable } from 'svelte/store';
+
+  let { variant }: FooterProps = $props();
+
+  const footerState: FooterContext = writable({
+    variant,
+  });
+
+  setContext('footer-state', footerState);
 
   const classes = tv({
     slots: {
       footer:
         'flex flex-col content-center gap-0 bg-black px-[max(calc((100%-1320px)/2),2rem)] py-12 text-black-contrast md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4',
       wrapper: 'mb-6 grid grid-rows-5 items-center gap-0 not-italic md:mb-0',
+    },
+    variants: {
+      variant: {
+        ridgetown: {
+          footer: 'lg:grid-cols-[1fr_0.90fr_0.90fr_1fr]',
+        },
+      },
     },
   });
 
@@ -51,7 +80,9 @@
     };
   });
 
-  const { footer, wrapper } = classes();
+  const { footer, wrapper } = classes({
+    variant: $footerState.variant,
+  });
 </script>
 
 <footer>
