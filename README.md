@@ -55,9 +55,11 @@ Either one will take you to a locally running version of the Storybook. Navigate
 
 If you are running into issues with Storybook not working locally, try using the command `npm run dev:docker` instead. This will run Storybook inside a Docker container which has been preconfigured to work with this monorepo. 
 
-Note you will need to have Docker/Docker Desktop installed on your machine for this to work.
+You will need to have Docker/Docker Desktop installed on your machine for this to work.
 
 You can download Docker from [here](https://www.docker.com/get-started).
+
+On the first run, Docker will download the necessary Docker images and may take a few minutes to complete.
 
 ### Testing Changes with an Existing Feature Branch
 
