@@ -20,6 +20,8 @@
     "watch:react-components": "lerna run watch --scope @uoguelph/react-components",
     "build:storybook": "lerna run build --scope @uoguelph/storybook",
     "dev": "lerna run dev --scope @uoguelph/storybook",
+    "docker:dev": "docker-compose up",
+    "docker:clean": "docker-compose down",
     "clean": "rm -rf packages/react-components/dist packages/web-components/dist packages/storybook/storybook-static"
   }
 }
