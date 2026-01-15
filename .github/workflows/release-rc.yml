@@ -5,6 +5,10 @@ on:
     branches:
       - main
     types: [opened, synchronize]
+    # Only run if files in the .changeset directory are modified
+    paths:
+      - '.changeset/*.md'
+      - '!.changeset/README.md'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -27,7 +31,16 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Check for Changesets
+        id: check-changesets
+        run: |
+          # Count .md files in .changeset excluding README.md
+          COUNT=$(ls .changeset/*.md 2>/dev/null | grep -v "README.md" | wc -l)
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+
       - name: Enter Prerelease Mode
+        # Only run if we actually have changesets to process
+        if: steps.check-changesets.outputs.count > 0
         run: |
           if [ ! -f .changeset/pre.json ]; then
             npm run changeset:enter-prerelease
@@ -36,6 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Version and Publish to npm (RC)
+        if: steps.check-changesets.outputs.count > 0
         id: changesets
         uses: changesets/action@v1
         with:
