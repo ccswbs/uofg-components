@@ -30,6 +30,8 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        env:
+          NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
 
       - name: Check for Changesets
         id: check-changesets
@@ -47,6 +49,7 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
 
       - name: Create Version and Publish to npm (RC)
         if: steps.check-changesets.outputs.count > 0
@@ -59,3 +62,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
