@@ -131,6 +131,12 @@ npm run release
 ### Publishing Release Candidates (-rc)
 
 If you need to publish a test version (RC) for a Pull Request:
+
+Create a Changeset: For every change, run:
+``` bash
+npm run changeset
+```
+
 Enter Pre-release mode:
 ``` bash
    npx changeset pre enter rc
