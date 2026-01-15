@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.0.9-rc.0
+
+### Patch Changes
+
+- 80daf50: Normalize hex color for social media icon
+
 ## 2.0.8
 
 ### Patch Changes
