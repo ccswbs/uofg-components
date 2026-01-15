@@ -94,9 +94,11 @@ bun unlink @uoguelph/react-components
 Note that this sometimes causes issues with ugnext's dev server and its recommended you try to test your changes using the other methods mentioned above.
 
 ## Publishing
+
 We use Changesets to manage versioning and Turborepo to handle the build-and-publish process.
 
 ### Prerequisites
+
 Ensure you have an NPM account with access to the uoguelph organization and are logged in:
 ``` sh
 npm login
@@ -104,7 +106,7 @@ npm login
 
 Run a build to ensure everything is valid:
 ``` sh
-   npm run build
+npm run build
 ```
 
 ### Publishing Steps (Standard Release)
@@ -118,14 +120,14 @@ Follow the prompts to select which packages changed and whether it is a patch, m
 
 Version the packages: Once you are ready to release, run:
 ``` bash
-   npm run version-packages
+npm run changeset:version
 ```
 
 This will consume the changeset files and update the package.json files.
 
 Publish to NPM:
 ``` bash
-npm run release
+npm run changeset:release
 ```
 
 ### Publishing Release Candidates (-rc)
@@ -139,22 +141,16 @@ npm run changeset
 
 Enter Pre-release mode:
 ``` bash
-   npx changeset pre enter rc
+npm run changeset:enter-prerelease
 ```
 
 Version and Publish:
 ``` bash
-npm run version-packages
-npm run release
+npm run changeset:version
+npm run changeset:release
 ```
 
 Exit Pre-release mode (Once testing is complete and you are ready for a final release):
 ``` bash
-   npx changeset pre exit
+npm run changeset:exit-prerelease
 ```
-
-Pull Requests and Publishing
-
-We require the use of pull requests for any changes made to the codebase. When creating a pull request, please ensure that you follow the guidelines outlined in the pull request template. This includes providing a summary of changes, detailing significant modifications, and including a test plan.
-
-Every PR that changes code should include a changeset file. You can generate this by running npm run changeset before committing your code. This ensures that the history of changes is captured and that the CI/CD pipeline knows how to version the package when it is merged.
