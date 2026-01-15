@@ -52,6 +52,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
 
+      - name: Commit version changes
+        if: steps.check-changesets.outputs.count > 0
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: version bump for RC [skip ci]"
+          git push origin HEAD:${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Publish to npm (RC)
         if: steps.check-changesets.outputs.count > 0
         id: changesets
