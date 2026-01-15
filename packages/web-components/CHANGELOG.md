@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.0.8
+
+### Patch Changes
+
+- 06b00ee: Updated Bluesky link color
+
 ## 2.0.8-rc.0
 
 ### Patch Changes
