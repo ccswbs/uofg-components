@@ -2,4 +2,4 @@
 '@uoguelph/web-components': patch
 ---
 
-Add Bluesky link in footer
+Updated Bluesky link color

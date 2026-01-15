@@ -60,7 +60,7 @@ export const social: { directory: string; links: FooterLink[] } = {
       text: 'LinkedIn',
       icon: faLinkedinIn,
       href: 'https://www.linkedin.com/school/university-of-guelph/',
-      classes: 'focus:text-white hover:text-white focus:bg-[#0a66c2] hover:bg-[#0a66c2]',
+      classes: 'focus:text-white hover:text-white focus:bg-[#006AFF] hover:bg-[#006AFF]',
     },
     {
       text: 'TikTok',
