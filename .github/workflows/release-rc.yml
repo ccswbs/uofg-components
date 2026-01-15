@@ -40,25 +40,25 @@ jobs:
           COUNT=$(ls .changeset/*.md 2>/dev/null | grep -v "README.md" | wc -l)
           echo "count=$COUNT" >> $GITHUB_OUTPUT
 
-      - name: Enter Prerelease Mode
-        # Only run if we actually have changesets to process
+      - name: Enter Prerelease Mode and Version
         if: steps.check-changesets.outputs.count > 0
         run: |
           if [ ! -f .changeset/pre.json ]; then
             npm run changeset:enter-prerelease
           fi
+          # Manually run versioning here to update package.json files in the runner
+          npm run changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
 
-      - name: Create Version and Publish to npm (RC)
+      - name: Publish to npm (RC)
         if: steps.check-changesets.outputs.count > 0
         id: changesets
         uses: changesets/action@v1
         with:
-          version: npm run changeset:version
+          # We leave 'version' out so the action doesn't try to create a PR
           publish: npm run changeset:release
-          createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
