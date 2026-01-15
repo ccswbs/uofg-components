@@ -1,4 +1,5 @@
 import {
+  faBluesky,
   faFacebookF,
   faInstagram,
   faLinkedinIn,
@@ -66,6 +67,12 @@ export const social: { directory: string; links: FooterLink[] } = {
       icon: faTiktok,
       href: 'https://www.tiktok.com/@uofguelph',
       classes: 'focus:text-black hover:text-black focus:bg-white hover:bg-white',
+    },
+    {
+      text: 'Bluesky',
+      icon: faBluesky,
+      href: 'https://bsky.app/profile/uofguelph.bsky.social',
+      classes: 'focus:text-white hover:text-white focus:bg-[#0a66c2] hover:bg-[#0a66c2]',
     },
   ],
 };
