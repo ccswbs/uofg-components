@@ -26,9 +26,9 @@
     "format": "npx prettier --write .",
     "watch:react-components": "turbo watch --filter @uoguelph/react-components",
     "changeset": "changeset",
-    "changeset:prerelease": "changeset pre enter rc",
+    "changeset:enter-prerelease": "changeset pre enter rc",
     "changeset:exit-prerelease": "changeset pre exit",
-    "version-packages": "changeset version",
-    "release": "turbo build && changeset publish"
+    "changeset:version": "changeset version",
+    "changeset:release": "turbo build && changeset publish"
   }
 }
