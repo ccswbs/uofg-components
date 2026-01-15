@@ -55,6 +55,7 @@ jobs:
         with:
           version: npm run changeset:version
           publish: npm run changeset:release
+          createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
