@@ -1,0 +1,26 @@
+services:
+  dev-server:
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NPMRC_FONTAWESOME_PACKAGE_TOKEN=${NPMRC_FONTAWESOME_PACKAGE_TOKEN}
+    command: sh -c "mkdir -p /tmp/node_tmp && rm -rf /tmp/node_tmp/* && npm run dev"
+    ports:
+      - "6007:6007"
+    environment:
+      - NPMRC_FONTAWESOME_PACKAGE_TOKEN=${NPMRC_FONTAWESOME_PACKAGE_TOKEN}
+      - NODE_ENV=development
+      - TMPDIR=/tmp/node_tmp
+    volumes:
+      # Mount the project root to /app for HMR
+      - .:/app
+      # Anonymous volumes to protect container node_modules from being overwritten by host
+      - /app/node_modules
+      - /app/packages/react-components/node_modules
+      - /app/packages/web-components/node_modules
+      - /app/packages/storybook/node_modules
+      - /app/packages/tailwind-theme/node_modules
+    stdin_open: true
+    tty: true
