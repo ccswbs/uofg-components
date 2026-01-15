@@ -15,9 +15,9 @@ You can get this token from the C&M FontAwesome account or from [Netlify](https:
 export NPMRC_FONTAWESOME_PACKAGE_TOKEN="TOKEN VALUE HERE"
 ```
 
-2. Install the necessary dependencies by running:
 
-```sh
+Install the necessary dependencies by running:
+``` sh
 npm install
 ```
 
@@ -25,141 +25,130 @@ You are now ready to start developing!
 
 ## Structure of the Monorepo
 
-This monorepo is managed using [Lerna](https://lerna.js.org/), a tool that optimizes the workflow around managing multi-package repositories with git and npm.
-
-### Packages
+This monorepo is managed using Turborepo, a high-performance build system, and Changesets for versioning and publishing.
 
 The monorepo contains the following packages:
 
-1. **packages/react-components**: This package is a collection of React components that follow the University of Guelph Brand Guidelines
-2. **packages/web-components**: This package is a collection of framework agnostic native web components that follow the University of Guelph Brand Guidelines. These components are developed using Svelte.
-3. **packages/tailwind-theme**: This package provides a common tailwind v4 config file, it is used internally in both the web-components and react-components packages but is also accessible as its own npm package.
-4. **packages/storybook**: This directory contains the code for our Storybook documentation. It acts as the documentation for all the other packages in the repo.
+- packages/react-components: This package is a collection of React components that follow the University of Guelph Brand Guidelines
+- packages/web-components: This package is a collection of framework agnostic native web components that follow the University of Guelph Brand Guidelines. These components are developed using Svelte.
+- packages/tailwind-theme: This package provides a common tailwind v4 config file, it is used internally in both the web-components and react-components packages but is also accessible as its own npm package.
+- packages/storybook: This directory contains the code for our Storybook documentation. It acts as the documentation for all the other packages in the repo.
 
 For more detailed explanation of each package, read their corresponding README and Development Guide files.
 
 ## Development Tips
 
-### Testing Changes Locally
+Testing Changes Locally
 
-The only way to test changes without publishing a release candidate first is to run Storybook locally and then observe how the component in question behaves. From your `uofg-components` directory, run `npm run dev` and when it finishes, you should see an info box with the following URLs:
+The only way to test changes without publishing a release candidate first is to run Storybook locally and then observe how the component in question behaves. From your uofg-components directory, run npm run dev. Thanks to Turborepo, only the necessary dependencies will be built and cached.
 
+When it finishes, you should see an info box with the following URLs:
 ```
 Local: http://localhost:6007/                                              │
 On your network: http://192.168.40.128:6007/
-``` 
+```
 
 Either one will take you to a locally running version of the Storybook. Navigate to the component you changed, e.g. http://localhost:6007/?path=/story/react-components-card--as-a-link and ensure your changes appear as expected with no error messages or warnings.
 
 ### Testing Changes with Docker
-
-If you are running into issues with Storybook not working locally, try using the command `npm run dev:docker` instead. This will run Storybook inside a Docker container which has been preconfigured to work with this monorepo. 
+If you are running into issues with Storybook not working locally, try using the command npm run dev:docker instead. This will run Storybook inside a Docker container which has been preconfigured to work with this monorepo.
 
 You will need to have Docker/Docker Desktop installed on your machine for this to work.
 
-You can download Docker from [here](https://www.docker.com/get-started).
+You can download Docker from here.
 
 On the first run, Docker will download the necessary Docker images and may take a few minutes to complete.
 
 ### Testing Changes with an Existing Feature Branch
 
-To test your changes with an existing feature branch from another repo, e.g. [ugnext](https://github.com/ccswbs/ugnext), go to `package.json` and, in the "dependencies" section, find the line referring to the package you want to test. Edit it to point to your just-published release candidate, e.g. `"@uoguelph/react-components": "^1.5.6-rc.1"` Then run `bun install` to ensure your `bun.lock` file gets updated as well. 
+To test your changes with an existing feature branch from another repo, e.g. ugnext, go to package.json and, in the "dependencies" section, find the line referring to the package you want to test. Edit it to point to your just-published release candidate, e.g. "@uoguelph/react-components": "^1.5.6-rc.1" Then run bun install to ensure your bun.lock file gets updated as well.
 
-Now you can run a local build which uses your release candidate and verify if your changes work as expected. If you want to test remotely, e.g. on a Netlify site, you'll need to commit your changes to `package.json` and `bun.lock` and then push. Make sure you revert these changes once testing is complete.
+Now you can run a local build which uses your release candidate and verify if your changes work as expected. If you want to test remotely, e.g. on a Netlify site, you'll need to commit your changes to package.json and bun.lock and then push. Make sure you revert these changes once testing is complete.
 
 ### Testing Changes Using the bun/npm Link command
+Another way to test your changes is to use the bun/npm link command.
 
-Another way to test your changes is to use the `bun/npm link` command.
+https://bun.com/docs/pm/cli/link
 
-- https://bun.com/docs/pm/cli/link
-- https://docs.npmjs.com/cli/v11/commands/npm-link
+https://docs.npmjs.com/cli/v11/commands/npm-link
 
 This command allows you to link a package so that the local version on your machine will be used instead of the published version.
 
-For example, if you want to test the changes you made to the `react-components` package on ugnext, you can run the following command from the `packages/react-components` directory:
-
-```bash
+For example, if you want to test the changes you made to the react-components package on ugnext, you can run the following command from the packages/react-components directory:
+``` bash
 bun link
 ```
 
-Then, in ugnext, you can run the following command to link the `react-components` package to the local version:
-
-```bash
+Then, in ugnext, you can run the following command to link the react-components package to the local version:
+``` bash
 bun link @uoguelph/react-components
 ```
 
-Now, when ever you make changes to the `react-components` package, you must build the package. You can do this by running the corresponding build command for the package you are working on. For example, to build the `react-components` package, run: `npm run build:react-components`
+Now, when ever you make changes to the react-components package, you must build the package. You can do this by running the corresponding build command for the package you are working on. For example, to build the react-components package, run: npm run build:react-components
 
 Once you are done testing, you can unlink the package by running:
-
-```bash
+``` bash
 bun unlink @uoguelph/react-components
 ```
 
 Note that this sometimes causes issues with ugnext's dev server and its recommended you try to test your changes using the other methods mentioned above.
 
 ## Publishing
-
-To publish the packages in this monorepo, we use [Lerna](https://lerna.js.org/) to manage the versioning and publishing process.
-
-Lerna allows us to publish all the packages in the monorepo with a single command.
+We use Changesets to manage versioning and Turborepo to handle the build-and-publish process.
 
 ### Prerequisites
-
-1. Ensure Lerna is installed on your machine. Run `lerna --help` to see if you already have it installed. If not, run `npm install --global lerna`. You can also install through other methods, such as Homebrew (`brew install lerna`)
-2. Ensure you have an NPM account with access to the uoguelph organization and are logged in. You can log in by running:
-
-```sh
+Ensure you have an NPM account with access to the uoguelph organization and are logged in:
+``` sh
 npm login
 ```
 
-2. Run a build of all the packages in the monorepo to make sure the packages are ready to be published.
-
-```sh
-lerna run build
+Run a build to ensure everything is valid:
+``` sh
+   npm run build
 ```
 
-If your build fails, you will need to fix the errors before you can publish the packages.
+### Publishing Steps (Standard Release)
 
-3. Update any documentation regarding the packages in the monorepo. This includes updating the README files and the Storybook.
-
-### Publishing Steps
-
-1. Run the following command to publish all the packages in the monorepo (Lerna will automatically determine which packages have changed and need to be republished):
-
-```sh
-lerna publish --pre-dist-tag rc --no-private --preid rc
+Create a Changeset: For every change, run:
+``` bash
+npm run changeset
 ```
 
-If for some reason a package is not being published, you can force it to be published by running:
+Follow the prompts to select which packages changed and whether it is a patch, minor, or major version bump. This creates a markdown file in .changeset/.
 
-```sh
-lerna publish --force-publish <package-name> --pre-dist-tag rc --no-private --preid rc
+Version the packages: Once you are ready to release, run:
+``` bash
+   npm run version-packages
 ```
 
-2. Follow the prompts to select the version number for each package. Lerna will give you a chance before publishing to see what the new version numbers for each package will be. You should read the [Semantic Versioning](https://semver.org/) documentation to understand how to select the correct version number. Remember any pre-release version should be suffixed with `-rc` (e.g. `1.0.0-rc.0`).
-3. Thats it! The packages should have been published to the NPM registry. You can verify by checking the NPM website for each package.
+This will consume the changeset files and update the package.json files.
 
-### Pull Requests and Publishing
-
-We require the use of pull requests for any changes made to the codebase.
-When creating a pull request, please ensure that you follow the guidelines outlined in the pull request template.
-This includes providing a summary of changes, detailing significant modifications, and including a test plan.
-
-For every pull request, you must publish test versions of the packages using the instructions above.
-
-Once your PR has been reviewed, approved,
-and is ready to be merged,
-you need to update the version numbers of the packages that were changed so they are no longer the test versions.
-You can do this by running:
-
-```sh
-lerna version --no-private --preid rc --force-publish <package-name>
+Publish to NPM:
+``` bash
+npm run release
 ```
 
-You can then merge your PR, switch to the main branch,
-pull the changes, and publish the packages using the following command:
+### Publishing Release Candidates (-rc)
 
-```sh
-lerna publish from-package --no-private --pre-dist-tag rc
+If you need to publish a test version (RC) for a Pull Request:
+Enter Pre-release mode:
+``` bash
+   npx changeset pre enter rc
 ```
+
+Version and Publish:
+``` bash
+npm run version-packages
+npm run release
+```
+
+Exit Pre-release mode (Once testing is complete and you are ready for a final release):
+``` bash
+   npx changeset pre exit
+```
+
+Pull Requests and Publishing
+
+We require the use of pull requests for any changes made to the codebase. When creating a pull request, please ensure that you follow the guidelines outlined in the pull request template. This includes providing a summary of changes, detailing significant modifications, and including a test plan.
+
+Every PR that changes code should include a changeset file. You can generate this by running npm run changeset before committing your code. This ensures that the history of changes is captured and that the CI/CD pipeline knows how to version the package when it is merged.
