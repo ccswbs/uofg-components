@@ -117,6 +117,23 @@ Then, open a pull request so other developers can review your changes.
 
 As part of the review process, you must create a release candidate (rc) version of the packages that you changed.
 
+### Publishing Changes With Github Actions
+
+1. Create a Changeset:
+``` bash
+npm run changeset
+```
+
+2. Push the changes
+
+3. The Github Action will automatically run and publish the release candidate packages.
+
+4. Once the action completes successfully, pull the latest changes to your branch as the Github Action will automatically make a commit on your branch.
+
+5. Once ready, merge your PR and the Github Action will automatically publish the final packages.
+
+### Publishing Changes Manually
+
 The full publishing process is as follows:
 
 1. Create a Changeset: For every change made to a package, run:
