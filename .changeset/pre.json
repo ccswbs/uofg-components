@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.8"
   },
   "changesets": [
+    "bumpy-poems-scream",
     "eighty-rooms-yawn",
     "yummy-shrimps-occur"
   ]

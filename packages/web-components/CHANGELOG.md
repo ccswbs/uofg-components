@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.0.9-rc.1
+
+### Patch Changes
+
+- 6a4e687: Remove legacy back-to-top web component
+
 ## 2.0.9-rc.0
 
 ### Patch Changes
