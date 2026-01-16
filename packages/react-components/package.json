@@ -59,6 +59,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "fast-glob": "^3.3.3",
     "globals": "^15.14.0",
+    "nanoid": "^3.3.11",
     "object-hash": "^3.0.0",
     "postcss": "^8.5.2",
     "rollup-preserve-directives": "^1.1.3",
