@@ -1,0 +1,64 @@
+name: Release Main
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Release Final
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+        env:
+          NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
+
+      - name: Exit Prerelease and Version
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # If we are in pre-mode, exit it
+          if [ -f .changeset/pre.json ]; then
+            npm run changeset:exit-prerelease
+            git add .
+            git commit -m "chore: exit prerelease mode [skip ci]" || echo "No changes to commit"
+          fi
+
+          # Version the packages to final versions
+          npm run changeset:version
+          git add .
+          git commit -m "chore: version packages for final release [skip ci]" || echo "No changes to commit"
+
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npm run changeset:release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPMRC_FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.NPMRC_FONTAWESOME_PACKAGE_TOKEN }}
