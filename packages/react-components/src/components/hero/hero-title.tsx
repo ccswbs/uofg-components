@@ -29,7 +29,7 @@ export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
   const Component = as ?? 'h1';
 
   const heroTitle = tv({
-    base: 'w-fit font-serif text-3xl font-bold',
+    base: 'box-border px-4 md:px-8 w-fit font-serif text-3xl font-bold',
     variants: {
       variant: {
         spotlight: 'text-white',
