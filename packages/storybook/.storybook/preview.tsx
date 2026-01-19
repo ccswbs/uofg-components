@@ -16,7 +16,7 @@ const preview: Preview = {
       },
     },
     viewport: {
-      viewports: INITIAL_VIEWPORTS,
+      options: INITIAL_VIEWPORTS,
     },
     docs: {
       theme: { ...theme, fontBase: '"DM Sans", sans-serif' },
