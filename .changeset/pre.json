@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.9"
   },
   "changesets": [
-    "pink-cameras-sell"
+    "pink-cameras-sell",
+    "rich-baths-sit"
   ]
 }
