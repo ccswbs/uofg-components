@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.2
+
+### Patch Changes
+
+- 00c386a: Update dependencies
+
 ## 1.6.3-rc.1
 
 ### Patch Changes
