@@ -18,7 +18,7 @@
     "./style": "./dist/uofg-web-components/uofg-web-components.css"
   },
   "scripts": {
-    "build": "NODE_ENV=production vite build",
+    "build": "cross-env NODE_ENV=production vite build",
     "prepack": "npm run build"
   },
   "devDependencies": {
