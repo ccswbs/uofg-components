@@ -1,5 +1,17 @@
 # @uoguelph/web-components
 
+## 2.0.10-rc.1
+
+### Patch Changes
+
+- 00c386a: Update dependencies
+
+## 2.0.10-rc.0
+
+### Patch Changes
+
+- 886a6d3: Update dependecies and configs
+
 ## 2.0.9
 
 ### Patch Changes
