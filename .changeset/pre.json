@@ -1,0 +1,15 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@uoguelph/react-components": "1.6.2",
+    "@uoguelph/storybook": "1.0.0",
+    "@uoguelph/tailwind-theme": "1.0.2",
+    "@uoguelph/web-components": "2.0.9"
+  },
+  "changesets": [
+    "fruity-gifts-spend",
+    "pink-cameras-sell",
+    "rich-baths-sit"
+  ]
+}
