@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.0.10-rc.2
+
+### Patch Changes
+
+- f08a274: Update turbo.json to ensure Storybook is not cached with old source of packages, fix local state references in @uoguelph/web-components
+
 ## 2.0.10-rc.1
 
 ### Patch Changes

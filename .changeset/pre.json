@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.9"
   },
   "changesets": [
+    "free-friends-send",
     "fruity-gifts-spend",
     "pink-cameras-sell",
     "rich-baths-sit"
