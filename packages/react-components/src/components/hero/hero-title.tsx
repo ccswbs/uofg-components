@@ -32,7 +32,7 @@ export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
     base: 'box-border px-4 md:px-8 w-fit font-serif text-3xl font-bold',
     variants: {
       variant: {
-        spotlight: 'text-white',
+        spotlight: 'text-white px-0',
         basic: 'bg-yellow p-1 text-yellow-contrast md:text-4xl',
       },
     },
