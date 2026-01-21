@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.4
+
+### Patch Changes
+
+- 9c887c0: Update hero title padding
+
 ## 1.6.3-rc.3
 
 ### Patch Changes

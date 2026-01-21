@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.0.10-rc.3
+
+### Patch Changes
+
+- 9c887c0: Update hero title padding
+
 ## 2.0.10-rc.2
 
 ### Patch Changes
