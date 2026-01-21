@@ -24,3 +24,22 @@ services:
       - /app/packages/tailwind-theme/node_modules
     stdin_open: true
     tty: true
+
+  build:
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NPMRC_FONTAWESOME_PACKAGE_TOKEN=${NPMRC_FONTAWESOME_PACKAGE_TOKEN}
+    command: npm run build
+    environment:
+      - NPMRC_FONTAWESOME_PACKAGE_TOKEN=${NPMRC_FONTAWESOME_PACKAGE_TOKEN}
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/packages/react-components/node_modules
+      - /app/packages/web-components/node_modules
+      - /app/packages/storybook/node_modules
+      - /app/packages/tailwind-theme/node_modules
