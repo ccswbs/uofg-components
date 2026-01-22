@@ -31,12 +31,6 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
       divisibleByFour: {
         true: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
       },
-      divisibleByFive: {
-        true: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
-      },
-      divisibleBySeven: {
-        true: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
-      },
       variant: {
         'solid-colors-full': '',
         'solid-colors-no-gap': '',
@@ -75,8 +69,6 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
       divisibleByTwo: count % 2 === 0,
       divisibleByThree: count % 3 === 0,
       divisibleByFour: count % 4 === 0,
-      divisibleByFive: count % 5 === 0,
-      divisibleBySeven: count % 7 === 0,
     }),
     className,
   );
@@ -86,6 +78,7 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
       value={{
         variant,
         incrementCount: () => setCount(prev => prev + 1),
+        count,
       }}
     >
       <dl
