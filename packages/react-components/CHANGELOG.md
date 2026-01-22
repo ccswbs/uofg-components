@@ -1,5 +1,12 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.9
+
+### Patch Changes
+
+- 2555f18: Fix more edge cases with statistics
+- 989438e: Remove console log
+
 ## 1.6.3-rc.8
 
 ### Patch Changes

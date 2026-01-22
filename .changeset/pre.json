@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.9"
   },
   "changesets": [
+    "floppy-icons-heal",
     "forty-glasses-think",
     "free-friends-send",
     "fruity-gifts-spend",
@@ -17,6 +18,7 @@
     "proud-stamps-shop",
     "rich-baths-sit",
     "sixty-emus-bathe",
-    "spicy-games-argue"
+    "spicy-games-argue",
+    "vast-stars-change"
   ]
 }
