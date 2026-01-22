@@ -45,6 +45,11 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
         class: 'gap-4',
       },
       {
+        variant: ['left-border'],
+        divisibleByFour: true,
+        class: 'lg:grid-cols-2 2xl:grid-cols-4',
+      },
+      {
         divisibleByTwo: true,
         divisibleByThree: false,
         divisibleByFour: false,
