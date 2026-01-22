@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.10
+
+### Patch Changes
+
+- 4499aa0: Add `decrementCount` to `statistics` context, update grid logic, and enhance `statistics` stories with container usage
+
 ## 1.6.3-rc.9
 
 ### Patch Changes
