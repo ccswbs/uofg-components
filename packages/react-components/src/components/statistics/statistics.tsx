@@ -45,6 +45,11 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
         class: 'gap-4',
       },
       {
+        variant: ['left-border'],
+        divisibleByFour: true,
+        class: 'lg:grid-cols-2',
+      },
+      {
         divisibleByTwo: true,
         divisibleByThree: false,
         divisibleByFour: false,
@@ -73,6 +78,8 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
       value={{
         variant,
         incrementCount: () => setCount(prev => prev + 1),
+        decrementCount: () => setCount(prev => prev - 1),
+        count,
       }}
     >
       <dl

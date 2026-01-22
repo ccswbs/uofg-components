@@ -16,11 +16,15 @@
   } & HTMLAttributes<HTMLAnchorElement> = $props();
 
   const classes = twJoin(
-    'w-fit underline decoration-transparent transition-colors hover:decoration-black-contrast focus:decoration-black-contrast',
-    className,
+    'w-fit',
+    'underline',
+    'decoration-transparent',
+    'transition-colors',
+    'hover:decoration-black-contrast',
+    'focus:decoration-black-contrast',
   );
 </script>
 
-<a class={classes} {href} aria-label={label ?? undefined}>
+<a class={twJoin(classes, className)} {href} aria-label={label ?? undefined}>
   {@render children()}
 </a>
