@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.5
+
+### Patch Changes
+
+- 14af202: Fix layout issue in statistics component in @uoguelph/react-components
+
 ## 1.6.3-rc.4
 
 ### Patch Changes

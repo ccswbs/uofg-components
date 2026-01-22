@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.0.10-rc.4
+
+### Patch Changes
+
+- 14af202: Fix layout issue in statistics component in @uoguelph/react-components
+
 ## 2.0.10-rc.3
 
 ### Patch Changes
