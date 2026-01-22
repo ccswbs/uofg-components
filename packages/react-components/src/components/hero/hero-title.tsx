@@ -29,11 +29,11 @@ export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
   const Component = as ?? 'h1';
 
   const heroTitle = tv({
-    base: 'box-border px-4 md:px-8 w-fit font-serif text-3xl font-bold',
+    base: 'w-fit px-3 py-0.5 font-serif text-3xl font-bold',
     variants: {
       variant: {
-        spotlight: 'text-white px-0 md:px-0',
-        basic: 'bg-yellow p-1 text-yellow-contrast md:text-4xl',
+        spotlight: 'px-0 text-white md:px-0',
+        basic: 'bg-yellow text-yellow-contrast md:text-4xl',
       },
     },
   });
