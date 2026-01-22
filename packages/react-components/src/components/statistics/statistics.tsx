@@ -47,7 +47,7 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
       {
         variant: ['left-border'],
         divisibleByFour: true,
-        class: 'lg:grid-cols-2 2xl:grid-cols-4',
+        class: 'lg:grid-cols-2',
       },
       {
         divisibleByTwo: true,
