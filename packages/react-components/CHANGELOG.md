@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.8
+
+### Patch Changes
+
+- 9caa4c6: Update pagination skip link focus styles
+
 ## 1.6.3-rc.7
 
 ### Patch Changes
