@@ -18,7 +18,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
   }, []);
 
   const classes = tv({
-    base: 'relative flex flex-1 flex-col justify-around gap-2',
+    base: 'relative flex min-w-1/3 flex-1 flex-col items-center justify-around gap-2',
     variants: {
       variant: {
         'solid-colors-full': [

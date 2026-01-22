@@ -49,7 +49,11 @@
 
   const headerState: HeaderContext = writable({
     mode: 'mobile',
-    variant,
+    variant: undefined,
+  });
+
+  $effect.pre(() => {
+    headerState.update(state => ({ ...state, variant }));
   });
 
   setContext('header-state', headerState);
