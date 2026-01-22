@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.6
+
+### Patch Changes
+
+- 98161c0: Update statisics layout
+
 ## 1.6.3-rc.5
 
 ### Patch Changes
