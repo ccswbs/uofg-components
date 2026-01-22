@@ -1,5 +1,12 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.7
+
+### Patch Changes
+
+- 823ef19: Update statistics to handle more edge cases
+- 9e9978a: Update spacing in basic variant of hero
+
 ## 1.6.3-rc.6
 
 ### Patch Changes
