@@ -4,6 +4,7 @@ import { StatisticsProps } from './statistics';
 export type StatisticsContextValue = {
   variant: StatisticsProps['variant'];
   incrementCount: () => void;
+  decrementCount: () => void;
   count: number;
 };
 

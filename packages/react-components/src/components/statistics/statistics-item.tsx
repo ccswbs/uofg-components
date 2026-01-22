@@ -15,6 +15,10 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
 
   useEffect(() => {
     context?.incrementCount();
+
+    return () => {
+      context?.decrementCount();
+    };
   }, []);
 
   const classes = tv({
@@ -46,6 +50,12 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
         'light-grey': '',
         'left-border': 'border-l-8 border-black nth-[2n]:border-red nth-[3n]:border-yellow nth-[4n]:border-blue',
       },
+      threeColumn: {
+        true: '',
+      },
+      fourColumn: {
+        true: '',
+      },
     },
     compoundVariants: [
       {
@@ -61,11 +71,32 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
         class:
           'bg-black text-black-contrast nth-[2n]:bg-red nth-[2n]:text-red-contrast nth-[3n]:bg-yellow nth-[3n]:text-yellow-contrast nth-[4n]:bg-blue nth-[4n]:text-blue-contrast',
       },
+      {
+        variant: ['solid-colors-full'],
+        threeColumn: true,
+        class: 'nth-[4n]:before:z-0',
+      },
+      {
+        variant: ['solid-colors-full'],
+        fourColumn: true,
+        class: 'nth-[5n]:before:z-0',
+      },
     ],
   });
 
+  const count = context?.count ?? NaN;
+
   return (
-    <div className={`uofg-statistics-item ${twMerge(classes({ variant: context?.variant }), className)}`}>
+    <div
+      className={`uofg-statistics-item ${twMerge(
+        classes({
+          variant: context?.variant,
+          threeColumn: count >= 5 && count % 4 !== 0,
+          fourColumn: count >= 5 && count % 4 === 0,
+        }),
+        className,
+      )}`}
+    >
       {children}
     </div>
   );
