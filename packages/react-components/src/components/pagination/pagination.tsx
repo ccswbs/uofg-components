@@ -185,7 +185,7 @@ export function Pagination({
 
   return (
     <div className={`uofg-pagination ${twMerge(base(), className)}`}>
-      <a href={`#uofg-pagination-skip-${id}`} className="sr-only focus:not-sr-only">
+      <a href={`#uofg-pagination-skip-${id}`} className="sr-only! focus-visible:not-sr-only!">
         Skip Pagination
       </a>
 
