@@ -72,7 +72,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
         'solid-colors-no-gap': '',
         'solid-colors': '',
         'light-grey': '',
-        'left-border': 'border-l-8 border-(--statistic-color)',
+        'left-border': 'items-start border-l-8 border-(--statistic-color)',
       },
       threeColumn: {
         true: '',
