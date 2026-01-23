@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.11
+
+### Patch Changes
+
+- 9e11792: Expand grid and styling logic in `statistics` and `statistics-item` components to support additional divisor cases and dynamic color assignment
+
 ## 1.6.3-rc.10
 
 ### Patch Changes
