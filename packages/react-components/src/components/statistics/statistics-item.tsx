@@ -1,6 +1,6 @@
 'use client';
 
-import { PropsWithChildren, useContext, useEffect } from 'react';
+import { PropsWithChildren, useContext, useEffect, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { StatisticsContext } from './statistics-context';
@@ -12,9 +12,33 @@ export type StatisticsItemProps = PropsWithChildren<{
 
 export function StatisticsItem({ children, className }: StatisticsItemProps) {
   const context = useContext(StatisticsContext);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const setColor = () => {
+    const colors = ['black', 'red', 'yellow', 'blue'];
+
+    if (!ref.current) {
+      return;
+    }
+
+    const item = ref.current;
+    const parent = ref.current.parentElement;
+
+    if (!parent) {
+      return;
+    }
+
+    const allItems = Array.from(parent.querySelectorAll('.uofg-statistics-item'));
+    const index = allItems.indexOf(item);
+
+    item.style.setProperty('--statistic-color', `var(--color-${colors[index % colors.length]})`);
+    item.style.setProperty('--statistic-color-contrast', `var(--color-${colors[index % colors.length]}-contrast)`);
+  };
 
   useEffect(() => {
     context?.incrementCount();
+
+    setColor();
 
     return () => {
       context?.decrementCount();
@@ -48,7 +72,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
         'solid-colors-no-gap': '',
         'solid-colors': '',
         'light-grey': '',
-        'left-border': 'border-l-8 border-black nth-[2n]:border-red nth-[3n]:border-yellow nth-[4n]:border-blue',
+        'left-border': 'border-l-8 border-(--statistic-color)',
       },
       threeColumn: {
         true: '',
@@ -68,8 +92,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
       },
       {
         variant: ['solid-colors-full', 'solid-colors-no-gap', 'solid-colors'],
-        class:
-          'bg-black text-black-contrast nth-[2n]:bg-red nth-[2n]:text-red-contrast nth-[3n]:bg-yellow nth-[3n]:text-yellow-contrast nth-[4n]:bg-blue nth-[4n]:text-blue-contrast',
+        class: 'bg-(--statistic-color) text-(--statistic-color-contrast)',
       },
       {
         variant: ['solid-colors-full'],
@@ -88,6 +111,7 @@ export function StatisticsItem({ children, className }: StatisticsItemProps) {
 
   return (
     <div
+      ref={ref}
       className={`uofg-statistics-item ${twMerge(
         classes({
           variant: context?.variant,
