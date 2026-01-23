@@ -8,12 +8,14 @@
     "@uoguelph/web-components": "2.0.9"
   },
   "changesets": [
+    "crisp-wombats-speak",
     "empty-melons-enter",
     "floppy-icons-heal",
     "forty-glasses-think",
     "free-friends-send",
     "fruity-gifts-spend",
     "late-falcons-make",
+    "loose-zebras-fall",
     "new-keys-notice",
     "nice-rooms-talk",
     "pink-cameras-sell",

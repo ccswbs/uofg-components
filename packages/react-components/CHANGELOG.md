@@ -1,5 +1,12 @@
 # @uoguelph/react-components
 
+## 1.6.3-rc.12
+
+### Patch Changes
+
+- d788346: Add focus indicator for selected tab in Tabs component
+- c2563b6: Left align content in left-border statistics
+
 ## 1.6.3-rc.11
 
 ### Patch Changes
