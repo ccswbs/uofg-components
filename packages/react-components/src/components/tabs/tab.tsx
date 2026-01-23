@@ -28,6 +28,7 @@ export function Tab({ children, className }: TabProps) {
     'ui-selected:border-2',
     'ui-selected:border-yellow',
     'ui-selected:bg-yellow',
+    'ui-selected:focus:bg-grey-light',
     'flex-1',
     className,
   );
