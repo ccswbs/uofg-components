@@ -8,7 +8,7 @@ export type AlertMessageProps = PropsWithChildren<{
 
 /** The AlertMessage component is used to display the main content of an alert. */
 export function AlertMessage({ children, className }: AlertMessageProps) {
-  const alertMessage = twMerge('bg-white px-4 py-2', className);
+  const alertMessage = twMerge('bg-white px-4 py-2 text-lg', className);
 
   return <div className={`uofg-alert-message ${alertMessage}`}>{children}</div>;
 }

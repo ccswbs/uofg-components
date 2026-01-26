@@ -8,7 +8,7 @@ export type AlertSubtitleProps = PropsWithChildren<{
 
 /** The AlertSubtitle component is used to display a subtitle for an alert. */
 export function AlertSubtitle({ children, className }: AlertSubtitleProps) {
-  const alertSubtitle = twMerge('mb-4 text-xl font-bold', className);
+  const alertSubtitle = twMerge('mb-4 text-xl font-bold text-black', className);
 
   return <div className={`uofg-alert-subtitle ${alertSubtitle}`}>{children}</div>;
 }

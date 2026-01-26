@@ -58,7 +58,7 @@ export function DismissibleAlert({ title, description, timestamp }: DismissibleA
           dismiss();
         }}
       >
-        <Container className="max-w-[80rem]! p-0">
+        <Container className="uofg-dismissable-alert-popup-container max-w-[80rem]! p-0">
           <Alert>
             <AlertTitle>University of Guelph Alert</AlertTitle>
 
@@ -82,10 +82,12 @@ export function DismissibleAlert({ title, description, timestamp }: DismissibleA
         clear();
         setShow(true);
       }}
-      className="sticky top-0 left-0 z-10000 flex w-dvw cursor-pointer items-center justify-center gap-[0.25em] bg-red p-2 text-red-contrast shadow-md transition hover:bg-black hover:text-white focus:bg-black focus:text-white"
+      className="uofg-dismissable-alert-bar sticky top-0 left-0 z-10000 flex w-dvw cursor-pointer items-center justify-center gap-[0.25em] bg-red p-2 text-red-contrast shadow-md transition hover:bg-black hover:text-white focus:bg-black focus:text-white"
     >
-      <FontAwesomeIcon className={`uofg-dismissable-alert-notification-icon`} icon={faCircleExclamation} />
-      <span className="overflow-hidden text-sm text-ellipsis whitespace-nowrap">{title}</span>
+      <FontAwesomeIcon className="uofg-dismissable-alert-bar-icon" icon={faCircleExclamation} />
+      <span className="uofg-dismissable-alert-bar-text overflow-hidden text-sm text-ellipsis whitespace-nowrap">
+        {title}
+      </span>
     </button>
   );
 }
