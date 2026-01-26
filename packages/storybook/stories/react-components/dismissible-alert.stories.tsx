@@ -28,7 +28,7 @@ export const Basic: Story = {
 
 export const WithLink: Story = {
   args: {
-    title: 'Example Alert Title asdf ahjskdfh aksldkjfh akjlsdfh akjsdhf lakjshf laskj',
+    title: 'Example Alert Title',
     description: 'Example alert description.',
     timestamp: new Date().toLocaleString(),
     link: {
