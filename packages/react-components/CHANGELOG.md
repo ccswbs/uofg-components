@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.16
+
+### Patch Changes
+
+- f5e11a7: Enhance `DismissibleAlert` styles with hover and focus states, adding pointer cursor and border for improved interactivity in `@uoguelph/react-components`
+
 ## 1.7.0-rc.15
 
 ### Patch Changes
