@@ -7,7 +7,6 @@ import objectHash from 'object-hash';
 import { useMemo, useState } from 'react';
 import { useDismissible } from '../../utils/use-dismissible';
 import { Alert, AlertFooter, AlertMessage, AlertSubtitle, AlertTitle } from '../alert/alert';
-import { Button } from '../button/button';
 import { Container } from '../container/container';
 import { Link } from '../link/link';
 import { Modal } from '../modal/modal';
@@ -16,10 +15,6 @@ export type DismissibleAlertProps = {
   title: string;
   description: string;
   timestamp: string;
-  link?: {
-    url: string;
-    text: string;
-  };
 };
 
 const parserOptions: HTMLReactParserOptions = {
@@ -39,13 +34,15 @@ const parserOptions: HTMLReactParserOptions = {
     switch (node.tagName) {
       case 'a':
         return <Link href={String(props.href)}>{children}</Link>;
+      case 'br':
+        return <br />;
       default:
         return null;
     }
   },
 };
 
-export function DismissibleAlert({ title, description, timestamp, link }: DismissibleAlertProps) {
+export function DismissibleAlert({ title, description, timestamp }: DismissibleAlertProps) {
   const [show, setShow] = useState(true);
   const hash = useMemo(() => objectHash({ title, description, timestamp }), [title, description, timestamp]);
   const { dismissed, dismiss, clear } = useDismissible('app-armor-alert', hash, 'session');
@@ -72,11 +69,6 @@ export function DismissibleAlert({ title, description, timestamp, link }: Dismis
 
             <AlertFooter className="flex flex-col gap-4">
               <span>Last Updated: {timestamp}</span>{' '}
-              {link && (
-                <Button as="a" href={link.url} color="red" className="py-2">
-                  {link.text}
-                </Button>
-              )}
             </AlertFooter>
           </Alert>
         </Container>

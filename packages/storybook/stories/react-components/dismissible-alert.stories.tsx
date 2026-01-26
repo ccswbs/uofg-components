@@ -29,11 +29,8 @@ export const Basic: Story = {
 export const WithLink: Story = {
   args: {
     title: 'Example Alert Title',
-    description: 'Example alert description.',
+    description:
+      'Please visit <a href="https://uoguelph.ca/campus-status">uoguelph.ca/campus-status</a> for more information.',
     timestamp: new Date().toLocaleString(),
-    link: {
-      url: 'https://uoguelph.ca/campus-status',
-      text: 'Learn More - Status Page',
-    },
   },
 };
