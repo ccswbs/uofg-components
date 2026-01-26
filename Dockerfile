@@ -11,7 +11,7 @@ ARG NPMRC_FONTAWESOME_PACKAGE_TOKEN
 ENV NPMRC_FONTAWESOME_PACKAGE_TOKEN=${NPMRC_FONTAWESOME_PACKAGE_TOKEN}
 
 # Copy package manifests for caching
-COPY package.json package-lock.json lerna.json .npmrc ./
+COPY package.json package-lock.json turbo.json .npmrc ./
 COPY packages/react-components/package.json ./packages/react-components/
 COPY packages/web-components/package.json ./packages/web-components/
 COPY packages/tailwind-theme/package.json ./packages/tailwind-theme/
