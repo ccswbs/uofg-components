@@ -5,7 +5,7 @@ const config: Meta<typeof DismissibleAlert> = {
   title: 'React Components/DismissibleAlert',
   component: DismissibleAlert,
   parameters: {
-    'layout': 'centered',
+    'layout': 'fullscreen',
     'docs': {
       toc: true,
     },
@@ -20,10 +20,20 @@ type Story = StoryObj<typeof DismissibleAlert>;
 
 export const Basic: Story = {
   args: {
-    alert: {
-      title: 'Example Alert Title',
-      description: 'Example alert description.',
-      timestamp: new Date().toLocaleString(),
+    title: 'Example Alert Title',
+    description: 'Example alert description.',
+    timestamp: new Date().toLocaleString(),
+  },
+};
+
+export const WithLink: Story = {
+  args: {
+    title: 'Example Alert Title',
+    description: 'Example alert description.',
+    timestamp: new Date().toLocaleString(),
+    link: {
+      url: 'https://uoguelph.ca/campus-status',
+      text: 'Learn More - Status Page',
     },
   },
 };
