@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.19
+
+### Patch Changes
+
+- bc5fed3: Make `DismissibleAlert` layout responsive and update Storybook to fullscreen mode for better preview
+
 ## 1.7.0-rc.18
 
 ### Patch Changes
