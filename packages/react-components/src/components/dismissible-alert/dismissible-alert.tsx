@@ -93,7 +93,7 @@ export function DismissibleAlert({ title, description, timestamp, link }: Dismis
       className="sticky top-0 left-0 z-10000 flex w-dvw cursor-pointer items-center justify-center gap-[0.25em] bg-red p-2 text-red-contrast shadow-md transition hover:bg-black hover:text-white focus:bg-black focus:text-white"
     >
       <FontAwesomeIcon className={`uofg-dismissable-alert-notification-icon`} icon={faCircleExclamation} />
-      <span className="overflow-hidden text-sm text-ellipsis whitespace-nowrap lg:max-w-[40ch]">{title}</span>
+      <span className="overflow-hidden text-sm text-ellipsis whitespace-nowrap">{title}</span>
     </button>
   );
 }
