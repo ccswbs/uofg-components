@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
+import { Container } from '../../../react-components/src/components/container/container';
 import {
   Statistics,
   StatisticsItem,
@@ -199,6 +200,214 @@ export const WithImages: Story = {
           <StatisticsItemImage src="https://picsum.photos/300/200" alt="Example Image" width="300" height="200" />
         </StatisticsItem>
       </Statistics>
+    );
+  },
+};
+
+export const TwoItems: Story = {
+  args: {
+    variant: 'solid-colors-full',
+  },
+  render: ({ ...args }) => {
+    return (
+      <Container>
+        <Statistics {...args}>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+        </Statistics>
+      </Container>
+    );
+  },
+};
+
+export const ThreeItems: Story = {
+  args: {
+    variant: 'solid-colors-full',
+  },
+  render: ({ ...args }) => {
+    return (
+      <Container>
+        <Statistics {...args}>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+        </Statistics>
+      </Container>
+    );
+  },
+};
+
+export const FiveItems: Story = {
+  args: {
+    variant: 'solid-colors-full',
+  },
+  render: ({ ...args }) => {
+    return (
+      <Container>
+        <Statistics {...args}>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+        </Statistics>
+      </Container>
+    );
+  },
+};
+
+export const SixItems: Story = {
+  args: {
+    variant: 'solid-colors-full',
+  },
+  render: ({ ...args }) => {
+    return (
+      <Container>
+        <Statistics {...args}>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+        </Statistics>
+      </Container>
+    );
+  },
+};
+
+export const SevenItems: Story = {
+  args: {
+    variant: 'solid-colors-full',
+  },
+  render: ({ ...args }) => {
+    return (
+      <Container>
+        <Statistics {...args}>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+        </Statistics>
+      </Container>
+    );
+  },
+};
+
+export const EightItems: Story = {
+  args: {
+    variant: 'solid-colors-full',
+  },
+  render: ({ ...args }) => {
+    return (
+      <Container>
+        <Statistics {...args}>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+          <StatisticsItem>
+            <StatisticsItemValue>Example Value</StatisticsItemValue>
+            <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          </StatisticsItem>
+        </Statistics>
+      </Container>
     );
   },
 };

@@ -10,7 +10,7 @@ export type AlertSubtitleProps = PropsWithChildren<{
 export function AlertSubtitle({ children, className }: AlertSubtitleProps) {
   const alertSubtitle = twMerge('mb-4 text-xl font-bold', className);
 
-  return <span className={`uofg-alert-subtitle ${alertSubtitle}`}>{children}</span>;
+  return <div className={`uofg-alert-subtitle ${alertSubtitle}`}>{children}</div>;
 }
 
 AlertSubtitle.displayName = 'AlertSubtitle';
