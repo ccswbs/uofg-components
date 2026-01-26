@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.14
+
+### Patch Changes
+
+- 1a2977f: Fix z-index issue in DismissibleAlert
+
 ## 1.7.0-rc.13
 
 ### Minor Changes
