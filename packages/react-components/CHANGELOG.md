@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.20
+
+### Patch Changes
+
+- b35c7c1: Make `DismissibleAlert` layout adjustments by switching breakpoint from `md` to `lg` and increasing max-width of title for better responsiveness
+
 ## 1.7.0-rc.19
 
 ### Patch Changes
