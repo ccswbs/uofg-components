@@ -1,0 +1,38 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@uoguelph/react-components": "1.6.2",
+    "@uoguelph/storybook": "1.0.0",
+    "@uoguelph/tailwind-theme": "1.0.2",
+    "@uoguelph/web-components": "2.0.9"
+  },
+  "changesets": [
+    "brave-lands-mix",
+    "calm-moons-attack",
+    "crisp-wombats-speak",
+    "empty-coins-tell",
+    "empty-melons-enter",
+    "fine-gifts-sort",
+    "floppy-icons-heal",
+    "forty-glasses-think",
+    "free-friends-send",
+    "fruity-gifts-spend",
+    "funky-dingos-wonder",
+    "late-falcons-make",
+    "loose-zebras-fall",
+    "new-keys-notice",
+    "nice-rooms-talk",
+    "pink-cameras-sell",
+    "proud-stamps-shop",
+    "rare-wolves-like",
+    "rich-baths-sit",
+    "sixty-emus-bathe",
+    "some-bees-allow",
+    "some-moments-drop",
+    "spicy-facts-unite",
+    "spicy-games-argue",
+    "strict-candies-wish",
+    "vast-stars-change"
+  ]
+}
