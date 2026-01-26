@@ -90,10 +90,10 @@ export function DismissibleAlert({ title, description, timestamp, link }: Dismis
         clear();
         setShow(true);
       }}
-      className="fixed top-0.75 left-1.5 z-10000 flex cursor-pointer items-center justify-center gap-[0.25em] bg-red p-2 text-red-contrast shadow-md transition hover:bg-black hover:text-white focus:bg-black focus:text-white"
+      className="sticky top-0 left-0 z-10000 flex w-dvw cursor-pointer items-center justify-center gap-[0.25em] bg-red p-2 text-red-contrast shadow-md transition hover:bg-black hover:text-white focus:bg-black focus:text-white md:fixed md:top-0.75 md:left-1.5 md:w-fit"
     >
       <FontAwesomeIcon className={`uofg-dismissable-alert-notification-icon`} icon={faCircleExclamation} />
-      <span className="max-w-[30ch] overflow-hidden text-sm text-ellipsis whitespace-nowrap">{title}</span>
+      <span className="w-full overflow-hidden text-sm text-ellipsis whitespace-nowrap md:max-w-[30ch]">{title}</span>
     </button>
   );
 }

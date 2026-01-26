@@ -5,7 +5,7 @@ const config: Meta<typeof DismissibleAlert> = {
   title: 'React Components/DismissibleAlert',
   component: DismissibleAlert,
   parameters: {
-    'layout': 'centered',
+    'layout': 'fullscreen',
     'docs': {
       toc: true,
     },
@@ -28,7 +28,7 @@ export const Basic: Story = {
 
 export const WithLink: Story = {
   args: {
-    title: 'Example Alert Title',
+    title: 'Example Alert Title asdf ahjskdfh aksldkjfh akjlsdfh akjsdhf lakjshf laskj',
     description: 'Example alert description.',
     timestamp: new Date().toLocaleString(),
     link: {
