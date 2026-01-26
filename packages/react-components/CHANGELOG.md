@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.25
+
+### Patch Changes
+
+- cf6cce3: Formatting
+
 ## 1.7.0-rc.24
 
 ### Patch Changes
