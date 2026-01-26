@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.21
+
+### Patch Changes
+
+- 3082ab9: Simplify `DismissibleAlert` by always using sticky layout
+
 ## 1.7.0-rc.20
 
 ### Patch Changes
