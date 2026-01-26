@@ -1,9 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["packages/*/src/**/*", "tsconfig.json", "package.json"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "storybook-static/**"]
+    },
+    "clean": {
+      "cache": false
     },
     "dev": {
       "cache": false,
@@ -12,9 +16,6 @@
     "watch": {
       "cache": false,
       "persistent": true
-    },
-    "clean": {
-      "cache": false
     }
   }
 }
