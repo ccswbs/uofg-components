@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.23
+
+### Patch Changes
+
+- 4b3b04d: Refactor `DismissibleAlert` to simplify layout, replace `Button` with `Link`, adjust `Modal` backdrop opacity, and enhance alert styling
+
 ## 1.7.0-rc.22
 
 ### Patch Changes
