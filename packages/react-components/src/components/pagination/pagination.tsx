@@ -3,6 +3,7 @@
 import { faEllipsis } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { faChevronsLeft, faChevronsRight } from '@awesome.me/kit-7993323d0c/icons/duotone/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
@@ -50,6 +51,7 @@ export function Pagination({
   const [inputPage, setInputPage] = useState(defaultPage ?? 0);
   const pages = [...Array(count).keys()];
   const visiblePages = Math.max(Math.ceil(visible), 3);
+  const id = nanoid();
 
   useEffect(() => {
     updateCurrentPage(page ?? 0);
@@ -71,7 +73,10 @@ export function Pagination({
           updateCurrentPage(p);
         }}
       >
-        <span className="sr-only">Page</span> {p + 1} { isActivePage ? <span className="sr-only">(Current Page)</span> : ''}
+        <span className="sr-only">Page</span> {p + 1}{' '}
+        {isActivePage ?
+          <span className="sr-only">(Current Page)</span>
+        : ''}
       </button>
     );
   };
@@ -180,6 +185,10 @@ export function Pagination({
 
   return (
     <div className={`uofg-pagination ${twMerge(base(), className)}`}>
+      <a href={`#uofg-pagination-skip-${id}`} className="sr-only! focus-visible:not-sr-only!">
+        Skip Pagination
+      </a>
+
       <div className={`uofg-pagination-list ${list()}`}>
         <button
           disabled={currentPage <= 0}
@@ -227,6 +236,7 @@ export function Pagination({
         </NumberInput>
 
         <Button
+          id={`uofg-pagination-skip-${id}`}
           color={color}
           className={`uofg-pagination-go-to-button ${goTo()}`}
           onClick={() => {
