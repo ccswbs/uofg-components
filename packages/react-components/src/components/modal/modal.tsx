@@ -18,7 +18,7 @@ export function Modal({ open, onClose = () => {}, role = 'dialog', labelledBy, c
   const modal = tv({
     slots: {
       base: 'relative z-50 transition duration-300 ease-out data-[closed]:opacity-0',
-      backdrop: 'fixed inset-0 bg-black/40 transition duration-300 ease-out data-[closed]:opacity-0',
+      backdrop: 'fixed inset-0 bg-black/60 transition duration-300 ease-out data-[closed]:opacity-0',
       wrapper: 'fixed inset-0 flex w-screen justify-center md:p-6',
       panelWrapper: 'relative flex w-full flex-col items-center',
       panel: 'relative',
