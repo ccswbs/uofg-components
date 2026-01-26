@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.17
+
+### Patch Changes
+
+- 711ae60: Remove unused border style from `DismissibleAlert` in `@uoguelph/react-components`
+
 ## 1.7.0-rc.16
 
 ### Patch Changes
