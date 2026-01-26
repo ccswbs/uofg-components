@@ -22,7 +22,7 @@ export const Basic: Story = {
   args: {
     alert: {
       title: 'Example Alert Title',
-      description: 'Example alert description.',
+      description: 'Example alert description. <a href="/testing">Test</a>',
       timestamp: new Date().toLocaleString(),
     },
   },
