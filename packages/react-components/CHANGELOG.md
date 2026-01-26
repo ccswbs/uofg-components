@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.24
+
+### Patch Changes
+
+- f9578b1: Refactor `DismissibleAlert` and alert components: update class names for consistency, add typography enhancements, and improve styling clarity
+
 ## 1.7.0-rc.23
 
 ### Patch Changes
