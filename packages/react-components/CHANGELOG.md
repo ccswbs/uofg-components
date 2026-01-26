@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.18
+
+### Patch Changes
+
+- 57fdb23: Adjust top spacing of `DismissibleAlert` for improved alignment in `@uoguelph/react-components`
+
 ## 1.7.0-rc.17
 
 ### Patch Changes
