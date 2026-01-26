@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.9"
   },
   "changesets": [
+    "calm-moons-attack",
     "crisp-wombats-speak",
     "empty-melons-enter",
     "floppy-icons-heal",

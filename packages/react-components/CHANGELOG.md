@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.13
+
+### Minor Changes
+
+- e673a31: Update DismissableAlert to add support for custom button link, better dismissing, and simplified props
+
 ## 1.6.3-rc.12
 
 ### Patch Changes
