@@ -1,5 +1,7 @@
 'use client';
 
+import { faCircleExclamation } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import parse, { attributesToProps, domToReact, type DOMNode, type HTMLReactParserOptions } from 'html-react-parser';
 import objectHash from 'object-hash';
 import { useMemo, useState } from 'react';
@@ -10,15 +12,14 @@ import { Container } from '../container/container';
 import { Link } from '../link/link';
 import { Modal } from '../modal/modal';
 
-export type AlertObject = {
+export type DismissibleAlertProps = {
   title: string;
   description: string;
   timestamp: string;
-};
-
-export type DismissibleAlertProps = {
-  /** Whether to use the testing app armor test ID */
-  alert?: AlertObject;
+  link?: {
+    url: string;
+    text: string;
+  };
 };
 
 const parserOptions: HTMLReactParserOptions = {
@@ -31,61 +32,51 @@ const parserOptions: HTMLReactParserOptions = {
       return null;
     }
 
-    // Disallow script, style, iframe, and img tags
-    switch (node.tagName) {
-      case 'script':
-      case 'style':
-      case 'iframe':
-      case 'img':
-        return null;
-    }
-
-    const NodeTag = node.name;
     const props = attributesToProps(node.attribs);
     const children = domToReact(node.children as DOMNode[], parserOptions);
 
+    // Only allow 'a' tags.
     switch (node.tagName) {
       case 'a':
         return <Link href={String(props.href)}>{children}</Link>;
       default:
-        return <NodeTag {...props}>{children}</NodeTag>;
+        return null;
     }
   },
 };
 
-export function DismissibleAlert({ alert }: DismissibleAlertProps) {
+export function DismissibleAlert({ title, description, timestamp, link }: DismissibleAlertProps) {
   const [show, setShow] = useState(true);
-  const hash = useMemo(() => {
-    return alert ? objectHash(alert) : undefined;
-  }, [alert]);
-  const { dismissed, dismiss } = useDismissible('app-armor-alert', hash, 'session');
+  const hash = useMemo(() => objectHash({ title, description, timestamp }), [title, description, timestamp]);
+  const { dismissed, dismiss, clear } = useDismissible('app-armor-alert', hash, 'session');
 
-  const parsedDescription = parse(alert?.description ?? '', parserOptions);
+  const parsedDescription = parse(description ?? '', parserOptions);
 
-  if (alert && !dismissed) {
+  if (!dismissed) {
     return (
-      <Modal open={show} onClose={() => setShow(false)}>
+      <Modal
+        open={show}
+        onClose={() => {
+          setShow(false);
+          dismiss();
+        }}
+      >
         <Container className="max-w-[80rem]! p-0">
           <Alert>
             <AlertTitle>University of Guelph Alert</AlertTitle>
 
             <AlertMessage>
-              <AlertSubtitle>{alert.title}</AlertSubtitle>
+              <AlertSubtitle>{title}</AlertSubtitle>
               {parsedDescription}
             </AlertMessage>
 
             <AlertFooter className="flex flex-col gap-4">
-              <span>Last Updated: {alert.timestamp}</span>{' '}
-              <Button
-                color="red"
-                className="py-2"
-                onClick={() => {
-                  setShow(false);
-                  dismiss();
-                }}
-              >
-                Don&apos;t show me this again
-              </Button>
+              <span>Last Updated: {timestamp}</span>{' '}
+              {link && (
+                <Button as="a" href={link.url} color="red" className="py-2">
+                  {link.text}
+                </Button>
+              )}
             </AlertFooter>
           </Alert>
         </Container>
@@ -93,5 +84,16 @@ export function DismissibleAlert({ alert }: DismissibleAlertProps) {
     );
   }
 
-  return <></>;
+  return (
+    <button
+      onClick={() => {
+        clear();
+        setShow(true);
+      }}
+      className="fixed top-1.5 left-1.5 flex items-center justify-center gap-[0.25em] bg-red p-2 text-red-contrast"
+    >
+      <FontAwesomeIcon className={`uofg-dismissable-alert-notification-icon`} icon={faCircleExclamation} />
+      <span className="max-w-[30ch] overflow-hidden text-sm text-ellipsis whitespace-nowrap">{title}</span>
+    </button>
+  );
 }
