@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.15
+
+### Patch Changes
+
+- e6c5100: Add shadow to `DismissibleAlert` for improved visual distinction in `@uoguelph/react-components`
+
 ## 1.7.0-rc.14
 
 ### Patch Changes
