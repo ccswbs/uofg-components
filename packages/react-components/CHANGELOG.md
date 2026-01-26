@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.22
+
+### Patch Changes
+
+- 326948f: Remove redundant `lg` breakpoint-specific max-width from `DismissibleAlert` title
+
 ## 1.7.0-rc.21
 
 ### Patch Changes
