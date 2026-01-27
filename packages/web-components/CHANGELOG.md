@@ -1,5 +1,15 @@
 # @uoguelph/web-components
 
+## 2.0.10
+
+### Patch Changes
+
+- 14af202: Fix layout issue in statistics component in @uoguelph/react-components
+- f08a274: Update turbo.json to ensure Storybook is not cached with old source of packages, fix local state references in @uoguelph/web-components
+- 00c386a: Update dependencies
+- 886a6d3: Update dependecies and configs
+- 9c887c0: Update hero title padding
+
 ## 2.0.10-rc.4
 
 ### Patch Changes

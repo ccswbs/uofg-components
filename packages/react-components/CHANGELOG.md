@@ -1,5 +1,43 @@
 # @uoguelph/react-components
 
+## 1.7.0
+
+### Minor Changes
+
+- e673a31: Update DismissableAlert to add support for custom button link, better dismissing, and simplified props
+
+### Patch Changes
+
+- f9578b1: Refactor `DismissibleAlert` and alert components: update class names for consistency, add typography enhancements, and improve styling clarity
+- f5e11a7: Enhance `DismissibleAlert` styles with hover and focus states, adding pointer cursor and border for improved interactivity in `@uoguelph/react-components`
+- d788346: Add focus indicator for selected tab in Tabs component
+- b35c7c1: Make `DismissibleAlert` layout adjustments by switching breakpoint from `md` to `lg` and increasing max-width of title for better responsiveness
+- 9e11792: Expand grid and styling logic in `statistics` and `statistics-item` components to support additional divisor cases and dynamic color assignment
+- 1a2977f: Fix z-index issue in DismissibleAlert
+- 2555f18: Fix more edge cases with statistics
+- 14af202: Fix layout issue in statistics component in @uoguelph/react-components
+- f08a274: Update turbo.json to ensure Storybook is not cached with old source of packages, fix local state references in @uoguelph/web-components
+- 00c386a: Update dependencies
+- 3082ab9: Simplify `DismissibleAlert` by always using sticky layout
+- 9caa4c6: Update pagination skip link focus styles
+- c2563b6: Left align content in left-border statistics
+- 4499aa0: Add `decrementCount` to `statistics` context, update grid logic, and enhance `statistics` stories with container usage
+- 823ef19: Update statistics to handle more edge cases
+- 7703493: Added skip link for the pagination component
+- 09a1725: Set light-grey statistics to 2 column with 4 items
+- 9e9978a: Update spacing in basic variant of hero
+- 57fdb23: Adjust top spacing of `DismissibleAlert` for improved alignment in `@uoguelph/react-components`
+- 886a6d3: Update dependecies and configs
+- 9c887c0: Update hero title padding
+- bc5fed3: Make `DismissibleAlert` layout responsive and update Storybook to fullscreen mode for better preview
+- e6c5100: Add shadow to `DismissibleAlert` for improved visual distinction in `@uoguelph/react-components`
+- 711ae60: Remove unused border style from `DismissibleAlert` in `@uoguelph/react-components`
+- 98161c0: Update statisics layout
+- 326948f: Remove redundant `lg` breakpoint-specific max-width from `DismissibleAlert` title
+- 989438e: Remove console log
+- 4b3b04d: Refactor `DismissibleAlert` to simplify layout, replace `Button` with `Link`, adjust `Modal` backdrop opacity, and enhance alert styling
+- cf6cce3: Formatting
+
 ## 1.7.0-rc.26
 
 ### Patch Changes
