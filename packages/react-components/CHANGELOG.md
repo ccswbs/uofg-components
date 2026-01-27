@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.1-rc.0
+
+### Patch Changes
+
+- 6875281: Updated basic variant of Hero component to be more responsive on mobile.
+
 ## 1.7.0
 
 ### Minor Changes
