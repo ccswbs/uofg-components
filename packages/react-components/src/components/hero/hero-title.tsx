@@ -33,7 +33,7 @@ export function HeroTitle<T extends HeroTitleElementType = 'h1'>({
     variants: {
       variant: {
         spotlight: 'px-0 text-white md:px-0',
-        basic: 'bg-yellow text-yellow-contrast md:text-4xl',
+        basic: 'w-full bg-yellow text-yellow-contrast sm:w-fit md:text-4xl',
       },
     },
   });
