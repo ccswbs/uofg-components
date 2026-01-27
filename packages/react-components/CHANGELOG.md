@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.0-rc.26
+
+### Patch Changes
+
+- 09a1725: Set light-grey statistics to 2 column with 4 items
+
 ## 1.7.0-rc.25
 
 ### Patch Changes
