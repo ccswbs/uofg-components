@@ -72,7 +72,7 @@ export function Statistics({ id, children, variant, className }: StatisticsProps
         class: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
       },
       {
-        variant: ['left-border'],
+        variant: ['left-border', 'light-grey'],
         isExactlyFour: true,
         class: 'lg:grid-cols-2',
       },
