@@ -26,10 +26,9 @@ export function ContactPhone({ number, extension, className }: ContactPhoneProps
   return (
     <div className={`uofg-contact-phone-container ${twMerge(container(), className)}`}>
       <FontAwesomeIcon icon={faPhone} className="uofg-contact-phone-icon" />
-      <a className={`uofg-contact-phone ${link()}`} href={`tel:${number}`}>
-        {number}
+      <a className={`uofg-contact-phone ${link()}`} href={`tel:${number}${extension ? `;${extension}` : ''}`}>
+        {number}{extension && <span className="uofg-contact-phone-extension"> - Ext. {extension}</span>}
       </a>
-      {extension && <span className="uofg-contact-phone-extension"> - Ext. {extension}</span>}
     </div>
   );
 }
