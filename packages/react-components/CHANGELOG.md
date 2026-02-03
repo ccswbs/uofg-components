@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.1-rc.0
+
+### Patch Changes
+
+- 52d524f: Refactor phone extension handling
+
 ## 1.7.0
 
 ### Minor Changes
