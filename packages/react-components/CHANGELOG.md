@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.7.2-rc.0
+
+### Patch Changes
+
+- 9a29fc9: Add multicolumn support for long lists and phone format fix
+
 ## 1.7.1
 
 ### Patch Changes
