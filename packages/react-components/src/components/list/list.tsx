@@ -34,14 +34,14 @@ export function List<T extends ListElementType = typeof defaultElement>({
   const context = useContext(ListContext);
 
   const list = tv({
-    base: 'relative flex h-fit w-full list-inside flex-col gap-2',
+    base: 'relative w-full list-outside gap-x-8 pl-6 [&:has(li:nth-child(9))]:md:columns-2 [&:has(li:nth-child(9))]:xl:columns-3 [&:has(.uofg-list)]:columns-1!',
     variants: {
       as: {
         ol: 'list-decimal',
         ul: 'list-disc',
       },
       nested: {
-        true: 'ml-4',
+        true: 'ml-4 columns-1!',
       },
       level: {
         0: '',

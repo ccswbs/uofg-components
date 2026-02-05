@@ -13,7 +13,7 @@ type ListItemProps = PropsWithChildren<
 /** A list item component. */
 export function ListItem({ className, children, ...rest }: ListItemProps) {
   return (
-    <li {...rest} className={`uofg-list-item ${twMerge('relative h-fit w-full', className)}`}>
+    <li {...rest} className={`uofg-list-item ${twMerge('relative break-inside-avoid', className)}`}>
       {children}
     </li>
   );
