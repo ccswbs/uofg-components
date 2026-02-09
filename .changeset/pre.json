@@ -1,0 +1,13 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@uoguelph/react-components": "1.7.1",
+    "@uoguelph/storybook": "1.0.2",
+    "@uoguelph/tailwind-theme": "1.0.2",
+    "@uoguelph/web-components": "2.0.10"
+  },
+  "changesets": [
+    "two-trams-fetch"
+  ]
+}
