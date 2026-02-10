@@ -1,10 +1,28 @@
 # @uoguelph/react-components
 
+## 1.7.2
+
+### Patch Changes
+
+- 9a29fc9: Add multicolumn support for long lists and phone format fix
+
+## 1.7.2-rc.0
+
+### Patch Changes
+
+- 9a29fc9: Add multicolumn support for long lists and phone format fix
+
+## 1.7.1
+
+### Patch Changes
+
+- 52d524f: Refactor phone extension handling
+
 ## 1.7.1-rc.0
 
 ### Patch Changes
 
-- 6875281: Updated basic variant of Hero component to be more responsive on mobile.
+- 52d524f: Refactor phone extension handling
 
 ## 1.7.0
 
