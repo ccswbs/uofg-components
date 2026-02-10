@@ -7,6 +7,11 @@ export type FigureProps = PropsWithChildren<{
 }> &
   ComponentPropsWithoutRef<'figure'>;
 
+/**
+ * The Figure component provides a way to display images with captions while allowing text to wrap around the image. A
+ * common use case is with news articles where images are used to enhance the content and provide visual context.
+ */
+
 export function Figure({ align = 'left', className, ...rest }: FigureProps) {
   const figure = tv({
     base: 'inline-flex w-[var(--uofg-figure-image-width)] flex-col items-center gap-0',

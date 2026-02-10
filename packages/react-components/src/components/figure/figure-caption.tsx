@@ -11,7 +11,7 @@ export type FigureCaptionProps = PropsWithChildren<
 
 export function FigureCaption({ textAlignment = 'center', children, className, ...rest }: FigureCaptionProps) {
   const figureCaption = tv({
-    base: 'w-full bg-grey-light-bg p-2 text-center text-base text-grey-light-contrast',
+    base: 'w-full bg-grey-light-bg p-2 text-base text-grey-light-contrast dark:bg-grey-dark-bg dark:text-grey-dark-contrast light:bg-white light:text-body-copy',
     variants: {
       textAlignment: {
         left: 'text-left',
