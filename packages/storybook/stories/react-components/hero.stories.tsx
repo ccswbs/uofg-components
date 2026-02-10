@@ -51,6 +51,18 @@ export const BasicHero: Story = {
   ),
 };
 
+export const BasicHeroWithLongTitle: Story = {
+  args: {
+    variant: 'basic',
+    ...image,
+  },
+  render: ({ ...args }) => (
+    <Hero {...args}>
+      <HeroTitle>Professional Course-Based Master's Programs</HeroTitle>
+    </Hero>
+  ),
+};
+
 export const BasicWithModalVideo: Story = {
   args: {
     variant: 'basic',
