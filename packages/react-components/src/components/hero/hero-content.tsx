@@ -30,7 +30,7 @@ export function HeroContent({ children, alignment = 'left' }: HeroContentProps) 
           base: 'flex w-full items-center lg:absolute lg:bottom-0 lg:left-1/2 lg:max-w-[137rem] lg:-translate-x-1/2 lg:p-4',
         },
         basic: {
-          base: 'absolute bottom-0 left-1/2 flex h-full w-full -translate-x-1/2 items-end p-0',
+          base: 'flex h-full w-full items-end p-0 sm:absolute sm:bottom-0 sm:left-1/2 sm:-translate-x-1/2',
         },
       },
       alignment: {

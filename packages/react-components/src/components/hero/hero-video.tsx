@@ -25,7 +25,8 @@ export function HeroVideo({ src, title, transcript, children }: HeroVideo) {
     base: '',
     variants: {
       variant: {
-        basic: 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+        basic:
+          'absolute top-[calc(50%-var(--text-3xl)/2)] left-1/2 w-12 -translate-x-1/2 -translate-y-1/2 text-xl sm:top-1/2 sm:w-24 sm:text-4xl',
         spotlight: 'w-fit gap-2 p-3',
       },
     },
