@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.0
+
+### Minor Changes
+
+- 8c548d1: Add figure component and improve Hero title rendering on mobile
+
 ## 1.8.0-rc.0
 
 ### Minor Changes
