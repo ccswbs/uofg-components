@@ -61,18 +61,20 @@ export const NestedUnorderedList: Story = {
       <ListItem>Example List Item 1</ListItem>
       <ListItem>Example List Item 2</ListItem>
       <ListItem>Example List Item 3</ListItem>
-      <List as="ul">
-        <ListItem>Example Nested List Item 1</ListItem>
-        <ListItem>Example Nested List Item 2</ListItem>
+      <ListItem>Example of a Nested Unordered List:
         <List as="ul">
           <ListItem>Example Nested List Item 1</ListItem>
           <ListItem>Example Nested List Item 2</ListItem>
           <List as="ul">
             <ListItem>Example Nested List Item 1</ListItem>
             <ListItem>Example Nested List Item 2</ListItem>
+            <List as="ul">
+              <ListItem>Example Nested List Item 1</ListItem>
+              <ListItem>Example Nested List Item 2</ListItem>
+            </List>
           </List>
         </List>
-      </List>
+      </ListItem>
       <ListItem>Example List Item 6</ListItem>
     </List>
   ),
@@ -87,18 +89,20 @@ export const NestedOrderedList: Story = {
       <ListItem>Example List Item 1</ListItem>
       <ListItem>Example List Item 2</ListItem>
       <ListItem>Example List Item 3</ListItem>
-      <List as="ol">
-        <ListItem>Example Nested List Item 1</ListItem>
-        <ListItem>Example Nested List Item 2</ListItem>
+      <ListItem>Example of a Nested Ordered List:
         <List as="ol">
           <ListItem>Example Nested List Item 1</ListItem>
           <ListItem>Example Nested List Item 2</ListItem>
           <List as="ol">
             <ListItem>Example Nested List Item 1</ListItem>
             <ListItem>Example Nested List Item 2</ListItem>
+            <List as="ol">
+              <ListItem>Example Nested List Item 1</ListItem>
+              <ListItem>Example Nested List Item 2</ListItem>
+            </List>
           </List>
         </List>
-      </List>
+      </ListItem>
       <ListItem>Example List Item 6</ListItem>
     </List>
   ),
@@ -119,6 +123,48 @@ export const LongList: Story = {
         <ListItem>Mobile-first design strategies and progressive enhancement</ListItem>
         <ListItem>Accessibility considerations and inclusive design patterns</ListItem>
         <ListItem>Performance optimization techniques for modern web applications</ListItem>
+        <ListItem>Cross-browser compatibility testing and fallback strategies</ListItem>
+        <ListItem>Modern CSS features and graceful degradation approaches</ListItem>
+        <ListItem>Component-based architecture and design system implementation</ListItem>
+        <ListItem>User experience best practices for responsive layouts</ListItem>
+        <ListItem>Testing methodologies for responsive components</ListItem>
+        <ListItem>Documentation strategies for component libraries</ListItem>
+        <ListItem>Version control practices for design systems</ListItem>
+      </List>
+    </div>
+  ),
+};
+
+
+export const LongListNested: Story = {
+  args: {
+    as: 'ul',
+  },
+  render: ({ ...args }) => (
+    <div className="w-full">
+      <List {...args}>
+        <ListItem>Introduction to responsive design and modern web development practices</ListItem>
+        <ListItem>Understanding CSS grid systems and layout fundamentals</ListItem>
+        <ListItem>Flexbox fundamentals and practical use cases in component design</ListItem>
+        <ListItem>CSS multicolumn layout properties and browser support considerations</ListItem>
+        <ListItem>Responsive typography principles for scalable interfaces</ListItem>
+        <ListItem>Mobile-first design strategies and progressive enhancement</ListItem>
+        <ListItem>Accessibility considerations and inclusive design patterns</ListItem>
+        <ListItem>Performance optimization techniques for modern web applications</ListItem>
+        <ListItem>Example of a Nested List
+          <List as="ul">
+            <ListItem>Example Nested List Item 1</ListItem>
+            <ListItem>Example Nested List Item 2</ListItem>
+            <List as="ol">
+              <ListItem>Example Nested List Item 1</ListItem>
+              <ListItem>Example Nested List Item 2</ListItem>
+              <List as="ol">
+                <ListItem>Example Nested List Item 1</ListItem>
+                <ListItem>Example Nested List Item 2</ListItem>
+              </List>
+            </List>
+          </List>
+        </ListItem>
         <ListItem>Cross-browser compatibility testing and fallback strategies</ListItem>
         <ListItem>Modern CSS features and graceful degradation approaches</ListItem>
         <ListItem>Component-based architecture and design system implementation</ListItem>
