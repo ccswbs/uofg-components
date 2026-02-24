@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.1-rc.0
+
+### Patch Changes
+
+- c5f484f: Fix safari bug on list columns and secondary section display
+
 ## 1.8.0
 
 ### Minor Changes
