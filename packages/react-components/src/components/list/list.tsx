@@ -34,7 +34,7 @@ export function List<T extends ListElementType = typeof defaultElement>({
   const context = useContext(ListContext);
 
   const list = tv({
-    base: 'relative w-full list-outside gap-x-8 pl-6 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:md:columns-2 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:xl:columns-3',
+    base: 'relative w-full list-outside gap-x-8 pl-6 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:@md/section-primary:columns-2 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:@xl/section-primary:columns-3',
     variants: {
       as: {
         ol: 'list-decimal',
