@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.1-rc.0
+
+### Patch Changes
+
+- 78605de: Update Contact component icons for email and phone
+
 ## 1.8.0
 
 ### Minor Changes
