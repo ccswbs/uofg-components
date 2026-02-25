@@ -70,7 +70,7 @@ export const NestedUnorderedList: Story = {
             <List as="ul">
               <ListItem>Example Nested List Item 1</ListItem>
               <ListItem>Example Nested List Item 2</ListItem>
-              <ListItem>Example of Nested List:
+              <ListItem>Example of Nested List 1:
                 <List as="ul">
                   <ListItem>Example Nested List Item 1</ListItem>
                   <ListItem>Example Nested List Item 2</ListItem>
@@ -94,15 +94,15 @@ export const NestedOrderedList: Story = {
       <ListItem>Example List Item 1</ListItem>
       <ListItem>Example List Item 2</ListItem>
       <ListItem>Example List Item 3</ListItem>
-      <ListItem>Example of Nested List:
+      <ListItem>Example of Nested List 1:
         <List as="ol">
           <ListItem>Example Nested List Item 1</ListItem>
           <ListItem>Example Nested List Item 2</ListItem>
-          <ListItem>Example of Nested List:
+          <ListItem>Example of Nested List 2:
             <List as="ol">
               <ListItem>Example Nested List Item 1</ListItem>
               <ListItem>Example Nested List Item 2</ListItem>
-              <ListItem>Example of Nested List:
+              <ListItem>Example of Nested List 3:
                 <List as="ol">
                   <ListItem>Example Nested List Item 1</ListItem>
                   <ListItem>Example Nested List Item 2</ListItem>
@@ -155,15 +155,15 @@ export const LongListNested: Story = {
         <ListItem>Responsive typography principles for scalable interfaces</ListItem>
         <ListItem>Mobile-first design strategies and progressive enhancement</ListItem>
         <ListItem>Accessibility considerations and inclusive design patterns</ListItem>
-        <ListItem>Example of Nested List:
+        <ListItem>Example of Nested List 1:
           <List as="ol">
             <ListItem>Example Nested List Item 1</ListItem>
             <ListItem>Example Nested List Item 2</ListItem>
-            <ListItem>Example of Nested List:
+            <ListItem>Example of Nested List 2:
               <List as="ol">
                 <ListItem>Example Nested List Item 1</ListItem>
                 <ListItem>Example Nested List Item 2</ListItem>
-                <ListItem>Example of Nested List:
+                <ListItem>Example of Nested List 3:
                   <List as="ol">
                     <ListItem>Example Nested List Item 1</ListItem>
                     <ListItem>Example Nested List Item 2</ListItem>
