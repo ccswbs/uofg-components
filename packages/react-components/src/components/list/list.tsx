@@ -18,6 +18,12 @@ export type ListProps<T extends ListElementType = typeof defaultElement> = Props
      * @default 'ul'
      */
     as?: T;
+    /**
+     * Whether columns are enabled.
+     *
+     * @default true
+     */
+    columns?: boolean;
     /** Additional classes to apply to the list. */
     className?: string;
   } & ComponentPropsWithoutRef<T>
@@ -27,6 +33,7 @@ export type ListProps<T extends ListElementType = typeof defaultElement> = Props
 export function List<T extends ListElementType = typeof defaultElement>({
   as,
   children,
+  columns,
   className,
   ...rest
 }: ListProps<T>) {
@@ -34,7 +41,7 @@ export function List<T extends ListElementType = typeof defaultElement>({
   const context = useContext(ListContext);
 
   const list = tv({
-    base: 'relative w-full list-outside gap-x-8 pl-6 [&:has(li:nth-child(9))]:not(:has(.uofg-list))]:md:columns-2 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:xl:columns-3 [&:has(li:nth-child(9))]:not(:has(.uofg-list))]:@md:columns-2 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:@xl:columns-3 [&:has(.uofg-list)]:break-inside-avoid-column',
+    base: 'relative w-full list-outside gap-x-8 pl-6',
     variants: {
       as: {
         ol: 'list-decimal',
@@ -49,6 +56,9 @@ export function List<T extends ListElementType = typeof defaultElement>({
         2: '',
         3: '',
       },
+      columns: {
+        true: '[&:has(li:nth-child(9))]:not(:has(.uofg-list))]:md:columns-2 [&:has(li:nth-child(9)):not(:has(.uofg-list))]:xl:columns-3 [&:has(.uofg-list)]:break-inside-avoid-column',
+      }
     },
     compoundVariants: [
       {
@@ -78,6 +88,7 @@ export function List<T extends ListElementType = typeof defaultElement>({
     as: Component,
     level: context.parent === as ? ((context.level % 3) as 0 | 1 | 2 | 3) : 0,
     nested: context.level > 0,
+    columns: columns ?? true,
   });
 
   return (
