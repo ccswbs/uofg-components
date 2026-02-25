@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.1-rc.2
+
+### Patch Changes
+
+- b50bf5e: Allow columns to be disabled in lists via prop
+
 ## 1.8.1-rc.1
 
 ### Patch Changes

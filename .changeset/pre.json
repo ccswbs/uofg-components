@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.10"
   },
   "changesets": [
+    "common-eyes-dream",
     "fiery-mice-learn",
     "large-drinks-make"
   ]
