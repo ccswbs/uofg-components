@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.1-rc.1
+
+### Patch Changes
+
+- Fix safari bug and add container queries for lists
+
 ## 1.8.1-rc.0
 
 ### Patch Changes
