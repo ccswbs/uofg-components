@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.1-rc.3
+
+### Patch Changes
+
+- 8f0685d: Update icons for contact email and phone
+
 ## 1.8.1-rc.2
 
 ### Patch Changes
