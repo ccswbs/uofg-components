@@ -4,7 +4,7 @@ import { Children, ComponentPropsWithoutRef, ElementType, PropsWithChildren, Rea
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { CardContent } from './card-content';
-import { CardContext } from './card-context';
+import { CardContext, CardContextValue } from './card-context';
 import { CardFooter } from './card-footer';
 import { CardImage } from './card-image';
 import { CardTitle } from './card-title';
@@ -25,6 +25,13 @@ export type CardProps<T extends CardElementType = typeof defaultElement> = Props
      * @default false
      */
     centered?: boolean;
+    /**
+     * The style of the card, vertical will stack image and content vertically, horizontal will place image and content
+     * side by side.
+     *
+     * @default 'vertical'
+     */
+    variant?: CardContextValue['variant'];
   } & ComponentPropsWithoutRef<T>
 >;
 
@@ -37,6 +44,7 @@ export function Card<T extends CardElementType = typeof defaultElement>({
   className,
   centered,
   children,
+  variant = 'vertical',
   ...rest
 }: CardProps<T>) {
   const Component = as ?? defaultElement;
@@ -49,6 +57,10 @@ export function Card<T extends CardElementType = typeof defaultElement>({
       },
       hasImage: {
         true: '',
+      },
+      variant: {
+        vertical: '',
+        horizontal: 'sm:flex-row',
       },
     },
     compoundVariants: [
@@ -64,8 +76,8 @@ export function Card<T extends CardElementType = typeof defaultElement>({
   const hasImage = Children.toArray(children).some(child => (child as ReactElement).type === CardImage);
 
   return (
-    <Component {...rest} className={`uofg-card ${twMerge(card({ isLink, hasImage }), className)}`}>
-      <CardContext.Provider value={{ isLink, centered: centered ?? false }}>{children}</CardContext.Provider>
+    <Component {...rest} className={`uofg-card ${twMerge(card({ isLink, hasImage, variant }), className)}`}>
+      <CardContext.Provider value={{ isLink, centered: centered ?? false, variant }}>{children}</CardContext.Provider>
     </Component>
   );
 }
