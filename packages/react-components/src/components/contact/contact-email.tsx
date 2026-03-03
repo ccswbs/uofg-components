@@ -14,7 +14,7 @@ export type ContactEmailProps = {
 export function ContactEmail({ email, className }: ContactEmailProps) {
   const contactEmail = tv({
     slots: {
-      container: 'flex items-center gap-1',
+      container: 'flex items-center gap-2',
       link: 'text-body-copy-link-on-light underline decoration-current transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none hocus-visible:decoration-transparent',
     },
   });
@@ -23,7 +23,7 @@ export function ContactEmail({ email, className }: ContactEmailProps) {
 
   return (
     <div className={`uofg-contact-email-container ${twMerge(container(), className)}`}>
-      <FontAwesomeIcon icon={faEnvelope} className="uofg-contact-email-icon me-2" />
+      <FontAwesomeIcon icon={faEnvelope} className="uofg-contact-email-icon fa-fw" />
       <a className={`uofg-contact-email ${link()}`} href={`mailto:${email}`}>
         {email}
       </a>

@@ -1,5 +1,29 @@
 # @uoguelph/react-components
 
+## 1.8.1-rc.3
+
+### Patch Changes
+
+- 8f0685d: Update icons for contact email and phone
+
+## 1.8.1-rc.2
+
+### Patch Changes
+
+- b50bf5e: Allow columns to be disabled in lists via prop
+
+## 1.8.1-rc.1
+
+### Patch Changes
+
+- Fix safari bug and add container queries for lists
+
+## 1.8.1-rc.0
+
+### Patch Changes
+
+- 6f88268: Fix safari bug and add container queries for lists
+
 ## 1.8.0
 
 ### Minor Changes
