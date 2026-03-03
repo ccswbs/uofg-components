@@ -1,4 +1,4 @@
-import { faPhone } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
+import { faPhone } from '@awesome.me/kit-7993323d0c/icons/classic/regular';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
@@ -45,7 +45,7 @@ function formatPhoneNumber(phoneNumber: string): string {
 export function ContactPhone({ number, extension, className }: ContactPhoneProps) {
   const phone = tv({
     slots: {
-      container: 'flex items-center gap-1',
+      container: 'flex items-center gap-2',
       link: 'text-body-copy-link-on-light underline decoration-current transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none hocus-visible:decoration-transparent',
     },
   });
@@ -57,7 +57,7 @@ export function ContactPhone({ number, extension, className }: ContactPhoneProps
 
   return (
     <div className={`uofg-contact-phone-container ${twMerge(container(), className)}`}>
-      <FontAwesomeIcon icon={faPhone} className="uofg-contact-phone-icon me-2" />
+      <FontAwesomeIcon icon={faPhone} className="uofg-contact-phone-icon fa-fw" />
       <a className={`uofg-contact-phone ${link()}`} href={`tel:${cleanNumber}${extension ? `;${extension}` : ''}`}>
         {formattedNumber}{extension && <span className="uofg-contact-phone-extension">,  Ext. {extension}</span>}
       </a>
