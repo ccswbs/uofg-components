@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.8.2-rc.1
+
+### Patch Changes
+
+- 7e47c4f: Add vertical padding to Figure component
+
 ## 1.8.2-rc.0
 
 ### Patch Changes
