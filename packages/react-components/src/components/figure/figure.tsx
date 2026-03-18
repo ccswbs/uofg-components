@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 export type FigureProps = PropsWithChildren<{
-  align: 'left' | 'right';
+  align: 'left' | 'right' | 'center';
 }> &
   ComponentPropsWithoutRef<'figure'>;
 
@@ -19,6 +19,7 @@ export function Figure({ align = 'left', className, ...rest }: FigureProps) {
       align: {
         left: 'float-start pr-3',
         right: 'float-end pl-3',
+        center: 'mx-auto block',
       },
     },
   });
