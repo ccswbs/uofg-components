@@ -14,12 +14,12 @@ export type FigureProps = PropsWithChildren<{
 
 export function Figure({ align = 'left', className, ...rest }: FigureProps) {
   const figure = tv({
-    base: 'inline-flex w-[var(--uofg-figure-image-width)] flex-col items-center gap-0',
+    base: 'block w-full flex-col items-center gap-0 sm:inline-flex sm:w-[var(--uofg-figure-image-width)]',
     variants: {
       align: {
-        left: 'float-start py-1 pr-3',
-        right: 'float-end py-1 pl-3',
-        center: 'mx-auto block py-3',
+        left: 'py-1 pr-3 sm:float-start',
+        right: 'py-1 pl-3 sm:float-end',
+        center: 'mx-auto block! py-3',
       },
     },
   });
