@@ -1,5 +1,17 @@
 # @uoguelph/react-components
 
+## 1.8.2-rc.1
+
+### Patch Changes
+
+- 7e47c4f: Add vertical padding to Figure component
+
+## 1.8.2-rc.0
+
+### Patch Changes
+
+- 098fc01: Added center alignment for Figure component
+
 ## 1.8.1
 
 ### Patch Changes
