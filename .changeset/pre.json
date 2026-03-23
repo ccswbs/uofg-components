@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.0.10"
   },
   "changesets": [
-    "eleven-areas-peel"
+    "eleven-areas-peel",
+    "smart-suns-peel"
   ]
 }
