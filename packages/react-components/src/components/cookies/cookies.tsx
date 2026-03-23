@@ -81,13 +81,13 @@ export function Cookies({
 
   const cookies = tv({
     slots: {
-      banner: 'fixed bottom-0 left-0 right-0 z-40 bg-grey-dark p-4 text-white shadow-lg border-t-4 border-red',
+      banner: 'fixed bottom-0 left-0 right-0 z-40 bg-grey-dark-bg p-4 text-white shadow-lg',
       content: 'max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between',
       text: 'text-sm leading-relaxed',
       buttonGroup: 'flex gap-2 flex-col sm:flex-row',
-      button: 'px-4 py-2 bg-red text-white text-sm font-medium rounded hover:bg-red-dark transition-colors',
-      dismissButton: 'px-4 py-2 bg-transparent border border-white text-white text-sm font-medium rounded hover:bg-white/10 transition-colors',
-      modalContent: 'bg-white p-6 rounded-lg shadow-xl max-w-2xl mx-auto',
+      button: 'px-4 py-2 bg-yellow text-black text-sm font-medium hocus-visible:bg-yellow-focus',
+      dismissButton: 'px-4 py-2 bg-white text-black text-sm font-medium hocus-visible:text-black hocus-visible:bg-grey-light-focus',
+      modalContent: 'bg-white p-6 shadow-xl max-w-2xl mx-auto',
       modalHeader: 'text-2xl font-bold text-grey-dark mb-4',
       modalBody: 'text-grey prose prose-lg'
     }
