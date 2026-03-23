@@ -1,5 +1,17 @@
 # @uoguelph/react-components
 
+## 1.8.2-rc.1
+
+### Patch Changes
+
+- a911b10: Update cookie banner formatting
+
+## 1.8.2-rc.0
+
+### Patch Changes
+
+- e48fd87: Create new Cookies component
+
 ## 1.8.1
 
 ### Patch Changes
