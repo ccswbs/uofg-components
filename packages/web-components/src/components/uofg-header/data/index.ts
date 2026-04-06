@@ -1,5 +1,6 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import type { HTMLAttributes } from 'svelte/elements';
+import { dualBrand } from './dual-brand';
 import { guelph } from './guelph';
 import { news } from './news';
 
@@ -13,6 +14,7 @@ export type HeaderLinkAndMenuCommon = {
 
 export type HeaderLink = {
   href: string;
+  img?: string;
 } & HeaderLinkAndMenuCommon;
 
 export type HeaderMenu = {
@@ -29,4 +31,4 @@ export type HeaderData = {
   primary: HeaderLink[];
 };
 
-export const variants: HeaderData[] = [guelph, news];
+export const variants: HeaderData[] = [guelph, news, dualBrand];
