@@ -1,72 +1,34 @@
-import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import type { HTMLAttributes } from 'svelte/elements';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { HeaderData } from './index';
 
-export type HeaderLinkAndMenuCommon = {
-  text: string;
-  icon?: any;
-  highlight?: boolean;
-  excludeFromMainMenu?: boolean;
-  attributes?: HTMLAttributes<HTMLAnchorElement>;
-};
-
-export type HeaderLink = {
-  href: string;
-} & HeaderLinkAndMenuCommon;
-
-export type HeaderMenu = {
-  items: HeaderLink[];
-} & HeaderLinkAndMenuCommon;
-
-export const primaryNavigation: HeaderLink[] = [
-  {
-    text: 'Find An Expert',
-    href: '/about',
+export const news: HeaderData = {
+  id: 'news',
+  homepage: {
+    url: 'https://uoguelph.ca/',
+    text: 'News',
   },
-  {
-    text: 'For Journalists',
-    href: '/programs/undergraduate',
-  },
-  {
-    text: 'Events',
-    href: '/admissions',
-  },
-  {
-    text: 'Contact Us',
-    href: '/studentexperience/',
-  },
-];
-
-export const search: HeaderLink = {
-  text: 'Search the University of Guelph News',
-  href: '/news/directory',
-  icon: faSearch,
-};
-
-export const topNavigation: (HeaderLink | HeaderMenu)[] = [];
-
-export const accountMenu: HeaderMenu = {
-  text: 'Account Menu',
-  items: [
+  primary: [
     {
-      text: 'U of G Insider',
-      href: 'https://uoguelphca.sharepoint.com/',
+      text: 'Find An Expert',
+      href: 'https://uoguelph.ca/about',
     },
     {
-      text: 'WebAdvisor',
-      href: 'https://www.uoguelph.ca/webadvisor/',
+      text: 'For Journalists',
+      href: 'https://www.uoguelph.ca/programs/undergraduate',
     },
     {
-      text: 'GryphMail',
-      href: 'https://mail.uoguelph.ca/',
+      text: 'Events',
+      href: 'https://uoguelph.ca/admissions',
     },
     {
-      text: 'CourseLink',
-      href: 'https://courselink.uoguelph.ca/',
+      text: 'Contact Us',
+      href: 'https://www.uoguelph.ca/studentexperience/',
     },
     {
-      text: 'GryphLife',
-      href: 'https://gryphlife.uoguelph.ca/',
+      text: 'News Directory',
+      href: '/news/directory',
+      standalone: true,
+      icon: faSearch,
     },
   ],
-  icon: faUser,
 };
