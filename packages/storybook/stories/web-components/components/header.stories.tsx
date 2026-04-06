@@ -17,7 +17,7 @@ const config = {
       table: {
         type: {
           optional: false,
-          summary: '"dual-brand"',
+          summary: '"dual-brand" | "news"',
         },
       },
     },
@@ -156,5 +156,17 @@ export const DualBrand = {
       },
     },
   },
-  render: ({}) => <uofg-header page-title="Example Topic/Department" variant="dual-brand"></uofg-header>,
+  render: ({}) => <uofg-header variant="dual-brand"></uofg-header>,
+};
+
+export const News = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'A simplfied version of the header, with both the University of Guelph and the University of Guelph-Humber logos. This is currently only used in Slate forms.',
+      },
+    },
+  },
+  render: ({}) => <uofg-header variant="news"></uofg-header>,
 };

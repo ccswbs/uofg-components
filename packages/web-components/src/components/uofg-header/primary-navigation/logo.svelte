@@ -13,12 +13,12 @@
     slots: {
       base: 'flex w-fit',
       decoration: 'left-0 h-full w-[7.5rem] min-[1320px]:absolute [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
-      logo: 'flex h-12.5 w-fit items-center min-[1320px]:absolute min-[1320px]:left-[max(calc((100%-1320px)/2),7.5rem)] lg:h-25',
-      link: 'focus:opacity-75transition-opacity h-full transition-opacity hover:opacity-75 focus:opacity-75 [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
-      line: 'mx-2 flex h-4/5 w-0.75 flex-col',
+      logo: 'flex h-12.5 w-fit items-center justify-center min-[1320px]:absolute min-[1320px]:left-[max(calc((100%-1320px)/2),7.5rem)] lg:h-25',
+      link: 'h-full transition-opacity hover:opacity-75 focus:opacity-75 [&>svg]:block [&>svg]:h-full [&>svg]:w-auto',
+      line: 'mx-2 flex h-full w-0.75 flex-col lg:h-4/5',
       lineSegment: 'h-1/3 w-full',
       secondaryLink:
-        'pl-4 text-2xl underline decoration-transparent transition-colors hover:decoration-white focus:decoration-white',
+        'text-2xl underline decoration-transparent transition-colors hover:decoration-white focus:decoration-white lg:pl-4',
     },
     variants: {
       mode: {
@@ -54,8 +54,8 @@
     {#if $headerState.data.homepage}
       <div class={line()}>
         <div class={twJoin(lineSegment(), 'bg-red')}></div>
-        <div class={twJoin(lineSegment(), 'bg-yellow')}></div>
-        <div class={twJoin(lineSegment(), 'bg-grey-dark')}></div>
+        <div class={twJoin(lineSegment(), 'bg-red lg:bg-yellow')}></div>
+        <div class={twJoin(lineSegment(), 'bg-red lg:bg-grey-dark')}></div>
       </div>
 
       <a href="#" class={secondaryLink()}>News</a>
