@@ -1,7 +1,10 @@
 <script lang="ts">
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { primaryNavigation, search } from '../data/guelph';
   import { tv } from 'tailwind-variants';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
+
+  const headerState: HeaderContext = getContext('header-state');
 
   const classes = tv({
     slots: {
@@ -22,7 +25,7 @@
 </script>
 
 <ul class={classes.base()}>
-  {#each [...primaryNavigation, search] as item}
+  {#each $headerState.data.primary as item}
     <li>
       {#if item.icon}
         <a class={classes.link({ hasIcon: true })} href={item.href}>
