@@ -3,12 +3,24 @@
   import Menu from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { accountMenu, primaryNavigation, search, topNavigation } from '../data/guelph';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
+  import { type HeaderLink, type HeaderMenu } from '../data';
 
-  const mainMenu = [...primaryNavigation, ...topNavigation];
-  const outer = [accountMenu, search];
+  const headerState: HeaderContext = getContext('header-state');
+
+  const main: (HeaderLink | HeaderMenu)[] = [];
+  const outer: (HeaderLink | HeaderMenu)[] = [];
+
+  for (const item of $headerState.data.primary) {
+    item.standalone ? outer.push(item) : main.push(item);
+  }
+
+  for (const item of $headerState.data.top ?? []) {
+    item.standalone ? outer.push(item) : main.push(item);
+  }
 </script>
 
 <ul class="flex h-full [&>li]:contents">
@@ -21,7 +33,11 @@
               class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"
               label={item.text}
             >
-              <FontAwesomeIcon icon={item.icon} />
+              {#if item.icon}
+                <FontAwesomeIcon icon={item.icon} />
+              {:else}
+                {item.text}
+              {/if}
             </MenuButton>
           {/snippet}
 
@@ -48,7 +64,11 @@
           href={item.href}
           aria-label={item.text}
         >
-          <FontAwesomeIcon icon={item.icon} />
+          {#if item.icon}
+            <FontAwesomeIcon icon={item.icon} />
+          {:else}
+            {item.text}
+          {/if}
         </a>
       {/if}
     </li>
@@ -70,7 +90,7 @@
         class="absolute top-full right-0 z-50 flex max-h-[calc(100vh-5rem)] w-full flex-col overflow-y-auto bg-white px-4 py-3 text-black shadow-md lg:w-[30rem] [&>li]:contents"
         transition:slide={{ duration: 200, easing: cubicInOut }}
       >
-        {#each mainMenu as item}
+        {#each main as item}
           <li>
             {#if 'items' in item}
               <Menu class="relative w-full" autoCollapse={false}>
