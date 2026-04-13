@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.9.0-rc.3
+
+### Minor Changes
+
+- 5b2154e: Refactor uofg-header variant logic, add new variant news
+
 ## 1.8.2-rc.2
 
 ### Patch Changes
