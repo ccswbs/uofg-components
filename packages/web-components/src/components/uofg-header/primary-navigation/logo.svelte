@@ -58,7 +58,7 @@
         <div class={twJoin(lineSegment(), 'bg-red lg:bg-grey-dark')}></div>
       </div>
 
-      <a href="#" class={secondaryLink()}>News</a>
+      <a href={$headerState.data.homepage.url} class={secondaryLink()}>{$headerState.data.homepage.text}</a>
     {/if}
   </div>
 </div>
