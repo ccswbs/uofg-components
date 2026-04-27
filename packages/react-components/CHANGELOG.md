@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.9.0-rc.4
+
+### Patch Changes
+
+- dcf5ad8: Fix broken URL
+
 ## 1.9.0-rc.3
 
 ### Minor Changes

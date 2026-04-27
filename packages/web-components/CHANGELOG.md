@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.1.0-rc.2
+
+### Patch Changes
+
+- dcf5ad8: Fix broken URL
+
 ## 2.1.0-rc.1
 
 ### Patch Changes
