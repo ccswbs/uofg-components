@@ -10,23 +10,23 @@ export const news: HeaderData = {
   primary: [
     {
       text: 'Find An Expert',
-      href: 'https://uoguelph.ca/about',
+      href: 'https://experts.uoguelph.ca/',
     },
     {
       text: 'For Journalists',
-      href: 'https://www.uoguelph.ca/programs/undergraduate',
+      href: 'https://news.uoguelph.ca/media-services/',
     },
     {
       text: 'Events',
-      href: 'https://uoguelph.ca/admissions',
+      href: 'https://news.uoguelph.ca/events/',
     },
     {
       text: 'Contact Us',
-      href: 'https://www.uoguelph.ca/studentexperience/',
+      href: 'https://news.uoguelph.ca/media-services//',
     },
     {
       text: 'News Directory',
-      href: '/news/directory',
+      href: 'https://www.uoguelph.ca/news/directory',
       standalone: true,
       icon: faSearch,
     },
