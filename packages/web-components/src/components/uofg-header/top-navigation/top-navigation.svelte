@@ -1,12 +1,15 @@
 <script lang="ts">
   import Menu from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
-  import { topNavigation, accountMenu } from '../data/guelph';
   import { tv } from 'tailwind-variants';
   import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
+
+  const headerState: HeaderContext = getContext('header-state');
 
   const classes = tv({
     slots: {
@@ -38,7 +41,7 @@
 
 <nav class={classes.base()} aria-label="Secondary">
   <ul class={classes.wrapper()}>
-    {#each [...topNavigation, accountMenu] as item (item.text)}
+    {#each $headerState.data.top as item (item.text)}
       <li>
         {#if 'items' in item}
           <Menu class={classes.menu()}>

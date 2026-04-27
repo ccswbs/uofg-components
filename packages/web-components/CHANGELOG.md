@@ -1,5 +1,17 @@
 # @uoguelph/web-components
 
+## 2.1.0-rc.1
+
+### Patch Changes
+
+- 6b99141: Update URLs for News header variant
+
+## 2.1.0-rc.0
+
+### Minor Changes
+
+- 5b2154e: Refactor uofg-header variant logic, add new variant news
+
 ## 2.0.10
 
 ### Patch Changes

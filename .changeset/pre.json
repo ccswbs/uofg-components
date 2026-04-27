@@ -1,0 +1,17 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@uoguelph/react-components": "1.8.1",
+    "@uoguelph/storybook": "1.0.5",
+    "@uoguelph/tailwind-theme": "1.0.2",
+    "@uoguelph/web-components": "2.0.10"
+  },
+  "changesets": [
+    "busy-words-sin",
+    "huge-ants-retire",
+    "odd-apes-wash",
+    "polite-teeth-rule",
+    "sharp-days-look"
+  ]
+}
