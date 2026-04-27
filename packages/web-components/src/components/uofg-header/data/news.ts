@@ -22,7 +22,7 @@ export const news: HeaderData = {
     },
     {
       text: 'Contact Us',
-      href: 'https://news.uoguelph.ca/media-services//',
+      href: 'https://news.uoguelph.ca/media-services/',
     },
     {
       text: 'News Directory',
