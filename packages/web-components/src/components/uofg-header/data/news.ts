@@ -4,7 +4,7 @@ import { HeaderData } from './index';
 export const news: HeaderData = {
   id: 'news',
   homepage: {
-    url: 'https://uoguelph.ca/',
+    url: 'https://uoguelph.ca/news',
     text: 'News',
   },
   primary: [
