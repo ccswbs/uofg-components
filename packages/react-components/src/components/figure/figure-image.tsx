@@ -36,7 +36,7 @@ export function FigureImage<T extends FigureImageElementType = typeof defaultEle
   ...rest
 }: FigureImageProps<T>) {
   const Component = as ?? defaultElement;
-  const classes = twJoin('');
+  const classes = twJoin('w-full object-cover');
 
   const ref = useRef<HTMLImageElement>(null);
 

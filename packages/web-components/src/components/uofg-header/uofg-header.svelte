@@ -19,18 +19,18 @@
 
 <script module lang="ts">
   import { type Writable } from 'svelte/store';
+  import { type HeaderData } from './data';
 
   export type HeaderProps = {
     pageTitle?: string;
     pageURL?: string;
-    variant?: 'dual-brand';
+    variant?: string;
   };
 
-  export type HeaderContext = Writable<
-    {
-      mode: 'mobile' | 'desktop';
-    } & Pick<HeaderProps, 'variant'>
-  >;
+  export type HeaderContext = Writable<{
+    mode: 'mobile' | 'desktop';
+    data: HeaderData;
+  }>;
 </script>
 
 <script lang="ts">
@@ -41,6 +41,7 @@
   import { writable } from 'svelte/store';
   import { onMount, setContext } from 'svelte';
   import { type HeaderLink, type HeaderMenu } from './data/guelph';
+  import { variants } from './data';
 
   let { pageTitle, pageURL, variant }: HeaderProps = $props();
 
@@ -49,14 +50,23 @@
 
   const headerState: HeaderContext = writable({
     mode: 'mobile',
-    variant: undefined,
-  });
-
-  $effect.pre(() => {
-    headerState.update(state => ({ ...state, variant }));
+    data: variants.find(v => v.id === variant) ?? variants[0],
   });
 
   setContext('header-state', headerState);
+
+  $effect(() => {
+    const mode = windowWidth >= BREAKPOINT ? 'desktop' : 'mobile';
+    const data = variants.find(v => v.id === variant) ?? variants[0];
+
+    if (mode !== $headerState.mode || data !== $headerState.data) {
+      headerState.set({ mode, data });
+    }
+  });
+
+  $effect(() => {
+    console.log('headerState', $headerState);
+  });
 
   let subNavigation = $state<(HeaderLink | HeaderMenu)[]>([]);
 
@@ -103,19 +113,12 @@
       observer.disconnect();
     };
   });
-
-  $effect(() => {
-    headerState.set({
-      mode: windowWidth >= BREAKPOINT ? 'desktop' : 'mobile',
-      variant,
-    });
-  });
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
 <header class="relative z-10 w-full font-sans text-black">
-  {#if $headerState.mode === 'desktop' && variant !== 'dual-brand'}
+  {#if $headerState.mode === 'desktop' && Array.isArray($headerState.data.top)}
     <TopNavigation />
   {/if}
 

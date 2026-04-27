@@ -3,12 +3,24 @@
   import Menu from '../../../lib/menu/menu.svelte';
   import MenuButton from '../../../lib/menu/menu-button.svelte';
   import FontAwesomeIcon from '../../../lib/font-awesome-icon.svelte';
-  import { accountMenu, primaryNavigation, search, topNavigation } from '../data/guelph';
   import { slide } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
+  import { getContext } from 'svelte';
+  import { type HeaderContext } from '../uofg-header.svelte';
+  import { type HeaderLink, type HeaderMenu } from '../data';
 
-  const mainMenu = [...primaryNavigation, ...topNavigation];
-  const outer = [accountMenu, search];
+  const headerState: HeaderContext = getContext('header-state');
+
+  const main: (HeaderLink | HeaderMenu)[] = [];
+  const outer: (HeaderLink | HeaderMenu)[] = [];
+
+  for (const item of $headerState.data.primary) {
+    item.standalone ? outer.push(item) : main.push(item);
+  }
+
+  for (const item of $headerState.data.top ?? []) {
+    item.standalone ? outer.push(item) : main.push(item);
+  }
 </script>
 
 <ul class="flex h-full [&>li]:contents">
@@ -21,7 +33,11 @@
               class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"
               label={item.text}
             >
-              <FontAwesomeIcon icon={item.icon} />
+              {#if item.icon}
+                <FontAwesomeIcon icon={item.icon} />
+              {:else}
+                {item.text}
+              {/if}
             </MenuButton>
           {/snippet}
 
@@ -42,7 +58,7 @@
             {/each}
           </ul>
         </Menu>
-      {:else}
+      {:else if item.icon}
         <a
           class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"
           href={item.href}
@@ -50,73 +66,85 @@
         >
           <FontAwesomeIcon icon={item.icon} />
         </a>
+      {:else if item.img}
+        <a
+          class="flex h-12.5 w-fit items-center justify-center border-0 p-2 transition-opacity hover:opacity-75 focus:opacity-75 [&>svg]:block [&>svg]:h-full [&>svg]:w-auto"
+          href={item.href}
+          aria-label={item.text}
+        >
+          {@html item.img}
+        </a>
+      {:else}
+        <a href={item.href}>{item.text}</a>
       {/if}
     </li>
   {/each}
 
   <!-- Main Menu -->
-  <li>
-    <Menu class="h-full w-fit">
-      {#snippet button()}
-        <MenuButton
-          class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black [&_svg]:aria-expanded:rotate-180"
-          label="Main Menu"
+  {#if main.length > 0}
+    <li>
+      <Menu class="h-full w-fit">
+        {#snippet button()}
+          <MenuButton
+            class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black [&_svg]:aria-expanded:rotate-180"
+            label="Main Menu"
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </MenuButton>
+        {/snippet}
+
+        <ul
+          class="absolute top-full right-0 z-50 flex max-h-[calc(100vh-5rem)] w-full flex-col overflow-y-auto bg-white px-4 py-3 text-black shadow-md lg:w-[30rem] [&>li]:contents"
+          transition:slide={{ duration: 200, easing: cubicInOut }}
         >
-          <FontAwesomeIcon icon={faBars} />
-        </MenuButton>
-      {/snippet}
-
-      <ul
-        class="absolute top-full right-0 z-50 flex max-h-[calc(100vh-5rem)] w-full flex-col overflow-y-auto bg-white px-4 py-3 text-black shadow-md lg:w-[30rem] [&>li]:contents"
-        transition:slide={{ duration: 200, easing: cubicInOut }}
-      >
-        {#each mainMenu as item}
-          <li>
-            {#if 'items' in item}
-              <Menu class="relative w-full" autoCollapse={false}>
-                {#snippet button()}
-                  <MenuButton
-                    class="border-grey/50 hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted flex w-full items-center justify-between gap-2 border-0 border-b border-solid p-2 transition-colors [&_svg]:aria-expanded:rotate-180"
-                  >
-                    <span
-                      class="flex w-full items-center justify-between gap-2 [&>svg]:transition-transform"
-                      class:bg-yellow={item.highlight}
+          {#each main as item}
+            <li>
+              {#if 'items' in item}
+                <Menu class="relative w-full" autoCollapse={false}>
+                  {#snippet button()}
+                    <MenuButton
+                      class="border-grey/50 hover:bg-grey-muted focus:bg-grey-muted aria-expanded:bg-grey-muted flex w-full items-center justify-between gap-2 border-0 border-b border-solid p-2 transition-colors [&_svg]:aria-expanded:rotate-180"
                     >
-                      <span class="mr-auto">{item.text}</span>
-                      <FontAwesomeIcon icon={faChevronDown} />
-                    </span>
-                  </MenuButton>
-                {/snippet}
-
-                <ul
-                  class="flex w-full flex-col bg-white text-black [&>li]:contents"
-                  transition:slide={{ duration: 200, easing: cubicInOut }}
-                >
-                  {#each item.items as menuItem}
-                    <li>
-                      <a
-                        class="border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
-                        href={menuItem.href}
-                        {...menuItem.attributes}
+                      <span
+                        class="flex w-full items-center justify-between gap-2 [&>svg]:transition-transform"
+                        class:bg-yellow={item.highlight}
                       >
-                        {menuItem.text}
-                      </a>
-                    </li>
-                  {/each}
-                </ul>
-              </Menu>
-            {:else}
-              <a
-                class="border-grey/50 hover:bg-grey-muted focus:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
-                class:bg-yellow={item.highlight}
-                href={item.href}
-              >
-                {item.text}
-              </a>
-            {/if}
-          </li>
-        {/each}
-      </ul>
-    </Menu>
-  </li>
+                        <span class="mr-auto">{item.text}</span>
+                        <FontAwesomeIcon icon={faChevronDown} />
+                      </span>
+                    </MenuButton>
+                  {/snippet}
+
+                  <ul
+                    class="flex w-full flex-col bg-white text-black [&>li]:contents"
+                    transition:slide={{ duration: 200, easing: cubicInOut }}
+                  >
+                    {#each item.items as menuItem}
+                      <li>
+                        <a
+                          class="border-grey/50 hover:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
+                          href={menuItem.href}
+                          {...menuItem.attributes}
+                        >
+                          {menuItem.text}
+                        </a>
+                      </li>
+                    {/each}
+                  </ul>
+                </Menu>
+              {:else}
+                <a
+                  class="border-grey/50 hover:bg-grey-muted focus:bg-grey-muted border-0 border-b border-solid p-2 transition-colors"
+                  class:bg-yellow={item.highlight}
+                  href={item.href}
+                >
+                  {item.text}
+                </a>
+              {/if}
+            </li>
+          {/each}
+        </ul>
+      </Menu>
+    </li>
+  {/if}
 </ul>
