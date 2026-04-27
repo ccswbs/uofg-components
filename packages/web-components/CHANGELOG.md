@@ -1,5 +1,12 @@
 # @uoguelph/web-components
 
+## 2.1.0-rc.3
+
+### Patch Changes
+
+- 5779066: Update homepage url for news variant
+- 5779066: No longer hardcoding secondary link in uofg-header
+
 ## 2.1.0-rc.2
 
 ### Patch Changes

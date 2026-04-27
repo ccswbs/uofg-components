@@ -1,5 +1,12 @@
 # @uoguelph/react-components
 
+## 1.9.0-rc.5
+
+### Patch Changes
+
+- 5779066: Update homepage url for news variant
+- 5779066: No longer hardcoding secondary link in uofg-header
+
 ## 1.9.0-rc.4
 
 ### Patch Changes
