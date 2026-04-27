@@ -1,5 +1,20 @@
 # @uoguelph/react-components
 
+## 1.9.0
+
+### Minor Changes
+
+- 5b2154e: Refactor uofg-header variant logic, add new variant news
+
+### Patch Changes
+
+- 7e47c4f: Add vertical padding to Figure component
+- dcf5ad8: Fix broken URL
+- 5779066: Update homepage url for news variant
+- 098fc01: Added center alignment for Figure component
+- 5779066: No longer hardcoding secondary link in uofg-header
+- 9eb5b99: Make figure responsive for mobile
+
 ## 1.9.0-rc.5
 
 ### Patch Changes
