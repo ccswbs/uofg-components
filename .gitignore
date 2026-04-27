@@ -13,3 +13,6 @@ node_modules/
 
 # Turborepo
 .turbo
+
+.idea/php.xml
+.idea/git_toolbox_prj.xml
