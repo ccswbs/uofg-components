@@ -143,10 +143,10 @@ export const LongList: Story = {
 };
 
 
-export const LongListWithColumnsDisabled: Story = {
+export const LongListWithColumnsEnabled: Story = {
   args: {
     as: 'ul',
-    columns: false,
+    columns: true,
   },
   render: ({ ...args }) => (
     <List {...args}>
@@ -172,6 +172,7 @@ export const LongListWithColumnsDisabled: Story = {
 export const LongListNested: Story = {
   args: {
     as: 'ul',
+    columns: true,
   },
   render: ({ ...args }) => (
       <List {...args}>
