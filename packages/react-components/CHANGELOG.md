@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.9.1-rc.1
+
+### Patch Changes
+
+- adf45b1: Remove console.log from uofg-header, and remove 'Contact Us' link in news variant of uofg-header
+
 ## 1.9.1-rc.0
 
 ### Patch Changes
