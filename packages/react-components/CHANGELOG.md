@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.9.1-rc.0
+
+### Patch Changes
+
+- ad6972f: Set lists to single column by default
+
 ## 1.9.0
 
 ### Minor Changes

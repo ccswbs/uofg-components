@@ -64,10 +64,6 @@
     }
   });
 
-  $effect(() => {
-    console.log('headerState', $headerState);
-  });
-
   let subNavigation = $state<(HeaderLink | HeaderMenu)[]>([]);
 
   onMount(() => {
