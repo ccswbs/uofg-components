@@ -21,10 +21,6 @@ export const news: HeaderData = {
       href: 'https://news.uoguelph.ca/events/',
     },
     {
-      text: 'Contact Us',
-      href: 'https://news.uoguelph.ca/media-services/',
-    },
-    {
       text: 'News Directory',
       href: 'https://www.uoguelph.ca/news/directory',
       standalone: true,

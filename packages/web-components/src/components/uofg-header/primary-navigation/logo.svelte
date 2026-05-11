@@ -54,8 +54,8 @@
     {#if $headerState.data.homepage}
       <div class={line()}>
         <div class={twJoin(lineSegment(), 'bg-red')}></div>
-        <div class={twJoin(lineSegment(), 'bg-red lg:bg-yellow')}></div>
-        <div class={twJoin(lineSegment(), 'bg-red lg:bg-grey-dark')}></div>
+        <div class={twJoin(lineSegment(), 'bg-yellow')}></div>
+        <div class={twJoin(lineSegment(), 'bg-grey-dark')}></div>
       </div>
 
       <a href={$headerState.data.homepage.url} class={secondaryLink()}>{$headerState.data.homepage.text}</a>
