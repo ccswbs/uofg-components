@@ -1,5 +1,13 @@
 # @uoguelph/react-components
 
+## 1.9.1
+
+### Patch Changes
+
+- 227b0d8: Update styles in uofg-header: adjust colors for logo segments and set mobile menu button height to 5rem
+- adf45b1: Remove console.log from uofg-header, and remove 'Contact Us' link in news variant of uofg-header
+- ad6972f: Set lists to single column by default
+
 ## 1.9.1-rc.2
 
 ### Patch Changes
