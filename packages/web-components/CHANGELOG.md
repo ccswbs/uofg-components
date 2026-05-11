@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.1.1-rc.1
+
+### Patch Changes
+
+- 227b0d8: Update styles in uofg-header: adjust colors for logo segments and set mobile menu button height to 5rem
+
 ## 2.1.1-rc.0
 
 ### Patch Changes
