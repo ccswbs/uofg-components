@@ -30,7 +30,7 @@
         <Menu class="h-full w-fit">
           {#snippet button()}
             <MenuButton
-              class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"
+              class="flex aspect-square h-[5rem] items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black"
               label={item.text}
             >
               {#if item.icon}
@@ -86,7 +86,7 @@
       <Menu class="h-full w-fit">
         {#snippet button()}
           <MenuButton
-            class="flex aspect-square h-full items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black [&_svg]:aria-expanded:rotate-180"
+            class="flex aspect-square h-[5rem] items-center justify-center gap-2 px-4 transition-colors hover:bg-white hover:text-black focus:bg-white focus:text-black aria-expanded:bg-white aria-expanded:text-black [&_svg]:aria-expanded:rotate-180"
             label="Main Menu"
           >
             <FontAwesomeIcon icon={faBars} />
