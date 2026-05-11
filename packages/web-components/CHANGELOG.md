@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.1.1-rc.0
+
+### Patch Changes
+
+- adf45b1: Remove console.log from uofg-header, and remove 'Contact Us' link in news variant of uofg-header
+
 ## 2.1.0
 
 ### Minor Changes
