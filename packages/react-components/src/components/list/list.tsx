@@ -21,7 +21,7 @@ export type ListProps<T extends ListElementType = typeof defaultElement> = Props
     /**
      * Whether columns are enabled.
      *
-     * @default true
+     * @default false
      */
     columns?: boolean;
     /** Additional classes to apply to the list. */
@@ -88,7 +88,7 @@ export function List<T extends ListElementType = typeof defaultElement>({
     as: Component,
     level: context.parent === as ? ((context.level % 3) as 0 | 1 | 2 | 3) : 0,
     nested: context.level > 0,
-    columns: columns ?? true,
+    columns: columns ?? false,
   });
 
   return (

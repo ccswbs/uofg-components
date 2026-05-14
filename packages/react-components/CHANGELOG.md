@@ -1,16 +1,82 @@
 # @uoguelph/react-components
 
+## 1.9.1
+
+### Patch Changes
+
+- 227b0d8: Update styles in uofg-header: adjust colors for logo segments and set mobile menu button height to 5rem
+- adf45b1: Remove console.log from uofg-header, and remove 'Contact Us' link in news variant of uofg-header
+- ad6972f: Set lists to single column by default
+
+## 1.9.1-rc.2
+
+### Patch Changes
+
+- 227b0d8: Update styles in uofg-header: adjust colors for logo segments and set mobile menu button height to 5rem
+
+## 1.9.1-rc.1
+
+### Patch Changes
+
+- adf45b1: Remove console.log from uofg-header, and remove 'Contact Us' link in news variant of uofg-header
+
+## 1.9.1-rc.0
+
+### Patch Changes
+
+- ad6972f: Set lists to single column by default
+
+## 1.9.0
+
+### Minor Changes
+
+- 5b2154e: Refactor uofg-header variant logic, add new variant news
+
+### Patch Changes
+
+- 7e47c4f: Add vertical padding to Figure component
+- dcf5ad8: Fix broken URL
+- 5779066: Update homepage url for news variant
+- 098fc01: Added center alignment for Figure component
+- 5779066: No longer hardcoding secondary link in uofg-header
+- 9eb5b99: Make figure responsive for mobile
+
+## 1.9.0-rc.5
+
+### Patch Changes
+
+- 5779066: Update homepage url for news variant
+- 5779066: No longer hardcoding secondary link in uofg-header
+
+## 1.9.0-rc.4
+
+### Patch Changes
+
+- dcf5ad8: Fix broken URL
+
+## 1.9.0-rc.3
+
+### Minor Changes
+
+- 5b2154e: Refactor uofg-header variant logic, add new variant news
+
+## 1.8.2-rc.2
+
+### Patch Changes
+
+- 9eb5b99: Make figure responsive for mobile
+
 ## 1.8.2-rc.1
 
 ### Patch Changes
 
-- a911b10: Update cookie banner formatting
+- 7e47c4f: Add vertical padding to Figure component
 
 ## 1.8.2-rc.0
 
 ### Patch Changes
 
-- e48fd87: Create new Cookies component
+- 098fc01: Added center alignment for Figure component
 
 ## 1.8.1
 
