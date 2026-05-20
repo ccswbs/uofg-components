@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.1.2
+
+### Patch Changes
+
+- 027f9a7: Remove X link in uofg-footer
+
 ## 2.1.2-rc.0
 
 ### Patch Changes
