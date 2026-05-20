@@ -33,12 +33,6 @@ export const social: { directory: string; links: FooterLink[] } = {
   directory: 'https://www.uoguelph.ca/web/socialmedia/',
   links: [
     {
-      text: 'X',
-      icon: faXTwitter,
-      href: 'https://twitter.com/uofg',
-      classes: 'focus:text-black hover:text-black focus:bg-white hover:bg-white',
-    },
-    {
       text: 'Facebook',
       icon: faFacebookF,
       href: 'https://www.facebook.com/uofguelph',
