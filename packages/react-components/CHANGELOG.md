@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.4
+
+### Patch Changes
+
+- e7b2083: Set Toaster as client side component
+
 ## 1.10.0-rc.3
 
 ### Patch Changes
