@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.1
+
+### Patch Changes
+
+- ef5af72: Fix typescript errors
+
 ## 1.10.0-rc.0
 
 ### Minor Changes
