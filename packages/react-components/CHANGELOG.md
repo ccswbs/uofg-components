@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.5
+
+### Patch Changes
+
+- 25a2f25: Include animations for toaster via Construtable Stylesheets
+
 ## 1.10.0-rc.4
 
 ### Patch Changes
