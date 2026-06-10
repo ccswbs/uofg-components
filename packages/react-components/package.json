@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/react-components",
-  "version": "1.9.1",
+  "version": "1.10.0-rc.0",
   "description": "University of Guelph React Components Library",
   "type": "module",
   "scripts": {
@@ -52,6 +52,7 @@
     "@types/object-hash": "^3.0.6",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "@types/react-transition-group": "^4.4.12",
     "@uoguelph/tailwind-theme": "*",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "autoprefixer": "^10.4.23",
@@ -81,5 +82,8 @@
   "bugs": {
     "url": "https://github.com/ccswbs/uofg-components/issues"
   },
-  "gitHead": "1739053a285cefe8d0bdbbff15686f64812c78eb"
+  "gitHead": "1739053a285cefe8d0bdbbff15686f64812c78eb",
+  "dependencies": {
+    "react-transition-group": "^4.4.5"
+  }
 }
