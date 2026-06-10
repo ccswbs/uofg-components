@@ -1,5 +1,17 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.1
+
+### Patch Changes
+
+- ef5af72: Fix typescript errors
+
+## 1.10.0-rc.0
+
+### Minor Changes
+
+- 1285777: Add Toaster component
+
 ## 1.9.1
 
 ### Patch Changes
