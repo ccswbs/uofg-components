@@ -1,5 +1,29 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.3
+
+### Patch Changes
+
+- 880c1bd: Refactor toaster to use global store rather than context
+
+## 1.10.0-rc.2
+
+### Patch Changes
+
+- f4d0159: Make react-transition-group external peer dependency
+
+## 1.10.0-rc.1
+
+### Patch Changes
+
+- ef5af72: Fix typescript errors
+
+## 1.10.0-rc.0
+
+### Minor Changes
+
+- 1285777: Add Toaster component
+
 ## 1.9.1
 
 ### Patch Changes
