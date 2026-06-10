@@ -9,28 +9,4 @@
   .docblock-colorpalette {
     white-space: pre-wrap !important;
   }
-
-  .uofg-toast-transition-enter {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  .uofg-toast-transition-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 300ms ease,
-    transform 300ms ease;
-  }
-
-  .uofg-toast-transition-exit {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .uofg-toast-transition-exit-active {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 300ms ease,
-    transform 300ms ease;
-  }
 }

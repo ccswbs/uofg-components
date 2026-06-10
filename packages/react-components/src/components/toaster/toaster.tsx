@@ -7,77 +7,11 @@ import {
   faTriangleExclamation,
 } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { nanoid } from 'nanoid';
-import { type RefObject, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { type RefObject, useEffect, useRef, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { twJoin } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
-
-export type Toast = {
-  message: string;
-  type: 'error' | 'success' | 'info' | 'warning';
-  id: string;
-  timeout: number;
-};
-
-type ToastListener = () => void;
-
-let toasts: Toast[] = [];
-const listeners = new Set<ToastListener>();
-
-function emitChange() {
-  listeners.forEach(listener => listener());
-}
-
-function removeToast(id: string) {
-  toasts = toasts.filter(toast => toast.id !== id);
-  emitChange();
-}
-
-function addToast(message: Toast['message'], type: Toast['type'] = 'info', timeout: Toast['timeout'] = 3000) {
-  const id = nanoid();
-
-  toasts = [
-    ...toasts,
-    {
-      id,
-      message,
-      type,
-      timeout,
-    },
-  ];
-
-  emitChange();
-
-  window.setTimeout(() => {
-    removeToast(id);
-  }, timeout);
-}
-
-function subscribe(listener: ToastListener) {
-  listeners.add(listener);
-
-  return () => {
-    listeners.delete(listener);
-  };
-}
-
-function getSnapshot() {
-  return toasts;
-}
-
-export function useToaster() {
-  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
-}
-
-export const toast = {
-  add: addToast,
-  remove: removeToast,
-  info: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'info', timeout),
-  success: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'success', timeout),
-  warning: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'warning', timeout),
-  error: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'error', timeout),
-};
+import { toast, type Toast, useToaster } from './toaster-store';
 
 type ToastTransitionProps = {
   toast: Toast;
@@ -174,8 +108,46 @@ function Toast({
   );
 }
 
+const transitionCSS = `
+  .uofg-toast-transition-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .uofg-toast-transition-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms ease,
+    transform 300ms ease;
+  }
+
+  .uofg-toast-transition-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .uofg-toast-transition-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms ease,
+    transform 300ms ease;
+  }
+ `;
+
 export function Toaster() {
   const toasts = useToaster();
+
+  useEffect(() => {
+    if (!('CSSStyleSheet' in window)) {
+      console.error(
+        '@uoguelph/react-components: Toaster animations will not work because Constructable Stylesheets is not supported in this browser',
+      );
+    }
+
+    const stylesheet = new CSSStyleSheet();
+    stylesheet.replaceSync(transitionCSS);
+    document.adoptedStyleSheets.push(stylesheet);
+  }, []);
 
   const classes = twJoin(
     'uofg-toaster',
@@ -198,3 +170,5 @@ export function Toaster() {
     </TransitionGroup>
   );
 }
+
+export { toast };
