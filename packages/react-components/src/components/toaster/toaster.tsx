@@ -1,5 +1,3 @@
-'use client';
-
 import {
   faCircleCheck,
   faCircleInfo,
@@ -7,20 +5,76 @@ import {
   faTriangleExclamation,
 } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { type ReactNode, type RefObject, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { nanoid } from 'nanoid';
+import { type RefObject, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { twJoin } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
-import { type Toast, ToastContext } from './toaster-context';
 
-export const useToaster = () => {
-  const context = useContext(ToastContext);
+export type Toast = {
+  message: string;
+  type: 'error' | 'success' | 'info' | 'warning';
+  id: string;
+  timeout: number;
+};
 
-  if (!context) {
-    throw new Error('useToast must be used within a ToasterProvider component');
-  }
+type ToastListener = () => void;
 
-  return context;
+let toasts: Toast[] = [];
+const listeners = new Set<ToastListener>();
+
+function emitChange() {
+  listeners.forEach(listener => listener());
+}
+
+function removeToast(id: string) {
+  toasts = toasts.filter(toast => toast.id !== id);
+  emitChange();
+}
+
+function addToast(message: Toast['message'], type: Toast['type'] = 'info', timeout: Toast['timeout'] = 3000) {
+  const id = nanoid();
+
+  toasts = [
+    ...toasts,
+    {
+      id,
+      message,
+      type,
+      timeout,
+    },
+  ];
+
+  emitChange();
+
+  window.setTimeout(() => {
+    removeToast(id);
+  }, timeout);
+}
+
+function subscribe(listener: ToastListener) {
+  listeners.add(listener);
+
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function getSnapshot() {
+  return toasts;
+}
+
+export function useToaster() {
+  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
+}
+
+export const toast = {
+  add: addToast,
+  remove: removeToast,
+  info: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'info', timeout),
+  success: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'success', timeout),
+  warning: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'warning', timeout),
+  error: (message: Toast['message'], timeout?: Toast['timeout']) => addToast(message, 'error', timeout),
 };
 
 type ToastTransitionProps = {
@@ -118,37 +172,8 @@ function Toast({
   );
 }
 
-export function ToasterProvider({ children }: { children: ReactNode }) {
-  const [toasts, setToasts] = useState<Toast[]>([]);
-
-  // Removes a toast from state based on its unique timestamp ID
-  const removeToast = useCallback((id: string) => {
-    setToasts(prevToasts => prevToasts.filter(toast => toast.id !== id));
-  }, []);
-
-  // Adds a toast and schedules its automatic dismissal after 3 seconds
-  const addToast = useCallback(
-    (message: Toast['message'], type: Toast['type'] = 'info', timeout: Toast['timeout'] = 3000) => {
-      const id = Date.now().toString();
-
-      console.log('Adding toast:', id, message, type, timeout);
-
-      setToasts(prevToasts => [
-        ...prevToasts,
-        {
-          id,
-          message,
-          type,
-          timeout,
-        },
-      ]);
-
-      setTimeout(() => {
-        removeToast(id);
-      }, timeout);
-    },
-    [removeToast],
-  );
+export function Toaster() {
+  const toasts = useToaster();
 
   const classes = twJoin(
     'uofg-toaster',
@@ -164,14 +189,10 @@ export function ToasterProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <ToastContext.Provider value={{ addToast }}>
-      {children}
-
-      <TransitionGroup component="div" className={classes}>
-        {toasts.map(toast => (
-          <ToastTransition key={toast.id} toast={toast} onRemove={removeToast} />
-        ))}
-      </TransitionGroup>
-    </ToastContext.Provider>
+    <TransitionGroup component="div" className={classes}>
+      {toasts.map(toastItem => (
+        <ToastTransition key={toastItem.id} toast={toastItem} onRemove={toast.remove} />
+      ))}
+    </TransitionGroup>
   );
 }
