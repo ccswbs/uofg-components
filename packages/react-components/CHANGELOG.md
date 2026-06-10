@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.6
+
+### Patch Changes
+
+- 9ad3a76: Update header variant prop type to string
+
 ## 1.10.0-rc.5
 
 ### Patch Changes
