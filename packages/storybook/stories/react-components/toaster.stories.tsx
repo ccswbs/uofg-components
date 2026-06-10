@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { Button } from '../../../react-components/src/components/button/button';
 import { ToasterProvider, useToaster } from '../../../react-components/src/components/toaster/toaster';
 

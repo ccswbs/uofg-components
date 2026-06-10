@@ -4,7 +4,6 @@ import {
   faCircleCheck,
   faCircleInfo,
   faCircleXmark,
-  faTimes,
   faTriangleExclamation,
 } from '@awesome.me/kit-7993323d0c/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,7 +39,7 @@ type ToastTransitionProps = {
 };
 
 function ToastTransition({ toast, onRemove, ...transitionProps }: ToastTransitionProps) {
-  const nodeRef = useRef<HTMLDivElement>(null);
+  const nodeRef = useRef<HTMLButtonElement>(null);
 
   return (
     <CSSTransition {...transitionProps} nodeRef={nodeRef} timeout={300} classNames="uofg-toast-transition">
@@ -88,8 +87,6 @@ function Toast({
       progress: 'uofg-toast-progress absolute right-0 bottom-0 left-0 h-1 origin-left bg-current opacity-70',
       icon: 'uofg-toast-icon text-2xl',
       message: 'uofg-toast-message',
-      close:
-        'uofg-toast-close-button text-md absolute -top-3 -left-3 h-6 w-6 cursor-pointer rounded-full bg-black text-white',
     },
     variants: {
       type: {
