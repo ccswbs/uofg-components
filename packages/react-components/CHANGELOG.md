@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.0-rc.3
+
+### Patch Changes
+
+- 880c1bd: Refactor toaster to use global store rather than context
+
 ## 1.10.0-rc.2
 
 ### Patch Changes

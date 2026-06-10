@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.1.2"
   },
   "changesets": [
+    "empty-knives-retire",
     "gold-geckos-guess",
     "stale-wings-divide",
     "wild-cloths-rhyme"
