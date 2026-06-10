@@ -1,6 +1,6 @@
 {
   "name": "@uoguelph/react-components",
-  "version": "1.9.1",
+  "version": "1.10.0-rc.4",
   "description": "University of Guelph React Components Library",
   "type": "module",
   "scripts": {
@@ -41,6 +41,7 @@
     "react": "^19.1.0",
     "react-animate-height": "^3.2.3",
     "react-dom": "^19.1.0",
+    "react-transition-group": "^4.4.5",
     "tailwind-merge": "^3.0.1",
     "tailwind-variants": "^3.1.1"
   },
@@ -52,6 +53,7 @@
     "@types/object-hash": "^3.0.6",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "@types/react-transition-group": "^4.4.12",
     "@uoguelph/tailwind-theme": "*",
     "@vitejs/plugin-react-swc": "^4.2.2",
     "autoprefixer": "^10.4.23",

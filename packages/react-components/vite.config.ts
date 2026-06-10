@@ -58,6 +58,7 @@ export default defineConfig({
         '@headlessui/tailwindcss',
         'react-animate-height',
         'html-react-parser',
+        'react-transition-group',
       ],
     },
     minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false,
