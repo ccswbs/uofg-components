@@ -1,5 +1,20 @@
 # @uoguelph/react-components
 
+## 1.10.0
+
+### Minor Changes
+
+- 1285777: Add Toaster component
+
+### Patch Changes
+
+- e7b2083: Set Toaster as client side component
+- 880c1bd: Refactor toaster to use global store rather than context
+- ef5af72: Fix typescript errors
+- 9ad3a76: Update header variant prop type to string
+- 25a2f25: Include animations for toaster via Construtable Stylesheets
+- f4d0159: Make react-transition-group external peer dependency
+
 ## 1.10.0-rc.6
 
 ### Patch Changes
