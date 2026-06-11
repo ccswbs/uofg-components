@@ -19,7 +19,7 @@ export type HeaderProps = PropsWithChildren<{
   /** The URL to the home page of the department or topic this page belongs to */
   url?: string;
   /** The variant of the header */
-  variant?: 'dual-brand';
+  variant?: string;
 }>;
 
 /**
