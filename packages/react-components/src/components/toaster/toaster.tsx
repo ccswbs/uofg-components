@@ -73,7 +73,7 @@ function Toast({
 
   const classes = tv({
     slots: {
-      toast: 'uofg-toast relative flex max-w-[50ch] gap-2 overflow-hidden p-6 text-left text-lg',
+      toast: 'uofg-toast relative flex w-full max-w-[50ch] gap-2 overflow-hidden p-6 text-left text-lg sm:w-fit',
       progress: 'uofg-toast-progress absolute right-0 bottom-0 left-0 h-1 origin-left bg-current opacity-70',
       icon: 'uofg-toast-icon text-2xl',
       message: 'uofg-toast-message',
@@ -134,8 +134,13 @@ const transitionCSS = `
   }
  `;
 
-export function Toaster() {
+export type ToasterProps = {
+  limit?: number;
+};
+
+export function Toaster({ limit = 5 }: ToasterProps) {
   const toasts = useToaster();
+  const filteredToasts = toasts.slice(-limit);
 
   useEffect(() => {
     if (!('CSSStyleSheet' in window)) {
@@ -152,11 +157,14 @@ export function Toaster() {
   const classes = twJoin(
     'uofg-toaster',
     'fixed',
-    'right-4',
-    'bottom-4',
+    'right-0',
+    'bottom-0',
+    'sm:right-4',
+    'sm:bottom-4',
     'z-1000',
     'flex',
-    'w-fit',
+    'sm:w-fit',
+    'w-full',
     'flex-col',
     'items-end',
     'gap-3',
@@ -164,7 +172,7 @@ export function Toaster() {
 
   return (
     <TransitionGroup component="div" className={classes}>
-      {toasts.map(toastItem => (
+      {filteredToasts.map(toastItem => (
         <ToastTransition key={toastItem.id} toast={toastItem} onRemove={toast.remove} />
       ))}
     </TransitionGroup>

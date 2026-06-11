@@ -5,6 +5,7 @@ export type Toast = {
   message: string;
   type: 'error' | 'success' | 'info' | 'warning';
   id: string;
+  timestamp: number;
   timeout: number;
 };
 
@@ -24,6 +25,7 @@ function removeToast(id: string) {
 
 function addToast(message: Toast['message'], type: Toast['type'] = 'info', timeout: Toast['timeout'] = 3000) {
   const id = nanoid();
+  const timestamp = Date.now();
 
   toasts = [
     ...toasts,
@@ -32,6 +34,7 @@ function addToast(message: Toast['message'], type: Toast['type'] = 'info', timeo
       message,
       type,
       timeout,
+      timestamp,
     },
   ];
 
