@@ -1,27 +1,15 @@
 'use client';
 
 import { Field, Radio as HUIRadio, Label } from '@headlessui/react';
-import { Fragment, PropsWithChildren, useContext, useEffect } from 'react';
+import { Fragment, PropsWithChildren } from 'react';
 import { tv } from 'tailwind-variants';
-import { RadioContext } from './radio-context';
 
 export type RadioProps<T> = PropsWithChildren<{
-  /** Whether the radio is selected or not initially. */
-  selected?: boolean;
   /** The value of the radio. */
   value: T;
 }>;
 
-export function Radio<T>({ selected, children, value }: RadioProps<T>) {
-  const context = useContext(RadioContext);
-
-  useEffect(() => {
-    if (selected) {
-      // Update the radio group state with the selected value, this allows for setting an initially selected value
-      context?.setSelected(value);
-    }
-  }, [context, selected, value]);
-
+export function Radio<T>({ children, value }: RadioProps<T>) {
   const radio = tv({
     slots: {
       field: 'flex items-center gap-2',

@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.1-rc.0
+
+### Patch Changes
+
+- f10bf00: Make radio controlled
+
 ## 1.10.0
 
 ### Minor Changes
