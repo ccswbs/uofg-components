@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
+import { useState } from 'storybook/preview-api';
 import { Radio, RadioGroup } from '../../../react-components/src/components/radio-group/radio-group';
 
 const config: Meta<typeof RadioGroup> = {
@@ -24,9 +24,6 @@ const config: Meta<typeof RadioGroup> = {
       </div>
     ),
   ],
-  args: {
-    onChange: fn(),
-  },
 };
 
 export default config;
@@ -34,36 +31,32 @@ export default config;
 type Story = StoryObj<typeof RadioGroup>;
 
 export const Default: Story = {
-  render: ({ ...args }) => (
-    <RadioGroup {...args}>
-      <Radio value="option-1">Option 1</Radio>
-      <Radio value="option-2">Option 2</Radio>
-      <Radio value="option-3">Option 3</Radio>
-    </RadioGroup>
-  ),
+  render: ({ value, onChange, ...rest }) => {
+    const [selectedValue, setSelectedValue] = useState<string | null>(null);
+
+    return (
+      <RadioGroup value={selectedValue} onChange={setSelectedValue} {...rest}>
+        <Radio value="option-1">Option 1</Radio>
+        <Radio value="option-2">Option 2</Radio>
+        <Radio value="option-3">Option 3</Radio>
+      </RadioGroup>
+    );
+  },
 };
 
 export const Inline: Story = {
   args: {
     inline: true,
   },
-  render: ({ ...args }) => (
-    <RadioGroup {...args}>
-      <Radio value="option-1">Option 1</Radio>
-      <Radio value="option-2">Option 2</Radio>
-      <Radio value="option-3">Option 3</Radio>
-    </RadioGroup>
-  ),
-};
+  render: ({ value, onChange, ...rest }) => {
+    const [selectedValue, setSelectedValue] = useState<string | null>(null);
 
-export const WithDefaultValue: Story = {
-  render: ({ ...args }) => (
-    <RadioGroup {...args}>
-      <Radio value="option-1">Option 1</Radio>
-      <Radio value="option-2" selected>
-        Option 2
-      </Radio>
-      <Radio value="option-3">Option 3</Radio>
-    </RadioGroup>
-  ),
+    return (
+      <RadioGroup value={selectedValue} onChange={setSelectedValue} {...rest}>
+        <Radio value="option-1">Option 1</Radio>
+        <Radio value="option-2">Option 2</Radio>
+        <Radio value="option-3">Option 3</Radio>
+      </RadioGroup>
+    );
+  },
 };
