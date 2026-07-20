@@ -365,3 +365,34 @@ export const DarkGrayBG: Story = {
     </MediaCaption>
   ),
 };
+
+const landscapeImage = {
+  src: 'https://picsum.photos/seed/media/1600/900',
+  height: 900,
+  width: 1600,
+  alt: 'Placeholder landscape image',
+};
+
+export const ImageAboveInGrid: Story = {
+  args: {
+    as: 'img',
+    ...landscapeImage,
+    position: 'above',
+    mediaAspectRatio: '16/9',
+  },
+  parameters: {
+    layout: 'padded',
+  },
+  render: ({ ...args }) => (
+    <div className="grid grid-cols-2 gap-4">
+      <MediaCaption {...args}>
+        <Typography type="body">
+          Testing media when one has a much longer caption than the other. Does it throw the image alignment off?
+        </Typography>
+      </MediaCaption>
+      <MediaCaption {...args}>
+        <Typography type="body">Testing media</Typography>
+      </MediaCaption>
+    </div>
+  ),
+};

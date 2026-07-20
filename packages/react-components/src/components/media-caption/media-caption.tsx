@@ -17,6 +17,8 @@ type MediaCaptionPropsBase = {
   background?: 'none' | 'grey-light' | 'grey-dark';
   /** Whether the media should expand to match the height of the caption. */
   matchCaptionHeight?: boolean;
+  /** Aspect ratio to apply to the media wrapper (e.g. "16/9", "4/3"). Useful for keeping image heights consistent across siblings in a parent grid. */
+  mediaAspectRatio?: string;
   className?: string;
   mediaClassName?: string;
 };
@@ -35,6 +37,7 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
   className,
   mediaClassName,
   matchCaptionHeight,
+  mediaAspectRatio,
   ...rest
 }: MediaCaptionProps<T>) {
   const Component = as ?? defaultElement;
@@ -80,6 +83,12 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
       },
       matchCaptionHeight: {
         true: {
+          media: 'h-full',
+        },
+      },
+      hasAspectRatio: {
+        true: {
+          mediaWrapper: 'overflow-hidden',
           media: 'h-full',
         },
       },
@@ -151,11 +160,11 @@ export function MediaCaption<T extends MediaCaptionElementType = typeof defaultE
     ],
   });
 
-  const { base, mediaWrapper, media, caption } = mediaCaption({ size, position, background, matchCaptionHeight });
+  const { base, mediaWrapper, media, caption } = mediaCaption({ size, position, background, matchCaptionHeight, hasAspectRatio: !!mediaAspectRatio });
 
   return (
     <div className={twMerge(base(), className)}>
-      <div className={mediaWrapper()}>
+      <div className={mediaWrapper()} style={mediaAspectRatio ? { aspectRatio: mediaAspectRatio } : undefined}>
         <Component {...rest} src={src as string} className={media()} />
       </div>
 
