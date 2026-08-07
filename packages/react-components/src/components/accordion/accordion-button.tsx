@@ -40,7 +40,10 @@ export function AccordionButton({ children, className }: AccordionButtonProps) {
   const { button, icon } = accordionButton({ open: context?.isOpen });
 
   return (
-    <DisclosureButton className={`uofg-accordion-button ${twMerge(className, button())}`}>
+    <DisclosureButton
+      ref={context?.buttonRef}
+      className={`uofg-accordion-button ${twMerge(className, button())}`}
+    >
       <span className="uofg-accordion-button-content">{children}</span>
       <FontAwesomeIcon
         icon={context?.isOpen ? faCircleMinus : faCirclePlus}
