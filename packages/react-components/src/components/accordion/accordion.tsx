@@ -19,7 +19,7 @@ export type AccordionProps = PropsWithChildren<{
 export function Accordion({ id, children, className }: AccordionProps) {
   const accordion = twMerge('my-2 [&_p:last-child]:mb-0', className);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
-  
+
   useEffect(() => {
     if (!id) return;
 
@@ -39,9 +39,17 @@ export function Accordion({ id, children, className }: AccordionProps) {
       container.scrollIntoView({ block: 'start' });
     };
 
-    maybeOpenFromHash();
+    // setTimeout defers the check by one task, which serves two purposes:
+    // 1. Allows the router to finish writing the hash to window.location before we read it.
+    // 2. In React StrictMode, effects fire twice; the cleanup's clearTimeout cancels the
+    //    first timer so only the second (surviving) timer fires, preventing a double-click
+    //    that would toggle the accordion open then immediately closed.
+    const timer = setTimeout(maybeOpenFromHash, 0);
     window.addEventListener('hashchange', maybeOpenFromHash);
-    return () => window.removeEventListener('hashchange', maybeOpenFromHash);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('hashchange', maybeOpenFromHash);
+    };
   }, [id]);
 
   return (
