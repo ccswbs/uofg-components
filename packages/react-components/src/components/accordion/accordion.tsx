@@ -36,7 +36,11 @@ export function Accordion({ id, children, className }: AccordionProps) {
         buttonRef.current?.click();
       }
 
-      container.scrollIntoView({ block: 'start' });
+      container.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
     };
 
     // setTimeout defers the check by one task, which serves two purposes:
