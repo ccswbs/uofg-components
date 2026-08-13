@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.2-rc.1
+
+### Patch Changes
+
+- 1e868ea: "Fix indentation"
+
 ## 1.10.2-rc.0
 
 ### Patch Changes

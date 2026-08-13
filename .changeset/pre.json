@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.1.2"
   },
   "changesets": [
-    "crisp-ravens-teach"
+    "crisp-ravens-teach",
+    "warm-things-remain"
   ]
 }
