@@ -37,10 +37,10 @@ export function Accordion({ id, children, className }: AccordionProps) {
       }
 
       container.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
     };
 
     // setTimeout defers the check by one task, which serves two purposes:
