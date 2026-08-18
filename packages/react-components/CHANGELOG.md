@@ -1,5 +1,17 @@
 # @uoguelph/react-components
 
+## 1.10.2-rc.1
+
+### Patch Changes
+
+- 1e868ea: "Fix indentation"
+
+## 1.10.2-rc.0
+
+### Patch Changes
+
+- e647aa2: Add ability to open accordions automatically via anchor links
+
 ## 1.10.1
 
 ### Patch Changes

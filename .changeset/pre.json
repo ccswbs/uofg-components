@@ -1,0 +1,14 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@uoguelph/react-components": "1.10.1",
+    "@uoguelph/storybook": "1.0.10",
+    "@uoguelph/tailwind-theme": "1.0.2",
+    "@uoguelph/web-components": "2.1.2"
+  },
+  "changesets": [
+    "crisp-ravens-teach",
+    "warm-things-remain"
+  ]
+}
