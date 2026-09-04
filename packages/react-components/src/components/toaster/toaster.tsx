@@ -157,6 +157,10 @@ export function Toaster({ limit = 5 }: ToasterProps) {
   const classes = twJoin(
     'uofg-toaster',
     'fixed',
+    'h-fit',
+    'sm:h-auto',
+    'top-auto!',
+    'left-auto!',
     'right-0',
     'bottom-0',
     'sm:right-4',
