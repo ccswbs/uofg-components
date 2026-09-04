@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.3-rc.0
+
+### Patch Changes
+
+- 34c3f2c: Fix toaster responsive styles
+
 ## 1.10.2
 
 ### Patch Changes
