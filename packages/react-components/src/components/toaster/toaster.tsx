@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { type RefObject, useEffect, useRef, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { twJoin } from 'tailwind-merge';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 import { toast, type Toast, useToaster } from './toaster-store';
 
@@ -136,9 +136,10 @@ const transitionCSS = `
 
 export type ToasterProps = {
   limit?: number;
+  className?: string;
 };
 
-export function Toaster({ limit = 5 }: ToasterProps) {
+export function Toaster({ limit = 5, className }: ToasterProps) {
   const toasts = useToaster();
   const filteredToasts = toasts.slice(-limit);
 
@@ -154,7 +155,7 @@ export function Toaster({ limit = 5 }: ToasterProps) {
     document.adoptedStyleSheets.push(stylesheet);
   }, []);
 
-  const classes = twJoin(
+  const classes = twMerge(
     'uofg-toaster',
     'fixed',
     'h-fit',
@@ -172,6 +173,7 @@ export function Toaster({ limit = 5 }: ToasterProps) {
     'flex-col',
     'items-end',
     'gap-3',
+    className,
   );
 
   return (
