@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.3-rc.1
+
+### Patch Changes
+
+- 819c235: Add ability to override Toaster classes.
+
 ## 1.10.3-rc.0
 
 ### Patch Changes

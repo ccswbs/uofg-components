@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.1.2"
   },
   "changesets": [
-    "curvy-views-sell"
+    "curvy-views-sell",
+    "thirty-files-open"
   ]
 }
