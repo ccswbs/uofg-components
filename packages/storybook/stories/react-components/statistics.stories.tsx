@@ -181,7 +181,7 @@ export const WithImages: Story = {
       <Statistics {...args}>
         <StatisticsItem>
           <StatisticsItemValue>Example Value</StatisticsItemValue>
-          <StatisticsItemRepresents>Example Represents</StatisticsItemRepresents>
+          <StatisticsItemRepresents>Example Represents that Appears on Multiple Lines</StatisticsItemRepresents>
           <StatisticsItemImage src="https://picsum.photos/300/200" alt="Example Image" width="300" height="200" />
         </StatisticsItem>
         <StatisticsItem>
