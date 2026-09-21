@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.10.4-rc.0
+
+### Patch Changes
+
+- d03d60d: Fix gap beneath statistics image when amount of text differs
+
 ## 1.10.3
 
 ### Patch Changes
