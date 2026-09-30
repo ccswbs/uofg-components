@@ -17,8 +17,8 @@ export function Figure({ align = 'left', className, ...rest }: FigureProps) {
     base: 'block w-full flex-col items-center gap-0 sm:inline-flex sm:w-[var(--uofg-figure-image-width)]',
     variants: {
       align: {
-        left: 'py-1 pr-3 sm:float-start',
-        right: 'py-1 pl-3 sm:float-end',
+        left: 'py-1 mr-5 sm:float-start',
+        right: 'py-1 ml-4 sm:float-end',
         center: 'mx-auto block! py-3',
       },
     },
