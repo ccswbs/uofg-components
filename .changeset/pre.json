@@ -8,6 +8,7 @@
     "@uoguelph/web-components": "2.1.2"
   },
   "changesets": [
-    "ninety-eggs-mix"
+    "ninety-eggs-mix",
+    "polite-boxes-look"
   ]
 }
