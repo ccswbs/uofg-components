@@ -1,5 +1,13 @@
 # @uoguelph/react-components
 
+## 1.10.4
+
+### Patch Changes
+
+- 0cde90b: Adjust spacing for left- and right-aligned figures to preserve image dimensions and add more white space between figures and text.
+- 13566da: Adjust spacing for left- and right-aligned figures to preserve image dimensions and add more white space between figures and text.
+- fae709c: Adjust spacing for left- and right-aligned figures to preserve image dimensions and add more white space between figures and text.
+
 ## 1.10.4-rc.2
 
 ### Patch Changes
