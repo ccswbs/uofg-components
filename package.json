@@ -6,21 +6,21 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@changesets/cli": "^2.29.8",
+    "@changesets/cli": "^3.0.3",
     "cross-env": "^10.1.0",
-    "prettier": "^3.8.0",
-    "prettier-plugin-jsdoc": "^1.8.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-jsdoc": "^1.8.1",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "prettier-plugin-svelte": "^3.4.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "turbo": "^2.9.17"
+    "prettier-plugin-svelte": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "turbo": "^2.11.10"
   },
   "scripts": {
     "build": "turbo build",
     "build:react-components": "turbo build --filter @uoguelph/react-components",
     "build:storybook": "turbo build --filter @uoguelph/storybook",
     "build:web-components": "turbo build --filter @uoguelph/web-components",
-    "clean": "turbo clean && rm -rf packages/*/dist packages/storybook/storybook-static",
+    "clean": "turbo clean && node -e \"const fs = require('node:fs'); for (const dir of fs.readdirSync('packages', { withFileTypes: true })) if (dir.isDirectory()) fs.rmSync('packages/' + dir.name + '/dist', { recursive: true, force: true }); fs.rmSync('packages/storybook/storybook-static', { recursive: true, force: true });\"",
     "dev": "turbo dev --filter @uoguelph/storybook",
     "docker:clean": "docker-compose down",
     "docker:dev": "docker-compose up",
@@ -31,5 +31,9 @@
     "changeset:exit-prerelease": "changeset pre exit",
     "changeset:version": "changeset version",
     "changeset:release": "turbo build && changeset publish"
+  },
+  "engines": {
+    "node": "^22.13.0 || ^24.0.0 || >=26.0.0",
+    "npm": ">=10.9.0"
   }
 }
