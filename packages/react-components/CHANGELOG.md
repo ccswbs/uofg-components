@@ -1,5 +1,11 @@
 # @uoguelph/react-components
 
+## 1.11.0-rc.0
+
+### Minor Changes
+
+- 0e5f4a0: Update vite and other major dependencies
+
 ## 1.10.4
 
 ### Patch Changes

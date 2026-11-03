@@ -17,7 +17,7 @@
     "@storybook/react-vite": "10.6.5",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@tailwindcss/vite": "^4.3.4",
-    "@uoguelph/tailwind-theme": "*",
+    "@uoguelph/tailwind-theme": "1.1.0-rc.0",
     "@vitejs/plugin-react-swc": "^4.3.3",
     "eslint-plugin-storybook": "10.6.5",
     "storybook": "10.6.5",
