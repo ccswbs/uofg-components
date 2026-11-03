@@ -31,6 +31,10 @@ if (fs.existsSync(componentsDir)) {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte(), tailwindcss() as any, svg()],
+  define: {
+    // Library mode preserves this check unless it is explicitly replaced for browsers.
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV ?? 'production'),
+  },
   build: {
     outDir: 'dist/uofg-web-components',
     lib: {
