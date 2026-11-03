@@ -22,8 +22,7 @@ if (fs.existsSync(componentsDir)) {
     // If you have deeply nested components, you might need more robust naming logic.
     if (file.isFile() && file.name.startsWith('uofg-') && file.name.endsWith('.svelte')) {
       const name = path.basename(file.name, '.svelte');
-      // Ensure file.path is used correctly (Node 20+)
-      const fullPath = path.join(file.path || file.parentPath, file.name);
+      const fullPath = path.join(file.parentPath, file.name);
       entries[name] = fullPath;
     }
   });
@@ -32,6 +31,10 @@ if (fs.existsSync(componentsDir)) {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte(), tailwindcss() as any, svg()],
+  define: {
+    // Library mode preserves this check unless it is explicitly replaced for browsers.
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV ?? 'production'),
+  },
   build: {
     outDir: 'dist/uofg-web-components',
     lib: {
@@ -41,7 +44,7 @@ export default defineConfig({
       fileName: (format, name) => (format === 'es' ? `${name}.esm.js` : `${name}.${format}.js`),
       cssFileName: 'uofg-web-components',
     },
-    minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false,
+    minify: process.env.NODE_ENV === 'production' ? 'oxc' : false,
     sourcemap: process.env.NODE_ENV !== 'production',
     emptyOutDir: true,
   },

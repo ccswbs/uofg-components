@@ -34,6 +34,10 @@ const config: StorybookConfig = {
   },
   typescript: {
     reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      tsconfigPath: '../react-components/tsconfig.json',
+      include: ['../react-components/src/**/*.tsx'],
+    },
   },
   docs: {},
   staticDirs: ['../public'],
