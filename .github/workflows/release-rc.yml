@@ -5,12 +5,17 @@ on:
     branches:
       - main
     types: [opened, synchronize]
-    # Only run if files in the .changeset directory are modified
+    # Run for release notes or changes to this workflow.
     paths:
       - '.changeset/*.md'
       - '!.changeset/README.md'
+      - '.changeset/pre/*.md'
+      - '.github/workflows/release-rc.yml'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -21,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
 
       - name: Setup Node.js 24.x
         uses: actions/setup-node@v4
@@ -36,14 +42,26 @@ jobs:
       - name: Check for Changesets
         id: check-changesets
         run: |
-          # Count .md files in .changeset excluding README.md
-          COUNT=$(ls .changeset/*.md 2>/dev/null | grep -v "README.md" | wc -l)
-          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+
+          const ignoredFiles = new Set(['readme.md', 'agents.md', 'claude.md', 'gemini.md']);
+          const pending = fs.readdirSync('.changeset', { withFileTypes: true }).filter(file =>
+            file.isFile() && file.name.endsWith('.md') && !ignoredFiles.has(file.name.toLowerCase())
+          );
+          const preState = fs.existsSync('.changeset/pre.json')
+            ? JSON.parse(fs.readFileSync('.changeset/pre.json', 'utf8'))
+            : undefined;
+
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            `count=${pending.length}\nprerelease=${preState?.mode === 'pre'}\n`
+          );
+          NODE
 
       - name: Enter Prerelease Mode and Version
         if: steps.check-changesets.outputs.count > 0
         run: |
-          if [ ! -f .changeset/pre.json ]; then
+          if [ "${{ steps.check-changesets.outputs.prerelease }}" != "true" ]; then
             npm run changeset:enter-prerelease
           fi
           # Manually run versioning here to update package.json files in the runner
@@ -64,12 +82,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to npm (RC)
-        if: steps.check-changesets.outputs.count > 0
+        if: steps.check-changesets.outputs.count > 0 || steps.check-changesets.outputs.prerelease == 'true'
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          # We leave 'version' out so the action doesn't try to create a PR
-          publish: npm run changeset:release
+          # Versioning above consumes pending changesets; v2 understands the prerelease archive.
+          publish-script: npm run changeset:release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
