@@ -44,7 +44,7 @@ export default defineConfig({
       cssFileName: 'index',
       formats: ['es'],
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: [
         'react',
         'react-dom',
@@ -61,7 +61,7 @@ export default defineConfig({
         'react-transition-group',
       ],
     },
-    minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false,
+    minify: process.env.NODE_ENV === 'production' ? 'oxc' : false,
     sourcemap: process.env.NODE_ENV !== 'production',
     emptyOutDir: true,
   },

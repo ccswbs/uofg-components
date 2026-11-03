@@ -1,5 +1,11 @@
 # @uoguelph/web-components
 
+## 2.2.0-rc.0
+
+### Minor Changes
+
+- 0e5f4a0: Update vite and other major dependencies
+
 ## 2.1.2
 
 ### Patch Changes
