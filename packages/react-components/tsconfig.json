@@ -10,7 +10,6 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
     "rootDir": "src",
     "strict": true,
     "noUnusedLocals": true,

@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-To get started with developing in this repository, you will need to have npm installed on your machine. If you don't have npm installed, you can download it from [here](https://www.npmjs.com/get-npm).
+Use Node.js 24 LTS and npm 11 to develop and build this repository. The release workflows and Docker image use Node.js 24.
 
 Once you have npm installed, follow these steps:
 

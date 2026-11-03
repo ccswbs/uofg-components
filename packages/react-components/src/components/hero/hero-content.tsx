@@ -40,12 +40,10 @@ export function HeroContent({ children, alignment = 'left' }: HeroContentProps) 
         center: {
           wrapper: 'mx-auto lg:max-w-[50%]',
           container: 'lg:items-center lg:text-center',
-          link: 'lg:mx-auto',
         },
         right: {
           wrapper: 'ml-auto lg:max-w-[50%]',
           container: 'lg:items-end lg:text-right',
-          link: 'lg:ml-auto',
         },
         fullWidth: {
           wrapper: 'mx-auto',

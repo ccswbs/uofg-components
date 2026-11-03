@@ -12,7 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "tailwindcss": "^4.0.9"
+    "tailwindcss": "^4.3.4"
   },
   "gitHead": "1c8fe9f548ce181a1c5e7f824270a26523a25b4d"
 }
