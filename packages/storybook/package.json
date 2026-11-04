@@ -9,26 +9,27 @@
     "build:chromatic": "export $(cat .env | xargs) && npx chromatic --project-token=$CHROMACTIC_PROJECT_TOKEN"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^5.2.1",
-    "@headlessui/react": "^2.2.0",
-    "@storybook/addon-a11y": "10.4.0",
-    "@storybook/addon-docs": "10.4.0",
-    "@storybook/addon-links": "10.4.0",
-    "@storybook/react-vite": "10.4.0",
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "@tailwindcss/vite": "^4.0.9",
-    "@uoguelph/tailwind-theme": "*",
-    "@vitejs/plugin-react-swc": "^4.2.2",
-    "eslint-plugin-storybook": "10.4.0",
-    "storybook": "10.4.0",
-    "tailwind-merge": "^3.3.0",
-    "tailwind-variants": "^3.2.2",
-    "tailwindcss": "^4.1.11",
-    "vite-plugin-svgo": "^2.0.0",
-    "vite-plugin-svgr": "^4.5.0"
+    "@chromatic-com/storybook": "^5.6.0",
+    "@headlessui/react": "^2.2.10",
+    "@storybook/addon-a11y": "10.6.5",
+    "@storybook/addon-docs": "10.6.5",
+    "@storybook/addon-links": "10.6.5",
+    "@storybook/react-vite": "10.6.5",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.4",
+    "@uoguelph/tailwind-theme": "1.1.0-rc.0",
+    "@vitejs/plugin-react-swc": "^4.3.3",
+    "eslint-plugin-storybook": "10.6.5",
+    "storybook": "10.6.5",
+    "tailwind-merge": "^3.7.0",
+    "tailwind-variants": "^4.0.1",
+    "tailwindcss": "^4.3.4",
+    "vite": "^8.3.5",
+    "vite-plugin-svgo": "^3.0.2",
+    "vite-plugin-svgr": "^5.2.0"
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.3.1"
   },
   "overrides": {
     "storybook": "$storybook"

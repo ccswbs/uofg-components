@@ -1,5 +1,17 @@
 # @uoguelph/web-components
 
+## 2.2.0-rc.1
+
+### Patch Changes
+
+- 0264ced: Replace Node environment checks at build time so the web-component bundles load directly in browsers without a process global.
+
+## 2.2.0-rc.0
+
+### Minor Changes
+
+- 0e5f4a0: Update vite and other major dependencies
+
 ## 2.1.2
 
 ### Patch Changes
